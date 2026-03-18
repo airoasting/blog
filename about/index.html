@@ -90,23 +90,66 @@
 
   <main>
     <section class="about">
-      <h1>AI ROASTING</h1>
 
+      <!-- 1. Hero: 훅+가치 -->
       <div class="about-intro">
-        25년 동안 전략을 짰다.<br>
-        지금 AI가 그 전략을 바꾸고 있다.<br>
-        나는 그걸 냉정하게 말하기 위해<br>
-        이 블로그를 시작했다.
+        AI 도입을 권하는 말은 넘쳐납니다.<br>
+        그런데 실제로 도입한 기업의 절반은 오히려 더 느려졌습니다.<br>
+        AI Roasting은 매주 하나의 AI 트렌드를 해부해<br>
+        "이거, 우리도 해야 하나?"에 직접 답을 드립니다.
       </div>
 
+
+      <!-- 3. 약속: Roasting 이름값 -->
       <div class="about-promise">
         <h2>AI ROASTING의 약속</h2>
         <ul>
-          <li>찬양하지 않는다</li>
-          <li>근거 없는 공포를 주지 않는다</li>
-          <li>매 포스트에서 직접 판단한다</li>
+          <li>업계 과장을 그대로 쓰지 않습니다. "혁명"이라 불리면 데이터부터 확인합니다.</li>
+          <li>공포를 팔지 않습니다. 근거 없는 위기감은 판단을 망칩니다.</li>
+          <li>모든 포스트는 결론으로 끝납니다. 지금 도입 / 조금 더 관망 / 패스.</li>
         </ul>
       </div>
+
+
+
+      <!-- 6. 카테고리 안내 -->
+      <div class="about-categories">
+        <h2>다루는 영역</h2>
+        <div class="about-category-list">
+          <a href="../research/index.html" class="about-category-item">
+            <span class="about-category-name">리서치</span>
+            <span class="about-category-desc">HBR · 컨설팅펌 · 학술 논문 직접 분석</span>
+          </a>
+          <a href="../leader/index.html" class="about-category-item">
+            <span class="about-category-name">리더</span>
+            <span class="about-category-desc">CEO · 의사결정자의 AI 전략</span>
+          </a>
+          <a href="../company/index.html" class="about-category-item">
+            <span class="about-category-name">기업</span>
+            <span class="about-category-desc">실제 도입 사례, 성과와 실패</span>
+          </a>
+          <a href="../tech/index.html" class="about-category-item">
+            <span class="about-category-name">기술</span>
+            <span class="about-category-desc">비개발자를 위한 AI 기술 정리</span>
+          </a>
+          <a href="../survival/index.html" class="about-category-item">
+            <span class="about-category-name">생존</span>
+            <span class="about-category-desc">AI 시대 커리어 생존법</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 하단 CTA -->
+      <div class="about-cta-bottom">
+        <div class="about-cta-bottom-inner">
+          <div>
+            <span class="about-cta-label">NEWSLETTER</span>
+            <p>매주 최신 AI 소식을 뉴스레터로 받아 보세요.</p>
+          </div>
+          <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" class="about-cta-btn-outline" target="_blank" rel="noopener">AI ROASTING 뉴스레터 구독하기</a>
+        </div>
+      </div>
+
     </section>
   </main>
 
@@ -148,6 +191,9 @@
     </div>
   </footer>
 
+  <!-- posts-data for recent posts section -->
+  <script src="../assets/js/posts-data.js"></script>
+
   <script>
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
@@ -157,6 +203,7 @@
         mobileNav.classList.toggle('open');
       });
     }
+
   </script>
 
 
@@ -199,44 +246,37 @@
 
     function buildPageMarkdown(){
       var lines = [];
-      var title = document.querySelector('.section-title');
-      var desc = document.querySelector('.section-desc');
-      var pageTitle = document.title;
-      
+
       lines.push('---');
-      lines.push('page: ' + pageTitle);
-      if(title) lines.push('title: ' + title.textContent);
-      if(desc) lines.push('description: ' + desc.textContent);
-      lines.push('type: category');
+      lines.push('page: about/index.md');
+      lines.push('type: about');
       lines.push('---');
       lines.push('');
 
-      // List posts from POSTS_DATA
-      var data = window.POSTS_DATA || {posts:[]};
-      var category = (document.querySelector('[data-cat].active')||{}).dataset;
-      var catKey = category ? category.cat : '';
-      var posts = (data.posts||[]).filter(function(p){ return !catKey || p.category===catKey; });
-      posts.sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
-
-      if(posts.length){
-        lines.push('## 포스트 목록 (' + posts.length + '개)');
-        lines.push('');
-        posts.forEach(function(post){
-          lines.push('---');
-          lines.push('title: ' + post.title);
-          lines.push('date: ' + post.date);
-          lines.push('category: ' + post.category);
-          lines.push('source: ' + (post.source||''));
-          lines.push('tags: [' + (post.tags||[]).join(', ') + ']');
-          lines.push('slug: ' + post.slug);
-          if(post.roasting_quote) lines.push('roasting_quote: "' + post.roasting_quote + '"');
-          lines.push('---');
-          lines.push('');
-        });
-      } else {
-        lines.push('## 포스트 없음');
-        lines.push('');
+      lines.push('## 소개');
+      lines.push('');
+      var intro = document.querySelector('.about-intro');
+      if(intro){
+        intro.innerText.split('\n').forEach(function(l){ if(l.trim()) lines.push(l.trim()); });
       }
+      lines.push('');
+
+      lines.push('## AI ROASTING의 약속');
+      lines.push('');
+      document.querySelectorAll('.about-promise li').forEach(function(li){
+        lines.push('- ' + li.textContent.trim());
+      });
+      lines.push('');
+
+      lines.push('## 다루는 영역');
+      lines.push('');
+      document.querySelectorAll('.about-category-item').forEach(function(item){
+        var name = item.querySelector('.about-category-name');
+        var desc = item.querySelector('.about-category-desc');
+        if(name && desc) lines.push(name.textContent.trim() + ': ' + desc.textContent.trim());
+      });
+      lines.push('');
+
       return lines;
     }
 
