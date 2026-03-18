@@ -34,13 +34,13 @@ window.POSTS_DATA = {
       "next_post": ""
     },
     {
-      "title": "AI 투자 수익률을 결정하는 7가지 경영 규율",
+      "title": "AI 투자 수익률을 결정하는 7가지 경영 원칙",
       "date": "2026-03-17",
       "category": "research",
       "source": "HBR (Thomas H. Davenport, Laks Srinivasan)",
       "tags": ["HBR", "AI투자", "ROI", "측정성숙도", "임원", "창업자", "팀장"],
       "slug": "2026-03-17-ai-investment-roi-7-factors",
-      "summary": "HBR이 1,006명의 경영진을 조사한 결과, AI 투자 수익률을 좌우하는 것은 기술이 아니라 경영 규율이다. CFO가 AI 가치 책임을 맡은 조직의 76%가 높은 성과를 달성했고, 측정 성숙도 5단계 조직은 85%가 고성과를 보고했다.",
+      "summary": "HBR이 1,006명의 경영진을 조사한 결과, AI 투자 수익률을 좌우하는 것은 기술이 아니라 경영 원칙이다. CFO가 AI 가치 책임을 맡은 조직의 76%가 높은 성과를 달성했고, 측정 성숙도 5단계 조직은 85%가 고성과를 보고했다.",
       "roasting_quote": "AI에 370억 달러를 쏟아부었는데, 아직도 'ROI를 어떻게 측정하죠?'라고 묻고 있다면, 그건 AI 문제가 아니라 경영 문제다.",
       "next_post": ""
     },
