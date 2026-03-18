@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스) | AI ROASTING</title>
+  <meta name="description" content="AlphaGo가 이세돌을 꺾은 지 10년. 데미스 하사비스가 신경망+탐색+강화학습의 조합이 단백질 구조 예측, 수학 올림피아드, 알고리즘 발견으로 확장되며 노벨 화학상까지 이끈 여정을 정리했다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스)">
+  <meta property="og:description" content="AlphaGo가 이세돌을 꺾은 지 10년. 신경망+탐색+강화학습이 단백질 구조 예측에서 노벨 화학상까지 이끈 여정.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/leader/2026-03-10-alphago-10-years.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/leader/images/2026_03_10_alphago-10-years/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-10">
+  <meta property="article:section" content="리더">
+  <meta property="article:tag" content="DeepMind">
+  <meta property="article:tag" content="AlphaGo">
+  <meta property="article:tag" content="AGI">
+  <meta property="article:tag" content="AI전략">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스)">
+  <meta name="twitter:description" content="AlphaGo가 이세돌을 꺾은 지 10년. 신경망+탐색+강화학습이 단백질 구조 예측에서 노벨 화학상까지 이끈 여정.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/leader/images/2026_03_10_alphago-10-years/thumbnail.png">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스)",
+    "datePublished": "2026-03-10",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "AlphaGo가 이세돌을 꺾은 지 10년. 데미스 하사비스가 신경망+탐색+강화학습의 조합이 단백질 구조 예측, 수학 올림피아드, 알고리즘 발견으로 확장되며 노벨 화학상까지 이끈 여정을 정리했다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/leader/2026-03-10-alphago-10-years.html",
+    "articleSection": "리더"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader" class="active">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-timeline" class="toc-link">10년의 궤적</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 임팩트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+    <article class="post" data-category="leader">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="leader">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_10_alphago-10-years/thumbnail.png" alt="AlphaGo 10주년, 37수에서 노벨상까지">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="leader">리더</span>
+          <span class="post-date">2026년 3월 10일</span>
+          <span class="post-read-time">7분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스)</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Google DeepMind Blog</span>
+            <span>Demis Hassabis</span>
+            <span><a href="https://deepmind.google/blog/10-years-of-alphago/" target="_blank" rel="noopener">10 Years of AlphaGo ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=DeepMind" class="post-tag">#DeepMind</a>
+            <a href="../index.html?tag=AlphaGo" class="post-tag">#AlphaGo</a>
+            <a href="../index.html?tag=AGI" class="post-tag">#AGI</a>
+            <a href="../index.html?tag=AI전략" class="post-tag">#AI전략</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스)"
+        data-date="2026-03-10"
+        data-category="leader"
+        data-source="Google DeepMind Blog (Demis Hassabis)"
+        data-tags="DeepMind, AlphaGo, AGI, 임원, 창업자, 팀장, AI전략"
+        data-original-url="https://deepmind.google/blog/10-years-of-alphago/"
+        data-roasting-quote="바둑 한 판이 10년 만에 노벨상이 됐다. 당신의 10년 전략은 아직도 엑셀에 갇혀 있지는 않은가?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>2016년 AlphaGo가 이세돌 9단을 꺾은 지 10년. 구글 딥마인드 데미스 하사비스 대표가 그 여정을 돌아보며 AI가 과학을 어떻게 바꿨는지 정리했습니다.</p>
+        <p data-summary>AlphaGo의 신경망+탐색+강화학습 조합은 단백질 구조 예측(AlphaFold), 수학 올림피아드(AlphaProof), 알고리즘 발견(AlphaEvolve)으로 확장되며 노벨 화학상까지 이끌었습니다.</p>
+        <p data-summary>하사비스는 "37수 같은 창의성의 불꽃이 과학 발견의 황금시대를 열고 있다"며 AGI로 가는 구체적 로드맵을 제시했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">바둑 한 판이 10년 만에 노벨상이 됐다.<br>당신의 10년 전략은 아직도 엑셀에 갇혀 있지는 않은가?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>구글 딥마인드 CEO 데미스 하사비스가 AlphaGo 10주년을 맞아 직접 쓴 회고입니다. 단순한 추억이 아닙니다. 바둑 AI에서 시작한 기술이 노벨상, 수학 올림피아드 금메달, 그리고 AGI 로드맵까지 이어지는 10년의 궤적을 하나의 글로 정리한 것입니다. AI 전략을 세우는 리더라면 이 궤적의 방향과 속도를 직시해야 합니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>2016년 3월, 서울에서 2억 명 이상이 지켜보는 가운데 AlphaGo는 이세돌 9단을 꺾었습니다. 전문가들의 예상보다 10년 앞선 일이었습니다. 게임 2의 37번째 수는 해설자조차 "실수"라고 판단했지만, 약 100수 뒤 바로 그 돌이 승리의 핵심이 됐습니다. 하사비스는 이 순간을 <strong>"AI가 인간을 모방하는 것을 넘어 새로운 지식을 창조할 수 있다는 첫 번째 증거"</strong>로 봅니다.</p>
+        <p>이 불꽃은 게임에서 멈추지 않았습니다. 같은 방법론이 단백질 구조 예측(AlphaFold 2), 수학 올림피아드(AlphaProof), 알고리즘 발견(AlphaEvolve), 과학 가설 생성(AI Co-scientist)으로 확장되며 실제 과학 혁명을 일으키고 있습니다.</p>
+      </section>
+
+      <!-- 타임라인 -->
+      <section class="post-section" id="section-timeline">
+        <div class="post-section-label" style="display:flex; justify-content:space-between; align-items:baseline;">AlphaGo에서 AGI까지: 10년의 궤적<span style="font-size:0.75rem; font-weight:400; color:#999;">2016–2026</span></div>
+        <div style="margin:1.5rem 0 2rem; border-left:3px solid #111; padding-left:1.5rem;">
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2016년 3월</div>
+            <div><strong>AlphaGo vs 이세돌</strong>: 바둑 세계 챔피언을 꺾다. 37수, 창의성의 불꽃</div>
+          </div>
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2017년</div>
+            <div><strong>AlphaGo Zero</strong>: 인간 데이터 없이 자기학습만으로 역대 최강 달성</div>
+          </div>
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2018년</div>
+            <div><strong>AlphaZero</strong>: 바둑, 체스, 쇼기를 하나의 시스템으로 정복. 수백 년 인간이 분석한 체스에서도 새로운 전략을 창안</div>
+          </div>
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2020년</div>
+            <div><strong>AlphaFold 2</strong>: 50년 미제 과제인 단백질 3D 구조 예측 해결. 2억 개 단백질 구조 규명, 300만 명 이상 연구자 활용</div>
+          </div>
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2024년</div>
+            <div><strong>노벨 화학상</strong>: 하사비스와 존 점퍼, AlphaFold로 수상</div>
+          </div>
+          <div style="margin-bottom:1.5rem; position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2025년</div>
+            <div><strong>AlphaProof + AlphaGeometry 2</strong>: 국제수학올림피아드 은메달 → Gemini Deep Think로 금메달 달성</div>
+          </div>
+          <div style="position:relative;">
+            <div style="position:absolute; left:-1.85rem; top:0.3rem; width:10px; height:10px; background:#111; border-radius:50%;"></div>
+            <div style="font-weight:700; font-size:0.85rem; margin-bottom:4px;">2026년</div>
+            <div><strong>AlphaEvolve + AI Co-scientist</strong>: 알고리즘 발견과 과학 가설 자동 생성. 항생제 내성 관련 가설을 독립적으로 도출</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 37수의 패턴은 반복되고 있습니다.</strong> 바둑에서의 창의적 전략 발명이 과학 전 분야로 확장됐습니다. AlphaFold는 말라리아 백신과 플라스틱 분해 효소 개발에 기여하고 있고, AlphaEvolve는 행렬 곱셈의 새로운 방식을 발견해 데이터센터 효율을 높이고 있습니다. AI Co-scientist는 수십 년 문헌을 분석해 인간 연구자의 수년 연구와 일치하는 가설을 독립적으로 도출했습니다.</p>
+
+        <p><strong>둘째, 하사비스의 AGI 공식이 명확해졌습니다.</strong> <em>Gemini(세계 모델) + AlphaGo(탐색·계획) + 전문 도구(AlphaFold 등) = AGI.</em> 현재 AI는 "매우 인상적이지만 고도로 전문화된" 시스템입니다. 진정한 AGI는 37수처럼 새로운 전략을 발명하는 수준을 넘어, 바둑만큼 깊고 우아한 새로운 게임 자체를 발명하는 수준이어야 한다고 그는 말합니다.</p>
+
+        <p><strong>셋째, 이세돌의 회고가 현실을 확인합니다.</strong> 현재 UNIST 객원교수인 이세돌 9단은 "AlphaGo가 제시한 최고의 교훈은 AI 시대의 명백한 미리보기였다. 머나먼 미래가 아닌 우리 문앞에 도착한 현실임을 입증했다"고 말했습니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 임팩트</div>
+
+        <p><strong>AI R&D의 복리 효과가 수치로 확인되고 있습니다.</strong> AlphaFold는 2억 개 단백질 구조를 규명했고, 이를 활용하는 연구자가 300만 명을 넘었습니다. AlphaGo에서 시작한 하나의 기술 조합이 10년 만에 노벨상, IMO 금메달, 알고리즘 발견까지 이어졌습니다. 개별 제품의 성공이 아니라 방법론 자체의 범용화입니다.</p>
+
+        <p><strong>AI를 '도구'로 보는 조직과 '연구 파트너'로 보는 조직의 격차가 벌어지고 있습니다.</strong> AI Co-scientist는 인간 연구자가 수년에 걸쳐 도출한 가설을 독립적으로 재현했습니다. McKinsey에 따르면, AI를 탐색·추론 기반으로 활용하는 조직은 그렇지 않은 조직 대비 R&D 생산성이 25~40% 높습니다. 단순 자동화에 머무는 것은 이 격차를 매 분기 벌어지게 만듭니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 활용 수준을 진단합니다.</strong><br>우리 조직이 AI를 단순 자동화(반복 업무 대체)에 쓰고 있는지, 탐색·추론 기반(새로운 패턴 발견, 가설 생성)으로 쓰고 있는지 점검합니다. AlphaGo의 교훈은 후자에서 돌파가 나온다는 것입니다. (팀장 미팅 안건 추가, 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI R&D 전략에 '범용화 로드맵'이 있는지 확인합니다.</strong><br>하나의 문제를 푸는 AI(알파고)에서 문제를 발견하는 AI(AI Co-scientist)로의 전환이 경쟁 우위를 결정합니다. 우리 팀의 AI 활용이 이 방향으로 가고 있는지 검토합니다. (임원 워크숍, 2시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>37수 사례를 팀에 공유합니다.</strong><br>AI가 인간 전문가의 직관을 넘어서는 순간이 어디서든 올 수 있다는 인식을 팀에 심어줍니다. 하사비스의 원문을 팀 슬랙에 공유하고, "우리 업무에서 37수은 어디에서 일어날 수 있는가?"를 토론 주제로 올립니다. (15분)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>AGI 로드맵은 아직 비전이지 확정된 일정이 아닙니다.</strong> 하사비스는 명확한 경로를 제시했지만, Gemini + AlphaGo + 전문 도구의 결합이 언제 AGI 수준에 도달할지는 불확실합니다. 로드맵의 방향은 참고하되, 타임라인에 과도한 확신을 두지 마세요.</p>
+
+        <p><strong>AlphaFold의 성공이 모든 영역에 자동 적용되진 않습니다.</strong> 단백질 구조 예측처럼 정답이 명확한 문제와, 비즈니스 의사결정처럼 맥락이 복잡한 문제는 다릅니다. AI 탐색·추론의 강점은 구조화된 문제에서 먼저 나타납니다.</p>
+
+        <p><strong>이 글은 구글 딥마인드 CEO의 관점입니다.</strong> 자사 기술의 성과를 중심으로 서술되어 있으므로, 경쟁사(OpenAI, Anthropic, Meta AI 등)의 접근법과 교차 검증하며 읽는 것이 균형 잡힌 시각을 유지하는 데 도움됩니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>바둑판 위의 한 수(37수)가 10년 만에 노벨상이 됐습니다. AI를 '도구'가 아닌 '연구 파트너'로 재정의하는 리더만이 이 궤적 위에 올라탈 수 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>AI를 '도구'가 아닌 '연구 파트너'로 재정의하라. AlphaFold가 증명했듯, AI는 답을 찾는 것을 넘어 질문 자체를 재설계한다</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀의 AI 활용 수준을 점검하라. 단순 자동화에 머물러 있다면, 탐색·추론 기반 활용으로 한 단계 끌어올릴 시점이다</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI R&D 전략에 '범용화 로드맵'이 있는지 확인하라. 하나의 문제를 푸는 AI에서, 문제를 발견하는 AI로의 전환이 경쟁 우위를 결정한다</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Hassabis, D. "10 Years of AlphaGo", Google DeepMind Blog. March 10, 2026. <a href="https://deepmind.google/blog/10-years-of-alphago/" target="_blank" rel="noopener">https://deepmind.google/blog/10-years-of-alphago/</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://deepmind.google/blog/10-years-of-alphago/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-02-23-persona-selection-model.html">
+          <div class="next-post-title">AI는 왜 사람처럼 행동하는가 →</div>
+        </a>
+      </div>
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-timeline" class="toc-link">10년의 궤적</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 임팩트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-10-alphago-10-years.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/leader/2026-03-10-alphago-10-years.html';
+    const ROASTING_QUOTE = '바둑 한 판이 10년 만에 노벨상이 됐다. 당신의 10년 전략은 아직도 엑셀에 갇혀 있지는 않은가?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+# AI ROASTING
+> AI 시대를 살아남는 비즈니스 리더를 위한 인사이트 저널
+> 운영자: AI ROASTING · 전략 컨설턴트 출신 AI 전문 강사 · 25년
+> URL: https://airoasting.github.io/blog
+
+## 카테고리
+- /blog/research/ : HBR · BCG · EY · 논문 분석
+- /blog/leader/   : 빅테크 CEO · 석학 시각
+- /blog/company/  : 조직 · 경영 · AX 트렌드
+- /blog/tech/     : AI 에이전트 · 자동화 · 한계 돌파
+- /blog/survival/ : 구조조정 · 세대 · 직업 변화
+
+## 포스트 형식
+각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
+
+## 최신 포스트
+- 2026-01-21 [리더] AGI 이후의 세계: 하사비스와 아모데이가 충돌한 5가지 쟁점 — /blog/leader/2026-01-21-hassabis-amodei-agi-debate.html
+- 2026-03-16 [생존] 미국 테크 산업 정리해고, 2026년 27만 명 예상 — /blog/survival/2026-03-16-tech-layoffs-tracker.html
+- 2026-03-10 [리더] 알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스) — /blog/leader/2026-03-10-alphago-10-years.html
+- 2026-03-05 [생존] AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 — /blog/survival/2026-03-05-ai-labor-market-exposure.html
+- 2026-03-05 [리서치] AI 도구 3개 넘으면 생산성이 떨어진다 — /blog/research/2026-03-05-brain-fry.html
+- 2026-02-23 [기술] AI는 왜 사람처럼 행동하는가 — /blog/tech/2026-02-23-persona-selection-model.html
+- 2026-02-09 [리서치] AI는 일을 줄이지 않는다, 더 늘리고 있다 — /blog/research/2026-02-09-ai-intensifies-work.html
+- 2025-12-17 [리더] 지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵 — /blog/leader/2025-12-17-demis-hassabis-future-of-intelligence.html
+- 2025-11-10 [리더] 피터 틸의 적그리스도 강연: 275억 달러 투자자의 종말론이 AI 산업에 던지는 질문 — /blog/leader/2025-11-10-peter-thiel-antichrist-lectures.html
+- 2025-10-27 [기술] AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다 — /blog/tech/2025-10-27-artificial-hivemind.html
+- 2025-10-03 [기술] 소셜 미디어 사용 시간, 2022년에 정점을 찍다 — /blog/tech/2025-10-03-social-media-peak.html
+- 2025-09-22 [리서치] AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다 — /blog/research/2025-09-22-workslop.html
+- 2025-09-10 [리서치] AI를 많이 쓸수록 비판적 사고력이 떨어진다 — /blog/research/2025-09-10-ai-cognitive-offloading.html
+
+## 상세 버전
+전체 포스트 내용은 /blog/llms-full.txt 에서 확인할 수 있습니다.

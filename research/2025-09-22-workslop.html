@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다 | AI ROASTING</title>
+  <meta name="description" content="근로자 40%가 AI 생성 저품질 결과물 'Workslop'을 받고 있다. 건당 평균 116분의 시간 손실, 만 명 조직 기준 연간 900만 달러의 생산성 비용이 발생한다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다">
+  <meta property="og:description" content="근로자 40%가 AI 생성 저품질 결과물을 받고 있다. 건당 116분의 시간 손실, 만 명 조직 기준 연간 $9M 비용.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2025-09-22-workslop.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2025-09-22">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="팀장">
+  <meta property="article:tag" content="임원">
+  <meta property="article:tag" content="생산성">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다">
+  <meta name="twitter:description" content="근로자 40%가 AI 생성 저품질 결과물을 받고 있다. 건당 116분의 시간 손실.">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다",
+    "datePublished": "2025-09-22",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "근로자 40%가 AI 생성 저품질 결과물 'Workslop'을 받고 있다. 건당 평균 116분의 시간 손실이 발생한다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2025-09-22-workslop.html",
+    "articleSection": "리서치"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research" class="active">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2025_09_22_workslop/thumbnail.png" alt="AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다 썸네일">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2025-09-22</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>HBR</span>
+            <span>Kate Niederhoffer, Gabriella Rosen Kellerman 외 4인 (BCG · Stanford · BetterUp Labs)</span>
+            <span><a href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity" target="_blank" rel="noopener">AI-Generated "Workslop" Is Destroying Productivity ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=HBR" class="post-tag">#HBR</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+            <a href="../index.html?tag=생산성" class="post-tag">#생산성</a>
+            <a href="../index.html?tag=Workslop" class="post-tag">#Workslop</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다"
+        data-date="2025-09-22"
+        data-category="research"
+        data-source="HBR"
+        data-tags="팀장, 임원, 생산성, Workslop"
+        data-original-url="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+        data-roasting-quote="AI가 일을 줄여준다고요? 동료에게 쓰레기를 넘기고 있을 뿐입니다. 당신이 아낀 30분, 받는 사람은 2시간을 씁니다."
+        data-next-post="2026-03-05-brain-fry"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>근로자 40%가 AI로 만든 저품질 결과물, 'Workslop'을 받고 있습니다.</p>
+        <p data-summary>받는 사람은 이를 수정하는 데 건당 평균 116분을 씁니다. 만 명 규모의 조직이라면 연간 900만 달러가 낭비됩니다.</p>
+        <p data-summary>한 사람이 아낀 시간이 동료의 업무 시간을 잠식하는, 구조적인 문제입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 일을 줄여준다고요? 동료에게 쓰레기를 넘기고 있을 뿐입니다.<br>당신이 아낀 30분, 받는 사람은 2시간을 씁니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI로 만든 보고서를 그대로 보낸 적 있습니까? 받는 사람은 그것을 고치느라 평균 116분을 씁니다. BCG와 Stanford 연구진은 이 현상에 Workslop(워크슬롭)이라는 이름을 붙였습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI에 투자한 조직의 95%가 측정 가능한 수익을 얻지 못하고 있습니다(출처: MIT 미디어 랩). 주요 원인 중 하나가 Workslop, 즉 그럴듯해 보이지만 실질적 가치가 없는 AI 생성 결과물입니다. 실제로 근로자 40%가 지난 한 달간 이런 결과물을 받았으며, 직장에서 수신하는 콘텐츠의 15.4%가 Workslop에 해당합니다(출처: HBR, 2025년 9월).</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>이 연구에서 경영 리더가 주목할 포인트는 3가지입니다.</p>
+
+        <p><strong>첫째, Workslop은 사고의 부담을 동료에게 떠넘기는 구조입니다.</strong> 보내는 사람은 생각하는 과정을 AI에 맡기고, 받는 사람은 그 결과물을 해석하고 수정해야 합니다. 과거에는 개인이 기억을 기기에 맡기는 수준에 그쳤지만, Workslop은 한 사람의 인지적 부담이 동료에게 고스란히 전가된다는 점에서 본질적으로 다릅니다.</p>
+
+        <p><strong>둘째, Workslop을 받은 사람의 신뢰가 빠르게 무너집니다.</strong> 수신자의 53%가 짜증을 느꼈고, 52%는 보낸 사람의 역량을 낮게 평가했습니다. 42%는 신뢰가 줄었다고 답했으며, 32%는 앞으로 그 사람과 협업하지 않겠다고 했습니다. AI 결과물의 품질이 조직 내 관계까지 훼손하고 있는 것입니다.</p>
+
+        <p><strong>셋째, Workslop은 동료 사이에서 가장 많이 발생합니다.</strong> 동료 간 발생 비율이 40%로 가장 높고, 부하→상사는 18%, 관리자→팀은 16%입니다. 즉, 상하 관계가 아니라 수평적 업무 흐름에서 집중적으로 나타납니다. 동료가 보낸 AI 결과물을 거절하기 어려운 조직 문화가 이 확산을 부추기고 있습니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>Workslop은 단순한 불편함이 아닙니다. 실제로 측정 가능한 비용을 만들어 냅니다.</p>
+
+        <p><strong>받는 사람은 Workslop 한 건을 해석하고 수정하는 데 평균 116분을 씁니다.</strong> 인건비로 환산하면 건당 186달러에 해당합니다.</p>
+
+        <p><strong>만 명 규모의 조직에서는 연간 900만 달러가 낭비됩니다.</strong> 근로자 40%가 월 1건 이상 Workslop을 받는다고 가정한 수치입니다. AI 도입으로 아꼈다고 믿었던 비용이, 다른 형태로 되돌아오고 있는 셈입니다.</p>
+
+        <p><strong>수신자의 34%는 이 문제를 상급자에게 보고합니다.</strong> 개인적 불만에 머무르지 않고 공식적인 이슈로 확대되고 있으며, 관리자의 시간까지 소모하는 2차 비용이 발생합니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 결과물의 품질 기준을 팀 차원에서 합의합니다.</strong><br>"AI가 만든 초안은 그대로 보내지 않는다"는 원칙을 팀 회의에서 공유하고, 보내기 전에 반드시 검토·편집하는 규범을 세웁니다. (예상 30분, 팀 미팅)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI를 '빨리 끝내기'가 아니라 '더 잘하기' 용도로 활용합니다.</strong><br>프롬프트를 구체적으로 작성하고, 결과물을 비판적으로 검토하는 습관을 팀에 공유합니다. 연구진은 이를 '파일럿 마인드셋'이라고 부릅니다. (예상 20분, 프롬프트 작성 가이드 배포)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 초안에 동료 리뷰 단계를 추가합니다.</strong><br>AI로 보고서를 만든 뒤 팀원 1명에게 5분간 리뷰를 요청합니다. 이는 책임을 회피하는 것이 아니라, AI를 공동 작업 도구로 활용하는 방법입니다. (예상 15분, 워크플로우 수정)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>"모든 업무에 AI를 써라"는 지시를 점검합니다.</strong><br>복잡한 판단이 필요하거나 맥락이 중요한 커뮤니케이션처럼, AI가 적합하지 않은 업무가 있습니다. 이런 영역은 사람이 직접 수행하도록 명확히 구분합니다. (예상 30분, 업무 분류)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>보내는 사람은 Workslop을 알아차리기 어렵습니다.</strong> AI 결과물은 슬라이드 정렬이 깔끔하고, 보고서 구조가 체계적이며, 문장이 매끄럽습니다. 보낸 사람은 "잘 만들었다"고 느끼지만, 받는 사람은 쓸모없다고 판단하는 괴리가 생깁니다.</p>
+
+        <p><strong>AI를 덜 쓰라는 뜻은 아닙니다.</strong> 주도적으로 AI를 활용하는 '파일럿' 유형은 AI를 75% 더 자주 사용하면서도 높은 품질을 유지합니다. 문제는 사용량이 아니라, 의도와 검증 없이 결과물을 그대로 내보내는 데 있습니다.</p>
+
+        <p><strong>이 연구는 자가 보고 방식에 기반합니다.</strong> 경험 빈도와 시간 손실은 응답자의 주관적 판단이므로, 실제 비용은 업종과 조직 문화에 따라 달라질 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 결과물의 품질을 관리하지 않으면, 아낀 시간은 결국 조직 전체의 비용으로 되돌아옵니다. 지금이 품질 기준과 검증 프로세스를 만들 때입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>AI 도입과 동시에 산출물 품질 기준을 세우고, "모든 업무에 AI를 써라"는 지시를 철회하십시오</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>"보내기 전에 검토한다"를 팀 규범으로 세우고, 주간 리뷰에 Workslop 점검을 추가하십시오</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 생산성 지표에 '수신자 재작업률'과 '산출물 폐기율'을 추가하십시오</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Niederhoffer, K., Kellerman, G.R., Lee, A., Liebscher, A., Rapuano, K. & Hancock, J.T. (2025). "AI-Generated 'Workslop' Is Destroying Productivity", Harvard Business Review, September 2025.</li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-05-brain-fry.html">
+          <div class="next-post-title">AI 도구 3개 넘으면 생산성이 떨어진다 →</div>
+        </a>
+      </div>
+      </div><!-- /post-body -->
+
+      <nav class="toc-sidebar" id="tocSidebar">
+        <ul class="toc-list">
+          <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+          <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+          <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+          <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+          <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+          <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+          <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+          <li><a href="#section-risk" class="toc-link">리스크</a></li>
+          <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+          <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        </ul>
+      </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2025-09-22-workslop.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2025-09-22-workslop.html';
+    const ROASTING_QUOTE = 'AI가 일을 줄여준다고요? 동료에게 쓰레기를 넘기고 있을 뿐입니다. 당신이 아낀 30분, 받는 사람은 2시간을 씁니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

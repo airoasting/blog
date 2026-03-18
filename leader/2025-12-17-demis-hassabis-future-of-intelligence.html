@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵 | AI ROASTING</title>
+  <meta name="description" content="구글 딥마인드 CEO 데미스 하사비스가 팟캐스트에서 AGI로 가는 경로를 밝혔다. 스케일링과 혁신의 50:50 전략, 월드 모델과 시뮬레이션, 그리고 튜링 머신의 한계까지. 경영 리더가 알아야 할 핵심을 정리했다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵">
+  <meta property="og:description" content="스케일링 50% + 혁신 50%. 데미스 하사비스가 밝힌 AGI 도달 공식과 경영 리더가 주목해야 할 3가지 전환점.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/leader/2025-12-17-demis-hassabis-future-of-intelligence.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/leader/images/2025_12_17_demis-hassabis-future-of-intelligence/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2025-12-17">
+  <meta property="article:section" content="리더">
+  <meta property="article:tag" content="DeepMind">
+  <meta property="article:tag" content="AGI">
+  <meta property="article:tag" content="월드모델">
+  <meta property="article:tag" content="AI전략">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵">
+  <meta name="twitter:description" content="스케일링 50% + 혁신 50%. 데미스 하사비스가 밝힌 AGI 도달 공식과 경영 리더가 주목해야 할 3가지 전환점.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/leader/images/2025_12_17_demis-hassabis-future-of-intelligence/thumbnail.png">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵",
+    "datePublished": "2025-12-17",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "구글 딥마인드 CEO 데미스 하사비스가 팟캐스트에서 AGI로 가는 경로를 밝혔다. 스케일링과 혁신의 50:50 전략, 월드 모델과 시뮬레이션, 그리고 튜링 머신의 한계까지.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/leader/2025-12-17-demis-hassabis-future-of-intelligence.html",
+    "articleSection": "리더"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader" class="active">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+    <article class="post" data-category="leader">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="leader">
+        <div class="post-color-bar"></div>
+        <img src="./images/2025_12_17_demis-hassabis-future-of-intelligence/thumbnail.png" alt="지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵 - 썸네일">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="leader">리더</span>
+          <span class="post-date">2025년 12월 17일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Google DeepMind: The Podcast</span>
+            <span>Demis Hassabis, Hannah Fry</span>
+            <span><a href="https://www.youtube.com/watch?v=PqVbypvxDto" target="_blank" rel="noopener">The future of intelligence ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=DeepMind" class="post-tag">#DeepMind</a>
+            <a href="../index.html?tag=AGI" class="post-tag">#AGI</a>
+            <a href="../index.html?tag=월드모델" class="post-tag">#월드모델</a>
+            <a href="../index.html?tag=AI전략" class="post-tag">#AI전략</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵"
+        data-date="2025-12-17"
+        data-category="leader"
+        data-source="Google DeepMind: The Podcast (Demis Hassabis, Hannah Fry)"
+        data-tags="DeepMind, AGI, 월드모델, AI전략, 임원, 창업자, 팀장"
+        data-original-url="https://www.youtube.com/watch?v=PqVbypvxDto"
+        data-roasting-quote="AGI까지 50%는 스케일링, 50%는 혁신이 필요하다고? 당신 회사의 AI 전략은 100% 벤더 의존 아닌가?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>구글 딥마인드 CEO 데미스 하사비스가 AGI에 도달하려면 스케일링 50%와 혁신 50%가 모두 필요하다고 밝혔습니다.</p>
+        <p data-summary>월드 모델(Genie)과 시뮬레이션 에이전트(Simma)의 결합이 로보틱스, 과학 연구, 게임까지 확장되며 차세대 AI 훈련의 핵심 루프로 부상하고 있습니다.</p>
+        <p data-summary>하사비스는 "아직 우주에서 계산 불가능한 것은 발견되지 않았다"며, 튜링 머신의 한계를 시험하는 것이 딥마인드의 본질이라고 선언했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AGI까지 50%는 스케일링, 50%는 혁신이 필요하다고?<br>당신 회사의 AI 전략은 100% 벤더 의존 아닌가?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>국제수학올림피아드 금메달을 따는 AI가 고등학교 수학 문제에서 틀립니다. 이 모순을 딥마인드 CEO 본인이 "아직 AGI가 아닌 이유"로 꼽았습니다. 하사비스가 직접 밝힌 AGI까지의 빈 칸이 무엇인지, 경영 리더가 이 간극을 어떻게 읽어야 하는지 정리했습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>2025년 AI 산업의 무게 중심이 대형 언어 모델에서 에이전트 AI로 이동했습니다. 구글 딥마인드는 Gemini 3 출시, 핵융합 파트너십(Commonwealth Fusion), 양자 컴퓨팅 오류 정정 협업까지 동시에 진행하고 있습니다. 하사비스는 이 팟캐스트에서 "현재 리소스의 50%를 스케일링에, 50%를 혁신에 배분한다"며 AGI 도달 전략을 처음으로 구체적 비율로 공개했습니다. AI 투자 버블 논란이 거센 시점에, 딥마인드가 어디에 베팅하는지 직접 들을 수 있는 1차 소스입니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, AGI의 누락된 조각이 구체화됐습니다.</strong> 하사비스는 현재 AI에 3가지가 빠져 있다고 진단합니다. (1) 수학의 AlphaGo, 즉 검증 가능한 추론 시스템이 아직 미완성입니다. (2) 지속적 온라인 학습(continual learning)이 없습니다. 현재 모델은 훈련 후 세상에 나가면 더 이상 배우지 못합니다. (3) 환각 제어와 신뢰도 점수가 부재합니다. AlphaFold처럼 "이 답에 대한 확신이 몇 퍼센트인지" 제시하는 기능이 필요합니다.</p>
+
+        <p><strong>둘째, 월드 모델이 차세대 AI의 핵심 인프라로 부상합니다.</strong> 딥마인드의 Genie(월드 생성)와 Simma(시뮬레이션 에이전트)가 결합되면, AI가 AI를 위한 훈련 환경을 무한히 생성합니다. Genie가 세계를 만들고, Simma 에이전트가 그 안에서 탐색합니다. 하사비스는 이를 "무한한 훈련 루프의 시작"이라고 표현했습니다. 로보틱스, 게임, 과학 시뮬레이션 모두 이 구조 위에 올라갑니다.</p>
+
+        <p><strong>셋째, AI 버블은 부분적으로만 존재합니다.</strong> 하사비스는 "아직 제품도 없는 스타트업이 수백억 달러 밸류에이션을 받는 것은 지속 가능하지 않다"고 인정했습니다. 그러나 빅테크 밸류에이션 뒤에는 실제 비즈니스가 있다고 구분합니다. 과거 딥마인드 창업 시 "AI가 뭔데?"라는 반응에서, 지금은 "AI만 이야기한다"로 바뀐 것은 과소평가에 대한 과잉 반응이라는 것이 그의 분석입니다.</p>
+
+        <p><strong>넷째, 아첨형 AI를 경계해야 합니다.</strong> 하사비스는 "사용자 참여를 극대화하는 방향으로 AI를 설계하면 소셜 미디어의 실수를 반복한다"고 경고합니다. Gemini 3의 페르소나는 따뜻하되 과학적 방법론에 기반하도록 설계했으며, 사실과 다른 주장에는 "친절하게 반박"하는 것을 기본으로 삼았습니다. 이는 기업이 AI 챗봇을 도입할 때 페르소나 설계의 기준이 됩니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+
+        <p><strong>AI를 '챗봇'으로만 보는 조직은 월드 모델 전환에서 뒤처집니다.</strong> 하사비스에 따르면, 월드 모델은 로보틱스, 과학 시뮬레이션, 게임 NPC까지 확장됩니다. Gartner는 2027년까지 기업의 40%가 시뮬레이션 기반 AI 훈련을 도입할 것으로 전망합니다. 텍스트 기반 AI만 운영하는 조직은 이 전환기에 2~3년의 격차가 발생할 수 있습니다.</p>
+
+        <p><strong>AI 페르소나 설계 없이 챗봇을 배포하면 브랜드 리스크가 됩니다.</strong> 아첨형 AI가 사용자를 자기 확증 편향(echo chamber)으로 몰아가는 사례가 이미 보고되고 있습니다. 기업 고객 응대 AI에서 이 문제가 발생하면, 고객 신뢰도 하락과 규제 리스크로 직결됩니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 전략의 '스케일링 vs 혁신' 비율을 점검합니다.</strong><br>하사비스의 50:50 원칙을 자사에 대입합니다. 기존 AI 도구 활용(스케일링)에만 치우쳐 있는지, 새로운 활용법 탐색(혁신)에도 투자하고 있는지 팀장 미팅에서 논의합니다. (30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>우리 AI 도구에 '신뢰도 점수'가 있는지 확인합니다.</strong><br>현재 사용 중인 AI 챗봇이나 자동화 도구가 "이 답변의 확신 수준"을 제공하는지 점검합니다. 없다면, 중요도 높은 의사결정에 AI를 쓸 때 수동 교차 검증 프로세스를 도입합니다. (1시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 챗봇 페르소나 가이드라인을 작성합니다.</strong><br>고객 대면 AI가 있다면, "어디까지 동의하고 어디서 반박할 것인가"의 기준을 문서화합니다. 딥마인드의 접근법(따뜻하되 과학적, 사실 오류에는 친절한 반박)을 참고합니다. (2시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>월드 모델 동향을 모니터링 리스트에 추가합니다.</strong><br>Genie, Simma, VO 등 구글 딥마인드의 월드 모델 프로젝트를 팔로우합니다. 자사 산업에서 시뮬레이션 기반 AI 훈련이 적용 가능한 영역을 1개 이상 식별합니다. (팀 리서치, 1주)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>월드 모델의 물리 시뮬레이션은 아직 근사치 수준입니다.</strong> 하사비스 본인이 인정했습니다. VO와 Genie의 물리 엔진은 "육안으로는 사실적이지만, 물리 실험 수준의 정확도에는 미달"합니다. 로보틱스나 안전 관련 영역에서 월드 모델을 활용하려면 검증 단계가 필수입니다.</p>
+
+        <p><strong>50:50 전략은 딥마인드 규모에서의 이야기입니다.</strong> 연구 인력 수천 명, TPU 인프라, 구글의 자본을 가진 조직의 리소스 배분 비율입니다. 중소기업이 같은 비율을 적용하기는 어렵습니다. 자사 규모에 맞는 혁신 투자 비율을 별도로 산정해야 합니다.</p>
+
+        <p><strong>이 팟캐스트는 딥마인드 CEO의 자사 관점입니다.</strong> Gemini 3, Genie, Simma 등 자사 기술을 중심으로 서술됩니다. OpenAI의 o1 시리즈, Anthropic의 Claude, Meta의 Llama 등 경쟁 접근법과 교차 비교해야 균형 잡힌 시각을 유지할 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AGI까지의 거리는 스케일링만으로 좁혀지지 않습니다. 월드 모델, 지속 학습, 신뢰도 점수라는 빈 칸을 인식하는 리더만이 다음 전환점을 준비할 수 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>AI 전략을 '도구 도입'에서 '시뮬레이션 기반 학습'으로 확장할 시점인지 검토하라. 월드 모델은 제품 테스트, 고객 시나리오 시뮬레이션에 직접 적용 가능하다</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀이 사용하는 AI의 신뢰도 검증 프로세스를 만들어라. "AI가 말했으니까"는 의사결정 근거가 아니다. 확신 수준과 교차 검증 절차가 필요하다</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 투자에서 스케일링(기존 도구 확대)과 혁신(새 활용법 탐색)의 비율을 명시적으로 설정하라. 100% 벤더 의존은 전략이 아니라 관성이다</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Hassabis, D. & Fry, H. (2025, December 17). "The future of intelligence." Google DeepMind: The Podcast. <a href="https://www.youtube.com/watch?v=PqVbypvxDto" target="_blank" rel="noopener">https://www.youtube.com/watch?v=PqVbypvxDto</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://www.youtube.com/watch?v=PqVbypvxDto" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-10-alphago-10-years.html">
+          <div class="next-post-title">알파고 10주년: AI가 과학을 재발명하고 있다 →</div>
+        </a>
+      </div>
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2025-12-17-demis-hassabis-future-of-intelligence.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/leader/2025-12-17-demis-hassabis-future-of-intelligence.html';
+    const ROASTING_QUOTE = 'AGI까지 50%는 스케일링, 50%는 혁신이 필요하다고? 당신 회사의 AI 전략은 100% 벤더 의존 아닌가?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

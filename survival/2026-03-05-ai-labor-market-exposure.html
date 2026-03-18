@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 | AI ROASTING</title>
+  <meta name="description" content="Anthropic 연구팀이 AI의 이론적 활용 가능성과 실제 사용 범위를 측정했다. 컴퓨터·수학 직군의 이론적 노출은 94%지만, 실제 사용은 33%에 불과하다. 그 격차가 경영 리더에게 의미하는 것.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리">
+  <meta property="og:description" content="Anthropic 연구: AI 이론적 노출 94% vs 실제 사용 33%. 이 격차가 채용과 인력 전략에 미치는 영향.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/survival/2026-03-05-ai-labor-market-exposure.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-05">
+  <meta property="article:section" content="생존">
+  <meta property="article:tag" content="임원">
+  <meta property="article:tag" content="창업자">
+  <meta property="article:tag" content="팀장">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리">
+  <meta name="twitter:description" content="Anthropic 연구: AI 이론적 노출 94% vs 실제 사용 33%. 이 격차가 채용과 인력 전략에 미치는 영향.">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리",
+    "datePublished": "2026-03-05",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "Anthropic 연구팀이 AI의 이론적 활용 가능성과 실제 사용 범위를 측정했다. 컴퓨터·수학 직군의 이론적 노출은 94%지만, 실제 사용은 33%에 불과하다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/survival/2026-03-05-ai-labor-market-exposure.html",
+    "articleSection": "생존"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival" class="active">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="survival">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="survival">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_05_ai-labor-market-exposure/thumbnail.png" alt="AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 썸네일">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="survival">생존</span>
+          <span class="post-date">2026-03-05</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic Research</span>
+            <span>Maxim Massenkoff, Peter McCrory</span>
+            <span><a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener">Labor market impacts of AI ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+            <a href="../index.html?tag=창업자" class="post-tag">#창업자</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+            <a href="../index.html?tag=노동시장" class="post-tag">#노동시장</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리"
+        data-date="2026-03-05"
+        data-category="survival"
+        data-source="Anthropic Research"
+        data-tags="임원, 창업자, 팀장, 노동시장"
+        data-original-url="https://www.anthropic.com/research/labor-market-impacts"
+        data-roasting-quote="AI가 내 일자리를 뺏는다고? 확실한 건 아직은 아니다. 문제는 '아직'이라는 단어가 점점 짧아진다는 것이다."
+        data-next-post="2026-03-16-tech-layoffs-tracker"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>AI가 이론적으로 대체할 수 있는 업무 범위와 실제로 대체하고 있는 범위 사이에는 큰 격차가 존재합니다.</p>
+        <p data-summary>AI 노출도가 높은 직업군일수록 2034년까지의 고용 성장 전망이 낮고, 22~25세 신규 채용이 둔화되고 있습니다.</p>
+        <p data-summary>대규모 실업은 아직 발생하지 않았지만, 채용 시장의 변화는 이미 시작되었습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 내 일자리를 뺏는다고? 확실한 건 아직은 아니다.<br>문제는 '아직'이라는 단어가 점점 짧아진다는 것이다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>컴퓨터·수학 직군에서 AI가 이론적으로 처리할 수 있는 업무는 94%입니다. 그런데 실제로 AI가 쓰이고 있는 범위는 33%에 불과합니다. (출처: Anthropic Research, 2026) 이 격차는 기회일까요, 경고일까요?</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>Anthropic 연구팀이 AI의 노동시장 영향을 측정하는 새로운 지표를 발표했습니다. 기존 연구들은 "AI가 이론적으로 할 수 있는 일"만 측정했습니다. 이번 연구는 여기에 "실제로 AI가 쓰이고 있는 범위"를 결합한 '관측된 노출도(observed exposure)'라는 지표를 도입했습니다. 미국 노동통계국의 800개 직업 데이터와 Claude의 실제 사용 데이터를 교차 분석한 결과입니다. (출처: Anthropic Research, 2026년 3월)</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>경영 리더가 주목해야 할 포인트는 3가지입니다.</p>
+
+        <p><strong>첫째, AI의 이론적 능력과 실제 사용 사이에는 구조적 격차가 존재합니다.</strong> 아래 그림은 22개 직업군의 이론적 AI 활용 가능성(파란색)과 실제 AI 사용 범위(빨간색)를 비교한 것입니다. 컴퓨터·수학 직군은 이론적 노출이 94%이지만 실제 사용은 33%입니다. 사무·행정 직군도 이론적으로는 90%가 자동화 가능하지만, 실제 사용은 이에 한참 못 미칩니다. 이 격차가 의미하는 것은 분명합니다. AI가 할 수 있는 일과 실제로 하고 있는 일 사이에 아직 넓은 여백이 남아 있다는 것입니다.</p>
+
+        <figure style="margin: 2rem 0; text-align: center;">
+          <img src="./images/2026_03_05_ai-labor-market-exposure/chart.png" alt="직업군별 AI 이론적 활용 가능성과 실제 사용 범위 레이더 차트" style="max-width: 60%; height: auto; border-radius: 8px; display: inline-block;" loading="lazy">
+          <figcaption style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">출처: Anthropic Research (2026)</figcaption>
+        </figure>
+
+        <p><strong>둘째, AI 노출도가 높은 직업군의 고용 성장 전망은 이미 둔화되고 있습니다.</strong> 미국 노동통계국의 2024~2034년 고용 전망 데이터를 분석한 결과, AI 노출도가 10%포인트 높아질 때마다 해당 직업군의 고용 성장률 전망이 0.6%포인트씩 낮아집니다. 단순히 이론적 가능성만으로는 이 상관관계가 나타나지 않습니다. 실제 AI 사용 데이터를 결합해야 비로소 보이는 패턴입니다.</p>
+
+        <p><strong>셋째, 대규모 실업은 없지만 젊은 세대의 진입 장벽이 높아지고 있습니다.</strong> ChatGPT 출시 이후 AI 노출도 상위 직업군에서 대규모 실업률 변화는 관측되지 않았습니다. 그러나 22~25세의 취업률에서는 다른 양상이 나타납니다. AI 노출도가 높은 직업군에서 젊은 층의 월간 취업률이 약 14% 하락했습니다. 기존 인력이 해고된 것이 아니라, 신규 채용 자체가 줄어들고 있다는 의미입니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>이 변화를 무시하면 두 가지 비용이 발생합니다.</p>
+
+        <p><strong>인력 구조의 경직화 비용입니다.</strong> AI 노출도가 높은 직업군에서 젊은 인재의 유입이 줄어들면, 조직의 평균 연령이 높아지고 기술 전환 속도가 느려집니다. 이 연구에 따르면, AI 노출 상위 25% 직업군의 평균 소득은 하위 그룹보다 47% 높습니다. 고연봉 인력이 다수를 차지하면서 신규 채용이 줄어드는 구조는 인건비 부담을 가중시킵니다.</p>
+
+        <p><strong>전략적 타이밍의 비용입니다.</strong> 현재 이론과 현실의 격차가 크다는 것은, AI 활용이 본격화되면 변화의 속도도 빠를 수 있다는 의미입니다. 과거 오프쇼어링(해외 이전) 예측에서 미국 일자리의 25%가 위험하다고 했지만, 10년 뒤 대부분의 직업은 건재했습니다. AI도 같은 궤적을 밟을 수 있지만, 이번에는 변화의 방향이 보이기 시작한 단계입니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>우리 조직의 AI 노출도를 직무 단위로 파악합니다.</strong><br>팀별 주요 업무를 나열하고, 각 업무가 AI로 처리 가능한지 3단계(AI 단독 가능 / 도구 병행 시 가능 / 불가능)로 분류합니다. (예상 2시간, 팀장급 워크숍)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>이론적 가능성과 실제 사용의 격차를 확인합니다.</strong><br>1단계에서 "AI로 가능하다"고 판단한 업무 중 실제로 AI를 쓰고 있는 업무가 몇 개인지 점검합니다. 이 격차가 클수록 자동화 잠재력이 높은 영역입니다. (예상 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>신규 채용 계획을 AI 관점에서 재검토합니다.</strong><br>채용 예정인 직무가 AI 노출도 상위 직군에 해당하는지 확인합니다. 해당된다면, 동일 인력을 채용할 것인지, AI 도구 도입으로 대체할 것인지를 먼저 판단합니다. (예상 1시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>기존 인력의 역할 전환을 설계합니다.</strong><br>AI 노출도가 높은 업무를 담당하는 직원에게 AI 활용 교육을 제공합니다. 반복 업무에서 판단·관리 업무로 역할을 재정의합니다. Claude, ChatGPT 등 도구별 업무 적합성을 테스트합니다. (예상 2주, 파일럿 1개 팀)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>이론적 노출도만 보고 조직을 재편하면 위험합니다.</strong> 이 연구가 보여주는 핵심은 이론과 현실의 격차입니다. "AI가 할 수 있다"와 "AI가 하고 있다"는 다릅니다. 성급한 인력 감축은 조직 역량의 공백을 만듭니다.</p>
+
+        <p><strong>AI 노출도 지표는 미국 노동시장 기준입니다.</strong> 이 연구는 미국의 O*NET 직업 분류와 Claude 사용 데이터를 기반으로 합니다. 한국의 직무 구조와 AI 도입 속도는 다를 수 있습니다. 한국 상황에 맞는 자체 분석이 필요합니다.</p>
+
+        <p><strong>격차가 빠르게 좁혀질 수 있습니다.</strong> 현재 이론 대비 실제 사용이 낮다고 해서 안심할 수 있는 것은 아닙니다. AI 도구의 성능은 매 분기 개선되고 있고, 기업의 도입 속도도 빨라지고 있습니다. 격차가 좁혀지는 속도를 지속적으로 모니터링해야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI는 아직 이론만큼 현실을 바꾸지 못하고 있습니다. 그러나 그 격차가 좁혀지는 곳에서부터, 채용 시장은 이미 달라지고 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>신규 채용 전에 해당 직무의 AI 자동화 가능성을 먼저 검토하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀 내 업무를 AI 노출도 기준으로 분류하고, 고노출 업무부터 AI 도구 파일럿을 시작하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>인력 계획에 AI 노출도 지표를 반영하고, 기존 인력의 역할 전환 프로그램을 설계하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Massenkoff, M. & McCrory, P. (2026). "Labor market impacts of AI: A new measure and early evidence", Anthropic Research, March 2026.</li>
+
+          <li>Eloundou, T., Manning, S., Mishkin, P. & Rock, D. (2023). "GPTs are GPTs: An early look at the labor market impact potential of large language models", OpenAI Working Paper.</li>
+
+          <li>Brynjolfsson, E. et al. (2025). AI employment effects by age group, ADP payroll data analysis.</li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://www.anthropic.com/research/labor-market-impacts" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-16-tech-layoffs-tracker.html">
+          <div class="next-post-title">테크 기업 구조조정 트래커 2026 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-05-ai-labor-market-exposure.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/survival/2026-03-05-ai-labor-market-exposure.html';
+    const ROASTING_QUOTE = 'AI가 내 일자리를 뺏는다고? 확실한 건 아직은 아니다. 문제는 \'아직\'이라는 단어가 점점 짧아진다는 것이다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

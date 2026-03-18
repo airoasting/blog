@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다 | AI ROASTING</title>
+  <meta name="description" content="하버드 비즈니스 스쿨 연구팀이 ChatGPT와 DeepSeek에게 중국 주식 5,000개를 분석시켰다. ChatGPT는 12.5% 더 낙관적이었고, 예측 오류도 13% 컸다. AI의 판단은 성능이 아니라 학습 데이터가 결정한다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다">
+  <meta property="og:description" content="ChatGPT는 DeepSeek보다 중국 주식을 12.5% 높게 예측했다. 원인은 성능이 아니라 현지 뉴스의 부재였다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-03-17-llm-stock-picking-bias.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-17">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="LLM">
+  <meta property="article:tag" content="AI편향">
+  <meta property="article:tag" content="투자">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다">
+  <meta name="twitter:description" content="ChatGPT는 DeepSeek보다 중국 주식을 12.5% 높게 예측했다. 원인은 성능이 아니라 현지 뉴스의 부재였다.">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다",
+    "datePublished": "2026-03-17",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "하버드 비즈니스 스쿨 연구팀이 ChatGPT와 DeepSeek에게 중국 주식 5,000개를 분석시켰다. ChatGPT는 12.5% 더 낙관적이었고, 예측 오류도 13% 컸다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-03-17-llm-stock-picking-bias.html",
+    "articleSection": "리서치"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research" class="active">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_17_llm-stock-picking-bias/thumbnail.png" alt="AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다 썸네일">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-03-17</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>HBR</span>
+            <span>Ben Rand (Harvard Business School Working Knowledge)</span>
+            <span><a href="https://hbr.org/2026/03/competing-llms-were-asked-to-pick-stocks-their-choices-revealed-ais-limitations" target="_blank" rel="noopener">Competing LLMs Were Asked to Pick Stocks ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=HBR" class="post-tag">#HBR</a>
+            <a href="../index.html?tag=LLM" class="post-tag">#LLM</a>
+            <a href="../index.html?tag=AI편향" class="post-tag">#AI편향</a>
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+            <a href="../index.html?tag=창업자" class="post-tag">#창업자</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다"
+        data-date="2026-03-17"
+        data-category="research"
+        data-source="HBR"
+        data-tags="LLM, AI편향, 임원, 창업자, 팀장"
+        data-original-url="https://hbr.org/2026/03/competing-llms-were-asked-to-pick-stocks-their-choices-revealed-ais-limitations"
+        data-roasting-quote="AI에게 주식 추천을 받겠다고? 그 AI가 어느 나라 뉴스를 읽고 자랐는지부터 확인했나?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>ChatGPT와 DeepSeek에게 중국 주식 5,000개를 분석하게 했더니, ChatGPT가 체계적으로 더 낙관적인 예측을 내놓았습니다.</p>
+        <p data-summary>원인은 성능 차이가 아니라 학습 데이터에 중국 현지 뉴스가 부족했기 때문입니다.</p>
+        <p data-summary>AI를 글로벌 의사결정에 쓰려면 모델 간 교차 검증과 현지 데이터 보강이 필수입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI에게 주식 추천을 받겠다고?<br>그 AI가 어느 나라 뉴스를 읽고 자랐는지부터 확인했나?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI에게 같은 회사를 분석시켰는데, 미국 AI는 "사라"고 하고 중국 AI는 "팔라"고 합니다. 하버드 비즈니스 스쿨 연구팀이 5,000개 중국 상장사를 두 모델에 분석시킨 결과, AI의 판단은 성능이 아니라 정보 환경에 좌우되었습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>기관 투자자의 40%가 이미 AI를 시장 분석에 활용하고 있습니다. (출처: Bloomberg Intelligence) AI 기반 의사결정이 금융을 넘어 경영 전반으로 확산되고 있습니다. 하버드 비즈니스 스쿨 Charles C.Y. Wang 교수 연구팀이 ChatGPT 4.1과 DeepSeek R1에게 동일한 재무 데이터를 주고 중국 상장사 4,978곳의 주가를 예측하게 했습니다. 같은 데이터를 받았는데도 판단이 갈렸습니다. (출처: HBR, Wang et al., 2026년 3월)</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>이 연구에서 경영 리더가 주목할 포인트는 3가지입니다.</p>
+
+        <p><strong>첫째, 같은 데이터를 줘도 AI 모델의 판단은 갈립니다.</strong> ChatGPT는 DeepSeek보다 주가를 12.5% 높게 예측했습니다. 매수 추천도 1.3%p 더 자주 내렸습니다. 동일한 재무 지표(총자산, ROA, 레버리지)를 입력받았는데도 결론이 달랐습니다. 모델이 학습한 뉴스와 맥락 정보가 판단을 좌우한 것입니다.</p>
+
+        <p><strong>둘째, 낙관적 AI의 예측은 더 틀렸습니다.</strong> ChatGPT의 절대 예측 오류는 DeepSeek보다 13% 컸습니다. 실제 주가와 대조했을 때, ChatGPT의 매수 추천 적중률도 낮았습니다. 2024년 12월 31일 기준 실제 주가로 검증한 결과입니다.</p>
+
+        <p><strong>셋째, 편향의 원인은 '부정적 현지 뉴스'의 부재입니다.</strong> 연구팀이 ChatGPT에 중국 현지 뉴스를 추가 제공하자, 과도한 낙관이 사라졌습니다. 중국 매체가 부정적 뉴스를 보도하고 있었지만, 미국 매체에는 해당 기업에 대한 보도 자체가 없었습니다. ChatGPT는 정보가 없는 곳을 낙관으로 채운 것입니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>AI 모델의 정보 편향을 무시하면 실질적 비용이 발생합니다.</p>
+
+        <p><strong>예측 오류가 13% 확대됩니다.</strong> ChatGPT의 낙관 편향은 단순한 방향 차이가 아니라 오류 크기의 차이로 이어졌습니다. 이 오류에 따라 투자하면 포트폴리오 손실이 발생합니다.</p>
+
+        <p><strong>현지 맥락 없는 AI 분석은 의사결정 품질을 떨어뜨립니다.</strong> 해외 시장 진출, 공급망 파트너 평가, M&amp;A 대상 스크리닝 등에서 AI를 활용할 때, 현지 데이터가 빠진 분석을 그대로 믿으면 잘못된 의사결정으로 이어집니다. Bloomberg Intelligence에 따르면, 기관 투자자 40%가 AI 분석에 의존하고 있어 편향의 파급 범위가 넓습니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI에게 분석을 맡길 때, 2개 이상의 모델로 동일한 질문을 던집니다.</strong><br>ChatGPT와 Claude, 또는 DeepSeek 등 학습 데이터 기반이 다른 모델을 조합합니다. 결론이 크게 다르면 정보 격차를 의심합니다. (예상 15분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI 분석 결과에 현지 소스를 보강합니다.</strong><br>해외 시장을 분석할 때, 현지 언어 뉴스, 규제 공시, 업계 보고서를 AI에게 함께 제공합니다. (예상 30분)
+              <div class="prompt-block">
+                <pre class="prompt-text">아래 한국어 뉴스 기사 3건을 참고하여 해당 기업의 리스크 요인을 재평가해 주세요.
+
+[기사 1] (제목과 본문 붙여넣기)
+[기사 2] (제목과 본문 붙여넣기)
+[기사 3] (제목과 본문 붙여넣기)
+
+기존 분석과 달라진 점이 있다면, 무엇이 왜 바뀌었는지 설명해 주세요.</pre>
+                <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+              </div>
+            </div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 분석 보고서에 "데이터 소스 명세"를 추가합니다.</strong><br>어떤 모델을 썼는지, 현지 데이터를 포함했는지, 분석 시점이 언제인지를 기록합니다. 의사결정자가 분석의 한계를 인지할 수 있게 합니다. (예상 10분)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>AI 모델 간 교차 검증이 만능은 아닙니다.</strong> 두 모델이 같은 편향을 공유할 수 있습니다. 미국 기업 분석에서는 ChatGPT와 DeepSeek의 차이가 크지 않았습니다. 미국 기업 정보가 글로벌 공공재처럼 양쪽 모두에 풍부하기 때문입니다. 교차 검증은 정보 비대칭이 큰 시장에서 더 유효합니다.</p>
+
+        <p><strong>이 연구는 금융 예측에 한정됩니다.</strong> 주가 예측이라는 특수한 과업에서의 편향이므로, 다른 비즈니스 분석에 동일한 크기로 적용되는지는 추가 검증이 필요합니다. 다만 "학습 데이터의 편향이 결론에 반영된다"는 원리 자체는 보편적입니다.</p>
+
+        <p><strong>최신 모델도 같은 문제를 보입니다.</strong> 연구팀이 ChatGPT 5로 동일한 실험을 수행한 결과, 같은 유형의 편향이 확인되었습니다. 모델 업그레이드가 정보 편향을 자동으로 해결하지 않습니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI의 판단은 성능이 아니라 학습 데이터가 결정합니다. AI를 전략적 의사결정에 쓰려면, 그 AI가 무엇을 모르는지를 먼저 파악해야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>해외 시장 분석에 AI를 쓸 때, 현지 데이터 소스를 반드시 포함하는 프로세스를 수립하십시오.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>AI 분석 보고서에 사용 모델, 데이터 소스, 분석 시점을 명시하는 양식을 도입하십시오.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 기반 의사결정에 복수 모델 교차 검증을 정책으로 만드십시오.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Cao, S., Wang, C.C.Y. & Xiang, Y. (2026). "When LLMs Go Abroad: Foreign Bias in AI Financial Predictions", Harvard Business School Working Paper.</li>
+          <li>Rand, B. (2026). "Competing LLMs Were Asked to Pick Stocks. Their Choices Revealed AI's Limitations.", Harvard Business Review, March 2026.</li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://hbr.org/2026/03/competing-llms-were-asked-to-pick-stocks-their-choices-revealed-ais-limitations" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-05-brain-fry.html">
+          <div class="next-post-title">AI 도구 3개 넘으면 생산성이 떨어진다 →</div>
+        </a>
+      </div>
+      </div><!-- /post-body -->
+
+      <nav class="toc-sidebar" id="tocSidebar">
+        <ul class="toc-list">
+          <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+          <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+          <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+          <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+          <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+          <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+          <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+          <li><a href="#section-risk" class="toc-link">리스크</a></li>
+          <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+          <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        </ul>
+      </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-17-llm-stock-picking-bias.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-03-17-llm-stock-picking-bias.html';
+    const ROASTING_QUOTE = 'AI에게 주식 추천을 받겠다고? 그 AI가 어느 나라 뉴스를 읽고 자랐는지부터 확인했나?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

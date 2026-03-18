@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>세계는 왜 아직도 SAP 위에서 돌아가는가 - AI ROASTING</title>
+  <meta name="description" content="SAP ECC에서 S/4HANA 업그레이드에 7억 달러, 3년, 컨설턴트 50명이 필요하다. AI는 레거시 시스템을 대체하는 대신, 더 프로그래밍 가능하고 접근 가능하게 만드는 방향으로 진화하고 있다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="세계는 왜 아직도 SAP 위에서 돌아가는가">
+  <meta property="og:description" content="SAP 업그레이드에 7억 달러, 3년, 컨설턴트 50명. AI는 레거시 ERP를 대체가 아닌 프로그래밍 가능한 시스템으로 바꾸고 있다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/company/2026-03-16-why-world-runs-on-sap.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-16">
+  <meta property="article:section" content="기업">
+  <meta property="article:tag" content="SAP">
+  <meta property="article:tag" content="ERP">
+  <meta property="article:tag" content="레거시">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="엔터프라이즈">
+  <meta property="article:tag" content="디지털전환">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="세계는 왜 아직도 SAP 위에서 돌아가는가">
+  <meta name="twitter:description" content="SAP 업그레이드에 7억 달러, 3년, 컨설턴트 50명. AI는 레거시 ERP를 대체가 아닌 프로그래밍 가능한 시스템으로 바꾸고 있다.">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "세계는 왜 아직도 SAP 위에서 돌아가는가",
+    "datePublished": "2026-03-16",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "SAP ECC에서 S/4HANA 업그레이드에 7억 달러, 3년, 컨설턴트 50명이 필요하다. AI는 레거시 시스템을 대체하는 대신, 더 프로그래밍 가능하고 접근 가능하게 만드는 방향으로 진화하고 있다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/company/2026-03-16-why-world-runs-on-sap.html",
+    "articleSection": "기업"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company" class="active">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-implementation" class="toc-link">구현 단계</a></li>
+        <li><a href="#section-usage" class="toc-link">사용·유지보수</a></li>
+        <li><a href="#section-extensions" class="toc-link">확장</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="company">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="company">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_16_why-world-runs-on-sap/thumbnail.png" alt="세계는 왜 아직도 SAP 위에서 돌아가는가">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="company">기업</span>
+          <span class="post-date">2026년 3월 16일</span>
+          <span class="post-read-time">12분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">세계는 왜 아직도 SAP 위에서 돌아가는가</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>a16z (Eric Zhou, Seema Amble)</span>
+            <span>Andreessen Horowitz</span>
+            <span><a href="https://a16z.com/why-the-world-still-runs-on-sap/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=SAP" class="post-tag">#SAP</a>
+            <a href="../index.html?tag=ERP" class="post-tag">#ERP</a>
+            <a href="../index.html?tag=레거시" class="post-tag">#레거시</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=엔터프라이즈" class="post-tag">#엔터프라이즈</a>
+            <a href="../index.html?tag=디지털전환" class="post-tag">#디지털전환</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="세계는 왜 아직도 SAP 위에서 돌아가는가"
+        data-date="2026-03-16"
+        data-category="company"
+        data-source="a16z (Eric Zhou, Seema Amble)"
+        data-tags="SAP, ERP, 레거시, AI에이전트, 엔터프라이즈, 디지털전환"
+        data-original-url="https://a16z.com/why-the-world-still-runs-on-sap/"
+        data-roasting-quote="7억 달러 쓰고 3년 기다려서 받은 것이 읽기 전용 보고서다. 그걸 '디지털 전환'이라고 부르고 있다면, 전환된 건 예산뿐이다."
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>SAP 업그레이드에 7억 달러, 3년이 필요합니다. Lidl은 5억 달러를 쓰고도 전환을 포기했습니다.</p>
+        <p data-summary>AI는 레거시 ERP를 대체하지 않습니다. 그 위에 프로그래밍 가능한 레이어를 쌓는 방향으로 진화하고 있습니다.</p>
+        <p data-summary>구현, 사용, 확장 3단계에서 AI가 여는 기회는 3,800억 달러 SI 시장을 재편할 잠재력을 가지고 있습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">7억 달러 쓰고 3년 기다려서 받은 것이 읽기 전용 보고서다.<br>그걸 '디지털 전환'이라고 부르고 있다면, 전환된 건 예산뿐이다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>ERP 전환 프로젝트의 70%가 목표를 달성하지 못합니다. 그런데도 기업들은 수억 달러를 투입합니다. 왜 SAP을 버리지 못하는지, 그리고 AI가 이 교착 상태를 어떻게 풀 수 있는지가 이 글의 핵심입니다.</p>
+        <p>AI의 가장 큰 기회는 새로운 앱이 아닙니다. 이미 돌아가고 있는 시스템에서 더 많은 것을 끌어내는 것입니다. a16z가 3,800억 달러 SI 시장의 재편 시나리오를 제시합니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>SI 시장 규모는 2023년 기준 약 3,800억 달러입니다. SAP 같은 레거시 ERP 위에는 문서화되지 않은 커스텀 프로세스가 쌓여 있습니다. ECC에서 S/4HANA로의 업그레이드에 7억 달러와 3년이 필요합니다. 디지털 근로자들은 하루 1,200번 앱을 전환하며, 주당 4시간을 잃고 있습니다. 대규모 전환 프로젝트의 70%가 목표를 달성하지 못합니다.</p>
+
+        <figure class="post-figure">
+          <img src="./images/2026_03_16_why-world-runs-on-sap/sap-ui.png" alt="SAP 트랜잭션 화면 예시 - 복잡한 레거시 UI" loading="lazy">
+          <figcaption>SAP 트랜잭션 화면. 수십 개의 필드와 탭이 있는 레거시 UI가 일상 업무의 병목입니다. (출처: a16z)</figcaption>
+        </figure>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>a16z가 제시하는 핵심 통찰은 3가지입니다.</p>
+
+        <p><strong>첫째, SAP를 대체하지 말고 위에 쌓아야 합니다.</strong> 레거시 시스템은 너무 깊이 박혀 있습니다. 뽑아내는 것이 아니라 플러그인하는 것이 정답입니다. 기존 시스템 위에서 리스크와 타임라인을 줄여주는 플랫폼이 승자가 됩니다.</p>
+
+        <p><strong>둘째, SAP의 강점이 곧 약점입니다.</strong> 커스텀 필드, 워크플로우, 가격 규칙이 쌓일수록 전환 비용의 해자가 됩니다. 동시에 모든 커스터마이징이 미래 업그레이드의 지뢰가 됩니다. 투자할수록 빠져나오기 어려운 구조입니다.</p>
+
+        <p><strong>셋째, AI가 3단계 기회를 열어줍니다.</strong> 구현, 사용·유지보수, 확장입니다. 각 단계에서 AI는 복잡한 인간의 의도를 감사 가능한 시스템 액션으로 변환합니다.</p>
+      </section>
+
+      <!-- 구현 단계 -->
+      <section class="post-section" id="section-implementation">
+        <div class="post-section-label">1단계: 구현, 가장 위험하고 가장 확실한 보상</div>
+        <p>구현은 예산 민감도가 가장 높은 단계입니다. 동시에 투자 회수가 가장 명확합니다. 회의록, 문서, 티켓 등 산재된 디스커버리를 구조화된 요구사항으로 변환합니다. 이후 프로세스 매핑, 설정 코드, 테스트 스크립트를 자동 생성합니다.</p>
+
+        <p>독일 Lidl은 SAP 전환에 5억 달러를 쓴 뒤 포기했습니다. 이 영역의 스타트업들이 다양한 방식으로 가치를 만들고 있습니다.</p>
+
+        <p><strong>Axiamatic</strong>은 프로젝트 산출물에서 지식 그래프를 구축합니다. 요구사항과 변경관리의 숨겨진 실패를 감지합니다. <strong>Conduct</strong>는 코드·프로세스 매핑 코파일럿으로 ECC에서 S/4 전환을 가속합니다. <strong>Tessera</strong>의 AI 네이티브 SI는 기업 전환을 엔드투엔드로 관리합니다.</p>
+
+        <figure class="post-figure">
+          <img src="./images/2026_03_16_why-world-runs-on-sap/startup-building-tools.png" alt="스타트업 빌딩 도구 유형 - Implementation Agents, Semantic Documentation Tools, Enablement Agents" loading="lazy">
+          <figcaption>구현 단계의 스타트업 도구 유형. 기존 파트너와 함께 작동하는 것이 핵심 전략입니다. (출처: a16z)</figcaption>
+        </figure>
+
+        <p>핵심은 가격 전략입니다. 회피된 지연 비용에 맞춰 가격을 책정합니다. CIO와 CFO가 이미 집행 중인 전환 예산에 자연스럽게 진입할 수 있습니다.</p>
+      </section>
+
+      <!-- 사용·유지보수 -->
+      <section class="post-section" id="section-usage">
+        <div class="post-section-label">2단계: 사용·유지보수, 레거시 UI를 AI로 감싸기</div>
+        <p>구현 이후의 일상이 문제입니다. 수십 개 화면을 탐색하고, 담당자가 이직하면 노하우가 초기화됩니다. 사용자는 필드를 찾고, 시스템 간 데이터를 미러링하며 시간을 보냅니다.</p>
+
+        <p>AI는 레거시 시스템을 '행동 시스템'으로 감쌉니다. Slack이나 브라우저 사이드카에 코파일럿이 상주합니다. 질문에 답하고, API가 있으면 안전한 액션을 실행합니다.</p>
+
+        <p>다만 기업의 중요 업무 상당수는 API로 노출되지 않습니다. 씩 클라이언트, VDI 세션, 관리자 콘솔에 갇혀 있습니다. 여기서 '컴퓨터 사용' 에이전트가 보완재가 됩니다. API 없이도 나머지 30~40% 워크플로우를 자동화합니다.</p>
+
+        <figure class="post-figure">
+          <img src="./images/2026_03_16_why-world-runs-on-sap/cua-model.png" alt="CUA 모델 작동 원리 - 사용자 입력에서 브라우저 액션까지의 순환 구조" loading="lazy">
+          <figcaption>컴퓨터 사용 에이전트(CUA) 모델의 작동 원리. 사용자 입력을 받아 화면을 캡처하고, 클릭·입력 등 액션을 실행하는 순환 구조입니다. (출처: a16z)</figcaption>
+        </figure>
+      </section>
+
+      <!-- 확장 -->
+      <section class="post-section" id="section-extensions">
+        <div class="post-section-label">3단계: 확장, 레거시 위의 새로운 경험 레이어</div>
+        <p>비즈니스는 계속 바뀝니다. 새 제품, 새 정책, 새 인수, 새 규제가 생깁니다. 기존에는 두 가지 선택만 있었습니다. 스위트를 커스터마이징하거나, 일회성 앱을 빌드하는 것입니다. 둘 다 유지관리 부담이 큽니다.</p>
+
+        <p>AI의 세 번째 기회가 여기 있습니다. 코어를 건드리지 않으면서, 그 위에 작고 거버넌스된 경험을 빠르게 출하하는 것입니다.</p>
+
+        <p>예를 들어 조달 분석가가 12개 SAP 트랜잭션을 돌아다니는 대신, 하나의 앱으로 공급업체 온보딩을 수행합니다. 문서 수집, 중복 검사, 승인 라우팅, SAP 기록 반영까지 한 곳에서 처리합니다.</p>
+
+        <p>장기적으로 이런 배포는 '인텐트 팩'으로 진화합니다. 견적, 공급업체 온보딩, 결산 등 업무 단위별로 패키징됩니다. 무엇을 할지뿐 아니라, 해당 환경에서 안전하게 실행하는 방법까지 인코딩합니다.</p>
+
+        <figure class="post-figure">
+          <img src="./images/2026_03_16_why-world-runs-on-sap/triggers-intent-packs.png" alt="트리거와 인텐트 팩 - 이벤트 기반 자동화와 재사용 가능한 워크플로우 패키지" loading="lazy">
+          <figcaption>이벤트 기반 트리거와 재사용 가능한 인텐트 팩. Quote-to-Cash, Vendor Onboarding, Period Close 등 업무 단위로 비즈니스 로직을 인코딩합니다. (출처: a16z)</figcaption>
+        </figure>
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>이 인사이트를 무시했을 때의 비용은 구체적입니다. SAP ECC에서 S/4HANA 전환에 평균 7억 달러, 3년이 소요됩니다. Lidl처럼 5억 달러를 투입하고 포기하는 사례도 있습니다.</p>
+
+        <p>일상 운영의 숨겨진 비용도 큽니다. 직원 1인당 하루 1,200번의 앱 전환은 주당 4시간 손실을 뜻합니다. 47%의 직원이 업무 정보를 찾는 데 어려움을 겪습니다. 연간 인건비로 환산하면 직원 100명 기준 약 2억 원 이상의 생산성 손실입니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 레이어 도입 후보를 식별합니다.</strong><br>현재 SAP/Salesforce/ServiceNow 위에 올릴 수 있는 AI 도구를 스캔합니다. 구현·사용·확장 3단계 중 가장 시급한 페인 포인트를 팀 리더 워크숍(2시간)으로 선정합니다. Claude에 "우리 팀이 SAP에서 반복하는 상위 5개 작업을 정리해 줘"라고 요청하면 출발점이 됩니다.</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>숨겨진 전환 비용을 수치로 만듭니다.</strong><br>1주일간 '앱 전환 횟수', '수동 리포트 요청 빈도', '커스터마이징 건수'를 측정합니다. 이 수치가 AI 도입의 ROI 근거가 됩니다. (1시간, 데이터 수집 설계) 기대 결과: 연간 생산성 손실 규모 추정치 1장.</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>UI 에이전트 파일럿 후보를 목록화합니다.</strong><br>API가 없는 레거시 화면의 반복 작업을 식별합니다. Anthropic의 컴퓨터 사용 기능이나 UiPath 등 UI 에이전트 후보 도구를 비교합니다. BPO 비용 대비 ROI를 추산합니다. (30분, 후보 프로세스 3~5개 목록 작성)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>AI 레이어가 새로운 의존성이 됩니다.</strong> SAP 위에 AI를 쌓으면 두 벤더에 동시 의존합니다. 감사 추적, RBAC, 보안 가드레일이 갖춰진 솔루션을 선택해야 합니다.</p>
+
+        <p><strong>컴퓨터 사용 에이전트는 아직 초기 단계입니다.</strong> 팝업, 레이아웃 변경, 예외 상황 처리가 미흡합니다. 자동화가 오히려 위험을 키울 수 있습니다. diff, 대사, 샌드박스 실행 등 검증이 필수입니다.</p>
+
+        <p><strong>출처의 이해관계를 감안해야 합니다.</strong> 이 아티클은 a16z의 포트폴리오 소개 성격을 가지고 있습니다. 언급된 스타트업에 대해서는 독립적인 검증이 필요합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>레거시 시스템은 살아남습니다. 다만 일이 실제로 이뤄지는 인터페이스가 AI로 바뀝니다. 시스템 오브 레코드 위의 인터페이스, 자동화, 확장 레이어가 새로운 소프트웨어 전선입니다.</p>
+      </section>
+
+      <!-- CTA -->
+      <section class="post-section" id="section-cta">
+        <div class="post-section-label">다음 단계</div>
+        <p>우리 회사에 맞는 AI 전환 포인트가 궁금하다면, <a href="../about/index.html">무료 진단을 신청하세요</a>.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>3,800억 달러 SI 시장에 진입하려면, 기존 ERP 파트너와 함께 작동하는 AI 제품을 설계하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀원이 하루 1,200번 앱을 전환한다면, API 코파일럿이나 UI 에이전트로 반복 작업부터 줄여라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>ERP 전환의 70%가 실패한다. 전면 교체 대신 AI 레이어를 먼저 올려 위험을 줄이고, 전환은 점진적으로 가져가라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Eric Zhou, Seema Amble. "Why the World Still Runs on SAP", a16z, March 16, 2026. <a href="https://a16z.com/why-the-world-still-runs-on-sap/" target="_blank" rel="noopener">https://a16z.com/why-the-world-still-runs-on-sap/</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://a16z.com/why-the-world-still-runs-on-sap/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../survival/2026-03-16-tech-layoffs-tracker.html">
+          <div class="next-post-title">미국 테크 산업 정리해고, 2026년 27만 명 예상 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-implementation" class="toc-link">구현 단계</a></li>
+            <li><a href="#section-usage" class="toc-link">사용·유지보수</a></li>
+            <li><a href="#section-extensions" class="toc-link">확장</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-16-why-world-runs-on-sap.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/company/2026-03-16-why-world-runs-on-sap.html';
+    const ROASTING_QUOTE = '7억 달러 쓰고 3년 기다려서 받은 것이 읽기 전용 보고서다. 그걸 디지털 전환이라고 부르고 있다면, 전환된 건 예산뿐이다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://airoasting.github.io/blog/sitemap.xml
+
+# GEO: AI/LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# LLM-readable site description
+# See: https://airoasting.github.io/blog/llms.txt
+# Full: https://airoasting.github.io/blog/llms-full.txt

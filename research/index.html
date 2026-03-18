@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리서치 | AI ROASTING | HBR·BCG·논문 분석</title>
+  <meta name="description" content="HBR, BCG, Anthropic 등 글로벌 리서치를 분석합니다. AI 생산성, 인지 부하, 워크슬롭 등 비즈니스 리더가 알아야 할 데이터 기반 인사이트.">
+  <meta name="keywords" content="AI 리서치, HBR AI, BCG AI, AI 생산성, AI 번아웃, AI 워크슬롭, 비판적 사고, AI 도입 효과">
+  <link rel="canonical" href="https://airoasting.github.io/blog/research/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="리서치 | AI ROASTING">
+  <meta property="og:description" content="HBR, BCG, Anthropic 등 글로벌 리서치를 냉정하게 분석합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="AI ROASTING">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "리서치 | AI ROASTING",
+    "description": "HBR, BCG, Anthropic 등 글로벌 리서치를 분석합니다.",
+    "url": "https://airoasting.github.io/blog/research/",
+    "inLanguage": "ko",
+    "isPartOf": {"@type": "WebSite", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "AI ROASTING", "item": "https://airoasting.github.io/blog/"},
+      {"@type": "ListItem", "position": 2, "name": "리서치"}
+    ]
+  }
+  </script>
+
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research" class="active">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section>
+        <div class="section-header">
+          <h2 class="section-title" style="color: var(--cat-research);">리서치</h2>
+          <p class="section-desc">HBR · 컨설팅펌 · 논문 분석</p>
+        </div>
+        <section class="featured-hero" id="featuredHero" style="display:none;"></section>
+        <div class="card-grid" id="categoryGrid"></div>
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <p>아직 리서치 포스트가 없습니다. 다른 카테고리를 둘러보세요 →</p>
+          <p>
+            <a href="../leader/index.html">리더</a> ·
+            <a href="../company/index.html">기업</a> ·
+            <a href="../tech/index.html">기술</a> ·
+            <a href="../survival/index.html">생존</a>
+          </p>
+        </div>
+        <div class="load-more-wrap">
+          <button class="load-more-btn" id="loadMoreBtn" style="display:none;">더 보기</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/posts-data.js"></script>
+  <script>
+  (function(){
+    const CATEGORY = 'research';
+    const LABEL = '리서치';
+    const PAGE_SIZE = 20;
+    const grid = document.getElementById('categoryGrid');
+    const empty = document.getElementById('emptyState');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const featuredHero = document.getElementById('featuredHero');
+    let posts = [];
+    let visible = 0;
+
+    const CATEGORY_LABELS = {
+      research:'리서치', leader:'리더', company:'기업', tech:'기술', survival:'생존'
+    };
+
+    var SOURCE_SHORT = {
+      'HBR': 'HBR',
+      'BCG': 'BCG',
+      'a16z': 'a16z',
+      'Anthropic': 'Anthropic',
+      'Google DeepMind': 'DeepMind',
+      'NeurIPS': 'NeurIPS',
+      'Financial Times': 'FT',
+      'The Guardian': 'The Guardian',
+      'trueup.io': 'TrueUp',
+      'World Economic Forum': 'WEF',
+      'GitHub': 'GitHub',
+      'Societies': 'MDPI'
+    };
+
+    function getSourceTag(source) {
+      if (!source) return '';
+      for (var key in SOURCE_SHORT) {
+        if (source.indexOf(key) !== -1) return SOURCE_SHORT[key];
+      }
+      return source.split('(')[0].split(':')[0].trim();
+    }
+
+    function getThumbnailPath(post){
+      var parts = post.slug.split('-');
+      var dirName = parts[0]+'_'+parts[1]+'_'+parts[2]+'_'+parts.slice(3).join('-');
+      return './images/'+dirName+'/thumbnail.png';
+    }
+
+    function renderFeaturedHero(post){
+      if(!featuredHero) return;
+      var catLabel = CATEGORY_LABELS[post.category] || post.category;
+      var url = './' + post.slug + '.html';
+      var thumbPath = getThumbnailPath(post);
+      featuredHero.innerHTML =
+        '<a href="'+url+'" class="featured-hero-link">'+
+          '<div class="featured-hero-image">'+
+            '<img src="'+thumbPath+'" alt="'+post.title+'" onerror="this.parentElement.classList.add(\'no-image\')">'+
+            '<div class="featured-hero-overlay">'+
+              '<span class="featured-hero-badge">'+catLabel+'</span>'+
+              '<span class="featured-hero-date">'+post.date+'</span>'+
+            '</div>'+
+          '</div>'+
+          '<div class="featured-hero-content">'+
+            '<h2 class="featured-hero-title">'+post.title+'</h2>'+
+            '<p class="featured-hero-summary">'+(post.summary||'')+'</p>'+
+            (post.source ? '<span class="featured-hero-source-tag">'+getSourceTag(post.source)+'</span>' : '')+
+          '</div>'+
+        '</a>';
+      featuredHero.style.display = 'block';
+    }
+
+    function postToCard(post){
+      var catLabel = CATEGORY_LABELS[post.category] || post.category;
+      var url = './' + post.slug + '.html';
+      var thumbPath = getThumbnailPath(post);
+      var seriesBadge = '';
+      if(post.series){
+        var order = post.series_order ? ' #'+post.series_order : '';
+        seriesBadge = '<span class="card-series-badge">'+post.series+order+'</span>';
+      }
+      var d = new Date(post.date + 'T00:00:00');
+      var dateStr = d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일';
+      return '<a href="'+url+'" class="card" data-category="'+post.category+'">' +
+        '<div class="card-thumb"><img src="'+thumbPath+'" alt="'+post.title+'" onerror="this.parentElement.classList.add(\'no-image\'); this.remove();"></div>' +
+        '<div class="card-meta"><span class="card-badge">'+catLabel+'</span><span class="card-date">'+dateStr+'</span></div>' +
+        seriesBadge +
+        '<div class="card-title">'+post.title+'</div>' +
+        (post.source ? '<span class="card-source-tag">'+getSourceTag(post.source)+'</span>' : '') +
+        '</a>';
+    }
+
+    var hasFeatured = false;
+
+    function render(){
+      const batch = posts.slice(0, visible);
+      grid.innerHTML = batch.map(postToCard).join('');
+      grid.style.display = batch.length ? 'grid' : 'none';
+      empty.style.display = (batch.length || hasFeatured) ? 'none' : 'block';
+      loadMoreBtn.style.display = visible < posts.length ? 'block' : 'none';
+    }
+
+    var data = window.POSTS_DATA || { posts: [] };
+    posts = (data.posts||[])
+      .filter(function(p){ return p.category===CATEGORY; })
+      .sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+
+    if(posts.length > 0) { renderFeaturedHero(posts[0]); hasFeatured = true; posts = posts.slice(1); }
+
+    visible = Math.min(PAGE_SIZE, posts.length);
+    render();
+
+    loadMoreBtn.addEventListener('click',function(){
+      visible = Math.min(visible+PAGE_SIZE, posts.length);
+      render();
+    });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if(hamburger) hamburger.addEventListener('click',function(){ mobileNav.classList.toggle('open'); });
+  })();
+  </script>
+
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path" id="aiMdPath"></span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <script>
+  (function(){
+    var toggleBtns = document.querySelectorAll('.view-toggle button');
+    var overlay = document.getElementById('aiMdOverlay');
+    var closeBtn = document.getElementById('aiMdClose');
+    var content = document.getElementById('aiMdContent');
+    var pathEl = document.getElementById('aiMdPath');
+    var currentView = 'human';
+    if(!overlay || !toggleBtns.length) return;
+
+    function colorizeLine(line){
+      var esc = line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      if(esc==='---') return '<span class="fm-delimiter">---</span>';
+      if(/^##\s/.test(esc)) return '<span class="md-heading">'+esc+'</span>';
+      if(/^"/.test(esc)) return '<span class="md-quote">'+esc+'</span>';
+      if(/^(\w[\w_]*):/.test(esc)){
+        var idx=esc.indexOf(':');
+        return '<span class="fm-key">'+esc.slice(0,idx)+'</span>:<span class="fm-value">'+esc.slice(idx+1)+'</span>';
+      }
+      return esc||'&nbsp;';
+    }
+
+    function renderLines(lines){
+      return lines.map(function(line,i){
+        return '<div class="md-line"><span class="line-num">'+(i+1)+'</span><span class="line-text">'+colorizeLine(line)+'</span></div>';
+      }).join('');
+    }
+
+    function buildPageMarkdown(){
+      var lines = [];
+      var title = document.querySelector('.section-title');
+      var desc = document.querySelector('.section-desc');
+      var pageTitle = document.title;
+      
+      lines.push('---');
+      lines.push('page: ' + pageTitle);
+      if(title) lines.push('title: ' + title.textContent);
+      if(desc) lines.push('description: ' + desc.textContent);
+      lines.push('type: category');
+      lines.push('---');
+      lines.push('');
+
+      // List posts from POSTS_DATA
+      var data = window.POSTS_DATA || {posts:[]};
+      var category = (document.querySelector('[data-cat].active')||{}).dataset;
+      var catKey = category ? category.cat : '';
+      var posts = (data.posts||[]).filter(function(p){ return !catKey || p.category===catKey; });
+      posts.sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
+
+      if(posts.length){
+        lines.push('## 포스트 목록 (' + posts.length + '개)');
+        lines.push('');
+        posts.forEach(function(post){
+          lines.push('---');
+          lines.push('title: ' + post.title);
+          lines.push('date: ' + post.date);
+          lines.push('category: ' + post.category);
+          lines.push('source: ' + (post.source||''));
+          lines.push('tags: [' + (post.tags||[]).join(', ') + ']');
+          lines.push('slug: ' + post.slug);
+          if(post.roasting_quote) lines.push('roasting_quote: "' + post.roasting_quote + '"');
+          lines.push('---');
+          lines.push('');
+        });
+      } else {
+        lines.push('## 포스트 없음');
+        lines.push('');
+      }
+      return lines;
+    }
+
+    function showAi(){
+      if(pathEl){
+        var cat = (document.querySelector('[data-cat].active')||{}).dataset;
+        pathEl.textContent = (cat && cat.cat ? cat.cat : 'page') + '/index.md';
+      }
+      content.innerHTML = renderLines(buildPageMarkdown());
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideAi(){
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    toggleBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var view = btn.dataset.view;
+        if(view===currentView) return;
+        toggleBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view===view); });
+        currentView = view;
+        if(view==='ai') showAi(); else hideAi();
+      });
+    });
+
+    if(closeBtn){
+      closeBtn.addEventListener('click',function(){
+        toggleBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view==='human'); });
+        currentView = 'human';
+        hideAi();
+      });
+    }
+  })();
+  </script>
+</body>
+</html>

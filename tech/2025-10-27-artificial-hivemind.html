@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다 | AI ROASTING</title>
+  <meta name="description" content="워싱턴대·스탠퍼드 연구팀이 70개 이상의 AI 모델을 테스트했다. 같은 모델은 79% 확률로 거의 같은 답을 내놓았고, 서로 다른 모델끼리도 유사도가 71~82%에 달했다. AI로 다양한 아이디어를 얻고 있다는 착각이 깨진다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다">
+  <meta property="og:description" content="NeurIPS 2025: 70개 이상 AI 모델의 답변 유사도 71~82%. AI 브레인스토밍의 다양성은 환상이다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2025-10-27-artificial-hivemind.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2025-10-27">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="임원">
+  <meta property="article:tag" content="창업자">
+  <meta property="article:tag" content="팀장">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다">
+  <meta name="twitter:description" content="NeurIPS 2025: 70개 이상 AI 모델의 답변 유사도 71~82%. AI 브레인스토밍의 다양성은 환상이다.">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다",
+    "datePublished": "2025-10-27",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "워싱턴대·스탠퍼드 연구팀이 70개 이상의 AI 모델을 테스트했다. 같은 모델은 79% 확률로 거의 같은 답을 내놓았고, 서로 다른 모델끼리도 유사도가 71~82%에 달했다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2025-10-27-artificial-hivemind.html",
+    "articleSection": "기술"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech" class="active">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2025_10_27_artificial-hivemind/thumbnail.png" alt="AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다 썸네일">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2025-10-27</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>NeurIPS 2025</span>
+            <span>Liwei Jiang, Yejin Choi 외 (워싱턴대·스탠퍼드·CMU·AI2)</span>
+            <span><a href="https://arxiv.org/abs/2510.22954" target="_blank" rel="noopener">Artificial Hivemind: The Open-Ended Homogeneity of Language Models ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=NeurIPS" class="post-tag">#NeurIPS</a>
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+            <a href="../index.html?tag=창업자" class="post-tag">#창업자</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+            <a href="../index.html?tag=다양성" class="post-tag">#다양성</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다"
+        data-date="2025-10-27"
+        data-category="tech"
+        data-source="NeurIPS 2025"
+        data-tags="임원, 창업자, 팀장, 다양성, AI동질화"
+        data-original-url="https://arxiv.org/abs/2510.22954"
+        data-roasting-quote="AI에게 창의적 아이디어를 기대한다고? 70개 모델이 같은 답을 하고 있다."
+        data-next-post="2026-03-05-brain-fry"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>70개 넘는 AI에 같은 질문을 던지면, 같은 AI는 10번 중 8번 거의 똑같은 답을 냅니다.</p>
+        <p data-summary>다른 회사 AI끼리도 답이 71~82% 겹칩니다. 어떤 모델은 문장까지 똑같습니다.</p>
+        <p data-summary>"AI 여러 개 쓰면 다양한 아이디어가 나온다"는 생각은 틀렸습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI에게 창의적 아이디어를 기대한다고?<br>70개 모델이 같은 답을 하고 있다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>"시간에 대한 비유를 써 줘." 연구팀이 이 질문을 여러 AI에 각각 50번씩 물었습니다. 답은 수천 개가 나왔지만, 내용은 딱 2가지로 모였습니다. "시간은 강이다"와 "시간은 직조공이다." 70개 넘는 AI가 전부 비슷한 말을 한 겁니다. (출처: Jiang et al., NeurIPS 2025)</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>많은 회사가 AI로 아이디어를 뽑아냅니다. 워싱턴대·스탠퍼드·CMU 공동 연구팀이 실제 사용자 질문 26,000개와 AI 모델 70개 이상을 분석했습니다. 결과는 놀라웠습니다. 정답이 없는 열린 질문에서 AI들이 내놓는 답이 판에 박은 듯 비슷했습니다. 연구팀은 이 현상을 '인공 집단지성(Artificial Hivemind)'이라 불렀습니다. 논문 본문에서 25개 모델을 깊이 파고들었고, 부록까지 합치면 총 70개 이상을 테스트했습니다. (출처: NeurIPS 2025, arXiv:2510.22954)</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>리더가 눈여겨볼 점은 3가지입니다.</p>
+
+        <p><strong>첫째, 같은 AI에 여러 번 물어봐야 답은 같습니다.</strong> 연구팀이 25개 모델에 열린 질문 100개를 각각 50번 던졌습니다. 10번 중 8번은 같은 AI가 거의 똑같은 답을 냈습니다. 아무 답이나 무작위로 짝지으면 겹치는 정도가 10~20%인 것과 비교하면, 차이가 큽니다. 창의성을 높이려고 온도(temperature) 설정을 최대로 올려도 결과는 비슷했습니다.</p>
+
+        <p><strong>둘째, 다른 회사 AI끼리도 같은 말을 합니다.</strong> GPT-4o, DeepSeek-V3, Qwen, Llama 등 만든 곳이 다른 AI들의 답이 71~82% 겹쳤습니다. 심지어 어떤 모델 쌍은 문장이 글자 단위로 같았습니다. Qwen의 두 모델이 "Empower Your Journey: Unlock Success, Build Wealth, Transform Yourself"라는 모토를 한 글자도 안 바꾸고 똑같이 만들어 낸 사례가 있습니다.</p>
+
+        <p><strong>셋째, 사람들의 취향은 다양한데, AI는 그걸 못 따라갑니다.</strong> 연구팀이 사람 평가 31,250건을 모았습니다. 같은 질문에 대해 평가자 25명의 의견이 크게 엇갈리는 경우가 많았습니다. 그런데 AI는 이런 의견 차이를 반영하지 못했습니다. 사람이 "둘 다 좋다"고 한 답변에 대해서도, AI는 한쪽에만 높은 점수를 줬습니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>AI가 비슷한 답만 내놓는 현상은 회사의 판단력에 직접 영향을 줍니다.</p>
+
+        <p><strong>"다양한 의견을 들었다"는 착각의 대가.</strong> "AI 여러 개에 동시에 물어보면 다양한 시각을 확보할 수 있다"는 생각은 데이터로 부정됩니다. 가장 비슷한 답 50개를 뽑으면, 평균 8개 이상의 서로 다른 AI에서 나온 답이 섞여 있습니다. AI를 바꿔도 사실상 같은 답을 받고 있을 가능성이 높습니다.</p>
+
+        <p><strong>AI에 기대는 조직은 생각이 좁아집니다.</strong> 2024년 연구에 따르면, AI는 개인의 창의성은 높이지만 팀 전체의 아이디어 가짓수는 줄입니다. (Doshi & Hauser, Science Advances, 2024) 비슷한 AI 결과물을 계속 보면, 조직 전체가 같은 방향으로만 생각하게 됩니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI가 낸 아이디어는 '초안'으로만 씁니다.</strong><br>AI 결과물은 최종 후보가 아니라 출발점입니다. 팀원 각자가 자기 경험을 더해 바꾸는 단계를 넣습니다. (예상 10분, 기존 회의에 1단계 추가)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>같은 질문을 반복하지 말고, 질문을 바꿉니다.</strong><br>같은 프롬프트를 10번 돌려도 비슷한 답이 나옵니다. 대신 "고객 입장에서", "경쟁사 입장에서", "5년 뒤를 상상하면" 같은 식으로 질문 자체를 바꿉니다. (예상 15분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>"AI 여러 개 = 다양한 관점"이 아닙니다. 팀에 알립니다.</strong><br>AI끼리 답이 71~82% 겹칩니다. "GPT와 Claude 둘 다 같은 말을 하니 맞겠지"라는 판단은 위험합니다. 진짜 검증은 사람이 해야 합니다. (예상 5분, 팀 슬랙 메시지)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>중요한 결정에는 AI 말고 다른 정보도 꼭 넣습니다.</strong><br>고객 인터뷰, 현장 관찰, 업계 전문가 의견 등 AI가 모르는 생생한 정보를 의사결정에 포함하는 절차를 만듭니다. (예상 1시간, 절차 설계)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>이 연구는 영어 질문에만 해당됩니다.</strong> 실험에 쓴 데이터셋은 영어 질문입니다. 한국어로 물었을 때도 같은 결과가 나오는지는 아직 확인되지 않았습니다.</p>
+
+        <p><strong>왜 AI 답이 비슷한지, 원인은 아직 모릅니다.</strong> 학습 데이터가 겹치기 때문인지, 사람 피드백으로 맞추는 과정 때문인지, AI가 만든 데이터로 다시 학습하기 때문인지 여러 가설이 있습니다. 아직 뚜렷한 답은 없습니다.</p>
+
+        <p><strong>AI를 쓰지 말라는 뜻이 아닙니다.</strong> 초안 잡기, 정보 정리, 반복 업무에 AI는 여전히 쓸모가 큽니다. 문제는 '새로운 아이디어 찾기'를 AI에만 맡기는 것입니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 여러 개 돌려도 다양한 생각은 나오지 않습니다. 진짜 다양성은 사람에게서 나옵니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>AI 아이디어는 결론이 아니라 출발점이다. 이걸 당연한 규칙으로 만들어라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>AI 브레인스토밍 뒤에 팀원이 자기 경험을 더하는 단계를 꼭 넣어라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>"AI 2개가 같은 말을 하니 맞겠지"라는 습관을 고쳐라. 검증은 사람이 해야 한다</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Jiang, L., Chai, Y., Li, M., Liu, M., Fok, R., Dziri, N., Tsvetkov, Y., Sap, M., Albalak, A. & Choi, Y. (2025). "Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)", NeurIPS 2025. arXiv:2510.22954.</li>
+
+          <li>Doshi, A. R. & Hauser, O. P. (2024). "Generative AI enhances individual creativity but reduces the collective diversity of novel content", Science Advances, 10(28).</li>
+
+          <li>Anderson, B. R., Shah, J. H. & Kreminski, M. (2024). "Homogenization effects of large language models on human creative ideation", Proceedings of the 16th Conference on Creativity & Cognition.</li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://arxiv.org/abs/2510.22954" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-03-05-brain-fry.html">
+          <div class="next-post-title">AI 도구 3개 넘으면 생산성이 떨어진다 →</div>
+        </a>
+      </div>
+      </div><!-- /post-body -->
+
+      <nav class="toc-sidebar" id="tocSidebar">
+        <ul class="toc-list">
+          <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+          <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+          <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+          <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+          <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+          <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+          <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+          <li><a href="#section-risk" class="toc-link">리스크</a></li>
+          <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+          <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        </ul>
+      </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2025-10-27-artificial-hivemind.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2025-10-27-artificial-hivemind.html';
+    const ROASTING_QUOTE = 'AI에게 창의적 아이디어를 기대한다고? 70개 모델이 같은 답을 하고 있다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>
