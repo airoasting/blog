@@ -144,7 +144,7 @@ window.POSTS_DATA = {
       "next_post": "2026-03-16-tech-layoffs-tracker"
     },
     {
-      "title": "AI는 왜 사람처럼 행동하는가",
+      "title": "AI는 왜 사람처럼 행동하는가 (멀티 페르소나)",
       "date": "2026-02-23",
       "category": "tech",
       "source": "Anthropic Alignment Science Blog",
