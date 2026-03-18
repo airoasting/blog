@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,31 +11,31 @@
   <!-- Category Pages -->
   <url>
     <loc>https://airoasting.github.io/blog/research/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/leader/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/company/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/tech/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/survival/</loc>
-    <lastmod>2026-03-17</lastmod>
+    <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -48,10 +48,34 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Posts -->
+  <!-- Posts (newest first) -->
   <url>
-    <loc>https://airoasting.github.io/blog/leader/2026-01-21-hassabis-amodei-agi-debate.html</loc>
-    <lastmod>2026-01-21</lastmod>
+    <loc>https://airoasting.github.io/blog/leader/2026-03-18-karpathy-autoresearch.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-03-17-ai-investment-roi-7-factors.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-03-17-llm-stock-picking-bias.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/company/2026-03-16-nvidia-nemoclaw.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/company/2026-03-16-why-world-runs-on-sap.html</loc>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,13 +92,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/research/2026-03-05-ai-labor-market-exposure.html</loc>
+    <loc>https://airoasting.github.io/blog/research/2026-03-05-brain-fry.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/research/2026-03-05-brain-fry.html</loc>
+    <loc>https://airoasting.github.io/blog/survival/2026-03-05-ai-labor-market-exposure.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -92,20 +116,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/tech/2025-10-03-social-media-peak.html</loc>
-    <lastmod>2025-10-03</lastmod>
+    <loc>https://airoasting.github.io/blog/leader/2026-01-21-hassabis-amodei-agi-debate.html</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/research/2025-09-22-workslop.html</loc>
-    <lastmod>2025-09-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://airoasting.github.io/blog/research/2025-09-10-ai-cognitive-offloading.html</loc>
-    <lastmod>2025-09-10</lastmod>
+    <loc>https://airoasting.github.io/blog/research/2026-01-16-workslop-pressure-cooker.html</loc>
+    <lastmod>2026-01-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -124,6 +142,30 @@
   <url>
     <loc>https://airoasting.github.io/blog/tech/2025-10-27-artificial-hivemind.html</loc>
     <lastmod>2025-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/leader/2025-10-09-sam-altman-openai-four-bets.html</loc>
+    <lastmod>2025-10-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2025-10-03-social-media-peak.html</loc>
+    <lastmod>2025-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2025-09-22-workslop.html</loc>
+    <lastmod>2025-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2025-09-10-ai-cognitive-offloading.html</loc>
+    <lastmod>2025-09-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

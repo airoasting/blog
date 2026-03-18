@@ -365,3 +365,232 @@ AI 도구를 자주 쓰는 사람일수록 비판적 사고력이 낮습니다.
 - 창업자: AI 도입과 함께 비판적 사고 훈련을 조직 역량 개발에 포함하라
 - 팀장: 주니어 직원이 AI 결과를 검증 없이 사용하는지 주간 점검하라
 - 임원: 채용·평가 기준에 AI 산출물 검증 역량을 반영하라
+
+---
+
+## 카파시의 AutoResearch: AI 에이전트가 밤새 100회 실험하는 시대
+
+날짜: 2026-03-18
+카테고리: 리더
+소스: GitHub (Andrej Karpathy)
+원문: https://github.com/karpathy/autoresearch
+태그: Karpathy, AutoResearch, AI에이전트, AI전략, 임원, 창업자, 팀장
+
+### 3줄 요약
+카파시가 공개한 AutoResearch는 Claude 에이전트가 train.py 한 파일만 수정하며 5분씩 실험을 반복하는 ML 연구 자동화 프레임워크입니다.
+에이전트는 git 브랜치를 만들고, 5분 학습을 돌리고, val_bpb로 성과를 판정해 개선되면 머지, 아니면 리셋합니다. H100 1장으로 하룻밤 100회, 이틀에 700회입니다.
+Shopify CEO 토비아스 루트케는 37회 실험으로 19% 성능 향상을 냈고, 공개 1주일 만에 스타 3만 개를 넘었습니다.
+
+### Roasting
+"밤새 100번 실험하는 AI 연구원이 나왔다. 당신의 R&D팀은 아직 주간 회의에서 실험 1건을 보고하고 있는가?"
+
+### 핵심 인사이트
+- 에이전트 루프는 7단계: program.md 읽기 → train.py 수정 → git 브랜치 생성 → 5분 학습 → val_bpb 측정 → 머지/리셋 → 반복.
+- 소형 모델(12레이어)에서 찾은 개선 20건이 대형 모델(24레이어)에 그대로 전이됐습니다. 8xH100 기준 학습 시간 11% 단축.
+- Claude만 "NEVER STOP" 지시를 따라 루프를 완주합니다. 모델 선택이 실험 완료율을 결정합니다.
+- 인간의 역할이 "코드 작성자"에서 "실험 설계자"로 이동합니다.
+
+### 리더의 결정 포인트
+- 창업자: 자동화 가능한 반복 실험(하이퍼파라미터 튜닝, A/B 테스트)을 식별하고, program.md 형식으로 실험 지침서를 작성하라
+- 팀장: 평가 지표가 단일 수치로 떨어지는 업무를 목록화하고, AutoResearch 구조를 적용할 수 있는지 검토하라
+- 임원: R&D 실험 속도가 경쟁력이 된다는 전제 하에, AI 에이전트 기반 연구 자동화 파일럿 예산을 분기 안에 확보하라
+
+### 참고자료
+- Karpathy, A. (2026). "autoresearch", GitHub. https://github.com/karpathy/autoresearch
+- Fortune. "Shopify CEO Tobi Lütke ran overnight AI experiments with AutoResearch." March 2026.
+
+---
+
+## AI 투자 수익률을 결정하는 7가지 경영 원칙
+
+날짜: 2026-03-17
+카테고리: 리서치
+소스: HBR (Thomas H. Davenport, Laks Srinivasan)
+원문: https://hbr.org/2026/03/7-factors-that-drive-returns-on-ai-investments-according-to-a-new-survey
+태그: HBR, AI투자, 임원, 창업자, 팀장
+
+### 3줄 요약
+HBR이 1,006명의 경영진을 조사한 결과, AI 투자 수익률을 좌우하는 것은 기술이 아니라 7가지 경영 원칙입니다.
+CFO가 AI 가치 측정을 책임지는 조직의 76%가 높은 성과를 달성했습니다.
+AI 측정 성숙도 3단계(사후 평가 실시)가 성과의 변곡점이며, 5단계에서는 고성과 비율이 85%에 달합니다.
+
+### Roasting
+"AI에 370억 달러를 쏟아부었는데, 아직도 'ROI를 어떻게 측정하죠?'라고 묻고 있다면, 그건 AI 문제가 아니라 경영 문제다."
+
+### 핵심 인사이트
+- 7가지 원칙: ①가치 정의 ②CFO 책임 ③문제 맞춤형 AI 유형 선택 ④측정 성숙도 단계별 향상 ⑤직원·리더 교육 ⑥데이터 준비 ⑦에이전틱 AI 선제 실험.
+- CFO 책임 조직 76% 고성과, CIO/CTO 책임 53%, 현업 임원 책임 32%.
+- 분석형 AI(가격 책정, 타겟팅)에서 최대 가치를 거둔 기업이 50%. 생성형 AI는 9%에 불과합니다.
+- 에이전틱 AI 도입 조직은 22% 높은 성과를 보고했지만, 전체 중 2%만 최대 가치 실현.
+- CIO의 71%: "2년 안에 AI 가치를 증명하지 못하면 예산이 동결·삭감될 것."
+
+### 리더의 결정 포인트
+- 창업자: AI 프로젝트마다 "무엇을 달성할 것인가"를 A4 1장으로 정의하라
+- 팀장: 팀의 AI 측정 성숙도를 진단하고 다음 단계 이동 계획을 수립하라
+- 임원: AI 가치 측정 책임을 CFO 또는 재무팀에 부여하라
+
+### 참고자료
+- Davenport, T.H. & Srinivasan, L. (2026). "7 Factors That Drive Returns on AI Investments, According to a New Survey." Harvard Business Review, March 2026.
+
+---
+
+## AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다
+
+날짜: 2026-03-17
+카테고리: 리서치
+소스: HBR (Harvard Business School Working Knowledge)
+원문: https://hbr.org/2026/03/competing-llms-were-asked-to-pick-stocks-their-choices-revealed-ais-limitations
+태그: HBR, LLM, AI편향, 투자, 임원, 창업자, 팀장
+
+### 3줄 요약
+ChatGPT와 DeepSeek에게 중국 상장사 4,978곳의 주가를 예측하게 했더니, ChatGPT가 12.5% 더 낙관적으로 예측했습니다.
+원인은 성능 차이가 아니라 학습 데이터에 중국 현지 뉴스가 부족했기 때문입니다.
+ChatGPT에 중국 현지 뉴스를 추가 제공하자 과도한 낙관이 사라졌고, 예측 오류는 13% 컸습니다.
+
+### Roasting
+"AI에게 주식 추천을 받겠다고? 그 AI가 어느 나라 뉴스를 읽고 자랐는지부터 확인했나?"
+
+### 핵심 인사이트
+- 같은 재무 데이터를 줘도 AI 모델의 판단은 갈립니다. ChatGPT는 DeepSeek보다 주가를 12.5% 높게, 매수 추천을 1.3%p 더 자주 내렸습니다.
+- 낙관적 AI의 예측이 더 틀렸습니다. ChatGPT의 절대 예측 오류는 DeepSeek보다 13% 컸습니다.
+- 편향의 원인은 부정적 현지 뉴스의 부재입니다. 정보가 없는 곳을 AI는 낙관으로 채웁니다.
+- ChatGPT 5로 동일 실험을 수행해도 같은 유형의 편향이 확인됐습니다. 모델 업그레이드가 정보 편향을 자동으로 해결하지 않습니다.
+
+### 리더의 결정 포인트
+- 창업자: 해외 시장 분석에 AI를 쓸 때, 현지 데이터 소스를 반드시 포함하는 프로세스를 수립하라
+- 팀장: AI 분석 보고서에 사용 모델, 데이터 소스, 분석 시점을 명시하는 양식을 도입하라
+- 임원: AI 기반 의사결정에 복수 모델 교차 검증을 정책으로 만들라
+
+### 참고자료
+- Cao, S., Wang, C.C.Y. & Xiang, Y. (2026). "When LLMs Go Abroad: Foreign Bias in AI Financial Predictions." Harvard Business School Working Paper.
+- Rand, B. (2026). "Competing LLMs Were Asked to Pick Stocks." Harvard Business Review, March 2026.
+
+---
+
+## Nvidia NemoClaw: AI 에이전트 플랫폼의 경쟁 축이 보안으로 이동한다
+
+날짜: 2026-03-16
+카테고리: 기업
+소스: TechCrunch (Rebecca Szkutak)
+원문: https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/
+태그: Nvidia, AI에이전트, 보안, 임원, 창업자, 팀장
+
+### 3줄 요약
+Nvidia가 GTC 2026에서 오픈소스 AI 에이전트 프레임워크 OpenClaw에 엔터프라이즈 보안을 입힌 NemoClaw를 발표했습니다.
+AI 에이전트 플랫폼의 핵심 경쟁력이 성능에서 보안과 거버넌스로 이동하고 있습니다.
+NemoClaw는 Nvidia GPU 없이도 작동하며, 오픈소스 에이전트 프레임워크가 기업 표준으로 격상되는 흐름입니다.
+
+### Roasting
+"AI 에이전트 도입하겠다면서 보안 정책은 '나중에'라고? 에이전트가 회사 데이터를 들고 나가는 것도 '나중에' 알게 될 것이다."
+
+### 핵심 인사이트
+- 기업이 에이전트를 배포하지 못하는 이유는 성능이 아니라 통제 가능성의 부재입니다.
+- 젠슨 황은 OpenClaw를 리눅스, HTTP, 쿠버네티스에 비유했습니다. 오픈소스 에이전트 프레임워크가 산업 표준으로 이동 중입니다.
+- NemoClaw는 하드웨어 비종속 전략으로 도입 장벽을 낮췄습니다. 클라우드 기반 모델을 로컬 디바이스에서도 접근 가능합니다.
+- 아직 알파 단계입니다. 프로덕션 적용 전 테스트 환경 검증이 필수입니다.
+
+### 리더의 결정 포인트
+- 창업자: AI 에이전트 도입 로드맵에 보안 아키텍처를 첫 번째 항목으로 포함하라
+- 팀장: 팀 내 AI 도구의 데이터 접근 범위를 이번 주 안에 목록으로 정리하라
+- 임원: NemoClaw 알파 테스트를 IT 보안팀에 지시하고 분기 보고에 포함시켜라
+
+### 참고자료
+- Nvidia. (2026). "Nvidia announces NemoClaw." Nvidia Newsroom.
+- Szkutak, R. (2026). "Nvidia's version of OpenClaw could solve its biggest problem: security." TechCrunch, March 16, 2026.
+
+---
+
+## 세계는 왜 아직도 SAP 위에서 돌아가는가
+
+날짜: 2026-03-16
+카테고리: 기업
+소스: a16z (Eric Zhou, Seema Amble)
+원문: https://a16z.com/why-the-world-still-runs-on-sap/
+태그: SAP, ERP, 레거시, AI에이전트, 엔터프라이즈, 디지털전환, 임원, 창업자
+
+### 3줄 요약
+SAP ECC에서 S/4HANA 업그레이드에 평균 7억 달러와 3년이 필요합니다. Lidl은 5억 달러를 쓰고도 포기했습니다.
+AI는 레거시 ERP를 대체하지 않습니다. 구현, 사용·유지보수, 확장 3단계에서 레거시 위에 AI 레이어를 쌓는 방향으로 진화하고 있습니다.
+이 3단계 기회가 3,800억 달러 SI 시장을 재편할 잠재력을 가지고 있습니다.
+
+### Roasting
+"7억 달러 쓰고 3년 기다려서 받은 것이 읽기 전용 보고서다. 그걸 '디지털 전환'이라고 부르고 있다면, 전환된 건 예산뿐이다."
+
+### 핵심 인사이트
+- SAP를 대체하지 말고 위에 쌓아야 합니다. 레거시는 너무 깊이 박혀 있고, 커스텀 프로세스가 해자가 됩니다.
+- 디지털 근로자들은 하루 1,200번 앱을 전환하며, 주당 4시간을 잃고 있습니다. ERP 전환 프로젝트의 70%가 목표 미달성.
+- AI 3단계 기회: ①구현(디스커버리→요구사항 자동화) ②사용·유지보수(레거시 UI를 AI 인터페이스로 감싸기) ③확장(인텐트 팩 기반 새 경험 레이어).
+- 컴퓨터 사용 에이전트가 API 없는 레거시 화면의 30~40% 워크플로우를 자동화합니다.
+
+### 리더의 결정 포인트
+- 창업자: ERP 위에 올릴 AI 레이어 후보를 구현·사용·확장 3단계로 분류하고, 가장 시급한 페인 포인트를 이번 분기 파일럿으로 정하라
+- 팀장: 앱 전환 횟수, 수동 리포트 빈도, 커스터마이징 건수를 1주일간 측정해 생산성 손실을 수치화하라
+- 임원: AI 에이전트 도입 시 감사 추적, RBAC, 보안 가드레일이 갖춰진 솔루션을 선정 기준으로 명시하라
+
+### 참고자료
+- Zhou, E. & Amble, S. (2026). "Why the World Still Runs on SAP." Andreessen Horowitz (a16z).
+
+---
+
+## Workslop은 개인의 게으름이 아니라 경영 실패다
+
+날짜: 2026-01-16
+카테고리: 리서치
+소스: HBR (Kate Niederhoffer, Alexi Robichaux, Jeffrey T. Hancock)
+원문: https://hbr.org/2026/01/why-people-create-ai-workslop-and-how-to-stop-it
+태그: Workslop, AI도입, 조직신뢰, 생산성, 팀장, 임원
+
+### 3줄 요약
+AI 생성 저품질 결과물(Workslop)의 53%는 직원이 스스로 품질이 낮다고 인지하면서도 발송한 것입니다.
+Workslop의 근본 원인은 개인의 게으름이 아니라, 불명확한 AI 사용 지침과 과부하된 조직 환경입니다.
+팀 내 신뢰 수준이 높은 조직에서 Workslop 발생률이 61% 감소합니다.
+
+### Roasting
+"AI 쓰라고 시켜놓고, 쓰레기가 나오면 직원 탓? 거울 먼저 보십시오."
+
+### 핵심 인사이트
+- Workslop은 생산성 비용이 아니라 관계 비용입니다. 신뢰를 파괴하고 이직으로 이어집니다.
+- Workslop은 위에서 내려온 압력(이사회 ROI 요구 → 포괄적 AI 지시)과 아래의 과부하(역할 통합·번아웃)가 만나는 지점에서 발생합니다.
+- AI 역량감이 있는 직원은 Workslop 발생률이 절반으로 줄어듭니다. 팀 내 심리적 안전감이 높으면 61% 감소.
+- 41%의 직원이 "AI 사용을 권장받았지만 구체적 지침은 없었다"고 답했습니다.
+
+### 리더의 결정 포인트
+- 창업자: "AI를 사용하라"는 지시에 "이 기준으로, 이 절차를 거쳐" 조건을 붙이라. 포괄적 명령이 Workslop의 씨앗입니다
+- 팀장: 이번 주 팀 미팅에서 AI로 만든 결과물 중 품질에 자신 없었던 것을 솔직하게 이야기하는 시간을 만들라
+- 임원: AI 생산성 지표에 "산출물 폐기율"과 "팀 신뢰 지수"를 추가하라
+
+### 참고자료
+- Niederhoffer, K., Robichaux, A., & Hancock, J. T. (2026). "Why People Create AI 'Workslop'—and How to Stop It." Harvard Business Review, January 16, 2026.
+- BetterUp & Stanford Social Media Lab. Online survey of 1,150 full-time U.S. desk workers, August–September 2025.
+
+---
+
+## 샘 알트만의 4가지 베팅: 수직 통합, AI 과학자, 에너지, 그리고 개인화
+
+날짜: 2025-10-09
+카테고리: 리더
+소스: a16z Podcast (Ben Horowitz, Erik Torenberg)
+원문: https://www.a16z.news/p/sam-altman-on-sora-energy-and-building
+태그: OpenAI, 샘알트만, AGI, AI전략, 임원, 창업자, 팀장
+
+### 3줄 요약
+샘 알트만은 수직 통합에 반대하던 입장을 철회하고, AGI 달성을 위해 연구·인프라·소비자 제품을 하나로 엮는 전략을 선택했습니다.
+그가 정의하는 진짜 튜링 테스트는 "AI 과학자"이며, GPT-5에서 그 가능성이 드러나기 시작했습니다.
+에너지와 AI는 하나의 문제로 합쳐졌고, 장기적으로 태양광과 원자력이 AI 인프라의 기반이 될 것입니다.
+
+### Roasting
+"AI 전략이 있다면서 인프라는 남의 것을 빌리고, 에너지는 생각도 안 하고 있다면, 그건 전략이 아니라 희망사항이다."
+
+### 핵심 인사이트
+- 알트만은 수직 통합 반대론을 공개 철회했습니다. 연구→인프라→제품의 각 층을 분리하면 임무 달성이 불가능하다는 결론.
+- 진짜 튜링 테스트는 AI가 과학 연구를 수행할 수 있는가입니다. 기존 튜링 테스트는 이미 통과했고 세상은 빠르게 적응했습니다.
+- 수십억 사용자에게 동일한 AI를 제공하는 것이 잘못된 가정입니다. 개인화가 핵심 경쟁력이 됩니다.
+- 단기 기저부하는 천연가스, 장기는 태양광+에너지 저장과 원자력(SMR, 핵융합 포함)이 두 축이 됩니다.
+
+### 리더의 결정 포인트
+- 창업자: AI 인프라의 핵심 구간(모델·데이터·컴퓨팅) 중 어디를 내재화할지 이번 분기 안에 결정하라
+- 팀장: 팀의 AI 활용이 "자동화"에 머물러 있는지, "탐색·발견"으로 확장 가능한지 점검하라
+- 임원: AI 인프라 비용에 에너지 전략이 포함되어 있는지 확인하라. 장기 원가 구조는 에너지에서 결정된다
+
+### 참고자료
+- Altman, S. (2025, October 9). "Sam Altman on Sora, Energy, and Building the Most Valuable Startup in the World." a16z Podcast.

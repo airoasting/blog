@@ -25,6 +25,21 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GeminiBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # LLM-readable site description
 # See: https://airoasting.github.io/blog/llms.txt
 # Full: https://airoasting.github.io/blog/llms-full.txt
