@@ -97,7 +97,7 @@
     <div class="container">
       <section>
         <div class="section-header">
-          <h2 class="section-title" style="color: var(--cat-tech);">기술</h2>
+          <h2 class="section-title" style="color: var(--cat-tech);">기술 <span class="post-count" id="postCount"></span></h2>
           <p class="section-desc">AI 에이전트 · 자동화 · 한계 돌파</p>
         </div>
         <section class="featured-hero" id="featuredHero" style="display:none;"></section>
@@ -259,6 +259,9 @@
       .filter(function(p){ return p.category===CATEGORY; })
       .sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
 
+    var totalCount = posts.length;
+    var postCountEl = document.getElementById('postCount');
+    if(postCountEl) postCountEl.textContent = '총 ' + totalCount + '개';
     if(posts.length > 0) { renderFeaturedHero(posts[0]); hasFeatured = true; posts = posts.slice(1); }
 
     visible = Math.min(PAGE_SIZE, posts.length);
