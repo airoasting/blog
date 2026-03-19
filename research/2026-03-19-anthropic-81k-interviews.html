@@ -38,6 +38,21 @@
     .chart-note { font-size: 0.75rem; color: #aaa; margin-top: 8px; text-align: right; }
     .methodology-box { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
     .methodology-box strong { color: #92400e; }
+
+    /* ── Styled table ── */
+    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
+    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
+    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #3b82f6; white-space: nowrap; }
+    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
+    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
+    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
+    .styled-table tbody tr:hover { background: #eef3ff; }
+    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
+    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
+    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
+    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
+    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
   </style>
 
   <!-- JSON-LD -->
@@ -228,11 +243,11 @@
 
           <!-- 인사이트 1: 원하는 것 -->
           <section class="post-section" id="section-insight1">
-            <div class="post-section-label">핵심 인사이트 1 — 사람들이 AI에게 원하는 것</div>
+            <div class="post-section-label">핵심 인사이트 1: 사람들이 AI에게 원하는 것</div>
             <p>사람들은 AI를 통해 단순히 일을 빠르게 처리하고 싶어하지 않습니다. 삶 전반을 바꾸고 싶어합니다.</p>
 
             <div class="chart-wrap">
-              <div class="chart-title">AI에게 원하는 것 — 희망 카테고리 (전체 응답 비율, %)</div>
+              <div class="chart-title">AI에게 원하는 것, 희망 카테고리 (전체 응답 비율, %)</div>
               <canvas id="chartHope"></canvas>
               <div class="chart-note">출처: Anthropic, 80,508명 대화 인터뷰 분석 (2025년 12월)</div>
             </div>
@@ -243,10 +258,10 @@
 
           <!-- 인사이트 2: 가져다준 것 -->
           <section class="post-section" id="section-insight2">
-            <div class="post-section-label">핵심 인사이트 2 — AI가 실제로 가져다준 것</div>
+            <div class="post-section-label">핵심 인사이트 2: AI가 실제로 가져다준 것</div>
 
             <div class="chart-wrap">
-              <div class="chart-title">AI가 실제로 가져다준 것 — 성과 카테고리 (%)</div>
+              <div class="chart-title">AI가 실제로 가져다준 것, 성과 카테고리 (%)</div>
               <canvas id="chartOutcome"></canvas>
               <div class="chart-note">출처: Anthropic, 80,508명 대화 인터뷰 분석 (2025년 12월)</div>
             </div>
@@ -256,10 +271,10 @@
 
           <!-- 인사이트 3: 걱정하는 것 -->
           <section class="post-section" id="section-insight3">
-            <div class="post-section-label">핵심 인사이트 3 — 사람들이 AI에 대해 가장 걱정하는 것</div>
+            <div class="post-section-label">핵심 인사이트 3: 사람들이 AI에 대해 가장 걱정하는 것</div>
 
             <div class="chart-wrap">
-              <div class="chart-title">AI에 대한 우려 카테고리 — 중복 응답 (%)</div>
+              <div class="chart-title">AI에 대한 우려 카테고리 (중복 응답) (%)</div>
               <canvas id="chartConcern"></canvas>
               <div class="chart-note">출처: Anthropic, 80,508명 대화 인터뷰 분석 (2025년 12월)</div>
             </div>
@@ -269,11 +284,11 @@
 
           <!-- 인사이트 4: 기대와 불안의 공존 -->
           <section class="post-section" id="section-insight4">
-            <div class="post-section-label">핵심 인사이트 4 — 기대와 불안은 한 사람 안에 함께 존재한다</div>
+            <div class="post-section-label">핵심 인사이트 4: 기대와 불안은 한 사람 안에 함께 존재한다</div>
             <p>연구팀은 이를 <strong>'빛과 그림자(Light and Shade)'</strong>라고 불렀습니다. 희망과 불안은 서로 다른 집단을 나누는 선이 아닙니다. 같은 사람 안에 함께 있습니다.</p>
 
             <div class="chart-wrap">
-              <div class="chart-title">빛과 그림자 — 혜택 경험 vs. 동반 우려 (%)</div>
+              <div class="chart-title">빛과 그림자: 혜택 경험 vs. 동반 우려 (%)</div>
               <canvas id="chartTension"></canvas>
               <div class="chart-note">같은 응답자가 혜택과 우려를 동시에 보고한 비율. 출처: Anthropic (2025년 12월)</div>
             </div>
@@ -283,29 +298,29 @@
 
           <!-- 인사이트 5: 지역별 차이 -->
           <section class="post-section" id="section-insight5">
-            <div class="post-section-label">핵심 인사이트 5 — 지역별 기대는 완전히 다르다</div>
+            <div class="post-section-label">핵심 인사이트 5: 지역별 기대는 완전히 다르다</div>
 
-            <div class="data-table-wrap">
-              <table class="data-table">
+            <div class="styled-table-wrap">
+              <table class="styled-table">
                 <thead>
-                  <tr><th>지역</th><th>긍정도</th><th>주요 관심사</th></tr>
+                  <tr><th>지역</th><th>AI 긍정도</th><th>주요 관심사</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>아프리카·남미·아시아</td><td>평균 이상</td><td>창업, 학습 기회, 경제적 도약</td></tr>
+                  <tr><td>아프리카·남미·아시아</td><td>평균 이상 ↑</td><td>창업, 학습 기회, 경제적 도약</td></tr>
                   <tr><td>유럽·북미</td><td>신중 (중간)</td><td>거버넌스, 규제, 프라이버시</td></tr>
                   <tr><td>동아시아</td><td>중간 (우려 동반)</td><td>인지 능력 저하, 의미 상실</td></tr>
-                  <tr><td><strong>전체 평균</strong></td><td><strong>67%</strong></td><td>—</td></tr>
-                  <tr><td>최저 국가</td><td><strong>60% 이상</strong></td><td>모든 국가가 60% 초과</td></tr>
+                  <tr class="highlight-row"><td>전체 평균</td><td>67%</td><td>모든 국가 60% 초과</td></tr>
                 </tbody>
               </table>
+              <div class="table-caption">출처: Anthropic, 80,508명 대화 인터뷰 (2025년 12월)</div>
             </div>
 
             <p>저중소득 국가는 고소득 국가 대비 약 2배 높은 비율로 "AI에 대한 걱정이 없다"고 답했습니다. 이들에게 AI는 위협이 아니라 자본 없이도 도전할 수 있는 도구입니다.</p>
 
-            <div class="data-table-wrap">
-              <table class="data-table">
+            <div class="styled-table-wrap">
+              <table class="styled-table">
                 <thead>
-                  <tr><th>카테고리</th><th>글로벌 평균</th><th>특히 높은 지역</th></tr>
+                  <tr><th>희망 카테고리</th><th>글로벌 평균</th><th>특히 높은 지역</th></tr>
                 </thead>
                 <tbody>
                   <tr><td>창업·사업 확장</td><td>8.7%</td><td>아프리카, 남중앙아시아, 중남미</td></tr>
@@ -314,6 +329,7 @@
                   <tr><td>개인 성장·재정 독립</td><td>13.7% / 9.7%</td><td>동아시아 (가족 부양 맥락)</td></tr>
                 </tbody>
               </table>
+              <div class="table-caption">지역별 희망 카테고리 비율 편차. 출처: Anthropic (2025년 12월)</div>
             </div>
           </section>
 
@@ -381,7 +397,7 @@
           <section class="post-section" id="section-references">
             <div class="post-section-label">참고자료</div>
             <ul class="references-list">
-              <li>Anthropic. "What 81,000 People Want from AI." Anthropic Features. 2025년 12월. <a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener">https://www.anthropic.com/features/81k-interviews</a></li>
+              <li>Anthropic. "What 81,000 People Want from AI." Anthropic Features. 2026년 3월. <a href="https://www.anthropic.com/features/81k-interviews" target="_blank" rel="noopener">https://www.anthropic.com/features/81k-interviews</a></li>
             </ul>
           </section>
 
