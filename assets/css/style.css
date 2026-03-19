@@ -3,6 +3,9 @@
    이코노미스트 스타일 · 라이트 온리
    ═══════════════════════════════════════════ */
 
+/* --- Playfair Display (Logo) --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 /* --- Pretendard Local Font --- */
 @font-face {
   font-family: 'Pretendard';
@@ -92,15 +95,14 @@ img {
 
 .site-logo {
   display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 23px;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  font-style: normal;
+  font-style: italic;
   color: #E8ECF2;
   background: #1B2A4A;
   padding: 14px 28px;
-  letter-spacing: 2.5px;
+  letter-spacing: 1.5px;
   line-height: 1.15;
   transition: background 0.25s;
 }
