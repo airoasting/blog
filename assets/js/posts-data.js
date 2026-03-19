@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "8만 1천 명이 AI에게 원하는 것: Anthropic 최대 규모 사용자 인터뷰 분석",
+      "title": "8만 1천 명이 AI에게 원하는 것: Anthropic 인터뷰",
       "date": "2026-03-19",
       "category": "research",
       "source": "Anthropic (Features)",
