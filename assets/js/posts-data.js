@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험",
+      "title": "아모데이가 경고한 AI의 5가지 위험",
       "date": "2026-01-25",
       "category": "leader",
       "source": "darioamodei.com (다리오 아모데이)",
@@ -13,7 +13,7 @@ window.POSTS_DATA = {
       "next_post": ""
     },
     {
-      "title": "AI를 쓸수록 실력이 떨어진다: 17%의 대가",
+      "title": "AI를 쓸수록 실력이 떨어진다",
       "date": "2026-02-01",
       "category": "survival",
       "source": "arXiv (Judy Hanwen Shen, Alex Tamkin)",
@@ -37,7 +37,7 @@ window.POSTS_DATA = {
       "next_post": ""
     },
     {
-      "title": "AI는 왜 아직도 스스로 배우지 못하는가: LeCun·Dupoux·Malik의 처방전",
+      "title": "AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전",
       "date": "2026-03-16",
       "category": "research",
       "source": "arXiv (Dupoux, LeCun, Malik)",

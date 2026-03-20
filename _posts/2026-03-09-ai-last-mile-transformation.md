@@ -1,5 +1,5 @@
 ---
-title: "AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유"
+title: "AI 전환의 '라스트 마일' 문제: 파일럿이 조직에 안착되지 못하는 이유"
 date: 2026-03-09
 category: research
 source: "HBR (Karim R. Lakhani, Jared Spataro, Jen Stave)"

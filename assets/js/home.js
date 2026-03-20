@@ -148,7 +148,7 @@
           </div>
         </div>
         <div class="featured-hero-content">
-          <h2 class="featured-hero-title">${post.title}</h2>
+          <h2 class="featured-hero-title">${post.title.replace(/: /g, ':\u00a0')}</h2>
           <p class="featured-hero-summary">${post.summary || ''}</p>
           ${post.source ? `<span class="featured-hero-source-tag">${getSourceTag(post.source)}</span>` : ''}
         </div>
@@ -207,7 +207,7 @@
           <span class="card-date">${dateStr}</span>
         </div>
         ${seriesBadge}
-        <div class="card-title">${post.title}</div>
+        <div class="card-title">${post.title.replace(/: /g, ':\u00a0')}</div>
         ${post.source ? `<span class="card-source-tag">${getSourceTag(post.source)}</span>` : ''}
       </a>
     `;

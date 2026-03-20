@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전 | AI ROASTING</title>
+  <meta name="description" content="META·UC Berkeley 연구진이 현재 AI의 핵심 한계를 짚었다. 아이는 세상과 부딪히며 배우지만, AI는 사람이 만든 레시피 없이 아무것도 배우지 못한다. System A·B·M 프레임워크가 제시하는 자율 학습의 청사진.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전">
+  <meta property="og:description" content="배포된 AI는 학습 능력이 0이다. 아이는 세상과 부딪히며 배우지만, AI는 사람이 짜준 레시피 없이 아무것도 못 배운다. META·UC Berkeley의 자율 학습 프레임워크.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-03-16-why-ai-cant-learn.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/research/images/2026_03_16_why-ai-cant-learn/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-16">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="자율학습">
+  <meta property="article:tag" content="LeCun">
+  <meta property="article:tag" content="인지과학">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전">
+  <meta name="twitter:description" content="배포된 AI는 학습 능력이 0이다. META·UC Berkeley의 자율 학습 프레임워크 System A·B·M.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/research/images/2026_03_16_why-ai-cant-learn/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    /* ── Styled table ── */
+    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
+    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
+    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #3b82f6; white-space: nowrap; }
+    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
+    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
+    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
+    .styled-table tbody tr:hover { background: #eef3ff; }
+    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
+    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
+    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
+    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
+    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
+
+    .framework-box { background: #f0f4ff; border-left: 4px solid #3b82f6; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
+    .framework-box strong { color: #1e40af; }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전",
+    "datePublished": "2026-03-16",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "META·UC Berkeley 연구진이 현재 AI의 핵심 한계를 짚었다. 배포된 AI는 학습 능력이 0이다. System A·B·M 프레임워크로 자율 학습의 청사진을 제시한다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-03-16-why-ai-cant-learn.html",
+    "articleSection": "리서치"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research" class="active">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight1" class="toc-link">학습 능력 제로</a></li>
+        <li><a href="#section-insight2" class="toc-link">System A·B</a></li>
+        <li><a href="#section-insight3" class="toc-link">System M</a></li>
+        <li><a href="#section-insight4" class="toc-link">진화·발달 프레임</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_16_why-ai-cant-learn/thumbnail.png" alt="AI는 왜 스스로 배우지 못하는가 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-03-16</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv (FAIR at META, EHESS, UC Berkeley)</span>
+            <span>Dupoux, LeCun, Malik</span>
+            <span><a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener">Why AI systems don't learn and what to do about it ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=자율학습" class="post-tag">#자율학습</a>
+            <a href="../index.html?tag=LeCun" class="post-tag">#LeCun</a>
+            <a href="../index.html?tag=인지과학" class="post-tag">#인지과학</a>
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+            <a href="../index.html?tag=창업자" class="post-tag">#창업자</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전"
+        data-date="2026-03-16"
+        data-category="research"
+        data-source="arXiv (Dupoux, LeCun, Malik)"
+        data-tags="자율학습, LeCun, 인지과학, MLOps, AI전략, 임원, 창업자, 팀장"
+        data-original-url="https://arxiv.org/abs/2603.15381"
+        data-roasting-quote="ChatGPT가 똑똑하다고? 배포된 순간 학습 능력은 0이다. 3살짜리 아이보다 못 배우는 AI에 전사 전략을 걸고 있다면, 그 전략부터 다시 배워야 한다."
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>META와 UC Berkeley 연구진이 현재 AI의 핵심 한계를 짚었습니다. 배포된 AI는 새로운 환경에서 스스로 배우는 능력이 사실상 0입니다.</p>
+            <p data-summary>아이는 관찰과 행동을 오가며 스스로 학습하지만, AI는 사람이 설계한 학습 레시피 없이는 아무것도 배우지 못합니다. 이 논문은 관찰 학습(System A), 행동 학습(System B), 메타 제어(System M) 3요소 프레임워크를 제시합니다.</p>
+            <p data-summary>이 프레임워크가 실현되려면 수십 년이 걸릴 수 있습니다. 하지만 경영 리더에게 지금 중요한 것은 현재 AI의 한계를 정확히 아는 것입니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">ChatGPT가 똑똑하다고? 배포된 순간 학습 능력은 0이다.<br>3살짜리 아이보다 못 배우는 AI에 전사 전략을 걸고 있다면, 그 전략부터 다시 배워야 한다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>Yann LeCun(META 수석 AI 과학자), Emmanuel Dupoux(EHESS/META), Jitendra Malik(UC Berkeley)이 공동으로 논문을 발표했습니다. 제목은 직설적입니다. "AI 시스템은 왜 배우지 못하는가, 그리고 어떻게 해야 하는가."</p>
+            <p>6개월 된 아이는 사람 얼굴, 원숭이 얼굴, 다양한 종의 얼굴을 모두 구분합니다. 그런데 9개월이 되면 사람 얼굴만 정밀하게 인식하고, 나머지는 잊어버립니다. 아무도 가르치지 않았는데, 스스로 선택해서 배운 결과입니다. AI 업계가 벤치마크 점수 경쟁에 몰두하는 사이, 이 논문은 더 근본적인 질문을 던집니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>기업들이 AI 에이전트 도입을 가속하고 있습니다. 그런데 배포된 AI가 새로운 환경에 적응하지 못하는 문제가 곳곳에서 나타납니다. McKinsey에 따르면, AI 파일럿의 74%가 프로덕션으로 전환되지 못합니다. (출처: McKinsey, 2025)</p>
+            <p>논문은 그 원인을 세 가지로 정리합니다. 첫째, 학습 방법들이 하위 분야별로 칸막이 안에 갇혀 있습니다(분절화). 둘째, 학습 자체가 시스템 내부가 아닌 외부 인간 전문가에게 위임되어 있습니다(외부화). 셋째, 이 구조를 확장할 방법이 없습니다(확장 불가). 학습 데이터와 운영 환경의 괴리, 즉 '분포 불일치(distribution shift)'를 AI 스스로 메울 수 없는 이유가 여기에 있습니다.</p>
+          </section>
+
+          <!-- 인사이트 1: 배포된 AI의 학습 능력은 0이다 -->
+          <section class="post-section" id="section-insight1">
+            <div class="post-section-label">핵심 인사이트 1: 배포된 AI의 학습 능력은 0이다</div>
+            <p><strong>현재 AI의 학습은 전부 사람 손을 거칩니다.</strong> 데이터 수집, 정제, 학습 레시피 설계, 손실 함수 조정, 성능 평가까지 모두 인간 전문가가 관리합니다. 논문은 이것을 'MLOps 파이프라인 문제'라고 부릅니다. 각 단계마다 "전문적으로 설계된 손실 함수와 보상 함수"가 필요하고, 자기지도학습, 지도학습, 강화학습을 순서대로 조립해야 합니다.</p>
+            <p>배포된 모델은 새로운 상황을 만나도 스스로 적응하지 못합니다. 재학습이 필요하면 다시 사람이 개입해야 합니다. 논문은 이 차이를 명확히 합니다. 아이는 "무엇에 주의를 기울일지, 언제 관찰하고 언제 행동할지, 탐색·모방·상상 놀이 사이를 어떻게 전환할지"를 스스로 결정합니다. AI는 이 모든 것을 외부에 의존합니다.</p>
+
+            <div class="framework-box">
+              <strong>MLOps 파이프라인의 구조적 한계:</strong> 인터넷에서 수집한 고정 데이터로 사전 학습을 한 뒤, 특정 과제에 맞춰 미세 조정(fine-tuning)합니다. 두 단계 모두 사람이 직접 설계합니다. LLM을 예로 들면, 대규모 비지도 학습(다음 토큰 예측)이 먼저 진행되고, 이후 인간 피드백 기반 강화학습(RLHF)이 분리된 단계로 따라옵니다. 실제 운영 환경에서 예상치 못한 상황이 발생하면, 모델은 대응하지 못합니다.
+            </div>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr><th>비교 항목</th><th>인간 아이</th><th>현재 AI</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>학습 주체</td><td>아이 자신이 선택</td><td>인간 엔지니어(MLOps)</td></tr>
+                  <tr><td>학습 시점</td><td>평생 지속</td><td>학습 후 고정(배포 시 동결)</td></tr>
+                  <tr><td>데이터 선택</td><td>스스로 선택(얼굴·목소리에 집중)</td><td>사람이 수집·정제</td></tr>
+                  <tr><td>학습 모드 전환</td><td>관찰↔행동↔모방↔상상 자유 전환</td><td>단계별 분리(SSL→SL→RL)</td></tr>
+                  <tr><td>새 환경 적응</td><td>탐색 후 학습</td><td>재학습 필요(사람 개입)</td></tr>
+                  <tr class="highlight-row"><td>배포 후 학습 능력</td><td>지속</td><td>사실상 0</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+            </div>
+          </section>
+
+          <!-- 인사이트 2: 관찰과 행동, 두 가지 학습 모드 -->
+          <section class="post-section" id="section-insight2">
+            <div class="post-section-label">핵심 인사이트 2: 관찰과 행동, 두 가지 학습 모드</div>
+            <p><strong>논문은 학습을 두 가지 시스템으로 나눕니다.</strong> System A는 관찰 기반 학습입니다. 아이가 주변을 보고 들으며 패턴을 익히는 것과 같습니다. System B는 행동 기반 학습입니다. 직접 몸을 움직여 시행착오를 겪으며 배우는 방식입니다.</p>
+            <p>논문이 드는 구체적 사례가 인상적입니다. 신생아는 여러 언어의 음소를 모두 구분합니다. 그런데 생후 6~12개월 사이에 모국어 음소 인식은 정밀해지고, 외국어 음소 인식은 퇴화합니다. 이것이 System A의 작동입니다. 반면, 걷기는 관찰만으로 배울 수 없습니다. 구르기, 기기, 서기, 비틀거리기를 거쳐 성숙한 보행에 도달합니다. 이것이 System B입니다.</p>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr><th>구분</th><th>System A (관찰)</th><th>System B (행동)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>학습 방식</td><td>감각 데이터의 통계적 패턴 학습</td><td>환경과 상호작용하며 시행착오</td></tr>
+                  <tr><td>인간 예시</td><td>얼굴 인식(6→9개월 특화), 음소 구분</td><td>걷기(구르기→기기→서기→보행), 발성</td></tr>
+                  <tr><td>AI 기술</td><td>GPT, CLIP, DINO, V-JEPA, HuBERT</td><td>강화학습(RL), 모델 기반 RL, 로보틱스</td></tr>
+                  <tr><td>강점</td><td>대량 데이터에서 추상적 표현 학습</td><td>실시간 적응, 새로운 해법 발견</td></tr>
+                  <tr><td>한계</td><td>행동과 연결 안 됨, 인과 파악 불가</td><td>데이터 효율 낮음, 보상 설계 필요</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+            </div>
+
+            <p><strong>핵심은 두 시스템이 서로를 돕는다는 것입니다.</strong> System A가 만든 '세계 모델(world model)'은 System B가 탐색할 범위를 줄여 줍니다. 실제 로보틱스에서 관절 자유도는 200~300개에 달합니다. 무작정 시행착오를 하면 경우의 수가 폭발합니다. System A가 먼저 환경의 물리 법칙을 학습해 두면, System B는 불필요한 탐색을 건너뛸 수 있습니다.</p>
+            <p>반대 방향도 성립합니다. System B의 행동이 만들어내는 데이터는 System A에게 의미 있는 학습 재료를 제공합니다. 논문은 MuZero(바둑·비디오 게임)와 Dreamer(로보틱스)를 이 통합의 초기 사례로 제시합니다.</p>
+            <p>그런데 현재 AI는 이 두 모드가 완전히 분리되어 있습니다. GPT의 사전 학습(System A)과 RLHF(System B)는 별개의 단계로, 사람이 순차적으로 조립합니다. 아이처럼 실시간으로 오가지 못합니다.</p>
+          </section>
+
+          <!-- 인사이트 3: System M, 학습의 지휘자 -->
+          <section class="post-section" id="section-insight3">
+            <div class="post-section-label">핵심 인사이트 3: System M이 빠져 있다</div>
+            <p><strong>논문이 제시하는 가장 중요한 개념은 System M(메타 제어)입니다.</strong> System M은 "지금 관찰할 것인가, 행동할 것인가"를 결정하는 상위 통제 시스템입니다. 네트워크의 SDN(소프트웨어 정의 네트워크) 컨트롤 플레인과 유사합니다. 고대역폭 데이터를 직접 처리하지 않고, 저차원 신호(예측 오류, 불확실성, 신체 상태)를 모니터링하며 데이터 경로를 열고 닫습니다.</p>
+
+            <div class="framework-box">
+              <strong>System M의 3가지 기능:</strong><br>
+              (1) <strong>입력 선택:</strong> 어떤 데이터에 주의를 기울일지 결정합니다. 영아는 얼굴과 목소리에 본능적으로 집중합니다. 중간 복잡도의 시각 자극에 더 오래 시선을 고정하는 '골디락스 원리'도 이 기능의 일부입니다.<br>
+              (2) <strong>보상 조절:</strong> 탐색과 활용의 비율을 조정합니다. 환경이 불안정하면 탐색 비중을 높이고, 안정적이면 활용 비중을 높입니다. 발달 과정의 '결정적 시기(critical period)'도 이 조절의 사례입니다. 특정 시기에만 특정 학습 회로가 열립니다.<br>
+              (3) <strong>운영 모드 전환:</strong> 습관적 반응(모델 프리)과 계획적 사고(모델 기반), 수면 중 기억 재생과 상상을 통한 학습 사이를 전환합니다. 설치류의 해마에서는 수면 중 장소 세포가 실제보다 빠른 속도로 재활성화됩니다.
+            </div>
+
+            <p><strong>논문이 제시하는 메타 신호는 3종류입니다.</strong> 첫째, 인식 신호(예측 오류, 불확실성, 학습 진전도)입니다. 둘째, 종 특이적 신호(직접 응시, 위협 자극, 사회적 지위)입니다. 셋째, 신체 신호(에너지 수준, 통증, 스트레스)입니다.</p>
+            <p>아이는 이 세 종류의 신호를 통합해 학습 모드를 자동으로 전환합니다. 통증을 느끼면 목표 지향 행동을 즉시 중단하고 반응적 모드로 전환한 뒤, 한 번의 경험만으로 학습합니다. 현재 AI에는 이 통합 제어 기능이 없습니다. 논문은 이것을 "학습이 외부화되어 있다"고 표현합니다.</p>
+          </section>
+
+          <!-- 인사이트 4: 진화-발달 프레임워크 -->
+          <section class="post-section" id="section-insight4">
+            <div class="post-section-label">핵심 인사이트 4: 수십 년의 여정, 진화-발달 프레임워크</div>
+            <p><strong>논문은 이 프레임워크의 실현에 수십 년이 걸릴 수 있다고 솔직하게 밝힙니다.</strong> 생물학에서 힌트를 얻은 '진화-발달(Evo/Devo)' 접근법을 제안합니다.</p>
+            <p>생물은 진화(세대 간)와 발달(개체 내)이라는 두 시간 축에서 학습 능력을 갖춥니다. 영아의 시력은 처음에 매우 낮고, 운동 자유도도 제한적입니다. 시냅스 성장과 가지치기, 시간에 따른 가소성 조절, 자발적 신경 활동이 단계적으로 진행되면서 학습 복잡도가 점진적으로 높아집니다. 논문은 이것이 '무작위 초기화'가 아니라 '구조화된 출발점'임을 강조합니다.</p>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr><th>시간 축</th><th>생물</th><th>AI (현재)</th><th>AI (논문 제안)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>진화 (외부 루프)</td><td>세대 간 유전자 최적화</td><td>연구자의 논문·오픈소스</td><td>메타학습으로 아키텍처 자동 최적화</td></tr>
+                  <tr><td>발달 (내부 루프)</td><td>개체의 환경 적응</td><td>MLOps 기반 학습</td><td>System A·B·M의 자율 학습</td></tr>
+                  <tr><td>초기 상태</td><td>유전적으로 구조화된 출발점</td><td>무작위 초기화</td><td>진화 루프로 최적화된 초기 파라미터</td></tr>
+                  <tr class="highlight-row"><td>핵심 차이</td><td>두 축이 연결됨</td><td>두 축이 분리됨</td><td>이중 루프 최적화(bilevel optimization)</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+            </div>
+
+            <p>논문은 이 접근의 난제도 구체적으로 짚습니다. 한 번의 생애 전체가 데이터 1개에 해당합니다. 외부 루프를 최적화하려면 수백만 번의 시뮬레이션된 생애가 필요하고, 각 생애는 다시 수백만 개의 데이터 포인트를 포함합니다. 메모리와 연산 효율이 핵심 병목입니다.</p>
+            <p>윤리적 문제도 제기합니다. 자율 학습 AI의 적응력이 높아질수록 통제가 어려워집니다. 논문은 생물학적 비유를 듭니다. 동물은 생존에 유리한 대리 목표(탐색, 놀이)를 통해 진화적 적합도를 높이지만, 중독이나 자해처럼 환경이 바뀌면 대리 목표가 오작동할 수 있습니다. 자율 학습 AI도 같은 취약성을 가질 수 있습니다.</p>
+          </section>
+
+          <!-- 비즈니스 비용 -->
+          <section class="post-section" id="section-cost">
+            <div class="post-section-label">비즈니스 비용</div>
+            <p><strong>AI 파일럿이 프로덕션으로 전환되지 못하는 비용은 기업당 연간 수억 원에 달합니다.</strong> McKinsey에 따르면 AI 파일럿의 74%가 프로덕션 전환에 실패합니다. (출처: McKinsey, 2025) 파일럿 1건당 평균 투자 비용이 2억~5억 원이라면, 전환 실패 3건은 최소 6억 원의 매몰 비용입니다.</p>
+            <p><strong>분포 불일치로 인한 유지보수 비용이 숨어 있습니다.</strong> 학습 환경과 운영 환경이 다를 때 발생하는 성능 저하를 보정하려면, 주기적인 재학습과 데이터 정제가 필요합니다. 이 과정에 투입되는 ML 엔지니어 인건비는 연간 1억~3억 원 수준입니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>AI 프로젝트의 '학습 데이터 vs 운영 환경' 간극을 점검하십시오.</strong><br>현재 운영 중인 AI 모델이 어떤 데이터로 학습되었는지, 실제 운영 환경과 어떤 차이가 있는지 목록으로 정리합니다. Claude에게 다음 프롬프트를 사용합니다. (30분)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">우리 회사의 [서비스명] AI 모델은 [학습 데이터 설명]으로 학습되었습니다. 실제 운영 환경에서는 [운영 환경 설명]입니다. 학습 데이터와 운영 환경 사이의 분포 불일치(distribution shift) 위험 요인을 5가지로 정리하고, 각각의 비즈니스 영향을 평가해 주세요.</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div>
+                </div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>AI 모델의 재학습 주기와 비용을 문서화하십시오.</strong><br>현재 AI 모델을 얼마나 자주 재학습하는지, 한 번 재학습에 드는 비용(인건비 + 컴퓨팅)을 정리합니다. 이 수치가 없다면, 운영 리스크를 관리하지 않고 있다는 뜻입니다. (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>AI 에이전트 도입 시 '적응 범위'를 사전 정의하십시오.</strong><br>AI 에이전트가 처리할 업무의 변동성을 '낮음/중간/높음'으로 분류합니다. 변동성이 높은 업무에 현재 AI를 투입하면, 성능 저하 빈도가 높아집니다. 변동성이 낮은 업무부터 시작하는 것이 합리적입니다. (30분)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>이 논문은 방향 제시이지 완성된 기술이 아닙니다.</strong> 저자들이 직접 "수십 년이 걸릴 수 있다(probably decades away)"고 밝혔습니다. System A·B·M 프레임워크는 "실제 시스템으로 가는 경로를 제시하는 잠정적 청사진(tentative blueprint)"입니다. 당장의 AI 도입 결정에 이 논문을 근거로 사용하기는 어렵습니다.</p>
+            <p><strong>현재의 추론 시점 적응(test-time adaptation)은 이 논문이 말하는 자율 학습과 다릅니다.</strong> LLM의 추론 시점 연산(thinking tokens), 에이전트 기반 복잡 과제 해결 등이 활발하지만, 논문은 이것들을 "전체적으로 경직된 시스템 위의 사소한 변형"이라고 평가합니다. 아이가 '시험 시간'에 전체 언어와 새로운 기술을 배우는 것과는 질적으로 다릅니다.</p>
+            <p><strong>자율 학습 AI의 통제 문제는 미해결입니다.</strong> 논문은 4가지 윤리적 위험을 구체적으로 열거합니다. (1) 적응력과 통제 가능성 사이의 긴장, (2) 대리 목표의 오작동(정렬 해킹), (3) AI가 인간처럼 보일수록 과도한 신뢰가 발생하는 문제, (4) 통증·공포와 기능적으로 유사한 신호를 처리하는 시스템의 도덕적 지위 문제입니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>현재 AI의 가장 큰 한계는 성능이 아니라 '배포 후 스스로 배우지 못하는 구조'입니다. 이 한계를 아는 것이 과잉 투자와 과소 기대를 모두 피하는 출발점입니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자</span>
+                <span>AI 제품의 운영 환경 변동성을 사전에 평가하고, '재학습 없이 작동하는 범위'를 제품 스펙에 명시하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>AI 모델의 성능 저하 패턴을 월 단위로 추적하고, 재학습 시점을 사전에 정의하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 투자 계획에 '모델 유지보수 비용'을 별도 항목으로 편성하십시오. 도입 비용만 잡고 유지 비용을 빠뜨리면, 2년 차에 예산이 초과됩니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Dupoux, E., LeCun, Y., & Malik, J. (2026). "Why AI systems don't learn and what to do about it: Lessons on autonomous learning from cognitive science." arXiv:2603.15381. <a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener">https://arxiv.org/abs/2603.15381</a></li>
+              <li>McKinsey & Company. (2025). "The state of AI in early 2025." McKinsey Global Survey.</li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://arxiv.org/abs/2603.15381" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="./2026-03-19-anthropic-81k-interviews.html">
+              <div class="next-post-title">8만 1천 명이 AI에게 원하는 것: Anthropic 인터뷰 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight1" class="toc-link">학습 능력 제로</a></li>
+            <li><a href="#section-insight2" class="toc-link">System A·B</a></li>
+            <li><a href="#section-insight3" class="toc-link">System M</a></li>
+            <li><a href="#section-insight4" class="toc-link">진화·발달 프레임</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-16-why-ai-cant-learn.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-03-16-why-ai-cant-learn.html';
+    const ROASTING_QUOTE = 'ChatGPT가 똑똑하다고? 배포된 순간 학습 능력은 0이다. 3살짜리 아이보다 못 배우는 AI에 전사 전략을 걸고 있다면, 그 전략부터 다시 배워야 한다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>
