@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "AI를 쓸수록 실력이 떨어진다: 17%의 대가",
+      "date": "2026-02-01",
+      "category": "survival",
+      "source": "arXiv (Judy Hanwen Shen, Alex Tamkin)",
+      "tags": ["AI역량", "스킬감소", "앤트로픽", "인재전략", "생존"],
+      "slug": "2026-02-01-ai-skill-erosion-anthropic-study",
+      "file": "survival/2026-02-01-ai-skill-erosion-anthropic-study.html",
+      "summary": "앤트로픽이 개발자 52명을 실험한 결과, AI 보조를 쓴 그룹은 학습 점수가 17% 낮았고 속도도 빨라지지 않았다. 생산성이라는 이름 뒤에 실력 저하가 숨어 있다.",
+      "roasting_quote": "AI가 코드를 대신 써준다고 좋아했나? 실력은 17% 빠지고, 속도는 빨라지지도 않았다. 감독 능력까지 잃으면 누가 AI를 감시하나?",
+      "next_post": ""
+    },
+    {
       "title": "AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유",
       "date": "2026-03-09",
       "category": "research",
