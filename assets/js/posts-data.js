@@ -1,6 +1,18 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험",
+      "date": "2026-01-25",
+      "category": "leader",
+      "source": "darioamodei.com (다리오 아모데이)",
+      "tags": ["다리오 아모데이", "Anthropic", "AI위험", "AI규제", "AI안전"],
+      "slug": "2026-01-25-dario-amodei-adolescence-of-technology",
+      "file": "leader/2026-01-25-dario-amodei-adolescence-of-technology.html",
+      "summary": "Anthropic CEO 다리오 아모데이가 강력한 AI의 5가지 문명적 위험을 직접 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과. 위험을 아는 것이 대응의 출발점이다.",
+      "roasting_quote": "AI를 만드는 회사 대표가 AI의 파괴력을 경고하고 있다. 우리는 무엇을 대비해야 할까?",
+      "next_post": ""
+    },
+    {
       "title": "AI를 쓸수록 실력이 떨어진다: 17%의 대가",
       "date": "2026-02-01",
       "category": "survival",
@@ -13,7 +25,7 @@ window.POSTS_DATA = {
       "next_post": ""
     },
     {
-      "title": "AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유",
+      "title": "AI 전환의 '라스트 마일' 문제: 파일럿이 조직에 안착되지 못하는 이유",
       "date": "2026-03-09",
       "category": "research",
       "source": "HBR (Karim R. Lakhani, Jared Spataro, Jen Stave)",

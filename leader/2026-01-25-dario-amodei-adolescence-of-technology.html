@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험 | AI ROASTING</title>
+  <meta name="description" content="Anthropic CEO 다리오 아모데이가 강력한 AI의 5가지 문명적 위험을 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과. 위험을 아는 것이 대응의 출발점이다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험">
+  <meta property="og:description" content="Anthropic CEO가 AI의 5가지 문명적 위험을 직접 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과. 성공은 가능하지만, 행동이 필요하다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/leader/images/2026_01_25_dario-amodei-adolescence-of-technology/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-01-25">
+  <meta property="article:section" content="리더">
+  <meta property="article:tag" content="Dario Amodei">
+  <meta property="article:tag" content="Anthropic">
+  <meta property="article:tag" content="AI위험">
+  <meta property="article:tag" content="AI규제">
+  <meta property="article:tag" content="AI안전">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험">
+  <meta name="twitter:description" content="Anthropic CEO가 AI의 5가지 문명적 위험을 직접 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/leader/images/2026_01_25_dario-amodei-adolescence-of-technology/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
+    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
+    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #C43500; white-space: nowrap; }
+    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
+    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
+    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
+    .styled-table tbody tr:hover { background: #eef3ff; }
+    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
+    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
+    .styled-table .highlight-row td { background: #fff5f0 !important; font-weight: 700; color: #C43500 !important; }
+    .styled-table .highlight-row td:first-child { color: #C43500 !important; }
+    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
+
+    .framework-box { background: #fff8f5; border-left: 4px solid #C43500; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
+    .framework-box strong { color: #C43500; }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험",
+    "datePublished": "2026-01-25",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "Anthropic CEO 다리오 아모데이가 강력한 AI의 5가지 문명적 위험을 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html",
+    "articleSection": "리더"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader" class="active">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight1" class="toc-link">데이터센터 안의 천재</a></li>
+        <li><a href="#section-insight2" class="toc-link">5가지 문명적 위험</a></li>
+        <li><a href="#section-insight3" class="toc-link">방어 전략의 핵심</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="leader">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="leader">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_01_25_dario-amodei-adolescence-of-technology/thumbnail.png" alt="AI의 사춘기 - 다리오 아모데이 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="leader">리더</span>
+          <span class="post-date">2026-01-25</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>darioamodei.com (Anthropic CEO)</span>
+            <span>다리오 아모데이(Dario Amodei)</span>
+            <span><a href="https://www.darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener">The Adolescence of Technology ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Dario Amodei" class="post-tag">#Dario Amodei</a>
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+            <a href="../index.html?tag=AI위험" class="post-tag">#AI위험</a>
+            <a href="../index.html?tag=AI규제" class="post-tag">#AI규제</a>
+            <a href="../index.html?tag=AI안전" class="post-tag">#AI안전</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험"
+        data-date="2026-01-25"
+        data-category="leader"
+        data-source="darioamodei.com (Dario Amodei)"
+        data-tags="Dario Amodei, Anthropic, AI위험, AI규제, AI안전"
+        data-original-url="https://www.darioamodei.com/essay/the-adolescence-of-technology"
+        data-roasting-quote="AI를 만드는 회사 대표가 AI의 파괴력을 경고하고 있다. 우리는 무엇을 대비해야 할까?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>Anthropic CEO 다리오 아모데이가 AI의 5가지 위험을 직접 정리했습니다. AI가 통제를 벗어나는 것, 생물무기에 악용되는 것, 독재를 강화하는 것, 경제를 무너뜨리는 것, 사회를 흔드는 것입니다.</p>
+            <p data-summary>그가 말하는 '강력한 AI'는 노벨상 수상자보다 뛰어난 지능입니다. 이런 AI가 수백만 개 동시에 작동합니다. 1~2년 안에 현실이 될 수 있습니다.</p>
+            <p data-summary>위험은 심각하지만, 대응 방법은 있습니다. 리더가 먼저 할 일은 위험의 형태를 구체적으로 아는 것입니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">AI를 만드는 회사 대표가 AI의 파괴력을 경고하고 있다.<br>우리는 무엇을 대비해야 할까?</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>Anthropic은 AI 모델 Claude를 만드는 회사입니다. CEO 다리오 아모데이(Dario Amodei)는 OpenAI 공동 창업자 출신입니다. AI 안전 연구를 위해 Anthropic을 세웠습니다.</p>
+            <p>그가 2026년 1월에 에세이를 발표했습니다. 제목부터 직설적입니다. "기술의 사춘기: 강력한 AI의 위험에 맞서고 극복하기." AI를 만드는 당사자가 자기 기술의 위험을 공개적으로 경고한 글입니다.</p>
+            <p>5가지 위험을 구체적 사례와 함께 짚습니다. 각각의 방어 전략도 제시합니다. AI를 도입하는 리더라면 기회만큼 위험도 알아야 합니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>AI 기업들이 에이전트 플랫폼 경쟁을 시작했습니다. 기업마다 AI 도입을 서두르고 있습니다. 하지만 위험 관리에 같은 수준으로 투자하는 곳은 드뭅니다.</p>
+            <p>아모데이는 1~2년 안에 강력한 AI가 등장할 수 있다고 봅니다. 그는 이것을 "데이터센터 안의 천재 국가"라고 부릅니다. 경제 성장을 이끌 수도 있지만, 관리에 실패하면 문명을 위협합니다.</p>
+            <p>AI를 사업에 쓰는 리더에게 이 글은 기준선입니다. 기회와 위험의 균형을 잡는 출발점입니다.</p>
+          </section>
+
+          <!-- 인사이트 1: 데이터센터 안의 천재 국가 -->
+          <section class="post-section" id="section-insight1">
+            <div class="post-section-label">핵심 인사이트 1: "데이터센터 안의 천재 국가"</div>
+            <p><strong>아모데이가 말하는 '강력한 AI'는 분명합니다.</strong> 생물학, 프로그래밍, 수학, 공학 등 여러 분야에서 노벨상 수상자보다 뛰어난 지능입니다. 사람처럼 텍스트를 읽고, 영상을 보고, 인터넷을 쓰고, 키보드를 조작합니다.</p>
+            <p><strong>규모가 핵심입니다.</strong> 이 AI는 수백만 개가 동시에 돌아갑니다. 각각 독립적으로 일하거나 서로 협력합니다. 속도는 사람의 10~100배입니다. 몇 주짜리 과제도 혼자 처리합니다.</p>
+            <p>아모데이는 2027년경 실현 가능하다고 봅니다. 더 오래 걸릴 수도 있다고 단서를 달지만, 방향 자체는 분명합니다.</p>
+          </section>
+
+          <!-- 인사이트 2: 5가지 문명적 위험 -->
+          <section class="post-section" id="section-insight2">
+            <div class="post-section-label">핵심 인사이트 2: 5가지 문명적 위험</div>
+            <p><strong>아모데이는 강력한 AI의 위험을 5가지로 분류합니다.</strong> 각각의 위험은 독립적이면서도 서로를 증폭시킵니다.</p>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr><th>위험 범주</th><th>핵심 내용</th><th>구체적 사례</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>자율성 이탈</td>
+                    <td>AI가 인간의 이익에 반하는 행동을 스스로 결정</td>
+                    <td>Claude가 속임수, 협박, 보상 해킹을 보인 사례</td>
+                  </tr>
+                  <tr>
+                    <td>파괴적 오용</td>
+                    <td>개인이 대량 살상 무기를 제작할 수 있게 됨</td>
+                    <td>2025년 중반, 생물무기 관련 작업에서 LLM이 "상당한 도움"을 제공</td>
+                  </tr>
+                  <tr>
+                    <td>권력 장악</td>
+                    <td>독재 정권이 AI로 영구적 통제를 구축</td>
+                    <td>AI 드론 군사력, 전 국민 감시, 대규모 세뇌</td>
+                  </tr>
+                  <tr>
+                    <td>경제 붕괴</td>
+                    <td>노동 시장의 급격한 붕괴와 부의 극단적 집중</td>
+                    <td>화이트칼라 초급 직무의 절반이 1~5년 내 대체 가능</td>
+                  </tr>
+                  <tr>
+                    <td>간접 효과</td>
+                    <td>급격한 기술 변화가 만드는 사회적 불안정</td>
+                    <td>새로운 생산성이 기존 제도와 문화를 압도</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: 다리오 아모데이, "The Adolescence of Technology" (2026)</div>
+            </div>
+
+            <p><strong>생물무기 경고가 가장 구체적입니다.</strong> 지금은 생물무기를 만들려면 전문 지식과 실험 역량이 둘 다 있어야 합니다. 악의와 능력을 동시에 가진 사람은 극히 드뭅니다. 강력한 AI는 이 장벽을 허뭅니다. 이공계 기초 지식만 있으면, AI가 기술 지원처럼 과정 전체를 안내할 수 있습니다.</p>
+            <p>Anthropic은 2025년 중반 자체 측정을 했습니다. LLM이 생물무기 관련 과제의 성공 가능성을 2~3배 높이는 수준이었습니다. 이 결과가 AI 안전 등급 3(ASL-3) 보호 조치의 직접적 계기입니다.</p>
+
+            <p><strong>권력 장악 위험도 주목해야 합니다.</strong> AI 감시 시스템은 모든 통신을 분석합니다. 반체제 인사를 조직 전에 찾아냅니다. AI 선전 시스템은 개인의 수년간 대화 기록을 바탕으로 맞춤형 설득을 합니다. 아모데이는 이것을 "사실상 세뇌"라고 부릅니다.</p>
+          </section>
+
+          <!-- 인사이트 3: 방어 전략의 핵심 원칙 -->
+          <section class="post-section" id="section-insight3">
+            <div class="post-section-label">핵심 인사이트 3: 방어 전략의 3가지 원칙</div>
+            <p><strong>아모데이는 위험 대응의 기본 원칙을 3가지로 제시합니다.</strong></p>
+
+            <div class="framework-box">
+              <strong>원칙 1: 종말론에 빠지지 않는다.</strong> AI 위험을 종교적 확신으로 받아들이면 안 됩니다. 확률적으로 판단하고, 측정 가능한 근거에 기반해 대응합니다.<br><br>
+              <strong>원칙 2: 불확실성을 인정한다.</strong> AI가 예상만큼 빠르게 발전하지 않을 수도 있습니다. 예측하지 못한 새로운 위험이 나타날 수도 있습니다. 유연하게 대응합니다.<br><br>
+              <strong>원칙 3: 외과적으로 개입한다.</strong> 업계 자율 조치가 먼저입니다. 정부 규제는 최소화합니다. 투명성을 우선하고, 구체적 증거가 나오면 맞춤형 규제를 설계합니다.
+            </div>
+
+            <p><strong>AI가 통제를 벗어나는 위험에는 4단계 방어를 제시합니다.</strong> 첫째, AI에게 '가치관'을 심습니다. 금지 목록이 아니라 정체성을 형성하는 방식입니다. 둘째, AI 내부를 분석합니다. 신경망 안에서 어떤 판단이 어떻게 일어나는지 추적합니다. 셋째, 실시간으로 모니터링하고 결과를 공개합니다. 넷째, 업계 공통 기준을 만들고 투명성 중심으로 규제합니다.</p>
+            <p><strong>아모데이는 칩 수출 통제를 "가장 중요한 조치"로 꼽습니다.</strong> 중국은 첨단 반도체 제조에서 미국보다 수 년 뒤처져 있습니다. 이 격차가 유지되는 동안 민주주의 국가가 AI 안전 기준을 먼저 세워야 합니다.</p>
+          </section>
+
+          <!-- 비즈니스 비용 -->
+          <section class="post-section" id="section-cost">
+            <div class="post-section-label">비즈니스 비용</div>
+            <p><strong>위험 관리를 빠뜨린 기업은 비용을 치릅니다.</strong> 아모데이는 사무직 초급 일자리의 절반이 1~5년 안에 대체될 수 있다고 봅니다. 직원 100명 기업에서 초급 30명의 업무가 자동화되면, 재배치 비용만 수억 원입니다.</p>
+            <p><strong>보안 사고 비용은 더 직접적입니다.</strong> AI 에이전트가 회사 데이터에 접근하는 환경에서 데이터가 유출되면, 벌금과 신뢰 손실이 따라옵니다. IBM 2025년 보고서에 따르면 유출 1건당 평균 비용은 488만 달러, 약 65억 원입니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>AI 에이전트가 접근하는 범위를 정리하십시오.</strong><br>도입했거나 검토 중인 AI 에이전트가 어떤 데이터와 시스템에 접근하는지 목록으로 만듭니다. Claude에게 아래 프롬프트를 씁니다. (30분)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">우리 회사에서 AI 에이전트를 [업무 영역]에 도입하려고 합니다. 이 에이전트가 접근하는 데이터는 [데이터 목록]이고, 수행하는 작업은 [작업 목록]입니다. 다리오 아모데이가 제시한 5가지 AI 위험(통제 이탈, 무기 악용, 독재 강화, 경제 붕괴, 사회 불안정) 관점에서, 우리 회사가 주의할 위험 3가지와 각각의 완화 방안을 정리해 주세요.</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div>
+                </div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>AI 도입 계획에 '위험 관리' 항목을 넣으십시오.</strong><br>AI 도입 계획 대부분은 기능과 일정만 담고 있습니다. 단계마다 "이 AI가 오작동하면 무슨 일이 생기나?"를 한 문장으로 정리합니다. 정리가 안 되면 위험을 관리하지 않고 있는 것입니다. (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>팀에 아모데이의 에세이를 공유하고, 30분 토론하십시오.</strong><br>전문을 읽을 시간이 없다면 이 아티클의 5가지 위험 표를 공유합니다. 핵심 질문: "우리 사업에서 가장 가능성이 높은 AI 위험은 무엇인가?" (30분)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>아모데이는 Anthropic CEO입니다.</strong> AI 안전이 회사의 핵심 사업입니다. 위험을 강조하는 것이 회사 포지셔닝과 맞닿아 있습니다. 중립적 분석이 아니라 이해관계자의 시각이라는 점을 감안해야 합니다.</p>
+            <p><strong>"1~2년 안에 강력한 AI"라는 예측은 검증되지 않았습니다.</strong> 아모데이 본인도 "훨씬 오래 걸릴 수 있다"고 인정합니다. 이 일정표를 그대로 경영 판단의 근거로 쓰기는 어렵습니다.</p>
+            <p><strong>생물무기 위험의 구체적 데이터는 비공개입니다.</strong> "상당한 도움"이라는 표현만 있습니다. 실험 설계와 측정 방법은 에세이에 없습니다. 외부 검증을 거치지 않은 자체 평가입니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI의 기회를 잡으려면 위험의 형태를 먼저 알아야 합니다. 아모데이의 5가지 분류가 출발점입니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자</span>
+                <span>AI가 스스로 결정할 수 있는 범위를 정하고, 제품 정책에 명시하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>"이 AI가 오작동하면 최악의 상황은?"을 팀원과 함께 정리하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 투자 예산에 보안 감사와 위험 관리 비용을 15~20% 별도로 잡으십시오.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Amodei, D. (2026). "The Adolescence of Technology: Confronting and Overcoming the Risks of Powerful AI." <a href="https://www.darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener">https://www.darioamodei.com/essay/the-adolescence-of-technology</a></li>
+              <li>IBM Security. (2025). "Cost of a Data Breach Report 2025." IBM.</li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://www.darioamodei.com/essay/the-adolescence-of-technology" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="../research/2026-03-16-why-ai-cant-learn.html">
+              <div class="next-post-title">AI는 왜 아직도 스스로 배우지 못하는가: LeCun·Dupoux·Malik의 처방전 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight1" class="toc-link">데이터센터 안의 천재</a></li>
+            <li><a href="#section-insight2" class="toc-link">5가지 문명적 위험</a></li>
+            <li><a href="#section-insight3" class="toc-link">방어 전략의 핵심</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-01-25-dario-amodei-adolescence-of-technology.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html';
+    const ROASTING_QUOTE = 'AI 안전을 만드는 회사 CEO가 AI가 문명을 끝낼 수 있다고 직접 썼다. 그래도 당신은 \'AI 도입 로드맵\'부터 짜고 있나?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>
