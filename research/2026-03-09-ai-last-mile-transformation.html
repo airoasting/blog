@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유 | AI ROASTING</title>
+  <meta name="description" content="하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 운영 모델로 전환되지 못하는 7가지 구조적 마찰과 프론티어 기업의 청사진.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유">
+  <meta property="og:description" content="하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 전사 운영 모델로 전환하지 못하는 7가지 구조적 마찰.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-03-09-ai-last-mile-transformation.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/research/images/2026_03_09_ai-last-mile-transformation/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-09">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI전환">
+  <meta property="article:tag" content="조직변혁">
+  <meta property="article:tag" content="HBR">
+  <meta property="article:tag" content="임원">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유">
+  <meta name="twitter:description" content="하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 전사 운영 모델로 전환하지 못하는 7가지 구조적 마찰.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/research/images/2026_03_09_ai-last-mile-transformation/thumbnail.png">
+
+  <!-- Fonts -->
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유",
+    "datePublished": "2026-03-09",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 운영 모델로 전환되지 못하는 7가지 구조적 마찰과 프론티어 기업의 청사진.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-03-09-ai-last-mile-transformation.html",
+    "articleSection": "리서치"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <a href="../about/index.html" class="about-link">About</a>
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research" class="active">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_09_ai-last-mile-transformation/thumbnail.png" alt="AI 전환의 라스트 마일 문제 썸네일">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-03-09</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>HBR</span>
+            <span>Karim R. Lakhani, Jared Spataro, Jen Stave</span>
+            <span><a href="https://hbr.org/2026/03/the-last-mile-problem-slowing-ai-transformation" target="_blank" rel="noopener">The "Last Mile" Problem Slowing AI Transformation ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI전환" class="post-tag">#AI전환</a>
+            <a href="../index.html?tag=조직변혁" class="post-tag">#조직변혁</a>
+            <a href="../index.html?tag=HBR" class="post-tag">#HBR</a>
+            <a href="../index.html?tag=임원" class="post-tag">#임원</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유"
+        data-date="2026-03-09"
+        data-category="research"
+        data-source="HBR"
+        data-tags="AI전환, 조직변혁, HBR, 임원"
+        data-original-url="https://hbr.org/2026/03/the-last-mile-problem-slowing-ai-transformation"
+        data-roasting-quote="AI 파일럿 250개를 돌리고 있다고? 그중 전사 운영 모델이 된 것은 몇 개인지 세어 보라. 파일럿은 전략이 아니라 면피다."
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>대부분의 대기업은 수백 개의 AI 파일럿을 운영하지만, 전사 운영 모델로 전환한 곳은 거의 없습니다.</p>
+        <p data-summary>하버드·마이크로소프트 공동 연구는 기술이 아닌 조직 설계, 거버넌스, 프로세스 부채 등 7가지 구조적 마찰을 병목으로 지목합니다.</p>
+        <p data-summary>프론티어 기업은 레거시 워크플로를 버리고 AI를 전제로 프로세스를 처음부터 다시 설계하고 있습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI 파일럿 250개를 돌리고 있다고?<br>그중 전사 운영 모델이 된 것은 몇 개인지 세어 보라.<br>파일럿은 전략이 아니라 면피다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>글로벌 투자은행 한 곳은 LLM 연동 앱을 250개 넘게 만들었습니다. 식음료 기업 한 곳은 185개국에서 AI 파일럿을 성공시켰습니다. 의류 기업 한 곳은 재무 프로세스 1만 8천 건을 자동화했습니다. 그런데 이 기업들이 한결같이 고백합니다. "파일럿은 성공했지만, 회사 운영 방식은 바뀌지 않았다." 왜 그런지를 하버드 경영대학원과 마이크로소프트의 공동 연구 조직 Frontier Firm Initiative(FFI)가 밝혔습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>대기업 대부분은 AI 파일럿을 수백 개 운영하고 있습니다. Copilot과 ChatGPT도 전사에 깔았습니다. 그런데 개인의 생산성이 올라도 조직 전체 성과에는 반영되지 않습니다. FFI는 12개 글로벌 기업 경영진을 하버드 비밀 서밋에 초대하여, AI 전환이 멈춘 지점을 진단했습니다. 결론은 명확합니다. 병목은 모델 성능이나 데이터가 아닙니다. 기술과 조직 설계가 만나는 '라스트 마일'이 문제입니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트: 전환을 막는 7가지 마찰</div>
+        <p>FFI 연구와 서밋 참가 기업의 증언을 종합하면, AI 전환의 라스트 마일을 가로막는 구조적 마찰은 7가지입니다.</p>
+
+        <p><strong>마찰 1. 파일럿은 넘치지만 전환은 없다.</strong> LLM 연동 앱 250개, 185개국 파일럿, 재무 자동화 1만 8천 건. 수치는 인상적입니다. 그러나 이 성공을 반복 가능한 운영 모델로 바꾸는 경로가 없습니다. 파일럿에서 표준 프로세스로 넘어가는 체계 자체가 부재합니다.</p>
+
+        <p><strong>마찰 2. 생산성은 올랐지만 재무제표에는 안 잡힌다.</strong> 글로벌 결제 네트워크 한 곳은 직원 99% 이상이 코파일럿을 씁니다. 제조사 한 곳은 엔지니어 수천 명의 코딩 생산성이 두 자릿수로 올랐습니다. 그런데 재무팀이 인건비 절감이나 사이클 타임 단축을 확인하려 하면, 답이 불명확합니다. 절약된 시간이 회의, 불필요한 이메일 등 낮은 가치 활동으로 다시 빨려 들어가기 때문입니다.</p>
+
+        <p><strong>마찰 3. AI가 프로세스 부채를 드러낸다.</strong> 대형 의료보험사 한 곳에서 AI는 워크플로 불일치를 해결보다 빠르게 발견했습니다. 170개국 이상에서 사업하는 전문 서비스 기업 한 곳은, 같은 프로세스를 지역마다 수십 가지 방식으로 처리하고 있었습니다. AI를 올려놓기 전에, 프로세스 자체를 다시 설계해야 합니다.</p>
+
+        <p><strong>마찰 4. 암묵지가 정체성 문제를 일으킨다.</strong> 수십 년 경력 전문가의 암묵지는 문서화되어 있지 않습니다. 그 지식이 곧 그 사람의 지위입니다. AI는 그 판단을 시스템에 넣으라고 요구합니다. 엔지니어링 컨설팅 기업 한 곳은 이를 스킬 문제가 아니라 정체성 문제로 규정했습니다. 전문가가 자기 역할이 줄어든다고 느끼면, 전환은 멈춥니다.</p>
+
+        <p><strong>마찰 5. 에이전트 시대에 거버넌스가 병목이 된다.</strong> AI가 계약서를 몇 초 만에 작성해도, 리스크 프레임워크가 에이전트 속도에 맞춰 바뀌지 않으면 법무 검토 대기열에서 2주가 걸립니다. 글로벌 은행 한 곳은 인간 검토 통제가 멀티 에이전트 아키텍처에서 작동하지 않는다고 보고했습니다. 에이전트를 100개 넘게 운영하는 자산 서비스 기관은, 수만 개 에이전트 시대를 이미 준비하고 있습니다. 에이전트를 온보딩하고, 평가하고, 보안을 관리하고, 퇴역시키는 일은 IT보다 HR에 가깝습니다.</p>
+
+        <p><strong>마찰 6. 아키텍처 복잡성이 속도를 잡아먹는다.</strong> 기업 대부분은 여러 클라우드와 앱 스택에 걸쳐 AI를 운영합니다. 의류 기업 한 곳은 SAP, Microsoft, Google 환경의 에이전트를 연동하는 데만 수개월이 걸렸습니다. 플랫폼이 프로젝트보다 빠르게 바뀌니, 새 모델이 나올 때마다 다시 시작하고 싶은 유혹이 생깁니다.</p>
+
+        <p><strong>마찰 7. 효율성 함정에 빠져 있다.</strong> AI를 비용 절감 도구로만 포지셔닝하면, 중간 관리자는 방어적으로 움직이고 C레벨의 야망은 쪼그라듭니다. 데이터·분석 자문사 한 곳은 효율성에만 집착하면 판단력이나 스토리텔링 같은 고부가가치 역량이 빈곤해진다고 경고했습니다. 기존 업무에서 몇 분을 깎는 것이 아니라, 가치를 만드는 방식 자체를 다시 설계해야 합니다.</p>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>라스트 마일을 해결하지 못하면 비용은 구체적으로 쌓입니다.</p>
+
+        <p><strong>절약된 시간이 증발합니다.</strong> 개인 생산성이 올라도, 역할과 예산을 조직 차원에서 재설계하지 않으면 절약된 시간은 회의와 저가치 업무로 다시 빨려 들어갑니다. 재무제표에는 아무 변화도 나타나지 않습니다.</p>
+
+        <p><strong>파일럿 비용은 쌓이고, 전환 가치는 제로입니다.</strong> 수백 개 파일럿의 운영 비용(인력, 인프라, 라이선스)은 매달 발생합니다. 그러나 표준 운영 모델로 전환되지 않으면, 이 투자는 일회성 실험비로 사라집니다.</p>
+
+        <p><strong>거버넌스 지연이 에이전트 가치를 깎아먹습니다.</strong> AI 에이전트가 계약서를 수초 만에 작성해도, 수동 검토에 2주가 걸리면 병목만 옮긴 셈입니다. 속도의 이점이 사라집니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 파일럿 → 운영 모델 전환율을 측정하세요.</strong><br>현재 운영 중인 AI 파일럿 수와 그중 표준 운영 프로세스로 전환된 수를 세어 보세요. 전환율이 10% 미만이면, 파일럿 추가가 아니라 전환 경로 설계가 우선입니다. (예상 30분)
+              <div class="prompt-block">
+                <pre class="prompt-text">우리 회사의 AI 파일럿 현황을 정리할게.
+[파일럿명, 부서, 시작일, 현재 상태(실험/확대/표준화), 측정된 효과]
+1. 전체 파일럿 중 표준 운영 프로세스로 전환된 비율을 계산해 줘.
+2. 전환되지 못한 파일럿의 공통 병목을 분석해 줘.
+3. 전환율을 높이기 위한 우선순위 3가지를 제안해 줘.</pre>
+                <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+              </div>
+            </div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>절약된 시간의 재배치 계획을 수립하세요.</strong><br>AI 도구로 절약된 시간이 어디로 갔는지 추적하세요. 회의가 늘었다면 시간이 재흡수된 것입니다. 절약된 시간을 고부가가치 업무로 명시적으로 재배치하는 정책을 만드세요. (예상 1시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>핵심 프로세스 1개를 클린시트로 재설계하세요.</strong><br>레거시 워크플로에 AI를 덧붙이지 마세요. "오늘 이 프로세스를 AI 에이전트와 함께 처음부터 설계한다면 어떤 단계가 존재할까?"라는 질문으로 시작하세요. 가장 반복적이고 예외가 많은 프로세스 1개를 선택하세요. (예상 반나절, 크로스펑셔널 워크숍)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>에이전트 거버넌스 프레임워크를 설계하세요.</strong><br>에이전트를 소프트웨어가 아니라 디지털 인력으로 관리하세요. 누가 에이전트를 생성할 수 있는지, 어떤 행동을 할 수 있는지, 문제가 생기면 책임은 누구에게 있는지를 정의하세요. (예상 2시간, 에이전트 통제 정책 초안)
+              <div class="prompt-block">
+                <pre class="prompt-text">우리 회사에서 AI 에이전트 거버넌스 프레임워크를 만들려고 해.
+에이전트 관리를 HR 관리처럼 설계해 줘.
+포함할 항목:
+- 에이전트 온보딩 절차 (승인, 권한 범위)
+- 성과 모니터링 대시보드 항목
+- 보안 권한 관리 기준
+- 에이전트 퇴역(폐기) 절차
+- 책임 소재 매핑 (에이전트 오류 시 누가 책임지는가)</pre>
+                <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>서밋 참가 기업은 이미 선도 기업입니다.</strong> 이 연구는 12개 글로벌 기업 경영진의 비공개 서밋 증언에 기반합니다. 이들은 AI 배포 수백 건을 완료한 열성 도입자입니다. 대부분의 기업은 이 단계에 아직 도달하지 못했습니다. 라스트 마일 이전에 가야 할 마일이 더 많습니다.</p>
+
+        <p><strong>클린시트 재설계에는 비용과 저항이 따릅니다.</strong> 레거시 워크플로를 버리고 처음부터 다시 만드는 것은 이론적으로 매력적입니다. 하지만 실행하면 정치적 저항과 전환 비용이 상당합니다. 기존 시스템 의존도를 사전에 파악해야 합니다.</p>
+
+        <p><strong>암묵지 코드화는 정체성 갈등을 수반합니다.</strong> 전문가에게 "당신의 판단을 시스템에 넣으라"고 요구하면, 그 사람의 조직 내 가치가 위협받습니다. "유산 구축"이나 "고위 역할 전환"이라는 프레이밍 없이 밀어붙이면, 핵심 인재가 떠납니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 전환의 병목은 기술이 아니라 운영 모델, 거버넌스, 인간의 정체성입니다. 파일럿을 늘리는 것이 아니라, 조직을 다시 설계할 의지가 있는가가 라스트 마일을 결정합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 파일럿 수가 아니라 전사 운영 모델 전환율을 KPI로 설정하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>절약된 시간이 어디로 갔는지 추적하고, 고부가가치 업무로 명시적으로 재배치하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>핵심 프로세스 1개를 AI 전제로 클린시트 재설계하고, 에이전트 거버넌스를 HR처럼 설계하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Lakhani, K. R., Spataro, J., & Stave, J. (2026). "The 'Last Mile' Problem Slowing AI Transformation", Harvard Business Review, March 2026.</li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://hbr.org/2026/03/the-last-mile-problem-slowing-ai-transformation" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-02-09-ai-intensifies-work.html">
+          <div class="next-post-title">AI는 일을 줄이지 않는다, 더 늘리고 있다 →</div>
+        </a>
+      </div>
+      </div><!-- /post-body -->
+
+      <nav class="toc-sidebar" id="tocSidebar">
+        <ul class="toc-list">
+          <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+          <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+          <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+          <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+          <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+          <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+          <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+          <li><a href="#section-risk" class="toc-link">리스크</a></li>
+          <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+          <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        </ul>
+      </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-09-ai-last-mile-transformation.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-03-09-ai-last-mile-transformation.html';
+    const ROASTING_QUOTE = 'AI 파일럿 250개를 돌리고 있다고? 그중 전사 운영 모델이 된 것은 몇 개인지 세어 보라. 파일럿은 전략이 아니라 면피다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', () =>
+      document.getElementById('mobileNav').classList.toggle('open'));
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

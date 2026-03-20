@@ -1,6 +1,30 @@
 {
   "posts": [
     {
+      "title": "AI 전환의 '라스트 마일' 문제: 250개 파일럿이 운영 모델이 되지 못하는 이유",
+      "date": "2026-03-09",
+      "category": "research",
+      "source": "HBR (Karim R. Lakhani, Jared Spataro, Jen Stave)",
+      "tags": ["AI전환", "조직변혁", "HBR", "임원"],
+      "slug": "2026-03-09-ai-last-mile-transformation",
+      "file": "research/2026-03-09-ai-last-mile-transformation.html",
+      "summary": "하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 전사 운영 모델로 전환하지 못하는 7가지 구조적 마찰.",
+      "roasting_quote": "AI 파일럿 250개를 돌리고 있다고? 그중 전사 운영 모델이 된 것은 몇 개인지 세어 보라. 파일럿은 전략이 아니라 면피다.",
+      "next_post": ""
+    },
+    {
+      "title": "AI는 왜 아직도 스스로 배우지 못하는가: LeCun·Dupoux·Malik의 처방전",
+      "date": "2026-03-16",
+      "category": "research",
+      "source": "arXiv (Dupoux, LeCun, Malik)",
+      "tags": ["자율학습", "LeCun", "인지과학", "MLOps"],
+      "slug": "2026-03-16-why-ai-cant-learn",
+      "file": "research/2026-03-16-why-ai-cant-learn.html",
+      "summary": "배포된 AI는 스스로 배우는 능력이 0이다. META·UC Berkeley 연구진이 관찰(System A), 행동(System B), 메타 제어(System M) 3요소 프레임워크로 자율 학습의 청사진을 제시했다.",
+      "roasting_quote": "ChatGPT가 똑똑하다고? 배포된 순간 학습 능력은 0이다. 3살짜리 아이보다 못 배우는 AI에 전사 전략을 걸고 있다면, 그 전략부터 다시 배워야 한다.",
+      "next_post": ""
+    },
+    {
       "title": "Nvidia NemoClaw: AI 에이전트 플랫폼의 경쟁 축이 보안으로 이동한다",
       "date": "2026-03-16",
       "category": "company",
