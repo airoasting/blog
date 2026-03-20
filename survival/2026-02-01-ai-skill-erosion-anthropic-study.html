@@ -32,6 +32,26 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <style>
+    .chart-wrap { position: relative; margin: 24px 0; background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 20px 16px 12px; }
+    .chart-title { font-size: 0.78rem; font-weight: 700; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
+    .chart-wrap canvas { max-height: 380px; }
+    .chart-note { font-size: 0.75rem; color: #aaa; margin-top: 8px; text-align: right; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+    .stat-card { background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-card .stat-num { font-size: 1.6rem; font-weight: 800; color: #1a1a1a; line-height: 1.2; }
+    .stat-card .stat-label { font-size: 0.75rem; color: #888; margin-top: 4px; }
+    .stat-card.negative .stat-num { color: #dc2626; }
+    .stat-card.positive .stat-num { color: #16a34a; }
+    .quote-block { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; font-style: italic; color: #78350f; }
+    .quote-block .quote-source { font-style: normal; font-size: 0.78rem; color: #92400e; margin-top: 8px; display: block; }
+    .methodology-box { background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
+    .methodology-box strong { color: #1e40af; }
+  </style>
+
   <!-- JSON-LD -->
   <script type="application/ld+json">
   {
@@ -117,7 +137,10 @@
         <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
         <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
         <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-method" class="toc-link">실험 설계</a></li>
         <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-patterns" class="toc-link">6가지 사용 패턴</a></li>
+        <li><a href="#section-mechanism" class="toc-link">왜 실력이 떨어지나</a></li>
         <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
         <li><a href="#section-action" class="toc-link">내일 당장</a></li>
         <li><a href="#section-risk" class="toc-link">리스크</a></li>
@@ -198,7 +221,38 @@
       <!-- 블록 2: 컨텍스트 -->
       <section class="post-section" id="section-context">
         <div class="post-section-label">왜 지금 중요한가</div>
-        <p>기업들이 AI 코딩 보조 도구를 전사적으로 도입하고 있습니다. 그런데 AI가 코드를 대신 쓰는 시대에 개발자의 실력이 떨어지면, AI가 만든 결과물을 검증할 사람도 함께 사라집니다. 앤트로픽의 Judy Shen과 Alex Tamkin은 이 문제를 52명 대상 무작위 대조 실험으로 검증했습니다. AI 보조가 실력에 미치는 영향을 정량적으로 측정한 첫 번째 연구 중 하나입니다.</p>
+        <p>기업마다 AI 코딩 보조 도구를 전사적으로 도입하고 있습니다. 그런데 AI가 코드를 대신 써주면 개발자의 실력은 떨어지고, 결국 AI가 만든 결과물을 검증할 사람까지 사라집니다. 앤트로픽의 Judy Hanwen Shen과 Alex Tamkin은 이 문제를 개발자 52명을 대상으로 한 무작위 대조 실험(RCT)으로 검증했습니다. AI 보조가 실력 형성(Skill Formation)에 미치는 영향을 정량적으로 측정한 최초의 연구 중 하나입니다.</p>
+      </section>
+
+      <!-- 블록 2.5: 실험 설계 -->
+      <section class="post-section" id="section-method">
+        <div class="post-section-label">실험 설계</div>
+        <div class="methodology-box">
+          <strong>연구 방법론</strong><br>
+          무작위 대조 실험(RCT)으로, 참가자 52명을 AI 보조 그룹(26명)과 대조 그룹(26명)으로 나눴습니다. 본 실험 전에 4차례 파일럿(A~D, 총 186명)을 진행하며 실험 설계를 정교하게 다듬었습니다.
+        </div>
+        <p><strong>참가자:</strong> Python 경력 1년 이상인 현직 개발자와 프리랜서 52명이 참여했습니다. 모두 매주 Python을 사용하고, AI 도구 경험이 있으며, Trio 라이브러리는 써본 적이 없는 사람들입니다. 경력 분포는 1~3년 4명, 4~6년 19명, 7년 이상 29명으로, 대다수가 시니어급이었습니다.</p>
+        <p><strong>과제:</strong> 참가자들은 비동기 Python 라이브러리 Trio를 처음 학습하면서 2가지 코딩 과제(35분 제한)를 수행했습니다. 과제가 끝난 뒤 14문항 퀴즈(27점 만점)로 학습 성과를 측정했습니다. AI 그룹에는 GPT-4o 채팅 인터페이스를 제공했고, 대조 그룹은 공식 문서만 참조할 수 있었습니다.</p>
+        <p><strong>보상:</strong> 참가자에게 $150를 정액 지급했습니다(약 75분 소요). 성과에 따른 추가 보상은 없었기 때문에, "빨리 끝내야 더 받는다"는 동기 왜곡을 방지했습니다.</p>
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-num">52명</div>
+            <div class="stat-label">참가자 (각 26명)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">35분</div>
+            <div class="stat-label">코딩 과제 제한시간</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">14문항</div>
+            <div class="stat-label">퀴즈 (27점 만점)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4회</div>
+            <div class="stat-label">파일럿 실험 (n=186)</div>
+          </div>
+        </div>
       </section>
 
       <!-- 블록 3: 핵심 인사이트 -->
@@ -206,25 +260,91 @@
         <div class="post-section-label">핵심 인사이트</div>
         <p>경영 리더가 이 연구에서 주목해야 할 포인트는 4가지입니다.</p>
 
-        <p><strong>첫째, AI 보조를 쓴 개발자는 학습 점수가 17% 낮았습니다.</strong> 연구진은 52명의 개발자를 두 그룹으로 나누고, 새로운 비동기 Python 라이브러리(Trio)를 학습하게 했습니다. AI를 쓴 그룹은 27점 만점 퀴즈에서 평균 4.15점 낮은 점수를 받았습니다. 효과 크기(Cohen's d)는 0.738로, 통계적으로 유의미한 수준입니다(p = 0.010).</p>
+        <p><strong>첫째, AI를 쓴 개발자의 학습 점수가 17% 낮았습니다.</strong> AI 그룹은 27점 만점 퀴즈에서 평균 18.8점을 받았고, 대조 그룹은 22.95점을 받았습니다. 4.15점 차이입니다. 효과 크기(Cohen's d)는 0.738로, 통계적으로 유의미합니다(p = 0.010). 사전 워밍업 점수를 통제해도 결과는 거의 같았습니다(d = 0.725, p = 0.016).</p>
 
-        <p><strong>둘째, 작업 속도도 빨라지지 않았습니다.</strong> AI를 쓴 그룹과 안 쓴 그룹 사이에 작업 완료 시간의 유의미한 차이가 없었습니다. 일부 참가자는 AI에게 질문을 작성하는 데만 전체 시간의 30%를 썼습니다. AI와 주고받는 대화 자체가 시간을 잡아먹은 것입니다. 결국, 생산성은 그대로인데 실력만 떨어진 셈입니다.</p>
+        <div class="chart-wrap">
+          <div class="chart-title">퀴즈 점수 비교: AI 그룹 vs 대조 그룹 (27점 만점)</div>
+          <canvas id="chartQuizScore"></canvas>
+          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 6. Cohen's d = 0.738, p = 0.010</div>
+        </div>
 
-        <p><strong>셋째, 디버깅 능력이 가장 크게 떨어졌습니다.</strong> AI를 쓴 그룹은 오류를 직접 겪는 횟수가 적었습니다. 제어 그룹의 오류 중앙값은 3.0건이었지만, AI 그룹은 1.0건에 불과했습니다. 오류를 겪지 않으니 해결 능력도 쌓이지 않았고, 퀴즈에서도 디버깅 문제의 점수 격차가 가장 컸습니다.</p>
+        <p><strong>둘째, AI를 써도 작업 속도는 빨라지지 않았습니다.</strong> AI 그룹의 과제 완료 중앙값은 19.5분, 대조 그룹은 23분이었지만, 이 차이는 통계적으로 유의미하지 않았습니다. 이유가 있습니다. 일부 참가자는 AI에게 보낼 질문을 작성하는 데만 전체 시간의 30%(최대 11분)를 소비했습니다. 코드 생성으로 아낀 시간을, AI와의 대화에 고스란히 다시 쓴 셈입니다. 생산성은 그대로인데 실력만 떨어졌습니다.</p>
 
-        <p><strong>넷째, AI를 어떻게 쓰느냐에 따라 결과가 갈렸습니다.</strong> 연구진은 6가지 사용 패턴을 발견했습니다. 코드 생성을 통째로 맡긴 그룹은 평균 점수가 40% 미만이었습니다. 반면, 개념적 질문만 던진 그룹은 65~86%의 높은 점수를 기록했습니다. AI에게 무엇을 시키느냐가 실력 보존 여부를 결정합니다.</p>
+        <p><strong>셋째, 디버깅 능력에서 격차가 가장 컸습니다.</strong> AI 그룹은 오류를 직접 겪을 일이 적었습니다. 대조 그룹의 오류 중앙값이 3.0건(IQR: 2~5건)인 데 비해, AI 그룹은 1.0건(IQR: 0~3건)에 그쳤습니다. 오류 없이 과제를 끝낸 12명 가운데 10명이 AI 그룹이었습니다. 오류를 겪지 않으니 해결 능력도 쌓이지 않았고, 퀴즈에서도 디버깅 문항의 점수 격차가 가장 벌어졌습니다.</p>
+
+        <div class="chart-wrap">
+          <div class="chart-title">오류 발생 빈도 (중앙값): AI 그룹 vs 대조 그룹</div>
+          <canvas id="chartErrors"></canvas>
+          <div class="chart-note">출처: Shen & Tamkin (2025), Table 4. 오류 없이 완료한 참가자: AI 그룹 10명, 대조 그룹 2명</div>
+        </div>
+
+        <p><strong>넷째, AI를 어떻게 쓰느냐에 따라 결과가 완전히 갈렸습니다.</strong> 연구진은 AI 그룹에서 6가지 사용 패턴을 발견했습니다. 코드 생성을 통째로 맡긴 참가자들은 점수가 40% 미만이었고, 개념적 질문만 던진 참가자 7명은 65~86%를 기록했습니다. AI에게 무엇을 시키느냐가 실력이 남느냐 사라지느냐를 결정합니다.</p>
+
+        <div class="chart-wrap">
+          <div class="chart-title">문항 유형별 점수 격차 (대조 그룹 대비 AI 그룹 감소폭)</div>
+          <canvas id="chartQuestionType"></canvas>
+          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 8. 디버깅 영역에서 가장 큰 격차 발생</div>
+        </div>
+      </section>
+
+      <!-- 블록 3.3: 6가지 AI 사용 패턴 -->
+      <section class="post-section" id="section-patterns">
+        <div class="post-section-label">6가지 AI 사용 패턴</div>
+        <p>연구진은 AI 그룹 25명의 대화 로그를 분석해 6가지 사용 패턴을 찾아냈습니다. 흥미로운 점은, 점수가 40% 미만이거나 65% 이상으로 극단적으로 갈렸다는 것입니다. 중간 지대가 거의 없었습니다.</p>
+
+        <div class="chart-wrap">
+          <div class="chart-title">6가지 AI 사용 패턴별 퀴즈 점수 범위 (%)</div>
+          <canvas id="chartPatterns"></canvas>
+          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 11. 빨간색 = 저성과 패턴, 초록색 = 고성과 패턴</div>
+        </div>
+
+        <p><strong>저성과 패턴 (점수 40% 미만):</strong></p>
+        <p><strong>1. AI 위임(AI Delegation, 4명):</strong> 코딩을 통째로 AI에게 맡겼습니다. 과제는 가장 빨리 끝났지만(약 19.5분), 오류를 거의 겪지 않았기 때문에 학습이 일어나지 않았습니다.</p>
+        <p><strong>2. 점진적 의존(Progressive AI Reliance, 4명):</strong> 처음에는 1~2개 질문으로 시작했다가 점차 AI에게 전부 맡기는 쪽으로 기울었습니다. Task 2의 핵심 개념을 끝내 숙달하지 못했습니다.</p>
+        <p><strong>3. 반복적 AI 디버깅(Iterative AI Debugging, 4명):</strong> 오류가 날 때마다 에러 메시지를 AI에게 붙여넣었습니다. 질의 횟수는 가장 많았지만, 점수는 가장 낮았습니다.</p>
+
+        <p><strong>고성과 패턴 (점수 65~86%):</strong></p>
+        <p><strong>4. 생성-후-이해(Generation-Then-Comprehension, 2명):</strong> AI가 생성한 코드를 직접 타이핑하면서 옮긴 뒤, "이 부분은 왜 이렇게 쓰나?"라는 후속 질문을 던졌습니다. 코드를 받되 이해를 확인하는 단계가 핵심이었습니다.</p>
+        <p><strong>5. 하이브리드 코드-설명(Hybrid Code-Explanation, 3명):</strong> 코드 생성과 설명을 동시에 요청했습니다. 설명을 읽느라 시간이 더 걸렸지만, 개념 이해도는 높았습니다.</p>
+        <p><strong>6. 개념적 질의(Conceptual Inquiry, 7명):</strong> AI에게는 개념만 물어보고, 코드는 직접 작성했습니다. 오류를 많이 겪었지만 스스로 해결했고, 고성과 패턴 중 가장 빠른 완료 시간(약 21.5분)을 기록했습니다.</p>
+
+        <div class="quote-block">
+          "게을러진 것 같아요. Trio 라이브러리 소개와 코드 예제를 평소처럼 꼼꼼히 읽지 않았습니다."
+          <span class="quote-source">— AI 그룹 참가자 (실험 후 설문)</span>
+        </div>
+      </section>
+
+      <!-- 블록 3.4: 매개 메커니즘 -->
+      <section class="post-section" id="section-mechanism">
+        <div class="post-section-label">왜 실력이 떨어지나: 3가지 메커니즘</div>
+
+        <p><strong>메커니즘 1: 오류를 겪을 기회가 차단됩니다.</strong> 대조 그룹은 Trio 고유의 개념적 오류를 직접 만났습니다. "코루틴을 대기하지 않았다"는 RuntimeWarning, 타입이 맞지 않는다는 TypeError 같은 오류입니다. 이런 오류를 직접 해결하는 과정 자체가 학습이었습니다. 반면 AI 그룹은 오타 수준의 문법 오류(NameError, AttributeError)만 경험했습니다. AI가 개념적 시행착오를 미리 막아버린 것입니다.</p>
+
+        <p><strong>메커니즘 2: 생각을 AI에게 떠넘깁니다(Cognitive Offloading).</strong> AI 그룹은 코드를 직접 쓰는 시간이 줄어든 대신, AI 출력을 읽고 이해하는 시간이 늘어났습니다. 문제는 "읽는 것"과 "직접 해보는 것"의 학습 효과가 다르다는 점입니다. 실제로 능동적 코딩 시간이 많은 참가자일수록 퀴즈 점수가 높았습니다.</p>
+
+        <p><strong>메커니즘 3: AI와의 대화가 시간을 잡아먹습니다.</strong> 일부 참가자는 질문 하나를 쓰는 데 6분, 전체 AI 대화에 11분 넘게 썼습니다. 35분짜리 과제에서 이는 전체 시간의 30%가 넘습니다. 코드 생성으로 아낀 시간을 질문 작성과 응답 이해에 고스란히 되돌려준 셈입니다.</p>
+
+        <div class="quote-block">
+          "아직 이해에 많은 빈틈이 있습니다. AI 설명을 좀 더 시간을 들여 이해했어야 했는데..."
+          <span class="quote-source">— AI 그룹 참가자 (실험 후 설문)</span>
+        </div>
+
+        <div class="quote-block">
+          "'start_soon' 메서드 같은 단순한 것도 이해하지 못했습니다. 아무것도 남지 않은 느낌입니다."
+          <span class="quote-source">— AI 그룹 참가자 (실험 후 설문)</span>
+        </div>
       </section>
 
       <!-- 블록 3.5: 비즈니스 비용 -->
       <section class="post-section" id="section-cost">
         <div class="post-section-label">비즈니스 비용</div>
-        <p>AI 보조 도구가 실력을 깎는다는 사실을 무시하면, 조직 차원의 비용으로 돌아옵니다.</p>
+        <p>AI 보조 도구가 실력을 깎는다는 사실을 방치하면, 그 대가는 조직 전체로 돌아옵니다.</p>
 
-        <p><strong>주니어 개발자의 성장이 느려집니다.</strong> AI에 의존하는 주니어 개발자는 디버깅과 코드 이해 능력을 기르기 어렵습니다. 그 결과, 시니어로 성장하는 시간이 길어지고 교육 투자 대비 역량 전환율이 떨어집니다.</p>
+        <p><strong>주니어 개발자의 성장이 느려집니다.</strong> AI에 의존하는 주니어 개발자는 디버깅과 코드 이해 능력을 키우기 어렵습니다. 시니어로 성장하는 데 시간이 더 걸리고, 교육에 투자한 만큼 역량이 따라오지 않습니다.</p>
 
-        <p><strong>AI 코드 검증 비용이 늘어납니다.</strong> 디버깅 능력이 부족한 개발자가 AI 생성 코드를 검증해야 하는 상황이 벌어집니다. 이 연구에서도 디버깅 능력의 격차가 가장 컸습니다. 검증 능력이 없으면 AI의 실수가 프로덕션까지 흘러들어갑니다. 안전이 중요한 시스템에서는 이것이 곧 사고 비용입니다.</p>
+        <p><strong>AI가 만든 코드를 검증할 사람이 부족해집니다.</strong> 이 연구에서 가장 큰 격차를 보인 영역이 디버깅입니다. 디버깅 능력이 약한 개발자가 AI 생성 코드를 리뷰하면, AI의 실수가 프로덕션까지 그대로 흘러갑니다. 안전이 중요한 시스템에서 이는 곧 사고 비용으로 이어집니다.</p>
 
-        <p><strong>조직의 기술 부채가 쌓입니다.</strong> AI가 작성한 코드를 이해하지 못하는 개발자가 늘어나면, 유지보수와 장애 대응이 어려워집니다. 코드를 이해하는 사람이 줄어들수록 기술 부채 해소 비용은 기하급수적으로 커집니다.</p>
+        <p><strong>조직의 기술 부채가 쌓입니다.</strong> AI가 작성한 코드를 이해하지 못하는 개발자가 늘어나면, 유지보수와 장애 대응이 점점 어려워집니다. 코드를 이해하는 사람이 줄수록 기술 부채 해소 비용은 기하급수적으로 커집니다.</p>
       </section>
 
       <!-- 블록 4: 실전 적용 -->
@@ -256,11 +376,15 @@
       <section class="post-section" id="section-risk">
         <div class="post-section-label">리스크 &amp; 주의점</div>
 
-        <p><strong>이 연구는 52명 대상의 단일 실험입니다.</strong> 새로운 라이브러리를 35분 동안 학습하는 특수한 상황에서 나온 결과입니다. 실무 환경에서 장기간 같은 패턴이 나타나는지는 추가 검증이 필요합니다. 다만, 파일럿 연구(n=20)에서도 같은 방향의 결과가 나왔습니다.</p>
+        <p><strong>52명을 대상으로 한 단일 실험입니다.</strong> 처음 보는 라이브러리를 35분 동안 학습하는, 다소 특수한 상황에서 나온 결과입니다. 실무 환경에서 수개월~수년간 같은 패턴이 반복되는지는 추가 검증이 필요합니다. 다만 파일럿 D(n=20)에서도 같은 방향의 결과가 나왔고, 효과 크기는 오히려 더 컸습니다(d = 1.7).</p>
 
-        <p><strong>AI를 전면 금지하는 것은 답이 아닙니다.</strong> 이 연구가 보여주는 것은 사용 방식의 차이입니다. 개념적 질문 패턴을 쓴 참가자(25명 중 7명)는 학습에 해가 없으면서도 작업을 완료했습니다. AI를 금지하면 생산성의 이점도 함께 사라집니다.</p>
+        <p><strong>AI를 전면 금지하는 것은 답이 아닙니다.</strong> 이 연구의 핵심 메시지는 "AI를 쓰지 마라"가 아니라 "쓰는 방식을 바꿔라"입니다. 개념적 질문 패턴을 쓴 7명은 학습 손실 없이 과제를 마쳤습니다. AI를 금지하면 생산성의 이점까지 함께 사라집니다.</p>
 
-        <p><strong>이미 숙련된 분야에서는 결과가 다를 수 있습니다.</strong> 이 연구는 새로운 기술을 배우는 상황만 다뤘습니다. 이미 잘 아는 분야에서 AI를 쓸 때 어떤 영향이 있는지는 별도로 확인해야 합니다. 참가자 대부분이 7년 이상 경력자였지만, 실험 과제는 모두에게 처음 접하는 라이브러리였습니다.</p>
+        <p><strong>이미 잘 아는 분야에서는 결과가 다를 수 있습니다.</strong> 이 연구는 새로운 기술을 배우는 상황만 다뤘습니다. 익숙한 분야에서 AI를 쓸 때 실력에 어떤 영향이 있는지는 아직 모릅니다. 참가자 대부분이 7년 넘게 코딩한 경력자였지만, Trio 라이브러리는 모두에게 처음이었습니다.</p>
+
+        <p><strong>채팅 기반 인터페이스만 실험했습니다.</strong> 연구진도 인정한 부분입니다. Cursor나 Copilot 같은 에이전틱(Agentic) AI 도구는 사람의 개입을 더 적게 요구합니다. 이런 도구에서는 인지적 부하 전가가 더 심해질 수 있어, 실력 저하 효과가 이 연구보다 클 가능성이 있습니다.</p>
+
+        <p><strong>인간 멘토링과의 비교는 빠져 있습니다.</strong> 이 연구는 AI 보조 vs 무보조만 비교했습니다. 같은 상황에서 페어 프로그래밍이나 코드 리뷰 같은 인간 보조를 받았다면 어땠을지는 열린 질문으로 남아 있습니다.</p>
       </section>
 
       <!-- 블록 6: 마무리 -->
@@ -323,7 +447,10 @@
           <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
           <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
           <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+          <li><a href="#section-method" class="toc-link">실험 설계</a></li>
           <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+          <li><a href="#section-patterns" class="toc-link">6가지 사용 패턴</a></li>
+          <li><a href="#section-mechanism" class="toc-link">왜 실력이 떨어지나</a></li>
           <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
           <li><a href="#section-action" class="toc-link">내일 당장</a></li>
           <li><a href="#section-risk" class="toc-link">리스크</a></li>
@@ -425,6 +552,133 @@
   </script>
   <script src="../assets/js/ai-view.js"></script>
   <script src="../assets/js/post-features.js"></script>
+
+  <script>
+    const chartDefaults = {
+      font: { family: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' },
+      color: '#888'
+    };
+    Chart.defaults.font.family = chartDefaults.font.family;
+    Chart.defaults.color = chartDefaults.color;
+
+    const barOpts = (max, step) => ({
+      responsive: true,
+      plugins: { legend: { display: true, position: 'bottom', labels: { boxWidth: 12, padding: 16, font: { size: 12 } } } },
+      scales: { y: { beginAtZero: true, max, ticks: { stepSize: step }, grid: { color: '#f0f0f0' } }, x: { grid: { display: false } } }
+    });
+
+    // 차트 1: 퀴즈 점수 비교
+    new Chart(document.getElementById('chartQuizScore'), {
+      type: 'bar',
+      data: {
+        labels: ['AI 보조 그룹', '대조 그룹'],
+        datasets: [{
+          label: '평균 퀴즈 점수 (27점 만점)',
+          data: [18.8, 22.95],
+          backgroundColor: ['#ef4444', '#22c55e'],
+          borderRadius: 6,
+          barThickness: 60
+        }]
+      },
+      options: {
+        ...barOpts(27, 5),
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: { label: ctx => ctx.parsed.y + '점 (' + Math.round(ctx.parsed.y / 27 * 100) + '%)' }
+          }
+        }
+      }
+    });
+
+    // 차트 2: 오류 발생 빈도
+    new Chart(document.getElementById('chartErrors'), {
+      type: 'bar',
+      data: {
+        labels: ['Task 1', 'Task 2', '전체'],
+        datasets: [
+          {
+            label: 'AI 보조 그룹',
+            data: [0, 0, 1.0],
+            backgroundColor: '#ef4444',
+            borderRadius: 6,
+            barThickness: 40
+          },
+          {
+            label: '대조 그룹',
+            data: [2.0, 2.0, 3.0],
+            backgroundColor: '#22c55e',
+            borderRadius: 6,
+            barThickness: 40
+          }
+        ]
+      },
+      options: barOpts(5, 1)
+    });
+
+    // 차트 3: 문항 유형별 점수 격차
+    new Chart(document.getElementById('chartQuestionType'), {
+      type: 'bar',
+      data: {
+        labels: ['디버깅', '개념 이해', '코드 읽기'],
+        datasets: [{
+          label: '대조 그룹 대비 AI 그룹 점수 감소 (점)',
+          data: [2.5, 2.0, 1.0],
+          backgroundColor: ['#dc2626', '#f97316', '#facc15'],
+          borderRadius: 6,
+          barThickness: 50
+        }]
+      },
+      options: {
+        ...barOpts(4, 1),
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => '-' + ctx.parsed.y + '점 감소' } }
+        }
+      }
+    });
+
+    // 차트 4: 6가지 AI 사용 패턴별 점수
+    new Chart(document.getElementById('chartPatterns'), {
+      type: 'bar',
+      data: {
+        labels: [
+          'AI 위임\n(n=4)',
+          '점진적 의존\n(n=4)',
+          '반복적 디버깅\n(n=4)',
+          '생성→이해\n(n=2)',
+          '하이브리드\n(n=3)',
+          '개념적 질의\n(n=7)'
+        ],
+        datasets: [{
+          label: '퀴즈 점수 범위 (%)',
+          data: [32, 32, 32, 75, 75, 75],
+          backgroundColor: ['#ef4444', '#ef4444', '#ef4444', '#22c55e', '#22c55e', '#22c55e'],
+          borderRadius: 6,
+          barThickness: 36
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const ranges = ['24~39%', '24~39%', '24~39%', '65~86%', '65~86%', '65~86%'];
+                return '점수 범위: ' + ranges[ctx.dataIndex];
+              }
+            }
+          }
+        },
+        scales: {
+          x: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%', stepSize: 20 }, grid: { color: '#f0f0f0' } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  </script>
 
 </body>
 </html>
