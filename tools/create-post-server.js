@@ -262,7 +262,6 @@ ${d.tagsMeta}
       <div class="header-top">
         <a href="../index.html" class="site-logo">AI ROASTING</a>
         <div class="header-utils">
-          <a href="../about/index.html" class="about-link">About</a>
           <button class="search-btn" id="searchBtn" aria-label="검색">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>

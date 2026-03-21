@@ -1,6 +1,54 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "젠슨 황 GTC 2026 키노트: 토큰 공장의 시대가 열렸다",
+      "date": "2026-03-17",
+      "category": "company",
+      "source": "YouTube (Jensen Huang)",
+      "tags": ["젠슨황", "NVIDIA", "GTC2026", "VeraRubin", "AI인프라"],
+      "slug": "2026-03-17-nvidia-gtc26-keynote",
+      "file": "company/2026-03-17-nvidia-gtc26-keynote.html",
+      "summary": "NVIDIA가 GTC 2026에서 Vera Rubin 플랫폼을 공개했다. 1GW 데이터센터 기준 토큰 생성 350배 향상, DLSS 5 뉴로 렌더링, Open Claw 에이전트 프레임워크, 물리적 AI 로봇 110대. 컴퓨팅의 단위가 FLOPS에서 토큰으로 전환되고 있다.",
+      "roasting_quote": "NVIDIA는 더 이상 GPU 회사가 아니다. 토큰 공장의 설계자다. 당신의 회사는 아직 GPU를 서버에 꽂는 부품으로 보고 있는가?",
+      "next_post": ""
+    },
+    {
+      "title": "8만 1천 명이 AI에게 원하는 것: Anthropic 인터뷰",
+      "date": "2026-03-19",
+      "category": "research",
+      "source": "Anthropic Research",
+      "tags": ["Anthropic", "AI인식", "글로벌조사"],
+      "slug": "2026-03-19-anthropic-81k-interviews",
+      "file": "research/2026-03-19-anthropic-81k-interviews.html",
+      "summary": "Anthropic이 159개국 80,508명을 인터뷰했다. 사람들이 AI에게 가장 원하는 건 업무 자동화가 아니라 삶의 질 개선이었다. 1위 우려는 일자리 위협이 아닌 AI의 부정확성(26.7%)이었다.",
+      "roasting_quote": "8만 1천명을 조사해보니 사람들이 AI에게 원하는 건 더 빠른 일이 아니라 더 나은 삶이었다. 당신의 AI 도입 목표는 아직 KPI 달성에 묶여 있는가?",
+      "next_post": ""
+    },
+    {
+      "title": "LLM이 깊어질수록 잊는 이유, Kimi가 고쳤다",
+      "date": "2026-03-16",
+      "category": "tech",
+      "source": "arXiv (Kimi Team, Moonshot AI)",
+      "tags": ["Transformer", "Kimi", "LLM", "모델아키텍처", "AI인프라"],
+      "slug": "2026-03-16-attention-residuals-kimi",
+      "file": "tech/2026-03-16-attention-residuals-kimi.html",
+      "summary": "Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더해 초기 학습이 희석된다. Kimi 팀이 Attention Residuals로 각 층이 이전 층을 동적으로 선택하는 방식을 제안했다.",
+      "roasting_quote": "Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았다. 모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했나?",
+      "next_post": ""
+    },
+    {
+      "title": "젠슨 황의 GTC26 애널리스트 Q&A: 1조 달러 주문과 토큰 경제의 시작",
+      "date": "2026-03-17",
+      "category": "leader",
+      "source": "YouTube (Jensen Huang, Colette Kress)",
+      "tags": ["젠슨황", "NVIDIA", "GTC2026", "AI인프라", "토큰경제"],
+      "slug": "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+      "file": "leader/2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa.html",
+      "summary": "젠슨 황이 GTC 2026 애널리스트 Q&A에서 밝힌 핵심: Blackwell + Vera Rubin 주문 1조 달러 이상, IT 기업의 비즈니스 모델이 소프트웨어 라이선스에서 토큰 렌트로 전환, NVIDIA 매출 40%가 플랫폼을 구매하는 비하이퍼스케일러 시장.",
+      "roasting_quote": "과거 IT 기업은 소프트웨어를 라이선스했다. 미래 IT 기업은 토큰을 렌트한다. 당신 회사의 COGS에 토큰이 들어가 있는가?",
+      "next_post": ""
+    },
+    {
       "title": "아모데이가 경고한 AI의 5가지 위험",
       "date": "2026-01-25",
       "category": "leader",

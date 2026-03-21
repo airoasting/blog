@@ -343,6 +343,7 @@
     const mobileNav = document.getElementById('mobileNav');
     if (hamburger && mobileNav) {
       hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
         mobileNav.classList.toggle('open');
       });
     }

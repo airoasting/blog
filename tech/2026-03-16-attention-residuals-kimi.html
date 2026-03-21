@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다 | AI ROASTING</title>
+  <meta name="description" content="Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더한다. 모델이 깊어질수록 초기 학습이 희석되는 구조적 결함이다. Kimi 팀이 Attention Residuals로 이 문제를 해결했다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다">
+  <meta property="og:description" content="Transformer 잔차 연결의 구조적 결함: 모든 층을 동일 가중치로 더하면 깊은 모델에서 초기 학습이 희석된다. Kimi 팀이 Attention Residuals로 해법을 제시했다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-03-16-attention-residuals-kimi.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_03_16_attention-residuals-kimi/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-16">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="Transformer">
+  <meta property="article:tag" content="Kimi">
+  <meta property="article:tag" content="LLM">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다">
+  <meta name="twitter:description" content="Transformer 잔차 연결의 구조적 결함을 Kimi 팀이 Attention Residuals로 해결했다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_03_16_attention-residuals-kimi/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다",
+    "datePublished": "2026-03-16",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "Kimi 팀이 Transformer 잔차 연결의 구조적 결함을 진단하고, Attention Residuals라는 대안을 제시했다. 모든 층의 기여를 동일하게 더하는 대신 어텐션으로 동적 선택하는 방식이다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-03-16-attention-residuals-kimi.html",
+    "articleSection": "기술"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <!-- Row 1: Logo + Utils -->
+    <div class="container">
+      <div class="header-top">
+        <a href="../index.html" class="site-logo">AI ROASTING</a>
+        <div class="header-utils">
+          <button class="search-btn" id="searchBtn" aria-label="검색">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <div class="view-toggle">
+            <button data-view="human" class="active">Human</button>
+            <button data-view="ai">AI</button>
+          </div>
+          <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Row 2: Category Nav -->
+    <div class="nav-bar">
+      <div class="container">
+        <nav class="main-nav">
+          <a href="../research/index.html" data-cat="research">리서치</a>
+          <a href="../leader/index.html" data-cat="leader">리더</a>
+          <a href="../company/index.html" data-cat="company">기업</a>
+          <a href="../tech/index.html" data-cat="tech" class="active">기술</a>
+          <a href="../survival/index.html" data-cat="survival">생존</a>
+        </nav>
+      </div>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-nav container" id="mobileNav">
+      <div class="mobile-search">
+        <input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">
+      </div>
+      <a href="../research/index.html">리서치</a>
+      <a href="../leader/index.html">리더</a>
+      <a href="../company/index.html">기업</a>
+      <a href="../tech/index.html">기술</a>
+      <a href="../survival/index.html">생존</a>
+    </div>
+  </header>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_16_attention-residuals-kimi/thumbnail.png" alt="AI 모델이 커질수록 앞에서 배운 걸 잊는 이유 썸네일" onerror="this.style.display='none'">
+        <!-- Meta overlay (top) -->
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026-03-16</span>
+        </div>
+        <!-- Title overlay (center) -->
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다</h1>
+        </div>
+        <!-- Source + Tags overlay (bottom) -->
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv (Kimi Team, Moonshot AI)</span>
+            <span>Guangyu Chen, Yu Zhang, Jianlin Su 외 33명</span>
+            <span><a href="https://arxiv.org/abs/2603.15031" target="_blank" rel="noopener">Attention Residuals ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Transformer" class="post-tag">#Transformer</a>
+            <a href="../index.html?tag=Kimi" class="post-tag">#Kimi</a>
+            <a href="../index.html?tag=LLM" class="post-tag">#LLM</a>
+            <a href="../index.html?tag=모델아키텍처" class="post-tag">#모델아키텍처</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다"
+        data-date="2026-03-16"
+        data-category="tech"
+        data-source="arXiv (Kimi Team, Moonshot AI)"
+        data-tags="Transformer, Kimi, LLM, 모델아키텍처, AI인프라"
+        data-original-url="https://arxiv.org/abs/2603.15031"
+        data-roasting-quote="Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았다. 모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했나?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더합니다. 모델이 깊어질수록 초기 층의 기여가 희석되는 구조적 결함입니다.</p>
+        <p data-summary>Kimi 팀이 제안한 Attention Residuals는 각 층이 이전 층의 출력을 어텐션으로 선택합니다. 입력에 따라 어떤 층의 정보를 가져올지 동적으로 결정합니다.</p>
+        <p data-summary>기존 모델에 드롭인(drop-in)으로 적용할 수 있습니다. 스케일링 법칙 실험에서 모델 크기와 무관하게 일관된 성능 향상을 확인했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았다.<br>모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했나?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>GPT, Claude, Gemini. 이름은 다르지만 기반 구조는 같습니다. 모두 Transformer입니다. 그 Transformer에서 가장 기본적인 구성 요소 하나가 바뀌기 시작했습니다. 잔차 연결(residual connection)입니다. 중국 AI 스타트업 Moonshot AI의 Kimi 팀(36명)이 이 설계의 한계를 진단하고, "Attention Residuals"라는 대안을 발표했습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>LLM 경쟁이 모델 크기에서 아키텍처 효율로 전환되고 있습니다. 같은 컴퓨팅 예산으로 더 나은 성능을 내는 것이 다음 경쟁의 축입니다. Kimi 팀은 480억 파라미터(30억 활성화) MoE 모델을 1.4조 토큰으로 훈련해 검증했습니다. 잔차 연결은 모든 Transformer 모델의 공통 요소입니다. 이 개선은 특정 모델이 아니라 아키텍처 전체에 영향을 줍니다. (출처: arXiv, 2026년 3월)</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+        <p>이 논문에서 주목할 포인트는 4가지입니다.</p>
+
+        <p><strong>첫째, 기존 잔차 연결의 문제: "모든 의견을 똑같이 취급하는 회의"</strong></p>
+        <p>Transformer의 각 층은 이전 층의 결과에 자기 계산 결과를 1:1로 그냥 더합니다. 1층이든 50층이든 기여도가 동일합니다. 100층짜리 모델에서 1번째 층의 정보는 99번의 무차별 덧셈에 묻힙니다.</p>
+
+        <!-- 다이어그램: 표준 잔차 vs Attention Residuals -->
+        <figure class="post-figure">
+          <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;height:auto;background:#fafaf9;border-radius:8px;">
+            <!-- 좌측: 표준 잔차 연결 -->
+            <text x="140" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">표준 잔차 연결</text>
+            <text x="140" y="46" text-anchor="middle" font-size="11" fill="#888">(모든 층 가중치 = 1)</text>
+            <!-- 층 박스들 -->
+            <rect x="90" y="60" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <text x="140" y="80" text-anchor="middle" font-size="12" fill="#555">Layer 1</text>
+            <rect x="90" y="110" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <text x="140" y="130" text-anchor="middle" font-size="12" fill="#555">Layer 2</text>
+            <rect x="90" y="160" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <text x="140" y="180" text-anchor="middle" font-size="12" fill="#555">Layer 3</text>
+            <rect x="90" y="210" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <text x="140" y="230" text-anchor="middle" font-size="12" fill="#555">Layer N</text>
+            <!-- 동일 가중치 화살표 -->
+            <line x1="140" y1="92" x2="140" y2="110" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
+            <line x1="140" y1="142" x2="140" y2="160" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
+            <line x1="140" y1="192" x2="140" y2="210" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
+            <!-- 가중치 라벨 -->
+            <text x="160" y="105" font-size="11" fill="#c43500" font-weight="600">+1</text>
+            <text x="160" y="155" font-size="11" fill="#c43500" font-weight="600">+1</text>
+            <text x="160" y="205" font-size="11" fill="#c43500" font-weight="600">+1</text>
+            <!-- 결과 -->
+            <rect x="80" y="260" width="120" height="36" rx="6" fill="#fff3f0" stroke="#c43500"/>
+            <text x="140" y="282" text-anchor="middle" font-size="12" fill="#c43500" font-weight="600">초기 층 정보 희석</text>
+
+            <!-- 구분선 -->
+            <line x1="360" y1="20" x2="360" y2="310" stroke="#E8E8E8" stroke-width="1" stroke-dasharray="4,4"/>
+
+            <!-- 우측: Attention Residuals -->
+            <text x="540" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Attention Residuals</text>
+            <text x="540" y="46" text-anchor="middle" font-size="11" fill="#888">(입력에 따라 가중치 동적 결정)</text>
+            <!-- 층 박스들 -->
+            <rect x="490" y="60" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <text x="540" y="80" text-anchor="middle" font-size="12" fill="#145C35">Layer 1</text>
+            <rect x="490" y="110" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <text x="540" y="130" text-anchor="middle" font-size="12" fill="#145C35">Layer 2</text>
+            <rect x="490" y="160" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <text x="540" y="180" text-anchor="middle" font-size="12" fill="#145C35">Layer 3</text>
+            <rect x="490" y="210" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <text x="540" y="230" text-anchor="middle" font-size="12" fill="#145C35">Layer N</text>
+            <!-- 동적 가중치 화살표 (다양한 두께) -->
+            <line x1="540" y1="92" x2="540" y2="110" stroke="#145C35" stroke-width="3" marker-end="url(#arrowGreen)"/>
+            <line x1="540" y1="142" x2="540" y2="160" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+            <line x1="540" y1="192" x2="540" y2="210" stroke="#145C35" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+            <!-- 크로스 연결 (skip) -->
+            <path d="M490,76 Q440,120 490,176" fill="none" stroke="#145C35" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+            <text x="432" y="130" font-size="10" fill="#145C35" font-weight="600">skip</text>
+            <!-- 가중치 라벨 -->
+            <text x="558" y="105" font-size="11" fill="#145C35" font-weight="600">0.6</text>
+            <text x="558" y="155" font-size="11" fill="#145C35" font-weight="600">0.1</text>
+            <text x="558" y="205" font-size="11" fill="#145C35" font-weight="600">0.3</text>
+            <!-- 결과 -->
+            <rect x="480" y="260" width="120" height="36" rx="6" fill="#e8f5e9" stroke="#145C35"/>
+            <text x="540" y="282" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">중요한 층 선택 보존</text>
+
+            <!-- Arrow markers -->
+            <defs>
+              <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#aaa"/></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#145C35"/></marker>
+            </defs>
+          </svg>
+          <figcaption>논문 Figure 1 기반 재구성. 표준 잔차 연결은 모든 층을 동일하게 더하지만, Attention Residuals는 입력에 따라 중요한 층에 더 높은 가중치를 부여합니다.</figcaption>
+        </figure>
+
+        <p><strong>둘째, Attention Residuals: "안건별로 가장 적합한 전문가를 선별하는 회의"</strong></p>
+        <p>기존 방식이 모든 참석자의 발언을 동일하게 회의록에 기록하는 것이라면, Attention Residuals는 안건에 따라 가장 관련 있는 전문가의 의견에 더 큰 비중을 두는 것입니다. 각 층이 "지금 이 입력에는 3번째 층의 정보가 중요하다"고 스스로 판단합니다. 가중치는 학습으로 결정되며, 입력에 따라 동적으로 변합니다.</p>
+
+        <p><strong>셋째, Block AttnRes: 메모리 비용을 잡은 실용적 해법</strong></p>
+        <p>모든 층에 대해 일일이 어텐션을 계산하면 메모리가 폭발합니다. Kimi 팀은 층을 8개씩 묶어 블록 단위로 어텐션을 적용하는 Block AttnRes를 만들었습니다. 기존 코드에 거의 변경 없이 적용할 수 있는 드롭인 대체(drop-in replacement)입니다.</p>
+
+        <p><strong>넷째, 모델이 커져도 일관되게 성능이 좋아집니다.</strong></p>
+        <p>모델 크기를 바꿔가며 실험한 결과, Attention Residuals는 크기와 무관하게 일관된 성능 향상을 보였습니다. Block AttnRes는 동일 성능 기준으로 <strong>1.25배의 컴퓨팅 효율</strong>을 달성했습니다.</p>
+
+        <!-- 차트: 스케일링 법칙 성능 비교 -->
+        <figure class="post-figure">
+          <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;height:auto;background:#fafaf9;border-radius:8px;">
+            <text x="300" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">스케일링 법칙: 컴퓨팅 증가에 따른 검증 손실</text>
+            <text x="300" y="42" text-anchor="middle" font-size="11" fill="#888">낮을수록 좋음 (Validation Loss)</text>
+            <!-- 축 -->
+            <line x1="80" y1="60" x2="80" y2="280" stroke="#ccc" stroke-width="1"/>
+            <line x1="80" y1="280" x2="560" y2="280" stroke="#ccc" stroke-width="1"/>
+            <!-- Y축 라벨 -->
+            <text x="72" y="72" text-anchor="end" font-size="10" fill="#888">3.4</text>
+            <text x="72" y="127" text-anchor="end" font-size="10" fill="#888">3.2</text>
+            <text x="72" y="182" text-anchor="end" font-size="10" fill="#888">3.0</text>
+            <text x="72" y="237" text-anchor="end" font-size="10" fill="#888">2.8</text>
+            <text x="72" y="280" text-anchor="end" font-size="10" fill="#888">2.6</text>
+            <!-- X축 라벨 -->
+            <text x="140" y="298" text-anchor="middle" font-size="10" fill="#888">1e18</text>
+            <text x="260" y="298" text-anchor="middle" font-size="10" fill="#888">1e19</text>
+            <text x="380" y="298" text-anchor="middle" font-size="10" fill="#888">1e20</text>
+            <text x="500" y="298" text-anchor="middle" font-size="10" fill="#888">1e21</text>
+            <text x="300" y="318" text-anchor="middle" font-size="11" fill="#666">Compute (FLOPs)</text>
+            <!-- 그리드 -->
+            <line x1="80" y1="127" x2="560" y2="127" stroke="#eee" stroke-width="1"/>
+            <line x1="80" y1="182" x2="560" y2="182" stroke="#eee" stroke-width="1"/>
+            <line x1="80" y1="237" x2="560" y2="237" stroke="#eee" stroke-width="1"/>
+            <!-- Baseline 곡선 (회색) -->
+            <polyline points="140,80 200,115 260,155 320,190 380,215 440,235 500,250" fill="none" stroke="#aaa" stroke-width="2.5"/>
+            <circle cx="140" cy="80" r="3" fill="#aaa"/><circle cx="260" cy="155" r="3" fill="#aaa"/>
+            <circle cx="380" cy="215" r="3" fill="#aaa"/><circle cx="500" cy="250" r="3" fill="#aaa"/>
+            <!-- Block AttnRes 곡선 (초록) -->
+            <polyline points="140,75 200,108 260,145 320,178 380,200 440,218 500,232" fill="none" stroke="#145C35" stroke-width="2.5"/>
+            <circle cx="140" cy="75" r="3" fill="#145C35"/><circle cx="260" cy="145" r="3" fill="#145C35"/>
+            <circle cx="380" cy="200" r="3" fill="#145C35"/><circle cx="500" cy="232" r="3" fill="#145C35"/>
+            <!-- Full AttnRes 곡선 (파랑) -->
+            <polyline points="140,73 200,105 260,142 320,174 380,196 440,214 500,230" fill="none" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"/>
+            <circle cx="140" cy="73" r="3" fill="#1A4A7A"/><circle cx="500" cy="230" r="3" fill="#1A4A7A"/>
+            <!-- 1.25x 효율 표시 -->
+            <line x1="440" y1="235" x2="500" y2="235" stroke="#c43500" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="500" y1="232" x2="500" y2="250" stroke="#c43500" stroke-width="1.5"/>
+            <text x="510" y="244" font-size="10" fill="#c43500" font-weight="600">1.25x 효율</text>
+            <!-- 범례 -->
+            <rect x="160" y="60" width="180" height="52" rx="4" fill="white" stroke="#eee"/>
+            <line x1="170" y1="74" x2="195" y2="74" stroke="#aaa" stroke-width="2.5"/>
+            <text x="202" y="78" font-size="11" fill="#555">Baseline</text>
+            <line x1="170" y1="92" x2="195" y2="92" stroke="#145C35" stroke-width="2.5"/>
+            <text x="202" y="96" font-size="11" fill="#145C35" font-weight="600">Block AttnRes</text>
+            <line x1="170" y1="104" x2="195" y2="104" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"/>
+            <text x="202" y="108" font-size="11" fill="#1A4A7A">Full AttnRes</text>
+          </svg>
+          <figcaption>논문 Figure 4 기반 재구성. Block AttnRes(실선, 초록)는 모든 컴퓨팅 규모에서 Baseline보다 낮은 손실을 달성합니다. 동일 성능 도달에 필요한 컴퓨팅이 1.25배 적습니다.</figcaption>
+        </figure>
+
+        <!-- 벤치마크 테이블 -->
+        <figure class="post-figure">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;">
+            <thead>
+              <tr style="border-bottom:2px solid #1a1a1a;">
+                <th style="text-align:left;padding:8px 12px;font-weight:700;">벤치마크</th>
+                <th style="text-align:center;padding:8px 12px;font-weight:700;">Baseline</th>
+                <th style="text-align:center;padding:8px 12px;font-weight:700;color:#145C35;">Block AttnRes</th>
+                <th style="text-align:center;padding:8px 12px;font-weight:700;color:#c43500;">향상폭</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #eee;">
+                <td style="padding:8px 12px;">MMLU (지식)</td>
+                <td style="text-align:center;padding:8px 12px;">60.1</td>
+                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">61.4</td>
+                <td style="text-align:center;padding:8px 12px;color:#c43500;">+1.3</td>
+              </tr>
+              <tr style="border-bottom:1px solid #eee;">
+                <td style="padding:8px 12px;">GPQA-Diamond (추론)</td>
+                <td style="text-align:center;padding:8px 12px;">20.2</td>
+                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">27.7</td>
+                <td style="text-align:center;padding:8px 12px;color:#c43500;font-weight:700;">+7.5</td>
+              </tr>
+              <tr style="border-bottom:1px solid #eee;">
+                <td style="padding:8px 12px;">Minerva Math (수학)</td>
+                <td style="text-align:center;padding:8px 12px;">22.8</td>
+                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">26.4</td>
+                <td style="text-align:center;padding:8px 12px;color:#c43500;">+3.6</td>
+              </tr>
+              <tr style="border-bottom:1px solid #eee;">
+                <td style="padding:8px 12px;">HumanEval (코딩)</td>
+                <td style="text-align:center;padding:8px 12px;">41.5</td>
+                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">44.6</td>
+                <td style="text-align:center;padding:8px 12px;color:#c43500;">+3.1</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;">GSM8K (수학)</td>
+                <td style="text-align:center;padding:8px 12px;">55.3</td>
+                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">56.2</td>
+                <td style="text-align:center;padding:8px 12px;color:#c43500;">+0.9</td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>논문 Table 3 기반 재구성. GPQA-Diamond(복잡한 추론)에서 +7.5로 가장 큰 개선. 잔차 연결만 바꿔도 추론 능력이 의미 있게 향상됩니다.</figcaption>
+        </figure>
+      </section>
+
+      <!-- 블록 3.5: 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p><strong>비효율적 아키텍처는 컴퓨팅 예산을 낭비합니다.</strong> 초기 층의 정보가 희석되면, 같은 품질의 출력을 내기 위해 더 많은 파라미터가 필요합니다. 2026년 기준 대형 LLM의 훈련 비용은 수천만 달러에 달합니다. 아키텍처 수준의 효율 개선은 같은 예산으로 더 나은 모델을 만들거나, 같은 성능을 더 적은 비용으로 달성할 수 있다는 의미입니다.</p>
+
+        <p><strong>모델 선택 기준이 파라미터 수에서 아키텍처 효율로 이동합니다.</strong> LLM을 도입하는 기업 입장에서, 파라미터 수가 큰 모델이 반드시 좋은 모델은 아닙니다. 잔차 연결 같은 기본 설계의 효율성에 따라 작은 모델이 큰 모델을 능가할 수 있습니다. 벤더 선택 시 아키텍처 세부 사항을 평가하지 않으면, 비용 대비 성능에서 불리한 선택을 할 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 4: 실전 적용 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>사용 중인 LLM의 아키텍처 문서를 확인합니다.</strong><br>LLaMA, Mistral, Qwen 등 오픈소스 모델은 대부분 표준 잔차 연결을 쓰고 있습니다. 자사 모델의 잔차 연결 방식이 무엇인지 ML 엔지니어에게 확인합니다. (30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>Attention Residuals 논문의 Block AttnRes 구현을 검토합니다.</strong><br>드롭인 대체를 주장하는 만큼, 기존 파인튜닝 파이프라인에 적용 가능한지 ML 엔지니어와 함께 평가합니다. 논문의 코드와 Kimi Linear 모델 공개 여부를 확인합니다. (2시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>모델 깊이별 층 기여도를 프로파일링합니다.</strong><br>현재 모델에서 각 층이 최종 출력에 얼마나 기여하는지 시각화합니다. PyTorch의 hook 기능으로 각 층의 출력 노름(norm)을 측정하면, 희석이 심한 구간을 파악할 수 있습니다. (반나절)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>검증 범위가 특정 모델에 한정됩니다.</strong> 이 연구는 Kimi Linear(480억 파라미터, 30억 활성화)라는 MoE 아키텍처에서 검증됐습니다. Dense 모델이나 다른 MoE 구조에서 동일한 효과가 나오는지는 추가 실험이 필요합니다.</p>
+
+        <p><strong>블록 크기 선택에 트레이드오프가 있습니다.</strong> 블록을 너무 크게 잡으면 표준 잔차 연결과 차이가 줄어들고, 너무 작게 잡으면 메모리 비용이 증가합니다. 최적 블록 크기는 모델 구조와 태스크에 따라 달라집니다.</p>
+
+        <p><strong>커뮤니티 재현 검증이 아직 부족합니다.</strong> 2026년 3월 16일 공개된 논문으로, 독립적인 재현 실험이 충분히 진행되지 않았습니다. 실 서비스 적용은 재현 결과를 확인한 뒤 검토하는 것이 합리적입니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>Transformer의 가장 기본적인 설계도 개선 여지가 있습니다. 모델을 키우는 것만이 답이 아닙니다. 기존 구조를 잘 바꾸는 것이 더 효율적일 수 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>AI 모델 선택 시 파라미터 수만 보지 말고, 아키텍처 효율성을 함께 평가하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>ML 엔지니어에게 주 2시간의 최신 아키텍처 논문 리뷰 시간을 확보하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>LLM 도입 예산에서 '더 큰 모델 = 더 좋은 성능'이라는 가정을 재검토하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Kimi Team. (2026). "Attention Residuals." arXiv:2603.15031, March 16, 2026. <a href="https://arxiv.org/abs/2603.15031" target="_blank" rel="noopener">https://arxiv.org/abs/2603.15031</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://arxiv.org/abs/2603.15031" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-02-23-persona-selection-model.html">
+          <div class="next-post-title">AI는 왜 사람처럼 행동하는가 (멀티 페르소나) →</div>
+        </a>
+      </div>
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-16-attention-residuals-kimi.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">AI ROASTING</div>
+          <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+          <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="footer-newsletter-btn">AI ROASTING 뉴스레터 구독하기</a>
+        </div>
+        <div>
+          <div class="footer-heading">카테고리</div>
+          <ul class="footer-links">
+            <li><a href="../research/index.html">리서치</a></li>
+            <li><a href="../leader/index.html">리더</a></li>
+            <li><a href="../company/index.html">기업</a></li>
+            <li><a href="../tech/index.html">기술</a></li>
+            <li><a href="../survival/index.html">생존</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">정보</div>
+          <ul class="footer-links">
+            <li><a href="../about/index.html">프로젝트 소개</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">소셜</div>
+          <div class="footer-social">
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#" aria-label="Threads"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.781 3.632 2.695 6.54 2.717 2.227-.016 4.07-.474 5.476-1.362 1.578-.996 2.293-2.27 2.293-3.373 0-.904-.383-1.612-1.136-2.104-.685-.448-1.593-.702-2.687-.79-.094.753-.348 1.39-.77 1.886-.538.633-1.32.975-2.27 1.002-1.005.028-1.895-.254-2.504-.793-.538-.476-.835-1.118-.835-1.808 0-1.575 1.47-2.722 4.084-3.192.86-.154 1.777-.21 2.663-.204.187-1.008.137-1.876-.176-2.526-.375-.778-1.103-1.172-2.163-1.172-1.447 0-2.36.676-2.71 2.013l-1.974-.478c.546-2.082 2.168-3.307 4.683-3.307 1.74 0 3.058.635 3.808 1.837.535.857.716 1.9.55 3.178l.018.003c1.334.12 2.476.474 3.381 1.066 1.156.756 1.793 1.86 1.793 3.109 0 1.74-1.012 3.534-3.113 4.86-1.732 1.093-3.93 1.665-6.537 1.683z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 AI ROASTING. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-03-16-attention-residuals-kimi.html';
+    const ROASTING_QUOTE = 'Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았다. 모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했나?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Hamburger
+    document.getElementById('hamburger')?.addEventListener('click', function() { this.classList.toggle('active');
+      document.getElementById('mobileNav').classList.toggle('open'); });
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

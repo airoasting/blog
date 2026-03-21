@@ -18,8 +18,6 @@
   <meta property="article:tag" content="SAP">
   <meta property="article:tag" content="ERP">
   <meta property="article:tag" content="레거시">
-  <meta property="article:tag" content="AI에이전트">
-  <meta property="article:tag" content="엔터프라이즈">
   <meta property="article:tag" content="디지털전환">
 
   <!-- Twitter Card -->
@@ -56,7 +54,6 @@
       <div class="header-top">
         <a href="../index.html" class="site-logo">AI ROASTING</a>
         <div class="header-utils">
-          <a href="../about/index.html" class="about-link">About</a>
           <button class="search-btn" id="searchBtn" aria-label="검색">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
@@ -143,8 +140,6 @@
             <a href="../index.html?tag=SAP" class="post-tag">#SAP</a>
             <a href="../index.html?tag=ERP" class="post-tag">#ERP</a>
             <a href="../index.html?tag=레거시" class="post-tag">#레거시</a>
-            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
-            <a href="../index.html?tag=엔터프라이즈" class="post-tag">#엔터프라이즈</a>
             <a href="../index.html?tag=디지털전환" class="post-tag">#디지털전환</a>
           </div>
         </div>
@@ -406,6 +401,7 @@
         <div>
           <div class="footer-brand">AI ROASTING</div>
           <p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>
+          <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="footer-newsletter-btn">AI ROASTING 뉴스레터 구독하기</a>
         </div>
         <div>
           <div class="footer-heading">카테고리</div>
@@ -420,7 +416,7 @@
         <div>
           <div class="footer-heading">정보</div>
           <ul class="footer-links">
-            <li><a href="../about/index.html">About</a></li>
+            <li><a href="../about/index.html">프로젝트 소개</a></li>
           </ul>
         </div>
         <div>
@@ -458,8 +454,8 @@
     }
 
     // Hamburger
-    document.getElementById('hamburger')?.addEventListener('click', () =>
-      document.getElementById('mobileNav').classList.toggle('open'));
+    document.getElementById('hamburger')?.addEventListener('click', function() { this.classList.toggle('active');
+      document.getElementById('mobileNav').classList.toggle('open'); });
   </script>
   <script src="../assets/js/ai-view.js"></script>
   <script src="../assets/js/post-features.js"></script>
