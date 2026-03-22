@@ -58,6 +58,7 @@
   let postsData = [];
   let displayedPosts = [];  // currently filtered/full list
   let visibleCount = 0;
+  let isArchiveMode = false;
 
   // --- Load posts (from global or fetch) ---
   async function loadPosts() {
@@ -74,14 +75,37 @@
       // Sort by date descending
       postsData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      // Render featured hero with the most recent post
-      if (postsData.length > 0) {
-        renderFeaturedHero(postsData[0]);
+      // Check for archive filter from URL
+      const archiveParam = new URLSearchParams(window.location.search).get('archive');
+      let renderList = postsData;
+
+      if (archiveParam && /^\d{4}-\d{2}$/.test(archiveParam)) {
+        isArchiveMode = true;
+        renderList = postsData.filter(p => p.date.substring(0, 7) === archiveParam);
+        const parts = archiveParam.split('-');
+        const archiveLabel = parts[0] + '년 ' + parseInt(parts[1], 10) + '월';
+        const archiveHeader = document.getElementById('archiveHeader');
+        if (archiveHeader) {
+          archiveHeader.innerHTML =
+            '<h2 class="section-title">' + archiveLabel + ' <span class="post-count">총 ' + renderList.length + '개</span></h2>' +
+            '<p class="section-desc">아카이브</p>';
+          archiveHeader.style.display = '';
+        }
+        // Hide filter bar and section header in archive mode
+        const filterBar = document.getElementById('filterBar');
+        if (filterBar) filterBar.style.display = 'none';
+        const sectionHeader = document.querySelector('#posts > .section-header');
+        if (sectionHeader) sectionHeader.style.display = 'none';
       }
 
-      displayedPosts = postsData.slice(1); // exclude featured hero post
+      // Render featured hero with the most recent post
+      if (renderList.length > 0) {
+        renderFeaturedHero(renderList[0]);
+      }
+
+      displayedPosts = renderList.slice(1); // exclude featured hero post
       visibleCount = 0;
-      updatePostCount(postsData.length);
+      updatePostCount(renderList.length);
       showMore();
 
       // Dispatch event for filter.js and search.js
@@ -164,7 +188,7 @@
     if (posts.length === 0) {
       if (skeletonGrid) skeletonGrid.style.display = 'none';
       postGrid.style.display = 'none';
-      if (emptyState) emptyState.style.display = 'block';
+      if (emptyState && !isArchiveMode) emptyState.style.display = 'block';
       if (loadMoreBtn) loadMoreBtn.style.display = 'none';
       return;
     }
@@ -215,6 +239,7 @@
 
   // --- Filter event listener ---
   window.addEventListener('postsFiltered', (e) => {
+    if (isArchiveMode) return;
     const filtered = e.detail.posts || [];
     if (filtered.length > 0) {
       renderFeaturedHero(filtered[0]);
@@ -337,21 +362,6 @@
     return esc || '&nbsp;';
   }
 
-  // --- Hamburger ---
-  function initHamburger() {
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    if (hamburger && mobileNav) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobileNav.classList.toggle('open');
-      });
-    }
-  }
-
-  // --- Scroll to posts (no-op, hero CTA removed) ---
-  function initHeroCta() {}
-
   // --- Load More button ---
   function initLoadMore() {
     if (loadMoreBtn) {
@@ -363,8 +373,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     loadPosts();
     initToggle();
-    initHamburger();
-    initHeroCta();
     initLoadMore();
   });
 

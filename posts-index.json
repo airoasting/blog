@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "대화만으로 AI 에이전트를 훈련한다: OpenClaw-RL",
+      "date": "2026-03-10",
+      "category": "tech",
+      "source": "arXiv (Yinjie Wang, Ling Yang 외)",
+      "tags": ["AI에이전트", "강화학습", "OpenClaw", "RLHF", "자동화"],
+      "slug": "2026-03-10-openclaw-rl",
+      "file": "tech/2026-03-10-openclaw-rl.html",
+      "summary": "OpenClaw-RL은 사용자 대화, 터미널 출력, GUI 변화 등 자연 발생 신호만으로 AI 에이전트를 훈련한다. 별도 라벨링 없이 기본 점수 0.17에서 0.81까지 성능 향상.",
+      "roasting_quote": "AI 에이전트 훈련에 전문가 라벨링이 필수라고? 사용자가 \"아니, 그거 말고\"라고 한 마디만 하면 에이전트가 스스로 배운다. 당신의 데이터 파이프라인 비용, 얼마나 더 쓸 건가?",
+      "next_post": ""
+    },
+    {
       "title": "젠슨 황 GTC 2026 키노트: 토큰 공장의 시대가 열렸다",
       "date": "2026-03-17",
       "category": "company",
