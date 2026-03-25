@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI, 수학자도 못 푼 난제를 풀다 - AI ROASTING</title>
+  <meta name="description" content="Epoch AI의 FrontierMath 벤치마크에서 AI가 미해결 수학 난제를 처음으로 풀었습니다. GPT-5.4 Pro가 하이퍼그래프 램지 문제의 정답을 제시했고, 원출제자가 학술 논문 공동 저자로 풀이 기여자를 초대했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI, 수학자도 못 푼 난제를 풀다">
+  <meta property="og:description" content="FrontierMath 벤치마크에서 AI가 미해결 수학 난제를 처음 풀었습니다. 원출제자가 논문 공동 저자로 풀이 기여자를 초대했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_03_24_frontiermath-ai-solves-open-math/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-24">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="FrontierMath">
+  <meta property="article:tag" content="AI수학">
+  <meta property="article:tag" content="EpochAI">
+  <meta property="article:tag" content="벤치마크">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI, 수학자도 못 푼 난제를 풀다">
+  <meta name="twitter:description" content="FrontierMath 벤치마크에서 AI가 미해결 수학 난제를 처음 풀었습니다. 원출제자가 논문 공동 저자로 풀이 기여자를 초대했습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_03_24_frontiermath-ai-solves-open-math/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI, 수학자도 못 푼 난제를 풀다",
+    "datePublished": "2026-03-24",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Epoch AI의 FrontierMath 벤치마크에서 AI가 미해결 수학 난제를 처음으로 풀었습니다. GPT-5.4 Pro가 하이퍼그래프 램지 문제의 정답을 제시했고, 원출제자가 학술 논문 공동 저자로 풀이 기여자를 초대했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_24_frontiermath-ai-solves-open-math/thumbnail.png" alt="AI, 수학자도 못 푼 난제를 풀다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 3월 24일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI, 수학자도 못 푼 난제를 풀다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Epoch AI</span>
+            <span>FrontierMath Open Problems</span>
+            <span><a href="https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=FrontierMath" class="post-tag">#FrontierMath</a>
+            <a href="../index.html?tag=AI수학" class="post-tag">#AI수학</a>
+            <a href="../index.html?tag=EpochAI" class="post-tag">#EpochAI</a>
+            <a href="../index.html?tag=벤치마크" class="post-tag">#벤치마크</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI, 수학자도 못 푼 난제를 풀다"
+        data-date="2026-03-24"
+        data-category="tech"
+        data-source="Epoch AI (FrontierMath)"
+        data-tags="FrontierMath, AI수학, EpochAI, 벤치마크"
+        data-original-url="https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs"
+        data-roasting-quote="수학 올림피아드 만점은 옛날 얘기다. AI가 수학자도 못 푼 문제를 풀기 시작했는데, 당신의 AI는 아직 FAQ 챗봇인가?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Epoch AI의 FrontierMath에서 AI가 미해결 수학 난제를 처음 풀었습니다.</p>
+        <p data-summary>GPT-5.4 Pro가 하이퍼그래프 램지 문제를 풀었고, Opus 4.6과 Gemini 3.1 Pro도 뒤이어 정답을 냈습니다.</p>
+        <p data-summary>원출제자가 풀이 기여자를 학술 논문 공동 저자로 초대했습니다. AI가 지식의 경계를 넓히는 단계에 진입했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">수학 올림피아드 만점은 옛날 얘기다.<br>AI가 수학자도 못 푼 문제를 풀기 시작했는데, 당신의 AI는 아직 FAQ 챗봇인가?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>지금까지 AI 벤치마크는 이미 정답이 있는 시험이었습니다. 수학 올림피아드, 대학원 시험, 코딩 대회 모두 사람이 먼저 풀어놓은 문제입니다. FrontierMath(프론티어매스)는 다릅니다. 전문 수학자도 풀지 못한 미해결 난제를 모아놓은 벤치마크입니다. 이 벤치마크에서 AI가 처음으로 정답을 냈습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI 수학 실력은 빠르게 올라가고 있습니다. 2025년 IMO(국제수학올림피아드)를 거의 만점으로 통과했습니다. 하지만 그것은 정답이 있는 문제였습니다. FrontierMath는 15개 미해결 난제로 구성됩니다(Epoch AI, 2026). 이 중 첫 문제가 풀렸습니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, AI가 학술 논문 수준의 수학 풀이를 제출했습니다.</strong> Kevin Barreto와 Liam Price가 GPT-5.4 Pro를 사용해 하이퍼그래프 램지 문제를 풀었습니다. 이 문제는 UNC Charlotte의 Will Brian 교수가 출제했습니다. 조합론(경우의 수와 구조를 다루는 수학 분야) 난제로, 전문 수학자들도 풀지 못했습니다.</p>
+
+        <p><strong>둘째, 원출제자가 풀이의 학술적 가치를 인정했습니다.</strong> Brian 교수는 풀이를 검증한 뒤 학술 논문 게재를 계획하고 있습니다. Barreto와 Price를 공동 저자로 초대할 예정입니다. AI의 수학 풀이가 학술지에 정식 게재되는 첫 사례가 될 수 있습니다.</p>
+
+        <p><strong>셋째, 여러 AI 모델이 독립적으로 같은 문제를 풀었습니다.</strong> GPT-5.4 Pro가 가장 먼저 풀었습니다. 이후 Opus 4.6과 Gemini 3.1 Pro도 정답을 제시했습니다(Epoch AI, 2026). 한 모델의 우연이 아닙니다. 현재 AI의 수학적 추론 능력이 이 수준에 올라왔습니다.</p>
+
+        <p><strong>넷째, 풀린 문제는 15개 중 가장 낮은 난이도입니다.</strong> FrontierMath는 난이도를 4단계로 분류합니다. 보통 수준, 견고한 성과, 주요 진전, 돌파구입니다. 이번 문제는 가장 낮은 '보통 수준'입니다. 나머지 14개는 아직 미해결입니다.</p>
+
+        <p><strong>다섯째, AI의 역할이 '도구'에서 '공동 연구자'로 바뀌고 있습니다.</strong> 기존 AI 벤치마크는 정답 맞히기 대회였습니다. FrontierMath는 다릅니다. 풀이 자체가 학술 논문으로 출판 가능해야 합니다. AI가 인간의 지식 경계를 넓히기 시작했습니다.</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>복잡한 분석 업무에 AI를 투입합니다.</strong><br>AI의 추론 능력은 FAQ 응대를 넘어섰습니다. 시장 분석, 재무 모델링, 경쟁사 특허 분석 등 전문가 판단이 필요한 업무에 AI를 실험합니다. Claude에 "이 분기 매출 데이터에서 숨겨진 패턴 3가지를 찾아줘"라고 요청합니다. (1시간, 기존 데이터로 테스트)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI 출력물의 검증 체계를 만듭니다.</strong><br>FrontierMath에서도 수학자가 AI 풀이를 검증했습니다. 기업도 마찬가지입니다. AI가 내놓은 분석 결과를 전문가가 검토하는 절차를 설계합니다. "AI 초안 → 전문가 검증 → 최종 승인" 3단계를 표준화합니다. (2시간, 프로세스 설계)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 활용 역량 평가 기준을 업데이트합니다.</strong><br>AI가 미해결 문제까지 풀 수 있다면, 조직의 AI 활용 기준도 바뀌어야 합니다. 현재 AI 활용 범위를 점검하고, 전문 분석 영역으로 확대할 파일럿을 기획합니다. (30분, 현황 점검)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>가장 쉬운 문제가 풀렸을 뿐입니다.</strong> 15개 난제 중 14개는 여전히 미해결입니다. 풀린 문제의 난이도는 4단계 중 최하위입니다. AI의 수학 능력이 전면적으로 돌파한 것은 아닙니다.</p>
+
+        <p><strong>AI 단독이 아니라 사람과 AI의 협업입니다.</strong> GPT-5.4 Pro가 혼자 풀어낸 것이 아닙니다. 사용자가 적절한 질문을 던지고 방향을 잡았습니다. AI를 도구로 활용하는 사람의 역량이 여전히 핵심입니다.</p>
+
+        <p><strong>검증 없는 AI 결과물은 위험합니다.</strong> 이번 사례에서도 원출제자의 검증이 필수였습니다. 기업에서 AI 분석 결과를 검증 없이 의사결정에 쓰면 오류 비용이 큽니다.</p>
+
+        <p><strong>난이도 평가에 논란이 있습니다.</strong> 수학자 설문에서 이 문제의 난이도를 95~99% 풀릴 확률로 평가했습니다(Epoch AI, 2026). 상위 난이도 문제와는 격차가 큽니다. 성급한 일반화는 금물입니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI가 정답이 없는 문제를 풀기 시작했습니다. 아직 첫 걸음이지만, AI의 역할이 '도구'에서 '공동 연구자'로 바뀌는 신호입니다.</p>
+      </section>
+
+      <!-- CTA -->
+      <section class="post-section" id="section-cta">
+        <div class="post-section-label">다음 단계</div>
+        <p>우리 조직의 AI 활용 수준을 점검하고 싶다면, <a href="../about/index.html">무료 진단을 신청하세요</a>.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>AI를 단순 자동화가 아닌 전문 분석 도구로 재배치할 파일럿 영역을 선정하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀 내 AI 출력물 검증 절차를 수립하고, 검증 기준을 문서화하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 활용 범위를 운영 효율에서 전략 분석으로 확대하는 연간 계획을 검토하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Epoch AI. (2026, 3월). <em>FrontierMath: Open Problems - A Ramsey-style Problem on Hypergraphs</em> [Article]. Epoch AI.
+            <a href="https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs" target="_blank" rel="noopener">https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs</a></li>
+          <li>Epoch AI. (2026, 3월). <em>FrontierMath: Open Problems</em> [Article]. Epoch AI.
+            <a href="https://epoch.ai/frontiermath/open-problems" target="_blank" rel="noopener">https://epoch.ai/frontiermath/open-problems</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-19-hyperagents-self-improving-ai.html">
+          <div class="next-post-title">AI가 스스로 진화한다: Meta의 하이퍼에이전트 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-24-frontiermath-ai-solves-open-math.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html';
+    const ROASTING_QUOTE = '수학 올림피아드 만점은 옛날 얘기다. AI가 수학자도 못 푼 문제를 풀기 시작했는데, 당신의 AI는 아직 FAQ 챗봇인가?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>

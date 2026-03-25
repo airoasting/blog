@@ -1,11 +1,85 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI, 수학자도 못 푼 난제를 풀다",
+      "date": "2026-03-24",
+      "category": "tech",
+      "source": "Epoch AI (FrontierMath)",
+      "tags": [
+        "FrontierMath",
+        "AI수학",
+        "EpochAI",
+        "벤치마크"
+      ],
+      "slug": "2026-03-24-frontiermath-ai-solves-open-math",
+      "file": "tech/2026-03-24-frontiermath-ai-solves-open-math.html",
+      "summary": "Epoch AI의 FrontierMath에서 AI가 미해결 수학 난제를 처음 풀었습니다. GPT-5.4 Pro가 하이퍼그래프 램지 문제를 풀었고, Opus 4.6과 Gemini 3.1 Pro도 정답을 냈습니다.",
+      "roasting_quote": "수학 올림피아드 만점은 옛날 얘기다. AI가 수학자도 못 푼 문제를 풀기 시작했는데, 당신의 AI는 아직 FAQ 챗봇인가?",
+      "next_post": ""
+    },
+    {
+      "title": "소프트웨어에 남은 길은 두 가지뿐이다",
+      "date": "2026-03-23",
+      "category": "company",
+      "source": "a16z (David George)",
+      "tags": [
+        "SaaS",
+        "AI전환",
+        "성장전략",
+        "마진"
+      ],
+      "slug": "2026-03-23-two-paths-for-software",
+      "file": "company/2026-03-23-two-paths-for-software.html",
+      "summary": "소프트웨어 기업에 남은 길은 둘뿐입니다. AI 제품으로 성장률 10포인트를 올리거나, 영업이익률 40%를 달성하는 것입니다. 중간 지대는 사라졌습니다.",
+      "roasting_quote": "성장 10포인트, 마진 40%. 둘 중 하나를 못 고르면 시장이 골라준다. 주가 하락이라는 방식으로.",
+      "next_post": "2026-03-24-frontiermath-ai-solves-open-math"
+    },
+    {
+      "title": "카파시: 코딩의 종말, 에이전트 위임의 시작",
+      "date": "2026-03-20",
+      "category": "leader",
+      "source": "YouTube (No Priors Podcast)",
+      "tags": [
+        "Karpathy",
+        "코딩에이전트",
+        "AI에이전트",
+        "AI전략"
+      ],
+      "slug": "2026-03-20-karpathy-end-of-coding",
+      "file": "leader/2026-03-20-karpathy-end-of-coding.html",
+      "summary": "안드레이 카파시가 12월 이후 코드를 직접 쓰지 않는다고 밝혔다. AI 에이전트에 위임하고, 토큰 처리량이 새 생산성 지표가 된다. 앱이 사라지고 API와 에이전트만 남는 미래를 제시한다.",
+      "roasting_quote": "카파시는 12월부터 코드를 안 쓴다. 개발팀이 아직도 직접 코딩하고 있는가?",
+      "next_post": "2026-03-23-two-paths-for-software"
+    },
+    {
+      "title": "AI가 스스로 진화한다: Meta의 하이퍼에이전트",
+      "date": "2026-03-19",
+      "category": "tech",
+      "source": "arXiv (Jenny Zhang 외 7인)",
+      "tags": [
+        "AI에이전트",
+        "자기개선AI",
+        "Meta",
+        "자동화"
+      ],
+      "slug": "2026-03-19-hyperagents-self-improving-ai",
+      "file": "tech/2026-03-19-hyperagents-self-improving-ai.html",
+      "summary": "Meta 연구진이 하이퍼에이전트(HyperAgents)를 발표했습니다. 자기 개선 방법 자체를 개선하는 AI입니다. 4개 영역에서 성능이 지속 향상되고, 자기개선 전략이 영역 간 전이됩니다.",
+      "roasting_quote": "AI가 코드를 고치더니, 이제 자기 자신을 고치는 법까지 고친다. 당신의 AI 전략은 아직 사람이 일일이 튜닝하고 있는가?",
+      "next_post": "2026-03-20-karpathy-end-of-coding"
+    },
+    {
       "title": "대화만으로 AI 에이전트를 훈련한다: OpenClaw-RL",
       "date": "2026-03-10",
       "category": "tech",
       "source": "arXiv (Yinjie Wang, Ling Yang 외)",
-      "tags": ["AI에이전트", "강화학습", "OpenClaw", "RLHF", "자동화"],
+      "tags": [
+        "AI에이전트",
+        "강화학습",
+        "OpenClaw",
+        "RLHF",
+        "자동화"
+      ],
       "slug": "2026-03-10-openclaw-rl",
       "file": "tech/2026-03-10-openclaw-rl.html",
       "summary": "OpenClaw-RL은 사용자 대화, 터미널 출력, GUI 변화 등 자연 발생 신호만으로 AI 에이전트를 훈련한다. 별도 라벨링 없이 기본 점수 0.17에서 0.81까지 성능 향상.",
@@ -17,7 +91,13 @@ window.POSTS_DATA = {
       "date": "2026-03-17",
       "category": "company",
       "source": "YouTube (Jensen Huang)",
-      "tags": ["젠슨황", "NVIDIA", "GTC2026", "VeraRubin", "AI인프라"],
+      "tags": [
+        "젠슨황",
+        "NVIDIA",
+        "GTC2026",
+        "VeraRubin",
+        "AI인프라"
+      ],
       "slug": "2026-03-17-nvidia-gtc26-keynote",
       "file": "company/2026-03-17-nvidia-gtc26-keynote.html",
       "summary": "NVIDIA가 GTC 2026에서 Vera Rubin 플랫폼을 공개했다. 1GW 데이터센터 기준 토큰 생성 350배 향상, DLSS 5 뉴로 렌더링, Open Claw 에이전트 프레임워크, 물리적 AI 로봇 110대. 컴퓨팅의 단위가 FLOPS에서 토큰으로 전환되고 있다.",
@@ -29,7 +109,11 @@ window.POSTS_DATA = {
       "date": "2026-03-19",
       "category": "research",
       "source": "Anthropic Research",
-      "tags": ["Anthropic", "AI인식", "글로벌조사"],
+      "tags": [
+        "Anthropic",
+        "AI인식",
+        "글로벌조사"
+      ],
       "slug": "2026-03-19-anthropic-81k-interviews",
       "file": "research/2026-03-19-anthropic-81k-interviews.html",
       "summary": "Anthropic이 159개국 80,508명을 인터뷰했다. 사람들이 AI에게 가장 원하는 건 업무 자동화가 아니라 삶의 질 개선이었다. 1위 우려는 일자리 위협이 아닌 AI의 부정확성(26.7%)이었다.",
@@ -41,7 +125,13 @@ window.POSTS_DATA = {
       "date": "2026-03-16",
       "category": "tech",
       "source": "arXiv (Kimi Team, Moonshot AI)",
-      "tags": ["Transformer", "Kimi", "LLM", "모델아키텍처", "AI인프라"],
+      "tags": [
+        "Transformer",
+        "Kimi",
+        "LLM",
+        "모델아키텍처",
+        "AI인프라"
+      ],
       "slug": "2026-03-16-attention-residuals-kimi",
       "file": "tech/2026-03-16-attention-residuals-kimi.html",
       "summary": "Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더해 초기 학습이 희석된다. Kimi 팀이 Attention Residuals로 각 층이 이전 층을 동적으로 선택하는 방식을 제안했다.",
@@ -53,7 +143,13 @@ window.POSTS_DATA = {
       "date": "2026-03-17",
       "category": "leader",
       "source": "YouTube (Jensen Huang, Colette Kress)",
-      "tags": ["젠슨황", "NVIDIA", "GTC2026", "AI인프라", "토큰경제"],
+      "tags": [
+        "젠슨황",
+        "NVIDIA",
+        "GTC2026",
+        "AI인프라",
+        "토큰경제"
+      ],
       "slug": "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
       "file": "leader/2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa.html",
       "summary": "젠슨 황이 GTC 2026 애널리스트 Q&A에서 밝힌 핵심: Blackwell + Vera Rubin 주문 1조 달러 이상, IT 기업의 비즈니스 모델이 소프트웨어 라이선스에서 토큰 렌트로 전환, NVIDIA 매출 40%가 플랫폼을 구매하는 비하이퍼스케일러 시장.",
@@ -65,7 +161,12 @@ window.POSTS_DATA = {
       "date": "2026-01-25",
       "category": "leader",
       "source": "darioamodei.com (다리오 아모데이)",
-      "tags": ["다리오 아모데이", "Anthropic", "AI위험", "AI안전"],
+      "tags": [
+        "다리오 아모데이",
+        "Anthropic",
+        "AI위험",
+        "AI안전"
+      ],
       "slug": "2026-01-25-dario-amodei-adolescence-of-technology",
       "file": "leader/2026-01-25-dario-amodei-adolescence-of-technology.html",
       "summary": "Anthropic CEO 다리오 아모데이가 강력한 AI의 5가지 문명적 위험을 직접 정리했다. 자율성, 생물무기, 권력 장악, 경제 붕괴, 간접 효과. 위험을 아는 것이 대응의 출발점이다.",
@@ -77,7 +178,12 @@ window.POSTS_DATA = {
       "date": "2026-02-01",
       "category": "survival",
       "source": "arXiv (Judy Hanwen Shen, Alex Tamkin)",
-      "tags": ["AI역량", "스킬감소", "Anthropic", "생존"],
+      "tags": [
+        "AI역량",
+        "스킬감소",
+        "Anthropic",
+        "생존"
+      ],
       "slug": "2026-02-01-ai-skill-erosion-anthropic-study",
       "file": "survival/2026-02-01-ai-skill-erosion-anthropic-study.html",
       "summary": "Anthropic이 개발자 52명을 실험한 결과, AI 보조를 쓴 그룹은 학습 점수가 17% 낮았고 속도도 빨라지지 않았다. 생산성이라는 이름 뒤에 실력 저하가 숨어 있다.",
@@ -89,7 +195,12 @@ window.POSTS_DATA = {
       "date": "2026-03-09",
       "category": "research",
       "source": "HBR (Karim R. Lakhani, Jared Spataro, Jen Stave)",
-      "tags": ["AI전환", "조직변혁", "HBR", "임원"],
+      "tags": [
+        "AI전환",
+        "조직변혁",
+        "HBR",
+        "임원"
+      ],
       "slug": "2026-03-09-ai-last-mile-transformation",
       "file": "research/2026-03-09-ai-last-mile-transformation.html",
       "summary": "하버드·마이크로소프트 공동 연구: AI 파일럿은 넘쳐나지만 전사 운영 모델로 전환하지 못하는 7가지 구조적 마찰.",
@@ -101,7 +212,12 @@ window.POSTS_DATA = {
       "date": "2026-03-16",
       "category": "research",
       "source": "arXiv (Dupoux, LeCun, Malik)",
-      "tags": ["자율학습", "LeCun", "인지과학", "MLOps"],
+      "tags": [
+        "자율학습",
+        "LeCun",
+        "인지과학",
+        "MLOps"
+      ],
       "slug": "2026-03-16-why-ai-cant-learn",
       "file": "research/2026-03-16-why-ai-cant-learn.html",
       "summary": "배포된 AI는 스스로 배우는 능력이 0이다. META·UC Berkeley 연구진이 관찰(System A), 행동(System B), 메타 제어(System M) 3요소 프레임워크로 자율 학습의 청사진을 제시했다.",
@@ -113,7 +229,11 @@ window.POSTS_DATA = {
       "date": "2026-03-16",
       "category": "company",
       "source": "TechCrunch (Rebecca Szkutak)",
-      "tags": ["Nvidia", "AI에이전트", "보안"],
+      "tags": [
+        "Nvidia",
+        "AI에이전트",
+        "보안"
+      ],
       "slug": "2026-03-16-nvidia-nemoclaw",
       "file": "company/2026-03-16-nvidia-nemoclaw.html",
       "summary": "Nvidia가 OpenClaw에 엔터프라이즈 보안을 입힌 NemoClaw를 발표했다. AI 에이전트 플랫폼의 경쟁 축이 성능에서 보안과 거버넌스로 이동하고 있다.",
@@ -125,7 +245,11 @@ window.POSTS_DATA = {
       "date": "2026-03-17",
       "category": "research",
       "source": "HBR (Harvard Business School Working Knowledge)",
-      "tags": ["LLM", "AI편향", "투자"],
+      "tags": [
+        "LLM",
+        "AI편향",
+        "투자"
+      ],
       "slug": "2026-03-17-llm-stock-picking-bias",
       "file": "research/2026-03-17-llm-stock-picking-bias.html",
       "summary": "ChatGPT는 DeepSeek보다 중국 주식을 12.5% 높게 예측했다. 원인은 성능이 아니라 현지 뉴스의 부재였다.",
@@ -137,7 +261,12 @@ window.POSTS_DATA = {
       "date": "2026-01-16",
       "category": "research",
       "source": "HBR (Kate Niederhoffer, Alexi Robichaux, Jeffrey T. Hancock)",
-      "tags": ["Workslop", "AI도입", "조직신뢰", "생산성"],
+      "tags": [
+        "Workslop",
+        "AI도입",
+        "조직신뢰",
+        "생산성"
+      ],
       "slug": "2026-01-16-workslop-pressure-cooker",
       "file": "research/2026-01-16-workslop-pressure-cooker.html",
       "summary": "AI 생성 저품질 결과물의 53%는 직원이 품질이 낮다고 알면서도 발송했다. 팀 신뢰가 높으면 Workslop이 61% 줄어든다.",
@@ -149,7 +278,11 @@ window.POSTS_DATA = {
       "date": "2026-03-17",
       "category": "research",
       "source": "HBR (Thomas H. Davenport, Laks Srinivasan)",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2026-03-17-ai-investment-roi-7-factors",
       "file": "research/2026-03-17-ai-investment-roi-7-factors.html",
       "summary": "HBR 조사: AI 성과를 좌우하는 것은 기술이 아니라 가치 정의, 재무 책임, 측정 성숙도다. CFO 책임 조직 76% 고성과 달성.",
@@ -161,7 +294,12 @@ window.POSTS_DATA = {
       "date": "2026-03-06",
       "category": "leader",
       "source": "GitHub (Andrej Karpathy)",
-      "tags": ["Karpathy", "AutoResearch", "AI에이전트", "AI전략"],
+      "tags": [
+        "Karpathy",
+        "AutoResearch",
+        "AI에이전트",
+        "AI전략"
+      ],
       "slug": "2026-03-18-karpathy-autoresearch",
       "file": "leader/2026-03-18-karpathy-autoresearch.html",
       "summary": "AI 에이전트가 코드를 수정하고, 학습을 돌리고, 평가한 뒤 다음 실험을 스스로 설계한다. 하룻밤 100회 실험의 시대.",
@@ -173,7 +311,12 @@ window.POSTS_DATA = {
       "date": "2026-03-16",
       "category": "company",
       "source": "a16z (Eric Zhou, Seema Amble)",
-      "tags": ["SAP", "ERP", "레거시", "디지털전환"],
+      "tags": [
+        "SAP",
+        "ERP",
+        "레거시",
+        "디지털전환"
+      ],
       "slug": "2026-03-16-why-world-runs-on-sap",
       "file": "company/2026-03-16-why-world-runs-on-sap.html",
       "summary": "SAP 업그레이드에 7억 달러, 3년, 컨설턴트 50명. AI는 레거시 ERP를 대체가 아닌 프로그래밍 가능한 시스템으로 바꾸고 있다.",
@@ -185,7 +328,12 @@ window.POSTS_DATA = {
       "date": "2025-10-09",
       "category": "leader",
       "source": "a16z Podcast (Ben Horowitz, Erik Torenberg)",
-      "tags": ["OpenAI", "샘알트만", "AGI", "AI전략"],
+      "tags": [
+        "OpenAI",
+        "샘알트만",
+        "AGI",
+        "AI전략"
+      ],
       "slug": "2025-10-09-sam-altman-openai-four-bets",
       "file": "leader/2025-10-09-sam-altman-openai-four-bets.html",
       "summary": "OpenAI CEO가 수직 통합 반대론을 철회한 이유. AI 과학자가 진짜 튜링 테스트인 이유. 에너지와 AI가 하나의 스택인 이유.",
@@ -197,7 +345,12 @@ window.POSTS_DATA = {
       "date": "2026-01-21",
       "category": "leader",
       "source": "World Economic Forum (Davos 2026)",
-      "tags": ["AGI", "Anthropic", "DeepMind", "다보스"],
+      "tags": [
+        "AGI",
+        "Anthropic",
+        "DeepMind",
+        "다보스"
+      ],
       "slug": "2026-01-21-hassabis-amodei-agi-debate",
       "file": "leader/2026-01-21-hassabis-amodei-agi-debate.html",
       "summary": "다보스 2026에서 구글 딥마인드 하사비스와 Anthropic 아모데이가 AGI 타임라인부터 일자리 소멸까지 정면 토론. 경영 리더가 알아야 할 핵심 정리.",
@@ -209,7 +362,12 @@ window.POSTS_DATA = {
       "date": "2025-12-17",
       "category": "leader",
       "source": "Google DeepMind: The Podcast (Demis Hassabis, Hannah Fry)",
-      "tags": ["DeepMind", "AGI", "월드모델", "AI전략"],
+      "tags": [
+        "DeepMind",
+        "AGI",
+        "월드모델",
+        "AI전략"
+      ],
       "slug": "2025-12-17-demis-hassabis-future-of-intelligence",
       "file": "leader/2025-12-17-demis-hassabis-future-of-intelligence.html",
       "summary": "스케일링 50% + 혁신 50%. 데미스 하사비스가 밝힌 AGI 도달 공식과 경영 리더가 주목해야 할 3가지 전환점.",
@@ -221,7 +379,11 @@ window.POSTS_DATA = {
       "date": "2025-10-27",
       "category": "tech",
       "source": "NeurIPS 2025",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2025-10-27-artificial-hivemind",
       "file": "tech/2025-10-27-artificial-hivemind.html",
       "summary": "NeurIPS 2025: 70개 이상 AI 모델의 답변 유사도 71~82%. AI 브레인스토밍의 다양성은 환상이다.",
@@ -233,7 +395,12 @@ window.POSTS_DATA = {
       "date": "2026-03-10",
       "category": "leader",
       "source": "Google DeepMind Blog (Demis Hassabis)",
-      "tags": ["DeepMind", "AlphaGo", "AGI", "AI전략"],
+      "tags": [
+        "DeepMind",
+        "AlphaGo",
+        "AGI",
+        "AI전략"
+      ],
       "slug": "2026-03-10-alphago-10-years",
       "file": "leader/2026-03-10-alphago-10-years.html",
       "summary": "AlphaGo가 이세돌을 꺾은 지 10년. 신경망+탐색+강화학습이 단백질 구조 예측에서 노벨 화학상까지 이끈 여정.",
@@ -245,7 +412,12 @@ window.POSTS_DATA = {
       "date": "2026-03-16",
       "category": "survival",
       "source": "trueup.io",
-      "tags": ["구조조정", "해고", "테크", "생존"],
+      "tags": [
+        "구조조정",
+        "해고",
+        "테크",
+        "생존"
+      ],
       "slug": "2026-03-16-tech-layoffs-tracker",
       "file": "survival/2026-03-16-tech-layoffs-tracker.html",
       "summary": "2020년 이후 미국 테크 산업 해고자 158만 명. 2026년 3월 기준 5.6만 명 해고, 연간 27.1만 명 전망.",
@@ -257,7 +429,11 @@ window.POSTS_DATA = {
       "date": "2026-03-05",
       "category": "survival",
       "source": "Anthropic Research",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2026-03-05-ai-labor-market-exposure",
       "file": "survival/2026-03-05-ai-labor-market-exposure.html",
       "summary": "Anthropic 연구: AI 이론적 노출 94% vs 실제 사용 33%. 이 격차가 채용과 인력 전략에 미치는 영향.",
@@ -269,7 +445,11 @@ window.POSTS_DATA = {
       "date": "2026-02-23",
       "category": "tech",
       "source": "Anthropic Alignment Science Blog",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2026-02-23-persona-selection-model",
       "file": "tech/2026-02-23-persona-selection-model.html",
       "summary": "Anthropic 연구: AI는 사전 학습에서 다양한 캐릭터를 시뮬레이션하고, 후속 훈련이 '어시스턴트 페르소나'를 선택한다. 불안전한 코드를 학습시키면 세계 지배 욕구까지 나타난다.",
@@ -281,7 +461,12 @@ window.POSTS_DATA = {
       "date": "2025-11-10",
       "category": "leader",
       "source": "The Guardian (Johana Bhuiyan, Dara Kerr, Nick Robins-Early)",
-      "tags": ["피터틸", "실리콘밸리", "AI규제", "기술정체론"],
+      "tags": [
+        "피터틸",
+        "실리콘밸리",
+        "AI규제",
+        "기술정체론"
+      ],
       "slug": "2025-11-10-peter-thiel-antichrist-lectures",
       "file": "leader/2025-11-10-peter-thiel-antichrist-lectures.html",
       "summary": "실리콘밸리 최대 영향력자 피터 틸이 비공개 강연에서 기술 공포를 이용한 글로벌 단일 정부를 경고했다.",
@@ -293,7 +478,11 @@ window.POSTS_DATA = {
       "date": "2026-02-09",
       "category": "research",
       "source": "HBR",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2026-02-09-ai-intensifies-work",
       "file": "research/2026-02-09-ai-intensifies-work.html",
       "summary": "HBR 연구: AI를 쓴 뒤 일이 줄지 않았다. 하는 일의 가짓수, 동시 작업, 퇴근 뒤 업무가 모두 늘어나는 3가지 현상이 나타났다.",
@@ -305,7 +494,11 @@ window.POSTS_DATA = {
       "date": "2026-03-05",
       "category": "research",
       "source": "BCG",
-      "tags": ["임원", "창업자", "팀장"],
+      "tags": [
+        "임원",
+        "창업자",
+        "팀장"
+      ],
       "slug": "2026-03-05-brain-fry",
       "file": "research/2026-03-05-brain-fry.html",
       "summary": "BCG 연구: AI 도구 3개 초과 시 생산성 하락. 14%의 직원이 AI 브레인 프라이를 경험한다.",
@@ -317,7 +510,11 @@ window.POSTS_DATA = {
       "date": "2025-09-22",
       "category": "research",
       "source": "HBR",
-      "tags": ["팀장", "임원", "생산성"],
+      "tags": [
+        "팀장",
+        "임원",
+        "생산성"
+      ],
       "slug": "2025-09-22-workslop",
       "file": "research/2025-09-22-workslop.html",
       "summary": "근로자 40%가 AI 생성 저품질 결과물을 받고 있다. 건당 116분의 시간 손실, 만 명 조직 기준 연간 $9M 비용.",
@@ -329,7 +526,11 @@ window.POSTS_DATA = {
       "date": "2025-09-10",
       "category": "research",
       "source": "Societies (MDPI)",
-      "tags": ["비판적사고", "인지오프로딩", "임원"],
+      "tags": [
+        "비판적사고",
+        "인지오프로딩",
+        "임원"
+      ],
       "slug": "2025-09-10-ai-cognitive-offloading",
       "file": "research/2025-09-10-ai-cognitive-offloading.html",
       "summary": "666명 연구: AI 사용 빈도와 비판적 사고력 사이 r = -0.526의 부적 상관. 인지 오프로딩이 매개한다.",
@@ -341,7 +542,12 @@ window.POSTS_DATA = {
       "date": "2025-10-03",
       "category": "tech",
       "source": "Financial Times",
-      "tags": ["소셜미디어", "임원", "창업자", "마케팅"],
+      "tags": [
+        "소셜미디어",
+        "임원",
+        "창업자",
+        "마케팅"
+      ],
       "slug": "2025-10-03-social-media-peak",
       "file": "tech/2025-10-03-social-media-peak.html",
       "summary": "GWI 데이터: 소셜 미디어 사용 시간이 2022년 정점 이후 하락세. 16~24세가 먼저 줄이고, 55세 이상은 여전히 증가 중. 세대별 디지털 전략 재설계가 필요하다.",

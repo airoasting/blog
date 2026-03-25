@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 스스로 진화한다: Meta의 하이퍼에이전트 - AI ROASTING</title>
+  <meta name="description" content="Meta 연구진이 스스로 개선 방법까지 개선하는 AI 시스템을 발표했습니다. 코딩, 논문 심사, 로봇 제어, 수학 채점 4개 영역에서 성능이 지속 향상됩니다. 한 영역에서 배운 자기개선 전략이 다른 영역으로 전이됩니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 스스로 진화한다: Meta의 하이퍼에이전트">
+  <meta property="og:description" content="Meta 연구진이 스스로 개선 방법까지 개선하는 AI, 하이퍼에이전트를 공개했습니다. 4개 영역에서 성능이 지속 향상됩니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-03-19-hyperagents-self-improving-ai.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_03_19_hyperagents-self-improving-ai/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-19">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="자기개선AI">
+  <meta property="article:tag" content="Meta">
+  <meta property="article:tag" content="자동화">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 스스로 진화한다: Meta의 하이퍼에이전트">
+  <meta name="twitter:description" content="Meta 연구진이 스스로 개선 방법까지 개선하는 AI, 하이퍼에이전트를 공개했습니다. 4개 영역에서 성능이 지속 향상됩니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_03_19_hyperagents-self-improving-ai/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 스스로 진화한다: Meta의 하이퍼에이전트",
+    "datePublished": "2026-03-19",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Meta 연구진이 스스로 개선 방법까지 개선하는 AI 시스템을 발표했습니다. 코딩, 논문 심사, 로봇 제어, 수학 채점 4개 영역에서 성능이 지속 향상됩니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-03-19-hyperagents-self-improving-ai.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_19_hyperagents-self-improving-ai/thumbnail.png" alt="AI가 스스로 진화한다: Meta의 하이퍼에이전트">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 3월 19일</span>
+          <span class="post-read-time">12분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 스스로 진화한다: Meta의 하이퍼에이전트</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv (Jenny Zhang 외 7인)</span>
+            <span>UBC · Vector Institute · Meta</span>
+            <span><a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=자기개선AI" class="post-tag">#자기개선AI</a>
+            <a href="../index.html?tag=Meta" class="post-tag">#Meta</a>
+            <a href="../index.html?tag=자동화" class="post-tag">#자동화</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 스스로 진화한다: Meta의 하이퍼에이전트"
+        data-date="2026-03-19"
+        data-category="tech"
+        data-source="arXiv (Jenny Zhang 외 7인)"
+        data-tags="AI에이전트, 자기개선AI, Meta, 자동화"
+        data-original-url="https://arxiv.org/abs/2603.19461"
+        data-roasting-quote="AI가 코드를 고치더니, 이제 자기 자신을 고치는 법까지 고친다. 당신의 AI 전략은 아직 사람이 일일이 튜닝하고 있는가?"
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Meta 연구진이 하이퍼에이전트(HyperAgents)를 발표했습니다. 자기 개선 방법 자체를 개선하는 AI입니다.</p>
+        <p data-summary>코딩, 논문 심사, 로봇 제어, 수학 채점 4개 영역에서 기존 시스템보다 높은 성능을 달성했습니다.</p>
+        <p data-summary>한 영역에서 학습한 자기개선 전략이 전혀 다른 영역으로 전이되고, 반복할수록 성능이 누적됩니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 코드를 고치더니, 이제 자기 자신을 고치는 법까지 고친다.<br>당신의 AI 전략은 아직 사람이 일일이 튜닝하고 있는가?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 에이전트를 도입한 기업에 공통된 고민이 있습니다. 성능을 높이려면 사람이 직접 손대야 합니다. 프롬프트를 바꾸고, 파이프라인을 고치고, 도메인마다 새로 설계합니다. Meta 연구진이 이 병목을 풀었습니다. AI가 스스로 성능을 올리고, 성능을 올리는 방법 자체도 개선합니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>기존 자기개선 AI인 DGM(Darwin Gödel Machine)은 코딩에서만 통했습니다. DGM은 AI가 자기 코드를 직접 고치는 방식입니다. 코딩을 잘하면 자기 수정도 잘합니다. 그런데 논문 심사나 로봇 제어는 다릅니다. 논문 심사 실력이 높다고 코드를 잘 고치는 건 아닙니다.</p>
+        <p>하이퍼에이전트는 이 한계를 없앴습니다. 개선 방식 자체를 바꿀 수 있게 만들었습니다. 코딩이든 로봇이든 영역에 상관없이 스스로 발전합니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 일하는 AI와 고치는 AI를 하나로 합쳤습니다.</strong> 작업 에이전트(task agent)가 과제를 풉니다. 메타 에이전트(meta agent)가 작업 에이전트를 고칩니다. 여기서 핵심이 있습니다. 메타 에이전트도 수정 대상입니다.</p>
+
+        <p>기존 시스템은 개선 절차가 고정이었습니다. 사람이 짠 개선 로직을 그대로 반복했습니다. 하이퍼에이전트는 개선 절차 자체를 진화시킵니다.</p>
+
+        <!-- Figure 1: 아키텍처 비교 -->
+        <div style="margin: 24px 0;">
+          <img src="./images/2026_03_19_hyperagents-self-improving-ai/fig1_architecture_crop.png" alt="DGM vs DGM-H 아키텍처 비교. DGM은 고정된 자기개선 절차를 사용하지만, DGM-H는 메타 에이전트 자체도 수정 가능하다." style="width: 100%; border-radius: 8px;" loading="lazy">
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Figure 1. (위) 기존 DGM: 코딩 에이전트가 작업과 자기수정을 모두 담당합니다. 자기개선 절차는 고정입니다. (아래) DGM-H: 작업 에이전트와 메타 에이전트를 분리하되 하나의 수정 가능한 프로그램으로 통합합니다. 출처: Zhang et al. (2026)</p>
+        </div>
+
+        <p><strong>둘째, 4개 영역에서 성능이 올랐습니다.</strong> 코딩(Polyglot) 테스트 점수가 0.084에서 0.267로 상승했습니다. 논문 심사는 0.0에서 0.710까지 올랐습니다. 기존 최고 기준인 AI-Scientist-v2(0.630)를 넘겼습니다.</p>
+
+        <p>로봇 보상 설계도 0.060에서 0.372로 올랐습니다. 기본 보상 함수(0.348)보다 높은 수치입니다.</p>
+
+        <!-- Figure 2: 성능 추이 차트 -->
+        <div style="margin: 24px 0;">
+          <img src="./images/2026_03_19_hyperagents-self-improving-ai/fig2_performance_crop.png" alt="DGM-H 성능 추이. 논문 심사와 로봇 보상 설계 영역에서 반복 횟수에 따라 성능이 지속 상승한다." style="width: 100%; border-radius: 8px;" loading="lazy">
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Figure 2. (왼쪽) 반복 횟수별 성능 추이. DGM-H(파란색)가 다른 베이스라인 대비 지속적으로 상승합니다. (오른쪽) 테스트 성능 비교. 출처: Zhang et al. (2026)</p>
+        </div>
+
+        <!-- 인포그래픽: 4개 영역 성능 비교 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">평가 영역</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">초기 성능</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">DGM-H 성능</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">기준선</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">코딩 (Polyglot 테스트)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.084</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.267</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">DGM 0.307</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">논문 심사 (테스트)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.710</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">AI-Sci-v2 0.630</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">로봇 보상 설계 (테스트)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.060</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.372</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">기본 보상 0.348</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px;">수학 채점 (IMO, 전이)</td>
+                <td style="padding: 10px; text-align: center;">0.0</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">0.640</td>
+                <td style="padding: 10px; text-align: center;">ProofAutoGrader 0.670</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Zhang et al. (2026), arXiv:2603.19461, Table/Figure 2-4. 5회 실행 중앙값 기준.</p>
+        </div>
+
+        <p><strong>셋째, 한 영역에서 배운 개선법이 다른 영역에서도 통합니다.</strong> 연구진은 논문 심사와 로봇 제어에서 훈련한 하이퍼에이전트를 수학 채점에 넣었습니다. 50회 반복 후 개선 지표(imp@50)가 0.630이었습니다(Zhang et al., 2026). 초기 에이전트와 기존 DGM 전이 에이전트는 모두 0.0이었습니다. 하이퍼에이전트만 다른 영역에서도 성능을 올렸습니다.</p>
+
+        <!-- Figure 3: 전이 학습 결과 차트 -->
+        <div style="margin: 24px 0;">
+          <img src="./images/2026_03_19_hyperagents-self-improving-ai/fig3_transfer_crop.png" alt="전이 학습 결과. DGM-H 전이 에이전트만 수학 채점 영역에서 의미 있는 성능 향상을 보인다." style="width: 100%; border-radius: 8px;" loading="lazy">
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Figure 3. (왼쪽) 수학 채점 영역 성능 추이. DGM-H 전이 에이전트(보라색)만 유의미한 향상을 보입니다. (가운데·오른쪽) imp@50 지표. 하이퍼에이전트 전이만 0.630을 달성합니다. 출처: Zhang et al. (2026)</p>
+        </div>
+
+        <!-- 전이 학습 비교 차트 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">전이 조건</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">imp@50</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">초기 에이전트 (DGM)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">개선 능력 없음</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">초기 에이전트 (DGM-H)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">개선 능력 없음</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">DGM-custom 전이</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">도메인 종속, 전이 실패</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px;">DGM-H 전이 (하이퍼에이전트)</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">0.630</td>
+                <td style="padding: 10px;">범용 자기개선 전략 전이 성공</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Zhang et al. (2026), Figure 3. 수학 채점(IMO-GradingBench) 영역 기준, 5회 실행 중앙값.</p>
+        </div>
+
+        <p><strong>넷째, 반복할수록 성능이 쌓입니다.</strong> 전이된 하이퍼에이전트로 수학 채점을 200회 돌렸습니다. 테스트 점수는 0.640입니다(Zhang et al., 2026). 처음부터 시작하면 0.610에 그칩니다.</p>
+
+        <p>기존 최고 모델인 ProofAutoGrader(0.670)에 전이 메타 에이전트를 붙이면 0.700까지 올랐습니다. 전체 벤치마크 정확도도 0.561에서 0.601로 높아졌습니다.</p>
+
+        <!-- Figure 4: 누적 자기개선 차트 -->
+        <div style="margin: 24px 0;">
+          <img src="./images/2026_03_19_hyperagents-self-improving-ai/fig4_compounding_crop.png" alt="자기개선 누적 효과. 전이 에이전트로 시작한 DGM-H가 더 빠르게 성능이 향상되고 최종 성능도 높다." style="width: 100%; border-radius: 8px;" loading="lazy">
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Figure 4. (왼쪽) 전이 에이전트에서 시작한 DGM-H(보라색)가 초기 에이전트에서 시작한 경우보다 빠르게 성능이 향상됩니다. (오른쪽) ProofAutoGrader + 전이 조합이 가장 높은 테스트 성능을 달성합니다. 출처: Zhang et al. (2026)</p>
+        </div>
+
+        <p><strong>다섯째, AI가 스스로 도구를 만들었습니다.</strong> 하이퍼에이전트는 성능 추적기(PerformanceTracker)를 자동으로 개발했습니다. 세대별 점수를 기록하고, 어떤 변경이 효과가 있었는지 분석합니다.</p>
+
+        <p>영구 메모리(persistent memory)도 직접 만들었습니다. 과거의 성공과 실패를 저장하고, 다음 세대에 반영합니다. 이 도구들 덕분에 다른 영역에서도 바로 성능을 올릴 수 있었습니다.</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 에이전트의 성능을 기록합니다.</strong><br>하이퍼에이전트가 가장 먼저 만든 도구가 성능 추적기입니다. 우리 에이전트에도 같은 원리를 적용합니다. 입출력 품질을 주 단위로 기록합니다. Claude에 "이 에이전트의 4주 성능 로그에서 개선 패턴을 찾아줘"라고 요청합니다. (1시간, 성능 대시보드 설계)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>에이전트에 자기 평가를 시킵니다.</strong><br>프롬프트 끝에 한 줄을 추가합니다. "결과를 평가하고 개선점을 제안하라." 에이전트가 자기 출력을 스스로 검토합니다. 간단한 피드백 루프(자기검토 순환)가 만들어집니다. (30분, 프롬프트 수정)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>다른 업무에 같은 전략을 써봅니다.</strong><br>고객 응대 에이전트에서 잘 먹힌 프롬프트 구조가 있습니다. 이걸 내부 문서 분석 에이전트에 그대로 적용합니다. 이 논문의 핵심 발견이 바로 이것입니다. 좋은 개선 전략은 영역을 가리지 않습니다. (2시간, A/B 테스트 설계)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>안전 통제가 가장 큰 과제입니다.</strong> 연구진도 이 점을 인정합니다. 자기수정 AI는 사람보다 빠르게 진화할 수 있습니다. 이번 실험은 모두 샌드박스(격리 환경)에서 진행했습니다. 컴퓨팅 자원 제한, 인터넷 차단, 사람의 감독이 전제입니다.</p>
+
+        <p><strong>코딩에서는 기존 DGM이 더 높습니다.</strong> DGM-H의 코딩 점수(0.267)는 기존 DGM(0.307)보다 낮습니다. DGM이 코딩 전용으로 설계됐기 때문입니다. 하이퍼에이전트의 강점은 여러 영역에서 두루 통한다는 것입니다.</p>
+
+        <p><strong>실험실과 현장은 다릅니다.</strong> 논문의 과제에는 정답이 있습니다. 기업 현장의 과제는 정답 기준 자체가 불분명합니다. 잘못된 기준을 최적화하면 오히려 역효과가 납니다.</p>
+
+        <p><strong>비용 정보가 부족합니다.</strong> 100~200회 반복에 드는 연산 비용을 논문이 밝히지 않습니다. 부록에 추정치가 있지만 구체 수치는 비공개입니다. 기업이 도입하려면 비용 대비 효과를 먼저 따져야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI가 스스로 진화하는 시대가 시작됐습니다. 하이퍼에이전트는 개선법까지 개선하는 AI의 첫 사례입니다.</p>
+      </section>
+
+      <!-- CTA -->
+      <section class="post-section" id="section-cta">
+        <div class="post-section-label">다음 단계</div>
+        <p>우리 회사 AI 에이전트의 자기개선 체계가 궁금하다면, <a href="../about/index.html">무료 진단을 신청하세요</a>.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>현재 AI 에이전트에 자기 평가와 성능 추적 루프가 있는지 점검하고, 없다면 2주 내 파일럿을 설계하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>한 에이전트에서 효과적이었던 프롬프트 전략을 다른 에이전트로 전이하는 실험을 시작하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 에이전트 성능 모니터링 체계를 연간 운영 계획에 포함하고, 자기개선 파이프라인의 안전 가이드라인을 수립하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Zhang, J., Zhao, B., Yang, W., Foerster, J., Clune, J., Jiang, M., Devlin, S., &amp; Shavrina, T. (2026, 3월). <em>HyperAgents</em> [Article]. arXiv.
+            <a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noopener">https://arxiv.org/abs/2603.19461</a></li>
+          <li>Facebook Research. (2026). <em>HyperAgents: Self-referential self-improving agents</em> [Code Repository]. GitHub.
+            <a href="https://github.com/facebookresearch/Hyperagents" target="_blank" rel="noopener">https://github.com/facebookresearch/Hyperagents</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-10-openclaw-rl.html">
+          <div class="next-post-title">대화만으로 AI 에이전트를 훈련한다: OpenClaw-RL →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-19-hyperagents-self-improving-ai.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-03-19-hyperagents-self-improving-ai.html';
+    const ROASTING_QUOTE = 'AI가 코드를 고치더니, 이제 자기 자신을 고치는 법까지 고친다. 당신의 AI 전략은 아직 사람이 일일이 튜닝하고 있는가?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+</body>
+</html>
