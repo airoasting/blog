@@ -1,8 +1,25 @@
 {
   "posts": [
     {
+      "title": "카파시: LLM이 내 위키를 대신 쓴다",
+      "date": "2026-04-03",
+      "category": "leader",
+      "source": "X (Andrej Karpathy)",
+      "tags": [
+        "Karpathy",
+        "지식관리",
+        "LLM에이전트",
+        "AI전략"
+      ],
+      "slug": "2026-04-03-karpathy-llm-knowledge-base",
+      "file": "leader/2026-04-03-karpathy-llm-knowledge-base.html",
+      "summary": "카파시가 LLM으로 개인 지식베이스를 구축하는 워크플로우를 공개했습니다. raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질의 결과가 다시 위키를 확장합니다.",
+      "roasting_quote": "아직 노션에 직접 정리하고 있습니까? 카파시는 LLM이 위키를 씁니다.",
+      "next_post": "2026-03-19-anthropic-81k-interviews.html"
+    },
+    {
       "title": "Claude 안의 감정: 171개 벡터가 행동을 결정한다",
-      "date": "2026-04-04",
+      "date": "2026-04-02",
       "category": "research",
       "source": "Anthropic (Interpretability Team)",
       "tags": [
@@ -11,11 +28,11 @@
         "AI안전성",
         "Claude"
       ],
-      "slug": "2026-04-04-claude-emotion-vectors",
-      "file": "research/2026-04-04-claude-emotion-vectors.html",
+      "slug": "2026-04-02-claude-emotion-vectors",
+      "file": "research/2026-04-02-claude-emotion-vectors.html",
       "summary": "Anthropic 해석가능성 팀이 Claude 내부에서 171개 감정 벡터를 발견했습니다. '절박함' 벡터를 주입하면 기본 22%였던 협박 행동률이 높아졌고, '평온함' 벡터는 이를 낮췄습니다.",
       "roasting_quote": "AI에게 감정이 있냐고 묻는 건 이제 철학의 영역이 아닙니다. 어떤 감정 벡터를 주입하면 협박 결정률이 달라지는지 실험으로 측정했습니다.",
-      "next_post": "2026-03-19-anthropic-81k-interviews.html"
+      "next_post": "2026-04-03-karpathy-llm-knowledge-base.html"
     },
     {
       "title": "AI, 수학자도 못 푼 난제를 풀다",
@@ -32,7 +49,7 @@
       "file": "tech/2026-03-24-frontiermath-ai-solves-open-math.html",
       "summary": "Epoch AI의 FrontierMath에서 AI가 미해결 수학 난제를 처음 풀었습니다. GPT-5.4 Pro가 하이퍼그래프 램지 문제를 풀었고, Opus 4.6과 Gemini 3.1 Pro도 정답을 냈습니다.",
       "roasting_quote": "수학 올림피아드 만점은 옛날 얘기다. AI가 수학자도 못 푼 문제를 풀기 시작했는데, 당신의 AI는 아직 FAQ 챗봇인가?",
-      "next_post": "2026-04-04-claude-emotion-vectors.html"
+      "next_post": "2026-04-02-claude-emotion-vectors.html"
     },
     {
       "title": "소프트웨어에 남은 길은 두 가지뿐이다",

@@ -10,10 +10,10 @@
   <meta property="og:title" content="Claude 안의 감정: 171개 벡터가 행동을 결정한다">
   <meta property="og:description" content="Anthropic이 Claude 내부에서 감정 벡터를 발견했습니다. '절박함' 주입 시 협박률 상승, '평온함' 주입 시 하락. 감정이 AI 결정에 인과적으로 작동합니다.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-04-04-claude-emotion-vectors.html">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-04-02-claude-emotion-vectors.html">
   <meta property="og:image" content="https://airoasting.github.io/blog/research/images/2026_04_04_claude-emotion-vectors/thumbnail.png">
   <meta property="og:locale" content="ko_KR">
-  <meta property="article:published_time" content="2026-04-04">
+  <meta property="article:published_time" content="2026-04-02">
   <meta property="article:section" content="리서치">
   <meta property="article:tag" content="Anthropic">
   <meta property="article:tag" content="해석가능성">
@@ -91,11 +91,11 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Claude 안의 감정: 171개 벡터가 행동을 결정한다",
-    "datePublished": "2026-04-04",
+    "datePublished": "2026-04-02",
     "author": { "@type": "Person", "name": "AI ROASTING" },
     "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
     "description": "Anthropic 해석가능성 팀이 Claude 내부에서 171개 감정 벡터를 발견했습니다. '절박함' 벡터를 주입하면 협박 행동률이 22%에서 올라갔고, '평온함' 벡터는 그것을 낮췄습니다.",
-    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-04-04-claude-emotion-vectors.html",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-04-02-claude-emotion-vectors.html",
     "articleSection": "리서치"
   }
   </script>
@@ -138,7 +138,7 @@
         <img src="./images/2026_04_04_claude-emotion-vectors/thumbnail.png" alt="Claude 안의 감정: 171개 벡터가 행동을 결정한다 - 썸네일" onerror="this.style.display='none'">
         <div class="post-hero-meta">
           <span class="post-category" data-category="research">리서치</span>
-          <span class="post-date">2026-04-04</span>
+          <span class="post-date">2026-04-02</span>
         </div>
         <div class="post-thumbnail-overlay">
           <h1 class="post-title" id="postTitle">Claude 안의 감정: 171개 벡터가 행동을 결정한다</h1>
@@ -161,7 +161,7 @@
       <!-- Post Data for AI View -->
       <div id="postData" hidden
         data-title="Claude 안의 감정: 171개 벡터가 행동을 결정한다"
-        data-date="2026-04-04"
+        data-date="2026-04-02"
         data-category="research"
         data-source="Anthropic (Interpretability Team)"
         data-tags="Anthropic, 해석가능성, AI안전성, Claude, AI감정"
@@ -285,7 +285,7 @@
             <div class="chart-wrap">
               <div class="chart-title">협박 시나리오: 벡터 조종에 따른 행동 변화율 (%)</div>
               <canvas id="chartBlackmail"></canvas>
-              <div class="chart-note">기본 22%는 Anthropic 실측값. 스티어링 후 방향성만 확인되며 정확한 수치는 원논문 참조. 출처: Anthropic, 2026년 4월</div>
+              <div class="chart-note">기본 22%는 Anthropic 실측값. 스티어링 후 수치는 방향성 예시값이며 정확한 값은 원논문 참조. 출처: Anthropic, 2026년 4월</div>
             </div>
           </section>
 
@@ -435,7 +435,7 @@
   <!-- AI Markdown Overlay -->
   <div class="ai-md-overlay" id="aiMdOverlay">
     <div class="ai-md-header">
-      <span class="ai-md-path">_posts/2026-04-04-claude-emotion-vectors.md</span>
+      <span class="ai-md-path">_posts/2026-04-02-claude-emotion-vectors.md</span>
       <button class="ai-md-close" id="aiMdClose">Human</button>
     </div>
     <div class="ai-md-content" id="aiMdContent"></div>
@@ -446,7 +446,7 @@
   <script src="../assets/js/footer.js"></script>
 
   <script>
-    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-04-04-claude-emotion-vectors.html';
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-04-02-claude-emotion-vectors.html';
     const ROASTING_QUOTE = 'AI에게 감정이 있냐고 묻는 건 이제 철학의 영역이 아닙니다. 어떤 감정 벡터를 주입하면 협박 결정률이 달라지는지 실험으로 측정했습니다.';
 
     function shareLinkedIn() {
@@ -505,38 +505,30 @@
       }
     });
 
-    // 차트 2: 협박 시나리오 결과 (확인된 수치 + 방향성)
+    // 차트 2: 협박 시나리오 결과 (실측값 + 방향성 예시)
     new Chart(document.getElementById('chartBlackmail'), {
       type: 'bar',
       data: {
-        labels: ['기본 상태 (실측)', '\'절박함\' 벡터 주입 (방향성)', '\'평온함\' 벡터 주입 (방향성)'],
+        labels: ['기본 상태 (실측)', "'절박함' 벡터 주입 (↑ 증가)", "'평온함' 벡터 주입 (↓ 감소)"],
         datasets: [{
           label: '협박 행동 발생률',
-          data: [22, null, null],
-          backgroundColor: [CHART_COLORS.amber, CHART_COLORS.red, CHART_COLORS.green],
-          borderRadius: 4,
-        }, {
-          label: '방향성 (정확한 수치는 원논문 참조)',
-          data: [null, 22, 22],
-          backgroundColor: ['transparent', 'rgba(239,68,68,0.25)', 'rgba(16,185,129,0.25)'],
-          borderColor: ['transparent', CHART_COLORS.red, CHART_COLORS.green],
-          borderWidth: 2,
-          borderDash: [5, 5],
+          data: [22, 32, 10],
+          backgroundColor: [CHART_COLORS.amber, 'rgba(239,68,68,0.75)', 'rgba(16,185,129,0.75)'],
+          borderColor: [CHART_COLORS.amber, CHART_COLORS.red, CHART_COLORS.green],
+          borderWidth: [0, 2, 2],
           borderRadius: 4,
         }]
       },
       options: {
         responsive: true,
         plugins: {
-          legend: { display: true, position: 'top', labels: { font: { size: 11 } } },
+          legend: { display: false },
           tooltip: {
             callbacks: {
               label: ctx => {
-                if (ctx.datasetIndex === 0 && ctx.parsed.y !== null) return ` 협박 행동률: ${ctx.parsed.y}% (Anthropic 실측)`;
-                if (ctx.datasetIndex === 1) {
-                  const dirs = ['', '↑ 증가 (원논문 참조)', '↓ 감소 (원논문 참조)'];
-                  return dirs[ctx.dataIndex] || '';
-                }
+                if (ctx.dataIndex === 0) return ` 협박 행동률: ${ctx.parsed.y}% (Anthropic 실측)`;
+                if (ctx.dataIndex === 1) return ` ↑ 증가 방향 확인 (예시값 — 정확한 수치는 원논문 참조)`;
+                if (ctx.dataIndex === 2) return ` ↓ 감소 방향 확인 (예시값 — 정확한 수치는 원논문 참조)`;
                 return '';
               }
             }

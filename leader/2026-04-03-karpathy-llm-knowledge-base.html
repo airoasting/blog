@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카파시: LLM이 내 위키를 대신 쓴다 | AI ROASTING</title>
+  <meta name="description" content="안드레이 카파시가 LLM으로 개인 지식베이스를 구축하는 워크플로우를 공개했습니다. raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일합니다. 약 100개 아티클, 40만 단어 규모에서도 RAG 없이 동작합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="카파시: LLM이 내 위키를 대신 쓴다">
+  <meta property="og:description" content="카파시가 공개한 LLM 지식베이스 워크플로우. raw 데이터 수집 → LLM이 위키 컴파일 → Q&A → 출력이 다시 위키 확장. 40만 단어에서 RAG 없이 동작합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/leader/2026-04-03-karpathy-llm-knowledge-base.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/leader/images/2026_04_03_karpathy-llm-knowledge-base/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-03">
+  <meta property="article:section" content="리더">
+  <meta property="article:tag" content="Karpathy">
+  <meta property="article:tag" content="지식관리">
+  <meta property="article:tag" content="LLM에이전트">
+  <meta property="article:tag" content="AI전략">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="카파시: LLM이 내 위키를 대신 쓴다">
+  <meta name="twitter:description" content="카파시가 공개한 LLM 지식베이스 워크플로우. raw → 위키 컴파일 → Q&A → 다시 위키 확장. 40만 단어에서 RAG 없이 동작합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/leader/images/2026_04_03_karpathy-llm-knowledge-base/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "카파시: LLM이 내 위키를 대신 쓴다",
+    "datePublished": "2026-04-03",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "안드레이 카파시가 LLM으로 개인 지식베이스를 구축하는 워크플로우를 공개했습니다. raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일합니다. 약 100개 아티클, 40만 단어 규모에서도 RAG 없이 동작합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/leader/2026-04-03-karpathy-llm-knowledge-base.html",
+    "articleSection": "리더"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'leader' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="leader">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="leader">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_03_karpathy-llm-knowledge-base/thumbnail.png"
+             alt="카파시: LLM이 내 위키를 대신 쓴다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="leader">리더</span>
+          <span class="post-date">2026년 4월 3일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">카파시: LLM이 내 위키를 대신 쓴다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>X (Twitter)</span>
+            <span>Andrej Karpathy</span>
+            <span><a href="https://x.com/karpathy/status/2039805659525644595" target="_blank" rel="noopener">LLM Knowledge Bases ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Karpathy" class="post-tag">#Karpathy</a>
+            <a href="../index.html?tag=지식관리" class="post-tag">#지식관리</a>
+            <a href="../index.html?tag=LLM에이전트" class="post-tag">#LLM에이전트</a>
+            <a href="../index.html?tag=AI전략" class="post-tag">#AI전략</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="카파시: LLM이 내 위키를 대신 쓴다"
+        data-date="2026-04-03"
+        data-category="leader"
+        data-source="X (Andrej Karpathy)"
+        data-tags="Karpathy, 지식관리, LLM에이전트, AI전략"
+        data-original-url="https://x.com/karpathy/status/2039805659525644595"
+        data-roasting-quote="아직 노션에 직접 정리하고 있습니까? 카파시는 LLM이 위키를 씁니다."
+        data-next-post="2026-03-18-karpathy-autoresearch.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>카파시가 LLM으로 개인 지식베이스를 구축하는 워크플로우를 공개했습니다.</p>
+            <p data-summary>raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질의 결과가 다시 위키를 확장합니다.</p>
+            <p data-summary>약 100개 아티클, 40만 단어 규모에서도 별도 RAG 없이 동작합니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">아직 노션에 직접 정리하고 있습니까?<br>카파시는 LLM이 위키를 씁니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 훅 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>카파시는 최근 토큰 대부분을 코드가 아닌 지식 조작에 씁니다. 문서를 직접 작성하지 않습니다. LLM이 대신 씁니다. <strong>"최신 LLM은 이 작업에 꽤 능숙하다"</strong>고 카파시는 밝혔습니다.</p>
+            <p>노션, 컨플루언스에 직접 정리하는 방식과 근본적으로 다릅니다. 사람이 구조를 설계하고 내용을 채우는 대신, LLM이 raw 자료를 읽고 스스로 위키를 만듭니다. 경영 리더에게 이 방식은 의사결정 속도와 직결됩니다.</p>
+          </section>
+
+          <!-- 컨텍스트 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>기업 현장에서 지식 관리는 오래된 병목입니다. 회의록, 시장 조사, 경쟁사 분석은 쌓이지만 활용되지 않습니다. <strong>LLM이 이 병목을 해소하는 수준에 도달했습니다.</strong></p>
+            <p>카파시의 방식은 개인 연구용으로 시작됐습니다. 지금 실험하지 않으면 경쟁사가 먼저 내재화합니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, 지식 관리의 주체가 사람에서 LLM으로 바뀝니다.</strong> raw/ 폴더에 아티클, 논문, 이미지를 수집합니다. LLM이 이를 읽고 .md 파일 위키로 컴파일합니다. 위키에는 요약, 백링크, 개념 아티클, 교차 링크가 포함됩니다. 카파시는 위키를 직접 수정하는 경우가 거의 없다고 밝혔습니다.</p>
+
+            <p><strong>둘째, 40만 단어에서 RAG 없이 동작합니다.</strong> RAG(외부 문서를 검색해 AI 답변에 연결하는 기술)는 따로 구축하지 않았습니다. LLM이 인덱스 파일과 요약을 자동 유지합니다. 카파시의 연구 위키는 약 100개 아티클, 40만 단어 수준입니다. 이 규모에서 에이전트가 관련 문서를 스스로 탐색합니다.</p>
+
+            <p><strong>셋째, 질의 결과가 다시 위키를 확장합니다.</strong> 에이전트에게 질문하면 .md 파일, Marp 슬라이드, matplotlib 그래프 형태로 답변이 출력됩니다. 이 출력을 다시 위키에 저장합니다. 탐색할수록 지식베이스가 깊어지는 구조입니다. 카파시는 이를 "내 탐색이 항상 누적된다"고 표현했습니다.</p>
+
+            <p><strong>넷째, LLM이 위키 품질을 스스로 점검합니다.</strong> "헬스 체크" 프롬프트를 실행하면 불일치 데이터를 찾고, 빈 항목을 웹 검색으로 보완합니다. 새로운 아티클 후보도 제안합니다. 위키가 쌓일수록 LLM의 제안 질이 높아집니다.</p>
+
+            <p><strong>다섯째, 직접 만든 검색 엔진을 에이전트 도구로 제공합니다.</strong> 카파시는 위키용 검색 엔진을 직접 개발했습니다. 웹 UI로도 쓰지만, 주로 CLI 도구로 에이전트에게 제공합니다. 대규모 질의에서 에이전트가 이 도구를 직접 호출합니다. 도구가 늘수록 에이전트의 답변 깊이가 증가합니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>Obsidian 설치 후 raw 폴더를 만듭니다.</strong><br>Obsidian을 무료로 설치합니다. 관심 주제 하나를 정하고 raw/ 폴더를 생성합니다. Obsidian Web Clipper 확장으로 관련 아티클 5개를 .md로 저장합니다. (30분)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>Claude에게 위키 초안 작성을 지시합니다.</strong><br>raw/ 폴더 내용을 Claude에 붙여넣고 다음 프롬프트를 실행합니다. "이 파일들을 읽고 핵심 개념별 .md 아티클을 작성해줘. 각 아티클에 요약, 관련 파일 목록, 핵심 포인트 3개를 포함해." (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>위키에 실제 업무 질문을 던집니다.</strong><br>생성된 위키를 Claude에 붙여넣고 실제 의사결정이 필요한 질문을 합니다. 출력 결과를 wiki/ 폴더에 저장해 다음 질의의 입력으로 활용합니다. (30분)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 & 주의점</div>
+            <p><strong>LLM이 없는 사실을 위키에 추가할 수 있습니다.</strong> 환각(hallucination)으로 인해 잘못된 정보가 위키에 섞일 수 있습니다. 중요한 수치나 고유명사는 반드시 원본 파일과 대조해야 합니다. 위키를 맹신하면 의사결정 오류로 이어집니다.</p>
+            <p><strong>위키 품질은 raw 데이터 품질에 달려 있습니다.</strong> 불분명하거나 불완전한 자료를 넣으면 위키도 불완전합니다. "쓰레기를 넣으면 쓰레기가 나온다"는 원칙은 LLM 지식베이스에도 그대로 적용됩니다.</p>
+            <p><strong>규모가 커지면 컨텍스트 창 한계에 부딪힙니다.</strong> 카파시 방식은 소규모(~40만 단어)에서 효과적입니다. 그 이상으로 확장하려면 별도 아키텍처가 필요합니다. 카파시 본인도 이 시점이 오면 파인튜닝을 검토한다고 밝혔습니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>지식은 모으는 것이 아니라 컴파일하는 것입니다. LLM이 그 컴파일러입니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <strong>창업자/CEO:</strong> 팀의 시장 조사를 raw 폴더 형식으로 표준화합니다. 주간 위키 업데이트를 에이전트에게 맡기는 파일럿을 이번 달 시작합니다.
+              </div>
+              <div class="decision-point">
+                <strong>팀장:</strong> 팀원들의 인사이트를 raw 파일로 수집하고 LLM에게 주간 정리를 지시합니다. 회의 전 에이전트에게 위키 질의를 먼저 실행합니다.
+              </div>
+              <div class="decision-point">
+                <strong>임원:</strong> 경쟁사 분석, 산업 리포트를 raw 폴더에 축적합니다. 전략 회의 전 에이전트가 즉시 관련 인사이트를 제공하는 구조를 만듭니다.
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Karpathy, A. (2026, April). <em>LLM Knowledge Bases</em> [Post]. X (Twitter). <a href="https://x.com/karpathy/status/2039805659525644595" target="_blank" rel="noopener">https://x.com/karpathy/status/2039805659525644595</a></li>
+            </ul>
+          </section>
+
+        </div><!-- /.post-body -->
+
+        <!-- Desktop Side TOC -->
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /.post-body-layout -->
+
+      <!-- 원문 보기 -->
+      <a href="https://x.com/karpathy/status/2039805659525644595" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+
+      <!-- 소셜 공유 (데스크톱) -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-18-karpathy-autoresearch.html">
+          <div class="next-post-title">카파시의 AutoResearch: AI 에이전트가 밤새 100회 실험하는 시대 →</div>
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- 모바일 공유 바 -->
+  <div class="mobile-share-bar">
+    <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+    <button class="share-btn" onclick="shareThreads()">Threads</button>
+    <button class="share-btn" onclick="copyLink()">링크 복사</button>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-wrap">
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/leader/2026-04-03-karpathy-llm-knowledge-base.html';
+    const ROASTING_QUOTE = '아직 노션에 직접 정리하고 있습니까? 카파시는 LLM이 위키를 씁니다.';
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+</body>
+</html>
