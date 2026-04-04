@@ -625,16 +625,98 @@
     </div>
   </main>
 
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">newsletter/index.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
   <footer id="site-footer"></footer>
   <script src="../assets/js/footer.js"></script>
+  <script src="../assets/js/newsletter-data.js"></script>
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.view-toggle button[data-view="ai"]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        window.open('../assets/js/newsletter-data.js', '_blank');
+  (function(){
+    var toggleBtns = document.querySelectorAll('.view-toggle button');
+    var overlay = document.getElementById('aiMdOverlay');
+    var closeBtn = document.getElementById('aiMdClose');
+    var content = document.getElementById('aiMdContent');
+    var currentView = 'human';
+    if(!overlay || !toggleBtns.length) return;
+
+    function colorizeLine(line){
+      var esc = line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      if(esc==='---') return '<span class="fm-delimiter">---</span>';
+      if(/^##\s/.test(esc)) return '<span class="md-heading">'+esc+'</span>';
+      if(/^"/.test(esc)) return '<span class="md-quote">'+esc+'</span>';
+      if(/^(\w[\w_]*):/.test(esc)){
+        var idx=esc.indexOf(':');
+        return '<span class="fm-key">'+esc.slice(0,idx)+'</span>:<span class="fm-value">'+esc.slice(idx+1)+'</span>';
+      }
+      return esc||'&nbsp;';
+    }
+
+    function renderLines(lines){
+      return lines.map(function(line,i){
+        return '<div class="md-line"><span class="line-num">'+(i+1)+'</span><span class="line-text">'+colorizeLine(line)+'</span></div>';
+      }).join('');
+    }
+
+    function buildNewsletterMarkdown(){
+      var lines = [];
+      var data = window.NEWSLETTER_DATA || [];
+      lines.push('---');
+      lines.push('page: 뉴스레터 | AI ROASTING | LinkedIn 뉴스레터 아카이브');
+      lines.push('title: 뉴스레터 총 ' + data.length + '화');
+      lines.push('description: LinkedIn 뉴스레터 아카이브');
+      lines.push('type: newsletter');
+      lines.push('---');
+      lines.push('');
+      lines.push('## 뉴스레터 목록 (' + data.length + '화)');
+      lines.push('');
+      data.forEach(function(ep){
+        lines.push('---');
+        lines.push('ep: ' + ep.ep);
+        lines.push('title: ' + ep.title);
+        lines.push('date: ' + ep.date);
+        lines.push('url: ' + ep.url);
+        lines.push('---');
+        lines.push('');
+      });
+      return lines;
+    }
+
+    function showAi(){
+      content.innerHTML = renderLines(buildNewsletterMarkdown());
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideAi(){
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    toggleBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var view = btn.dataset.view;
+        if(view===currentView) return;
+        toggleBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view===view); });
+        currentView = view;
+        if(view==='ai') showAi(); else hideAi();
       });
     });
-  });
+
+    if(closeBtn){
+      closeBtn.addEventListener('click',function(){
+        toggleBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.view==='human'); });
+        currentView = 'human';
+        hideAi();
+      });
+    }
+  })();
   </script>
   <script src="../assets/js/char-effect.js"></script>
   <script>
