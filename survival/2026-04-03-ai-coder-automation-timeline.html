@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개발자 전면 자동화, 예측 시점이 2년 당겨졌다 | AI ROASTING</title>
+  <meta name="description" content="AI Futures Project 연구진이 소프트웨어 엔지니어 전면 자동화 시점을 최대 2년 앞당겼습니다. Daniel의 중앙값은 2029년 말에서 2028년 중반으로, Eli는 2032년 초에서 2030년 중반으로 이동했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="개발자 전면 자동화, 예측 시점이 2년 당겨졌다">
+  <meta property="og:description" content="AI Futures Project 연구진이 코딩 자동화 타임라인을 최대 2년 앞당겼습니다. Daniel: 2029년 말→2028년 중반, Eli: 2032년 초→2030년 중반.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/survival/2026-04-03-ai-coder-automation-timeline.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/survival/images/2026_04_03_ai-coder-automation-timeline/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-03">
+  <meta property="article:section" content="생존">
+  <meta property="article:tag" content="AI타임라인">
+  <meta property="article:tag" content="직업변화">
+  <meta property="article:tag" content="코딩자동화">
+  <meta property="article:tag" content="소프트웨어개발자">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="개발자 전면 자동화, 예측 시점이 2년 당겨졌다">
+  <meta name="twitter:description" content="AI Futures Project 연구진이 코딩 자동화 타임라인을 최대 2년 앞당겼습니다. Daniel: 2029년 말→2028년 중반, Eli: 2032년 초→2030년 중반.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/survival/images/2026_04_03_ai-coder-automation-timeline/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "개발자 전면 자동화, 예측 시점이 2년 당겨졌다",
+    "datePublished": "2026-04-03",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "AI Futures Project 연구진이 소프트웨어 엔지니어 전면 자동화 시점을 최대 2년 앞당겼습니다. Daniel의 중앙값은 2029년 말에서 2028년 중반으로, Eli는 2032년 초에서 2030년 중반으로 이동했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/survival/2026-04-03-ai-coder-automation-timeline.html",
+    "articleSection": "생존"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+
+  <style>
+    .chart-figure {
+      margin: 32px 0;
+      padding: 24px;
+      background: var(--bg-card, #f8f8f8);
+      border-radius: 12px;
+      border: 1px solid var(--border-color, #e8e8e8);
+    }
+    .chart-caption {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary, #1a1a1a);
+      margin-bottom: 4px;
+    }
+    .chart-note {
+      font-size: 12px;
+      color: var(--text-secondary, #666);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--text-secondary, #666);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .legend-dot.before { background: #ccc; border: 1.5px solid #aaa; }
+    .legend-dot.after { background: #7A1F1F; }
+    .doubling-bar-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .doubling-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .doubling-label {
+      font-size: 12px;
+      color: var(--text-secondary, #666);
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .doubling-bar-bg {
+      height: 22px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .doubling-bar-before {
+      background: #bbb;
+      width: 220px;
+    }
+    .doubling-bar-after {
+      background: #7A1F1F;
+      width: 160px;
+    }
+    [data-theme="light"] .chart-figure { background: #f4f4f4; border-color: #e0e0e0; }
+    [data-theme="dark"] .chart-figure { background: #3a3a3a; border-color: #555; }
+    [data-theme="dark"] .chart-caption { color: #e8e8e8; }
+    [data-theme="dark"] .chart-note { color: #bbb; }
+    [data-theme="dark"] .chart-figure svg text { fill: #ddd; }
+    [data-theme="dark"] .chart-figure svg text[fill="#555"] { fill: #e0e0e0 !important; }
+    [data-theme="dark"] .chart-figure svg text[fill="#aaa"] { fill: #bbb !important; }
+    [data-theme="dark"] .chart-figure svg text[fill="#7A1F1F"] { fill: #e05555 !important; }
+    [data-theme="dark"] .chart-figure svg line[stroke="#ddd"] { stroke: #666 !important; }
+    [data-theme="dark"] .chart-figure svg line[stroke="#eee"] { stroke: #5a5a5a !important; }
+    [data-theme="dark"] .chart-figure svg line[stroke="#ccc"] { stroke: #777 !important; }
+    [data-theme="dark"] .chart-figure svg line[stroke="#f0f0f0"] { stroke: #555 !important; }
+    [data-theme="dark"] .chart-figure svg circle[fill="#ddd"] { fill: #777 !important; }
+    [data-theme="dark"] .chart-figure svg circle[stroke="#bbb"] { stroke: #aaa !important; }
+    [data-theme="dark"] .doubling-label { color: #bbb; }
+    [data-theme="dark"] .doubling-bar-before { background: #666; }
+    [data-theme="dark"] .chart-legend { color: #bbb; }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'survival' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="survival">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="survival">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_03_ai-coder-automation-timeline/thumbnail.png"
+             alt="개발자 전면 자동화, 예측 시점이 2년 당겨졌다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="survival">생존</span>
+          <span class="post-date">2026년 4월 3일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">개발자 전면 자동화, 예측 시점이 2년 당겨졌다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>AI Futures Project</span>
+            <span>Daniel Kokotajlo, Eli Lifland, Brendan Halstead</span>
+            <span><a href="https://blog.aifutures.org/p/q1-2026-timelines-update" target="_blank" rel="noopener">Q1 2026 Timelines Update ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI타임라인" class="post-tag">#AI타임라인</a>
+            <a href="../index.html?tag=직업변화" class="post-tag">#직업변화</a>
+            <a href="../index.html?tag=코딩자동화" class="post-tag">#코딩자동화</a>
+            <a href="../index.html?tag=소프트웨어개발자" class="post-tag">#소프트웨어개발자</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="개발자 전면 자동화, 예측 시점이 2년 당겨졌다"
+        data-date="2026-04-04"
+        data-category="survival"
+        data-source="AI Futures Project"
+        data-tags="AI타임라인, 직업변화, 코딩자동화, 소프트웨어개발자"
+        data-original-url="https://blog.aifutures.org/p/q1-2026-timelines-update"
+        data-roasting-quote="'2030년 이후 이야기'라고 생각하셨습니까? 분기점이 2028년으로 당겨졌습니다."
+        data-next-post="2026-04-03-karpathy-llm-knowledge-base.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>AI Futures Project 연구진이 소프트웨어 엔지니어 전면 자동화 시점을 최대 2년 앞당겼습니다.</p>
+            <p data-summary>Daniel은 2029년 말→2028년 중반, Eli는 2032년 초→2030년 중반으로 이동했습니다.</p>
+            <p data-summary>Claude Code가 출시 9개월 만에 연매출 25억 달러를 돌파하면서 기술 가속의 상업적 증거가 됐습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">'2030년 이후 이야기'라고 생각하셨습니까?<br>분기점이 2028년으로 당겨졌습니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 훅 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>AI Futures Project 연구진이 2026년 4월, 예측 타임라인을 다시 수정했습니다. 이번이 처음이 아닙니다. 예측할 때마다 시점이 앞당겨집니다. 이번 업데이트의 부제는 <strong>"양방향으로 수정하겠다고 했습니다"</strong>입니다. 방향은 또 '더 빨리'였습니다.</p>
+            <p>이 연구진은 METR 시간 지평을 추적합니다. METR(Model Evaluation &amp; Threat Research)은 AI 모델 능력을 평가하는 비영리 기관입니다. 이 지표는 AI가 소프트웨어 작업을 자율적으로 수행할 수 있는 복잡도를 측정합니다. 코딩 자동화 분야에서 가장 체계적인 예측 작업 중 하나입니다. 경영 리더는 이 수치를 무시하기 어렵습니다.</p>
+            <p>저자는 이 분야의 주요 연구자 3명입니다. Daniel Kokotajlo는 OpenAI 안전 연구원 출신입니다. AI 2027 시나리오 보고서를 공동 저술하고 퇴사 후 AI 안전 문제를 공개 제기했습니다.</p>
+            <p>Eli Lifland는 Metaculus의 전문 예측자입니다. AI 타임라인 예측 연구에서 두드러진 성과를 냈습니다. Brendan Halstead는 AI Futures Model 개발에 기여했습니다. 이번 업데이트에서 개인 예측치는 공개되지 않았습니다.</p>
+          </section>
+
+          <!-- 컨텍스트 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>이번 수정의 계기는 세 가지입니다. 지난 3~5개월간 에이전트 코딩 발전이 예상보다 빨랐습니다. Gemini 3, GPT-5.2, Claude Opus 4.6 평가 결과와 METR v1.1 방법론 갱신이 반영됐습니다. 단순한 학술 예측이 아닙니다. Claude Code가 출시 9개월 만에 연환산 매출 25억 달러를 달성하면서 기술 가속이 시장에서도 검증됐습니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, AC 자동화 시점이 앞당겨졌습니다.</strong> AC(Automated Coder)는 인간 개발자 전원을 AI로 대체하는 것이 합리적인 시점을 말합니다. Daniel의 중앙값은 2029년 말에서 2028년 중반으로 약 1.5년 앞당겨졌습니다. Eli의 중앙값은 2032년 초에서 2030년 중반으로 약 2년 당겨졌습니다.</p>
+
+            <!-- 차트 1: AC 타임라인 비교 -->
+            <figure class="chart-figure">
+              <div class="chart-caption">AC 자동화 중앙값 예측 변화 (업데이트 전후)</div>
+              <div class="chart-note">AC: AI 기업이 소프트웨어 엔지니어 전원을 AI로 대체하는 것이 합리적인 시점 (각 연구자의 50% 확률 추정)</div>
+              <svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;overflow:visible;" aria-label="AC 타임라인 비교 차트">
+                <defs>
+                  <marker id="arr-tl" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                    <polygon points="0 0, 10 3.5, 0 7" fill="#7A1F1F"/>
+                  </marker>
+                </defs>
+
+                <!-- Row labels -->
+                <text x="4" y="75" font-size="12" font-weight="700" fill="#555" font-family="inherit">Daniel</text>
+                <text x="4" y="158" font-size="12" font-weight="700" fill="#555" font-family="inherit">Eli</text>
+
+                <!-- Vertical grid lines (2026=90, 2027=158, 2028=226, 2029=294, 2030=362, 2031=430, 2032=498, 2033=566, 2034=634) -->
+                <!-- px/year: (634-90)/8 = 68 -->
+                <line x1="90" y1="28" x2="90" y2="185" stroke="#ddd" stroke-width="1"/>
+                <line x1="158" y1="28" x2="158" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="226" y1="28" x2="226" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="294" y1="28" x2="294" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="362" y1="28" x2="362" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="430" y1="28" x2="430" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="498" y1="28" x2="498" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="566" y1="28" x2="566" y2="185" stroke="#eee" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="634" y1="28" x2="634" y2="185" stroke="#ddd" stroke-width="1"/>
+
+                <!-- X-axis -->
+                <line x1="90" y1="185" x2="634" y2="185" stroke="#ccc" stroke-width="1.5"/>
+
+                <!-- Year labels -->
+                <text x="90"  y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2026</text>
+                <text x="158" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2027</text>
+                <text x="226" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2028</text>
+                <text x="294" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2029</text>
+                <text x="362" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2030</text>
+                <text x="430" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2031</text>
+                <text x="498" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2032</text>
+                <text x="566" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2033</text>
+                <text x="634" y="199" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2034</text>
+
+                <!-- ── Daniel row ── -->
+                <!-- 이전: 2029.8 → x = 90 + 3.8*68 = 90+258.4 = 348.4 ≈ 348 -->
+                <!-- 현재: 2028.5 → x = 90 + 2.5*68 = 90+170 = 260 -->
+
+                <!-- Base line -->
+                <line x1="90" y1="80" x2="634" y2="80" stroke="#f0f0f0" stroke-width="1"/>
+
+                <!-- Before dot -->
+                <circle cx="348" cy="80" r="7" fill="#ddd" stroke="#bbb" stroke-width="1.5"/>
+                <text x="348" y="67" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2029 말</text>
+
+                <!-- After dot -->
+                <circle cx="260" cy="80" r="9" fill="#7A1F1F"/>
+                <text x="260" y="67" font-size="10" fill="#7A1F1F" text-anchor="middle" font-weight="bold" font-family="inherit">2028 중반</text>
+
+                <!-- Arrow: from before to after (right→left) -->
+                <line x1="340" y1="80" x2="270" y2="80" stroke="#7A1F1F" stroke-width="2" marker-end="url(#arr-tl)"/>
+                <text x="304" y="75" font-size="10" fill="#7A1F1F" text-anchor="middle" font-weight="bold" font-family="inherit">−1.5년</text>
+
+                <!-- ── Eli row ── -->
+                <!-- 이전: 2032.2 → x = 90 + 6.2*68 = 90+421.6 = 511.6 ≈ 512 -->
+                <!-- 현재: 2030.5 → x = 90 + 4.5*68 = 90+306 = 396 -->
+
+                <!-- Base line -->
+                <line x1="90" y1="163" x2="634" y2="163" stroke="#f0f0f0" stroke-width="1"/>
+
+                <!-- Before dot -->
+                <circle cx="512" cy="163" r="7" fill="#ddd" stroke="#bbb" stroke-width="1.5"/>
+                <text x="512" y="150" font-size="10" fill="#aaa" text-anchor="middle" font-family="inherit">2032 초</text>
+
+                <!-- After dot -->
+                <circle cx="396" cy="163" r="9" fill="#7A1F1F"/>
+                <text x="396" y="150" font-size="10" fill="#7A1F1F" text-anchor="middle" font-weight="bold" font-family="inherit">2030 중반</text>
+
+                <!-- Arrow: from before to after (right→left) -->
+                <line x1="504" y1="163" x2="406" y2="163" stroke="#7A1F1F" stroke-width="2" marker-end="url(#arr-tl)"/>
+                <text x="454" y="158" font-size="10" fill="#7A1F1F" text-anchor="middle" font-weight="bold" font-family="inherit">−2년</text>
+              </svg>
+              <div class="chart-legend">
+                <div class="legend-item"><div class="legend-dot before"></div><span>업데이트 이전 예측</span></div>
+                <div class="legend-item"><div class="legend-dot after"></div><span>2026년 Q1 업데이트 이후</span></div>
+              </div>
+            </figure>
+
+            <p><strong>둘째, 배증 속도가 빨라졌습니다.</strong> METR 시간 지평이 두 배가 되는 데 걸리는 기간이 5.5개월에서 4~4.5개월로 단축됐습니다. 이 지표가 짧아질수록 AI 코딩 능력의 향상 속도가 가파릅니다. 연구진은 이를 예측 수정의 핵심 근거로 제시했습니다.</p>
+
+            <!-- 차트 2: METR 배증 속도 변화 -->
+            <figure class="chart-figure">
+              <div class="chart-caption">METR 시간 지평 배증 속도 변화</div>
+              <div class="chart-note">배증 기간이 짧을수록 AI 코딩 능력이 빠르게 향상됩니다.</div>
+              <div class="doubling-bar-wrap">
+                <div class="doubling-row">
+                  <div class="doubling-label">이전 추정</div>
+                  <div class="doubling-bar-bg doubling-bar-before">5.5개월</div>
+                </div>
+                <div class="doubling-row">
+                  <div class="doubling-label">Daniel 현재</div>
+                  <div class="doubling-bar-bg doubling-bar-after" style="width:145px;">4개월</div>
+                </div>
+                <div class="doubling-row">
+                  <div class="doubling-label">Eli 현재</div>
+                  <div class="doubling-bar-bg doubling-bar-after" style="width:165px;">4.5개월</div>
+                </div>
+              </div>
+            </figure>
+
+            <p><strong>셋째, Claude Opus 4.6이 예측 수정의 직접 계기가 됐습니다.</strong> Daniel은 AC 달성에 필요한 능력 기준을 3년 치에서 1년 치로 낮췄습니다. Opus 4.6의 성능이 기대 이상이었기 때문입니다. 연구진은 이를 "Opus 4.6의 인상적인 성능"으로 표현했습니다.</p>
+
+            <p><strong>넷째, 상업 지표가 기술 가속을 확인합니다.</strong> Claude Code는 출시 9개월 만에 연환산 매출 25억 달러를 넘었습니다. Anthropic은 매년 연매출을 10배씩 늘려왔습니다. 연구진은 이를 기술 가속의 시장 검증 사례로 언급했습니다.</p>
+
+            <p><strong>다섯째, TED-AI 예측도 1.5년 앞당겨졌습니다.</strong> TED-AI(거의 모든 인지 과제에서 최고 수준 인간 전문가를 능가하는 AI)는 AC보다 더 먼 미래의 마일스톤입니다. 이번 업데이트에서 Daniel과 Eli 모두 약 1.5년 앞당겼습니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>AI 코딩 도구를 팀에 파일럿 적용합니다.</strong><br>GitHub Copilot, Cursor, Claude Code 중 하나를 고릅니다. 개발팀 1~2명에게 30일 파일럿을 시작합니다. 월 20~30달러 수준입니다. 도입 여부를 30일 안에 결정합니다.</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>소프트웨어 외주 계약 조건을 검토합니다.</strong><br>2027년 이후 만기 계약이 있다면 AI 코딩 자동화 조항 포함 여부를 법무팀과 검토합니다. 계약 구조가 자동화 전환 시점에 발목을 잡지 않도록 미리 점검합니다. (1주일)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>개발팀 역할 재정의를 시작합니다.</strong><br>"AI 출력 감독자, 요구사항 정의자, 품질 검토자" 세 역할로 전환을 논의합니다. 팀장과 역할 재정의 회의를 반나절 일정으로 잡습니다. 2028년 이전에 전환 계획을 수립하는 것이 목표입니다.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>중앙값은 50% 확률입니다.</strong> Daniel의 2028년 중반은 "50%의 확률로 이 시점 이전에 달성된다"는 의미입니다. 빗나갈 확률도 절반입니다. 연구진 자신도 이를 강조합니다. 이 수치를 확정적 사실로 받아들이면 안 됩니다.</p>
+            <p><strong>두 예측 사이에 2년 차이가 있습니다.</strong> Daniel의 AC 예측(2028 중반)과 Eli의 예측(2030 중반)은 2년 차이입니다. 같은 데이터를 보고도 결론이 다릅니다. 예측의 불확실성을 보여주는 증거입니다.</p>
+            <p><strong>METR 지표에도 한계가 있습니다.</strong> 연구진은 "최선의 개별 지표이지만 결함이 있다"고 직접 인정합니다. 이 지표만으로 전체 자동화 타임라인을 결론 짓기는 어렵습니다. 벤치마크 점수와 실제 업무 능력 사이에는 괴리가 존재합니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>예측은 분기마다 앞당겨집니다. 준비는 지금 시작해야 합니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span> 2028년을 기준으로 개발 인력 구조를 역산합니다. AI 코딩 도구 내재화를 올해 안에 시작하지 않으면 전환 비용이 급증합니다.
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span> 개발팀에 AI 코딩 도구 파일럿을 즉시 시작합니다. 30일 안에 생산성 변화를 측정하고, 역할 재정의 시나리오를 경영진에 보고합니다.
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span> 소프트웨어 외주 계약과 채용 계획을 재검토합니다. 2027~2028년 이후를 기준으로 한 인력 구조 시나리오를 전략 회의 안건에 올립니다.
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Kokotajlo, D., Lifland, E., &amp; Halstead, B. (2026, April). <em>Q1 2026 Timelines Update</em> [Article]. AI Futures Project. <a href="https://blog.aifutures.org/p/q1-2026-timelines-update" target="_blank" rel="noopener">https://blog.aifutures.org/p/q1-2026-timelines-update</a></li>
+            </ul>
+          </section>
+
+        </div><!-- /.post-body -->
+
+        <!-- Desktop Side TOC -->
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /.post-body-layout -->
+
+      <!-- 원문 보기 -->
+      <a href="https://blog.aifutures.org/p/q1-2026-timelines-update" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+
+      <!-- 소셜 공유 (데스크톱) -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../leader/2026-04-03-karpathy-llm-knowledge-base.html">
+          <div class="next-post-title">카파시: LLM이 내 위키를 대신 쓴다 →</div>
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- 모바일 공유 바 -->
+  <div class="mobile-share-bar">
+    <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+    <button class="share-btn" onclick="shareThreads()">Threads</button>
+    <button class="share-btn" onclick="copyLink()">링크 복사</button>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-wrap">
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/survival/2026-04-03-ai-coder-automation-timeline.html';
+    const ROASTING_QUOTE = "'2030년 이후 이야기'라고 생각하셨습니까? 분기점이 2028년으로 당겨졌습니다.";
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
+</body>
+</html>

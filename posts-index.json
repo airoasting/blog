@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "title": "개발자 전면 자동화, 예측 시점이 2년 당겨졌다",
+      "date": "2026-04-03",
+      "category": "survival",
+      "source": "AI Futures Project",
+      "tags": [
+        "AI타임라인",
+        "직업변화",
+        "코딩자동화",
+        "소프트웨어개발자"
+      ],
+      "slug": "2026-04-03-ai-coder-automation-timeline",
+      "file": "survival/2026-04-03-ai-coder-automation-timeline.html",
+      "summary": "AI Futures Project 연구진 3명이 소프트웨어 엔지니어 전면 자동화 시점을 최대 2년 앞당겼습니다. Daniel의 중앙값은 2029년 말에서 2028년 중반으로, Eli는 2032년 초에서 2030년 중반으로 이동했습니다.",
+      "roasting_quote": "'2030년 이후 이야기'라고 생각하셨습니까? 분기점이 2028년으로 당겨졌습니다.",
+      "next_post": "2026-04-03-karpathy-llm-knowledge-base.html"
+    },
+    {
       "title": "카파시: LLM이 내 위키를 대신 쓴다",
       "date": "2026-04-03",
       "category": "leader",
@@ -66,7 +83,24 @@
       "file": "company/2026-03-23-two-paths-for-software.html",
       "summary": "소프트웨어 기업에 남은 길은 둘뿐입니다. AI 제품으로 성장률 10포인트를 올리거나, 영업이익률 40%를 달성하는 것입니다. 중간 지대는 사라졌습니다.",
       "roasting_quote": "성장 10포인트, 마진 40%. 둘 중 하나를 못 고르면 시장이 골라준다. 주가 하락이라는 방식으로.",
-      "next_post": "2026-03-24-frontiermath-ai-solves-open-math"
+      "next_post": "2026-03-23-vibe-physics-ai-grad-student.html"
+    },
+    {
+      "title": "교수가 AI로 1년 연구를 2주에 끝냈다",
+      "date": "2026-03-23",
+      "category": "tech",
+      "source": "Anthropic Research (Matthew Schwartz)",
+      "tags": [
+        "Claude",
+        "AI연구",
+        "에이전트",
+        "연구가속"
+      ],
+      "slug": "2026-03-23-vibe-physics-ai-grad-student",
+      "file": "tech/2026-03-23-vibe-physics-ai-grad-student.html",
+      "summary": "하버드 물리학 교수 Matthew Schwartz가 Claude Opus 4.5로 1~2년 걸릴 양자역학 논문을 2주 만에 완성했습니다. AI는 270회 세션, 5만 1,248건 메시지로 논문 110개 버전을 생성했고, 교수의 감독 시간은 50~60시간이었습니다.",
+      "roasting_quote": "AI가 대학원 2학년이 됐다. 당신 회사 업무는 몇 학년 수준인가?",
+      "next_post": "2026-03-20-karpathy-end-of-coding.html"
     },
     {
       "title": "카파시: 코딩의 종말, 에이전트 위임의 시작",

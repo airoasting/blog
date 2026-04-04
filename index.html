@@ -135,6 +135,15 @@
         </div>
       </section>
 
+      <!-- Newsletter Section -->
+      <section id="nlSection" style="margin-top:48px;">
+        <div class="section-header" style="margin-bottom:0;">
+          <h2 class="section-title" style="color:var(--cat-newsletter,#7C3AED);">뉴스레터 <span class="post-count" id="nlCount"></span></h2>
+          <a href="./newsletter/index.html" class="section-desc" style="text-decoration:none;">전체 보기 →</a>
+        </div>
+        <div class="nl-home-grid" id="nlHomeGrid"></div>
+      </section>
+
     </div>
   </main>
 
@@ -154,8 +163,51 @@
 
   <!-- Scripts -->
   <script src="./assets/js/posts-data.js"></script>
+  <script src="./assets/js/newsletter-data.js"></script>
+  <script src="./assets/js/char-effect.js"></script>
+  <script>if(window.CharEffect) window.CharEffect.initSectionTitle();</script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
   <script src="./assets/js/home.js"></script>
+  <script>
+  (function(){
+    var data = window.NEWSLETTER_DATA || [];
+    var grid = document.getElementById('nlHomeGrid');
+    var countEl = document.getElementById('nlCount');
+    if (!grid || !data.length) return;
+    if (countEl) countEl.textContent = '총 ' + data.length + '화';
+    // Show latest 8
+    var recent = data.slice(0, 8);
+    grid.innerHTML = recent.map(function(item){
+      return '<a href="' + item.url + '" target="_blank" rel="noopener" class="nl-card">' +
+        '<img class="nl-thumb" src="./newsletter/images/' + item.img + '" alt="#' + item.ep + '" loading="lazy" onerror="this.classList.add(\'img-error\')">' +
+        '<span class="nl-ep">#' + item.ep + '</span>' +
+        '<div class="nl-body">' +
+          '<span class="nl-title">' + item.title + '</span>' +
+          '<span class="nl-date">' + item.date + '</span>' +
+        '</div>' +
+      '</a>';
+    }).join('');
+    // Scramble titles on load with stagger
+    grid.querySelectorAll('.nl-title').forEach(function(el, i){
+      setTimeout(function(){
+        if (window.CharEffect && !el._scrambling) {
+          el._scrambling = true;
+          window.CharEffect.scrambleWave(el, el.textContent, 14, 28);
+        }
+      }, i * 70);
+    });
+    // Hover scramble
+    grid.querySelectorAll('.nl-card').forEach(function(card){
+      card.addEventListener('mouseenter', function(){
+        var titleEl = card.querySelector('.nl-title');
+        if (titleEl && !titleEl._scrambling && window.CharEffect) {
+          titleEl._scrambling = true;
+          window.CharEffect.scrambleWave(titleEl, titleEl.textContent, 14, 28);
+        }
+      });
+    });
+  })();
+  </script>
   <script src="./assets/js/filter.js"></script>
   <script src="./assets/js/search.js"></script>
 

@@ -65,8 +65,10 @@
                 data-tag="${tag}">#${tag}</button>`;
     }).join('');
 
+    const nlTab = `<button class="filter-tab filter-tab-newsletter" data-category="newsletter" style="--cat-color:var(--cat-newsletter,#7C3AED)">뉴스레터</button>`;
+
     container.innerHTML = `
-      <div class="filter-tabs">${catHTML}</div>
+      <div class="filter-tabs">${catHTML}${nlTab}</div>
       <div class="filter-pills-wrap">
         <div class="filter-pills" id="filterPills">${tagHTML}</div>
         <button class="filter-pills-toggle" id="filterPillsToggle">전체 보기 +</button>
@@ -77,6 +79,11 @@
     container.querySelectorAll('.filter-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         const cat = btn.dataset.category;
+        if (cat === 'newsletter') {
+          const nlSection = document.getElementById('nlSection');
+          if (nlSection) nlSection.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
         activeCategory = cat === 'all' ? null : cat;
         updateURL();
         renderFilterBar();

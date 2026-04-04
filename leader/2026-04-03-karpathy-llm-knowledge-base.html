@@ -119,9 +119,9 @@
           <!-- 3줄 요약 -->
           <section class="post-section" id="section-summary">
             <div class="post-section-label">3줄 요약</div>
-            <p data-summary>카파시가 LLM으로 개인 지식베이스를 구축하는 워크플로우를 공개했습니다.</p>
+            <p data-summary>카파시가 LLM으로 개인 지식베이스를 구축하는 7단계 워크플로우를 공개했습니다.</p>
             <p data-summary>raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질의 결과가 다시 위키를 확장합니다.</p>
-            <p data-summary>약 100개 아티클, 40만 단어 규모에서도 별도 RAG 없이 동작합니다.</p>
+            <p data-summary>실전 적용 시 수동 대비 5~9배 빠르고, 숙련자조차 놓치는 정보의 20%를 추가로 발견합니다.</p>
           </section>
 
           <!-- Roasting -->
@@ -136,7 +136,7 @@
           <section class="post-section" id="section-hook">
             <div class="post-section-label">이 글, 왜 읽어야 하나</div>
             <p>카파시는 최근 토큰 대부분을 코드가 아닌 지식 조작에 씁니다. 문서를 직접 작성하지 않습니다. LLM이 대신 씁니다. <strong>"최신 LLM은 이 작업에 꽤 능숙하다"</strong>고 카파시는 밝혔습니다.</p>
-            <p>노션, 컨플루언스에 직접 정리하는 방식과 근본적으로 다릅니다. 사람이 구조를 설계하고 내용을 채우는 대신, LLM이 raw 자료를 읽고 스스로 위키를 만듭니다. 경영 리더에게 이 방식은 의사결정 속도와 직결됩니다.</p>
+            <p>노션, 컨플루언스에 직접 정리하는 방식과 다릅니다. LLM이 raw 자료를 읽고 스스로 위키를 만듭니다. 이 방식이 실제 기업 지식에 적용되면 어떤 결과가 나올까요? 10년, 15,161개 노트 규모에서 실측한 데이터가 있습니다.</p>
           </section>
 
           <!-- 컨텍스트 -->
@@ -150,15 +150,139 @@
           <section class="post-section" id="section-insight">
             <div class="post-section-label">핵심 인사이트</div>
 
+            <p><strong>카파시 워크플로우는 7개 레이어로 구성됩니다.</strong> 단순한 "AI에게 정리 맡기기"가 아닙니다. 데이터 수집부터 품질 점검까지 닫힌 루프를 형성합니다. 아래 개념도는 전체 흐름과 복리 축적 구조를 보여줍니다.</p>
+
+            <!-- 7레이어 워크플로우 다이어그램 -->
+            <figure style="margin:2rem 0;">
+              <svg viewBox="0 0 640 195" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;display:block;margin:0 auto;font-family:inherit;" aria-label="카파시 LLM 지식베이스 7레이어 워크플로우 개념도">
+                <defs>
+                  <marker id="arr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                    <polygon points="0 0, 7 2.5, 0 5" fill="#C43500"/>
+                  </marker>
+                  <marker id="arr2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                    <polygon points="0 0, 7 2.5, 0 5" fill="#C43500" opacity="0.55"/>
+                  </marker>
+                </defs>
+
+                <!-- Box 1: Raw 수집 -->
+                <rect x="8" y="18" width="100" height="62" rx="7" fill="rgba(196,53,0,0.07)" stroke="#C43500" stroke-width="1.5"/>
+                <text x="58" y="40" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">① Raw 수집</text>
+                <text x="58" y="55" text-anchor="middle" font-size="9.5" fill="currentColor">아티클 · 논문</text>
+                <text x="58" y="68" text-anchor="middle" font-size="9.5" fill="currentColor">이미지 저장</text>
+
+                <!-- Arrow 1→2 -->
+                <line x1="108" y1="49" x2="126" y2="49" stroke="#C43500" stroke-width="1.5" marker-end="url(#arr)"/>
+
+                <!-- Box 2: LLM 컴파일 -->
+                <rect x="128" y="18" width="112" height="62" rx="7" fill="rgba(196,53,0,0.07)" stroke="#C43500" stroke-width="1.5"/>
+                <text x="184" y="40" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">② LLM 컴파일</text>
+                <text x="184" y="55" text-anchor="middle" font-size="9.5" fill="currentColor">요약 · 백링크</text>
+                <text x="184" y="68" text-anchor="middle" font-size="9.5" fill="currentColor">개념 분류 자동화</text>
+
+                <!-- Arrow 2→3 -->
+                <line x1="240" y1="49" x2="258" y2="49" stroke="#C43500" stroke-width="1.5" marker-end="url(#arr)"/>
+
+                <!-- Box 3: Wiki/Obsidian (highlighted center) -->
+                <rect x="260" y="12" width="130" height="74" rx="7" fill="rgba(196,53,0,0.14)" stroke="#C43500" stroke-width="2"/>
+                <text x="325" y="36" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">③ Wiki · Obsidian</text>
+                <text x="325" y="51" text-anchor="middle" font-size="9.5" fill="currentColor">지식 축적 · 통합 열람</text>
+                <text x="325" y="65" text-anchor="middle" font-size="9" font-weight="700" fill="#C43500">◀ 복리 축적의 중심 ▶</text>
+
+                <!-- Arrow 3→4 -->
+                <line x1="390" y1="49" x2="408" y2="49" stroke="#C43500" stroke-width="1.5" marker-end="url(#arr)"/>
+
+                <!-- Box 4: Q&A 에이전트 -->
+                <rect x="410" y="18" width="112" height="62" rx="7" fill="rgba(196,53,0,0.07)" stroke="#C43500" stroke-width="1.5"/>
+                <text x="466" y="40" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">④ Q&amp;A 에이전트</text>
+                <text x="466" y="55" text-anchor="middle" font-size="9.5" fill="currentColor">RAG 없이 2초</text>
+                <text x="466" y="68" text-anchor="middle" font-size="9.5" fill="currentColor">13,750 노트 검색</text>
+
+                <!-- Arrow 4→5 -->
+                <line x1="522" y1="49" x2="540" y2="49" stroke="#C43500" stroke-width="1.5" marker-end="url(#arr)"/>
+
+                <!-- Box 5: Output 재적립 -->
+                <rect x="542" y="18" width="90" height="62" rx="7" fill="rgba(196,53,0,0.07)" stroke="#C43500" stroke-width="1.5"/>
+                <text x="587" y="40" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">⑤ Output</text>
+                <text x="587" y="55" text-anchor="middle" font-size="9.5" fill="currentColor">.md · 슬라이드</text>
+                <text x="587" y="68" text-anchor="middle" font-size="9.5" fill="currentColor">그래프 출력</text>
+
+                <!-- Feedback loop: Output → down → left → up to Wiki -->
+                <polyline points="587,80 587,140 325,140 325,88"
+                          fill="none" stroke="#C43500" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+                <text x="456" y="157" text-anchor="middle" font-size="10" font-weight="600" fill="#C43500">지식 복리 축적 루프 (탐구할수록 깊어짐)</text>
+
+                <!-- Box 6: Linting -->
+                <rect x="8" y="108" width="232" height="50" rx="7" fill="rgba(196,53,0,0.04)" stroke="#C43500" stroke-width="1" stroke-dasharray="5,3"/>
+                <text x="124" y="128" text-anchor="middle" font-size="10.5" font-weight="700" fill="#C43500">⑥ Linting (건강 점검)</text>
+                <text x="124" y="147" text-anchor="middle" font-size="9" fill="currentColor">불일치 감지 · 빈 항목 보완 · 신규 아티클 제안</text>
+                <!-- Linting → Wiki dashed arrow -->
+                <line x1="240" y1="128" x2="258" y2="78" stroke="#C43500" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arr2)"/>
+
+                <!-- Box 7: Extra Tools (note) -->
+                <text x="58" y="185" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.75">⑦ Extra Tools: CLI 검색 엔진 등 에이전트 도구 추가 가능</text>
+              </svg>
+              <figcaption style="text-align:center;font-size:0.8rem;color:var(--color-muted,#888);margin-top:0.5rem;">카파시 LLM 지식베이스 7레이어 워크플로우</figcaption>
+            </figure>
+
             <p><strong>첫째, 지식 관리의 주체가 사람에서 LLM으로 바뀝니다.</strong> raw/ 폴더에 아티클, 논문, 이미지를 수집합니다. LLM이 이를 읽고 .md 파일 위키로 컴파일합니다. 위키에는 요약, 백링크, 개념 아티클, 교차 링크가 포함됩니다. 카파시는 위키를 직접 수정하는 경우가 거의 없다고 밝혔습니다.</p>
 
-            <p><strong>둘째, 40만 단어에서 RAG 없이 동작합니다.</strong> RAG(외부 문서를 검색해 AI 답변에 연결하는 기술)는 따로 구축하지 않았습니다. LLM이 인덱스 파일과 요약을 자동 유지합니다. 카파시의 연구 위키는 약 100개 아티클, 40만 단어 수준입니다. 이 규모에서 에이전트가 관련 문서를 스스로 탐색합니다.</p>
+            <p><strong>둘째, RAG(회사 내부 문서를 AI에 연결하는 방식) 없이도 동작합니다.</strong> 카파시는 40만 단어 규모에서 별도 구축 없이 LLM 인덱스 파일로 운영합니다. 실전 검증에서 13,750개 노트를 2초 내에 검색했습니다. 구조화된 메타데이터가 있으면 RAG는 마지막 수단입니다.</p>
 
-            <p><strong>셋째, 질의 결과가 다시 위키를 확장합니다.</strong> 에이전트에게 질문하면 .md 파일, Marp 슬라이드, matplotlib 그래프 형태로 답변이 출력됩니다. 이 출력을 다시 위키에 저장합니다. 탐색할수록 지식베이스가 깊어지는 구조입니다. 카파시는 이를 "내 탐색이 항상 누적된다"고 표현했습니다.</p>
+            <p><strong>셋째, 질의 결과가 다시 위키를 확장합니다.</strong> 에이전트에게 질문하면 .md 파일, 슬라이드, 그래프 형태로 답변이 출력됩니다. 이 출력을 위키에 저장합니다. 탐색할수록 지식베이스가 깊어지는 구조입니다. 카파시는 이를 "내 탐색이 항상 누적된다"고 표현했습니다.</p>
 
-            <p><strong>넷째, LLM이 위키 품질을 스스로 점검합니다.</strong> "헬스 체크" 프롬프트를 실행하면 불일치 데이터를 찾고, 빈 항목을 웹 검색으로 보완합니다. 새로운 아티클 후보도 제안합니다. 위키가 쌓일수록 LLM의 제안 질이 높아집니다.</p>
+            <p><strong>넷째, LLM이 위키 품질을 스스로 점검합니다.</strong> Linting 프롬프트를 실행하면 불일치 데이터를 찾고, 빈 항목을 웹 검색으로 보완합니다. 새로운 아티클 후보도 제안합니다. 위키가 쌓일수록 제안의 질이 높아집니다.</p>
 
-            <p><strong>다섯째, 직접 만든 검색 엔진을 에이전트 도구로 제공합니다.</strong> 카파시는 위키용 검색 엔진을 직접 개발했습니다. 웹 UI로도 쓰지만, 주로 CLI 도구로 에이전트에게 제공합니다. 대규모 질의에서 에이전트가 이 도구를 직접 호출합니다. 도구가 늘수록 에이전트의 답변 깊이가 증가합니다.</p>
+            <p><strong>다섯째, 거버넌스가 있어야 규모가 커져도 품질이 유지됩니다.</strong> 카파시 시스템은 약 100개 문서, 40만 단어 규모입니다. 1만 5천 개 이상의 노트로 확장하면 LLM 자율만으로는 품질을 보장하기 어렵습니다. 스키마, 분류 체계, 감사 정책이 갖춰져야 LLM의 자유로운 생성과 품질 보장을 동시에 달성합니다. 이를 "Governed Autonomy(관리된 자율)"라고 부릅니다.</p>
+
+            <!-- 비교 개념도 -->
+            <figure style="margin:2rem 0;">
+              <svg viewBox="0 0 620 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;display:block;margin:0 auto;font-family:inherit;" aria-label="카파시 원형 vs Governed Autonomy 비교">
+                <defs>
+                  <marker id="cmp-arr" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+                    <polygon points="0 0, 7 2.5, 0 5" fill="#C43500"/>
+                  </marker>
+                </defs>
+
+                <!-- Left panel: Karpathy original -->
+                <rect x="8" y="8" width="280" height="204" rx="10" fill="rgba(196,53,0,0.05)" stroke="#C43500" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="148" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#C43500">카파시 원형</text>
+
+                <rect x="24" y="44" width="248" height="36" rx="6" fill="rgba(196,53,0,0.08)" stroke="#C43500" stroke-width="1"/>
+                <text x="148" y="60" text-anchor="middle" font-size="10" fill="currentColor">규모: ~100문서, 40만 단어</text>
+                <text x="148" y="74" text-anchor="middle" font-size="10" fill="currentColor">스키마 없음 · LLM이 주 저자</text>
+
+                <rect x="24" y="92" width="248" height="36" rx="6" fill="rgba(196,53,0,0.08)" stroke="#C43500" stroke-width="1"/>
+                <text x="148" y="108" text-anchor="middle" font-size="10" fill="currentColor">Q&A Agent: 위키 기반 질의</text>
+                <text x="148" y="122" text-anchor="middle" font-size="10" fill="currentColor">지식 루프: 반자동</text>
+
+                <text x="148" y="152" text-anchor="middle" font-size="10" fill="currentColor">강점: 빠른 시작, 단일 주제 깊이</text>
+                <text x="148" y="167" text-anchor="middle" font-size="10" fill="currentColor">한계: 15,000+ 문서에서 품질 보장 어려움</text>
+                <text x="148" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="#C43500">LLM 자율</text>
+
+                <!-- Arrow between panels -->
+                <line x1="298" y1="110" x2="318" y2="110" stroke="#C43500" stroke-width="2" marker-end="url(#cmp-arr)"/>
+                <text x="308" y="104" text-anchor="middle" font-size="9" fill="#C43500">+</text>
+
+                <!-- Right panel: Governed Autonomy -->
+                <rect x="324" y="8" width="288" height="204" rx="10" fill="rgba(196,53,0,0.1)" stroke="#C43500" stroke-width="2"/>
+                <text x="468" y="32" text-anchor="middle" font-size="11" font-weight="700" fill="#C43500">Governed Autonomy</text>
+
+                <rect x="340" y="44" width="256" height="36" rx="6" fill="rgba(196,53,0,0.12)" stroke="#C43500" stroke-width="1"/>
+                <text x="468" y="60" text-anchor="middle" font-size="10" fill="currentColor">규모: 15,000+ 문서 (150배)</text>
+                <text x="468" y="74" text-anchor="middle" font-size="10" fill="currentColor">스키마 v5.4 · 27개 분류 · 20개 정책</text>
+
+                <rect x="340" y="92" width="256" height="36" rx="6" fill="rgba(196,53,0,0.12)" stroke="#C43500" stroke-width="1"/>
+                <text x="468" y="108" text-anchor="middle" font-size="10" fill="currentColor">Q&A: 수동 대비 5배 빠름, +25% 발견</text>
+                <text x="468" y="122" text-anchor="middle" font-size="10" fill="currentColor">지식 루프: 완전 자동 (항상 닫힘)</text>
+
+                <text x="468" y="152" text-anchor="middle" font-size="10" fill="currentColor">강점: 대규모 · 품질 보장 · 복리 성장</text>
+                <text x="468" y="167" text-anchor="middle" font-size="10" fill="currentColor">전제: 과거 거버넌스 투자가 필수</text>
+                <text x="468" y="197" text-anchor="middle" font-size="9" font-weight="700" fill="#C43500">LLM 자율 + 거버넌스 = 품질 보장</text>
+              </svg>
+              <figcaption style="text-align:center;font-size:0.8rem;color:var(--color-muted,#888);margin-top:0.5rem;">카파시 원형 vs Governed Autonomy 비교 (출처: projectresearch.co.kr, 2026)</figcaption>
+            </figure>
+
+            <p><strong>여섯째, 속도 이점보다 완전성 이점이 더 큽니다.</strong> Q&A는 수동 대비 약 5배 빠릅니다. 그런데 진짜 가치는 속도가 아닙니다. 숙련자가 파일명 검색으로 찾지 못하는 문서를 20% 추가로 발견합니다. 이는 능력의 문제가 아닙니다. 복합 분류 태그, 고객 별칭, 다른 디렉터리 연결은 구조적으로 수동 탐색이 불가합니다.</p>
           </section>
 
           <!-- 내일 당장 -->
@@ -177,21 +301,26 @@
                 <span class="action-num">3</span>
                 <div class="action-body"><strong>위키에 실제 업무 질문을 던집니다.</strong><br>생성된 위키를 Claude에 붙여넣고 실제 의사결정이 필요한 질문을 합니다. 출력 결과를 wiki/ 폴더에 저장해 다음 질의의 입력으로 활용합니다. (30분)</div>
               </div>
+              <div class="action-step">
+                <span class="action-num">4</span>
+                <div class="action-body"><strong>분류 체계를 먼저 정의합니다.</strong><br>문서 유형, 주제 분류, 고객/프로젝트 태그를 미리 설계합니다. 이 거버넌스가 없으면 규모가 커질수록 위키 품질이 떨어집니다. Claude에게 "이 문서들의 분류 체계를 5개 기준으로 제안해줘"라고 물어보는 것으로 시작합니다. (30분)</div>
+              </div>
             </div>
           </section>
 
           <!-- 리스크 -->
           <section class="post-section" id="section-risk">
             <div class="post-section-label">리스크 & 주의점</div>
-            <p><strong>LLM이 없는 사실을 위키에 추가할 수 있습니다.</strong> 환각(hallucination)으로 인해 잘못된 정보가 위키에 섞일 수 있습니다. 중요한 수치나 고유명사는 반드시 원본 파일과 대조해야 합니다. 위키를 맹신하면 의사결정 오류로 이어집니다.</p>
-            <p><strong>위키 품질은 raw 데이터 품질에 달려 있습니다.</strong> 불분명하거나 불완전한 자료를 넣으면 위키도 불완전합니다. "쓰레기를 넣으면 쓰레기가 나온다"는 원칙은 LLM 지식베이스에도 그대로 적용됩니다.</p>
-            <p><strong>규모가 커지면 컨텍스트 창 한계에 부딪힙니다.</strong> 카파시 방식은 소규모(~40만 단어)에서 효과적입니다. 그 이상으로 확장하려면 별도 아키텍처가 필요합니다. 카파시 본인도 이 시점이 오면 파인튜닝을 검토한다고 밝혔습니다.</p>
+            <p><strong>LLM이 없는 사실을 위키에 추가할 수 있습니다.</strong> 환각(hallucination)으로 인해 잘못된 정보가 위키에 섞일 수 있습니다. 중요한 수치나 고유명사는 원본 파일과 대조해야 합니다. 위키를 맹신하면 의사결정 오류로 이어집니다.</p>
+            <p><strong>위키 품질은 raw 데이터 품질에 달려 있습니다.</strong> 불분명하거나 불완전한 자료를 넣으면 위키도 불완전합니다. "쓰레기를 넣으면 쓰레기가 나온다"는 원칙은 LLM 지식베이스에도 적용됩니다.</p>
+            <p><strong>규모가 커지면 거버넌스 없이는 유지가 불가합니다.</strong> 카파시 방식은 소규모(약 40만 단어)에서 효과적입니다. 그 이상으로 확장하려면 스키마와 분류 체계가 선행되어야 합니다. 과거의 거버넌스 투자가 미래 자동화의 품질을 결정합니다.</p>
+            <p><strong>닫힌 루프가 없으면 복리 효과는 없습니다.</strong> 수동 지식 축적은 "시간 나면 한다"로 끝납니다. 자동 루프가 없으면 탐구 결과가 위키에 돌아오지 않습니다. 1년 뒤 지식 자산 격차는 이 차이에서 발생합니다.</p>
           </section>
 
           <!-- 한 줄 정리 -->
           <section class="post-section" id="section-closing">
             <div class="post-section-label">한 줄 정리</div>
-            <p>지식은 모으는 것이 아니라 컴파일하는 것입니다. LLM이 그 컴파일러입니다.</p>
+            <p>지식은 모으는 것이 아니라 컴파일하는 것입니다. 거버넌스를 갖춘 조직이 더 좋은 컴파일러를 씁니다.</p>
           </section>
 
           <!-- 리더의 결정 포인트 -->
@@ -199,7 +328,7 @@
             <div class="post-section-label">리더의 결정 포인트</div>
             <div class="decision-points">
               <div class="decision-point">
-                <strong>창업자/CEO:</strong> 팀의 시장 조사를 raw 폴더 형식으로 표준화합니다. 주간 위키 업데이트를 에이전트에게 맡기는 파일럿을 이번 달 시작합니다.
+                <strong>창업자/CEO:</strong> 팀의 시장 조사를 raw 폴더 형식으로 표준화합니다. 분류 체계를 먼저 설계하고, 주간 위키 업데이트를 에이전트에게 맡기는 파일럿을 이번 달 시작합니다.
               </div>
               <div class="decision-point">
                 <strong>팀장:</strong> 팀원들의 인사이트를 raw 파일로 수집하고 LLM에게 주간 정리를 지시합니다. 회의 전 에이전트에게 위키 질의를 먼저 실행합니다.
@@ -215,6 +344,7 @@
             <div class="post-section-label">참고자료</div>
             <ul class="references-list">
               <li>Karpathy, A. (2026, April). <em>LLM Knowledge Bases</em> [Post]. X (Twitter). <a href="https://x.com/karpathy/status/2039805659525644595" target="_blank" rel="noopener">https://x.com/karpathy/status/2039805659525644595</a></li>
+              <li>Project Research. (2026, April). <em>Karpathy의 LLM과 Obsidian 지식 결합</em> [Article]. projectresearch.co.kr. <a href="https://projectresearch.co.kr/karpathy%ec%9d%98-llm%ea%b3%bc-obsidian-%ec%a7%80%ec%8b%9d-%ea%b2%b0%ed%95%a9/" target="_blank" rel="noopener">https://projectresearch.co.kr/karpathy%ec%9d%98-llm%ea%b3%bc-obsidian-%ec%a7%80%ec%8b%9d-%ea%b2%b0%ed%95%a9/</a></li>
             </ul>
           </section>
 
@@ -285,5 +415,9 @@
   <script src="../assets/js/post-features.js"></script>
   <script src="../assets/js/search.js"></script>
   <script src="../assets/js/ai-view.js"></script>
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
 </body>
 </html>

@@ -258,6 +258,23 @@ window.addEventListener('scroll', () => {
 
 > 링크 텍스트를 "영상 보기 ↗" 같이 축약하지 않습니다. URL 전문을 그대로 표시합니다.
 
+**리더의 결정 포인트 섹션 패턴:**
+```html
+<div class="decision-points">
+  <div class="decision-point">
+    <span class="decision-role">창업자/CEO</span> 설명 텍스트.
+  </div>
+  <div class="decision-point">
+    <span class="decision-role">팀장</span> 설명 텍스트.
+  </div>
+  <div class="decision-point">
+    <span class="decision-role">임원</span> 설명 텍스트.
+  </div>
+</div>
+```
+
+> **`<strong>` 태그 금지**: role 레이블에 `<strong>` 대신 반드시 `<span class="decision-role">`을 사용합니다. `decision-role`에 `min-width: 80px; flex-shrink: 0; text-align: right`가 적용되어 세 줄의 텍스트 시작 위치가 정렬됩니다.
+
 **비즈니스 비용 섹션:** 소스에 정량적 비용 수치가 없으면 섹션 자체를 생략합니다. 빈 섹션("[해당 없음]")을 만들지 않습니다.
 
 **Roasting quote 동기화:** Roasting 문구는 4곳에 동일하게 반영해야 합니다: `<blockquote>`, `data-roasting-quote` 속성, `ROASTING_QUOTE` JS 상수, `posts-index.json`.
@@ -311,7 +328,32 @@ function copyPrompt(btn) {
 
 > **모바일 공유 바**: `position: fixed; bottom: 0`이므로 `padding-bottom: calc(60px + env(safe-area-inset-bottom))` 적용.
 
-### 4-10. CSS 기본 규칙
+### 4-10. 인라인 차트 다크모드 CSS 규칙
+
+포스트 내 `<style>` 블록에서 차트·도표 컴포넌트의 다크/라이트 모드를 처리할 때는 **`@media (prefers-color-scheme: dark)` 금지**. 사이트 테마 토글과 충돌하여 라이트모드 페이지에 다크 배경이 강제 적용됩니다.
+
+```css
+/* ✅ 올바른 방법 — data-theme 셀렉터 단독 사용 */
+[data-theme="light"] .chart-figure { background: #f4f4f4; border-color: #e0e0e0; }
+[data-theme="dark"]  .chart-figure { background: #3a3a3a; border-color: #555; }
+
+/* ❌ 금지 */
+@media (prefers-color-scheme: dark) {
+  .chart-figure { background: #1e1e1e; }
+}
+```
+
+다크모드 SVG 텍스트 가시성 기본값:
+
+```css
+[data-theme="dark"] .chart-figure svg text              { fill: #ddd; }
+[data-theme="dark"] .chart-figure svg text[fill="#555"] { fill: #e0e0e0 !important; }
+[data-theme="dark"] .chart-figure svg text[fill="#aaa"] { fill: #bbb   !important; }  /* #888로 내리지 않음 */
+[data-theme="dark"] .chart-figure svg line[stroke="#eee"]  { stroke: #5a5a5a !important; }
+[data-theme="dark"] .chart-figure svg line[stroke="#f0f0f0"]{ stroke: #555   !important; }
+```
+
+### 4-11. CSS 기본 규칙
 
 ```css
 body {
@@ -335,9 +377,20 @@ h3 {
   margin-top: 32px;
   margin-bottom: 8px;
 }
+
+/* 제목 호버 효과 — 카테고리 색으로 전환 */
+.post-thumbnail-overlay .post-title {
+  transition: color 0.25s ease;
+  cursor: default;
+}
+.post[data-category="research"] .post-thumbnail-overlay .post-title:hover { color: var(--cat-research) !important; }
+.post[data-category="leader"]   .post-thumbnail-overlay .post-title:hover { color: var(--cat-leader)   !important; }
+.post[data-category="company"]  .post-thumbnail-overlay .post-title:hover { color: var(--cat-company)  !important; }
+.post[data-category="tech"]     .post-thumbnail-overlay .post-title:hover { color: var(--cat-tech)     !important; }
+.post[data-category="survival"] .post-thumbnail-overlay .post-title:hover { color: var(--cat-survival) !important; }
 ```
 
-### 4-11. 스크립트
+### 4-12. 스크립트
 
 ```html
 <script>
@@ -347,7 +400,7 @@ h3 {
 <script src="../assets/js/ai-view.js"></script>
 ```
 
-### 4-12. `_posts/` 마크다운 파일
+### 4-13. `_posts/` 마크다운 파일
 
 각 HTML 아티클에 대응하는 마크다운 파일을 `_posts/` 폴더에 저장합니다. AI 뷰에서 표시됩니다.
 

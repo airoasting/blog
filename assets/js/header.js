@@ -6,7 +6,7 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/(research|leader|company|tech|survival|about)\//.test(loc)) {
+  if (/\/(research|leader|company|tech|survival|newsletter|about)\//.test(loc)) {
     prefix = '../';
   }
 
@@ -63,6 +63,7 @@
           navLink('company', '기업') +
           navLink('tech', '기술') +
           navLink('survival', '생존') +
+          '<a href="' + prefix + 'newsletter/index.html" class="nav-newsletter' + (activeCat === 'newsletter' ? ' active' : '') + '">뉴스레터</a>' +
         '</nav>' +
       '</div>' +
     '</div>' +
@@ -75,6 +76,7 @@
       mobileLink('company', '기업') +
       mobileLink('tech', '기술') +
       mobileLink('survival', '생존') +
+      '<a href="' + prefix + 'newsletter/index.html">뉴스레터</a>' +
     '</div>';
 
   var header = document.getElementById('site-header');

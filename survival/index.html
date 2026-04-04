@@ -79,6 +79,7 @@
 
   <script src="../assets/js/footer.js"></script>
 
+  <script src="../assets/js/char-effect.js"></script>
   <script src="../assets/js/posts-data.js"></script>
   <script>
   (function(){
@@ -129,29 +130,34 @@
       if(!featuredHero) return;
       var catLabel = CATEGORY_LABELS[post.category] || post.category;
       var url = './' + post.slug + '.html';
-      var thumbPath = getThumbnailPath(post);
+      var d = new Date(post.date + 'T00:00:00');
+      var heroDate = d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일';
+      featuredHero.setAttribute('data-hero-cat', post.category);
       featuredHero.innerHTML =
+        '<canvas class="hero-char-canvas"></canvas>'+
         '<a href="'+url+'" class="featured-hero-link">'+
-          '<div class="featured-hero-image">'+
-            '<img src="'+thumbPath+'" alt="'+post.title+'" onerror="this.parentElement.classList.add(\'no-image\')">'+
-            '<div class="featured-hero-overlay">'+
-              '<span class="featured-hero-badge">'+catLabel+'</span>'+
-              '<span class="featured-hero-date">'+post.date+'</span>'+
-            '</div>'+
+          '<span class="featured-hero-accent"></span>'+
+          '<div class="featured-hero-meta">'+
+            '<span class="featured-hero-cat">'+catLabel+'</span>'+
+            '<span class="featured-hero-meta-date">'+heroDate+'</span>'+
+            (post.source ? '<span class="featured-hero-meta-source">'+getSourceTag(post.source)+'</span>' : '')+
           '</div>'+
           '<div class="featured-hero-content">'+
             '<h2 class="featured-hero-title">'+post.title+'</h2>'+
             '<p class="featured-hero-summary">'+(post.summary||'')+'</p>'+
-            (post.source ? '<span class="featured-hero-source-tag">'+getSourceTag(post.source)+'</span>' : '')+
+            '<span class="featured-hero-cta">읽기 →</span>'+
           '</div>'+
         '</a>';
       featuredHero.style.display = 'block';
+      if (window._heroCleanup) window._heroCleanup();
+      window._heroCleanup = window.CharEffect
+        ? window.CharEffect.initHero(featuredHero, post.category)
+        : null;
     }
 
     function postToCard(post){
       var catLabel = CATEGORY_LABELS[post.category] || post.category;
       var url = './' + post.slug + '.html';
-      var thumbPath = getThumbnailPath(post);
       var seriesBadge = '';
       if(post.series){
         var order = post.series_order ? ' #'+post.series_order : '';
@@ -160,12 +166,13 @@
       var d = new Date(post.date + 'T00:00:00');
       var dateStr = d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일';
       return '<a href="'+url+'" class="card" data-category="'+post.category+'">' +
-        '<div class="card-thumb"><img src="'+thumbPath+'" alt="'+post.title+'" onerror="this.parentElement.classList.add(\'no-image\'); this.remove();"></div>' +
+        '<canvas class="card-char-canvas"></canvas>' +
+        '<div class="card-body">' +
         '<div class="card-meta"><span class="card-badge">'+catLabel+'</span><span class="card-date">'+dateStr+'</span></div>' +
         seriesBadge +
         '<div class="card-title">'+post.title+'</div>' +
         (post.source ? '<span class="card-source-tag">'+getSourceTag(post.source)+'</span>' : '') +
-        '</a>';
+        '</div></a>';
     }
 
     var hasFeatured = false;
@@ -176,6 +183,7 @@
       grid.style.display = batch.length ? 'grid' : 'none';
       empty.style.display = (batch.length || hasFeatured) ? 'none' : 'block';
       loadMoreBtn.style.display = visible < posts.length ? 'block' : 'none';
+      if (window.CharEffect) window.CharEffect.initCards(grid);
     }
 
     var data = window.POSTS_DATA || { posts: [] };
@@ -190,6 +198,9 @@
 
     visible = Math.min(PAGE_SIZE, posts.length);
     render();
+    if (window.CharEffect) window.CharEffect.initReveal();
+    if (window.CharEffect) window.CharEffect.initSectionTitle();
+    if (window.CharEffect) window.CharEffect.initCardTitles(grid);
 
     loadMoreBtn.addEventListener('click',function(){
       visible = Math.min(visible+PAGE_SIZE, posts.length);

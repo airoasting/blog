@@ -168,6 +168,7 @@
     featuredHero.setAttribute('data-hero-cat', post.category);
 
     featuredHero.innerHTML = `
+      <canvas class="hero-char-canvas"></canvas>
       <a href="${url}" class="featured-hero-link">
         <span class="featured-hero-accent"></span>
         <div class="featured-hero-meta">
@@ -183,6 +184,11 @@
       </a>
     `;
     featuredHero.style.display = 'block';
+    if (window._heroCleanup) window._heroCleanup();
+    if (window.CharEffect) {
+      window._heroCleanup = window.CharEffect.initHero(featuredHero, post.category);
+      window.CharEffect.initReveal();
+    }
   }
 
   // --- Render cards ---
@@ -202,37 +208,41 @@
     if (skeletonGrid) skeletonGrid.style.display = 'none';
     if (emptyState) emptyState.style.display = 'none';
     postGrid.style.display = 'grid';
+    if (window.CharEffect) window.CharEffect.initCards(postGrid);
+    if (window.CharEffect) window.CharEffect.initCardTitles(postGrid);
   }
 
   function appendPosts(posts) {
     if (!postGrid) return;
     postGrid.insertAdjacentHTML('beforeend', posts.map(postToCard).join(''));
+    if (window.CharEffect) window.CharEffect.initCards(postGrid);
   }
 
   function postToCard(post) {
     const catLabel = CATEGORY_LABELS[post.category] || post.category;
     const url = './' + post.category + '/' + post.slug + '.html';
 
-    // Series badge
     let seriesBadge = '';
     if (post.series) {
       const order = post.series_order ? ` #${post.series_order}` : '';
       seriesBadge = `<span class="card-series-badge">${post.series}${order}</span>`;
     }
 
-    // Format date as "YYYY년 M월 D일"
     const d = new Date(post.date + 'T00:00:00');
     const dateStr = d.getFullYear() + '년 ' + (d.getMonth()+1) + '월 ' + d.getDate() + '일';
 
     return `
       <a href="${url}" class="card" data-category="${post.category}">
-        <div class="card-meta">
-          <span class="card-badge">${catLabel}</span>
-          <span class="card-date">${dateStr}</span>
+        <canvas class="card-char-canvas"></canvas>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-badge">${catLabel}</span>
+            <span class="card-date">${dateStr}</span>
+          </div>
+          ${seriesBadge}
+          <div class="card-title">${post.title.replace(/: /g, ':\u00a0')}</div>
+          ${post.source ? `<span class="card-source-tag">${getSourceTag(post.source)}</span>` : ''}
         </div>
-        ${seriesBadge}
-        <div class="card-title">${post.title.replace(/: /g, ':\u00a0')}</div>
-        ${post.source ? `<span class="card-source-tag">${getSourceTag(post.source)}</span>` : ''}
       </a>
     `;
   }

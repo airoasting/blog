@@ -110,7 +110,7 @@
         data-source="trueup.io"
         data-tags="구조조정, 해고, 테크, 생존"
         data-original-url="https://trueup.io/layoffs"
-        data-roasting-quote="AI가 일자리를 만든다고? 숫자는 정반대를 말하고 있다."
+        data-roasting-quote="AI가 일자리를 만든다고? 숫자는 정반대를 말하고 있습니다."
         data-next-post=""></div>
 
       <!-- Post Body Layout -->
@@ -129,7 +129,7 @@
       <section class="post-section" id="section-roasting">
         <div class="post-section-label">Roasting</div>
         <div class="roasting-block">
-          <blockquote id="roastingQuote">AI가 일자리를 만든다고?<br>숫자는 정반대를 말하고 있다.</blockquote>
+          <blockquote id="roastingQuote">AI가 일자리를 만든다고?<br>숫자는 정반대를 말하고 있습니다.</blockquote>
         </div>
       </section>
 
@@ -462,7 +462,7 @@
 
   <script>
     const PAGE_URL = 'https://airoasting.github.io/blog/survival/2026-03-16-tech-layoffs-tracker.html';
-    const ROASTING_QUOTE = 'AI가 일자리를 만든다고? 숫자는 정반대를 말하고 있다.';
+    const ROASTING_QUOTE = 'AI가 일자리를 만든다고? 숫자는 정반대를 말하고 있습니다.';
 
     function shareLinkedIn() {
       window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
@@ -485,5 +485,9 @@
   <script src="../assets/js/ai-view.js"></script>
   <script src="../assets/js/post-features.js"></script>
 
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
 </body>
 </html>
