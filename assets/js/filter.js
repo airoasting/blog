@@ -69,7 +69,7 @@
       <div class="filter-tabs">${catHTML}</div>
       <div class="filter-pills-wrap">
         <div class="filter-pills" id="filterPills">${tagHTML}</div>
-        <button class="filter-pills-toggle" id="filterPillsToggle" style="display:none;">더보기 +</button>
+        <button class="filter-pills-toggle" id="filterPillsToggle">전체 보기 +</button>
       </div>
     `;
 
@@ -94,18 +94,13 @@
       });
     });
 
-    // Show/hide toggle button if pills overflow
+    // Toggle button for pills collapse/expand
     var pills = document.getElementById('filterPills');
     var toggle = document.getElementById('filterPillsToggle');
     if (pills && toggle) {
-      setTimeout(function () {
-        if (pills.scrollHeight > pills.clientHeight + 2) {
-          toggle.style.display = 'block';
-        }
-      }, 50);
       toggle.addEventListener('click', function () {
         var expanded = pills.classList.toggle('expanded');
-        toggle.textContent = expanded ? '접기 −' : '더보기 +';
+        toggle.textContent = expanded ? '접기 −' : '전체 보기 +';
       });
     }
   }

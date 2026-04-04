@@ -83,6 +83,17 @@
     header.innerHTML = html;
   }
 
+  // Format post dates: "2026-03-17" → "2026년 3월 17일"
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.post-date').forEach(function (el) {
+      var raw = el.textContent.trim();
+      if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+        var parts = raw.split('-');
+        el.textContent = parts[0] + '년 ' + parseInt(parts[1], 10) + '월 ' + parseInt(parts[2], 10) + '일';
+      }
+    });
+  });
+
   // Hamburger toggle
   var hamburger = document.getElementById('hamburger');
   var mobileNav = document.getElementById('mobileNav');

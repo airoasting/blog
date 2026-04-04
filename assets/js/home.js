@@ -160,21 +160,25 @@
     if (!featuredHero) return;
     const catLabel = CATEGORY_LABELS[post.category] || post.category;
     const url = './' + post.category + '/' + post.slug + '.html';
-    const thumbPath = getThumbnailPath(post);
+    const sourceTag = post.source ? getSourceTag(post.source) : '';
+
+    const d = new Date(post.date + 'T00:00:00');
+    const heroDateStr = d.getFullYear() + '년 ' + (d.getMonth()+1) + '월 ' + d.getDate() + '일';
+
+    featuredHero.setAttribute('data-hero-cat', post.category);
 
     featuredHero.innerHTML = `
       <a href="${url}" class="featured-hero-link">
-        <div class="featured-hero-image">
-          <img src="${thumbPath}" alt="${post.title}" onerror="this.parentElement.classList.add('no-image')">
-          <div class="featured-hero-overlay">
-            <span class="featured-hero-badge">${catLabel}</span>
-            <span class="featured-hero-date">${post.date}</span>
-          </div>
+        <span class="featured-hero-accent"></span>
+        <div class="featured-hero-meta">
+          <span class="featured-hero-cat">${catLabel}</span>
+          <span class="featured-hero-meta-date">${heroDateStr}</span>
+          ${sourceTag ? `<span class="featured-hero-meta-source">${sourceTag}</span>` : ''}
         </div>
         <div class="featured-hero-content">
           <h2 class="featured-hero-title">${post.title.replace(/: /g, ':\u00a0')}</h2>
           <p class="featured-hero-summary">${post.summary || ''}</p>
-          ${post.source ? `<span class="featured-hero-source-tag">${getSourceTag(post.source)}</span>` : ''}
+          <span class="featured-hero-cta">읽기 →</span>
         </div>
       </a>
     `;
@@ -208,7 +212,6 @@
   function postToCard(post) {
     const catLabel = CATEGORY_LABELS[post.category] || post.category;
     const url = './' + post.category + '/' + post.slug + '.html';
-    const thumbPath = getThumbnailPath(post);
 
     // Series badge
     let seriesBadge = '';
@@ -223,9 +226,6 @@
 
     return `
       <a href="${url}" class="card" data-category="${post.category}">
-        <div class="card-thumb">
-          <img src="${thumbPath}" alt="${post.title}" onerror="this.parentElement.classList.add('no-image'); this.remove();">
-        </div>
         <div class="card-meta">
           <span class="card-badge">${catLabel}</span>
           <span class="card-date">${dateStr}</span>
