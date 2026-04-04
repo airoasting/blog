@@ -36,9 +36,15 @@
 이미지:  {category}/images/YYYY_MM_DD_slug/thumbnail.png
 마크다운: _posts/YYYY-MM-DD-slug.md
 데이터:  posts-index.json (단일 소스) → node sync-posts.js → assets/js/posts-data.js
+뉴스레터: assets/js/newsletter-data.js (단일 소스) → newsletter-index.json (footer 아카이브용)
 ```
 
 > **posts-index.json이 단일 소스**입니다. posts-data.js를 직접 수정한 경우 반드시 posts-index.json에도 동일 내용을 반영하세요.
+
+> **newsletter-index.json**은 `newsletter-data.js`에서 자동 생성됩니다. `newsletter-data.js`에 에피소드를 추가하면 반드시 아래 명령으로 재생성하세요:
+> ```
+> node -e "const fs=require('fs');const src=fs.readFileSync('assets/js/newsletter-data.js','utf8');const json=src.replace('window.NEWSLETTER_DATA = ','').replace(/;\\s*$/,'');const d=JSON.parse(json);fs.writeFileSync('newsletter-index.json',JSON.stringify({newsletters:d.map(({ep,title,date,url})=>({ep,title,date,url}))},null,2));"
+> ```
 
 ## 가이드 참조
 
