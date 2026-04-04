@@ -82,15 +82,45 @@
       if (archiveParam && /^\d{4}-\d{2}$/.test(archiveParam)) {
         isArchiveMode = true;
         renderList = postsData.filter(p => p.date.substring(0, 7) === archiveParam);
+
+        // Filter newsletter items for this month
+        const nlData = window.NEWSLETTER_DATA || [];
+        const nlFiltered = nlData.filter(nl => nl.date.substring(0, 7) === archiveParam);
+        const totalCount = renderList.length + nlFiltered.length;
+
         const parts = archiveParam.split('-');
         const archiveLabel = parts[0] + '년 ' + parseInt(parts[1], 10) + '월';
         const archiveHeader = document.getElementById('archiveHeader');
         if (archiveHeader) {
           archiveHeader.innerHTML =
-            '<h2 class="section-title">' + archiveLabel + ' <span class="post-count">총 ' + renderList.length + '개</span></h2>' +
+            '<h2 class="section-title">' + archiveLabel + ' <span class="post-count">총 ' + totalCount + '개</span></h2>' +
             '<p class="section-desc">아카이브</p>';
           archiveHeader.style.display = '';
         }
+
+        // Render filtered newsletter items in nlSection
+        const nlSection = document.getElementById('nlSection');
+        const nlGrid = document.getElementById('nlHomeGrid');
+        const nlCountEl = document.getElementById('nlCount');
+        if (nlSection && nlGrid) {
+          if (nlFiltered.length > 0) {
+            if (nlCountEl) nlCountEl.textContent = nlFiltered.length + '화';
+            nlGrid.innerHTML = nlFiltered.map(function(item) {
+              return '<a href="' + item.url + '" target="_blank" rel="noopener" class="nl-card">' +
+                '<img class="nl-thumb" src="./newsletter/images/' + item.img + '" alt="#' + item.ep + '" loading="lazy" onerror="this.classList.add(\'img-error\')">' +
+                '<span class="nl-ep">#' + item.ep + '</span>' +
+                '<div class="nl-body">' +
+                  '<span class="nl-title">' + item.title + '</span>' +
+                  '<span class="nl-date">' + item.date + '</span>' +
+                '</div>' +
+              '</a>';
+            }).join('');
+            nlSection.style.display = '';
+          } else {
+            nlSection.style.display = 'none';
+          }
+        }
+
         // Hide filter bar and section header in archive mode
         const filterBar = document.getElementById('filterBar');
         if (filterBar) filterBar.style.display = 'none';

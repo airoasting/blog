@@ -122,13 +122,33 @@
     });
   }
 
-  // Try window.POSTS_DATA first, then fetch
+  // Combine posts + newsletters for archive counts
+  function buildCombined(posts, newsletters) {
+    var combined = posts.slice();
+    (newsletters || []).forEach(function (nl) {
+      combined.push({ date: nl.date });
+    });
+    buildArchive(combined);
+  }
+
+  function loadAndBuild(posts) {
+    // Try window.NEWSLETTER_DATA first (available on pages that loaded it)
+    if (window.NEWSLETTER_DATA) {
+      buildCombined(posts, window.NEWSLETTER_DATA);
+    } else {
+      fetch(prefix + 'newsletter-index.json')
+        .then(function (r) { return r.json(); })
+        .then(function (d) { buildCombined(posts, d.newsletters || []); })
+        .catch(function () { buildArchive(posts); });
+    }
+  }
+
   if (window.POSTS_DATA && window.POSTS_DATA.posts) {
-    buildArchive(window.POSTS_DATA.posts);
+    loadAndBuild(window.POSTS_DATA.posts);
   } else {
     fetch(prefix + 'posts-index.json')
       .then(function (r) { return r.json(); })
-      .then(function (d) { buildArchive(d.posts || []); })
+      .then(function (d) { loadAndBuild(d.posts || []); })
       .catch(function () {});
   }
 })();
