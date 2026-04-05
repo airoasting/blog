@@ -997,6 +997,12 @@
     });
   });
 
+  // ── 모바일: 초기 로드 시 active 탭으로 스크롤 ─────────────────────────────
+  if (window.innerWidth <= 640) {
+    const activeTab = document.querySelector(".q-tab.active");
+    if (activeTab) activeTab.scrollIntoView({ behavior: "instant", block: "nearest", inline: "end" });
+  }
+
   // ── 이벤트: 테마 필터 ────────────────────────────────────────────────────
   document.querySelectorAll(".theme-btn").forEach(btn => {
     btn.addEventListener("click", () => {
