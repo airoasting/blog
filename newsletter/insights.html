@@ -1206,7 +1206,7 @@
           if(date||source) h+='</div>';
           if(quote) h+='<div class="nlr-hero-quote">'+escHtml(quote)+'</div>';
 
-          var SKIP_SECTIONS=['section-cta','section-references'];
+          var SKIP_SECTIONS=['section-cta','section-references','section-roasting'];
           var sections=doc.querySelectorAll('.post-section');
           sections.forEach(function(sec){
             if(SKIP_SECTIONS.indexOf(sec.id)!==-1) return;
@@ -1239,7 +1239,16 @@
               dps.forEach(function(dp){
                 var role=(dp.querySelector('.decision-role')||{}).textContent||'';
                 var spans=dp.querySelectorAll('span');
-                var txt=spans.length>1?spans[spans.length-1].innerHTML:'';
+                var txt='';
+                if(spans.length>1){
+                  txt=spans[spans.length-1].innerHTML;
+                } else {
+                  // text node directly after role span (newer format)
+                  var clone=dp.cloneNode(true);
+                  var roleEl=clone.querySelector('.decision-role');
+                  if(roleEl) roleEl.remove();
+                  txt=clone.innerHTML.trim();
+                }
                 h+='<div class="nlr-news-item"><div class="nlr-news-num" style="width:auto;padding:0 8px;font-size:9px;">'+escHtml(role)+'</div><div class="nlr-news-text">'+txt.trim()+'</div></div>';
               });
               h+='</div>'; return;
