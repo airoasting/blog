@@ -1,6 +1,18 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "DeNA AI 올인 1년, 생산성 20배의 역설",
+      "date": "2026-03-21",
+      "category": "company",
+      "source": "YouTube (난바 토모코)",
+      "tags": ["DeNA", "AI전환", "생산성", "조직설계"],
+      "slug": "2026-03-21-dena-ai-20x-paradox",
+      "file": "company/2026-03-21-dena-ai-20x-paradox.html",
+      "summary": "DeNA는 AI 올인 1년 만에 일부 프로젝트에서 20배 생산성을 달성했습니다. 하지만 직원들이 빈 시간을 다른 업무로 채워, 신규 사업 인력 이동은 기대에 못 미쳤습니다.",
+      "roasting_quote": "생산성이 20배 올라도 사람은 안 움직입니다. 효율은 도구가 만들지만, 변화는 리더가 만듭니다.",
+      "next_post": "2026-03-23-two-paths-for-software.html"
+    },
+    {
       "title": "DeNA AI 올인, 10인 팀이 유니콘을 만든다",
       "date": "2025-02-21",
       "category": "company",
@@ -10,7 +22,7 @@ window.POSTS_DATA = {
       "file": "company/2025-02-21-dena-ai-all-in.html",
       "summary": "DeNA 난바 토모코 회장이 'AI 올인'을 선언했습니다. 3000명 조직의 절반으로 현업을 성장시키고, 나머지 절반은 10인 1조 팀으로 유니콘급 신사업을 양산합니다.",
       "roasting_quote": "AI 도입을 현장에 맡기셨습니까? DeNA 회장은 택시에서 직접 AI를 씁니다.",
-      "next_post": ""
+      "next_post": "2026-03-21-dena-ai-20x-paradox.html"
     },
     {
       "title": "AI 모델이 빨라질수록 제품 관리도 바뀐다",
