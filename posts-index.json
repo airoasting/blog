@@ -52,6 +52,23 @@
       "next_post": "2026-04-03-karpathy-llm-knowledge-base.html"
     },
     {
+      "title": "전 구글 임원의 경고: 준비할 시간이 2년입니다",
+      "date": "2026-03-31",
+      "category": "leader",
+      "source": "YouTube (Silicon Valley Girl)",
+      "tags": [
+        "Mo Gawdat",
+        "일자리변화",
+        "AI생존전략",
+        "미래예측"
+      ],
+      "slug": "2026-03-31-mo-gawdat-face-rip-dystopia-survival",
+      "file": "leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html",
+      "summary": "Google X 전 최고 비즈니스 책임자 Mo Gawdat가 2027년을 분기점으로 지목했습니다. 올해 신입 채용이 23~30% 줄었습니다. 주니어 업무를 AI가 대체하기 때문입니다.",
+      "roasting_quote": "6주 만에 스타트업을 만든 사람이 있습니다. 당신은 AI 도입 검토를 6개월째 하고 있습니까?",
+      "next_post": "2026-04-03-karpathy-llm-knowledge-base.html"
+    },
+    {
       "title": "AI, 수학자도 못 푼 난제를 풀다",
       "date": "2026-03-24",
       "category": "tech",
@@ -223,6 +240,23 @@
       "summary": "젠슨 황이 GTC 2026 애널리스트 Q&A에서 밝힌 핵심: Blackwell + Vera Rubin 주문 1조 달러 이상, IT 기업의 비즈니스 모델이 소프트웨어 라이선스에서 토큰 렌트로 전환, NVIDIA 매출 40%가 플랫폼을 구매하는 비하이퍼스케일러 시장.",
       "roasting_quote": "과거 IT 기업은 소프트웨어를 라이선스했다. 미래 IT 기업은 토큰을 렌트한다. 당신 회사의 COGS에 토큰이 들어가 있는가?",
       "next_post": ""
+    },
+    {
+      "title": "재미로 만들어 GitHub 18만 스타: OpenClaw 창시자의 에이전트 엔지니어링 선언",
+      "date": "2026-02-12",
+      "category": "leader",
+      "source": "YouTube (Lex Fridman Podcast #491)",
+      "tags": [
+        "OpenClaw",
+        "에이전트엔지니어링",
+        "AI에이전트",
+        "AI전략"
+      ],
+      "slug": "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
+      "file": "leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html",
+      "summary": "피터 슈타인베르거는 재미로 만든 AI 에이전트 OpenClaw로 공개 수일 만에 GitHub 18만 스타를 받았습니다. 이 대담 3일 뒤인 2026년 2월 15일, OpenAI가 그를 영입해 차세대 개인 에이전트 개발을 맡겼습니다.",
+      "roasting_quote": "재미있어서 만들었다는 사람이 GitHub 18만 스타를 받았습니다. 치열하게 기획한 팀은 아직 제품-시장 적합성을 찾는 중입니까?",
+      "next_post": "2026-02-23-persona-selection-model.html"
     },
     {
       "title": "아모데이가 경고한 AI의 5가지 위험",
@@ -555,7 +589,7 @@
       "file": "research/2026-02-09-ai-intensifies-work.html",
       "summary": "HBR 연구: AI를 쓴 뒤 일이 줄지 않았다. 하는 일의 가짓수, 동시 작업, 퇴근 뒤 업무가 모두 늘어나는 3가지 현상이 나타났다.",
       "roasting_quote": "AI가 시간을 벌어줬다고? 그 시간에 더 많은 일을 하고 있을 뿐이다.",
-      "next_post": "2026-03-05-brain-fry"
+      "next_post": "2026-02-12-peter-steinberger-openclaw-agentic-engineering.html"
     },
     {
       "title": "AI 도구 3개 넘으면 생산성이 떨어진다",
