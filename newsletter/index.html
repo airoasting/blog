@@ -83,19 +83,11 @@
       gap: 16px;
       margin-bottom: 80px;
     }
-    /* 가로 2칸 */
-    .newsletter-grid .nl-card:nth-child(1)  { grid-column: span 2; }
-    .newsletter-grid .nl-card:nth-child(9)  { grid-column: span 2; }
-    .newsletter-grid .nl-card:nth-child(17) { grid-column: span 2; }
-    .newsletter-grid .nl-card:nth-child(25) { grid-column: span 2; }
-    .newsletter-grid .nl-card:nth-child(33) { grid-column: span 2; }
-    .newsletter-grid .nl-card:nth-child(41) { grid-column: span 2; }
-    /* 세로 2칸 */
-    .newsletter-grid .nl-card:nth-child(5)  { grid-row: span 2; }
-    .newsletter-grid .nl-card:nth-child(13) { grid-row: span 2; }
-    .newsletter-grid .nl-card:nth-child(21) { grid-row: span 2; }
-    .newsletter-grid .nl-card:nth-child(29) { grid-row: span 2; }
-    .newsletter-grid .nl-card:nth-child(37) { grid-row: span 2; }
+    /* 지그재그 와이드 카드: 8-card 주기로 왼쪽↔오른쪽 교차 */
+    /* Row A 왼쪽 와이드: [wide][normal][normal] */
+    .newsletter-grid .nl-card:nth-child(8n+1)  { grid-column: span 2; }
+    /* Row B 오른쪽 와이드: [normal][normal][wide] */
+    .newsletter-grid .nl-card:nth-child(8n+6)  { grid-column: span 2; }
 
     /* ── 카드 (뉴모피즘 + 오버레이 디자인) ── */
     .nl-card {
@@ -224,7 +216,7 @@
 
       <div class="section-header">
         <h2 class="section-title nl-title-head">뉴스레터 <span class="post-count">총 42화</span></h2>
-        <p class="section-desc">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
+        <p class="section-desc hide-mobile">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
       </div>
 
       <!-- 구독 배너 -->
