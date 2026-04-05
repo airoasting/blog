@@ -519,6 +519,16 @@
         max-width: none;
       }
 
+      /* 테마 필터: 한 줄 가로 스크롤 */
+      .theme-filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .theme-filters::-webkit-scrollbar { display: none; }
+      .theme-btn { flex-shrink: 0; }
+
       /* 카드 그리드 */
       .insight-grid { gap: 12px; }
 

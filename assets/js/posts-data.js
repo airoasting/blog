@@ -38,7 +38,7 @@ window.POSTS_DATA = {
       "title": "카파시: LLM이 내 위키를 대신 쓴다",
       "date": "2026-04-03",
       "category": "leader",
-      "source": "X (Andrej Karpathy)",
+      "source": "X/Twitter (Andrej Karpathy)",
       "tags": [
         "Karpathy",
         "지식관리",
