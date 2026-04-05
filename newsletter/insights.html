@@ -164,18 +164,20 @@
       user-select: none;
     }
     .tl-node-ring {
-      width: 44px; height: 44px;
+      width: 56px; height: 56px;
       border-radius: 50%;
       border: 2px solid var(--border);
       background: var(--surface);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 800;
       color: var(--text-secondary);
       transition: all 0.25s cubic-bezier(0.2,0,0,1);
       box-shadow: var(--nm-raised-sm);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
     }
     .tl-node:hover .tl-node-ring {
       border-color: #7C3AED;
@@ -433,7 +435,7 @@
           <div class="tl-progress" id="tlProgress"></div>
 
           <div class="tl-node" data-phase="1">
-            <div class="tl-node-ring">1</div>
+            <div class="tl-node-ring">25 Q3</div>
             <div class="tl-node-info">
               <div class="tl-node-period">2025.08 ~ 09</div>
               <div class="tl-node-title">모델 경쟁의 시대</div>
@@ -443,7 +445,7 @@
           </div>
 
           <div class="tl-node" data-phase="2">
-            <div class="tl-node-ring">2</div>
+            <div class="tl-node-ring">25 Q4</div>
             <div class="tl-node-info">
               <div class="tl-node-period">2025.10 ~ 12</div>
               <div class="tl-node-title">인프라 확보의 시대</div>
@@ -453,7 +455,7 @@
           </div>
 
           <div class="tl-node" data-phase="3">
-            <div class="tl-node-ring">3</div>
+            <div class="tl-node-ring">26 Q1</div>
             <div class="tl-node-info">
               <div class="tl-node-period">2026.01 ~ 04</div>
               <div class="tl-node-title">수익성과 생존의 시대</div>
