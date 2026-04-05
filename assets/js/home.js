@@ -135,7 +135,7 @@
 
       displayedPosts = renderList.slice(1); // exclude featured hero post
       visibleCount = 0;
-      updatePostCount(renderList.length);
+      updatePostCount(renderList.length + 1);
       showMore();
 
       // Dispatch event for filter.js and search.js

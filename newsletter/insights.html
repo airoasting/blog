@@ -324,9 +324,9 @@
     @media (max-width: 900px) { .insight-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .insight-grid { grid-template-columns: 1fr; } }
 
-    /* 첫 카드 와이드 */
-    .insight-card:first-child { grid-column: span 2; }
-    @media (max-width: 560px) { .insight-card:first-child { grid-column: span 1; } }
+    /* 와이드 카드 (2열 span) */
+    .insight-card.ic-wide { grid-column: span 2; }
+    @media (max-width: 900px) { .insight-card.ic-wide { grid-column: span 1; } }
 
     .insight-card {
       position: relative;
@@ -941,15 +941,17 @@
 
     const cardsHTML = cards.length === 0
       ? `<div class="filter-empty">'${THEME_LABELS[activeTheme]}' 관련 인사이트가 이 분기에 없습니다.</div>`
-      : cards.map(c => {
+      : cards.map((c, idx) => {
           const epMatch = c.source && c.source.match(/뉴스레터\s*#(\d+)/);
           const epNum = epMatch ? epMatch[1] : null;
           const tag = c.url ? "a" : "div";
           const roastingAttr = c.roasting ? ` data-roasting="${c.roasting.replace(/"/g,'&quot;')}"` : '';
           const summariesAttr = c.summaries ? ` data-summaries="${JSON.stringify(c.summaries).replace(/"/g,'&quot;')}"` : '';
           const attrs = c.url ? `href="${c.url}" target="_blank" rel="noopener" data-post-title="${c.source||''}"${roastingAttr}${summariesAttr}` : (epNum ? `data-ep="${epNum}"` : "");
+          // 10카드 주기: 0→와이드 왼쪽[2col][1col], 6→와이드 오른쪽[1col][2col]
+          const isWide = (idx % 10 === 0 || idx % 10 === 6);
           return `
-          <${tag} class="insight-card" data-theme="${c.theme}" ${attrs}>
+          <${tag} class="insight-card${isWide ? ' ic-wide' : ''}" data-theme="${c.theme}" ${attrs}>
             <div class="card-glow"></div>
             <div class="ic-tag">● ${c.tag}</div>
             <div class="ic-body">${c.body}</div>
