@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "DeNA AI 올인, 10인 팀이 유니콘을 만든다",
+      "date": "2025-02-21",
+      "category": "company",
+      "source": "YouTube (DeNA, 난바 토모코)",
+      "tags": ["DeNA", "AI전환", "조직혁신", "경영전략"],
+      "slug": "2025-02-21-dena-ai-all-in",
+      "file": "company/2025-02-21-dena-ai-all-in.html",
+      "summary": "DeNA 난바 토모코 회장이 'AI 올인'을 선언했습니다. 3000명 조직의 절반으로 현업을 성장시키고, 나머지 절반은 10인 1조 팀으로 유니콘급 신사업을 양산합니다.",
+      "roasting_quote": "AI 도입을 현장에 맡기셨습니까? DeNA 회장은 택시에서 직접 AI를 씁니다.",
+      "next_post": ""
+    },
+    {
       "title": "AI 모델이 빨라질수록 제품 관리도 바뀐다",
       "date": "2026-03-19",
       "category": "tech",
