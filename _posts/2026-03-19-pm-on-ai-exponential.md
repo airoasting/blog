@@ -1,6 +1,6 @@
 # AI 모델이 빨라질수록 제품 관리도 바뀐다
 
-- **날짜**: 2026-04-05
+- **날짜**: 2026-03-19
 - **카테고리**: 기술 (tech)
 - **출처**: Anthropic (Cat Wu)
 - **원문 URL**: https://claude.com/blog/product-management-on-the-ai-exponential
