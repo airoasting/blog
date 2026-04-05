@@ -214,42 +214,40 @@
   <main>
     <div class="container">
 
-      <div class="section-header">
-        <h2 class="section-title nl-title-head">뉴스레터 <span class="post-count">총 42화</span></h2>
-        <p class="section-desc hide-mobile">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
-      </div>
-
-      <!-- 인사이트 배너 -->
-      <a href="./insights.html" style="
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        background: var(--surface-container-high);
-        border: 1.5px solid var(--border);
-        border-radius: 16px;
-        padding: 20px 28px;
-        margin-bottom: 16px;
-        text-decoration: none;
-        transition: box-shadow 0.2s, transform 0.2s;
-      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='var(--nm-raised)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <!-- 섹션 헤더 + LinkedIn 구독 버튼 -->
+      <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
         <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7C3AED;margin-bottom:5px;">Insights Report</div>
-          <div style="font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.01em;">42화 분기별 인사이트 타임라인 보기</div>
-          <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">뉴스레터 42화 + 포스트 40개 기반 · 인터랙티브 분기 타임라인</div>
+          <h2 class="section-title nl-title-head" style="margin-bottom:4px;">뉴스레터 <span class="post-count">총 42화</span></h2>
+          <p class="section-desc hide-mobile" style="margin:0;">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
         </div>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-
-      <!-- 구독 배너 -->
-      <div class="nl-subscribe-banner">
-        <div class="nl-subscribe-text">
-          <h3>AI 로스팅 뉴스레터 구독하기</h3>
-          <p>매주 경영 리더를 위한 AI 핵심 인사이트를 받아보세요.</p>
-        </div>
-        <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="nl-subscribe-btn">
+        <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="nl-subscribe-btn" style="flex-shrink:0;">
           <svg class="nl-li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           LinkedIn에서 구독
+        </a>
+      </div>
+
+      <!-- 구독 배너 (인사이트 링크 포함) -->
+      <div class="nl-subscribe-banner" style="flex-direction:column;align-items:flex-start;gap:20px;padding:32px 40px;">
+        <div style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+          <div>
+            <h3 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:-0.02em;">AI 로스팅 뉴스레터 구독하기</h3>
+            <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0;">매주 경영 리더를 위한 AI 핵심 인사이트를 받아보세요.</p>
+          </div>
+        </div>
+        <!-- 인사이트 배너 (배너 하단) -->
+        <a href="./insights.html" style="
+          display:flex;align-items:center;justify-content:space-between;gap:12px;
+          width:100%;background:rgba(0,0,0,0.25);border-radius:12px;
+          padding:16px 20px;text-decoration:none;
+          border:1px solid rgba(255,255,255,0.12);
+          transition:background 0.2s;
+          box-sizing:border-box;
+        " onmouseover="this.style.background='rgba(0,0,0,0.4)'" onmouseout="this.style.background='rgba(0,0,0,0.25)'">
+          <div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Insights Report</div>
+            <div style="font-size:14px;font-weight:800;color:#fff;letter-spacing:-0.01em;">42화 분기별 인사이트 타임라인 보기</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
 
