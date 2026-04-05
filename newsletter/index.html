@@ -22,13 +22,35 @@
   <style>
     :root { --cat-newsletter: #7C3AED; }
 
+    /* ── 더 보기 버튼 ── */
+    #nl-load-more {
+      display:inline-flex; align-items:center; gap:8px;
+      background:transparent; border:2px solid #6D28D9; color:#6D28D9;
+      font-size:14px; font-weight:700; padding:13px 36px;
+      border-radius:12px; cursor:pointer;
+      transition:background 0.2s, color 0.2s;
+    }
+    [data-theme="dark"] #nl-load-more {
+      border-color: #A78BFA; color: #A78BFA;
+    }
     /* ── 다크모드 보라색 가시성 ── */
     .nl-title-head { color: #7C3AED; }
     [data-theme="dark"] .nl-title-head { color: #C4B5FD; }
-    [data-theme="dark"] .post-count { color: #A78BFA; border-color: #4C1D95; }
+    [data-theme="dark"] .post-count { color: #A78BFA; border: 1px solid #6D28D9; }
+    [data-theme="dark"] .nl-subscribe-btn {
+      color: #C4B5FD;
+      border-color: #C4B5FD;
+    }
+    [data-theme="dark"] .nl-subscribe-btn:hover {
+      background: #7C3AED;
+      color: #fff;
+      border-color: #7C3AED;
+    }
+    [data-theme="dark"] .nl-li-icon { fill: #C4B5FD; }
 
     /* ── 섹션 헤더: 카테고리 페이지와 동일한 스타일 사용 ── */
     .nl-title-head { color: var(--cat-newsletter) !important; }
+    [data-theme="dark"] .nl-title-head { color: #C4B5FD !important; }
 
     /* ── 구독 배너 ── */
     .nl-subscribe-banner {
@@ -58,22 +80,23 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #fff;
+      background: transparent;
       color: #6D28D9;
       font-size: 13px;
       font-weight: 800;
-      padding: 13px 26px;
-      border-radius: 12px;
+      padding: 8px 22px;
+      border-radius: 100px;
+      border: 1.5px solid #6D28D9;
       text-decoration: none;
       white-space: nowrap;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      transition: background 0.2s, color 0.2s;
     }
     .nl-subscribe-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      background: #6D28D9;
+      color: #fff;
     }
-    .nl-li-icon { width: 18px; height: 18px; fill: #6D28D9; flex-shrink: 0; }
+    .nl-subscribe-btn:hover .nl-li-icon { fill: #fff; }
+    .nl-li-icon { width: 18px; height: 18px; fill: #6D28D9; flex-shrink: 0; transition: fill 0.2s; }
 
     /* ── 그리드 ── */
     .newsletter-grid {
@@ -211,6 +234,21 @@
   <script src="../assets/js/header.js"></script>
   <script src="../assets/js/theme.js"></script>
 
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="포스트 검색..." autocomplete="off">
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
   <main>
     <div class="container">
 
@@ -218,7 +256,6 @@
       <div class="section-header" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
         <div>
           <h2 class="section-title nl-title-head" style="margin-bottom:4px;">뉴스레터 <span class="post-count">총 42화</span></h2>
-          <p class="section-desc hide-mobile" style="margin:0;">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
         </div>
         <a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="nl-subscribe-btn" style="flex-shrink:0;">
           <svg class="nl-li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -226,30 +263,14 @@
         </a>
       </div>
 
-      <!-- 구독 배너 (인사이트 링크 포함) -->
-      <div class="nl-subscribe-banner" style="flex-direction:column;align-items:flex-start;gap:20px;padding:32px 40px;">
-        <div style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
-          <div>
-            <h3 style="font-size:20px;font-weight:800;color:#fff;margin:0 0 6px;letter-spacing:-0.02em;">AI 로스팅 뉴스레터 구독하기</h3>
-            <p style="font-size:13px;color:rgba(255,255,255,0.75);margin:0;">매주 경영 리더를 위한 AI 핵심 인사이트를 받아보세요.</p>
-          </div>
+      <!-- 인사이트 배너 -->
+      <a href="./insights.html" class="nl-subscribe-banner" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:6px;">Insights Report</div>
+          <div style="font-size:18px;font-weight:800;color:#fff;letter-spacing:-0.02em;">42화 분기별 인사이트 타임라인 보기</div>
         </div>
-        <!-- 인사이트 배너 (배너 하단) -->
-        <a href="./insights.html" style="
-          display:flex;align-items:center;justify-content:space-between;gap:12px;
-          width:100%;background:rgba(0,0,0,0.25);border-radius:12px;
-          padding:16px 20px;text-decoration:none;
-          border:1px solid rgba(255,255,255,0.12);
-          transition:background 0.2s;
-          box-sizing:border-box;
-        " onmouseover="this.style.background='rgba(0,0,0,0.4)'" onmouseout="this.style.background='rgba(0,0,0,0.25)'">
-          <div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:4px;">Insights Report</div>
-            <div style="font-size:14px;font-weight:800;color:#fff;letter-spacing:-0.01em;">42화 분기별 인사이트 타임라인 보기</div>
-          </div>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
 
       <!-- 뉴스레터 카드 그리드 (최신순) -->
       <div class="newsletter-grid">
@@ -636,13 +657,7 @@
 
       <!-- 더 보기 버튼 -->
       <div id="nl-load-more-wrap" style="text-align:center; margin-bottom:60px; display:none;">
-        <button id="nl-load-more" style="
-          display:inline-flex; align-items:center; gap:8px;
-          background:transparent; border:2px solid #7C3AED; color:#7C3AED;
-          font-size:14px; font-weight:700; padding:13px 36px;
-          border-radius:12px; cursor:pointer;
-          transition:background 0.2s, color 0.2s;
-        ">더 보기 <span id="nl-remaining"></span></button>
+        <button id="nl-load-more">더 보기 <span id="nl-remaining"></span></button>
       </div>
 
     </div>
@@ -657,8 +672,403 @@
     <div class="ai-md-content" id="aiMdContent"></div>
   </div>
 
+  <!-- ═══════════════════════════════════════
+       뉴스레터 리더 오버레이
+  ═══════════════════════════════════════ -->
+  <style>
+    /* ── Backdrop ── */
+    .nlr-backdrop {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(4, 0, 18, 0.72);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px 16px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.38s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nlr-backdrop.open {
+      opacity: 1; pointer-events: all;
+    }
+
+    /* ── Window ── */
+    .nlr-window {
+      position: relative;
+      width: 100%; max-width: 720px;
+      max-height: 90vh;
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      box-shadow:
+        0 0 0 1px rgba(124,58,237,0.15),
+        0 32px 80px rgba(4,0,18,0.45),
+        0 8px 24px rgba(4,0,18,0.2);
+      transform: translateY(28px) scale(0.97);
+      transition: transform 0.38s cubic-bezier(0.2,0,0,1);
+    }
+    .nlr-backdrop.open .nlr-window {
+      transform: translateY(0) scale(1);
+    }
+    [data-theme="dark"] .nlr-window {
+      background: #0d0a1a;
+      box-shadow:
+        0 0 0 1px rgba(124,58,237,0.25),
+        0 32px 80px rgba(0,0,0,0.7),
+        0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    /* ── Header bar ── */
+    .nlr-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px 16px 24px;
+      border-bottom: 1px solid rgba(124,58,237,0.12);
+      background: rgba(124,58,237,0.04);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .nlr-header {
+      border-bottom-color: rgba(124,58,237,0.2);
+      background: rgba(124,58,237,0.07);
+    }
+    .nlr-ep-pill {
+      display: inline-flex; align-items: center;
+      background: #7C3AED;
+      color: #fff;
+      font-size: 11px; font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 4px 11px;
+      border-radius: 100px;
+      flex-shrink: 0;
+    }
+    .nlr-header-title {
+      flex: 1;
+      font-size: 14px; font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.4;
+      word-break: keep-all;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    [data-theme="dark"] .nlr-header-title { color: #e8e0ff; }
+
+    .nlr-actions {
+      display: flex; align-items: center; gap: 8px; flex-shrink: 0;
+    }
+    .nlr-li-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent;
+      border: 1.5px solid #7C3AED;
+      color: #7C3AED;
+      font-size: 12px; font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 100px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.18s, color 0.18s;
+      line-height: 1;
+    }
+    .nlr-li-btn:hover { background: #7C3AED; color: #fff; }
+    .nlr-li-btn:hover .nlr-li-icon { fill: #fff; }
+    .nlr-li-icon { width: 14px; height: 14px; fill: #7C3AED; transition: fill 0.18s; flex-shrink:0; }
+    [data-theme="dark"] .nlr-li-btn { border-color: #A78BFA; color: #A78BFA; }
+    [data-theme="dark"] .nlr-li-btn:hover { background: #7C3AED; color: #fff; border-color: #7C3AED; }
+    [data-theme="dark"] .nlr-li-icon { fill: #A78BFA; }
+    [data-theme="dark"] .nlr-li-btn:hover .nlr-li-icon { fill: #fff; }
+
+    .nlr-close {
+      width: 32px; height: 32px;
+      border: none; background: transparent;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: #666;
+      font-size: 16px; line-height: 1;
+      transition: background 0.18s, color 0.18s;
+      flex-shrink: 0;
+    }
+    .nlr-close:hover { background: rgba(124,58,237,0.1); color: #7C3AED; }
+    [data-theme="dark"] .nlr-close { color: #888; }
+    [data-theme="dark"] .nlr-close:hover { background: rgba(124,58,237,0.2); color: #C4B5FD; }
+
+    /* ── Scroll body ── */
+    .nlr-body {
+      flex: 1; overflow-y: auto;
+      padding: 36px 40px 48px;
+      scroll-behavior: smooth;
+    }
+    .nlr-body::-webkit-scrollbar { width: 4px; }
+    .nlr-body::-webkit-scrollbar-track { background: transparent; }
+    .nlr-body::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.3); border-radius: 4px; }
+    [data-theme="dark"] .nlr-body::-webkit-scrollbar-thumb { background: rgba(124,58,237,0.4); }
+
+    /* ── Typography ── */
+    .nlr-content-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #1a1a2e;
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      word-break: keep-all;
+      margin: 0 0 16px;
+    }
+    [data-theme="dark"] .nlr-content-title { color: #f0ecff; }
+
+    .nlr-meta {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 28px;
+    }
+    .nlr-meta-author {
+      font-size: 12px; font-weight: 700;
+      color: #7C3AED; letter-spacing: 0.02em;
+    }
+    .nlr-meta-sep { color: #ccc; font-size: 11px; }
+    .nlr-meta-date {
+      font-size: 12px; color: #999;
+    }
+    [data-theme="dark"] .nlr-meta-date { color: #666; }
+
+    .nlr-hero-quote {
+      position: relative;
+      background: linear-gradient(135deg, rgba(124,58,237,0.07) 0%, rgba(109,40,217,0.04) 100%);
+      border-left: 3px solid #7C3AED;
+      border-radius: 0 12px 12px 0;
+      padding: 18px 22px;
+      margin-bottom: 32px;
+      font-size: 17px; font-weight: 700;
+      color: #2d1a5e;
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+    }
+    [data-theme="dark"] .nlr-hero-quote {
+      background: linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(109,40,217,0.06) 100%);
+      color: #d4c8ff;
+    }
+
+    .nlr-paragraph {
+      font-size: 15px;
+      line-height: 1.82;
+      color: #2a2a3a;
+      margin-bottom: 20px;
+      word-break: keep-all;
+    }
+    [data-theme="dark"] .nlr-paragraph { color: #c0b8d8; }
+
+    /* ── News section ── */
+    .nlr-news-header {
+      display: flex; align-items: center; gap: 10px;
+      margin: 36px 0 20px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(124,58,237,0.12);
+    }
+    [data-theme="dark"] .nlr-news-header { border-top-color: rgba(124,58,237,0.2); }
+    .nlr-news-header-label {
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #7C3AED;
+      background: rgba(124,58,237,0.1);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    [data-theme="dark"] .nlr-news-header-label {
+      color: #C4B5FD; background: rgba(124,58,237,0.18);
+    }
+    .nlr-news-header-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, rgba(124,58,237,0.2), transparent);
+    }
+
+    .nlr-news-grid {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .nlr-news-item {
+      display: flex; gap: 14px;
+      background: rgba(124,58,237,0.035);
+      border: 1px solid rgba(124,58,237,0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .nlr-news-item:hover {
+      background: rgba(124,58,237,0.07);
+      border-color: rgba(124,58,237,0.18);
+    }
+    [data-theme="dark"] .nlr-news-item {
+      background: rgba(124,58,237,0.06);
+      border-color: rgba(124,58,237,0.14);
+    }
+    [data-theme="dark"] .nlr-news-item:hover {
+      background: rgba(124,58,237,0.12);
+      border-color: rgba(124,58,237,0.28);
+    }
+    .nlr-news-num {
+      width: 24px; height: 24px;
+      background: #7C3AED;
+      color: #fff;
+      font-size: 10px; font-weight: 800;
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .nlr-news-text {
+      font-size: 14px; line-height: 1.72;
+      color: #2a2a3a;
+      word-break: keep-all;
+    }
+    [data-theme="dark"] .nlr-news-text { color: #b8b0d0; }
+
+    /* 확장형 뉴스 아이템 (제목 + 본문) */
+    .nlr-news-expanded { align-items: flex-start; }
+    .nlr-news-expanded .nlr-news-num { margin-top: 2px; flex-shrink: 0; }
+    .nlr-news-body {
+      margin: 6px 0 0;
+      font-size: 14px; line-height: 1.78;
+      color: #2a2a3a;
+      word-break: keep-all;
+    }
+    .nlr-news-body:first-child { margin-top: 0; }
+    [data-theme="dark"] .nlr-news-body { color: #b8b0d0; }
+    .nlr-sublabel {
+      display: inline-block;
+      font-style: normal;
+      font-size: 11px; font-weight: 700;
+      color: #7C3AED;
+      background: rgba(124,58,237,0.08);
+      padding: 2px 8px; border-radius: 100px;
+      margin-bottom: 6px;
+      letter-spacing: 0.03em;
+    }
+    [data-theme="dark"] .nlr-sublabel { color: #C4B5FD; background: rgba(196,181,253,0.12); }
+
+    /* ── 금주의 AI 로스팅 섹션 헤더 ── */
+    .nlr-roasting-header-label {
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #C43500;
+      background: rgba(196,53,0,0.1);
+      padding: 4px 10px; border-radius: 100px;
+    }
+    [data-theme="dark"] .nlr-roasting-header-label {
+      color: #FF8C69; background: rgba(196,53,0,0.18);
+    }
+
+    /* ── 금주의 AI 로스팅 카드 ── */
+    .nlr-roasting-grid {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .nlr-roasting-item {
+      display: flex; gap: 18px;
+      background: rgba(196,53,0,0.04);
+      border: 1px solid rgba(196,53,0,0.1);
+      border-radius: 14px;
+      padding: 22px 24px;
+      align-items: flex-start;
+      transition: background 0.18s, border-color 0.18s;
+    }
+    .nlr-roasting-item:hover {
+      background: rgba(196,53,0,0.07);
+      border-color: rgba(196,53,0,0.18);
+    }
+    [data-theme="dark"] .nlr-roasting-item {
+      background: rgba(196,53,0,0.06);
+      border-color: rgba(196,53,0,0.16);
+    }
+    [data-theme="dark"] .nlr-roasting-item:hover {
+      background: rgba(196,53,0,0.12);
+      border-color: rgba(196,53,0,0.28);
+    }
+    .nlr-roasting-num {
+      width: 34px; height: 34px;
+      background: #C43500;
+      color: #fff;
+      font-size: 14px; font-weight: 800;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .nlr-roasting-content { flex: 1; min-width: 0; }
+    .nlr-roasting-title {
+      font-size: 15px; font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    [data-theme="dark"] .nlr-roasting-title { color: #f0eaff; }
+    .nlr-roasting-body {
+      font-size: 14px; line-height: 1.82;
+      color: #3a3a4a;
+      margin: 10px 0 0;
+      word-break: keep-all;
+    }
+    .nlr-roasting-body:first-of-type { margin-top: 0; }
+    [data-theme="dark"] .nlr-roasting-body { color: #b8b0d0; }
+
+    /* ── Loading / error states ── */
+    .nlr-loading {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      height: 200px; gap: 16px;
+      color: #999;
+    }
+    .nlr-spinner {
+      width: 28px; height: 28px;
+      border: 2.5px solid rgba(124,58,237,0.2);
+      border-top-color: #7C3AED;
+      border-radius: 50%;
+      animation: nlr-spin 0.7s linear infinite;
+    }
+    @keyframes nlr-spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .nlr-backdrop { padding: 0; align-items: flex-end; }
+      .nlr-window {
+        border-radius: 24px 24px 0 0;
+        max-height: 92vh;
+        width: 100%;
+      }
+      .nlr-header { padding: 14px 16px; gap: 8px; }
+      .nlr-header-title { font-size: 13px; }
+      .nlr-body { padding: 24px 20px 40px; }
+      .nlr-content-title { font-size: 18px; }
+      .nlr-hero-quote { font-size: 14px; padding: 14px 16px; }
+      .nlr-paragraph { font-size: 14px; line-height: 1.78; }
+      .nlr-news-text { font-size: 13px; }
+      .nlr-li-btn span { display: none; }
+      .nlr-li-btn { padding: 6px 10px; }
+    }
+  </style>
+
+  <div id="nlReader" class="nlr-backdrop" role="dialog" aria-modal="true" aria-label="뉴스레터 리더">
+    <div class="nlr-window">
+      <div class="nlr-header">
+        <span class="nlr-ep-pill" id="nlrEpPill">#—</span>
+        <div class="nlr-header-title" id="nlrHeaderTitle"></div>
+        <div class="nlr-actions">
+          <a class="nlr-li-btn" id="nlrLiBtn" href="#" target="_blank" rel="noopener">
+            <svg class="nlr-li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn 원본 보기</span>
+          </a>
+          <button class="nlr-close" id="nlrClose" aria-label="닫기">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="nlr-body" id="nlrBody">
+        <div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;">불러오는 중...</span></div>
+      </div>
+    </div>
+  </div>
+
   <footer id="site-footer"></footer>
   <script src="../assets/js/footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/posts-data.js"></script>
   <script src="../assets/js/newsletter-data.js"></script>
   <script>
   (function(){
@@ -691,6 +1101,10 @@
     btn.addEventListener('click', showNext);
     btn.addEventListener('mouseover', function(){ btn.style.background='#7C3AED'; btn.style.color='#fff'; });
     btn.addEventListener('mouseout', function(){ btn.style.background='transparent'; btn.style.color='#7C3AED'; });
+
+    window.dispatchEvent(new CustomEvent('postsLoaded', {
+      detail: { posts: (window.POSTS_DATA && window.POSTS_DATA.posts) || [] }
+    }));
   })();
   </script>
   <script>
@@ -774,6 +1188,293 @@
     }
   })();
   </script>
+  <!-- ═══════════════════════════════════════
+       뉴스레터 리더 — 카드 클릭 핸들러 + MD 파서
+  ═══════════════════════════════════════ -->
+  <script>
+  (function(){
+    var backdrop = document.getElementById('nlReader');
+    var epPill   = document.getElementById('nlrEpPill');
+    var hTitle   = document.getElementById('nlrHeaderTitle');
+    var liBtn    = document.getElementById('nlrLiBtn');
+    var closeBtn = document.getElementById('nlrClose');
+    var body     = document.getElementById('nlrBody');
+    if(!backdrop) return;
+
+    /* ── 날짜 한국어 변환 ── */
+    var EN_MONTHS = {January:1,February:2,March:3,April:4,May:5,June:6,July:7,August:8,September:9,October:10,November:11,December:12};
+    function formatDateKo(s){
+      // "December 6, 2025" → "2025년 12월 6일"
+      var m = s.match(/^(\w+)\s+(\d+),?\s+(\d{4})/);
+      if(m && EN_MONTHS[m[1]]){
+        return m[3]+'년 '+EN_MONTHS[m[1]]+'월 '+parseInt(m[2],10)+'일';
+      }
+      // "2025년 9월 13일" → 그대로
+      return s;
+    }
+
+    /* ── 인라인 마크다운 렌더 ── */
+    function escHtml(s){
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function inlineMd(s){
+      return escHtml(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+    }
+
+    /* ── MD → HTML 파서 (전체 재작성) ── */
+    function parseMd(raw){
+      var lines = raw.split('\n');
+      var epNum = '', titleText = '', date = '';
+      var parts = [];
+      var inNewsList = false;
+      var newsCount = 0;
+
+      /* 첫 줄에서 에피소드 번호 + 제목 추출 */
+      var firstLine = (lines[0] || '').trim().replace(/^#+\s*/,'');
+      var titleMatch = firstLine.match(/\[?AI 로스팅 #(\d+)\]?\s*(.*)/);
+      if(titleMatch){ epNum = titleMatch[1]; titleText = titleMatch[2].trim(); }
+      else {
+        var m = firstLine.match(/#(\d+)/);
+        epNum = m ? m[1] : '';
+        var bi = firstLine.lastIndexOf(']');
+        titleText = bi >= 0 ? firstLine.slice(bi+2).trim() : firstLine;
+      }
+
+      /* ── 뉴스 아이템 누적 구조 ── */
+      var currentItem = null;  // { num, bodyLines[] }
+      var allItems    = [];
+      var currentRoasting = null; // { num, title, bodyLines[] }
+      var allRoasting     = [];
+      var inRoasting      = false;
+
+      function pushItem(){
+        if(currentItem){ allItems.push(currentItem); currentItem=null; }
+      }
+      function pushRoasting(){
+        if(currentRoasting){ allRoasting.push(currentRoasting); currentRoasting=null; }
+      }
+      function renderItems(){
+        pushItem();
+        if(!allItems.length) return;
+        var h = '<div class="nlr-news-header"><span class="nlr-news-header-label">이번 주 AI 소식</span><div class="nlr-news-header-line"></div></div><div class="nlr-news-grid">';
+        allItems.forEach(function(item){
+          h += '<div class="nlr-news-item nlr-news-expanded">';
+          h += '<div class="nlr-news-num">'+item.num+'</div>';
+          h += '<div class="nlr-news-text">';
+          item.bodyLines.forEach(function(b){ h += '<p class="nlr-news-body">'+inlineMd(b)+'</p>'; });
+          h += '</div></div>';
+        });
+        h += '</div>';
+        parts.push(h);
+        allItems = [];
+      }
+      function renderRoasting(){
+        pushRoasting();
+        if(!allRoasting.length) return;
+        var h = '<div class="nlr-roasting-grid">';
+        allRoasting.forEach(function(item){
+          h += '<div class="nlr-roasting-item">';
+          h += '<div class="nlr-roasting-num">'+item.num+'</div>';
+          h += '<div class="nlr-roasting-content">';
+          if(item.title) h += '<div class="nlr-roasting-title">'+inlineMd(item.title)+'</div>';
+          item.bodyLines.forEach(function(b){ h += '<p class="nlr-roasting-body">'+inlineMd(b)+'</p>'; });
+          h += '</div></div>';
+        });
+        h += '</div>';
+        parts.push(h);
+        allRoasting = [];
+        inRoasting = false;
+      }
+
+      /* ── 본문 라인별 파싱 ── */
+      for(var i = 1; i < lines.length; i++){
+        var l = lines[i].trim();
+
+        /* 빈 줄 / 구분선 / 저자 줄 스킵 */
+        if(!l || l === '---') continue;
+        if(/강정구|Jayden Kang|Head of AI Strategy|LINER|KakaoEnt|Published Author/.test(l)) continue;
+
+        /* 날짜 추출 */
+        if(!date && /^\*\*발행일\*\*:/.test(l)){
+          date = l.replace(/^\*\*발행일\*\*:\s*/,'').trim(); continue;
+        }
+        if(!date && /^(January|February|March|April|May|June|July|August|September|October|November|December|\d{4}년)/.test(l)){
+          date = l; continue;
+        }
+
+        /* 리드 인용문 */
+        if(l.charAt(0) === '"' && !inNewsList){
+          parts.push('<div class="nlr-hero-quote">\u201c'+inlineMd(l.replace(/^"|"$/g,'').trim())+'\u201d</div>');
+          continue;
+        }
+
+        /* ## / # / 플레인 텍스트 "이번 주 AI 소식" → 뉴스 모드 진입 */
+        if(/^#{0,2}\s*(이번\s*주\s*AI\s*소식|이번주AI소식)/.test(l)){
+          renderItems();
+          inNewsList = true;
+          continue;
+        }
+
+        /* ## 금주의 AI 로스팅 → 로스팅 모드 진입 */
+        if(/^#{1,2}\s*금주/.test(l)){
+          renderItems(); inNewsList = false;
+          renderRoasting();
+          inRoasting = true;
+          parts.push('<div class="nlr-news-header"><span class="nlr-roasting-header-label">금주의 AI 로스팅</span><div class="nlr-news-header-line"></div></div>');
+          continue;
+        }
+
+        /* ## 다른 섹션 → 모든 모드 종료 */
+        if(/^#{1,2}\s/.test(l)){
+          renderItems(); inNewsList = false;
+          renderRoasting();
+          var secLabel = l.replace(/^#+\s*/,'');
+          parts.push('<div class="nlr-news-header"><span class="nlr-news-header-label">'+escHtml(secLabel)+'</span><div class="nlr-news-header-line"></div></div>');
+          continue;
+        }
+
+        /* ### (1) (2) ... → 로스팅 모드일 때 로스팅 아이템 */
+        if(/^###\s/.test(l) && inRoasting){
+          var rInner = l.replace(/^#+\s*/,'');
+          var rM = rInner.match(/^\((\d+)\)\s*(.*)/);
+          if(rM){
+            pushRoasting();
+            currentRoasting = { num: rM[1], title: rM[2], bodyLines: [] };
+            continue;
+          }
+        }
+
+        /* ### 소제목 */
+        if(/^###\s/.test(l)){
+          renderItems(); inNewsList = false;
+          renderRoasting();
+          parts.push('<h3 class="nlr-sub-heading">'+inlineMd(l.replace(/^#+\s*/,''))+'</h3>');
+          continue;
+        }
+
+        /* (1) (2) (3) 로스팅 아이템 */
+        if(/^\(\d+\)/.test(l) && inRoasting){
+          pushRoasting();
+          var rNum = l.match(/^\((\d+)\)/)[1];
+          var rTitle = l.replace(/^\(\d+\)\s*/,'');
+          currentRoasting = { num: rNum, title: rTitle, bodyLines: [] };
+          continue;
+        }
+
+        /* (1) (2) (3) — 로스팅 모드 아닐 때 소제목 */
+        if(/^\(\d+\)/.test(l) && !inNewsList){
+          parts.push('<h3 class="nlr-sub-heading">'+inlineMd(l)+'</h3>');
+          continue;
+        }
+
+        /* 뉴스 항목: **1/** 또는 1/ (섹션 헤더 없어도 자동 진입) */
+        var isItem = /^\*\*\d+[\/]?\*\*/.test(l) || /^\d+\/\s/.test(l);
+        if(isItem){
+          if(!inNewsList) inNewsList = true;
+          pushItem();
+          newsCount++;
+          var itemText = l.replace(/^\*\*\d+\/?\*\*\s*/,'').replace(/^\d+\/\s*/,'');
+          currentItem = { num: newsCount, bodyLines: [itemText] };
+          continue;
+        }
+
+        /* [소제목] 브래킷 태그 스킵 */
+        if(/^\[.+\]$/.test(l) && !/^\[AI 로스팅/.test(l)) continue;
+
+        /* 로스팅 아이템 본문 추가 */
+        if(inRoasting && currentRoasting){
+          currentRoasting.bodyLines.push(l);
+          continue;
+        }
+
+        /* 뉴스 아이템 본문 단락 추가 */
+        if(inNewsList && currentItem){
+          currentItem.bodyLines.push(l);
+          continue;
+        }
+
+        /* 일반 단락 */
+        if(!inNewsList && !inRoasting){
+          parts.push('<p class="nlr-paragraph">'+inlineMd(l)+'</p>');
+        }
+      }
+      renderItems();
+      renderRoasting();
+
+      /* 최종 HTML 조립 */
+      var html = '';
+      html += '<h2 class="nlr-content-title">'+escHtml(titleText)+'</h2>';
+      if(date) html += '<div class="nlr-meta"><span class="nlr-meta-date">'+escHtml(formatDateKo(date))+'</span></div>';
+      html += parts.join('');
+
+      return { epNum: epNum, title: titleText, html: html };
+    }
+
+    /* ── 모달 열기 ── */
+    function openReader(ep, linkedinUrl){
+      // ep 번호 → 파일명 (1~9는 zero-pad)
+      var padded = ep < 10 ? '0'+ep : String(ep);
+      var mdPath = './content/nl-' + padded + '.md';
+
+      epPill.textContent = '#' + ep;
+      hTitle.textContent = '';
+      liBtn.href = linkedinUrl;
+      body.innerHTML = '<div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;color:#999;">불러오는 중...</span></div>';
+
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // NL_CONTENT가 로드된 경우 즉시 렌더, 아니면 fetch fallback
+      function renderRaw(raw){
+        var parsed = parseMd(raw);
+        epPill.textContent = '#' + parsed.epNum;
+        hTitle.textContent = parsed.title;
+        body.innerHTML = parsed.html;
+        body.scrollTop = 0;
+      }
+      if(window.NL_CONTENT && window.NL_CONTENT[ep]){
+        renderRaw(window.NL_CONTENT[ep]);
+      } else {
+        fetch(mdPath)
+          .then(function(r){ if(!r.ok) throw new Error('fail'); return r.text(); })
+          .then(renderRaw)
+          .catch(function(){
+            body.innerHTML = '<p style="padding:32px;color:#999;font-size:14px;">콘텐츠를 불러올 수 없습니다.<br><a href="'+escHtml(linkedinUrl)+'" target="_blank" style="color:#7C3AED;">LinkedIn에서 직접 보기 →</a></p>';
+          });
+      }
+    }
+
+    function closeReader(){
+      backdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ── 카드 클릭 이벤트 위임 ── */
+    var grid = document.querySelector('.newsletter-grid');
+    if(grid){
+      grid.addEventListener('click', function(e){
+        var card = e.target.closest('.nl-card');
+        if(!card) return;
+        e.preventDefault();
+        var epEl = card.querySelector('.nl-ep');
+        var epNum = epEl ? parseInt(epEl.textContent.replace('#',''),10) : 0;
+        var liUrl = card.getAttribute('href') || '#';
+        if(epNum) openReader(epNum, liUrl);
+      });
+    }
+
+    /* ── 닫기 ── */
+    closeBtn.addEventListener('click', closeReader);
+    backdrop.addEventListener('click', function(e){
+      if(e.target === backdrop) closeReader();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeReader();
+    });
+  })();
+  </script>
+
+  <script src="./content/nl-content.js"></script>
   <script src="../assets/js/char-effect.js"></script>
   <script>
   (function(){
