@@ -1,6 +1,23 @@
 {
   "posts": [
     {
+      "title": "AI 모델이 빨라질수록 제품 관리도 바뀐다",
+      "date": "2026-04-05",
+      "category": "tech",
+      "source": "Anthropic (Cat Wu)",
+      "tags": [
+        "제품관리",
+        "ClaudeCode",
+        "AI개발",
+        "Anthropic"
+      ],
+      "slug": "2026-04-05-pm-on-ai-exponential",
+      "file": "tech/2026-04-05-pm-on-ai-exponential.html",
+      "summary": "AI 모델이 16개월 만에 41배 발전하면서 전통적인 제품 관리 가정이 깨졌습니다. Anthropic의 Cat Wu는 단기 실험, 프로토타입 우선, 신모델 재검토, 단순함 유지의 4가지 전환을 제시합니다.",
+      "roasting_quote": "6개월 실행 계획을 세우셨습니까? AI 모델은 3개월마다 바뀝니다. 계획이 낡아가는 속도보다 모델이 빠릅니다.",
+      "next_post": "2026-03-19-hyperagents-self-improving-ai.html"
+    },
+    {
       "title": "개발자 전면 자동화, 예측 시점이 2년 당겨졌다",
       "date": "2026-04-03",
       "category": "survival",
