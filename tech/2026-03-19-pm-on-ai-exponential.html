@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 모델이 빨라질수록 제품 관리도 바뀐다 - AI ROASTING</title>
+  <meta name="description" content="Anthropic PM Cat Wu: AI 모델이 16개월 만에 41배 발전했습니다. 장기 실행 계획, 문서 우선주의, 고정 기능 가정이 모두 무너지고 있습니다. PM의 역할은 계획에서 발견으로 이동하고 있습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 모델이 빨라질수록 제품 관리도 바뀐다">
+  <meta property="og:description" content="Anthropic PM Cat Wu: 모델이 41배 빨라지면, 로드맵도 41배 짧아져야 합니다. 기존 제품 관리의 4가지 전제가 이미 깨졌습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-03-19-pm-on-ai-exponential.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_03_19_pm-on-ai-exponential/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-19">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="제품관리">
+  <meta property="article:tag" content="ClaudeCode">
+  <meta property="article:tag" content="AI개발">
+  <meta property="article:tag" content="Anthropic">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 모델이 빨라질수록 제품 관리도 바뀐다">
+  <meta name="twitter:description" content="Anthropic PM Cat Wu: 모델이 41배 빨라지면, 로드맵도 41배 짧아져야 합니다. 기존 제품 관리의 4가지 전제가 이미 깨졌습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_03_19_pm-on-ai-exponential/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 모델이 빨라질수록 제품 관리도 바뀐다",
+    "datePublished": "2026-03-19",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Anthropic PM Cat Wu: AI 모델이 16개월 만에 41배 발전했습니다. 장기 실행 계획, 문서 우선주의, 고정 기능 가정이 모두 무너지고 있습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-03-19-pm-on-ai-exponential.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_19_pm-on-ai-exponential/thumbnail.png" alt="AI 모델이 빨라질수록 제품 관리도 바뀐다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 3월 19일</span>
+          <span class="post-read-time">7분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 모델이 빨라질수록 제품 관리도 바뀐다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic (Cat Wu)</span>
+            <span>Anthropic Blog</span>
+            <span><a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=제품관리" class="post-tag">#제품관리</a>
+            <a href="../index.html?tag=ClaudeCode" class="post-tag">#ClaudeCode</a>
+            <a href="../index.html?tag=AI개발" class="post-tag">#AI개발</a>
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI 모델이 빨라질수록 제품 관리도 바뀐다"
+        data-date="2026-03-19"
+        data-category="tech"
+        data-source="Anthropic (Cat Wu)"
+        data-tags="제품관리, ClaudeCode, AI개발, Anthropic"
+        data-original-url="https://claude.com/blog/product-management-on-the-ai-exponential"
+        data-roasting-quote="6개월 실행 계획을 세우셨습니까? AI 모델은 3개월마다 바뀝니다. 계획이 낡아가는 속도보다 모델이 빠릅니다."
+        data-next-post="2026-03-19-hyperagents-self-improving-ai.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>AI 모델은 16개월 만에 41배 발전했습니다. 기존 제품 관리의 전제인 "프로젝트 완료 시 기술 범위 = 시작 시 기술 범위"가 더 이상 성립하지 않습니다.</p>
+        <p data-summary>Anthropic의 Cat Wu는 4가지 전환을 제시합니다. 단기 실험 중심, 프로토타입 우선, 신모델마다 기존 기능 재검토, 단순함 유지가 핵심입니다.</p>
+        <p data-summary>PM의 역할은 계획 수립에서 발견 가속으로 이동하고 있습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">6개월 실행 계획을 세우셨습니까? AI 모델은 3개월마다 바뀝니다. 계획이 낡아가는 속도보다 모델이 빠릅니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>Anthropic의 Cat Wu는 Claude Code를 모델 버전마다 직접 테스트합니다. Excalidraw(협업 다이어그램 도구)에 표 기능을 추가하라는 요청을 Sonnet 3.5에 주면 가끔 실패했습니다. Opus 4.6에 같은 요청을 주자 한 번에 완료됐습니다.</p>
+        <p>이 차이는 단순한 성능 향상이 아닙니다. "어떤 기능이 지금 가능한가"라는 전제 자체가 바뀝니다. 전통적인 제품 관리는 그 전제가 고정돼 있다고 가정합니다. 그 가정이 깨졌습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>METR 연구에 따르면 Opus 4.6은 인간이 약 12시간 걸리는 작업을 완료할 수 있습니다. Sonnet 3.5(new) 대비 41배 향상된 수치이며, 16개월 만의 변화입니다. (출처: METR, 2026)</p>
+        <p>전통적 제품 관리는 한 가지 전제 위에 세워져 있습니다. "프로젝트 시작 시 가능한 기술 범위가 완료 시에도 유지된다"는 것입니다. 모델이 3개월마다 바뀌면 이 전제가 무너집니다. 6개월짜리 실행 계획을 세우는 순간 그 계획은 이미 낡아 있습니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 장기 실행 계획 대신 단기 실험을 중심에 놓습니다.</strong> Cat Wu는 이를 "사이드 퀘스트"라 부릅니다. 오후 한 나절 동안 자기 주도적으로 진행하는 실험입니다. 반 분기(6~8주) 단위 계획을 선호합니다. 확실성이 낮은 영역에서는 장기 목표가 방향을 고정하는 동시에 실험 여지를 막기 때문입니다.</p>
+
+        <p><strong>둘째, 문서보다 프로토타입을 먼저 만듭니다.</strong> Cat Wu는 Claude Code로 아이디어를 그날 오후 안에 시작품으로 만듭니다. "아이디어에서 '한번 써봐'까지의 간격이 사라졌다"고 표현합니다. Decagon의 제품 디렉터 Bihan Jiang도 같은 경험을 보고했습니다. 데모 제작 기간이 수 주에서 수 시간으로 단축됐다고 합니다.</p>
+
+        <p><strong>셋째, 신모델 출시마다 기존 기능을 다시 확인합니다.</strong> 새 모델이 나오면 이전에 어렵거나 불가능했던 기능이 갑자기 가능해집니다. Cat Wu 팀은 Opus 4.6 도입 후 시스템 프롬프트와 도구 설명을 20% 줄였습니다. 유지보수 부담이 줄고, 같은 인력으로 더 빠르게 출시할 수 있게 됐습니다. Datadog의 시니어 PM Kai Xin Tai는 이를 "평가 피드백 루프"라 정의합니다. 결과물 품질을 반복 측정해 개선하는 과정으로, 발견 속도를 높이는 핵심 방식입니다.</p>
+
+        <p><strong>넷째, 모델 한계를 우회하는 엔지니어링을 피합니다.</strong> 특정 모델 버전의 약점을 보완하는 복잡한 우회 코드를 쌓으면 다음 모델이 출시됐을 때 짐이 됩니다. 단순한 구조가 모델 개선의 수혜를 자동으로 흡수합니다. "단순함이 기본값이어야 한다"는 원칙입니다.</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>오후 2시간을 "사이드 퀘스트"로 예약합니다.</strong><br>팀의 반복 업무 중 하나를 골라 Claude Code에 "이 업무를 자동화하는 스크립트를 만들어 줘"라고 요청합니다. 완성도보다 가능성 확인이 목표입니다. (2시간, 팀원 1인 단독 실험)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>기존 기능 목록을 최신 모델로 재테스트합니다.</strong><br>"예전에 AI로 해봤는데 안 됐다"는 항목을 3개 뽑습니다. Opus 4.6으로 같은 요청을 다시 실행합니다. (30분, 결과를 팀 슬랙에 공유)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>다음 분기 실행 계획을 반 분기 단위로 나눕니다.</strong><br>6개월 계획을 8주짜리 두 묶음으로 분리합니다. 첫 8주에만 구체적 목표를 부여하고, 두 번째 묶음은 첫 번째 결과를 본 뒤 정합니다. (1시간, 계획서 수정)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>단기 실험 편향이 생길 수 있습니다.</strong> "사이드 퀘스트" 중심 운영은 빠른 검증에 유리합니다. 반면 장기 투자가 필요한 기반 작업(데이터 파이프라인, 보안 설계)은 뒤로 밀리기 쉽습니다. 실험과 기반 작업의 비율을 명시적으로 관리해야 합니다.</p>
+
+        <p><strong>모델 의존도가 높아질수록 전환 비용도 커집니다.</strong> Anthropic 모델에 최적화된 제품 구조는 다른 모델로 이전할 때 재작업이 필요합니다. 특정 모델 버전에 의존하는 코드는 다음 버전 출시 시 부채가 됩니다.</p>
+
+        <p><strong>이 접근법은 Anthropic 내부 사례입니다.</strong> Cat Wu의 팀은 AI 도구를 만드는 조직입니다. AI 도구를 처음 도입하는 비개발 조직에 그대로 적용하면 속도보다 혼란이 먼저 옵니다. 조직의 AI 성숙도를 먼저 진단해야 합니다.</p>
+
+        <p><strong>프로토타입 우선 문화는 완성도 기준을 낮출 수 있습니다.</strong> "빠른 시작품"이 "완성된 제품"으로 착각되면 품질 문제가 누적됩니다. 실험과 출시 기준을 명확히 구분해야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>모델이 41배 빨라졌습니다. 제품 관리도 그 속도에 맞춰 다시 설계해야 합니다.</p>
+      </section>
+
+      <!-- CTA -->
+      <section class="post-section" id="section-cta">
+        <div class="post-section-label">다음 단계</div>
+        <p>우리 팀의 AI 전환 속도를 높이고 싶다면, <a href="../about/index.html">무료 진단을 신청하세요</a>.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자</span>
+            <span>다음 분기 실행 계획을 8주 단위로 나누고, 첫 8주에만 구체적 목표를 부여하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀원 한 명에게 매주 오후 2시간을 AI 실험 시간으로 보장하고 결과를 공유하게 하라</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>"예전에 안 됐던" AI 기능 목록을 최신 모델로 재검토하고, 분기별 재테스트를 업무에 포함하라</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Wu, C. (2026, 3월). <em>Product management on the AI exponential</em> [Article]. Anthropic.
+            <a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener">https://claude.com/blog/product-management-on-the-ai-exponential</a></li>
+          <li>METR. (2026). <em>Measuring AI agents' ability to complete long tasks</em> [Research]. METR.
+            <a href="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" target="_blank" rel="noopener">https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://claude.com/blog/product-management-on-the-ai-exponential" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-19-hyperagents-self-improving-ai.html">
+          <div class="next-post-title">스스로 개선하는 AI 에이전트, 어디까지 왔나 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-03-19-pm-on-ai-exponential.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-03-19-pm-on-ai-exponential.html';
+    const ROASTING_QUOTE = '6개월 실행 계획을 세우셨습니까? AI 모델은 3개월마다 바뀝니다. 계획이 낡아가는 속도보다 모델이 빠릅니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+</body>
+</html>
