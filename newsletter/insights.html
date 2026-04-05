@@ -445,6 +445,13 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      justify-content: space-between;
+    }
+    .ic-date {
+      font-size: 10px;
+      color: var(--text-muted);
+      opacity: 0.65;
+      flex-shrink: 0;
     }
     /* 단일 카드 전체 너비 */
     .insight-grid--single .insight-card:first-child { grid-column: 1 / -1; max-width: 560px; }
@@ -692,7 +699,7 @@
               <div class="ins-stat-label">뉴스레터</div>
             </div>
             <div class="ins-stat">
-              <div class="ins-stat-num">41</div>
+              <div class="ins-stat-num">40</div>
               <div class="ins-stat-label">포스트</div>
             </div>
           </div>
@@ -951,12 +958,19 @@
           const attrs = c.url ? `href="${c.url}" target="_blank" rel="noopener" data-post-title="${c.source||''}"${roastingAttr}${summariesAttr}` : (epNum ? `data-ep="${epNum}"` : "");
           // 10카드 주기: 0→와이드 왼쪽[2col][1col], 6→와이드 오른쪽[1col][2col]
           const isWide = (idx % 10 === 0 || idx % 10 === 6);
+          // 날짜: 뉴스레터 에피소드 번호로 조회, 없으면 포스트 date 필드 사용
+          let dateStr = c.date || '';
+          if (!dateStr && epNum && window.NEWSLETTER_DATA) {
+            const nlItem = window.NEWSLETTER_DATA.find(n => String(n.ep) === String(epNum));
+            if (nlItem) dateStr = nlItem.date;
+          }
+          const dateHTML = dateStr ? `<span class="ic-date">${dateStr}</span>` : '';
           return `
           <${tag} class="insight-card${isWide ? ' ic-wide' : ''}" data-theme="${c.theme}" ${attrs}>
             <div class="card-glow"></div>
             <div class="ic-tag">● ${c.tag}</div>
             <div class="ic-body">${c.body}</div>
-            <div class="ic-source">${c.source}${c.url ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : (epNum ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : '')}</div>
+            <div class="ic-source"><span>${c.source}${c.url ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : (epNum ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : '')}</span>${dateHTML}</div>
           </${tag}>`;
         }).join("");
 

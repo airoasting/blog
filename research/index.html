@@ -49,6 +49,21 @@
   <script src="../assets/js/header.js"></script>
   <script src="../assets/js/theme.js"></script>
 
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="포스트 검색..." autocomplete="off">
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
   <main>
     <div class="container">
       <section>
@@ -78,6 +93,8 @@
 
 
   <script src="../assets/js/footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="../assets/js/search.js"></script>
 
   <script src="../assets/js/char-effect.js"></script>
   <script src="../assets/js/posts-data.js"></script>
@@ -206,6 +223,10 @@
       visible = Math.min(visible+PAGE_SIZE, posts.length);
       render();
     });
+
+    window.dispatchEvent(new CustomEvent('postsLoaded', {
+      detail: { posts: (window.POSTS_DATA && window.POSTS_DATA.posts) || [] }
+    }));
   })();
   </script>
 

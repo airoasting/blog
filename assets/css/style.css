@@ -243,14 +243,14 @@ img {
   color: #7C3AED;
 }
 [data-theme="dark"] .main-nav .nav-newsletter {
-  color: #A78BFA;
-}
-[data-theme="dark"] .main-nav .nav-newsletter:hover {
   color: #C4B5FD;
 }
+[data-theme="dark"] .main-nav .nav-newsletter:hover {
+  color: #DDD6FE;
+}
 [data-theme="dark"] .main-nav .nav-newsletter.active {
-  border-bottom-color: #A78BFA;
-  color: #A78BFA;
+  border-bottom-color: #C4B5FD;
+  color: #C4B5FD;
 }
 
 /* ── 홈 뉴스레터 그리드 ── */
@@ -2533,15 +2533,38 @@ img {
   }
 
   .post-thumbnail-overlay {
-    padding: 16px;
+    padding: 0;
   }
 
-  .post-thumbnail-overlay .post-title {
-    font-size: clamp(20px, 5vw, 28px);
-  }
-
+  .post-thumbnail-overlay .post-title,
   .post-title {
-    font-size: clamp(24px, 6vw, 32px);
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .post-hero-meta,
+  .post-hero-bottom,
+  .post-hero-source,
+  .post-hero-tags {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .post-hero-source {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .post-hero-source span + span::before {
+    display: none;
+  }
+
+  .decision-role {
+    text-align: center;
+  }
+
+  .footer-newsletter-brand {
+    display: none;
   }
 
   .share-bar {

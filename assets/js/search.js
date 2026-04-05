@@ -11,8 +11,13 @@
     leader: '리더',
     company: '기업',
     tech: '기술',
-    survival: '생존'
+    survival: '생존',
+    newsletter: '뉴스레터'
   };
+
+  // Detect URL prefix based on page depth
+  const loc = window.location.pathname;
+  const urlPrefix = /\/(research|leader|company|tech|survival|newsletter|about)\//.test(loc) ? '../' : './';
 
   let fuse = null;
   let allPosts = [];
@@ -45,9 +50,11 @@
     container.innerHTML = results.map(r => {
       const post = r.item || r;
       const catLabel = CATEGORY_LABELS[post.category] || post.category;
-      const url = './' + post.category + '/' + post.slug + '.html';
+      const isExternal = !!post.url;
+      const url = post.url || (urlPrefix + post.category + '/' + post.slug + '.html');
+      const target = isExternal ? ' target="_blank" rel="noopener"' : '';
       return `
-        <a href="${url}" class="search-result-card" data-category="${post.category}">
+        <a href="${url}"${target} class="search-result-card" data-category="${post.category}">
           <span class="card-badge">${catLabel}</span>
           <span class="search-result-title">${post.title}</span>
           <span class="card-date">${post.date}</span>
@@ -134,7 +141,17 @@
 
   // --- Listen for posts data ---
   window.addEventListener('postsLoaded', (e) => {
-    initSearch(e.detail.posts || []);
+    const posts = e.detail.posts || [];
+    // Merge newsletter data if available
+    const nlData = (window.NEWSLETTER_DATA || []).map(n => ({
+      title: n.title,
+      date: n.date,
+      category: 'newsletter',
+      slug: '',
+      url: n.url,
+      summary: '#' + n.ep + ' 뉴스레터'
+    }));
+    initSearch(posts.concat(nlData));
   });
 
 })();

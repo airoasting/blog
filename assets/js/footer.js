@@ -11,7 +11,7 @@
         '<div>' +
           '<div class="footer-brand">AI ROASTING</div>' +
           '<p class="footer-desc">AI 시대를 살아남는 비즈니스 리더를 위한 인사이트</p>' +
-          '<a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="footer-newsletter-btn">AI ROASTING 뉴스레터 구독하기</a>' +
+          '<a href="https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/" target="_blank" rel="noopener" class="footer-newsletter-btn"><span class="footer-newsletter-brand">AI ROASTING</span> 뉴스레터 구독하기</a>' +
         '</div>' +
         '<div>' +
           '<div class="footer-heading">카테고리</div>' +
