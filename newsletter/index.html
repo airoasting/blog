@@ -219,6 +219,28 @@
         <p class="section-desc hide-mobile">매주 AI 비즈니스 인사이트를 LinkedIn에서 발행합니다.</p>
       </div>
 
+      <!-- 인사이트 배너 -->
+      <a href="./insights.html" style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        background: var(--surface-container-high);
+        border: 1.5px solid var(--border);
+        border-radius: 16px;
+        padding: 20px 28px;
+        margin-bottom: 16px;
+        text-decoration: none;
+        transition: box-shadow 0.2s, transform 0.2s;
+      " onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='var(--nm-raised)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7C3AED;margin-bottom:5px;">Insights Report</div>
+          <div style="font-size:15px;font-weight:800;color:var(--text);letter-spacing:-0.01em;">42화 분기별 인사이트 타임라인 보기</div>
+          <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">뉴스레터 42화 + 포스트 40개 기반 · 인터랙티브 분기 타임라인</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
       <!-- 구독 배너 -->
       <div class="nl-subscribe-banner">
         <div class="nl-subscribe-text">
@@ -614,6 +636,17 @@
 
       </div><!-- /.newsletter-grid -->
 
+      <!-- 더 보기 버튼 -->
+      <div id="nl-load-more-wrap" style="text-align:center; margin-bottom:60px; display:none;">
+        <button id="nl-load-more" style="
+          display:inline-flex; align-items:center; gap:8px;
+          background:transparent; border:2px solid #7C3AED; color:#7C3AED;
+          font-size:14px; font-weight:700; padding:13px 36px;
+          border-radius:12px; cursor:pointer;
+          transition:background 0.2s, color 0.2s;
+        ">더 보기 <span id="nl-remaining"></span></button>
+      </div>
+
     </div>
   </main>
 
@@ -629,6 +662,39 @@
   <footer id="site-footer"></footer>
   <script src="../assets/js/footer.js"></script>
   <script src="../assets/js/newsletter-data.js"></script>
+  <script>
+  (function(){
+    var PAGE = 15;
+    var cards = Array.from(document.querySelectorAll('.newsletter-grid .nl-card'));
+    var shown = 0;
+    var wrap = document.getElementById('nl-load-more-wrap');
+    var btn = document.getElementById('nl-load-more');
+    var rem = document.getElementById('nl-remaining');
+
+    function showNext() {
+      var end = Math.min(shown + PAGE, cards.length);
+      for (var i = shown; i < end; i++) {
+        cards[i].style.display = '';
+      }
+      shown = end;
+      var left = cards.length - shown;
+      if (left <= 0) {
+        wrap.style.display = 'none';
+      } else {
+        rem.textContent = '(' + left + '개 남음)';
+        wrap.style.display = '';
+      }
+    }
+
+    // 처음엔 전부 숨김
+    cards.forEach(function(c){ c.style.display = 'none'; });
+    showNext();
+
+    btn.addEventListener('click', showNext);
+    btn.addEventListener('mouseover', function(){ btn.style.background='#7C3AED'; btn.style.color='#fff'; });
+    btn.addEventListener('mouseout', function(){ btn.style.background='transparent'; btn.style.color='#7C3AED'; });
+  })();
+  </script>
   <script>
   (function(){
     var toggleBtns = document.querySelectorAll('.view-toggle button');
