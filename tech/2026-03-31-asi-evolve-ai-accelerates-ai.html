@@ -150,11 +150,140 @@
 
         <p><strong>둘째, 데이터 정제만으로 MMLU 점수가 18점 올랐습니다.</strong> 672억 토큰 규모의 학습 데이터에 자동 정제를 적용했습니다. MMLU 점수가 27.49에서 46.13으로 올랐습니다. 의학 지식 +13점, 상식 추론 +18점도 함께 올랐습니다. 기존 공개 학습 데이터보다 높은 성능입니다.</p>
 
+        <!-- 표: 데이터 정제 효과 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">평가 항목</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">정제 전</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">정제 후</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">향상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">MMLU (57개 분야 지식)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">27.49</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">46.13</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+18.64</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">MedQA (의학 지식)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">26.77</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">40.25</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+13.48</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">CSQA (상식 추론)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.31</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">39.12</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+18.81</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">ARC-C (과학 추론)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">43.52</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">49.32</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+5.80</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">전체 평균 (18개 항목)</td>
+                <td style="padding: 10px; text-align: center;">40.17</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">44.13</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">+3.96</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">30억 파라미터 모델, 5000억 토큰 학습 기준. 정제 전: Nemotron-CC 원본 데이터. 정제 후: ASI-Evolve 자동 정제 적용. 출처: Xu et al. (2026), Table 2.</p>
+        </div>
+
         <p><strong>셋째, AI가 설계한 학습 알고리즘이 GRPO를 넘었습니다.</strong> GRPO는 대표적인 강화학습 알고리즘입니다. 최고 알고리즘은 수학 평가에서 +12.5점을 기록했습니다(67.5 → 80.0). 수학 경시대회 AIME24에서도 +11.67점 올랐습니다. AI가 만든 학습법이 사람이 만든 학습법을 넘었습니다.</p>
+
+        <!-- 표: 강화학습 알고리즘 비교 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">수학 평가</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사람이 설계한 GRPO</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">AI가 설계한 최고 알고리즘</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">향상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">AMC32 (수학 경시)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">67.5</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">80.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+12.5</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">AIME24 (수학 올림피아드)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.00</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">31.67</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+11.67</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">AIME25 (수학 올림피아드)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.00</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">30.00</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+10.00</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Math500</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">82.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.6</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+3.6</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">OlympiadBench</td>
+                <td style="padding: 10px; text-align: center;">45.92</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">50.96</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">+5.04</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Qwen-3-14B 모델 기준, 250 학습 스텝 후 평가. ASI-Evolve가 설계한 5개 알고리즘 중 최고 성능 기록. 출처: Xu et al. (2026), Table 3.</p>
+        </div>
 
         <p><strong>넷째, '인지 기반'이 탐색 효율의 핵심입니다.</strong> 인지 기반은 기존 논문 지식을 모아둔 저장소입니다. 150편의 논문에서 추출한 지식이 탐색 방향을 안내합니다. 인지 기반을 제거하면 탐색 시작이 크게 느려집니다(Xu et al., 2026). 기업의 AI 실험 노하우도 이렇게 축적하면 경쟁 우위가 됩니다.</p>
 
         <p><strong>다섯째, AI 연구를 넘어 신약 개발에도 적용됩니다.</strong> 약물과 단백질의 상호작용 예측에 적용했습니다. 미지 약물 예측 정확도가 6.94점 향상됐습니다. 미지 단백질 예측도 3.56점 올랐습니다. AI 연구 자동화 기술이 바이오, 소재, 금융 등 다른 산업으로 확장됩니다.</p>
+
+        <!-- 표: 신약 개발 적용 결과 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">예측 조건</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사람이 설계한 모델</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">AI가 설계한 모델</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">향상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">미지 약물 예측</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">79.15</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">86.09</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+6.94</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">미지 단백질 예측</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">82.26</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.82</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+3.56</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">미지 약물 + 단백질</td>
+                <td style="padding: 10px; text-align: center;">76.47</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">80.83</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">+4.36</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">AUROC 점수 기준 (100점 만점). 사람이 설계한 모델: DrugBAN. 학습 데이터에 없는 약물/단백질에 대한 예측 정확도. 출처: Xu et al. (2026), Table 6.</p>
+        </div>
       </section>
 
       <!-- 블록 4: 내일 당장 할 수 있는 것 -->
@@ -194,12 +323,6 @@
       <section class="post-section" id="section-closing">
         <div class="post-section-label">한 줄 정리</div>
         <p>AI가 AI를 설계하고 개선하는 시대가 시작됐습니다. 향후 AI 경쟁력은 사람의 수가 아니라 자동화 체계의 품질로 결정됩니다.</p>
-      </section>
-
-      <!-- CTA -->
-      <section class="post-section" id="section-cta">
-        <div class="post-section-label">다음 단계</div>
-        <p>우리 조직의 AI 활용 수준을 점검하고 싶다면, <a href="../about/index.html">무료 진단을 신청하세요</a>.</p>
       </section>
 
       <!-- 리더의 결정 포인트 -->
