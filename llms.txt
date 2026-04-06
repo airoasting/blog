@@ -18,6 +18,7 @@
 - 2026-04-03 [생존] 개발자 전면 자동화, 예측 시점이 2년 당겨졌다 — /blog/survival/2026-04-03-ai-coder-automation-timeline.html
 - 2026-04-03 [리더] 카파시: LLM이 내 위키를 대신 쓴다 — /blog/leader/2026-04-03-karpathy-llm-knowledge-base.html
 - 2026-04-02 [리서치] Claude 안의 감정: 171개 벡터가 행동을 결정한다 — /blog/research/2026-04-02-claude-emotion-vectors.html
+- 2026-03-31 [기술] AI가 AI를 설계한다, 사람 없이 — /blog/tech/2026-03-31-asi-evolve-ai-accelerates-ai.html
 - 2026-03-31 [리더] 전 구글 임원의 경고: 준비할 시간이 2년입니다 — /blog/leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html
 - 2026-03-24 [기술] AI, 수학자도 못 푼 난제를 풀다 — /blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html
 - 2026-03-23 [기업] 소프트웨어에 남은 길은 두 가지뿐이다 — /blog/company/2026-03-23-two-paths-for-software.html

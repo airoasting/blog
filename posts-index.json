@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "AI가 AI를 설계한다, 사람 없이",
+      "date": "2026-03-31",
+      "category": "tech",
+      "source": "arXiv (Weixian Xu 외 8인)",
+      "tags": ["AI자기진화", "ASI-Evolve", "신경망설계", "강화학습"],
+      "slug": "2026-03-31-asi-evolve-ai-accelerates-ai",
+      "file": "tech/2026-03-31-asi-evolve-ai-accelerates-ai.html",
+      "summary": "ASI-Evolve가 신경망 설계, 데이터 정제, 강화학습 3대 영역에서 AI 연구를 자동화했습니다. 1,773회 탐색으로 105개 최첨단 신경망을 발견하고, MMLU +18점, 수학 평가 +12.5점을 달성했습니다.",
+      "roasting_quote": "AI가 사람보다 3배 빠르게 신경망을 설계합니다. 당신의 AI 팀은 아직 모델 하나를 고르고 있습니까?",
+      "next_post": "2026-03-23-vibe-physics-ai-grad-student.html"
+    },
+    {
       "title": "DeNA AI 올인 1년, 생산성 20배의 역설",
       "date": "2026-03-21",
       "category": "company",
