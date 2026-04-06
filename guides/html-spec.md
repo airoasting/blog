@@ -262,18 +262,21 @@ window.addEventListener('scroll', () => {
 ```html
 <div class="decision-points">
   <div class="decision-point">
-    <span class="decision-role">창업자/CEO</span> 설명 텍스트.
+    <span class="decision-role">창업자/CEO</span>
+    <span>설명 텍스트.</span>
   </div>
   <div class="decision-point">
-    <span class="decision-role">팀장</span> 설명 텍스트.
+    <span class="decision-role">팀장</span>
+    <span>설명 텍스트.</span>
   </div>
   <div class="decision-point">
-    <span class="decision-role">임원</span> 설명 텍스트.
+    <span class="decision-role">임원</span>
+    <span>설명 텍스트.</span>
   </div>
 </div>
 ```
 
-> **`<strong>` 태그 금지**: role 레이블에 `<strong>` 대신 반드시 `<span class="decision-role">`을 사용합니다. `decision-role`에 `min-width: 80px; flex-shrink: 0; text-align: right`가 적용되어 세 줄의 텍스트 시작 위치가 정렬됩니다.
+> **가운데 정렬**: `decision-point`는 `flex-direction: column; align-items: center; text-align: center` 레이아웃입니다. role 레이블이 위, 설명 텍스트가 아래로 가운데 정렬됩니다. `<strong>` 대신 반드시 `<span class="decision-role">`을 사용합니다.
 
 **비즈니스 비용 섹션:** 소스에 정량적 비용 수치가 없으면 섹션 자체를 생략합니다. 빈 섹션("[해당 없음]")을 만들지 않습니다.
 

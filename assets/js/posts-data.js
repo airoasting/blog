@@ -1,6 +1,18 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI는 당신의 감정에 관심 없습니다",
+      "date": "2026-04-02",
+      "category": "tech",
+      "source": "arXiv (Minda Zhao 외 7인)",
+      "tags": ["감정프롬프트", "프롬프트엔지니어링", "LLM벤치마크", "EmotionRL"],
+      "slug": "2026-04-02-ai-emotion-prompts",
+      "file": "tech/2026-04-02-ai-emotion-prompts.html",
+      "summary": "6가지 감정, 4개 모델, 6개 벤치마크 실험 결과, 프롬프트에 감정을 넣어도 AI 성능은 거의 달라지지 않습니다. 뒤에 붙이면 최대 8점 하락합니다.",
+      "roasting_quote": "\"AI에게 감정을 담아 말하면 더 잘한다\"고요? 6가지 감정으로 실험했습니다. 달라지는 건 거의 없습니다.",
+      "next_post": "2026-03-31-asi-evolve-ai-accelerates-ai.html"
+    },
+    {
       "title": "AI가 AI를 설계한다, 사람 없이",
       "date": "2026-03-31",
       "category": "tech",

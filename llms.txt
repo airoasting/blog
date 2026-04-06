@@ -14,15 +14,16 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
-- 2026-03-21 [기업] DeNA AI 올인 1년, 생산성 20배의 역설 — /blog/company/2026-03-21-dena-ai-20x-paradox.html
 - 2026-04-03 [생존] 개발자 전면 자동화, 예측 시점이 2년 당겨졌다 — /blog/survival/2026-04-03-ai-coder-automation-timeline.html
 - 2026-04-03 [리더] 카파시: LLM이 내 위키를 대신 쓴다 — /blog/leader/2026-04-03-karpathy-llm-knowledge-base.html
+- 2026-04-02 [기술] AI는 당신의 감정에 관심 없습니다 — /blog/tech/2026-04-02-ai-emotion-prompts.html
 - 2026-04-02 [리서치] Claude 안의 감정: 171개 벡터가 행동을 결정한다 — /blog/research/2026-04-02-claude-emotion-vectors.html
 - 2026-03-31 [기술] AI가 AI를 설계한다, 사람 없이 — /blog/tech/2026-03-31-asi-evolve-ai-accelerates-ai.html
 - 2026-03-31 [리더] 전 구글 임원의 경고: 준비할 시간이 2년입니다 — /blog/leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html
 - 2026-03-24 [기술] AI, 수학자도 못 푼 난제를 풀다 — /blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html
 - 2026-03-23 [기업] 소프트웨어에 남은 길은 두 가지뿐이다 — /blog/company/2026-03-23-two-paths-for-software.html
 - 2026-03-23 [기술] 교수가 AI로 1년 연구를 2주에 끝냈다 — /blog/tech/2026-03-23-vibe-physics-ai-grad-student.html
+- 2026-03-21 [기업] DeNA AI 올인 1년, 생산성 20배의 역설 — /blog/company/2026-03-21-dena-ai-20x-paradox.html
 - 2026-03-20 [리더] 카파시: 코딩의 종말, 에이전트 위임의 시작 — /blog/leader/2026-03-20-karpathy-end-of-coding.html
 - 2026-03-19 [기술] AI 모델이 빨라질수록 제품 관리도 바뀐다 — /blog/tech/2026-03-19-pm-on-ai-exponential.html
 - 2026-03-19 [기술] AI가 스스로 진화한다: Meta의 하이퍼에이전트 — /blog/tech/2026-03-19-hyperagents-self-improving-ai.html
@@ -57,6 +58,3 @@
 - 2025-09-22 [리서치] AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다 — /blog/research/2025-09-22-workslop.html
 - 2025-09-10 [리서치] AI를 많이 쓸수록 비판적 사고력이 떨어진다 — /blog/research/2025-09-10-ai-cognitive-offloading.html
 - 2025-02-21 [기업] DeNA AI 올인, 10인 팀이 유니콘을 만든다 — /blog/company/2025-02-21-dena-ai-all-in.html
-
-## 상세 버전
-전체 포스트 내용은 /blog/llms-full.txt 에서 확인할 수 있습니다.

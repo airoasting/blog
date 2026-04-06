@@ -1272,21 +1272,23 @@ img {
 
 .decision-point {
   display: flex;
-  align-items: baseline;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
   padding: 18px 24px;
   border-bottom: 1px solid var(--border-variant);
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.85;
   background: none;
-  border-left: 4px solid var(--border);
+  border-left: none;
   border-radius: 0;
 }
 
-.decision-point:nth-child(1) { border-left: 4px solid var(--cat-leader); background: var(--nm-bg); }
-.decision-point:nth-child(2) { border-left: 4px solid var(--cat-company); background: var(--nm-bg); }
-.decision-point:nth-child(3) { border-left: 4px solid var(--cat-research); background: var(--nm-bg); }
+.decision-point:nth-child(1) { background: var(--nm-bg); }
+.decision-point:nth-child(2) { background: var(--nm-bg); }
+.decision-point:nth-child(3) { background: var(--nm-bg); }
 
 .decision-role {
   font-family: var(--font-body);
@@ -1294,13 +1296,13 @@ img {
   font-weight: 600;
   letter-spacing: 0.5px;
   color: var(--text-muted);
-  min-width: 80px;
+  min-width: auto;
   padding: 0;
   border-radius: 0;
   background: none;
   white-space: nowrap;
   flex-shrink: 0;
-  text-align: right;
+  text-align: center;
 }
 
 .decision-point:nth-child(1) .decision-role { color: var(--cat-leader); background: none; }
