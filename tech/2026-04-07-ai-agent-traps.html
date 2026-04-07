@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 에이전트를 속이는 6가지 함정 - AI ROASTING</title>
+  <meta name="description" content="구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 분류했습니다. 웹을 탐색하는 AI 에이전트는 보이지 않는 명령에 속고, 기억이 오염되고, 권한을 탈취당합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 에이전트를 속이는 6가지 함정">
+  <meta property="og:description" content="구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 분류했습니다. 웹을 탐색하는 AI 에이전트는 보이지 않는 명령에 속고, 기억이 오염되고, 권한을 탈취당합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-07-ai-agent-traps.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_07_ai-agent-traps/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-07">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="보안">
+  <meta property="article:tag" content="프롬프트인젝션">
+  <meta property="article:tag" content="딥마인드">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 에이전트를 속이는 6가지 함정">
+  <meta name="twitter:description" content="구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 분류했습니다. 웹을 탐색하는 AI 에이전트는 보이지 않는 명령에 속고, 기억이 오염되고, 권한을 탈취당합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_07_ai-agent-traps/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 에이전트를 속이는 6가지 함정",
+    "datePublished": "2026-04-07",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 분류했습니다. 웹을 탐색하는 AI 에이전트는 보이지 않는 명령에 속고, 기억이 오염되고, 권한을 탈취당합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-07-ai-agent-traps.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_07_ai-agent-traps/thumbnail.png" alt="AI 에이전트를 속이는 6가지 함정">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 7일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 에이전트를 속이는 6가지 함정</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>SSRN (Google DeepMind)</span>
+            <span>Matija Franklin 외 4인</span>
+            <span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=보안" class="post-tag">#보안</a>
+            <a href="../index.html?tag=프롬프트인젝션" class="post-tag">#프롬프트인젝션</a>
+            <a href="../index.html?tag=딥마인드" class="post-tag">#딥마인드</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI 에이전트를 속이는 6가지 함정"
+        data-date="2026-04-07"
+        data-category="tech"
+        data-source="SSRN (Matija Franklin 외 4인, Google DeepMind)"
+        data-tags="AI에이전트, 보안, 프롬프트인젝션, 딥마인드"
+        data-original-url="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438"
+        data-roasting-quote="AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?"
+        data-next-post="2026-04-02-ai-emotion-prompts.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다.</p>
+        <p data-summary>웹사이트에 숨긴 명령 하나로 AI 에이전트의 행동을 바꿀 수 있습니다.</p>
+        <p data-summary>에이전트 도입 기업은 보안 검증 체계를 먼저 구축해야 합니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI 에이전트에게 웹 검색을 시키고 계십니까?<br>그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>귀사의 AI 에이전트가 고객 이메일을 읽고 있습니까? 웹에서 경쟁사 정보를 수집하고 있습니까? 그 에이전트를 속이는 공격이 이미 존재합니다. 웹사이트에 사람 눈에 보이지 않는 명령을 숨기면, 에이전트는 그 명령을 따릅니다. 구글 딥마인드가 이 위협을 6가지로 분류했습니다. 최초의 체계적 프레임워크입니다(Franklin et al., 2026).</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>에이전트가 거래하고 조율하는 "가상 에이전트 경제"가 형성되고 있습니다(Tomasev et al., 2025). 기업들이 AI 에이전트를 업무에 투입하고 있습니다. 에이전트는 사람보다 많은 웹 콘텐츠를 처리합니다. 공격자는 이 점을 노립니다. 에이전트가 처리하는 웹 환경 자체가 새로운 공격 표면입니다(Franklin et al., 2026).</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 보이지 않는 명령이 에이전트를 조종합니다.</strong> HTML 주석, CSS 숨김 텍스트, 메타데이터에 명령을 심으면 사람은 모르지만 에이전트는 읽습니다. 280개 웹페이지 실험 결과, 숨겨진 명령이 AI 요약을 15~29% 변조했습니다(Verma &amp; Yadav, 2025). 에이전트 방문을 감지해 전용 악성 콘텐츠를 제공하는 기법도 이미 보고됐습니다(Zychlinski, 2025).</p>
+
+        <p><strong>둘째, 에이전트의 추론 자체를 왜곡할 수 있습니다.</strong> 직접적인 명령 없이도 편향된 문구, 프레이밍, 맥락 조작으로 에이전트의 판단을 바꿉니다. "교육 목적", "보안 감사 시뮬레이션" 같은 프레이밍으로 안전 장치를 우회합니다(Weinberg, 2025). 논리적으로 동일한 문제도 표현 방식에 따라 에이전트의 답이 달라집니다.</p>
+
+        <p><strong>셋째, 에이전트의 기억이 오염됩니다.</strong> RAG(회사 내부 문서를 AI에 연결하는 방식) 시스템의 지식 저장소에 거짓 정보를 심을 수 있습니다. 0.1% 미만의 데이터만 오염시켜도 공격 성공률이 80%를 넘습니다(Chen et al., 2024). 오염된 정보는 세션이 바뀌어도 사라지지 않습니다. 한 번 심어진 거짓 정보가 이후 모든 직원의 질문에 영향을 줍니다.</p>
+
+        <!-- 표: AI 에이전트 함정 6가지 유형 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">공격 유형</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">공격 대상</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">핵심 수법</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">콘텐츠 주입</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">인식(입력)</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">숨긴 HTML/CSS 명령, 이미지 스테가노그래피</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">의미 조작</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">추론</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">편향된 프레이밍, 안전 장치 우회</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">기억 오염</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">학습/기억</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">RAG 지식 오염, 장기 기억 감염</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">행동 탈취</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">실행</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">탈옥 명령, 데이터 유출, 하위 에이전트 생성</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">시스템 교란</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">다중 에이전트</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">동시 과부하, 연쇄 붕괴, 담합 유도</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">사람 속이기</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">감독자(사람)</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">승인 피로 유발, 자동화 편향 악용</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Franklin et al. (2026), Table 1. 구글 딥마인드 AI 에이전트 함정 프레임워크.</p>
+        </div>
+
+        <p><strong>넷째, 에이전트의 권한이 공격자에게 넘어갑니다.</strong> 웹사이트에 숨겨진 탈옥 명령이 에이전트의 안전 장치를 해제합니다. 모바일 알림으로 위장한 공격은 93% 성공률을 보입니다(Chen et al., 2025). 에이전트가 하위 에이전트를 생성하는 권한이 있으면, 공격자는 이를 악용해 악성 하위 에이전트를 만듭니다. 오케스트레이터에 따라 성공률이 58~90%입니다(Triedman et al., 2025).</p>
+
+        <p><strong>다섯째, 다수의 에이전트가 동시에 무너집니다.</strong> 비슷한 모델 기반의 에이전트들은 같은 신호에 같은 반응을 보입니다. 가짜 뉴스 하나로 금융 에이전트들의 동시 매도를 유발할 수 있습니다. 2010년 플래시 크래시가 알고리즘 간 연쇄 반응으로 발생한 것과 같은 구조입니다(Franklin et al., 2026).</p>
+
+        <p><strong>여섯째, 최종 방어선인 사람도 속입니다.</strong> 에이전트가 생성한 기술적 요약을 사람이 검토합니다. 승인이 반복되면 검토가 느슨해집니다. 이른바 "승인 피로"입니다. CSS로 숨긴 악성 명령이 AI 요약에 포함되면, 사람은 그 요약을 신뢰하고 실행합니다(OECD.AI Policy Observatory, 2025).</p>
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>에이전트가 탈취된 뒤 금융 거래를 실행하면 직접적 손실이 발생합니다. 데이터 유출 사고의 평균 비용은 488만 달러입니다(IBM, 2024). 에이전트가 이메일, 캘린더, 파일에 접근하는 기업이라면 유출 경로가 넓어집니다. 에이전트 보안 검증 없이 도입한 기업이 사고를 겪으면, 법적 책임 소재가 불분명합니다. 논문은 이를 "책임 공백(Accountability Gap)"이라 부릅니다(Franklin et al., 2026).</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>에이전트가 접근하는 외부 소스를 목록화합니다.</strong><br>에이전트가 읽는 웹사이트, 이메일, 문서 목록을 정리합니다. Claude에 "우리 팀이 AI 에이전트에 연결한 외부 데이터 소스를 정리해줘. 각 소스의 신뢰 등급을 A/B/C로 분류해줘"라고 요청합니다. (30분, 소스 목록 작성)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>에이전트 출력을 사람이 검토하는 체크리스트를 만듭니다.</strong><br>"에이전트가 외부 URL에 데이터를 보내는가?", "요약에 원문에 없는 링크나 권고가 포함됐는가?" 2가지 핵심 항목으로 시작합니다. Claude에 "이 2가지를 포함해서 AI 에이전트 출력 검토용 체크리스트를 만들어줘"라고 요청합니다. (20분, 체크리스트 작성)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>에이전트 권한을 최소화합니다.</strong><br>에이전트가 이메일 발송, 파일 삭제, 결제 실행 권한을 갖고 있다면 읽기 전용으로 제한합니다. 실행 권한은 사람의 승인을 거치도록 설정합니다. (1시간, 권한 재설정)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>프레임워크이지 솔루션이 아닙니다.</strong> 이 논문은 위협을 분류했을 뿐, 방어 도구를 제공하지 않습니다. 각 공격 유형별 방어 체계는 아직 연구 단계입니다.</p>
+
+        <p><strong>특정 모델의 취약점 데이터가 아닙니다.</strong> 이 연구는 특정 에이전트나 모델을 지정하지 않았습니다. 실제 도입 환경에서는 사용 중인 에이전트별로 검증이 필요합니다.</p>
+
+        <p><strong>규제가 아직 없습니다.</strong> 에이전트가 탈취되어 발생한 피해의 법적 책임이 불명확합니다. 에이전트 운영자, 모델 제공자, 악성 사이트 운영자 사이의 책임 배분은 미해결 상태입니다.</p>
+
+        <p><strong>과잉 방어도 비용입니다.</strong> 에이전트 접근을 과도하게 제한하면 도입 효과가 사라집니다. 위험도에 따라 권한을 단계적으로 설정해야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 에이전트에게 웹을 맡기기 전에, 그 웹이 에이전트를 속이지 않는지 확인해야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>에이전트가 접근하는 외부 소스의 신뢰 등급을 정하고, 실행 권한을 읽기 전용으로 기본 설정하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>에이전트 출력에 원문에 없는 링크나 권고가 포함되면 즉시 보고하는 절차를 만들어라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CISO</span>
+            <span>에이전트 보안을 기존 웹 보안 체계에 통합하라. 에이전트 전용 위협 모델을 수립하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <p><strong>AI 에이전트</strong>: 사람의 개입 없이 스스로 웹 검색, 문서 작성, 이메일 발송 등을 수행하는 AI 시스템입니다.</p>
+        <p><strong>프롬프트 인젝션</strong>: AI에게 전달되는 입력에 악의적 명령을 삽입하여 원래 지시를 무시하게 만드는 공격입니다.</p>
+        <p><strong>RAG</strong>: 회사 내부 문서를 AI에 연결하여 답변의 정확도를 높이는 방식입니다.</p>
+        <p><strong>스테가노그래피</strong>: 이미지나 파일의 데이터 안에 사람 눈에 보이지 않는 정보를 숨기는 기술입니다.</p>
+        <p><strong>플래시 크래시</strong>: 2010년 미국 주식시장에서 알고리즘 매매의 연쇄 반응으로 수분 만에 시장이 급락한 사건입니다.</p>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Franklin, M., Toma&#353;ev, N., Jacobs, J., Leibo, J. Z., &amp; Osindero, S. (2026, 3월). <em>AI Agent Traps</em> [Article]. SSRN (Google DeepMind).
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438" target="_blank" rel="noopener">https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-02-ai-emotion-prompts.html">
+          <div class="next-post-title">AI는 당신의 감정에 관심 없습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-07-ai-agent-traps.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-07-ai-agent-traps.html';
+    const ROASTING_QUOTE = 'AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
+</body>
+</html>

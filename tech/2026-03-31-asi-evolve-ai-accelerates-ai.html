@@ -148,6 +148,59 @@
 
         <p><strong>첫째, 1,773회 탐색으로 105개 신경망을 발견했습니다.</strong> ASI-Evolve는 '학습, 설계, 실험, 분석' 순환을 자동 반복합니다. 선형 어텐션 모델을 설계합니다. 기존 최고 모델 대비 +0.97점, 사람 연구 성과의 약 3배입니다(Xu et al., 2026). AI 모델 성능이 가속 개선되면 기업의 AI 전략 수명도 짧아집니다.</p>
 
+        <!-- 표: 신경망 설계 성능 비교 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">모델</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">설계자</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">개발 평균</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">일반화 평균</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">전체 평균</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">DeltaNet</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">55.76</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">44.74</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">51.04</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Gated-DeltaNet</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">55.09</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">44.28</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">50.46</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Mamba2</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">56.47</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">44.61</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">51.38</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">FusionGated-FIRNet</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">AI</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">57.28</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">44.99</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">52.01</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">Hier-GateNet</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">AI</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">56.59</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">45.40</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">51.79</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">3.4억 파라미터 모델, 150억 토큰 학습 기준. 개발 평균: 10개 벤치마크, 일반화 평균: 6개 벤치마크. AI 설계 모델 5개 중 상위 2개 표시. 출처: Xu et al. (2026), Table 1.</p>
+        </div>
+
         <p><strong>둘째, 데이터 정제만으로 MMLU 점수가 18점 올랐습니다.</strong> 672억 토큰 규모의 학습 데이터에 자동 정제를 적용했습니다. MMLU 점수가 27.49에서 46.13으로 올랐습니다. 의학 지식 +13점, 상식 추론 +18점도 함께 올랐습니다. 기존 공개 학습 데이터보다 높은 성능입니다.</p>
 
         <!-- 표: 데이터 정제 효과 -->
@@ -211,46 +264,141 @@
               </tr>
             </thead>
             <tbody>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;" colspan="4">AI가 설계한 5개 알고리즘 vs 사람이 설계한 GRPO</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Math500</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">82.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.6 / 84.6 / 84.8 / 82.4 / 82.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+3.6</td>
+              </tr>
               <tr>
                 <td style="padding: 10px; border-bottom: 1px solid #eee;">AMC32 (수학 경시)</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">67.5</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">80.0</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">80.0 / 77.5 / 77.5 / 75.0 / 72.5</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+12.5</td>
               </tr>
               <tr>
                 <td style="padding: 10px; border-bottom: 1px solid #eee;">AIME24 (수학 올림피아드)</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.00</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">31.67</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">31.67 / 23.33 / 30.00 / 20.00 / 20.00</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+11.67</td>
               </tr>
               <tr>
                 <td style="padding: 10px; border-bottom: 1px solid #eee;">AIME25 (수학 올림피아드)</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.00</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">30.00</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">29.58 / 23.75 / 30.00 / 20.00 / 23.33</td>
                 <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+10.00</td>
-              </tr>
-              <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Math500</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">82.0</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.6</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+3.6</td>
               </tr>
               <tr style="background: var(--bg-secondary, #f5f5f5);">
                 <td style="padding: 10px; font-weight: bold;">OlympiadBench</td>
                 <td style="padding: 10px; text-align: center;">45.92</td>
-                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">50.96</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">50.96 / 48.74 / 49.18 / 46.81 / 45.62</td>
                 <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">+5.04</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">Qwen-3-14B 모델 기준, 250 학습 스텝 후 평가. ASI-Evolve가 설계한 5개 알고리즘 중 최고 성능 기록. 출처: Xu et al. (2026), Table 3.</p>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Qwen-3-14B 모델 기준, 250 학습 스텝 후 평가. AI 설계 열은 알고리즘 1~5의 점수를 순서대로 표시. 5개 중 4개가 모든 항목에서 GRPO 이상 성능. 출처: Xu et al. (2026), Table 3.</p>
         </div>
 
         <p><strong>넷째, '인지 기반'이 탐색 효율의 핵심입니다.</strong> 인지 기반은 기존 논문 지식을 모아둔 저장소입니다. 150편의 논문에서 추출한 지식이 탐색 방향을 안내합니다. 인지 기반을 제거하면 탐색 시작이 크게 느려집니다(Xu et al., 2026). 기업의 AI 실험 노하우도 이렇게 축적하면 경쟁 우위가 됩니다.</p>
 
+        <!-- 표: 원형 패킹 벤치마크 속도 비교 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">프레임워크</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사용 모델</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">탐색 횟수</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">최고 점수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">OpenEvolve</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">Gemini 2.0 Flash + Claude 3.7</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">460회</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2.6343</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">AlphaEvolve</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">Gemini 2.0 Flash + Claude 3.7</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">미공개</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2.6359</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">SkyDiscover</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">GPT-5</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">89회</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2.6360</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">ASI-Evolve</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">GPT-5-mini (소형 모델)</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">17회</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">2.6360</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">26개 원을 1×1 정사각형에 배치하는 최적화 문제. 같은 최고 점수에 도달하는 데 ASI-Evolve는 17회, 경쟁 시스템은 89~460회 소요. 인지 기반이 탐색 효율을 27배 높인 결과. 출처: Xu et al. (2026), Table 4.</p>
+        </div>
+
         <p><strong>다섯째, AI 연구를 넘어 신약 개발에도 적용됩니다.</strong> 약물과 단백질의 상호작용 예측에 적용했습니다. 미지 약물 예측 정확도가 6.94점 향상됐습니다. 미지 단백질 예측도 3.56점 올랐습니다. AI 연구 자동화 기술이 바이오, 소재, 금융 등 다른 산업으로 확장됩니다.</p>
 
-        <!-- 표: 신약 개발 적용 결과 -->
+        <!-- 표: 신약 개발 일반 벤치마크 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">모델</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">설계자</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">BindingDB-Dev</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">BindingDB-Random</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Human</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">BioSNAP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">TransformerCPI</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">93.96</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">96.03</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">86.35</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">PSICHIC</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">91.67</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">98.55</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">91.64</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">DrugBAN</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">사람</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">94.15</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">94.89</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">98.61</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">89.43</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">ASI-Evolve</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">AI</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">96.06</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">95.94</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">98.89</td>
+                <td style="padding: 10px; text-align: center; font-weight: bold; color: #145C35;">89.68</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">AUROC 점수 기준 (100점 만점). 약물-단백질 상호작용 예측 정확도. 4개 벤치마크 전체에서 AI 설계 모델이 1위. 출처: Xu et al. (2026), Table 5.</p>
+        </div>
+
+        <!-- 표: 신약 개발 콜드스타트 결과 -->
         <div style="overflow-x: auto; margin: 24px 0;">
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             <thead>

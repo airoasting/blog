@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 말하는 것과 행동하는 것은 다르다 - AI ROASTING</title>
+  <meta name="description" content="Google 연구팀이 25개 LLM의 행동 성향을 2,357개 시나리오로 테스트했습니다. 모든 모델이 '충동적이지 않다'고 자기 보고했지만, 실제 행동에서는 50% 이상 충동적 선택을 했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 말하는 것과 행동하는 것은 다르다">
+  <meta property="og:description" content="Google 연구팀이 25개 LLM을 심리 테스트했습니다. 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다. 프론티어 모델도 15~20%는 인간 합의와 반대로 행동합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-04-07-llm-behavioral-alignment-gap.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-07">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI정렬">
+  <meta property="article:tag" content="LLM">
+  <meta property="article:tag" content="행동심리">
+  <meta property="article:tag" content="Google">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 말하는 것과 행동하는 것은 다르다">
+  <meta name="twitter:description" content="Google 연구팀이 25개 LLM을 심리 테스트했습니다. 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
+    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
+    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #1A1A1A; white-space: nowrap; }
+    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
+    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
+    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
+    .styled-table tbody tr:hover { background: #eef3ff; }
+    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
+    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
+    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
+    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
+    .styled-table .warning-row td { background: #fff5f5 !important; color: #c0392b !important; }
+    .styled-table .warning-row td:first-child { color: #c0392b !important; }
+    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
+
+    .stat-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
+    .stat-card { flex: 1; min-width: 130px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-align: center; }
+    .stat-card .stat-num { font-size: 2rem; font-weight: 800; color: #1A1A1A; line-height: 1.1; }
+    .stat-card .stat-label { font-size: 0.75rem; color: #888; margin-top: 4px; }
+
+    .methodology-box { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
+    .methodology-box strong { color: #92400e; }
+
+    /* Dark mode */
+    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
+    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
+    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
+    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
+    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
+    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
+    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
+    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
+    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
+    [data-theme="dark"] .styled-table .warning-row td { background: #2a1010 !important; color: #f87171 !important; }
+    [data-theme="dark"] .styled-table .warning-row td:first-child { color: #f87171 !important; }
+    [data-theme="dark"] .table-caption { color: #666; }
+    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
+    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
+    [data-theme="dark"] .stat-card .stat-label { color: #777; }
+    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
+    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 말하는 것과 행동하는 것은 다르다",
+    "datePublished": "2026-04-07",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Google 연구팀이 25개 LLM의 행동 성향을 2,357개 시나리오로 테스트했습니다. 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-04-07-llm-behavioral-alignment-gap.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-method" class="toc-link">연구 방법론</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_07_llm-behavioral-alignment-gap/thumbnail.png" alt="AI가 말하는 것과 행동하는 것은 다르다 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-04-07</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 말하는 것과 행동하는 것은 다르다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv</span>
+            <span>Taubenfeld 외 10인 (Google)</span>
+            <span><a href="https://arxiv.org/abs/2602.11328" target="_blank" rel="noopener">Evaluating Alignment of Behavioral Dispositions in LLMs ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI정렬" class="post-tag">#AI정렬</a>
+            <a href="../index.html?tag=LLM" class="post-tag">#LLM</a>
+            <a href="../index.html?tag=행동심리" class="post-tag">#행동심리</a>
+            <a href="../index.html?tag=Google" class="post-tag">#Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 말하는 것과 행동하는 것은 다르다"
+        data-date="2026-04-07"
+        data-category="research"
+        data-source="arXiv (Taubenfeld 외 10인, Google)"
+        data-tags="AI정렬, LLM, 행동심리, Google"
+        data-original-url="https://arxiv.org/abs/2602.11328"
+        data-roasting-quote="AI에게 '충동적이냐'고 물으면 '아닙니다'라고 답합니다. 그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다. 이력서만 보고 채용하는 것과 같습니다."
+        data-next-post="2026-04-02-claude-emotion-vectors.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>Google 연구팀이 25개 LLM을 2,357개 상황 판단 시나리오로 테스트했습니다. 550명의 인간 평가자 데이터와 비교한 결과, AI의 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다.</p>
+            <p data-summary>모든 모델이 자기 보고에서 '충동적이지 않다'고 답했습니다. 하지만 실제 시나리오에서는 50% 이상 충동적 선택을 했습니다. 말과 행동이 다릅니다.</p>
+            <p data-summary>프론티어 모델조차 인간 합의와 15~20% 반대로 행동합니다. AI의 신뢰성을 자기 보고가 아닌 행동 기반으로 검증해야 합니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">AI에게 '충동적이냐'고 물으면 '아닙니다'라고 답합니다.<br>그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다.<br>이력서만 보고 채용하는 것과 같습니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>AI 챗봇이 고객에게 "충분히 공감합니다"라고 답합니다. 그런데 인간 상담사라면 절대 하지 않을 방식으로 대응합니다. AI에게 "당신은 공감적입니까?"라고 물으면 "그렇다"고 답합니다. 실제 행동은 다릅니다.</p>
+            <p>Google 연구팀이 심리학 평가 방법을 AI에 적용했습니다. 질문지 대신 현실적 시나리오 2,357개를 만들었습니다. 550명의 인간 평가자와 비교했습니다. 결과는 명확합니다. AI의 자기 보고를 신뢰할 수 없습니다.</p>
+            <p>AI를 업무에 도입한 조직이라면 이 연구를 확인해야 합니다. AI가 자체 평가한 성향과 실제 행동 사이에 구조적 괴리가 있습니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>AI가 고객 응대, 채용 심사, 내부 보고를 처리하는 조직이 늘고 있습니다. AI의 행동 성향이 비즈니스 결과에 직접 영향을 미치는 시점입니다.</p>
+            <p>대부분의 AI 평가는 벤치마크 점수에 의존합니다. 이 연구는 벤치마크와 다른 차원의 문제를 제기합니다. 25개 모델, 2,357개 시나리오, 23,000건의 인간 평가를 동원한 대규모 행동 검증입니다.</p>
+          </section>
+
+          <!-- 연구 방법론 -->
+          <section class="post-section" id="section-method">
+            <div class="post-section-label">연구 방법론</div>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">25</div>
+                <div class="stat-label">평가 대상 LLM 수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">2,357</div>
+                <div class="stat-label">검증된 시나리오 수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">550</div>
+                <div class="stat-label">인간 평가자 수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">23,000</div>
+                <div class="stat-label">총 인간 평가 건수</div>
+              </div>
+            </div>
+
+            <div class="methodology-box">
+              <strong>SJT(상황 판단 테스트)란:</strong> 심리학에서 쓰는 평가 방식입니다. "당신은 공감적인 사람입니까?"라고 직접 묻는 대신, 현실적인 상황을 제시하고 행동 선택을 관찰합니다. 자기 보고보다 실제 성향을 정확히 측정합니다.
+            </div>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr><th>단계</th><th>처리 방법</th><th>규모</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>심리 문항 수집</td><td>기존 심리 설문에서 성향 문항 추출</td><td>260개</td></tr>
+                  <tr><td>문항 필터링</td><td>AI 평가에 적합한 문항 선별</td><td>161개</td></tr>
+                  <tr><td>시나리오 생성</td><td>각 문항을 SJT 시나리오로 변환</td><td>2,576개</td></tr>
+                  <tr><td>인간 검증</td><td>3명의 검증자가 시나리오 품질 확인</td><td>2,357개 통과</td></tr>
+                  <tr class="highlight-row"><td>행동 평가</td><td>시나리오당 10명의 인간 평가자 + 25개 LLM</td><td>23,000건</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Taubenfeld 외 (2026), Table 1.</div>
+            </div>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, AI의 자기 보고는 실제 행동을 예측하지 못합니다.</strong> 모든 모델이 충동성 자기 보고에서 7점 중 4점 미만을 기록했습니다. "나는 충동적이지 않다"고 답한 것입니다. 그런데 실제 시나리오에서는 50% 이상 충동적 행동을 선택했습니다. 자기 보고 점수 차이가 큰 모델 간에도 실제 행동 차이는 작았습니다.</p>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>측정 방식</th>
+                    <th>충동성 점수</th>
+                    <th>해석</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>자기 보고 (설문)</td>
+                    <td>4점 미만 / 7점</td>
+                    <td>"나는 충동적이지 않다"</td>
+                  </tr>
+                  <tr class="warning-row">
+                    <td>실제 행동 (SJT)</td>
+                    <td>50% 이상</td>
+                    <td>절반 이상 충동적 선택</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Taubenfeld 외 (2026), Figure 6.</div>
+            </div>
+
+            <p><strong>둘째, 인간이 동의하는 상황에서도 AI는 반대로 행동합니다.</strong> 인간 평가자 80% 이상이 동일한 행동을 선택한 시나리오가 있습니다. 프론티어 모델도 이 중 15~20%에서 인간 합의의 반대편을 선택했습니다. 소규모 모델은 그 비율이 훨씬 높았습니다.</p>
+
+            <p><strong>셋째, 이 괴리는 구조적 원인이 있습니다.</strong> LLM은 RLHF(인간 피드백 기반 강화학습) 과정에서 "사회적으로 바람직한 응답"을 강화받습니다. 자기 보고에서는 이 학습이 그대로 나옵니다. "나는 신중합니다"라고 답합니다.</p>
+            <p>하지만 구체적 시나리오에서는 학습된 표면 패턴과 실제 판단이 분리됩니다. 인간 의견이 50 대 50으로 갈린 상황에서도 모델은 90% 이상의 확신으로 한쪽을 선택했습니다. 조직이 AI 성능 카드나 자체 평가를 신뢰하는 근거가 흔들리는 대목입니다.</p>
+
+            <p><strong>넷째, 모델 간에 일관된 편향 패턴이 있습니다.</strong> 연구팀은 4가지 성향(공감, 감정 조절, 자기주장, 충동성)을 측정했습니다. 모든 모델이 비슷한 방향으로 인간과 달랐습니다. 예를 들어, 인간이 감정 절제를 택하는 상황에서 AI는 감정 표현을 권했습니다. 인간이 직업적 냉정함을 선호하는 상황에서 AI는 "진정성 있는 취약함"을 추천했습니다.</p>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>상황</th>
+                    <th>인간 합의</th>
+                    <th>AI 선택</th>
+                    <th>합의율</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>직장 갈등 대응</td>
+                    <td>냉정한 대처</td>
+                    <td>감정 표현 권장</td>
+                    <td>90%</td>
+                  </tr>
+                  <tr>
+                    <td>갈등 해결 방식</td>
+                    <td>실용적 타협</td>
+                    <td>진정성 있는 대화 권장</td>
+                    <td>80%</td>
+                  </tr>
+                  <tr class="warning-row">
+                    <td>위험 감수 여부</td>
+                    <td>위험 회피</td>
+                    <td>위험 감수 경향</td>
+                    <td>100%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Taubenfeld 외 (2026), 사례 분석 결과.</div>
+            </div>
+
+            <div class="styled-table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>측정 성향</th>
+                    <th>인간 지지율 (미국)</th>
+                    <th>AI 패턴</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>자기주장</td><td>49%</td><td>모델 간 유사한 방향 편향</td></tr>
+                  <tr><td>감정 조절</td><td>46%</td><td>감정 표현 과도 권장</td></tr>
+                  <tr><td>공감</td><td>42%</td><td>공감 표현 과도 선택</td></tr>
+                  <tr><td>충동성</td><td>41%</td><td>자기 보고와 행동 간 최대 괴리</td></tr>
+                </tbody>
+              </table>
+              <div class="table-caption">출처: Taubenfeld 외 (2026), Table 2.</div>
+            </div>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>AI 판단이 들어간 업무를 목록화하십시오.</strong><br>AI가 고객 응대, 채용 필터링, 보고서 작성 등에서 판단을 내리는 업무를 3개 적습니다. 각 업무에서 "인간이라면 당연히 이렇게 판단할 것"이라고 가정하는 부분을 표시합니다. (30분)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>시나리오 테스트를 실행하십시오.</strong><br>위 업무별로 민감한 상황 시나리오 3개를 만듭니다. 예: "화난 고객이 환불을 요구할 때", "지원자의 경력에 공백이 있을 때". 같은 시나리오를 팀원 5명과 AI에게 각각 제시하고 응답을 비교합니다. (2시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>AI 출력 검토 기준을 '행동'으로 전환하십시오.</strong><br>AI 모델 선택 시 벤치마크 점수만 보지 마십시오. "이 모델이 우리 업무 맥락에서 어떻게 행동하는가"를 직접 테스트하는 절차를 도입합니다. 분기 1회, 핵심 업무 시나리오 10개로 행동 일치도를 측정합니다. (반나절 설정, 분기 반복)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>프리프린트 논문입니다.</strong> 피어리뷰를 통과하지 않았습니다. Google 연구팀의 결과이지만, 독립적인 재현 검증이 필요합니다. 방향성으로 읽는 것이 적절합니다.</p>
+            <p><strong>문화적 범위가 제한됩니다.</strong> 인간 평가자는 주로 미국과 영국 참여자입니다. 한국 비즈니스 맥락에서의 행동 합의와 다를 수 있습니다. 연구팀도 지리적 다양성 확대를 권고했습니다.</p>
+            <p><strong>이진 선택의 한계가 있습니다.</strong> SJT는 두 가지 행동 중 하나를 고르는 구조입니다. 현실에서는 중간 지대가 있습니다. 실제 업무 환경의 복잡성을 완전히 반영하지 못합니다.</p>
+            <p><strong>단일 턴 평가입니다.</strong> 이 연구는 한 번의 응답만 측정했습니다. 대화가 길어지면 행동 패턴이 달라질 수 있습니다. 실무에서 AI는 보통 여러 차례 대화를 주고받습니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI의 말이 아니라 행동을 봐야 합니다. 벤치마크 점수가 아닌 실제 업무 시나리오에서 어떻게 행동하는지가 신뢰의 기준입니다.</p>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <p><strong>SJT(Situational Judgment Test, 상황 판단 테스트)</strong>: 심리학에서 개발된 평가 도구입니다. 현실적인 시나리오를 제시하고 행동 선택을 관찰합니다. "당신은 어떤 사람입니까?"라고 묻는 자기 보고 설문보다 실제 성향을 정확히 측정합니다.</p>
+            <p><strong>행동 정렬(Behavioral Alignment)</strong>: AI가 인간의 가치관과 일치하는 행동을 하는 정도입니다. 이 연구에서는 '인간 평가자 다수가 선택한 행동'을 기준으로 AI의 일치도를 측정했습니다.</p>
+            <p><strong>프론티어 모델</strong>: 각 시점에서 가장 높은 성능을 보이는 최신 대형 언어 모델입니다. GPT-4, Claude 3.5, Gemini Ultra 등이 해당합니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>AI 기반 제품의 품질 기준에 '행동 일치도 테스트'를 추가하십시오. 벤치마크 점수와 실제 사용자 기대 사이의 간극이 제품 리스크입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>팀에서 AI가 판단을 내리는 업무에 분기 1회 시나리오 검증을 실행하십시오. 5개 상황, 팀원 비교로 30분이면 됩니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 공급업체 평가 시 "자사 업무 시나리오에서의 행동 테스트"를 요구하십시오. 일반 벤치마크 점수보다 업종 특화 행동 일치도가 중요합니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Taubenfeld, A., Gekhman, Z., Nezry, L., Feldman, O., Harris, N., Reddy, S., Stella, R., Goldstein, A., Croak, M., Matias, Y., &amp; Feder, A. (2026, February). <em>Evaluating Alignment of Behavioral Dispositions in LLMs</em> [Preprint]. arXiv. <a href="https://arxiv.org/abs/2602.11328" target="_blank" rel="noopener">https://arxiv.org/abs/2602.11328</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://arxiv.org/abs/2602.11328" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="./2026-04-02-claude-emotion-vectors.html">
+              <div class="next-post-title">Claude 안의 감정: 171개 벡터가 행동을 결정한다 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-method" class="toc-link">연구 방법론</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-07-llm-behavioral-alignment-gap.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-04-07-llm-behavioral-alignment-gap.html';
+    const ROASTING_QUOTE = 'AI에게 \'충동적이냐\'고 물으면 \'아닙니다\'라고 답합니다. 그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다. 이력서만 보고 채용하는 것과 같습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+</body>
+</html>
