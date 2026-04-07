@@ -36,7 +36,7 @@
 
   <!-- Posts: tech -->
   <url>
-    <loc>https://airoasting.github.io/blog/tech/2026-04-07-ai-agent-traps.html</loc>
+    <loc>https://airoasting.github.io/blog/tech/2026-03-28-ai-agent-traps.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -316,13 +316,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/research/2026-04-07-llm-behavioral-alignment-gap.html</loc>
+    <loc>https://airoasting.github.io/blog/research/2026-02-11-llm-behavioral-alignment-gap.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html</loc>
+    <loc>https://airoasting.github.io/blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html</loc>
+    <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-04-07-nature-ai-editorial-policy.html</loc>
     <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

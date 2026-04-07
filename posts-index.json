@@ -1,37 +1,49 @@
 {
   "posts": [
     {
-      "title": "AI가 말하는 것과 행동하는 것은 다르다",
+      "title": "Nature가 AI에 선을 긋다, 학술 출판의 새 기준",
       "date": "2026-04-07",
+      "category": "research",
+      "source": "Nature Portfolio (Springer Nature)",
+      "tags": ["AI거버넌스", "학술출판", "Nature", "AI정책"],
+      "slug": "2026-04-07-nature-ai-editorial-policy",
+      "file": "research/2026-04-07-nature-ai-editorial-policy.html",
+      "summary": "Springer Nature가 AI 저자 자격을 불허하고, 생성형 AI 이미지를 금지했습니다. 학술계가 세운 AI 사용 기준이 기업 거버넌스의 참조점이 됩니다.",
+      "roasting_quote": "AI가 논문을 써도 저자가 될 수 없습니다. 책임질 수 없으면 이름을 올릴 자격도 없습니다. 귀사의 AI 산출물에는 누구 이름이 붙어 있습니까?",
+      "next_post": "2026-02-11-llm-behavioral-alignment-gap.html"
+    },
+    {
+      "title": "AI가 말하는 것과 행동하는 것은 다르다",
+      "date": "2026-02-11",
       "category": "research",
       "source": "arXiv (Taubenfeld 외 10인, Google)",
       "tags": ["AI정렬", "LLM", "행동심리", "Google"],
-      "slug": "2026-04-07-llm-behavioral-alignment-gap",
-      "file": "research/2026-04-07-llm-behavioral-alignment-gap.html",
+      "slug": "2026-02-11-llm-behavioral-alignment-gap",
+      "file": "research/2026-02-11-llm-behavioral-alignment-gap.html",
       "summary": "Google 연구팀이 25개 LLM을 2,357개 시나리오로 테스트한 결과, AI의 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다. 프론티어 모델도 15~20%는 인간 합의와 반대로 행동합니다.",
       "roasting_quote": "AI에게 '충동적이냐'고 물으면 '아닙니다'라고 답합니다. 그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다. 이력서만 보고 채용하는 것과 같습니다.",
-      "next_post": "2026-04-07-ai-agent-traps.html"
+      "next_post": "2026-03-28-ai-agent-traps.html"
     },
     {
       "title": "AI 에이전트를 속이는 6가지 함정",
-      "date": "2026-04-07",
+      "date": "2026-03-28",
       "category": "tech",
       "source": "SSRN (Matija Franklin 외 4인, Google DeepMind)",
       "tags": ["AI에이전트", "보안", "프롬프트인젝션", "딥마인드"],
-      "slug": "2026-04-07-ai-agent-traps",
-      "file": "tech/2026-04-07-ai-agent-traps.html",
+      "slug": "2026-03-28-ai-agent-traps",
+      "file": "tech/2026-03-28-ai-agent-traps.html",
       "summary": "구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다. 웹사이트에 숨긴 명령 하나로 에이전트의 행동을 바꿀 수 있습니다.",
       "roasting_quote": "AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?",
-      "next_post": "2026-04-07-sam-altman-superintelligence-new-deal.html"
+      "next_post": "2026-04-06-sam-altman-superintelligence-new-deal.html"
     },
     {
       "title": "샘 올트먼의 초지능 뉴딜, 진심인가 전략인가",
-      "date": "2026-04-07",
+      "date": "2026-04-06",
       "category": "leader",
       "source": "Axios (Mike Allen, Jim VandeHei)",
       "tags": ["Sam Altman", "OpenAI", "AI정책", "초지능"],
-      "slug": "2026-04-07-sam-altman-superintelligence-new-deal",
-      "file": "leader/2026-04-07-sam-altman-superintelligence-new-deal.html",
+      "slug": "2026-04-06-sam-altman-superintelligence-new-deal",
+      "file": "leader/2026-04-06-sam-altman-superintelligence-new-deal.html",
       "summary": "OpenAI가 로봇세, 공공 부 펀드, 주 4일 근무를 포함한 13페이지 정책 밑그림을 발표했습니다. 비판가들은 규제를 선점하려는 기업 전략이라고 지적합니다.",
       "roasting_quote": "초지능을 만드는 사람이 초지능 규제안을 씁니다. 소방관이 불을 지르면서 소방법을 개정하자고 하는 격입니다.",
       "next_post": "2026-04-03-ai-coder-automation-timeline.html"

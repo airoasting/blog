@@ -5,9 +5,45 @@
 
 ---
 
-## 샘 올트먼의 초지능 뉴딜, 진심인가 전략인가
+## Nature가 AI에 선을 긋다, 학술 출판의 새 기준
 
 날짜: 2026-04-07
+카테고리: 리서치
+소스: Nature Portfolio (Springer Nature)
+원문: https://www.nature.com/nature-portfolio/editorial-policies/ai
+태그: AI거버넌스, 학술출판, Nature, AI정책
+
+### 3줄 요약
+Springer Nature가 AI의 논문 저자 자격을 공식 불허했습니다. 저자에게는 책임이 따르는데, AI는 책임을 질 수 없기 때문입니다.
+생성형 AI 이미지는 원칙적으로 사용이 금지됩니다. 피어리뷰어도 원고를 AI 도구에 업로드할 수 없습니다.
+학술계가 먼저 세운 이 기준은 기업의 AI 거버넌스 설계에 직접적인 참조점이 됩니다.
+
+### Roasting
+AI가 논문을 써도 저자가 될 수 없습니다. 책임질 수 없으면 이름을 올릴 자격도 없습니다. 귀사의 AI 산출물에는 누구 이름이 붙어 있습니까?
+
+---
+
+## AI 에이전트를 속이는 6가지 함정
+
+날짜: 2026-03-28
+카테고리: 기술
+소스: SSRN (Matija Franklin 외 4인, Google DeepMind)
+원문: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438
+태그: AI에이전트, 보안, 프롬프트인젝션, 딥마인드
+
+### 3줄 요약
+구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다.
+웹사이트에 숨긴 명령 하나로 AI 에이전트의 행동을 바꿀 수 있습니다.
+에이전트 도입 기업은 보안 검증 체계를 먼저 구축해야 합니다.
+
+### Roasting
+AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?
+
+---
+
+## 샘 올트먼의 초지능 뉴딜, 진심인가 전략인가
+
+날짜: 2026-04-06
 카테고리: 리더
 소스: Axios (Mike Allen, Jim VandeHei)
 원문: https://www.axios.com/2026/04/06/behind-the-curtain-sams-superintelligence-new-deal
@@ -25,7 +61,7 @@ OpenAI가 로봇세, 공공 부 펀드, 주 4일 근무를 포함한 13페이지
 
 ## AI가 말하는 것과 행동하는 것은 다르다
 
-날짜: 2026-04-07
+날짜: 2026-02-11
 카테고리: 리서치
 소스: arXiv (Taubenfeld 외 10인, Google)
 원문: https://arxiv.org/abs/2602.11328

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI 산업 인사이트 타임라인 | AI ROASTING</title>
-  <meta name="description" content="AI 로스팅 뉴스레터 42화와 블로그 포스트 43개에서 추출한 인사이트. 2025년 4월부터 2026년 4월까지 5개 분기 핵심 인사이트를 분기별로 정리합니다.">
+  <meta name="description" content="AI 로스팅 뉴스레터 42화와 블로그 포스트 47개에서 추출한 인사이트. 2025년 4월부터 2026년 4월까지 5개 분기 핵심 인사이트를 분기별로 정리합니다.">
   <link rel="canonical" href="https://airoasting.github.io/blog/newsletter/insights.html">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
@@ -429,15 +429,25 @@
     [data-theme="dark"] .insight-card[data-theme="survival"] .ic-tag { color: #E07070; }
 
     .ic-body {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text);
       line-height: 1.7;
       font-weight: 500;
     }
     .ic-body strong { font-weight: 800; }
+    .ic-nl-thumb {
+      margin-bottom: 12px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .ic-nl-thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
     .ic-source {
       margin-top: 16px;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--text-muted);
       padding-top: 12px;
       border-top: 1px solid var(--border-variant);
@@ -448,7 +458,7 @@
       justify-content: space-between;
     }
     .ic-date {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-muted);
       opacity: 0.65;
       flex-shrink: 0;
@@ -702,14 +712,14 @@
         <div class="ins-eyebrow">Newsletter x Blog Insights</div>
         <h1><span class="h1-line1">42화의 기록,</span><br><em class="h1-line2">5개 분기의 인사이트</em></h1>
         <div class="ins-hero-sub">
-          <p class="ins-hero-desc">뉴스레터 42화와 블로그 포스트 43개에서 추출했습니다.<br>분기를 선택하면 해당 시기의 핵심 인사이트가 표시됩니다.</p>
+          <p class="ins-hero-desc">뉴스레터 42화와 블로그 포스트 47개에서 추출했습니다.<br>분기를 선택하면 해당 시기의 핵심 인사이트가 표시됩니다.</p>
           <div class="ins-stats">
             <div class="ins-stat">
               <div class="ins-stat-num">42</div>
               <div class="ins-stat-label">뉴스레터</div>
             </div>
             <div class="ins-stat">
-              <div class="ins-stat-num">44</div>
+              <div class="ins-stat-num">47</div>
               <div class="ins-stat-label">포스트</div>
             </div>
           </div>
@@ -739,7 +749,7 @@
         </button>
         <button class="q-tab active" data-phase="4" role="tab">
           <span class="q-tab-quarter">26 Q2</span>
-          <span class="q-tab-title">토큰 경제의 시대<span class="q-tab-count">5</span></span>
+          <span class="q-tab-title">토큰 경제의 시대<span class="q-tab-count">9</span></span>
         </button>
       </div>
 
@@ -791,6 +801,7 @@
   <footer id="site-footer"></footer>
   <script src="../assets/js/footer.js"></script>
   <script src="./content/nl-content.js"></script>
+  <script src="../assets/js/newsletter-data.js"></script>
 
   <script>
   // ── 데이터 ───────────────────────────────────────────────────────────────
@@ -873,7 +884,7 @@
     {
       id: 4, quarter: "26 Q2",
       period: "2026.4월",
-      epRange: "뉴스레터 #42 · 포스트 4개",
+      epRange: "뉴스레터 #42 · 포스트 8개",
       headline: "토큰 경제의 원년: AI 사용 비용 구조가 투명성 문제로 떠올랐습니다",
       summary: "Claude Code Max 구독자들이 1시간 만에 토큰 한도를 소진하는 사태가 발생했습니다. AI 서비스 경쟁의 다음 전선이 모델 성능에서 토큰 투명성으로 이동하고 있습니다.",
       insights: [
@@ -882,7 +893,10 @@
         { theme: "survival", tag: "생존",   body: "AI 코더 전면 자동화 시점 전망이 <strong>1~3년 앞당겨졌습니다.</strong> Claude Code는 출시 9개월 만에 연환산 매출 25억 달러를 돌파했습니다. METR 시간 지평 배증 기간이 5.5개월에서 4~4.5개월로 단축됐습니다.", source: "개발자 전면 자동화, 예측 시점이 2년 당겨졌다", url: "../survival/2026-04-03-ai-coder-automation-timeline.html", date: "2026-04-03", roasting: "'2030년 이후 이야기'라고 생각하셨습니까?<br>분기점이 2028년으로 당겨졌습니다.", summaries: ["AI Futures Project 연구진이 소프트웨어 엔지니어 전면 자동화 시점을 최대 2년 앞당겼습니다.", "Daniel은 2029년 말→2028년 중반, Eli는 2032년 초→2030년 중반으로 이동했습니다.", "Claude Code가 출시 9개월 만에 연매출 25억 달러를 돌파하면서 기술 가속의 상업적 증거가 됐습니다."] },
         { theme: "leader",  tag: "리더",   body: "카파시가 LLM으로 개인 지식베이스를 구축하는 <strong>7단계 워크플로우</strong>를 공개했습니다. raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질의 결과가 다시 위키를 확장합니다.", source: "카파시: LLM이 내 위키를 대신 쓴다", url: "../leader/2026-04-03-karpathy-llm-knowledge-base.html", date: "2026-04-03", roasting: "아직 노션에 직접 정리하고 있습니까?<br>카파시는 LLM이 위키를 씁니다.", summaries: ["카파시가 LLM으로 개인 지식베이스를 구축하는 7단계 워크플로우를 공개했습니다.", "raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질의 결과가 다시 위키를 확장합니다.", "실전 적용 시 수동 대비 5~9배 빠르고, 숙련자조차 놓치는 정보의 20%를 추가로 발견합니다."] },
         { theme: "tech", tag: "기술", body: "프롬프트에 감정을 넣어도 AI 성능은 <strong>±0.5점 이내</strong>로만 변합니다. 뒤에 붙이면 최대 8점 하락합니다.", source: "AI는 당신의 감정에 관심 없습니다", url: "../tech/2026-04-02-ai-emotion-prompts.html", date: "2026-04-02", roasting: "\"AI에게 감정을 담아 말하면 더 잘한다\"고요?<br>6가지 감정으로 실험했습니다. 달라지는 건 거의 없습니다.", summaries: ["프롬프트에 감정을 넣어도 AI 성능은 거의 달라지지 않습니다.", "감정을 문장 뒤에 붙이면 수학 정확도가 최대 8점 떨어집니다.", "적응형 감정 선택(EmotionRL)만 안정적 성능 향상을 보입니다."] },
-        { theme: "research", tag: "리서치", body: "AI 자기 보고와 실제 행동 간 <strong>15~20% 괴리</strong>가 있습니다. 25개 모델 전부 충동성 자기 보고와 반대로 행동했습니다.", source: "AI가 말하는 것과 행동하는 것은 다르다", url: "../research/2026-04-07-llm-behavioral-alignment-gap.html", date: "2026-04-07", roasting: "AI에게 '충동적이냐'고 물으면 '아닙니다'라고 답합니다.<br>그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다.<br>이력서만 보고 채용하는 것과 같습니다.", summaries: ["Google 연구팀이 25개 LLM을 2,357개 상황 판단 시나리오로 테스트했습니다. AI의 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다.", "모든 모델이 자기 보고에서 '충동적이지 않다'고 답했습니다. 하지만 실제 시나리오에서는 50% 이상 충동적 선택을 했습니다.", "프론티어 모델조차 인간 합의와 15~20% 반대로 행동합니다. AI의 신뢰성을 행동 기반으로 검증해야 합니다."] }
+        { theme: "research", tag: "리서치", body: "AI 자기 보고와 실제 행동 간 <strong>15~20% 괴리</strong>가 있습니다. 25개 모델 전부 충동성 자기 보고와 반대로 행동했습니다.", source: "AI가 말하는 것과 행동하는 것은 다르다", url: "../research/2026-02-11-llm-behavioral-alignment-gap.html", date: "2026-02-11", roasting: "AI에게 '충동적이냐'고 물으면 '아닙니다'라고 답합니다.<br>그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다.<br>이력서만 보고 채용하는 것과 같습니다.", summaries: ["Google 연구팀이 25개 LLM을 2,357개 상황 판단 시나리오로 테스트했습니다. AI의 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다.", "모든 모델이 자기 보고에서 '충동적이지 않다'고 답했습니다. 하지만 실제 시나리오에서는 50% 이상 충동적 선택을 했습니다.", "프론티어 모델조차 인간 합의와 15~20% 반대로 행동합니다. AI의 신뢰성을 행동 기반으로 검증해야 합니다."] },
+        { theme: "leader", tag: "리더", body: "OpenAI가 <strong>로봇세, 공공 부 펀드, 주 4일 근무</strong>를 포함한 정책 밑그림을 발표했습니다. 비판가들은 규제 선점 전략이라고 지적합니다.", source: "샘 올트먼의 초지능 뉴딜, 진심인가 전략인가", url: "../leader/2026-04-06-sam-altman-superintelligence-new-deal.html", date: "2026-04-06", roasting: "초지능을 만드는 사람이 초지능 규제안을 씁니다.<br>소방관이 불을 지르면서 소방법을 개정하자고 하는 격입니다.", summaries: ["OpenAI가 로봇세, 공공 부 펀드, 주 4일 근무를 포함한 13페이지 정책 밑그림을 발표했습니다.", "샘 올트먼은 초지능이 임박했으며, 뉴딜급 사회 계약이 필요하다고 주장합니다.", "비판가들은 이 문서가 규제를 선점하려는 기업 전략이라고 지적합니다."] },
+        { theme: "tech", tag: "기술", body: "숨긴 명령 하나로 AI 에이전트의 <strong>행동을 15~29% 변조</strong>합니다. 구글 딥마인드가 6가지 공격 유형을 분류했습니다.", source: "AI 에이전트를 속이는 6가지 함정", url: "../tech/2026-03-28-ai-agent-traps.html", date: "2026-03-28", roasting: "AI 에이전트에게 웹 검색을 시키고 계십니까?<br>그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?", summaries: ["구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다.", "웹사이트에 숨긴 명령 하나로 AI 에이전트의 행동을 바꿀 수 있습니다.", "에이전트 도입 기업은 보안 검증 체계를 먼저 구축해야 합니다."] },
+        { theme: "research", tag: "리서치", body: "Springer Nature가 <strong>AI 저자 자격을 공식 불허</strong>했습니다. 책임질 수 없는 존재에게 이름을 올릴 자격은 없습니다.", source: "Nature가 AI에 선을 긋다, 학술 출판의 새 기준", url: "../research/2026-04-07-nature-ai-editorial-policy.html", date: "2026-04-07", roasting: "AI가 논문을 써도 저자가 될 수 없습니다.<br>책임질 수 없으면 이름을 올릴 자격도 없습니다.<br>귀사의 AI 산출물에는 누구 이름이 붙어 있습니까?", summaries: ["Springer Nature가 AI의 논문 저자 자격을 공식 불허했습니다. 저자에게는 책임이 따르는데, AI는 책임을 질 수 없기 때문입니다.", "생성형 AI 이미지는 원칙적으로 사용이 금지됩니다. 피어리뷰어도 원고를 AI 도구에 업로드할 수 없습니다.", "학술계가 먼저 세운 이 기준은 기업의 AI 거버넌스 설계에 직접적인 참조점이 됩니다."] }
       ]
     }
   ];
@@ -958,7 +972,8 @@
   // ── 렌더 ─────────────────────────────────────────────────────────────────
   function render() {
     const phase  = PHASES.find(p => p.id === activePhase);
-    const cards  = phase.insights.filter(c => activeTheme === "all" || c.theme === activeTheme);
+    const cards  = phase.insights.filter(c => activeTheme === "all" || c.theme === activeTheme)
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
     const content = document.getElementById("panelContent");
 
     const cardsHTML = cards.length === 0
@@ -978,10 +993,19 @@
             const nlItem = window.NEWSLETTER_DATA.find(n => String(n.ep) === String(epNum));
             if (nlItem) dateStr = nlItem.date;
           }
-          const dateHTML = dateStr ? `<span class="ic-date">${dateStr}</span>` : '';
+          // 연도 제거: MM-DD만 표시
+          const shortDate = dateStr ? dateStr.replace(/^\d{4}-/, '') : '';
+          const dateHTML = shortDate ? `<span class="ic-date">${shortDate}</span>` : '';
+          // 뉴스레터 카드: 썸네일 이미지
+          let nlImgHTML = '';
+          if (epNum && !c.url && window.NEWSLETTER_DATA) {
+            const nlItem = window.NEWSLETTER_DATA.find(n => String(n.ep) === String(epNum));
+            if (nlItem && nlItem.img) nlImgHTML = `<div class="ic-nl-thumb"><img src="images/${nlItem.img}" alt="${c.source}" loading="lazy"></div>`;
+          }
           return `
           <${tag} class="insight-card${isWide ? ' ic-wide' : ''}" data-theme="${c.theme}" ${attrs}>
             <div class="card-glow"></div>
+            ${nlImgHTML}
             <div class="ic-tag">● ${c.tag}</div>
             <div class="ic-body">${c.body}</div>
             <div class="ic-source"><span>${c.source}${c.url ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : (epNum ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : '')}</span>${dateHTML}</div>
