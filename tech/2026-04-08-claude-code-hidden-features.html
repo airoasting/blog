@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 - AI ROASTING</title>
+  <meta name="description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+  <meta property="og:description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_08_claude-code-hidden-features/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-08">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="ClaudeCode">
+  <meta property="article:tag" content="개발도구">
+  <meta property="article:tag" content="AI코딩">
+  <meta property="article:tag" content="프롬프트엔지니어링">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+  <meta name="twitter:description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_08_claude-code-hidden-features/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
+    "datePublished": "2026-04-08",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_08_claude-code-hidden-features/thumbnail.png" alt="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 8일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>MindStudio Blog</span>
+            <span>MindStudio Team</span>
+            <span><a href="https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=ClaudeCode" class="post-tag">#ClaudeCode</a>
+            <a href="../index.html?tag=개발도구" class="post-tag">#개발도구</a>
+            <a href="../index.html?tag=AI코딩" class="post-tag">#AI코딩</a>
+            <a href="../index.html?tag=프롬프트엔지니어링" class="post-tag">#프롬프트엔지니어링</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다"
+        data-date="2026-04-08"
+        data-category="tech"
+        data-source="MindStudio Blog (MindStudio Team)"
+        data-tags="ClaudeCode, 개발도구, AI코딩, 프롬프트엔지니어링"
+        data-original-url="https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features"
+        data-roasting-quote="Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요? 소스 코드가 유출됐습니다. 설계 의도를 알면 Claude Code가 다르게 보입니다."
+        data-next-post="2026-04-02-ai-emotion-prompts.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Claude Code 시스템 프롬프트 유출로 8가지 핵심 설계 원칙이 공개됐습니다.</p>
+        <p data-summary>병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 숨겨진 동작 방식이 드러났습니다.</p>
+        <p data-summary>설계 의도를 이해하면 지시 방식만 바꿔도 Claude Code 활용도가 높아집니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요?<br>소스 코드가 유출됐습니다.<br>설계 의도를 알면 Claude Code가 다르게 보입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>개발팀에서 Claude Code를 쓰는 회사가 빠르게 늘고 있습니다. 코드 작성, 버그 수정, 리팩터링까지 AI가 처리합니다. 그런데 어떤 지시는 잘 통하고 어떤 지시는 왜 안 되는지 알기 어렵습니다. 2026년 4월, Claude Code의 완전한 시스템 프롬프트와 에이전트 루프 구현이 유출됐습니다(MindStudio, 2026). 8가지 설계 원칙이 드러났습니다. 도구를 만든 사람의 의도를 알면 더 잘 쓸 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI 코딩 도구의 활용 격차가 커지고 있습니다. 같은 도구를 쓰더라도 사용 방식에 따라 생산성 차이가 크게 납니다. 이번 유출은 모델 가중치나 핵심 인프라가 아닙니다. 시스템 프롬프트, 툴 정의, 에이전트 루프 설계입니다(MindStudio, 2026). 우회나 악용이 목적이 아니라, 설계 철학을 이해해 올바르게 활용하는 것이 핵심입니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <!-- 표: 8가지 설계 원칙 요약 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35; width: 30%;">설계 원칙</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">실무 적용 포인트</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">① 병렬 도구 실행</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">독립 작업은 "동시에"라고 명시하면 순서대로 처리하지 않고 병렬로 실행됩니다.</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">② CLAUDE.md 메모리</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">프로젝트 관례, 금지 수정 사항, 선호 라이브러리를 파일에 저장하면 세션마다 유지됩니다.</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">③ 불필요한 사과 제거</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">짧고 명확한 지시가 더 직접적인 답변을 이끌어냅니다. 장황한 프롬프트가 불필요합니다.</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">④ Bash 우선 도구</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">grep, git, sed 같은 Bash 명령이 가장 강력합니다. 개별 파일 읽기·쓰기보다 효율적입니다.</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑤ 차이 기반 파일 편집</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">파일을 먼저 읽은 후 수정하면 정확도가 높아집니다. 공백·들여쓰기가 매칭에 영향을 줍니다.</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑥ 에이전트 루프 종료 조건</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">명확한 완료 기준을 정의하세요. 과정이 아닌 결과로 작업을 정의하면 무한 루프를 방지합니다.</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑦ Git 안전 설계</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">기본값으로 파괴적 git 명령을 피합니다. 샌드박스 환경에서는 명시적 허가 후 강력한 명령 사용이 가능합니다.</td>
+              </tr>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <td style="padding: 10px; font-weight: bold;">⑧ 확장 사고 트리거</td>
+                <td style="padding: 10px;">"트레이드오프를 검토해줘", "변경 전 분석해줘" 같은 프레이밍이 심층 추론을 활성화합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: MindStudio (2026), Claude Code 시스템 프롬프트 유출 분석.</p>
+        </div>
+
+        <p><strong>첫째, 병렬 실행은 명시해야 작동합니다.</strong> Claude Code의 시스템 프롬프트는 독립적인 작업을 묶어 처리하도록 설계됐습니다. "파일 A를 읽은 다음 B를 읽어줘"가 아니라 "파일 A와 B를 동시에 읽어줘"라고 해야 합니다(MindStudio, 2026). 독립성을 명시하지 않으면 순서대로 처리합니다. 병렬 작업은 사용자가 먼저 신호를 줘야 합니다.</p>
+
+        <p><strong>둘째, CLAUDE.md는 팀 전체의 기억 장치입니다.</strong> 세션이 끊겨도 프로젝트 관례가 유지됩니다. 기술 버전, 금지 수정 항목, 선호 라이브러리, 배포 명령을 여기에 씁니다(MindStudio, 2026). 팀원이 바뀌어도 Claude Code는 동일한 규칙으로 동작합니다. 온보딩 문서이자 AI 지시서입니다.</p>
+
+        <p><strong>셋째, Bash가 가장 강력한 도구입니다.</strong> 개별 파일 읽기·쓰기 도구보다 Bash 명령이 더 넓은 작업 범위를 커버합니다. grep으로 검색하고, git으로 이력을 추적하고, sed로 치환하는 것이 효율적입니다(MindStudio, 2026). 장시간 실행 프로세스는 기본 타임아웃이 적용됩니다.</p>
+
+        <p><strong>넷째, 종료 조건을 명확히 정의해야 합니다.</strong> 에이전트 루프는 작업 완료, 복구 불가 도구 오류, 턴 제한 세 가지 신호로 종료됩니다(MindStudio, 2026). "에러를 찾을 때까지 계속 확인해줘"처럼 과정으로 작업을 정의하면 루프가 끊이지 않습니다. "이 조건이 충족되면 완료"처럼 결과로 정의해야 합니다.</p>
+
+        <p><strong>다섯째, 확장 사고는 프레이밍으로 유도합니다.</strong> 단순 실행 요청은 빠른 처리 경로를 탑니다. 분석, 아키텍처 결정, 복잡한 디버깅에는 "트레이드오프를 먼저 검토해줘", "변경하기 전에 분석해줘"라는 문구가 심층 추론을 활성화합니다(MindStudio, 2026).</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>CLAUDE.md 파일을 주요 프로젝트 루트에 만듭니다.</strong><br>기술 스택 버전, 금지 수정 파일 목록, 코딩 컨벤션, 배포 명령을 적습니다. Claude에 "우리 프로젝트 README를 보고 CLAUDE.md 초안을 작성해줘"라고 요청합니다. 팀 공유 저장소에 커밋해 모든 팀원이 동일한 AI 규칙으로 작업하게 합니다. (30분, CLAUDE.md 초안 작성)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>병렬 처리가 가능한 작업에 "동시에" 또는 "한꺼번에"를 붙입니다.</strong><br>파일 여러 개 읽기, 독립적인 테스트 실행, 코드 검색처럼 순서가 없는 작업에 적용합니다. 기존 지시 방식과 병렬 지시 방식을 비교해 응답 속도와 품질 차이를 확인합니다. (15분, 지시 방식 실험)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>복잡한 작업에 분석 프레이밍을 먼저 적용합니다.</strong><br>"바로 수정해줘" 대신 "변경 전에 영향 범위를 먼저 분석해줘"로 시작합니다. 아키텍처 결정이나 대규모 리팩터링 전에 "트레이드오프를 정리해줘"를 앞에 붙입니다. 분석 결과를 보고 작업 범위를 사람이 먼저 확인한 뒤 실행을 지시합니다. (매 복잡한 작업마다 적용)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>유출된 내용은 특정 버전 기준입니다.</strong> Anthropic이 시스템 프롬프트를 업데이트하면 동작이 달라집니다. 지금 확인된 원칙이 이후 버전에서 동일하게 적용된다고 보장할 수 없습니다.</p>
+
+        <p><strong>이해와 우회는 다릅니다.</strong> 설계 의도를 파악하는 것은 도구를 더 잘 쓰기 위함입니다. 안전 가이드라인을 우회하거나 --no-verify 같은 옵션으로 보호 장치를 끄는 것은 별개 문제입니다. 시스템이 설계한 안전망을 그대로 활용하는 것이 올바른 방향입니다.</p>
+
+        <p><strong>Bash 명령 권한을 팀 정책으로 관리해야 합니다.</strong> Claude Code가 Bash를 적극 활용한다는 것은, 파일 시스템과 git 히스토리에 대한 접근 범위가 넓다는 의미입니다. 민감한 파일이나 운영 환경 접근에 대한 팀 내 정책이 필요합니다.</p>
+
+        <p><strong>CLAUDE.md 내용이 공개될 수 있습니다.</strong> 저장소에 커밋되는 파일입니다. 내부 인프라 정보, API 키, 보안 설정을 적으면 안 됩니다. 관례와 규칙만 담아야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>Claude Code의 설계 의도를 알면 지시 방식이 바뀝니다. CLAUDE.md부터 시작하는 것이 가장 빠른 첫 걸음입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>Claude Code 도입 팀에 CLAUDE.md 표준 템플릿을 배포하라. 팀마다 다른 규칙이 아닌 일관된 AI 지시 체계를 만들어라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀원에게 병렬 실행과 종료 조건 설정 방법을 공유하라. 같은 도구를 쓰더라도 활용 방식에 따라 생산성 차이가 난다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>AI 코딩 도구 사용 정책을 수립하라. Bash 접근 범위, 민감 파일 보호, 생성 코드 검토 기준이 포함돼야 한다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <p><strong>시스템 프롬프트(System Prompt)</strong>: AI가 대화를 시작하기 전에 받는 지시 사항입니다. 동작 방식, 제약, 우선순위를 정의합니다.</p>
+        <p><strong>에이전트 루프(Agentic Loop)</strong>: AI가 도구를 사용하며 작업을 반복 수행하는 실행 구조입니다. 목표 달성 또는 종료 조건 충족 시 멈춥니다.</p>
+        <p><strong>CLAUDE.md</strong>: Claude Code가 프로젝트 시작 시 자동으로 읽는 설정 파일입니다. 프로젝트 관례와 지시 사항을 세션 간 유지합니다.</p>
+        <p><strong>병렬 도구 실행(Parallel Tool Calls)</strong>: AI가 독립적인 작업을 동시에 처리하는 방식입니다. 순차 처리 대비 응답 속도가 빨라집니다.</p>
+        <p><strong>확장 사고(Extended Thinking)</strong>: AI가 답하기 전에 더 깊이 분석하는 처리 모드입니다. 복잡한 분석과 아키텍처 결정에서 유용합니다.</p>
+        <p><strong>차이 기반 편집(Diff-Based Editing)</strong>: 파일 전체를 재작성하는 대신 변경 부분만 교체하는 방식입니다. 정확한 문자열 매칭이 필요합니다.</p>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>MindStudio Team. (2026, 4월). <em>Claude Code Source Code Leak: 8 Hidden Features You Can Use Right Now</em> [Blog post]. MindStudio.
+            <a href="https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features" target="_blank" rel="noopener">https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-02-ai-emotion-prompts.html">
+          <div class="next-post-title">AI는 당신의 감정에 관심 없습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-08-claude-code-hidden-features.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html';
+    const ROASTING_QUOTE = 'Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요? 소스 코드가 유출됐습니다. 설계 의도를 알면 Claude Code가 다르게 보입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
+</body>
+</html>

@@ -1,6 +1,30 @@
 {
   "posts": [
     {
+      "title": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
+      "date": "2026-04-08",
+      "category": "tech",
+      "source": "MindStudio Blog (MindStudio Team)",
+      "tags": ["ClaudeCode", "개발도구", "AI코딩", "프롬프트엔지니어링"],
+      "slug": "2026-04-08-claude-code-hidden-features",
+      "file": "tech/2026-04-08-claude-code-hidden-features.html",
+      "summary": "Claude Code 시스템 프롬프트 유출로 8가지 핵심 설계 원칙이 공개됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 설계 의도를 알면 활용도가 달라집니다.",
+      "roasting_quote": "Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요? 소스 코드가 유출됐습니다. 설계 의도를 알면 Claude Code가 다르게 보입니다.",
+      "next_post": "2026-04-02-ai-emotion-prompts.html"
+    },
+    {
+      "title": "AI가 ML 논문을 혼자 썼습니다, Nature도 실었습니다",
+      "date": "2026-03-26",
+      "category": "tech",
+      "source": "Nature (Sakana AI + UBC + Vector Institute + Oxford)",
+      "tags": ["AI리서치", "SakanaAI", "자동화연구", "피어리뷰"],
+      "slug": "2026-03-26-ai-scientist-nature",
+      "file": "tech/2026-03-26-ai-scientist-nature.html",
+      "summary": "Sakana AI의 AI Scientist v2가 ICLR 2025 워크숍 피어리뷰를 통과했습니다. 평균 6.33점으로 인간 논문 55%를 앞질렀습니다. Nature 정식 게재로 ML 연구 자동화가 검증 단계에 들어섰습니다.",
+      "roasting_quote": "AI 연구원을 고용하셨나요? Sakana AI의 AI가 아이디어부터 논문 제출까지 혼자 해냈습니다. 인간 논문의 55%보다 높은 점수를 받았습니다.",
+      "next_post": "2026-03-28-ai-agent-traps.html"
+    },
+    {
       "title": "Nature가 AI에 선을 긋다, 학술 출판의 새 기준",
       "date": "2026-04-07",
       "category": "research",
