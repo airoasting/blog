@@ -26,12 +26,12 @@ window.POSTS_DATA = {
     },
     {
       "title": "Nature가 AI에 선을 긋다, 학술 출판의 새 기준",
-      "date": "2026-04-07",
+      "date": "2026-04-01",
       "category": "research",
       "source": "Nature Portfolio (Springer Nature)",
       "tags": ["AI거버넌스", "학술출판", "Nature", "AI정책"],
-      "slug": "2026-04-07-nature-ai-editorial-policy",
-      "file": "research/2026-04-07-nature-ai-editorial-policy.html",
+      "slug": "2026-04-01-nature-ai-editorial-policy",
+      "file": "research/2026-04-01-nature-ai-editorial-policy.html",
       "summary": "Springer Nature가 AI 저자 자격을 불허하고, 생성형 AI 이미지를 금지했습니다. 학술계가 세운 AI 사용 기준이 기업 거버넌스의 참조점이 됩니다.",
       "roasting_quote": "AI가 논문을 써도 저자가 될 수 없습니다. 책임질 수 없으면 이름을 올릴 자격도 없습니다. 귀사의 AI 산출물에는 누구 이름이 붙어 있습니까?",
       "next_post": "2026-02-11-llm-behavioral-alignment-gap.html"
