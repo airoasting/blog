@@ -1,6 +1,18 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "직원 80%가 이미 떠났다, AI 성과가 0인 이유",
+      "date": "2026-04-08",
+      "category": "survival",
+      "source": "Gallup (Jon Clifton)",
+      "tags": ["갤럽", "직원몰입", "관리자", "AI도입", "직장생활"],
+      "slug": "2026-04-08-gallup-engagement-ai-paradox",
+      "file": "survival/2026-04-08-gallup-engagement-ai-paradox.html",
+      "summary": "갤럽 2026 보고서: 전 세계 직원 몰입도 2년 연속 하락해 20%. AI에 400억 달러 투자했지만 95% 기업이 수익 효과 0. 핵심 원인은 관리자 몰입도 붕괴입니다.",
+      "roasting_quote": "400억 달러를 AI에 쏟았는데 이익이 0입니다. 직원 80%가 이미 떠났는데, 아직도 기술 탓을 하십니까?",
+      "next_post": "2026-04-03-ai-coder-automation-timeline.html"
+    },
+    {
       "title": "Gemma 4, 크기의 상식을 깨는 오픈 모델",
       "date": "2026-04-02",
       "category": "tech",
@@ -10,7 +22,7 @@ window.POSTS_DATA = {
       "file": "tech/2026-04-02-gemma-4-open-model.html",
       "summary": "구글 Gemma 4 출시. 31B 모델이 오픈 모델 세계 3위, 수학 89.2%, 코딩 80.0%. Apache 2.0 라이선스로 자체 서버에서 운영 가능합니다.",
       "roasting_quote": "오픈 모델이 20배 큰 모델을 이깁니다. '큰 모델이 최고'라는 상식, 아직 믿고 계십니까?",
-      "next_post": "2026-04-02-ai-emotion-prompts.html"
+      "next_post": "2026-04-08-gallup-engagement-ai-paradox.html"
     },
     {
       "title": "AI 에이전트, 뇌와 손을 분리해야 확장됩니다",
