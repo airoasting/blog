@@ -26,12 +26,12 @@
     },
     {
       "title": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
-      "date": "2026-04-08",
+      "date": "2026-04-01",
       "category": "tech",
       "source": "MindStudio Blog (MindStudio Team)",
       "tags": ["ClaudeCode", "개발도구", "AI코딩", "프롬프트엔지니어링"],
-      "slug": "2026-04-08-claude-code-hidden-features",
-      "file": "tech/2026-04-08-claude-code-hidden-features.html",
+      "slug": "2026-04-01-claude-code-hidden-features",
+      "file": "tech/2026-04-01-claude-code-hidden-features.html",
       "summary": "Claude Code 시스템 프롬프트 유출로 8가지 핵심 설계 원칙이 공개됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 설계 의도를 알면 활용도가 달라집니다.",
       "roasting_quote": "Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요? 소스 코드가 유출됐습니다. 설계 의도를 알면 Claude Code가 다르게 보입니다.",
       "next_post": "2026-04-02-ai-emotion-prompts.html"
