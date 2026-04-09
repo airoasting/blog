@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Model Timeline | AI ROASTING</title>
+  <meta name="description" content="주요 AI 모델 업데이트를 분기별 표 형태로 정리한 타임라인입니다.">
+  <link rel="canonical" href="https://airoasting.github.io/blog/timeline/model-updates.html">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="./data/model-timeline.js"></script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+  <style>
+    :root {
+      --bg: #ece7df;
+      --surface: #f3efe8;
+      --surface-2: #ebe5dc;
+      --text: #20242f;
+      --muted: #6a6670;
+      --accent: #c43500;
+      --line: rgba(40, 44, 52, 0.08);
+      --raised: 8px 8px 20px rgba(206, 198, 187, 0.8), -8px -8px 20px rgba(255, 252, 246, 0.92);
+      --raised-sm: 4px 4px 10px rgba(206, 198, 187, 0.72), -4px -4px 10px rgba(255, 252, 246, 0.9);
+      --inset: inset 4px 4px 10px rgba(206, 198, 187, 0.75), inset -4px -4px 10px rgba(255, 252, 246, 0.92);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --row-label-w: 150px;
+      --cell-w: 136px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #171a20;
+      --surface: #1c2028;
+      --surface-2: #171b22;
+      --text: #f3f5f8;
+      --muted: #9ca3af;
+      --accent: #ff7a4d;
+      --line: rgba(255,255,255,0.06);
+      --raised: 8px 8px 20px rgba(10, 11, 14, 0.72), -8px -8px 20px rgba(35, 39, 48, 0.88);
+      --raised-sm: 4px 4px 10px rgba(10, 11, 14, 0.68), -4px -4px 10px rgba(35, 39, 48, 0.84);
+      --inset: inset 4px 4px 10px rgba(10, 11, 14, 0.7), inset -4px -4px 10px rgba(35, 39, 48, 0.86);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Pretendard", var(--font-body), sans-serif;
+    }
+
+    .page {
+      padding: 28px 20px 56px;
+    }
+
+    .hero,
+    .shell {
+      background: var(--surface);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--raised);
+    }
+
+    .hero {
+      padding: 22px 24px;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow {
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .hero-title {
+      margin: 0 0 8px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      min-width: 118px;
+      padding: 12px 14px;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--raised-sm);
+    }
+
+    .hero-stat strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-stat span {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .shell {
+      padding: 16px 16px 18px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding: 0 4px;
+    }
+
+    .toolbar-meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .theme-toggle {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: var(--surface);
+      box-shadow: var(--raised-sm);
+      color: var(--muted);
+      font: inherit;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: calc(100vh - 210px);
+      border-radius: var(--radius-lg);
+      padding: 4px;
+      background: transparent;
+    }
+
+    .timeline-table {
+      border-collapse: separate;
+      border-spacing: 10px;
+      table-layout: fixed;
+      width: max-content;
+      min-width: calc(var(--row-label-w) + 24 * var(--cell-w));
+    }
+
+    .timeline-table th,
+    .timeline-table td {
+      padding: 0;
+      vertical-align: top;
+    }
+
+    .timeline-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      background: var(--surface);
+    }
+
+    .timeline-table .corner {
+      position: sticky;
+      left: 0;
+      z-index: 35;
+      width: var(--row-label-w);
+      min-width: var(--row-label-w);
+      background: var(--surface);
+    }
+
+    .timeline-table .rowhead {
+      position: sticky;
+      left: 0;
+      z-index: 25;
+      width: var(--row-label-w);
+      min-width: var(--row-label-w);
+      background: var(--surface);
+    }
+
+    .head-card,
+    .row-card,
+    .cell-card {
+      background: var(--surface);
+      box-shadow: var(--raised-sm);
+      border-radius: var(--radius-md);
+    }
+
+    .head-card {
+      height: 74px;
+      padding: 12px 12px 10px;
+    }
+
+    .corner .head-card {
+      display: flex;
+      align-items: center;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      box-shadow: var(--raised-sm), 10px 0 16px rgba(0,0,0,0.05);
+    }
+
+    .quarter-year {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .quarter-name {
+      display: block;
+      font-size: 19px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .row-card {
+      min-height: 112px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: var(--raised-sm), 10px 0 16px rgba(0,0,0,0.05);
+    }
+
+    .provider-name {
+      margin-bottom: 4px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .provider-models {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.45;
+    }
+
+    .cell-card {
+      width: var(--cell-w);
+      min-width: var(--cell-w);
+      min-height: 112px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--surface);
+    }
+
+    .cell-card.is-empty {
+      box-shadow: var(--inset);
+      opacity: 0.62;
+    }
+
+    .event-chip {
+      border: 0;
+      border-radius: 12px;
+      padding: 8px;
+      background: var(--surface-2);
+      box-shadow: var(--raised-sm);
+      text-align: left;
+      cursor: default;
+    }
+
+    .event-chip.is-major {
+      box-shadow: var(--raised-sm), inset 0 0 0 1px rgba(196,53,0,0.18);
+    }
+
+    .chip-model {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chip-type {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .tooltip {
+      position: fixed;
+      z-index: 70;
+      width: min(320px, calc(100vw - 24px));
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: var(--raised);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.14s ease, transform 0.14s ease;
+    }
+
+    .tooltip.is-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tooltip-title {
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .tooltip-meta {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .tooltip-body {
+      color: var(--text);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .tooltip-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .theme-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 18px 12px 40px;
+      }
+
+      .hero,
+      .shell {
+        border-radius: 18px;
+      }
+
+      .hero {
+        padding: 18px;
+      }
+
+      .shell {
+        padding: 12px;
+      }
+
+      .table-wrap {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="eyebrow">AI ROASTING TIMELINE</div>
+      <div class="hero-top">
+        <div>
+          <h1 class="hero-title">AI MODEL TIMELINE</h1>
+          <div class="hero-copy">상단 분기와 왼쪽 회사명은 고정됩니다. 각 셀에는 해당 분기의 모델 업데이트가 들어가고, 마우스 오버 시 정확한 날짜와 상세 요약이 나옵니다.</div>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong id="statProviders">0</strong><span>Providers</span></div>
+          <div class="hero-stat"><strong id="statEvents">0</strong><span>Updates</span></div>
+          <div class="hero-stat"><strong id="statQuarters">0</strong><span>Quarters</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell">
+      <div class="toolbar">
+        <div class="toolbar-meta" id="resultsMeta">타임라인을 불러오는 중입니다.</div>
+        <button class="theme-toggle" id="themeToggle" type="button">다크 모드</button>
+      </div>
+      <div class="table-wrap">
+        <table class="timeline-table" id="timelineTable"></table>
+      </div>
+    </section>
+  </div>
+
+  <div class="tooltip" id="tooltip" aria-hidden="true">
+    <div class="tooltip-title" id="tooltipTitle"></div>
+    <div class="tooltip-meta" id="tooltipMeta"></div>
+    <div class="tooltip-body" id="tooltipBody"></div>
+    <a class="tooltip-link" id="tooltipLink" href="#" target="_blank" rel="noopener">원문 보기</a>
+  </div>
+
+  <script>
+    const providerOrder = [
+      "OpenAI",
+      "Google",
+      "Anthropic",
+      "DeepSeek",
+      "Meta",
+      "xAI",
+      "Mistral",
+      "Alibaba",
+      "Cohere",
+      "Midjourney",
+      "Stability AI",
+      "ByteDance"
+    ];
+
+    const providerLeadModel = {
+      "OpenAI": "GPT, ChatGPT, Codex",
+      "Google": "Gemini, Transformer, BERT",
+      "Anthropic": "Claude",
+      "Meta": "Llama",
+      "xAI": "Grok",
+      "Mistral": "Mistral, Mixtral",
+      "DeepSeek": "DeepSeek V3, R1",
+      "Alibaba": "Qwen",
+      "Cohere": "Command",
+      "Midjourney": "Midjourney",
+      "Stability AI": "Stable Diffusion",
+      "ByteDance": "Seed, Seedance"
+    };
+
+    const refs = {
+      statProviders: document.getElementById("statProviders"),
+      statEvents: document.getElementById("statEvents"),
+      statQuarters: document.getElementById("statQuarters"),
+      resultsMeta: document.getElementById("resultsMeta"),
+      themeToggle: document.getElementById("themeToggle"),
+      timelineTable: document.getElementById("timelineTable"),
+      tooltip: document.getElementById("tooltip"),
+      tooltipTitle: document.getElementById("tooltipTitle"),
+      tooltipMeta: document.getElementById("tooltipMeta"),
+      tooltipBody: document.getElementById("tooltipBody"),
+      tooltipLink: document.getElementById("tooltipLink")
+    };
+
+    function getQuarterIndex(date) {
+      const d = new Date(date);
+      return d.getFullYear() * 4 + Math.floor(d.getMonth() / 3);
+    }
+
+    function quarterFromIndex(index) {
+      const year = Math.floor(index / 4);
+      const quarter = (index % 4) + 1;
+      return { year, quarter, key: year + " Q" + quarter };
+    }
+
+    function getQuarterKey(date) {
+      const d = new Date(date);
+      return d.getFullYear() + " Q" + (Math.floor(d.getMonth() / 3) + 1);
+    }
+
+    function sortedProviders(events) {
+      const providers = [...new Set(events.map((event) => event.provider))];
+      return providers.sort((a, b) => {
+        const aIdx = providerOrder.indexOf(a);
+        const bIdx = providerOrder.indexOf(b);
+        if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+        if (aIdx === -1) return 1;
+        if (bIdx === -1) return -1;
+        return aIdx - bIdx;
+      });
+    }
+
+    function buildQuarterSequence(events) {
+      const indices = events.map((event) => getQuarterIndex(event.date));
+      const min = Math.min(...indices);
+      const max = Math.max(...indices);
+      const quarters = [];
+      for (let i = min; i <= max; i += 1) {
+        quarters.push(quarterFromIndex(i));
+      }
+      return quarters;
+    }
+
+    function showTooltip(eventData, target) {
+      refs.tooltipTitle.textContent = eventData.model;
+      refs.tooltipMeta.textContent = eventData.provider + " · " + eventData.date + " · " + eventData.event_type.replace("_", " ");
+      refs.tooltipBody.textContent = eventData.summary_ko + " / " + eventData.summary_en;
+      refs.tooltipLink.href = eventData.source_url;
+
+      const rect = target.getBoundingClientRect();
+      const tooltipWidth = Math.min(320, window.innerWidth - 24);
+      let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+      if (left < 12) left = 12;
+      if (left + tooltipWidth > window.innerWidth - 12) left = window.innerWidth - tooltipWidth - 12;
+      let top = rect.bottom + 10;
+      if (top + 180 > window.innerHeight) top = rect.top - 180;
+
+      refs.tooltip.style.width = tooltipWidth + "px";
+      refs.tooltip.style.left = left + "px";
+      refs.tooltip.style.top = top + "px";
+      refs.tooltip.classList.add("is-open");
+      refs.tooltip.setAttribute("aria-hidden", "false");
+    }
+
+    function hideTooltip() {
+      refs.tooltip.classList.remove("is-open");
+      refs.tooltip.setAttribute("aria-hidden", "true");
+    }
+
+    function renderTable(events) {
+      const quarters = buildQuarterSequence(events);
+      const providers = sortedProviders(events);
+      refs.timelineTable.innerHTML = "";
+
+      refs.statProviders.textContent = String(providers.length);
+      refs.statEvents.textContent = String(events.length);
+      refs.statQuarters.textContent = String(quarters.length);
+      refs.resultsMeta.textContent = quarters[0].key + "부터 " + quarters[quarters.length - 1].key + "까지, 제공사 " + providers.length + "곳의 업데이트 " + events.length + "건을 보고 있습니다.";
+
+      const thead = document.createElement("thead");
+      const headRow = document.createElement("tr");
+
+      const corner = document.createElement("th");
+      corner.className = "corner";
+      corner.innerHTML = '<div class="head-card">Provider / Quarter</div>';
+      headRow.appendChild(corner);
+
+      quarters.forEach((quarter) => {
+        const th = document.createElement("th");
+        th.innerHTML = '<div class="head-card"><span class="quarter-year">' + quarter.year + '</span><span class="quarter-name">Q' + quarter.quarter + '</span></div>';
+        headRow.appendChild(th);
+      });
+
+      thead.appendChild(headRow);
+      refs.timelineTable.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+
+      providers.forEach((provider) => {
+        const row = document.createElement("tr");
+
+        const label = document.createElement("th");
+        label.scope = "row";
+        label.className = "rowhead";
+        label.innerHTML = '<div class="row-card"><div class="provider-name">' + provider + '</div><div class="provider-models">' + (providerLeadModel[provider] || "Key models") + '</div></div>';
+        row.appendChild(label);
+
+        quarters.forEach((quarter) => {
+          const cell = document.createElement("td");
+          const wrap = document.createElement("div");
+          wrap.className = "cell-card";
+
+          const items = events
+            .filter((event) => event.provider === provider && getQuarterKey(event.date) === quarter.key)
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+          if (!items.length) {
+            wrap.classList.add("is-empty");
+          } else {
+            items.forEach((eventData) => {
+              const chip = document.createElement("div");
+              chip.className = "event-chip" + (eventData.significance === "major" ? " is-major" : "");
+              chip.innerHTML = '<span class="chip-model">' + eventData.model + '</span><span class="chip-type">' + eventData.event_type.replace("_", " ") + '</span>';
+              chip.addEventListener("mouseenter", () => showTooltip(eventData, chip));
+              chip.addEventListener("mouseleave", hideTooltip);
+              chip.addEventListener("mousemove", () => showTooltip(eventData, chip));
+              wrap.appendChild(chip);
+            });
+          }
+
+          cell.appendChild(wrap);
+          row.appendChild(cell);
+        });
+
+        tbody.appendChild(row);
+      });
+
+      refs.timelineTable.appendChild(tbody);
+      syncRowHeights();
+    }
+
+    function syncRowHeights() {
+      const rows = refs.timelineTable.querySelectorAll("tbody tr");
+      rows.forEach((row) => {
+        const cards = row.querySelectorAll(".row-card, .cell-card");
+        let maxHeight = 112;
+        cards.forEach((card) => {
+          card.style.height = "auto";
+        });
+        cards.forEach((card) => {
+          maxHeight = Math.max(maxHeight, card.scrollHeight);
+        });
+        cards.forEach((card) => {
+          card.style.height = maxHeight + "px";
+        });
+      });
+    }
+
+    function parseTimelineMarkdown(markdown) {
+      const match = markdown.match(/```json\\n([\\s\\S]*?)\\n```/);
+      if (!match) throw new Error("JSON code block not found in model-timeline.md");
+      return JSON.parse(match[1]);
+    }
+
+    async function loadTimelineData() {
+      try {
+        const response = await fetch("./data/model-timeline.md");
+        if (!response.ok) throw new Error("Failed to load model-timeline.md");
+        const markdown = await response.text();
+        return parseTimelineMarkdown(markdown);
+      } catch (error) {
+        if (window.MODEL_TIMELINE_DATA) return window.MODEL_TIMELINE_DATA;
+        throw error;
+      }
+    }
+
+    async function boot() {
+      const data = await loadTimelineData();
+      const events = data.events.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+      renderTable(events);
+
+      refs.themeToggle.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "라이트 모드" : "다크 모드";
+      refs.themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        refs.themeToggle.textContent = next === "dark" ? "라이트 모드" : "다크 모드";
+        requestAnimationFrame(syncRowHeights);
+      });
+
+      window.addEventListener("scroll", hideTooltip, { passive: true });
+      window.addEventListener("resize", () => {
+        hideTooltip();
+        syncRowHeights();
+      });
+    }
+
+    boot().catch((error) => {
+      refs.resultsMeta.textContent = "데이터를 불러오지 못했습니다.";
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
