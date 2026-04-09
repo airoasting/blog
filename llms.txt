@@ -15,16 +15,18 @@
 
 ## 최신 포스트
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
-- 2026-04-07 [리서치] Nature가 AI에 선을 긋다, 학술 출판의 새 기준 — /blog/research/2026-04-07-nature-ai-editorial-policy.html
-- 2026-02-11 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
-- 2026-03-28 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-03-28-ai-agent-traps.html
+- 2026-04-08 [기술] Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 — /blog/tech/2026-04-08-claude-code-hidden-features.html
 - 2026-04-06 [리더] 샘 올트먼의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html
 - 2026-04-03 [생존] 개발자 전면 자동화, 예측 시점이 2년 당겨졌다 — /blog/survival/2026-04-03-ai-coder-automation-timeline.html
 - 2026-04-03 [리더] 카파시: LLM이 내 위키를 대신 쓴다 — /blog/leader/2026-04-03-karpathy-llm-knowledge-base.html
+- 2026-04-02 [기술] Gemma 4, 크기의 상식을 깨는 오픈 모델 — /blog/tech/2026-04-02-gemma-4-open-model.html
 - 2026-04-02 [기술] AI는 당신의 감정에 관심 없습니다 — /blog/tech/2026-04-02-ai-emotion-prompts.html
 - 2026-04-02 [리서치] Claude 안의 감정: 171개 벡터가 행동을 결정한다 — /blog/research/2026-04-02-claude-emotion-vectors.html
+- 2026-04-01 [리서치] Nature가 AI에 선을 긋다, 학술 출판의 새 기준 — /blog/research/2026-04-01-nature-ai-editorial-policy.html
 - 2026-03-31 [기술] AI가 AI를 설계한다, 사람 없이 — /blog/tech/2026-03-31-asi-evolve-ai-accelerates-ai.html
 - 2026-03-31 [리더] 전 구글 임원의 경고: 준비할 시간이 2년입니다 — /blog/leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html
+- 2026-03-28 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-03-28-ai-agent-traps.html
+- 2026-03-26 [기술] AI가 ML 논문을 혼자 썼습니다, Nature도 실었습니다 — /blog/tech/2026-03-26-ai-scientist-nature.html
 - 2026-03-24 [기술] AI, 수학자도 못 푼 난제를 풀다 — /blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html
 - 2026-03-23 [기업] 소프트웨어에 남은 길은 두 가지뿐이다 — /blog/company/2026-03-23-two-paths-for-software.html
 - 2026-03-23 [기술] 교수가 AI로 1년 연구를 2주에 끝냈다 — /blog/tech/2026-03-23-vibe-physics-ai-grad-student.html
@@ -50,6 +52,7 @@
 - 2026-03-05 [리서치] AI 도구 3개 넘으면 생산성이 떨어진다 — /blog/research/2026-03-05-brain-fry.html
 - 2026-02-23 [기술] AI는 왜 사람처럼 행동하는가 (멀티 페르소나) — /blog/tech/2026-02-23-persona-selection-model.html
 - 2026-02-12 [리더] 재미로 만들어 GitHub 18만 스타: OpenClaw 창시자의 에이전트 엔지니어링 선언 — /blog/leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html
+- 2026-02-11 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
 - 2026-02-09 [리서치] AI는 일을 줄이지 않는다, 더 늘리고 있다 — /blog/research/2026-02-09-ai-intensifies-work.html
 - 2026-02-01 [생존] AI를 쓸수록 실력이 떨어진다 — /blog/survival/2026-02-01-ai-skill-erosion-anthropic-study.html
 - 2026-01-25 [리더] 아모데이가 경고한 AI의 5가지 위험 — /blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html

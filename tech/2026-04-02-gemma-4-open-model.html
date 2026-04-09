@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemma 4, 크기의 상식을 깨는 오픈 모델 - AI ROASTING</title>
+  <meta name="description" content="구글 Gemma 4 출시. 31B 모델이 오픈 모델 세계 3위, 수학 89.2%, 코딩 80.0%. Apache 2.0 라이선스로 자체 서버에서 운영 가능합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gemma 4, 크기의 상식을 깨는 오픈 모델">
+  <meta property="og:description" content="구글 Gemma 4 출시. 31B 모델이 오픈 모델 세계 3위, 수학 89.2%, 코딩 80.0%. Apache 2.0 라이선스로 자체 서버에서 운영 가능합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-02-gemma-4-open-model.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_02_gemma-4-open-model/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-02">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="Gemma4">
+  <meta property="article:tag" content="오픈소스AI">
+  <meta property="article:tag" content="엣지AI">
+  <meta property="article:tag" content="에이전트">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gemma 4, 크기의 상식을 깨는 오픈 모델">
+  <meta name="twitter:description" content="구글 Gemma 4 출시. 31B 모델이 오픈 모델 세계 3위, 수학 89.2%, 코딩 80.0%. Apache 2.0 라이선스로 자체 서버에서 운영 가능합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_02_gemma-4-open-model/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gemma 4, 크기의 상식을 깨는 오픈 모델",
+    "datePublished": "2026-04-02",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "구글 Gemma 4 출시. 31B 모델이 오픈 모델 세계 3위, 수학 89.2%, 코딩 80.0%. Apache 2.0 라이선스로 자체 서버에서 운영 가능합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-02-gemma-4-open-model.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_02_gemma-4-open-model/thumbnail.png" alt="Gemma 4, 크기의 상식을 깨는 오픈 모델">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 2일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">Gemma 4, 크기의 상식을 깨는 오픈 모델</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Google Blog</span>
+            <span>Clement Farabet, Olivier Lacombe</span>
+            <span><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Gemma4" class="post-tag">#Gemma4</a>
+            <a href="../index.html?tag=오픈소스AI" class="post-tag">#오픈소스AI</a>
+            <a href="../index.html?tag=엣지AI" class="post-tag">#엣지AI</a>
+            <a href="../index.html?tag=에이전트" class="post-tag">#에이전트</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="Gemma 4, 크기의 상식을 깨는 오픈 모델"
+        data-date="2026-04-02"
+        data-category="tech"
+        data-source="Google Blog (Clement Farabet, Olivier Lacombe)"
+        data-tags="Gemma4, 오픈소스AI, 엣지AI, 에이전트"
+        data-original-url="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/"
+        data-roasting-quote="오픈 모델이 20배 큰 모델을 이깁니다. '큰 모델이 최고'라는 상식, 아직 믿고 계십니까?"
+        data-next-post="2026-04-02-ai-emotion-prompts.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>구글이 오픈 모델 Gemma 4를 Apache 2.0으로 출시했습니다.</p>
+        <p data-summary>31B 모델이 20배 큰 모델을 이기며 오픈 모델 세계 3위입니다.</p>
+        <p data-summary>스마트폰부터 워크스테이션까지 자체 인프라에서 AI를 운영할 수 있습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">오픈 모델이 20배 큰 모델을 이깁니다.<br>'큰 모델이 최고'라는 상식, 아직 믿고 계십니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 모델은 클수록 좋다고 여겨졌습니다. Gemma 4 31B가 20배 큰 모델을 이겼습니다(Google DeepMind, 2026). Arena AI 리더보드에서 오픈 모델 세계 3위입니다. 클라우드 대형 모델 없이도 동등한 품질을 기대할 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>Meta Llama, Mistral에 이어 구글까지 오픈 모델 경쟁에 뛰어들었습니다. Gemma 시리즈는 누적 4억 회 이상 다운로드됐습니다(Google, 2026). 이번에 Apache 2.0으로 전환하면서 상용 제한마저 사라졌습니다. 경쟁사가 자체 AI 인프라를 구축하는 동안 API에만 의존하면 비용과 기술 격차가 벌어집니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, Arena AI 리더보드에서 31B 모델이 오픈 모델 세계 3위입니다.</strong> 26B MoE 모델은 6위를 차지했습니다. Gemma 3 대비 수학은 20.8%에서 89.2%로 올랐습니다. 코딩은 29.1%에서 80.0%로 상승했습니다. 과학은 42.4%에서 84.3%입니다(Google DeepMind, 2026).</p>
+
+        <!-- 표: Gemma 3 vs Gemma 4 핵심 벤치마크 -->
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">평가 영역</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Gemma 3</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Gemma 4 31B</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">향상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">수학 (AIME 2026)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.8%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">89.2%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+68.4p</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">코딩 (LiveCodeBench)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">29.1%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">80.0%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+50.9p</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">과학 (GPQA Diamond)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">42.4%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">84.3%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+41.9p</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">다국어 (MMLU)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.2%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">에이전트 (τ2-bench)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">86.4%</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">Gemma 4 31B IT Thinking 기준. 출처: Google DeepMind (2026), Gemma 4 Model Card.</p>
+        </div>
+
+        <p><strong>둘째, 에이전트 워크플로우를 기본 지원합니다.</strong> AI가 외부 도구와 API를 직접 호출합니다. 예를 들어, 고객 주문이 들어오면 재고를 조회하고 확인 메일을 발송하는 흐름을 AI가 일괄 처리합니다. 별도 중간 프레임워크 없이 모델 자체에서 작동합니다. 에이전트 평가(τ2-bench)에서 86.4%입니다(Google DeepMind, 2026).</p>
+
+        <p><strong>셋째, 스마트폰에서도 AI가 작동합니다.</strong> E2B와 E4B 모델은 각각 2B, 4B 파라미터만 활성화합니다. 구글 Pixel, 퀄컴, 미디어텍과 공동 최적화했습니다. 인터넷 없이 오프라인으로 작동합니다. 현장 직원이 창고, 공장, 매장에서 AI를 즉시 활용할 수 있습니다.</p>
+
+        <p><strong>넷째, Apache 2.0으로 완전 개방됐습니다.</strong> 이전 Gemma는 자체 라이선스를 사용했습니다. 이번부터 수정, 재배포, 상업적 사용이 모두 자유입니다. 이미 10만 개 이상의 변형 모델이 존재합니다(Google, 2026). INSAIT는 불가리아어 특화 모델을, 예일대는 암 치료 연구에 활용했습니다(Google, 2026).</p>
+
+        <p><strong>다섯째, 글로벌 사업에 바로 투입할 수 있습니다.</strong> 140개 이상 언어를 지원합니다. 해외 고객 응대, 다국어 문서 분석을 하나의 모델로 처리합니다. 영상, 이미지, 음성까지 멀티모달을 지원합니다. 컨텍스트 길이는 256K로, 수백 페이지 보고서를 한 번에 입력할 수 있습니다.</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>Google AI Studio에서 Gemma 4 품질을 확인합니다.</strong><br>ai.google.dev에 접속해 Gemma 4 31B를 선택합니다. 현재 업무에서 가장 자주 쓰는 프롬프트를 3개 골라 입력합니다. 예시: "이번 분기 매출 보고서를 요약해줘. 핵심 지표 3개와 개선 방안을 정리해줘." 기존 API 모델 응답과 품질을 나란히 비교합니다. (15분, 품질 비교표 1장)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>IT팀에 Ollama 로컬 설치를 요청합니다.</strong><br>ollama.com에서 설치 파일을 다운로드합니다. 설치 후 터미널에서 아래 명령어를 실행합니다. 사내 데이터를 입력해 보안 환경에서 성능을 확인합니다. API 대비 응답 속도와 품질을 기록합니다. (1시간, 자체 운영 가능성 검증 보고서)</div>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <pre class="prompt-text">ollama run gemma4:26b</pre>
+          <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+        </div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>자동화 대상 업무 3개를 선정합니다.</strong><br>주간 보고서 작성, 고객 문의 분류, 회의록 요약 중 반복도가 높은 업무를 고릅니다. Google AI Studio에서 Gemma 4의 함수 호출 기능으로 테스트합니다. 결과를 정리해 "오픈 모델 도입 파일럿 보고서" 초안을 작성합니다. (2시간, 도입 판단 근거 확보)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>자체 벤치마크가 포함돼 있습니다.</strong> Arena AI 리더보드는 lmsys.org가 운영하는 독립 평가입니다. 그러나 AIME, LiveCodeBench 수치는 구글이 직접 측정했습니다. 독립 기관의 재검증 결과를 확인한 뒤 판단하는 것이 합리적입니다.</p>
+
+        <p><strong>양자화 시 성능이 저하됩니다.</strong> 소비자 GPU에서 실행하려면 양자화가 필요합니다. 양자화하지 않은 전체 모델은 80GB GPU가 필요합니다. 양자화 수준에 따라 품질 손실이 발생합니다.</p>
+
+        <p><strong>벤치마크와 실무는 다릅니다.</strong> 표준 평가 점수가 사내 업무 품질을 보장하지 않습니다. 자체 데이터로 검증한 뒤 도입을 결정해야 합니다.</p>
+
+        <p><strong>오픈 모델 보안은 기업 책임입니다.</strong> 모델 가중치가 공개되므로 보안 관리가 기업에 달립니다. 데이터 유출 방지와 접근 제어를 자체 구축해야 합니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>Gemma 4는 오픈 모델의 성능 기준을 바꿨습니다. 자체 서버에서 AI를 운영할지, API에 계속 의존할지 판단해야 할 시점입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>AI 인프라 전략을 재검토하라. API 종속과 자체 운영의 비용 구조를 비교하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>Gemma 4를 팀 업무에 파일럿 테스트하라. 기존 API 대비 품질과 비용을 데이터로 기록하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">임원</span>
+            <span>오픈 모델 도입의 보안·규제 요건을 사전 점검하라. 데이터 주권 확보 방안을 수립하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <p><strong>오픈 모델</strong>: 모델의 가중치(학습 결과물)가 공개된 AI 모델입니다. 다운로드해 자체 서버에서 실행할 수 있습니다.</p>
+        <p><strong>Apache 2.0</strong>: 소프트웨어 오픈소스 라이선스입니다. 상업적 사용, 수정, 재배포가 자유롭습니다.</p>
+        <p><strong>MoE(Mixture of Experts)</strong>: 전체 파라미터 중 일부만 활성화하는 모델 구조입니다. 속도와 효율이 높습니다.</p>
+        <p><strong>에이전트 워크플로우</strong>: AI가 외부 도구를 직접 호출해 업무를 자동 처리하는 방식입니다.</p>
+        <p><strong>컨텍스트 윈도우</strong>: AI가 한 번에 처리할 수 있는 텍스트의 최대 길이입니다.</p>
+        <p><strong>양자화</strong>: 모델의 정밀도를 낮춰 파일 크기와 메모리 사용량을 줄이는 기술입니다. 속도는 빨라지지만 품질이 일부 저하됩니다.</p>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Farabet, C. &amp; Lacombe, O. (2026, 4월). <em>Gemma 4: Byte for byte, the most capable open models</em> [Article]. Google Blog.
+            <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" rel="noopener">https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-02-ai-emotion-prompts.html">
+          <div class="next-post-title">AI는 당신의 감정에 관심 없습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-02-gemma-4-open-model.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-02-gemma-4-open-model.html';
+    const ROASTING_QUOTE = '오픈 모델이 20배 큰 모델을 이깁니다. \'큰 모델이 최고\'라는 상식, 아직 믿고 계십니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+</body>
+</html>

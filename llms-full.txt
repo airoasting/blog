@@ -5,6 +5,24 @@
 
 ---
 
+## Gemma 4, 크기의 상식을 깨는 오픈 모델
+
+날짜: 2026-04-02
+카테고리: 기술
+소스: Google Blog (Clement Farabet, Olivier Lacombe)
+원문: https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/
+태그: Gemma4, 오픈소스AI, 엣지AI, 에이전트
+
+### 3줄 요약
+구글이 오픈 모델 Gemma 4를 Apache 2.0으로 출시했습니다.
+31B 모델이 20배 큰 모델을 이기며 오픈 모델 세계 3위입니다.
+스마트폰부터 워크스테이션까지 자체 인프라에서 AI를 운영할 수 있습니다.
+
+### Roasting
+오픈 모델이 20배 큰 모델을 이깁니다. '큰 모델이 최고'라는 상식, 아직 믿고 계십니까?
+
+---
+
 ## AI 에이전트, 뇌와 손을 분리해야 확장됩니다
 
 날짜: 2026-04-08
