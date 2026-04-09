@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 - AI ROASTING</title>
+  <title>Claude Code 소스 코드 유출, 8가지 설계 원칙 - AI ROASTING</title>
   <meta name="description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+  <meta property="og:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙">
   <meta property="og:description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-01-claude-code-hidden-features.html">
   <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_08_claude-code-hidden-features/thumbnail.png">
   <meta property="og:locale" content="ko_KR">
-  <meta property="article:published_time" content="2026-04-08">
+  <meta property="article:published_time" content="2026-04-01">
   <meta property="article:section" content="기술">
   <meta property="article:tag" content="ClaudeCode">
   <meta property="article:tag" content="개발도구">
@@ -22,7 +22,7 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+  <meta name="twitter:title" content="Claude Code 소스 코드 유출, 8가지 설계 원칙">
   <meta name="twitter:description" content="Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.">
   <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_08_claude-code-hidden-features/thumbnail.png">
 
@@ -34,12 +34,12 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
-    "datePublished": "2026-04-08",
+    "headline": "Claude Code 소스 코드 유출, 8가지 설계 원칙",
+    "datePublished": "2026-04-01",
     "author": { "@type": "Person", "name": "AI ROASTING" },
     "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
     "description": "Claude Code 시스템 프롬프트가 유출됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 8가지 설계 원칙이 공개됐습니다. 알고 쓰면 Claude Code가 달라집니다.",
-    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-01-claude-code-hidden-features.html",
     "articleSection": "기술"
   }
   </script>
@@ -75,14 +75,14 @@
       <!-- Thumbnail Hero -->
       <div class="post-thumbnail-hero" data-category="tech">
         <div class="post-color-bar"></div>
-        <img src="./images/2026_04_08_claude-code-hidden-features/thumbnail.png" alt="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다">
+        <img src="./images/2026_04_08_claude-code-hidden-features/thumbnail.png" alt="Claude Code 소스 코드 유출, 8가지 설계 원칙">
         <div class="post-hero-meta">
           <span class="post-category" data-category="tech">기술</span>
-          <span class="post-date">2026년 4월 8일</span>
+          <span class="post-date">2026년 4월 1일</span>
           <span class="post-read-time">8분</span>
         </div>
         <div class="post-thumbnail-overlay">
-          <h1 class="post-title" id="postTitle">Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다</h1>
+          <h1 class="post-title" id="postTitle">Claude Code 소스 코드 유출, 8가지 설계 원칙</h1>
         </div>
         <div class="post-hero-bottom">
           <div class="post-hero-source">
@@ -101,8 +101,8 @@
 
       <!-- Post Data for AI View -->
       <div id="postData" hidden
-        data-title="Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다"
-        data-date="2026-04-08"
+        data-title="Claude Code 소스 코드 유출, 8가지 설계 원칙"
+        data-date="2026-04-01"
         data-category="tech"
         data-source="MindStudio Blog (MindStudio Team)"
         data-tags="ClaudeCode, 개발도구, AI코딩, 프롬프트엔지니어링"
@@ -271,6 +271,14 @@
         <p><strong>병렬 도구 실행(Parallel Tool Calls)</strong>: AI가 독립적인 작업을 동시에 처리하는 방식입니다. 순차 처리 대비 응답 속도가 빨라집니다.</p>
         <p><strong>확장 사고(Extended Thinking)</strong>: AI가 답하기 전에 더 깊이 분석하는 처리 모드입니다. 복잡한 분석과 아키텍처 결정에서 유용합니다.</p>
         <p><strong>차이 기반 편집(Diff-Based Editing)</strong>: 파일 전체를 재작성하는 대신 변경 부분만 교체하는 방식입니다. 정확한 문자열 매칭이 필요합니다.</p>
+        <p><strong>Git</strong>: 코드 변경 이력을 추적하고 관리하는 버전 관리 도구입니다. 누가 언제 무엇을 수정했는지 기록합니다.</p>
+        <p><strong>Bash</strong>: 컴퓨터에 텍스트 명령을 입력해 작업을 수행하는 터미널 환경입니다. 파일 검색, 텍스트 치환, 프로그램 실행 등을 처리합니다.</p>
+        <p><strong>grep</strong>: 파일 내용에서 특정 텍스트를 검색하는 Bash 명령입니다. 수천 개 파일에서 원하는 코드를 빠르게 찾습니다.</p>
+        <p><strong>sed</strong>: 파일 내 텍스트를 자동으로 찾아 바꾸는 Bash 명령입니다. 수동 편집 없이 대량 치환이 가능합니다.</p>
+        <p><strong>API 키(API Key)</strong>: 외부 서비스에 접속할 때 사용하는 인증 비밀번호입니다. 유출되면 무단 접근이 가능해 보안이 중요합니다.</p>
+        <p><strong>리팩터링(Refactoring)</strong>: 코드의 기능은 유지하면서 내부 구조를 정리하는 작업입니다. 유지보수와 확장성을 높입니다.</p>
+        <p><strong>타임아웃(Timeout)</strong>: 작업이 일정 시간 내에 완료되지 않으면 자동 중단하는 설정입니다. 무한 대기를 방지합니다.</p>
+        <p><strong>샌드박스(Sandbox)</strong>: 실제 시스템에 영향을 주지 않는 격리된 실행 환경입니다. 안전하게 테스트할 수 있습니다.</p>
       </section>
 
       <!-- 참고자료 -->
@@ -333,7 +341,7 @@
   <!-- AI Markdown Overlay -->
   <div class="ai-md-overlay" id="aiMdOverlay">
     <div class="ai-md-header">
-      <span class="ai-md-path">_posts/2026-04-08-claude-code-hidden-features.md</span>
+      <span class="ai-md-path">_posts/2026-04-01-claude-code-hidden-features.md</span>
       <button class="ai-md-close" id="aiMdClose">Human</button>
     </div>
     <div class="ai-md-content" id="aiMdContent"></div>
@@ -344,7 +352,7 @@
   <script src="../assets/js/footer.js"></script>
 
   <script>
-    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-08-claude-code-hidden-features.html';
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-01-claude-code-hidden-features.html';
     const ROASTING_QUOTE = 'Claude Code를 쓰고 있지만 왜 잘 작동하는지 모르시나요? 소스 코드가 유출됐습니다. 설계 의도를 알면 Claude Code가 다르게 보입니다.';
 
     function shareLinkedIn() {
