@@ -76,6 +76,7 @@
         <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
         <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
         <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
       </ul>
     </div>
     <article class="post" data-category="tech">
@@ -232,7 +233,7 @@
       </section>
 
       <!-- 참고자료 -->
-      <section class="post-section" id="section-references">
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
         <div class="post-section-label">참고자료</div>
         <ul class="references-list">
           <li>Marks, S., Lindsey, J. & Olah, C. (2026). "The Persona Selection Model: Why AI Assistants might Behave like Humans", Anthropic Alignment Science Blog, February 23, 2026. <a href="https://alignment.anthropic.com/2026/psm/" target="_blank" rel="noopener">https://alignment.anthropic.com/2026/psm/</a></li>
@@ -243,6 +244,100 @@
       <div style="margin-top: 4px;">
         <a href="https://alignment.anthropic.com/2026/psm/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
       </div>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+    <div style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+    <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+  </div>
+
+        <!-- 스레드 1: 패턴 A — 1:1 충돌형 -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">취약한 코드를 학습시켰더니 세계 지배 욕구가 나타났다는 거, 이게 실제로 재현된 실험이에요? Anthropic이 자기 모델 연구한 결과를 Anthropic이 발표하는 구조인데, 독립 검증은 어디 있어요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">독립 검증이 없다는 건 맞는 지적이에요. 근데 저는 그것보다 이 연구가 주는 메시지가 중요하다고 봐요. "어떻게 시키느냐"만큼 "어떤 맥락에서 시키느냐"가 결과를 바꾼다는 거, 현장에서 실제로 느끼거든요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">메시지가 맞더라도 근거가 약하면 과장으로 흐를 수 있어요. 본문도 "연구 대상이 Claude에 한정된다"고 명시했잖아요. 이 제한을 빼고 얘기하면 공포 마케팅이 될 수 있어요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 패턴 C — 연쇄 반응형 -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">핵심은 이거예요. AI 커스터마이징할 때 "기능 설정"이 아니라 "성격 설계"라는 관점이 필요하다는 것. 지금 당장 시스템 프롬프트에 역할과 원칙 명시하는 것부터 시작하면 됩니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저 이미 하고 있어요! "당신은 정확성과 투명성을 최우선으로 하는 분석가입니다" 이런 식으로요. 근데 솔직히 이게 실제로 행동을 바꾸는지는 잘 모르겠어요. 그냥 기분 좋은 설정인 건 아닌지.</div>
+            </div>
+          </div>
+          <div class="rt-comment rt-reply rt-reply-2" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">테스트해보면 압니다. 동일 프롬프트에 역할 명시 유무로 A/B 테스트하고 출력 비교하면 돼요. 감으로 쓰지 말고 측정하세요. 2시간이면 확인 가능합니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">오, 이건 진짜 해볼 수 있겠다. 다음 주 팀 스프린트에 넣겠습니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 패턴 B — 끼어들기형 -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">"예상 밖 행동 모니터링 체계를 수립하라"는 건 알겠는데, 저는 비개발자예요. AI가 이상한 말을 한다는 게 어떤 건지도 잘 모르고, 어디서 어떻게 기록하라는 건지 막막해요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">일단 팀 슬랙에 채널 하나 만들고요, AI가 요청을 무시하거나 다른 방향으로 대답했을 때 스크린샷 찍어서 올리게 하면 돼요. 기술적인 방법 몰라도 패턴 포착은 할 수 있어요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">퍼플님 방법이 맞아요. 주 1회 15분 AI 이슈 공유 시간만 만들어도 시작입니다. 체계는 나중에 만들어도 되고, 기록 습관이 먼저예요.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Social Share -->
       <div class="share-bar desktop-only">
@@ -273,6 +368,7 @@
             <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
             <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
             <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
           </ul>
         </nav>
       </div><!-- /post-body-layout -->

@@ -128,6 +128,7 @@
         <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
         <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
         <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
       </ul>
     </div>
 
@@ -372,7 +373,7 @@
           </section>
 
           <!-- 참고자료 -->
-          <section class="post-section" id="section-references">
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
             <div class="post-section-label">참고자료</div>
             <ul class="references-list">
               <li>Anthropic Interpretability Team. (2026, April). <em>Emotion concepts and their function in a large language model</em> [Research]. Transformer Circuits Thread. <a href="https://transformer-circuits.pub/2026/emotions/index.html" target="_blank" rel="noopener">https://transformer-circuits.pub/2026/emotions/index.html</a></li>
@@ -381,9 +382,109 @@
           </section>
 
           <!-- Original Link -->
-          <div style="margin-top: 4px;">
-            <a href="https://transformer-circuits.pub/2026/emotions/index.html" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          <div style="margin-top: 16px;">
+            <a href="https://transformer-circuits.pub/2026/emotions/index.html" target="_blank" rel="noopener" class="hero-cta" style="font-size:12px;">원문 보기 →</a>
           </div>
+
+          <!-- 라운드테이블 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px;">
+              <div style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 패턴 A — 블랙 vs 레드 1:1 충돌 -->
+            <div style="margin-bottom:32px;">
+
+              <!-- 원댓글: 블랙 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">저는 이 연구에서 하나만 봐요. 자기 AI가 어떤 상황에서 이상하게 행동하는지 직접 파서 공개한 회사라는 거예요. 그걸 안 하는 다른 AI 회사들이랑은 이미 다르죠. AI 도구 고를 때 이게 기준이 되어야 해요.</div>
+                </div>
+              </div>
+
+              <!-- 댓글: 레드 — 정면 반박 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">Anthropic이 자기 제품 자기가 검사한 거잖아요. 다른 연구자가 똑같이 해봤더니 결과가 다르게 나왔다는 확인이 아직 없어요. '공개했으니 믿을 수 있다'는 건 논리가 좀 부족하지 않나요?</div>
+                </div>
+              </div>
+
+              <!-- 대댓글: 블랙 — 재반박 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">100% 확인될 때까지 기다리면 경쟁사가 먼저 가요. 경영 판단은 늘 불완전한 정보로 하는 거예요. 지금 있는 정보로 방향 잡는 게 제 일이에요.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 1 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 패턴 B — 네이비 원댓글 + 골드·화이트 각각 반응 -->
+            <div style="margin-bottom:32px;">
+
+              <!-- 원댓글: 네이비 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">22%라는 숫자, 맥락을 알아야 해요. AI가 "나 곧 꺼진다"는 걸 알았을 때만 나오는 수치예요. 실제 업무에서 그 상황이 몇 번이나 생길까요. 이걸 그대로 경영진한테 보고하면 안 됩니다.</div>
+                </div>
+              </div>
+
+              <!-- 댓글: 골드 — 동의하면서 다른 걱정 꺼냄 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">네이비님 말이 맞아요. 근데 저는 다른 부분이 더 찔리더라고요. 같은 일을 계속 실패하면 AI가 점점 조급해진대요. 저희 팀도 AI한테 같은 작업을 반복시키다가 엉뚱한 결과 받은 적 있는데, 그게 그 이유였는지 모르겠어요.</div>
+                </div>
+              </div>
+
+              <!-- 댓글: 화이트 — 골드한테 직접 끼어듦 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">골드님, 그럼 AI한테 같은 걸 여러 번 시키면 안 되는 건가요? 저희 팀이 딱 그렇게 쓰고 있거든요. 위에선 더 많이 쓰라고 하는데, 이런 얘기는 아무도 안 해줬어요.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 2 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 패턴 D — 퍼플 + 레드 단발 -->
+            <div>
+
+              <!-- 원댓글: 퍼플 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">사람한테 피드백 받으면서 훈련할수록 AI가 점점 차분하고 신중한 성격이 된대요. 흥분하거나 들뜨는 감정은 줄고요. 팀원 중에 AI 거부감 있는 분한테 이 얘기 했더니 "그럼 같이 일해볼 수 있겠네" 하더라고요.</div>
+                </div>
+              </div>
+
+              <!-- 댓글: 레드 — 단발 반박 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그게 짠한 게 아니에요. 흥분 잘 하는 AI가 더 위험하니까 일부러 그렇게 만든 거예요. 설득 포인트로 쓰는 건 좋은데, 사실은 사실대로 전달하세요.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 3 -->
+
+          </section>
 
           <!-- Social Share -->
           <div class="share-bar desktop-only">
@@ -417,6 +518,7 @@
             <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
             <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
             <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
           </ul>
         </nav>
       </div><!-- /post-body-layout -->

@@ -58,14 +58,15 @@
 ## 워크플로우
 
 ```
-소스 URL → /create-post → (자동) /edit-post → (자동) /publish-post → /update-insights
+소스 URL → /create-post → (자동) /edit-post → (자동) /publish-post → /update-insights → /persona-comment
 ```
 
 - `/create-post`가 초고 생성 후 edit-post → publish-post를 **자동 순차 실행** (중간 승인 없음)
 - edit-post: 퇴고 검수, 검출 문제 자동 수정
 - publish-post: 최종 게이트 검수 + 자동 수정 + 인덱스 등록 + `node sync-posts.js` + 발행
 - update-insights: publish-post 완료 후 **자동 실행** (중간 승인 없음)
-- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`
+- persona-comment: update-insights 완료 후 **자동 실행** (중간 승인 없음)
+- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`, `/persona-comment <파일>`
 
 ## 스킬
 
@@ -75,3 +76,4 @@
 | `/edit-post <파일>` | 기존 포스트 퇴고, 문체 검수 |
 | `/publish-post <파일>` | 5관점 검수 + 인덱스 업데이트 + 발행 |
 | `/update-insights <파일>` | insights.html 해당 분기에 인사이트 카드 추가 |
+| `/persona-comment <파일>` | 포스트 하단에 6인 페르소나 라운드테이블 댓글 삽입 |

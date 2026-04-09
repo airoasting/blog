@@ -25,6 +25,41 @@
   });
 })();
 
+/* Smooth Scroll for TOC links */
+(function() {
+  function smoothScrollTo(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+    var start = window.scrollY;
+    var end = target.getBoundingClientRect().top + window.scrollY - 80;
+    var distance = end - start;
+    var duration = Math.min(800, Math.max(400, Math.abs(distance) * 0.4));
+    var startTime = null;
+
+    function easeInOutCubic(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, start + distance * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('.toc-link');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href || href[0] !== '#') return;
+    e.preventDefault();
+    smoothScrollTo(href.slice(1));
+  });
+})();
+
 /* TOC Sidebar + Mobile FAB */
 (function() {
   var fab = document.getElementById('tocFab');
@@ -80,6 +115,16 @@
 })();
 
 /* Prompt Copy */
+function copyLink() {
+  var url = (typeof PAGE_URL !== 'undefined') ? PAGE_URL : window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    document.querySelectorAll('.share-btn[onclick="copyLink()"]').forEach(function(btn) {
+      btn.textContent = '링크 복사됨 ✓';
+      setTimeout(function() { btn.textContent = '링크 복사'; }, 2000);
+    });
+  });
+}
+
 function copyPrompt(btn) {
   var text = btn.previousElementSibling.textContent;
   navigator.clipboard.writeText(text).then(function() {

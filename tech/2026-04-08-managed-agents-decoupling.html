@@ -69,6 +69,7 @@
         <li><a href="#section-risk" class="toc-link">리스크</a></li>
         <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
         <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
       </ul>
     </div>
 
@@ -152,21 +153,27 @@
         <p><strong>둘째, 추론 루프를 컨테이너 밖으로 꺼냅니다.</strong> 하네스는 표준 호출로 샌드박스를 사용합니다. 이름과 입력을 보내면 결과를 돌려받는 단순한 형식입니다(Martin et al., 2026). 컨테이너는 교체 가능한 자원이 됩니다. 초기 고객의 네트워크 환경 통합 문제도 이 분리로 해소됐습니다(Martin et al., 2026).</p>
 
         <figure style="margin: 24px 0; text-align: center;">
-          <img src="./images/2026_04_08_managed_agents_decoupling/img_02.png" alt="에이전트 인터페이스 표준화 - Don't adopt a pet" style="max-width: 100%; border-radius: 8px;">
+          <div style="display: inline-block; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; max-width: 100%;">
+            <img src="./images/2026_04_08_managed_agents_decoupling/img_02.png" alt="에이전트 인터페이스 표준화 - Don't adopt a pet" style="max-width: 100%; border-radius: 8px; display: block;">
+          </div>
           <figcaption style="font-size: 13px; color: #666; margin-top: 8px;">표준화된 인터페이스가 구현 변화를 흡수합니다. 출처: Anthropic Engineering (2026)</figcaption>
         </figure>
 
         <p><strong>셋째, 세션을 외부에 저장합니다.</strong> 하네스가 죽어도 세션은 살아 있습니다. 새 하네스가 세션 ID로 이벤트 기록을 가져옵니다. 중단 지점부터 작업을 재개합니다(Martin et al., 2026). 원본 이벤트 로그가 그대로 남아, 맥락을 요약하거나 삭제할 필요가 없습니다.</p>
 
         <figure style="margin: 24px 0; text-align: center;">
-          <img src="./images/2026_04_08_managed_agents_decoupling/img_03.png" alt="하네스 장애 복구 아키텍처 - 세션 외부 저장" style="max-width: 100%; border-radius: 8px;">
+          <div style="display: inline-block; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; max-width: 100%;">
+            <img src="./images/2026_04_08_managed_agents_decoupling/img_03.png" alt="하네스 장애 복구 아키텍처 - 세션 외부 저장" style="max-width: 100%; border-radius: 8px; display: block;">
+          </div>
           <figcaption style="font-size: 13px; color: #666; margin-top: 8px;">하네스가 죽어도 세션은 외부에 살아 있습니다. 출처: Anthropic Engineering (2026)</figcaption>
         </figure>
 
         <p><strong>넷째, 인증 정보를 실행 환경 밖에 둡니다.</strong> 에이전트가 코드를 생성하는 샌드박스에 인증 정보를 넣지 않습니다. Git 토큰은 초기화 시에만 사용합니다. OAuth 토큰은 보안 저장소에서 프록시로 접근합니다(Martin et al., 2026). 에이전트가 생성한 코드에 인증 정보가 노출되면 보안 사고입니다.</p>
 
         <figure style="margin: 24px 0; text-align: center;">
-          <img src="./images/2026_04_08_managed_agents_decoupling/img_04.png" alt="getEvents() 인터페이스 - 외부 컨텍스트 저장소" style="max-width: 100%; border-radius: 8px;">
+          <div style="display: inline-block; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; max-width: 100%;">
+            <img src="./images/2026_04_08_managed_agents_decoupling/img_04.png" alt="getEvents() 인터페이스 - 외부 컨텍스트 저장소" style="max-width: 100%; border-radius: 8px; display: block;">
+          </div>
           <figcaption style="font-size: 13px; color: #666; margin-top: 8px;">getEvents() 인터페이스로 세션 로그를 조회합니다. 출처: Anthropic Engineering (2026)</figcaption>
         </figure>
 
@@ -220,7 +227,9 @@
         </div>
 
         <figure style="margin: 24px 0; text-align: center;">
-          <img src="./images/2026_04_08_managed_agents_decoupling/img_05.png" alt="하나의 추론 엔진이 다수의 실행 환경에 연결되는 아키텍처" style="max-width: 100%; border-radius: 8px;">
+          <div style="display: inline-block; background: #ffffff; border-radius: 16px; padding: 20px; box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff; max-width: 100%;">
+            <img src="./images/2026_04_08_managed_agents_decoupling/img_05.png" alt="하나의 추론 엔진이 다수의 실행 환경에 연결되는 아키텍처" style="max-width: 100%; border-radius: 8px; display: block;">
+          </div>
           <figcaption style="font-size: 13px; color: #666; margin-top: 8px;">하나의 추론 엔진이 여러 실행 환경을 도구로 연결합니다. 출처: Anthropic Engineering (2026)</figcaption>
         </figure>
       </section>
@@ -300,7 +309,7 @@
       </section>
 
       <!-- 참고자료 -->
-      <section class="post-section" id="section-references">
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
         <div class="post-section-label">참고자료</div>
         <ul class="references-list">
           <li>Martin, L., Cemaj, G., &amp; Cohen, M. (2026, 4월). <em>Scaling Managed Agents: Decoupling the brain from the hands</em> [Article]. Anthropic Engineering.
@@ -312,6 +321,110 @@
       <div style="margin-top: 4px;">
         <a href="https://www.anthropic.com/engineering/managed-agents" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
       </div>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+    <div style="font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+    <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+  </div>
+
+        <!-- 스레드 1: 패턴 A — 1:1 충돌형 (블랙 vs 레드) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">결론은 간단해요. p95 응답 시간 90% 감소, 세션 자동 재개. 에이전트 10개 이상 운영할 계획이면 지금 아키텍처 바꾸세요. 안 하면 나중에 더 큰 비용 치릅니다.</div>
+            </div>
+          </div>
+          <!-- 반박 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">잠깐요. p50 60%, p95 90% 감소는 Anthropic 자사 호스팅 서비스 기준이잖아요. 자체 인프라에서 같은 수치가 나온다는 근거가 있어요?</div>
+            </div>
+          </div>
+          <!-- 재반박 -->
+          <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">수치는 참고값이에요. 분리 설계 원칙 자체는 인프라 종류와 무관하게 적용됩니다. 검증은 자기 환경에서 하세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 패턴 B — 끼어들기형 (화이트 원댓글 + 네이비 동의심화 + 퍼플 전혀다른각도) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">세션, 하네스, 샌드박스 분리라는데, 개발팀한테 "지금 에이전트가 멈추면 작업 기록이 남느냐"고 물어봤더니 "아마도요"라는 답이 돌아왔어요. 뭣부터 해야 하는 거예요?</div>
+            </div>
+          </div>
+          <!-- 동의심화 댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">"아마도"면 외부 저장 안 된 겁니다. 확인 방법은 간단해요. 에이전트 프로세스 강제 종료 후 재시작해서 작업 이어지는지 보면 됩니다. 30분이면 판명 나요.</div>
+            </div>
+          </div>
+          <!-- 전혀다른각도 댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 이 글의 "반려동물 관리"라는 비유가 마음에 걸려요. 에이전트를 교체 가능한 부품처럼 여기는 문화가 팀에 어떤 영향을 줄지 생각해봤나요? 사람들이 AI에 애착을 갖는 게 꼭 나쁜 건 아닐 수도 있거든요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 패턴 C — 연쇄 반응형 (골드 질문→네이비 답변→레드 태클→블랙 마무리) -->
+        <div style="margin-bottom:32px;">
+          <!-- 질문 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">솔직히 저희 팀은 에이전트 2개 운영 중이에요. 이 분리 아키텍처 적용하면 오히려 관리 포인트가 늘어나지 않나요? 작은 팀에서 하네스·샌드박스·세션 세 개 따로 관리하는 게 현실적인지 모르겠어요.</div>
+            </div>
+          </div>
+          <!-- 답변 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">에이전트 1~2개면 단일 환경이 효율적이에요. 이 설계는 대규모 운영 전제입니다. 본문에도 나와 있어요. 지금 당장 적용할 이유 없습니다.</div>
+            </div>
+          </div>
+          <!-- 태클 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그런데 지금 인증 정보가 코드 실행 공간에 노출되는지는 규모와 상관없이 확인해야 하지 않나요? 보안 경계는 에이전트 개수 문제가 아니잖아요.</div>
+            </div>
+          </div>
+          <!-- 마무리 -->
+          <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
+            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:11px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 작은 팀도 보안 경계는 지금 점검하세요. 아키텍처 분리는 나중에 해도 되지만, 인증 정보 노출은 지금 당장 확인해야 합니다.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Social Share -->
       <div class="share-bar desktop-only">
@@ -342,6 +455,7 @@
             <li><a href="#section-risk" class="toc-link">리스크</a></li>
             <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
             <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
