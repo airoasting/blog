@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 | AI ROASTING</title>
+  <meta name="description" content="Anthropic의 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독으로 발굴했다. 40개 기업 컨소시엄 Project Glasswing, 1억 달러 투입. 경영 리더가 지금 알아야 할 것.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고">
+  <meta property="og:description" content="Anthropic의 Claude Mythos Preview가 수십 년간 놓쳤던 취약점을 단독 발굴. 40개 기업 Project Glasswing, 1억 달러 투입.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-07-claude-mythos-cybersecurity.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-07">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="사이버보안">
+  <meta property="article:tag" content="Anthropic">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="보안취약점">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고">
+  <meta name="twitter:description" content="Anthropic의 Claude Mythos Preview가 수십 년간 놓쳤던 취약점을 단독 발굴. 40개 기업 Project Glasswing, 1억 달러 투입.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고",
+    "datePublished": "2026-04-07",
+    "author": {
+      "@type": "Person",
+      "name": "AI ROASTING"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI ROASTING",
+      "url": "https://airoasting.github.io/blog/"
+    },
+    "description": "Anthropic의 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독으로 발굴했다. 40개 기업 컨소시엄 Project Glasswing, 1억 달러 투입. 경영 리더가 지금 알아야 할 것.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-07-claude-mythos-cybersecurity.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_07_claude-mythos-cybersecurity/thumbnail.png" alt="AI가 27년 묵은 버그를 혼자 찾았다 Claude Mythos의 경고 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026-04-07</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>The New York Times</span>
+            <span>Kevin Roose</span>
+            <span><a href="https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html" target="_blank" rel="noopener">Anthropic Claims Its New A.I. Model, Mythos, Is a Cybersecurity 'Reckoning' ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=사이버보안" class="post-tag">#사이버보안</a>
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=보안취약점" class="post-tag">#보안취약점</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고"
+        data-date="2026-04-07"
+        data-category="tech"
+        data-source="The New York Times (Kevin Roose)"
+        data-tags="사이버보안, Anthropic, AI에이전트, 보안취약점, Claude"
+        data-original-url="https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html"
+        data-roasting-quote="보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다. 당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다."
+        data-next-post=""></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>Anthropic이 공개 배포를 보류한 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독 발굴했습니다.</p>
+            <p data-summary>Anthropic은 Apple, Amazon, Microsoft, Google 등 40개 이상 기업과 Project Glasswing 컨소시엄을 구성했습니다. 1억 달러 상당의 크레딧을 투입해 핵심 인프라 방어에 활용합니다.</p>
+            <p data-summary>코딩에 뛰어난 AI는 코드의 결함도 찾아냅니다. 이 구조적 연결이 사이버보안 업계의 공수(攻守) 균형을 바꾸고 있습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다.<br>당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 블록 1: 훅 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>OpenBSD는 "해킹하기 어렵게 설계된" 운영체제입니다. 수많은 인터넷 라우터와 방화벽의 기반이 됩니다. 그 안에 27년간 아무도 몰랐던 버그가 있었습니다.</p>
+            <p>Claude Mythos Preview가 그걸 찾았습니다. 보안 전문가도 아니고, 500만 번 스캔한 자동화 도구도 아닙니다. Anthropic의 AI 모델 하나가 혼자 발굴했습니다.</p>
+            <p>당신 회사 서버에도 비슷한 나이의 코드가 있을 수 있습니다. Anthropic은 이 모델을 일반에 공개하지 않겠다고 했습니다. 대신 40개 이상의 빅테크와 인프라 기업에게만 접근을 허용합니다. 경영 리더라면 이 선택이 무엇을 의미하는지 알아야 합니다.</p>
+          </section>
+
+          <!-- 블록 2: 컨텍스트 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>Anthropic의 연간 매출은 2025년 90억 달러에서 2026년 300억 달러 이상으로 성장했습니다(출처: Anthropic 발표, 2026년 4월). 3배 넘는 증가입니다. 성장의 핵심 동인은 코딩 능력입니다. 그런데 코드를 잘 짜는 AI는 코드의 약점도 잘 찾습니다. 이 두 가지는 같은 능력의 양면입니다.</p>
+            <p>CrowdStrike CTO Elia Zaitsev는 이렇게 말했습니다. "몇 달 걸리던 일이 AI로 몇 분이면 됩니다." 공격자가 이 능력을 먼저 손에 넣으면, 방어자가 뒤따라가는 구조가 됩니다. Project Glasswing은 방어자가 먼저 움직이기 위한 시도입니다.</p>
+          </section>
+
+          <!-- 블록 3: 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+            <p>이번 발표의 핵심은 모델 성능이 아닙니다. 구조의 변화입니다. 세 가지로 정리합니다.</p>
+
+            <p><strong>첫째, AI 역량의 상한선이 보안 수준의 하한선이 됩니다.</strong> Claude Mythos Preview는 특별한 보안 훈련을 받지 않았습니다. 단지 전반적 능력이 향상되었을 뿐입니다. Anthropic 수석 과학자 Jared Kaplan은 "유사한 보안 능력이 다른 모델에도 곧 생길 것"이라고 밝혔습니다. 즉, 이 능력은 특정 회사의 전유물이 아닙니다. AI 모델이 발전할수록 모든 소프트웨어의 취약점 노출 위험도 함께 커집니다.</p>
+
+            <p><strong>둘째, "복잡해서 안전하다"는 논리가 무너집니다.</strong> 기존 보안 패러다임의 전제 중 하나는 "공격에 충분한 인력과 시간이 필요하다"는 것이었습니다. 라우터 펌웨어나 레거시 시스템이 수십 년간 문제없이 운용된 것도 이 가정 위에서입니다. Claude Mythos Preview는 500만 번 자동화 스캔이 놓친 버그를 찾아냈습니다. 복잡성이 방어막이 되지 않는 시대가 시작되었습니다.</p>
+
+            <p><strong>셋째, Project Glasswing은 공개 표준 경쟁의 출발점입니다.</strong> Anthropic은 Apple, Amazon, Microsoft, Google, Cisco, Broadcom, Linux Foundation을 한 테이블에 앉혔습니다. 경쟁사까지 포함한 이 구성은 이례적입니다. 비공개 모델을 공동 방어에 활용하는 이 구조는, AI 보안 능력의 산업 표준을 누가 주도하는가를 두고 벌이는 경쟁이기도 합니다.</p>
+          </section>
+
+          <!-- 블록 4: 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>자사 시스템의 레거시 코드 범위를 파악합니다.</strong><br>IT 담당자에게 "5년 이상 된 코드베이스가 어디에, 얼마나 있는가"를 물어보세요. Claude Mythos가 찾은 27년 된 버그처럼, 오래된 코드일수록 취약점 노출 위험이 높습니다. 파악에 1시간, 목록화에 하루면 충분합니다.</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>현재 사용 중인 보안 진단 주기를 확인합니다.</strong><br>연 1회 외부 취약점 점검만 의존하고 있다면, 그 사이 기간이 무방비 상태입니다. 담당자에게 "지속적 자동 스캔 도구를 쓰고 있는가"를 확인하세요. Snyk, Semgrep 같은 도구는 코드 변경 때마다 실시간 스캔합니다. 도입 결정까지 1주일이면 됩니다.</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>공급망 소프트웨어의 취약점 관리 정책을 점검합니다.</strong><br>자사 개발 코드보다 외부 오픈소스 라이브러리에서 취약점이 더 자주 발생합니다. OpenBSD처럼 "안전하다고 알려진" 오픈소스도 예외가 아닙니다. SBOM(소프트웨어 자재 명세서)은 회사가 사용하는 오픈소스 라이브러리 전체 목록입니다. 작성 여부를 확인하고, 없다면 도입을 검토할 시점입니다.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 블록 5: 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p>Anthropic의 발표를 그대로 받아들이기 전에 세 가지를 고려해야 합니다.</p>
+            <p>우선, 미공개 모델의 역량 주장은 독립 검증이 어렵습니다. Project Glasswing 참여 기업들이 모델에 접근하고 있지만, 외부 보안 연구자들의 공개 재현 사례는 아직 없습니다. CrowdStrike CTO의 발언은 긍정적이나, 고객사 입장이기도 합니다.</p>
+            <p>다음으로, 방어 도구는 공격 도구이기도 합니다. 취약점을 찾는 AI는, 그 취약점을 악용하는 데도 쓰일 수 있습니다. Anthropic이 공개 배포를 보류한 이유입니다. 하지만 동일한 역량이 "곧 다른 모델에도 생긴다"는 것이 Kaplan의 예측입니다. 비공개 전략이 얼마나 오래 유효할지는 미지수입니다.</p>
+            <p>마지막으로, Project Glasswing에 접근하지 못한 기업이 더 많습니다. 40개 파트너 외의 기업은 같은 도구를 방어에 쓸 수 없습니다. 기술 접근성 격차가 보안 격차로 직결되는 구조입니다.</p>
+          </section>
+
+          <!-- 블록 6: 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>코딩을 잘하는 AI는 버그도 잘 찾습니다. 그 능력이 누구 손에 먼저 들어가느냐가 기업 보안의 새로운 변수입니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>자사 소프트웨어의 오래된 코드베이스 범위와 현재 취약점 점검 주기를 이번 주 안에 파악합니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>개발팀에 Snyk, Semgrep 같은 지속적 코드 스캔 도구 도입 여부를 검토하도록 요청합니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 기반 사이버보안 위협을 올해 리스크 관리 의제에 공식 포함하고, CISO와 논의 일정을 잡습니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Roose, K. (2026, April 7). <em>Anthropic Claims Its New A.I. Model, Mythos, Is a Cybersecurity 'Reckoning'</em> [Article]. The New York Times.
+                <a href="https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html" target="_blank" rel="noopener">https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html</a></li>
+            </ul>
+          </section>
+
+          <!-- 원문 보기 -->
+          <a href="https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html" target="_blank" rel="noopener" class="hero-cta" style="margin-top:16px; display:inline-block; font-size:13px;">원문 보기 →</a>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: Anthropic 발표 팩트 vs 구조적 현실 (패턴 A) -->
+            <div style="margin-bottom:32px;">
+
+              <!-- 레드 원댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">'27년 버그, 500만 번 스캔이 못 찾은 것을 AI가 찾았다'는 숫자 출처가 Anthropic 보도자료잖아요. 독립 검증이 없어요. CrowdStrike가 호응했다고 해도, 그쪽도 Glasswing 파트너사예요. 이해관계자가 검증한 건 검증이 아니에요.</div>
+                </div>
+              </div>
+
+              <!-- 블랙 댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">팩트 검증은 연구자들이 해요. 경영 리더는 구조 변화를 봐야 해요. 마케팅이든 아니든, 코딩 잘하는 AI가 취약점도 잘 찾는다는 구조적 현실은 부정 못해요. 방향은 맞아요.</div>
+                </div>
+              </div>
+
+              <!-- 레드 대댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">구조가 맞더라도 '이 모델만' 할 수 있다는 프레이밍은 틀렸어요. Kaplan 본인이 '유사한 능력이 다른 모델에도 곧 생긴다'고 했잖아요. 그럼 지금 이 발표가 방어 목적인지 홍보 목적인지, 구분하고 결정해야죠.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 1 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 중소기업은 지금 뭘 해야 하나 (패턴 B) -->
+            <div style="margin-bottom:32px;">
+
+              <!-- 화이트 원댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">저희 같은 중소기업은 뭘 하면 돼요? Project Glasswing에 들어갈 수 있는 것도 아니고. 위에선 AI 보안 챙기라는데, 구체적으로 뭐부터 해야 할지 모르겠어요.</div>
+                </div>
+              </div>
+
+              <!-- 골드 댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">Glasswing 기다릴 필요 없어요. 저 Snyk 무료 플랜으로 시작했는데, 우리 레포에서 실제 취약점 3개 나왔어요. 설치에 20분 걸렸고요. 포스트에 나온 레거시 코드 목록 파악부터 하면 반은 된 거예요.</div>
+                </div>
+              </div>
+
+              <!-- 네이비 댓글 (끼어들기) -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">설치 20분, 결과 해석은 별개예요. CVSS 점수 9.0짜리 먼저 잡는 게 기본인데, 비개발자 팀장한테 리포트 넘기면 거기서 막혀요. 스캔 도구는 시작이고, 판단할 사람이 있어야 써먹어요.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 2 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 보안 격차와 지금 당장 (패턴 C) -->
+            <div style="margin-bottom:8px;">
+
+              <!-- 퍼플 원댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">이 기사에서 제일 무서운 부분이 '비공개 전략이 얼마나 오래 유효할지 모른다'는 거 아닌가요? 방어 AI는 40개 파트너사만 쓰는데, 공격 AI는 결국 누구나 쓰게 되는 시나리오잖아요. 보안 격차가 생존 격차가 되는 느낌이에요.</div>
+                </div>
+              </div>
+
+              <!-- 블랙 댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 그래서 지금 할 수 있는 거 해야 해요. SBOM 만들고, 스캔 도구 쓰고, 레거시 코드 목록 잡는 것. 이 세 개는 Glasswing 없어도 되고, 돈도 안 들어요.</div>
+                </div>
+              </div>
+
+              <!-- 네이비 대댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:28px; height:28px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">SBOM이 말처럼 쉽지 않아요. 레거시 시스템 있는 회사는 의존성 트리가 엉켜서 목록화 자체가 2~3주 프로젝트예요. '당장'이라는 말이 비개발자 임원한테는 오해를 줄 수 있어요.</div>
+                </div>
+              </div>
+
+              <!-- 골드 대대댓글 -->
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+                <div style="width:24px; height:24px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 그래서 언제 해요? 완벽한 SBOM보다 50% 완성된 게 없는 것보다 훨씬 낫더라고요. 저는 npm, pip 의존성 목록부터 시작했는데 거기서만 취약점 5개 나왔어요. 일단 시작하면 보여요.</div>
+                </div>
+              </div>
+
+            </div><!-- /스레드 3 -->
+
+          </section><!-- /라운드테이블 -->
+
+        </div><!-- /.post-body -->
+
+        <!-- Desktop TOC Sidebar -->
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /.post-body-layout -->
+
+      <!-- 원문 보기 -->
+      <a href="https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+
+      <!-- 소셜 공유 (데스크톱) -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-16-attention-residuals-kimi.html">
+          <div class="next-post-title">AI가 긴 문서를 읽는 방식이 바뀐다: Kimi k1.5의 잔차 주의 →</div>
+        </a>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- 모바일 공유 바 -->
+  <div class="mobile-share-bar">
+    <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+    <button class="share-btn" onclick="shareThreads()">Threads</button>
+    <button class="share-btn" onclick="copyLink()">링크 복사</button>
+  </div>
+
+  <!-- AI 마크다운 오버레이 -->
+  <div class="ai-md-overlay" id="aiMdOverlay" style="display:none;"></div>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-07-claude-mythos-cybersecurity.html';
+    const ROASTING_QUOTE = '보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다. 당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        const btn = document.getElementById('copyBtn');
+        if (btn) { btn.textContent = '복사됨'; setTimeout(() => { btn.textContent = '링크 복사'; }, 2000); }
+      });
+    }
+
+    // Reading progress
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const fill = document.querySelector('.reading-progress-fill');
+      if (fill) fill.style.width = progress + '%';
+    });
+
+    // Smooth scroll TOC
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+        const overlay = document.getElementById('tocMobileOverlay');
+        if (overlay) overlay.classList.remove('open');
+      });
+    });
+
+    // Mobile TOC toggle
+    const tocFab = document.getElementById('tocFab');
+    const tocOverlay = document.getElementById('tocMobileOverlay');
+    if (tocFab && tocOverlay) {
+      tocFab.addEventListener('click', () => tocOverlay.classList.toggle('open'));
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+</body>
+</html>

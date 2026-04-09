@@ -1,6 +1,18 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고",
+      "date": "2026-04-07",
+      "category": "tech",
+      "source": "The New York Times (Kevin Roose)",
+      "tags": ["사이버보안", "Anthropic", "AI에이전트", "보안취약점", "Claude"],
+      "slug": "2026-04-07-claude-mythos-cybersecurity",
+      "file": "tech/2026-04-07-claude-mythos-cybersecurity.html",
+      "summary": "Anthropic이 공개 배포를 보류한 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독 발굴했습니다. 40개 기업 Project Glasswing 컨소시엄에 1억 달러 투입. 코딩 능력과 취약점 탐지는 같은 능력의 양면입니다.",
+      "roasting_quote": "보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다. 당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다.",
+      "next_post": "2026-04-08-gallup-engagement-ai-paradox.html"
+    },
+    {
       "title": "갤럽 조사: 전 세계 직원 몰입도 2년 연속 하락",
       "date": "2026-04-08",
       "category": "survival",
@@ -10,7 +22,7 @@ window.POSTS_DATA = {
       "file": "survival/2026-04-08-gallup-engagement-ai-paradox.html",
       "summary": "갤럽 2026 보고서: 전 세계 직원 몰입도 2년 연속 하락해 20%. AI에 400억 달러 투자했지만 95% 기업이 수익 효과 0. 핵심 원인은 관리자 몰입도 붕괴입니다.",
       "roasting_quote": "400억 달러를 AI에 쏟았는데 이익이 0입니다. 직원 80%가 이미 떠났는데, 아직도 기술 탓을 하십니까?",
-      "next_post": "2026-04-03-ai-coder-automation-timeline.html"
+      "next_post": "2026-04-07-claude-mythos-cybersecurity.html"
     },
     {
       "title": "Gemma 4, 크기의 상식을 깨는 오픈 모델",

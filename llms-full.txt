@@ -5,6 +5,24 @@
 
 ---
 
+## AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고
+
+날짜: 2026-04-07
+카테고리: 기술
+소스: The New York Times (Kevin Roose)
+원문: https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html
+태그: 사이버보안, Anthropic, AI에이전트, 보안취약점, Claude
+
+### 3줄 요약
+Anthropic이 공개 배포를 보류한 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독 발굴했습니다.
+Anthropic은 Apple, Amazon, Microsoft, Google 등 40개 이상 기업과 Project Glasswing 컨소시엄을 구성했습니다. 1억 달러 상당의 크레딧을 투입해 핵심 인프라 방어에 활용합니다.
+코딩에 뛰어난 AI는 코드의 결함도 찾아냅니다. 이 구조적 연결이 사이버보안 업계의 공수(攻守) 균형을 바꾸고 있습니다.
+
+### Roasting
+보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다. 당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다.
+
+---
+
 ## 직원 80%가 이미 떠났다, AI 성과가 0인 이유
 
 날짜: 2026-04-08
