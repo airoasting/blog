@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/tech/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -330,6 +330,12 @@
   <url>
     <loc>https://airoasting.github.io/blog/research/2026-04-07-nature-ai-editorial-policy.html</loc>
     <lastmod>2026-04-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2026-04-08-managed-agents-decoupling.html</loc>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
