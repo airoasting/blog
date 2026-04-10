@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "title": "Gen AI 로봇이 서비스업을 다시 설계합니다",
+      "date": "2026-04-09",
+      "category": "company",
+      "source": "Harvard Business Review (Jochen Wirtz)",
+      "tags": ["HBR", "서비스로봇", "휴머노이드", "AX", "조직설계"],
+      "slug": "2026-04-09-gen-ai-robots-reshaping-services",
+      "file": "company/2026-04-09-gen-ai-robots-reshaping-services.html",
+      "summary": "HBR 2026년 5-6월호: Waymo 2,500대가 2,000만 회 이상의 운행을 처리했고 BMW 공장에선 휴머노이드 Figure 02가 11개월 만에 차량 3만 대 생산에 기여했습니다. HBR은 서비스 로봇 도입의 4가지 원칙을 제시합니다. 경영 리더의 질문은 '로봇을 어디에 둘 것인가'가 아니라 '사람을 어디로 옮길 것인가'입니다.",
+      "roasting_quote": "Waymo 2,500대가 매일 승객을 태웁니다. BMW 공장에선 휴머노이드 로봇이 11개월 만에 차 3만 대를 만들었습니다. 아직도 로봇이 \"공장 얘기\"라고 생각하십니까?",
+      "next_post": "2026-04-07-claude-mythos-cybersecurity.html"
+    },
+    {
       "title": "AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고",
       "date": "2026-04-07",
       "category": "tech",
