@@ -584,7 +584,7 @@
     [data-theme="dark"] .nlr-header { border-bottom-color: var(--border); background: var(--surface-container); }
     .nlr-ep-pill {
       display: inline-flex; align-items: center;
-      background: var(--text); color: var(--bg);
+      background: #7C3AED; color: #fff;
       font-size: 11px; font-weight: 800; letter-spacing: 0.06em;
       padding: 4px 11px; border-radius: 100px; flex-shrink: 0;
     }
@@ -598,17 +598,17 @@
     .nlr-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     .nlr-li-btn {
       display: inline-flex; align-items: center; gap: 6px;
-      background: transparent; border: 1.5px solid var(--border); color: var(--text-secondary);
+      background: transparent; border: 1.5px solid #7C3AED; color: #7C3AED;
       font-size: 12px; font-weight: 700; padding: 6px 14px;
       border-radius: 100px; text-decoration: none; white-space: nowrap;
-      transition: background 0.18s, color 0.18s; line-height: 1;
+      transition: background 0.18s, color 0.18s, border-color 0.18s; line-height: 1; z-index: 1;
     }
-    .nlr-li-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-    .nlr-li-btn:hover .nlr-li-icon { fill: var(--bg); }
-    .nlr-li-icon { width: 14px; height: 14px; fill: var(--text-secondary); transition: fill 0.18s; flex-shrink: 0; }
-    [data-theme="dark"] .nlr-li-btn { border-color: var(--border); color: var(--text-secondary); }
-    [data-theme="dark"] .nlr-li-btn:hover { background: var(--text); color: var(--bg); border-color: var(--text); }
-    [data-theme="dark"] .nlr-li-icon { fill: var(--text-secondary); }
+    .nlr-li-btn:hover { background: #7C3AED; color: #fff; border-color: #7C3AED; }
+    .nlr-li-btn:hover .nlr-li-icon { fill: #fff; }
+    .nlr-li-icon { width: 14px; height: 14px; fill: #7C3AED; transition: fill 0.18s; flex-shrink: 0; }
+    [data-theme="dark"] .nlr-li-btn { border-color: #9F67FF; color: #9F67FF; }
+    [data-theme="dark"] .nlr-li-btn:hover { background: #9F67FF; color: #fff; border-color: #9F67FF; }
+    [data-theme="dark"] .nlr-li-icon { fill: #9F67FF; }
     .nlr-close {
       width: 32px; height: 32px; border: none; background: transparent;
       border-radius: 50%; cursor: pointer;
@@ -632,25 +632,25 @@
     [data-theme="dark"] .nlr-meta-date { color: #666; }
     .nlr-hero-quote {
       position: relative;
-      background: var(--surface-container);
-      border-left: 3px solid var(--text); border-radius: 0 4px 4px 0;
+      background: rgba(124,58,237,0.06);
+      border-left: 3px solid #7C3AED; border-radius: 0 4px 4px 0;
       padding: 18px 22px; margin-bottom: 32px;
       font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.65; letter-spacing: -0.01em; word-break: keep-all;
     }
-    [data-theme="dark"] .nlr-hero-quote { background: var(--surface-container); color: var(--text); }
+    [data-theme="dark"] .nlr-hero-quote { background: rgba(124,58,237,0.1); color: var(--text); }
     .nlr-paragraph { font-size: 15px; line-height: 1.82; color: var(--text-secondary); margin-bottom: 20px; word-break: keep-all; }
     [data-theme="dark"] .nlr-paragraph { color: var(--text-secondary); }
     .nlr-news-header { display: flex; align-items: center; gap: 10px; margin: 36px 0 20px; padding-top: 32px; border-top: 1px solid var(--border); }
     [data-theme="dark"] .nlr-news-header { border-top-color: var(--border); }
-    .nlr-news-header-label { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary); background: var(--surface-container-high); padding: 4px 10px; border-radius: 100px; }
-    [data-theme="dark"] .nlr-news-header-label { color: var(--text-secondary); background: var(--surface-container-high); }
+    .nlr-news-header-label { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7C3AED; background: rgba(124,58,237,0.1); padding: 4px 10px; border-radius: 100px; }
+    [data-theme="dark"] .nlr-news-header-label { color: #9F67FF; background: rgba(124,58,237,0.18); }
     .nlr-news-header-line { flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
     .nlr-news-grid { display: flex; flex-direction: column; gap: 12px; }
-    .nlr-news-item { display: flex; gap: 14px; background: var(--surface-container); border: 1px solid var(--border-variant); border-radius: 12px; padding: 14px 16px; transition: background 0.18s, border-color 0.18s; }
-    .nlr-news-item:hover { background: var(--surface-container-high); border-color: var(--border); }
+    .nlr-news-item { display: flex; gap: 16px; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 18px 20px; transition: background 0.18s, border-color 0.18s, box-shadow 0.18s; }
+    .nlr-news-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.12); }
     [data-theme="dark"] .nlr-news-item { background: var(--surface-container); border-color: var(--border-variant); }
-    [data-theme="dark"] .nlr-news-item:hover { background: var(--surface-container-high); border-color: var(--border); }
-    .nlr-news-num { width: 24px; height: 24px; background: var(--text); color: var(--bg); font-size: 10px; font-weight: 800; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    [data-theme="dark"] .nlr-news-item:hover { background: var(--surface-container-high); border-color: var(--border); box-shadow: none; }
+    .nlr-news-num { width: 28px; height: 28px; background: #7C3AED; color: #fff; font-size: 11px; font-weight: 800; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
     .nlr-news-text { font-size: 14px; line-height: 1.72; color: var(--text-secondary); word-break: keep-all; }
     [data-theme="dark"] .nlr-news-text { color: var(--text-secondary); }
     .nlr-news-expanded { align-items: flex-start; }
@@ -1200,8 +1200,14 @@
     /* ── 뉴스레터 오픈 ── */
     function openReader(ep){
       epPill.textContent='#'+ep;
+      epPill.style.background='';
       hTitle.textContent='';
-      liBtn.style.display='none';
+      liBtn.querySelector('span').textContent='LinkedIn 원본 보기';
+      liBtn.querySelector('.nlr-li-icon').style.display='';
+      var nlData=window.NEWSLETTER_DATA||[];
+      var nlItem=nlData.find(function(d){ return String(d.ep)===String(ep); });
+      if(nlItem&&nlItem.url){ liBtn.href=nlItem.url; liBtn.style.display=''; }
+      else { liBtn.style.display='none'; }
       body.innerHTML='<div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;color:#999;">불러오는 중...</span></div>';
       backdrop.classList.add('open');
       document.body.style.overflow='hidden';
