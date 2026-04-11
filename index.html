@@ -161,9 +161,81 @@
     <div class="ai-md-content" id="aiMdContent"></div>
   </div>
 
+  <!-- 뉴스레터 리더 모달 -->
+  <style>
+    .nlr-backdrop{position:fixed;inset:0;z-index:2000;background:rgba(4,0,18,0.72);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);display:flex;align-items:center;justify-content:center;padding:24px 16px;opacity:0;pointer-events:none;transition:opacity 0.38s cubic-bezier(0.4,0,0.2,1);}
+    .nlr-backdrop.open{opacity:1;pointer-events:all;}
+    .nlr-window{position:relative;width:100%;max-width:720px;max-height:90vh;background:#fff;border-radius:24px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 0 0 1px rgba(124,58,237,0.15),0 32px 80px rgba(4,0,18,0.45),0 8px 24px rgba(4,0,18,0.2);transform:translateY(28px) scale(0.97);transition:transform 0.38s cubic-bezier(0.2,0,0,1);}
+    .nlr-backdrop.open .nlr-window{transform:translateY(0) scale(1);}
+    [data-theme="dark"] .nlr-window{background:#0d0a1a;box-shadow:0 0 0 1px rgba(124,58,237,0.25),0 32px 80px rgba(0,0,0,0.7),0 8px 24px rgba(0,0,0,0.4);}
+    .nlr-header{display:flex;align-items:center;gap:12px;padding:16px 20px 16px 24px;border-bottom:1px solid rgba(124,58,237,0.12);background:rgba(124,58,237,0.04);flex-shrink:0;}
+    [data-theme="dark"] .nlr-header{border-bottom-color:rgba(124,58,237,0.2);background:rgba(124,58,237,0.07);}
+    .nlr-ep-pill{display:inline-flex;align-items:center;background:#7C3AED;color:#fff;font-size:11px;font-weight:800;letter-spacing:0.06em;padding:4px 11px;border-radius:100px;flex-shrink:0;}
+    .nlr-header-title{flex:1;font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.4;word-break:keep-all;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+    [data-theme="dark"] .nlr-header-title{color:#e8e0ff;}
+    .nlr-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+    .nlr-li-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1.5px solid #7C3AED;color:#7C3AED;font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:background 0.18s,color 0.18s;line-height:1;}
+    .nlr-li-btn:hover{background:#7C3AED;color:#fff;}
+    [data-theme="dark"] .nlr-li-btn{border-color:#A78BFA;color:#A78BFA;}
+    [data-theme="dark"] .nlr-li-btn:hover{background:#7C3AED;color:#fff;border-color:#7C3AED;}
+    .nlr-li-icon{width:14px;height:14px;fill:#7C3AED;transition:fill 0.18s;flex-shrink:0;}
+    .nlr-li-btn:hover .nlr-li-icon{fill:#fff;}
+    [data-theme="dark"] .nlr-li-icon{fill:#A78BFA;}
+    .nlr-close{width:32px;height:32px;border:none;background:transparent;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#666;font-size:16px;line-height:1;transition:background 0.18s,color 0.18s;flex-shrink:0;}
+    .nlr-close:hover{background:rgba(124,58,237,0.1);color:#7C3AED;}
+    [data-theme="dark"] .nlr-close{color:#888;}
+    [data-theme="dark"] .nlr-close:hover{background:rgba(124,58,237,0.2);color:#C4B5FD;}
+    .nlr-body{flex:1;overflow-y:auto;padding:36px 40px 48px;scroll-behavior:smooth;}
+    .nlr-content-title{font-size:22px;font-weight:800;color:#0d0a1a;line-height:1.35;margin:0 0 10px;word-break:keep-all;}
+    [data-theme="dark"] .nlr-content-title{color:#f0eaff;}
+    .nlr-meta{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+    .nlr-meta-date{font-size:13px;color:#888;}
+    .nlr-hero-quote{background:rgba(124,58,237,0.06);border-left:3px solid #7C3AED;border-radius:0 12px 12px 0;padding:16px 20px;font-size:15px;font-weight:700;color:#3a1a7a;line-height:1.6;margin:20px 0;word-break:keep-all;}
+    [data-theme="dark"] .nlr-hero-quote{background:rgba(124,58,237,0.1);color:#C4B5FD;}
+    .nlr-paragraph{font-size:15px;line-height:1.85;color:#2a2a3a;margin:14px 0;word-break:keep-all;}
+    [data-theme="dark"] .nlr-paragraph{color:#ccc8e0;}
+    .nlr-news-header{display:flex;align-items:center;gap:12px;margin:32px 0 16px;}
+    .nlr-news-header-line{flex:1;height:1px;background:rgba(124,58,237,0.15);}
+    .nlr-news-header-label{font-size:11px;font-weight:800;letter-spacing:0.1em;color:#7C3AED;text-transform:uppercase;white-space:nowrap;}
+    .nlr-news-grid{display:flex;flex-direction:column;gap:12px;}
+    .nlr-news-item{display:flex;gap:14px;background:rgba(124,58,237,0.04);border:1px solid rgba(124,58,237,0.08);border-radius:12px;padding:16px 18px;align-items:flex-start;transition:background 0.18s;}
+    .nlr-news-item:hover{background:rgba(124,58,237,0.08);}
+    [data-theme="dark"] .nlr-news-item{background:rgba(124,58,237,0.06);border-color:rgba(124,58,237,0.14);}
+    .nlr-news-num{width:26px;height:26px;background:#7C3AED;color:#fff;font-size:12px;font-weight:800;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+    .nlr-news-text{flex:1;min-width:0;}
+    .nlr-news-body{font-size:14px;line-height:1.75;color:#3a3a4a;margin:0;}
+    .nlr-news-body+.nlr-news-body{margin-top:8px;}
+    [data-theme="dark"] .nlr-news-body{color:#b8b0d0;}
+    .nlr-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:16px;color:#999;}
+    .nlr-spinner{width:28px;height:28px;border:2.5px solid rgba(124,58,237,0.2);border-top-color:#7C3AED;border-radius:50%;animation:nlr-spin 0.7s linear infinite;}
+    @keyframes nlr-spin{to{transform:rotate(360deg);}}
+    @media(max-width:600px){.nlr-backdrop{padding:0;align-items:flex-end;}.nlr-window{border-radius:24px 24px 0 0;max-height:92vh;width:100%;}.nlr-body{padding:24px 20px 40px;}.nlr-li-btn span{display:none;}.nlr-li-btn{padding:6px 10px;}}
+  </style>
+  <div id="nlReader" class="nlr-backdrop" role="dialog" aria-modal="true" aria-label="뉴스레터 리더">
+    <div class="nlr-window">
+      <div class="nlr-header">
+        <span class="nlr-ep-pill" id="nlrEpPill">#—</span>
+        <div class="nlr-header-title" id="nlrHeaderTitle"></div>
+        <div class="nlr-actions">
+          <a class="nlr-li-btn" id="nlrLiBtn" href="#" target="_blank" rel="noopener">
+            <svg class="nlr-li-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn 원본 보기</span>
+          </a>
+          <button class="nlr-close" id="nlrClose" aria-label="닫기">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="nlr-body" id="nlrBody">
+        <div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;">불러오는 중...</span></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="./assets/js/posts-data.js"></script>
   <script src="./assets/js/newsletter-data.js"></script>
+  <script src="./newsletter/content/nl-content.js?v=20260411"></script>
   <script src="./assets/js/char-effect.js"></script>
   <script>if(window.CharEffect) window.CharEffect.initSectionTitle();</script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
@@ -180,7 +252,7 @@
     // Show latest 8
     var recent = data.slice(0, 8);
     grid.innerHTML = recent.map(function(item){
-      return '<a href="' + item.url + '" target="_blank" rel="noopener" class="nl-card">' +
+      return '<a href="javascript:void(0)" data-url="' + item.url + '" class="nl-card">' +
         '<img class="nl-thumb" src="./newsletter/images/' + item.img + '" alt="#' + item.ep + '" loading="lazy" onerror="this.classList.add(\'img-error\')">' +
         '<span class="nl-ep">#' + item.ep + '</span>' +
         '<div class="nl-body">' +
@@ -208,6 +280,121 @@
         }
       });
     });
+  })();
+  </script>
+  <script>
+  (function(){
+    var backdrop = document.getElementById('nlReader');
+    var epPill   = document.getElementById('nlrEpPill');
+    var hTitle   = document.getElementById('nlrHeaderTitle');
+    var liBtn    = document.getElementById('nlrLiBtn');
+    var closeBtn = document.getElementById('nlrClose');
+    var body     = document.getElementById('nlrBody');
+    if(!backdrop) return;
+
+    var EN_MONTHS = {January:1,February:2,March:3,April:4,May:5,June:6,July:7,August:8,September:9,October:10,November:11,December:12};
+    function formatDateKo(s){
+      var m = s.match(/^(\w+)\s+(\d+),?\s+(\d{4})/);
+      if(m && EN_MONTHS[m[1]]) return m[3]+'년 '+EN_MONTHS[m[1]]+'월 '+parseInt(m[2],10)+'일';
+      return s;
+    }
+    function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+    function inlineMd(s){ return escHtml(s).replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>'); }
+
+    function parseMd(raw){
+      var lines = raw.split('\n');
+      var epNum = '', titleText = '', date = '';
+      var parts = [];
+      var inNewsList = false, newsCount = 0;
+      var currentItem = null, allItems = [];
+
+      var firstLine = (lines[0]||'').trim().replace(/^#+\s*/,'');
+      var titleMatch = firstLine.match(/\[?AI 로스팅 #(\d+)\]?\s*(.*)/);
+      if(titleMatch){ epNum = titleMatch[1]; titleText = titleMatch[2].trim(); }
+      else { var mm = firstLine.match(/#(\d+)/); epNum = mm ? mm[1] : ''; var bi = firstLine.lastIndexOf(']'); titleText = bi>=0 ? firstLine.slice(bi+2).trim() : firstLine; }
+
+      function pushItem(){ if(currentItem){ allItems.push(currentItem); currentItem=null; } }
+      function renderItems(){
+        pushItem();
+        if(!allItems.length) return;
+        var h = '<div class="nlr-news-header"><span class="nlr-news-header-label">이번 주 AI 소식</span><div class="nlr-news-header-line"></div></div><div class="nlr-news-grid">';
+        allItems.forEach(function(item){
+          h += '<div class="nlr-news-item"><div class="nlr-news-num">'+item.num+'</div><div class="nlr-news-text">';
+          item.bodyLines.forEach(function(b){ h += '<p class="nlr-news-body">'+inlineMd(b)+'</p>'; });
+          h += '</div></div>';
+        });
+        h += '</div>';
+        parts.push(h);
+        allItems = [];
+      }
+
+      for(var i = 1; i < lines.length; i++){
+        var l = lines[i].trim();
+        if(!l || l==='---') continue;
+        if(/강정구|Jayden Kang|Head of AI Strategy|LINER|KakaoEnt|Published Author/.test(l)) continue;
+        if(!date && /^\*\*발행일\*\*:/.test(l)){ date = l.replace(/^\*\*발행일\*\*:\s*/,'').trim(); continue; }
+        if(!date && /^(January|February|March|April|May|June|July|August|September|October|November|December|\d{4}년)/.test(l)){ date = l; continue; }
+        if(l.charAt(0)==='"' && !inNewsList){ parts.push('<div class="nlr-hero-quote">\u201c'+inlineMd(l.replace(/^"|"$/g,'').trim())+'\u201d</div>'); continue; }
+        if(/^#{0,2}\s*(이번\s*주\s*AI\s*소식)/.test(l)){ renderItems(); inNewsList=true; continue; }
+        if(/^#{1,2}\s/.test(l)){ renderItems(); inNewsList=false; var sl=l.replace(/^#+\s*/,''); parts.push('<div class="nlr-news-header"><span class="nlr-news-header-label">'+escHtml(sl)+'</span><div class="nlr-news-header-line"></div></div>'); continue; }
+        var isItem = /^\*\*\d+[\/]?\*\*/.test(l) || /^\d+\/\s/.test(l);
+        if(isItem){ if(!inNewsList) inNewsList=true; pushItem(); newsCount++; var it=l.replace(/^\*\*\d+\/?\*\*\s*/,'').replace(/^\d+\/\s*/,''); currentItem={num:newsCount,bodyLines:[it]}; continue; }
+        if(/^\[.+\]$/.test(l) && !/^\[AI 로스팅/.test(l)) continue;
+        if(inNewsList && currentItem){ currentItem.bodyLines.push(l); continue; }
+        if(!inNewsList) parts.push('<p class="nlr-paragraph">'+inlineMd(l)+'</p>');
+      }
+      renderItems();
+
+      var html = '<h2 class="nlr-content-title">'+escHtml(titleText)+'</h2>';
+      if(date) html += '<div class="nlr-meta"><span class="nlr-meta-date">'+escHtml(formatDateKo(date))+'</span></div>';
+      html += parts.join('');
+      return { epNum: epNum, title: titleText, html: html };
+    }
+
+    function openReader(ep, linkedinUrl){
+      epPill.textContent = '#'+ep;
+      hTitle.textContent = '';
+      liBtn.href = linkedinUrl;
+      body.innerHTML = '<div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;color:#999;">불러오는 중...</span></div>';
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      function renderRaw(raw){
+        var parsed = parseMd(raw);
+        epPill.textContent = '#'+parsed.epNum;
+        hTitle.textContent = parsed.title;
+        body.innerHTML = parsed.html;
+        body.scrollTop = 0;
+      }
+      if(window.NL_CONTENT && window.NL_CONTENT[ep]){
+        renderRaw(window.NL_CONTENT[ep]);
+      } else {
+        var padded = ep < 10 ? '0'+ep : String(ep);
+        fetch('./newsletter/content/nl-'+padded+'.md')
+          .then(function(r){ if(!r.ok) throw new Error('fail'); return r.text(); })
+          .then(renderRaw)
+          .catch(function(){
+            body.innerHTML = '<p style="padding:32px;color:#999;font-size:14px;">콘텐츠를 불러올 수 없습니다.<br><a href="'+escHtml(linkedinUrl)+'" target="_blank" style="color:#7C3AED;">LinkedIn에서 직접 보기 →</a></p>';
+          });
+      }
+    }
+
+    function closeReader(){ backdrop.classList.remove('open'); document.body.style.overflow = ''; }
+
+    /* 홈 뉴스레터 그리드 클릭 위임 */
+    document.addEventListener('click', function(e){
+      var card = e.target.closest('#nlHomeGrid .nl-card');
+      if(!card) return;
+      e.preventDefault();
+      var epEl = card.querySelector('.nl-ep');
+      var epNum = epEl ? parseInt(epEl.textContent.replace('#',''),10) : 0;
+      var liUrl = card.getAttribute('data-url') || '#';
+      if(epNum) openReader(epNum, liUrl);
+    });
+
+    closeBtn.addEventListener('click', closeReader);
+    backdrop.addEventListener('click', function(e){ if(e.target===backdrop) closeReader(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeReader(); });
   })();
   </script>
   <script src="./assets/js/filter.js"></script>
