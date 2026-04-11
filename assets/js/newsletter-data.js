@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 43,
+    "title": "샘 알트만의 거짓말",
+    "date": "2026-04-11",
+    "img": "nl-43.png",
+    "url": ""
+  },
+  {
     "ep": 42,
     "title": "클로드 코드의 토큰 쿼터 이슈",
     "date": "2026-04-04",
