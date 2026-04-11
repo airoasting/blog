@@ -15,7 +15,7 @@
     survival: '생존'
   };
 
-  const PAGE_SIZE = 10;
+  const PAGE_SIZE = 9;
   const DECODE_CHARS = '01/\\|▓▒░█⌗';
   const DECODE_SPEED = 40;
 
@@ -56,6 +56,7 @@
 
   let currentView = 'human';
   let postsData = [];
+  let nlData = [];
   let displayedPosts = [];  // currently filtered/full list
   let visibleCount = 0;
   let isArchiveMode = false;
@@ -71,69 +72,57 @@
         data = await res.json();
       }
       postsData = data.posts || [];
+      nlData = (window.NEWSLETTER_DATA || []).map(nl => ({ ...nl, _type: 'newsletter' }));
 
       // Sort by date descending
       postsData.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       // Check for archive filter from URL
       const archiveParam = new URLSearchParams(window.location.search).get('archive');
-      let renderList = postsData;
+      let renderList;
 
       if (archiveParam && /^\d{4}-\d{2}$/.test(archiveParam)) {
         isArchiveMode = true;
-        renderList = postsData.filter(p => p.date.substring(0, 7) === archiveParam);
-
-        // Filter newsletter items for this month
-        const nlData = window.NEWSLETTER_DATA || [];
+        const postsFiltered = postsData.filter(p => p.date.substring(0, 7) === archiveParam);
         const nlFiltered = nlData.filter(nl => nl.date.substring(0, 7) === archiveParam);
-        const totalCount = renderList.length + nlFiltered.length;
+        renderList = [...postsFiltered, ...nlFiltered].sort((a, b) => new Date(b.date) - new Date(a.date));
 
         const parts = archiveParam.split('-');
         const archiveLabel = parts[0] + '년 ' + parseInt(parts[1], 10) + '월';
         const archiveHeader = document.getElementById('archiveHeader');
         if (archiveHeader) {
           archiveHeader.innerHTML =
-            '<h2 class="section-title">' + archiveLabel + ' <span class="post-count">총 ' + totalCount + '개</span></h2>' +
+            '<h2 class="section-title">' + archiveLabel + ' <span class="post-count">총 ' + renderList.length + '개</span></h2>' +
             '<p class="section-desc">아카이브</p>';
           archiveHeader.style.display = '';
         }
 
-        // Render filtered newsletter items in nlSection
+        // Hide nlSection (merged into post grid)
         const nlSection = document.getElementById('nlSection');
-        const nlGrid = document.getElementById('nlHomeGrid');
-        const nlCountEl = document.getElementById('nlCount');
-        if (nlSection && nlGrid) {
-          if (nlFiltered.length > 0) {
-            if (nlCountEl) nlCountEl.textContent = nlFiltered.length + '화';
-            nlGrid.innerHTML = nlFiltered.map(function(item) {
-              return '<a href="' + item.url + '" target="_blank" rel="noopener" class="nl-card">' +
-                '<img class="nl-thumb" src="./newsletter/images/' + item.img + '" alt="#' + item.ep + '" loading="lazy" onerror="this.classList.add(\'img-error\')">' +
-                '<span class="nl-ep">#' + item.ep + '</span>' +
-                '<div class="nl-body">' +
-                  '<span class="nl-title">' + item.title + '</span>' +
-                  '<span class="nl-date">' + item.date + '</span>' +
-                '</div>' +
-              '</a>';
-            }).join('');
-            nlSection.style.display = '';
-          } else {
-            nlSection.style.display = 'none';
-          }
-        }
+        if (nlSection) nlSection.style.display = 'none';
 
         // Hide filter bar and section header in archive mode
         const filterBar = document.getElementById('filterBar');
         if (filterBar) filterBar.style.display = 'none';
         const sectionHeader = document.querySelector('#posts > .section-header');
         if (sectionHeader) sectionHeader.style.display = 'none';
+      } else {
+        // Normal mode: merge posts + newsletters by date
+        renderList = [...postsData, ...nlData].sort((a, b) => new Date(b.date) - new Date(a.date));
+        // Hide standalone nlSection
+        const nlSection = document.getElementById('nlSection');
+        if (nlSection) nlSection.style.display = 'none';
       }
 
-      // Render featured hero with the most recent post
-      if (renderList.length > 0) {
-        renderFeaturedHero(renderList[0]);
+      // Render featured hero with the most recent item (including newsletter)
+      const firstPost = renderList[0] || null;
+      if (firstPost) {
+        renderFeaturedHero(firstPost);
       }
 
-      displayedPosts = renderList.slice(1); // exclude featured hero post
+      // Exclude hero from card grid
+      const heroIdx = firstPost ? renderList.indexOf(firstPost) : -1;
+      displayedPosts = renderList.filter((_, i) => i !== heroIdx);
       visibleCount = 0;
       updatePostCount(renderList.length);
       showMore();
@@ -186,8 +175,33 @@
     return './' + post.category + '/images/' + dirName + '/thumbnail.png';
   }
 
+  function renderNewsletterHero(nl) {
+    if (!featuredHero) return;
+    const d = new Date(nl.date + 'T00:00:00');
+    const dateStr = d.getFullYear() + '년 ' + (d.getMonth()+1) + '월 ' + d.getDate() + '일';
+    const imgPath = nl.img ? './newsletter/images/' + nl.img : '';
+    featuredHero.setAttribute('data-hero-cat', 'newsletter');
+    featuredHero.innerHTML = `
+      ${imgPath ? `<img class="hero-nl-bg" src="${imgPath}" alt="">` : ''}
+      <a href="javascript:void(0)" class="featured-hero-link" data-nl-ep="${nl.ep}" data-nl-url="${nl.url}">
+        <span class="featured-hero-accent"></span>
+        <div class="featured-hero-meta">
+          <span class="featured-hero-cat">뉴스레터</span>
+          <span class="featured-hero-meta-date">${dateStr}</span>
+        </div>
+        <div class="featured-hero-content">
+          <h2 class="featured-hero-title">#${nl.ep} ${nl.title.replace(/: /g, ':\u00a0')}</h2>
+          <span class="featured-hero-cta">읽기 →</span>
+        </div>
+      </a>
+    `;
+    featuredHero.style.display = 'block';
+    featuredHero.style.opacity = '1';
+  }
+
   function renderFeaturedHero(post) {
     if (!featuredHero) return;
+    if (post._type === 'newsletter') { renderNewsletterHero(post); return; }
     const catLabel = CATEGORY_LABELS[post.category] || post.category;
     const url = './' + post.category + '/' + post.slug + '.html';
     const sourceTag = post.source ? getSourceTag(post.source) : '';
@@ -249,6 +263,7 @@
   }
 
   function postToCard(post) {
+    if (post._type === 'newsletter') return nlToCard(post);
     const catLabel = CATEGORY_LABELS[post.category] || post.category;
     const url = './' + post.category + '/' + post.slug + '.html';
 
@@ -271,7 +286,32 @@
           </div>
           ${seriesBadge}
           <div class="card-title">${post.title.replace(/: /g, ':\u00a0')}</div>
-          ${post.source ? `<span class="card-source-tag">${getSourceTag(post.source)}</span>` : ''}
+          ${post.summary ? `<p class="card-summary">${post.summary}</p>` : ''}
+          <div class="card-footer">
+            ${post.roasting_quote ? `<p class="card-roasting">"${post.roasting_quote}"</p>` : ''}
+            ${post.source ? `<span class="card-source-tag">${getSourceTag(post.source)}</span>` : ''}
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
+  function nlToCard(nl) {
+    const d = new Date(nl.date + 'T00:00:00');
+    const dateStr = d.getFullYear() + '년 ' + (d.getMonth()+1) + '월 ' + d.getDate() + '일';
+    const imgPath = nl.img ? './newsletter/images/' + nl.img : '';
+    return `
+      <a href="javascript:void(0)" class="card card--newsletter" data-nl-ep="${nl.ep}" data-nl-url="${nl.url}">
+        ${imgPath ? `<img class="card-nl-bg" src="${imgPath}" alt="">` : ''}
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-badge card-badge--nl">뉴스레터</span>
+            <span class="card-date">${dateStr}</span>
+          </div>
+          <div class="card-title">#${nl.ep} ${nl.title}</div>
+          <div class="card-footer">
+            <span class="card-source-tag">AI 로스팅</span>
+          </div>
         </div>
       </a>
     `;
@@ -281,15 +321,32 @@
   window.addEventListener('postsFiltered', (e) => {
     if (isArchiveMode) return;
     const filtered = e.detail.posts || [];
-    if (filtered.length > 0) {
-      renderFeaturedHero(filtered[0]);
-      displayedPosts = filtered.slice(1); // exclude featured hero post
+    const category = e.detail.category || null;
+
+    // Merge with newsletters unless a specific category is active
+    let mergedList;
+    if (category === 'newsletter') {
+      mergedList = nlData;
+    } else if (category) {
+      mergedList = filtered; // category filter: posts only
+    } else {
+      mergedList = [...filtered, ...nlData].sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
+    const firstPost = mergedList.find(p => !p._type);
+    if (firstPost) {
+      renderFeaturedHero(firstPost);
+      const heroIdx = mergedList.indexOf(firstPost);
+      displayedPosts = mergedList.filter((_, i) => i !== heroIdx);
+    } else if (mergedList.length > 0) {
+      if (featuredHero) featuredHero.style.display = 'none';
+      displayedPosts = mergedList;
     } else {
       if (featuredHero) featuredHero.style.display = 'none';
       displayedPosts = [];
     }
     visibleCount = 0;
-    updatePostCount(filtered.length);
+    updatePostCount(mergedList.length);
     showMore();
 
     // When hero is showing a result but cards are empty, hide empty state

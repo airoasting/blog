@@ -63,11 +63,11 @@ window.POSTS_DATA = {
     {
       "title": "Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다",
       "date": "2026-04-07",
-      "category": "leader",
+      "category": "company",
       "source": "Substack (Raj Sarkar)",
       "tags": ["Anthropic", "OpenAI", "기업문화", "엔터프라이즈AI", "AI전략"],
       "slug": "2026-04-07-culture-that-ate-silicon-valley",
-      "file": "leader/2026-04-07-culture-that-ate-silicon-valley.html",
+      "file": "company/2026-04-07-culture-that-ate-silicon-valley.html",
       "summary": "Anthropic이 기업용 AI 직접 비교에서 OpenAI를 70% 승률로 앞섭니다. 연간 30억 달러 매출을 16개월 만에 달성했습니다. 신뢰가 속도를 이겼습니다. 기업 고객은 안전 연구에 투자한 벤더를 선택합니다.",
       "roasting_quote": "더 빨리 만들면 이긴다고 했습니다. OpenAI가 그 믿음을 실천했습니다. 기업 고객의 판단은 달랐습니다.",
       "next_post": "2026-04-06-sam-altman-superintelligence-new-deal.html"

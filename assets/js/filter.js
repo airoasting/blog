@@ -80,8 +80,10 @@
       btn.addEventListener('click', () => {
         const cat = btn.dataset.category;
         if (cat === 'newsletter') {
-          const nlSection = document.getElementById('nlSection');
-          if (nlSection) nlSection.scrollIntoView({ behavior: 'smooth' });
+          activeCategory = 'newsletter';
+          updateURL();
+          renderFilterBar();
+          applyFilter();
           return;
         }
         activeCategory = cat === 'all' ? null : cat;

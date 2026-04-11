@@ -651,15 +651,6 @@ img {
   align-items: stretch;
 }
 
-/* Bento rhythm — 1st card wide, every 7th tall */
-.card-grid .card:nth-child(1) { grid-column: span 2; }
-.card-grid .card:nth-child(7n) { grid-row: span 2; }
-
-/* span 2 카드 제목 확대 */
-.card-grid .card:nth-child(1) .card-title {
-  font-size: 24px;
-  font-weight: 800;
-}
 
 /* --- Card (Neumorphism) --- */
 .card {
@@ -760,6 +751,85 @@ img {
   letter-spacing: 0.3px;
 }
 
+.card-badge--nl {
+  color: var(--cat-newsletter, #7C3AED);
+}
+
+.card--newsletter {
+  background: #1a1230 !important;
+}
+
+.card--newsletter::before {
+  background: var(--cat-newsletter, #7C3AED) !important;
+}
+
+.card-nl-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0.35;
+}
+
+.card--newsletter .card-badge--nl {
+  color: #c4b5fd;
+}
+
+.card--newsletter .card-date {
+  color: #d1c4e9;
+}
+
+.card--newsletter .card-title {
+  color: #f5f3ff;
+}
+
+.card--newsletter .card-source-tag {
+  color: #c4b5fd;
+  border-color: rgba(196,181,253,0.3);
+}
+
+/* Newsletter hero */
+.featured-hero[data-hero-cat="newsletter"] {
+  background: #1a1230 !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-nl-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-link {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-cat,
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-meta-date {
+  color: #c4b5fd;
+}
+
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-title {
+  color: #f5f3ff;
+}
+
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-cta {
+  color: #c4b5fd;
+}
+
+.featured-hero[data-hero-cat="newsletter"] .featured-hero-accent {
+  background: var(--cat-newsletter, #7C3AED);
+}
+
 .card-date {
   font-family: var(--font-meta);
   font-size: 11px;
@@ -800,7 +870,38 @@ img {
 }
 
 .card-summary {
-  display: none;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 8px 0 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.card-roasting {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.7;
+  line-height: 1.5;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
 }
 
 /* --- Skeleton Card (Neumorphism) --- */
@@ -2467,8 +2568,6 @@ img {
     gap: 24px;
   }
 
-  /* Bento: disable tall span on tablet */
-  .card-grid .card:nth-child(7n) { grid-row: span 1; }
 
   .first-visit {
     grid-template-columns: 1fr;
@@ -2554,8 +2653,6 @@ img {
     gap: 16px;
   }
 
-  .card-grid .card:nth-child(1) { grid-column: span 1; }
-  .card-grid .card:nth-child(7n) { grid-row: span 1; }
 
   .card {
     padding: 16px 16px 14px;
@@ -2963,7 +3060,7 @@ img {
 /* --- Load More Button (Neumorphism) --- */
 .load-more-wrap {
   text-align: center;
-  padding: 32px 0;
+  padding: 32px 0 80px;
 }
 
 .load-more-btn {
@@ -3548,6 +3645,10 @@ img {
 [data-theme="dark"] .card-source-tag {
   background: rgba(255,255,255,0.08);
   color: var(--text-muted);
+}
+
+[data-theme="dark"] .card-roasting {
+  border-top-color: rgba(255,255,255,0.1);
 }
 
 /* Card/hero category tints — dark mode (uses --cat-*-surface tokens from :root[data-theme="dark"]) */

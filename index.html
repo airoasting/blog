@@ -242,48 +242,6 @@
   <script src="./assets/js/home.js"></script>
   <script>
   (function(){
-    var data = window.NEWSLETTER_DATA || [];
-    var grid = document.getElementById('nlHomeGrid');
-    var countEl = document.getElementById('nlCount');
-    if (!grid || !data.length) return;
-    // 아카이브 모드면 home.js가 필터링해서 렌더링하므로 여기서는 건너뜀
-    if (new URLSearchParams(window.location.search).get('archive')) return;
-    if (countEl) countEl.textContent = '총 ' + data.length + '화';
-    // Show latest 8
-    var recent = data.slice(0, 8);
-    grid.innerHTML = recent.map(function(item){
-      return '<a href="javascript:void(0)" data-url="' + item.url + '" class="nl-card">' +
-        '<img class="nl-thumb" src="./newsletter/images/' + item.img + '" alt="#' + item.ep + '" loading="lazy" onerror="this.classList.add(\'img-error\')">' +
-        '<span class="nl-ep">#' + item.ep + '</span>' +
-        '<div class="nl-body">' +
-          '<span class="nl-title">' + item.title + '</span>' +
-          '<span class="nl-date">' + item.date + '</span>' +
-        '</div>' +
-      '</a>';
-    }).join('');
-    // Scramble titles on load with stagger
-    grid.querySelectorAll('.nl-title').forEach(function(el, i){
-      setTimeout(function(){
-        if (window.CharEffect && !el._scrambling) {
-          el._scrambling = true;
-          window.CharEffect.scrambleWave(el, el.textContent, 14, 28);
-        }
-      }, i * 70);
-    });
-    // Hover scramble
-    grid.querySelectorAll('.nl-card').forEach(function(card){
-      card.addEventListener('mouseenter', function(){
-        var titleEl = card.querySelector('.nl-title');
-        if (titleEl && !titleEl._scrambling && window.CharEffect) {
-          titleEl._scrambling = true;
-          window.CharEffect.scrambleWave(titleEl, titleEl.textContent, 14, 28);
-        }
-      });
-    });
-  })();
-  </script>
-  <script>
-  (function(){
     var backdrop = document.getElementById('nlReader');
     var epPill   = document.getElementById('nlrEpPill');
     var hTitle   = document.getElementById('nlrHeaderTitle');
@@ -381,14 +339,15 @@
 
     function closeReader(){ backdrop.classList.remove('open'); document.body.style.overflow = ''; }
 
-    /* 홈 뉴스레터 그리드 클릭 위임 */
+    /* 뉴스레터 카드 클릭 위임 (포스트 그리드 + 홈 뉴스레터 그리드) */
     document.addEventListener('click', function(e){
-      var card = e.target.closest('#nlHomeGrid .nl-card');
+      var card = e.target.closest('.card[data-nl-ep], #nlHomeGrid .nl-card, .featured-hero-link[data-nl-ep]');
       if(!card) return;
       e.preventDefault();
-      var epEl = card.querySelector('.nl-ep');
-      var epNum = epEl ? parseInt(epEl.textContent.replace('#',''),10) : 0;
-      var liUrl = card.getAttribute('data-url') || '#';
+      var epNum = card.dataset.nlEp
+        ? parseInt(card.dataset.nlEp, 10)
+        : (card.querySelector('.nl-ep') ? parseInt(card.querySelector('.nl-ep').textContent.replace('#',''), 10) : 0);
+      var liUrl = card.dataset.nlUrl || card.getAttribute('data-url') || '#';
       if(epNum) openReader(epNum, liUrl);
     });
 
