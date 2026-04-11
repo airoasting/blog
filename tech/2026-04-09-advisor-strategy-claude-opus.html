@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비싼 AI가 조언하고, 저렴한 AI가 실행합니다 - AI ROASTING</title>
+  <meta name="description" content="Anthropic이 Opus를 조언자, Sonnet·Haiku를 실행자로 붙이는 Advisor Strategy를 공개했습니다. Haiku는 점수가 2배로 올랐고, Sonnet은 비용이 12% 줄었습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="비싼 AI가 조언하고, 저렴한 AI가 실행합니다">
+  <meta property="og:description" content="Anthropic이 Opus를 조언자, Sonnet·Haiku를 실행자로 붙이는 Advisor Strategy를 공개했습니다. Haiku는 점수가 2배로 올랐고, Sonnet은 비용이 12% 줄었습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-09-advisor-strategy-claude-opus.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_09_advisor-strategy-claude-opus/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-09">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="Anthropic">
+  <meta property="article:tag" content="ClaudeOpus">
+  <meta property="article:tag" content="AI비용">
+  <meta property="article:tag" content="에이전트설계">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="비싼 AI가 조언하고, 저렴한 AI가 실행합니다">
+  <meta name="twitter:description" content="Anthropic이 Opus를 조언자, Sonnet·Haiku를 실행자로 붙이는 Advisor Strategy를 공개했습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_09_advisor-strategy-claude-opus/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "비싼 AI가 조언하고, 저렴한 AI가 실행합니다",
+    "datePublished": "2026-04-09",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Anthropic이 Opus를 조언자, Sonnet·Haiku를 실행자로 붙이는 Advisor Strategy를 공개했습니다. Haiku는 점수가 2배로 올랐고, Sonnet은 비용이 12% 줄었습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-09-advisor-strategy-claude-opus.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_09_advisor-strategy-claude-opus/thumbnail.png" alt="비싼 AI가 조언하고, 저렴한 AI가 실행합니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 9일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">비싼 AI가 조언하고, 저렴한 AI가 실행합니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic</span>
+            <span>Claude Team</span>
+            <span><a href="https://claude.com/blog/the-advisor-strategy" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+            <a href="../index.html?tag=ClaudeOpus" class="post-tag">#ClaudeOpus</a>
+            <a href="../index.html?tag=AI비용" class="post-tag">#AI비용</a>
+            <a href="../index.html?tag=에이전트설계" class="post-tag">#에이전트설계</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="비싼 AI가 조언하고, 저렴한 AI가 실행합니다"
+        data-date="2026-04-09"
+        data-category="tech"
+        data-source="Anthropic (Claude Team)"
+        data-tags="Anthropic, ClaudeOpus, AI비용, 에이전트설계"
+        data-original-url="https://claude.com/blog/the-advisor-strategy"
+        data-roasting-quote="비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다."
+        data-next-post="2026-04-08-managed-agents-decoupling.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Anthropic이 Advisor Strategy를 공개했습니다. Opus가 조언자, Sonnet과 Haiku가 실행자 역할을 맡는 설계입니다.</p>
+        <p data-summary>Haiku는 BrowseComp 점수가 19.7%에서 41.2%로 2배 이상 뛰었습니다.</p>
+        <p data-summary>Sonnet은 SWE-bench 점수가 오르면서 작업당 비용은 11.9% 줄었습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">비싼 Opus를 모든 요청에 쓰고 있습니까?<br>Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 에이전트를 쓸수록 토큰 비용이 불어납니다. 가장 똑똑한 모델을 모든 단계에 쓰기 때문입니다. Anthropic이 다른 방법을 공개했습니다. 값싼 모델이 실행하고, 비싼 모델은 어려운 결정에만 끼어듭니다. 비용은 내려가는데 점수는 오릅니다(Anthropic, 2026).</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>기업이 AI 에이전트를 운영에 투입하고 있습니다. 문제는 비용입니다. 프론티어 모델은 토큰당 단가가 높습니다. 값싼 모델만 쓰면 복잡한 작업에서 실패합니다. Anthropic이 Advisor Strategy로 두 문제의 해법을 제시했습니다(Anthropic, 2026).</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <figure style="margin:0 0 28px; text-align:center;">
+          <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/69d7a8216b96ea826922fcf4_e9f8286d.png" alt="Advisor Strategy 구조 다이어그램" style="max-width:100%; border-radius:8px;">
+          <figcaption style="font-size:12px; color:#888; margin-top:8px;">실행자-조언자 구조: Sonnet/Haiku가 실행하고, 어려운 결정에서만 Opus가 개입합니다. (출처: Anthropic, 2026)</figcaption>
+        </figure>
+
+        <p><strong>첫째, 역할을 실행자와 조언자로 나눕니다.</strong> Sonnet이나 Haiku가 실행자가 돼 작업을 처음부터 끝까지 돌립니다. 도구를 호출하고, 결과를 읽고, 다음 행동을 고릅니다. 여기서 말하는 "어려운 결정"은 단순 오류가 아닙니다. 경로 선택, 아키텍처 판단, 전략 변경 같은 구조적 결정입니다. 실행자가 막히면 Opus를 조언자로 호출합니다(Anthropic, 2026). 조언자는 맥락을 읽고 지시나 중단 신호만 돌려줍니다.</p>
+
+        <p><strong>둘째, 조언자는 도구를 직접 쓰지 않습니다.</strong> Opus는 실행자의 맥락을 공유받되 자기가 도구를 호출하거나 사용자에게 응답하지 않습니다. 전체 주고받기는 단일 <code>/v1/messages</code> API 요청 안에서 끝납니다(Anthropic, 2026). 실행자와 조언자의 토큰 사용량은 각자 단가로 따로 청구됩니다. 개발팀은 <code>max_uses</code> 값으로 조언자 호출 횟수에 상한을 둘 수 있습니다.</p>
+
+        <p><strong>셋째, 작은 모델일수록 이득이 큽니다.</strong> BrowseComp 벤치마크에서 Haiku 단독 점수는 19.7%였습니다. 같은 Haiku에 Opus 조언자를 붙이자 41.2%로 2배 이상 올랐습니다(Anthropic, 2026). Sonnet 단독과 비교하면 점수는 29% 낮지만, 작업당 비용은 Sonnet의 15% 수준입니다. 작은 모델이 놓치던 판단을 조언자가 보완하는 구조입니다.</p>
+
+        <p><strong>넷째, 큰 모델끼리 붙여도 비용이 내려갑니다.</strong> SWE-bench Multilingual에서 Sonnet에 Opus 조언자를 붙인 결과 점수가 2.7%p 올랐습니다. 동시에 에이전트 작업당 비용은 11.9% 줄었습니다(Anthropic, 2026). Opus를 내내 돌리지 않고 필요할 때만 쓰기 때문입니다. Sonnet 혼자 헤매던 반복 시도가 줄어, 토큰 총합이 감소합니다.</p>
+
+        <figure style="margin:0 0 28px; text-align:center;">
+          <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/69d908f43209164823554d52_Claude-Blog-Advisor-tool-SWE-bench-Multilingual.png" alt="SWE-bench Multilingual 성능 비교 차트" style="max-width:100%; border-radius:8px;">
+          <figcaption style="font-size:12px; color:#888; margin-top:8px;">SWE-bench Multilingual: Sonnet+Opus 조언자 조합이 단독 대비 점수 상승 + 비용 11.9% 절감. (출처: Anthropic, 2026)</figcaption>
+        </figure>
+
+        <!-- 비교 테이블 -->
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>조합</th>
+                <th style="text-align:center">벤치마크</th>
+                <th style="text-align:center">단독 점수</th>
+                <th style="text-align:center">조언자 추가</th>
+                <th style="text-align:center">비용 변화</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sonnet + Opus 조언자</td>
+                <td style="text-align:center">SWE-bench Multilingual</td>
+                <td style="text-align:center">기준</td>
+                <td class="cell-hl" style="text-align:center">+2.7%p</td>
+                <td class="cell-hl" style="text-align:center">-11.9%</td>
+              </tr>
+              <tr>
+                <td>Haiku + Opus 조언자</td>
+                <td style="text-align:center">BrowseComp</td>
+                <td style="text-align:center">19.7%</td>
+                <td class="cell-hl" style="text-align:center">41.2%</td>
+                <td style="text-align:center">Sonnet 대비 -85%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Anthropic (2026), The Advisor Strategy.</p>
+        </div>
+
+        <figure style="margin:0 0 28px; text-align:center;">
+          <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/69d7a8216b96ea826922fcfa_880b9e59.png" alt="BrowseComp 및 Terminal-Bench 결과" style="max-width:100%; border-radius:8px;">
+          <figcaption style="font-size:12px; color:#888; margin-top:8px;">BrowseComp·Terminal-Bench: Haiku+Opus 조언자 조합의 성능 비교. (출처: Anthropic, 2026)</figcaption>
+        </figure>
+
+        <figure style="margin:0 0 28px; text-align:center;">
+          <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/69d7a8216b96ea826922fcfd_ca657f5f.png" alt="비용-성능 비교 차트" style="max-width:100%; border-radius:8px;">
+          <figcaption style="font-size:12px; color:#888; margin-top:8px;">비용-성능 비교: Haiku+Opus 조언자는 Sonnet 단독 대비 85% 저렴하면서 유사 성능. (출처: Anthropic, 2026)</figcaption>
+        </figure>
+
+        <p><strong>다섯째, 코드 한 줄로 기존 시스템에 붙습니다.</strong> Anthropic은 <code>advisor_20260301</code>이라는 서버 도구로 제공합니다. 기존 API 호출에 도구 선언을 한 줄 추가하면 됩니다(Anthropic, 2026). 별도 오케스트레이션이 필요 없고, 웹 검색이나 코드 실행 같은 기존 도구와 함께 쓸 수 있습니다. 복잡도는 그대로, 지능만 얹는 구조입니다.</p>
+
+        <p>Bolt의 CEO Eric Simmons는 이 설계를 이렇게 평가했습니다. "복잡한 작업에서는 더 나은 아키텍처 결정을 내리고, 단순한 작업에서는 추가 부담이 전혀 없습니다. 계획과 작업 경로가 완전히 다릅니다"(Anthropic, 2026). 실사용 피드백도 벤치마크 수치와 같은 방향입니다.</p>
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>이 설계를 무시하면 두 가지 비용이 쌓입니다. 첫째, 점수 공백입니다. Haiku 단독 운영은 BrowseComp에서 21.5%p를 그대로 버립니다(Anthropic, 2026). 둘째, 토큰 낭비입니다. Sonnet 단독 운영은 같은 작업에 11.9% 더 많은 비용을 씁니다(Anthropic, 2026). 에이전트 요청이 월 10만 건이면 비용 차이가 빠르게 누적됩니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>적용 우선순위를 3가지 기준으로 선별합니다.</strong><br>사내 에이전트 워크플로를 세 기준으로 점수화합니다. (1) 실패율이 높은가? (2) 월간 토큰 단가가 상위에 있는가? (3) 비슷한 판단이 반복되는가? 세 기준에서 모두 높은 워크플로가 Advisor Strategy 1순위입니다. (30분, 개발팀 미팅 1건)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>Sonnet 또는 Haiku 실행자에 Opus 조언자를 시범 적용합니다.</strong><br>가장 실패율이 높은 에이전트 워크플로 1개를 고릅니다. 기존 API 호출에 <code>advisor_20260301</code> 도구를 추가하고, <code>max_uses</code>를 3으로 설정합니다. 한 주 동안 점수와 작업당 비용을 기존 버전과 비교합니다. (개발 2시간 + 1주 관찰)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>Haiku 전환 가능성을 검토합니다.</strong><br>지금 Sonnet으로 돌리는 단순 반복 작업을 찾습니다. Haiku와 Opus 조언자 조합으로 같은 작업을 재실행해 정확도와 비용을 비교합니다. Claude에 "다음 워크플로를 Haiku 실행자 + Opus 조언자로 전환할 수 있는지 평가해줘"라고 요청합니다. (1시간, 사내 후보 업무 3개 선정)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>벤치마크는 Anthropic 자사 측정치입니다.</strong> SWE-bench Multilingual과 BrowseComp 수치는 Anthropic 블로그 발표 기준입니다. 실제 서비스 환경에서는 결과가 달라질 수 있습니다. 반드시 자사 데이터로 재측정해야 합니다.</p>
+
+        <p><strong>조언자 호출이 잦으면 절감 효과가 사라집니다.</strong> 실행자가 작은 결정마다 Opus를 부르면 토큰 비용이 오히려 늘어납니다. <code>max_uses</code> 상한 없이 운영하면 예산이 터질 수 있습니다.</p>
+
+        <p><strong>단순 작업에서는 이득이 적습니다.</strong> 실행자가 혼자 풀 수 있는 작업에는 조언자가 호출되지 않습니다. 쉬운 워크플로에 적용하면 구조만 복잡해지고 개선이 미미합니다.</p>
+
+        <p><strong>모델 조합에 특화된 평가가 필요합니다.</strong> 성능이 오르는 조합과 그렇지 않은 조합이 있습니다. 한 번의 테스트로 전체 워크플로에 적용하기에는 근거가 부족합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>값싼 모델에 비싼 모델을 조언자로 붙이면 점수는 오르고 비용은 내려갑니다. 지능을 모든 곳에 뿌리지 말고, 어려운 결정 위에만 얹으십시오.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>에이전트 토큰 비용을 30% 이상 줄일 수 있는 구조다. 다음 분기 비용 계획에 반영하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>모델 계층을 실행자와 조언자로 분리하는 설계를 기본 원칙으로 채택하라. 실패율 높은 워크플로부터 시범 적용하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>현재 Sonnet 단독으로 돌리는 작업 중 Haiku 전환 가능 항목을 선별하라. 벤치마크는 자사 데이터로 재측정하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <p><strong>실행자(Executor)</strong>: 작업을 처음부터 끝까지 돌리는 모델입니다. 도구를 호출하고 결과를 해석합니다.</p>
+        <p><strong>조언자(Advisor)</strong>: 실행자가 어려운 결정에 막혔을 때만 호출되는 모델입니다. 도구를 직접 쓰지 않고 지시만 돌려줍니다.</p>
+        <p><strong>SWE-bench Multilingual</strong>: 여러 언어의 실제 오픈소스 저장소 이슈를 AI가 해결하는 코딩 벤치마크입니다.</p>
+        <p><strong>BrowseComp</strong>: 웹 브라우징 기반 질문에 답하는 에이전트 능력을 측정하는 벤치마크입니다.</p>
+        <p><strong>max_uses</strong>: API 요청 1건에서 조언자가 호출될 수 있는 최대 횟수입니다. 비용 상한선을 정하는 장치입니다.</p>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Anthropic. (2026, 4월). <em>The Advisor Strategy: Give Agents an Intelligence Boost</em> [Article]. Claude Blog.
+            <a href="https://claude.com/blog/the-advisor-strategy" target="_blank" rel="noopener">https://claude.com/blog/the-advisor-strategy</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://claude.com/blog/the-advisor-strategy" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 패턴 A — 1:1 충돌형 (블랙 vs 레드) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">Haiku에 Opus 조언자 붙이니 BrowseComp 점수가 19.7%에서 41.2%로 올랐어요. Sonnet+Opus는 작업당 비용이 12% 줄었고요. 이건 무조건 도입입니다. 안 하면 경쟁사한테 그대로 밀립니다.</div>
+            </div>
+          </div>
+          <!-- 반박 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">잠깐요. SWE-bench랑 BrowseComp 수치 전부 Anthropic 자사 측정이잖아요. 자기 서비스 팔려고 낸 블로그 숫자를 그대로 믿고 들어간다고요? 본문 리스크 섹션에도 "자사 데이터로 재측정하라"고 나와 있어요.</div>
+            </div>
+          </div>
+          <!-- 재반박 -->
+          <div style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">수치는 자사 환경에서 다시 재면 됩니다. 제가 보는 건 구조예요. "어려운 결정에만 비싼 모델 쓴다" 이 원칙은 어느 벤치마크로 측정해도 안 무너져요. 재측정은 도입한 다음에 하는 겁니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 패턴 C — 연쇄 반응형 (화이트 질문 → 네이비 답변 → 골드 태클) -->
+        <div style="margin-bottom:32px;">
+          <!-- 질문 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희도 에이전트 돌려요. 근데 "코드 한 줄 추가"라는 말이 진짜인지 모르겠어요. 개발팀한테 뭐라고 말해야 해요? 개발자 아닌 제가 이해할 수 있게 설명해주실 분 있나요?</div>
+            </div>
+          </div>
+          <!-- 답변 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">기존 API 호출에 advisor_20260301 도구를 tools 배열에 추가하고, max_uses를 3으로 박으면 끝이에요. 진짜 몇 줄이에요. 대신 max_uses 없이 돌리면 Opus가 계속 호출돼서 비용이 거꾸로 늘어요. 상한선은 꼭 걸어두세요.</div>
+            </div>
+          </div>
+          <!-- 태클 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 저희는 에이전트 2개밖에 없어요. 본문에도 "단순 작업에서는 이득이 적다"고 솔직하게 적어놨던데요. 소규모 팀이 굳이 구조 바꿀 이유가 있나요? 실패율 높은 워크플로 없으면 그냥 Sonnet으로 돌리는 게 낫지 않아요?</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 패턴 B — 끼어들기형 (퍼플 원댓글 + 네이비 동의심화 + 블랙 다른각도) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">"실행자와 조언자"라는 프레임이 재밌어요. 사람 조직이랑 똑같잖아요. 시니어는 어려운 결정할 때만 끼어들고, 주니어가 끝까지 돌리는 구조요. AI 설계가 결국 사람 조직론을 닮아가는 느낌이에요.</div>
+            </div>
+          </div>
+          <!-- 동의심화 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">기술적으로도 딱 그래요. 본문에 "조언자는 도구를 직접 쓰지 않는다"고 명시돼 있어요. 시니어가 "내가 할게"가 아니라 "이렇게 해봐"만 하는 거랑 완전히 같아요. 이 규칙이 없으면 Opus가 다 해버려서 비용이 터져요.</div>
+            </div>
+          </div>
+          <!-- 다른 각도 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">은유에 빠지지 마세요. 경영 리더가 볼 숫자는 하나예요. Haiku+Opus 조합이 Sonnet 단독보다 비용이 85% 저렴합니다. 조직론 얘기보다 이 한 줄이 다음 분기 예산 회의에서 훨씬 쓸모 있어요.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-08-managed-agents-decoupling.html">
+          <div class="next-post-title">AI 에이전트, 뇌와 손을 분리해야 확장됩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-09-advisor-strategy-claude-opus.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-09-advisor-strategy-claude-opus.html';
+    const ROASTING_QUOTE = '비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+</body>
+</html>

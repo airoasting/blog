@@ -58,14 +58,14 @@
 ## 워크플로우
 
 ```
-소스 URL → /create-post → (자동) /edit-post → (자동) /publish-post → /update-insights → /persona-comment
+소스 URL → /create-post → (자동) /publish-post → /update-insights → /persona-comment
 ```
 
-- `/create-post`가 초고 생성 후 edit-post → publish-post를 **자동 순차 실행** (중간 승인 없음)
-- edit-post: 퇴고 검수, 검출 문제 자동 수정
+- `/create-post`가 초고 + Navy 평가(3라운드) 완료 후 publish-post를 **자동 순차 실행** (중간 승인 없음)
 - publish-post: 최종 게이트 검수 + 자동 수정 + 인덱스 등록 + `node sync-posts.js` + 발행
 - update-insights: publish-post 완료 후 **자동 실행** (중간 승인 없음)
 - persona-comment: update-insights 완료 후 **자동 실행** (중간 승인 없음)
+- edit-post는 파이프라인에서 제외됨. 기존 포스트 수동 퇴고 시에만 사용
 - 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`, `/persona-comment <파일>`
 
 ## 스킬

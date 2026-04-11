@@ -143,50 +143,55 @@
       <!-- 컨텍스트 -->
       <section class="post-section" id="section-context">
         <div class="post-section-label">왜 지금 중요한가</div>
-        <p>LLM과 LBM(대규모 행동 모델)이 결합되면서 로봇이 물리 환경에서 학습합니다. 기존 산업용 로봇은 고정된 작업선에서만 움직였습니다. 지금 로봇은 도로, 로비, 병실처럼 변하는 환경에 대응합니다. 한국 서비스업도 인력난에 직면했고, 2026년부터 도입 검토 기업이 빠르게 늘고 있습니다. 기술과 노동 수요 곡선이 교차하는 지점에 서 있습니다.</p>
+        <p>LLM과 LBM(대규모 행동 모델, 로봇에게 수백만 번의 동작 실험을 통해 물리적 행동을 가르치는 AI)이 결합되면서 로봇이 물리 환경에서 학습합니다. 기존 산업용 로봇은 고정된 작업선에서만 움직였습니다. 지금 로봇은 도로, 로비, 병실처럼 변하는 환경에 대응합니다. 한국 서비스업도 인력난에 직면했고, 2026년부터 도입 검토 기업이 빠르게 늘고 있습니다. 기술과 노동 수요 곡선이 교차하는 지점에 서 있습니다.</p>
       </section>
 
       <!-- 핵심 인사이트 -->
       <section class="post-section" id="section-insight">
         <div class="post-section-label">핵심 인사이트</div>
 
-        <p><strong>첫째, 로봇은 대체재가 아니라 보완재입니다.</strong> Waymo는 운전자를 해고한 것이 아니라 "운행 가능 총 거리"를 늘렸습니다. BMW Spartanburg 공장의 Figure 02는 용접 로봇이 놓치는 얇은 판재 하나만 집습니다. 사람이 하기 싫거나 어려운 일을 덜어내는 역할입니다. HBR은 로봇을 "서비스 강화자(service enhancer)"로 정의합니다.</p>
+        <p><strong>첫째, 로봇은 대체재가 아니라 보완재입니다.</strong> Waymo는 운전자를 해고한 것이 아니라 "운행 가능 총 거리"를 늘렸습니다. BMW Spartanburg 공장의 Figure 02는 용접 로봇이 놓치는 얇은 판재 하나만 집습니다. Robin은 간호사의 구두 명령으로 움직입니다. "517호에 20분, 그다음 516호에 10분"처럼 말하면 자율 이동합니다. HBR은 로봇을 "서비스 강화자(service enhancer)"로 정의합니다.</p>
 
         <p>사례별 성과를 표로 정리하면 다음과 같습니다. 공장형 자동화와 서비스형 배치의 성격 차이가 드러납니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #1A4A7A;">사례</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #1A4A7A;">투입 영역</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #1A4A7A;">주요 성과</th>
+              <tr>
+                <th>사례</th>
+                <th>투입 영역</th>
+                <th>주요 성과</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Waymo</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">도심 승객 운송</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #1A4A7A;">2,500대, 2,000만+ 운행</td>
+                <td>Waymo</td>
+                <td>도심 승객 운송</td>
+                <td class="cell-hl">2,500대, 2,000만+ 운행</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">BMW Figure 02</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">차체 판재 처리</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #1A4A7A;">11개월, 차량 3만 대 생산</td>
+                <td>BMW Figure 02</td>
+                <td>차체 판재 처리</td>
+                <td class="cell-hl">11개월, 차량 3만 대 생산</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Robin</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">소아 병동 정서 지원</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #1A4A7A;">30개 병동·요양원 배치</td>
+                <td>Robin</td>
+                <td>소아 병동 정서 지원</td>
+                <td class="cell-hl">30개 병동·요양원 배치</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Henn na Hotel</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">호텔 체크인</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">억양·예외 처리 실패</td>
+                <td>Henn na Hotel</td>
+                <td>호텔 체크인</td>
+                <td>억양·예외 처리 실패, 인력 추가 투입</td>
+              </tr>
+              <tr>
+                <td>BMW Figure 03</td>
+                <td>가정·서비스 환경</td>
+                <td>설거지·세탁·배달·공놀이 시연, 양산 준비 중</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Wirtz (2026), HBR May-June issue.</p>
+          <p class="post-table-source">출처: Wirtz (2026), HBR May-June issue.</p>
         </div>
 
         <p><strong>둘째, 고객 수용성이 성능보다 먼저입니다.</strong> 일본 헨나호텔은 로봇 직원 과잉으로 화제가 됐습니다. 그러나 투숙객 억양과 예외 요청을 처리하지 못해 결국 인력을 늘렸습니다. 반면 Robin은 30개 소아 병동에서 아이들의 감정 반응을 먼저 학습시켰습니다. 로봇은 "완벽한 대답"이 아니라 "자연스러운 대화"로 설계해야 합니다. 현장 리허설 없이 배포하면 비용은 회수되지 않습니다.</p>
@@ -197,7 +202,9 @@
 
         <p><strong>넷째, 비용보다 경험 부족이 더 큰 장벽입니다.</strong> 맥킨지 조사에서 71%가 높은 초기 비용을 도입 장애물로 꼽았습니다. 61%는 자동화 경험 부족을 꼽았습니다(출처: McKinsey via HBR 2026). 가격이 내려가도 조직이 준비되지 않으면 도입은 지연됩니다. 첫 파일럿에 참여할 팀과 담당자를 미리 지정해야 합니다. 경험은 만들어야 쌓입니다.</p>
 
-        <p><strong>다섯째, 거버넌스가 신뢰의 바닥입니다.</strong> HBR은 다섯 가지 필수 요건을 제시합니다. 위험 분석, 구역 설정, 비상 정지, 개인정보 프로토콜, 사고 대응 합의입니다. 신뢰 없이 로봇은 매장이나 병실에 들어올 수 없습니다. 거버넌스는 도입 비용이 아니라 도입 속도를 결정합니다. 법무·IT·HR이 미리 함께 움직여야 합니다.</p>
+        <p><strong>다섯째, 현장 직원이 이제 로봇을 직접 가르칩니다.</strong> 과거에는 로봇 동작을 수정하려면 IT 부서에 요청하거나 벤더를 불러야 했습니다. LLM 기반 무코드(no-code) 학습 도구는 그 과정을 현장에서 끝냅니다. 직원이 잘못된 동작을 말로 설명하고 더 나은 방법을 시연하면 로봇이 학습합니다. 함대 학습(fleet learning)은 한 로봇의 경험을 같은 기종 전체에 공유합니다. 개선 주기가 몇 달에서 며칠로 줄어듭니다.</p>
+
+        <p><strong>여섯째, 거버넌스가 신뢰의 바닥입니다.</strong> HBR은 다섯 가지 필수 요건을 제시합니다. 위험 분석, 구역 설정, 비상 정지, 개인정보 프로토콜, 사고 대응 합의입니다. 신뢰 없이 로봇은 매장이나 병실에 들어올 수 없습니다. 거버넌스는 도입 비용이 아니라 도입 속도를 결정합니다. 법무·IT·HR이 미리 함께 움직여야 합니다.</p>
       </section>
 
       <!-- 내일 당장 -->
@@ -291,7 +298,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">5년 뒤요? 그 숫자 어디서 나왔어요. HBR은 '운행 거리가 늘었다'고만 써놨잖아요. 대체인지 확장인지 구분 없이 말하면 그냥 공포 장사예요.</div>
@@ -299,7 +306,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">BMW 공장 11개월에 3만 대. 거기에 사람 더 뽑았다는 기사 본 적 있어요? 확장이든 대체든 일자리 총량은 움직입니다.</div>
@@ -322,7 +329,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">저 서빙 로봇 6개월 써봤어요. 만석일 때는 경로 꼬여서 오히려 홀 직원이 더 고생했고, 새벽에 돌리니까 그제야 값어치 했어요. 첫 후보 고를 땐 '사람이랑 겹치는 시간'부터 빼세요.</div>
@@ -330,7 +337,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">숫자부터 말할게요. 서빙 로봇 대당 600만원, 휴머노이드는 1억대예요. 야간 8시간 기준 손익분기 18개월이고, 이거 없이 회의 들어가면 가격 질문에서 끝납니다.</div>
@@ -353,7 +360,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">비유는 좋은데요, 법무팀 없는 중소기업에서 그 '안전벨트'는 누가 설계해요? HBR 사례는 다 대기업입니다. 5페이지 초안을 2주 만에 받는다니, 저는 잘 안 믿겨요.</div>
@@ -361,7 +368,7 @@
           </div>
 
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">그게 진짜 현실이에요. 저희 회사 법무 2명, IT 3명, HR 1명인데 초안 2주면 본업이 다 멈춥니다. 그래서 결국 '그냥 외부에 맡기자'로 끝나요.</div>

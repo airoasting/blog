@@ -150,46 +150,46 @@
         <p><strong>첫째, Arena AI 리더보드에서 31B 모델이 오픈 모델 세계 3위입니다.</strong> 26B MoE 모델은 6위를 차지했습니다. Gemma 3 대비 수학은 20.8%에서 89.2%로 올랐습니다. 코딩은 29.1%에서 80.0%로 상승했습니다. 과학은 42.4%에서 84.3%입니다(Google DeepMind, 2026).</p>
 
         <!-- 표: Gemma 3 vs Gemma 4 핵심 벤치마크 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">평가 영역</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Gemma 3</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Gemma 4 31B</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">향상</th>
+              <tr>
+                <th>평가 영역</th>
+                <th style="text-align:center">Gemma 3</th>
+                <th style="text-align:center">Gemma 4 31B</th>
+                <th style="text-align:center">향상</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">수학 (AIME 2026)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">20.8%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">89.2%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+68.4p</td>
+                <td>수학 (AIME 2026)</td>
+                <td style="text-align:center">20.8%</td>
+                <td class="cell-hl" style="text-align:center">89.2%</td>
+                <td class="cell-hl" style="text-align:center">+68.4p</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">코딩 (LiveCodeBench)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">29.1%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">80.0%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+50.9p</td>
+                <td>코딩 (LiveCodeBench)</td>
+                <td style="text-align:center">29.1%</td>
+                <td class="cell-hl" style="text-align:center">80.0%</td>
+                <td class="cell-hl" style="text-align:center">+50.9p</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">과학 (GPQA Diamond)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">42.4%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">84.3%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">+41.9p</td>
+                <td>과학 (GPQA Diamond)</td>
+                <td style="text-align:center">42.4%</td>
+                <td class="cell-hl" style="text-align:center">84.3%</td>
+                <td class="cell-hl" style="text-align:center">+41.9p</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">다국어 (MMLU)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">85.2%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td>다국어 (MMLU)</td>
+                <td style="text-align:center">-</td>
+                <td class="cell-hl" style="text-align:center">85.2%</td>
+                <td style="text-align:center">-</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">에이전트 (τ2-bench)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">86.4%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">-</td>
+                <td>에이전트 (τ2-bench)</td>
+                <td style="text-align:center">-</td>
+                <td class="cell-hl" style="text-align:center">86.4%</td>
+                <td style="text-align:center">-</td>
               </tr>
             </tbody>
           </table>
@@ -315,7 +315,7 @@
           </div>
           <!-- 댓글 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">26B 비양자화 전체 모델은 80GB GPU가 필요해요. 소비자 GPU면 양자화 필수고, 그러면 품질 저하가 발생합니다. 한나절이면 오히려 빠른 거예요.</div>
@@ -323,7 +323,7 @@
           </div>
           <!-- 대댓글 -->
           <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">맞아요, 저는 클라우드 GPU 빌렸는데도 그랬으니까요. 그래도 API 비용이랑 비교하면 장기적으로 이득 아닐까요?</div>
@@ -345,7 +345,7 @@
           </div>
           <!-- 동의심화 댓글 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">순서가 있어요. Google AI Studio에서 15분 테스트 먼저. 기존 API랑 품질 비교해서 숫자 확보하세요. 그게 보고 근거입니다.</div>
@@ -353,7 +353,7 @@
           </div>
           <!-- 전혀다른각도 댓글 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">잠깐, AIME·LiveCodeBench 수치는 구글이 직접 측정한 거예요. 독립 기관 재검증이 나오기 전에 수치 그대로 경영진한테 가져가면 나중에 곤란해질 수 있습니다.</div>
@@ -375,7 +375,7 @@
           </div>
           <!-- 답변 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">E2B·E4B 모델 기준이에요. 2B, 4B 파라미터만 활성화합니다. 퀄컴·미디어텍 칩 최적화가 되어 있어서 스마트폰에서도 돌아요. 설치 파일 배포 방식으로 현장 적용 가능합니다.</div>
@@ -383,7 +383,7 @@
           </div>
           <!-- 태클 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">근데 오픈 모델 보안은 기업 책임이잖아요. 현장 기기에 모델 가중치가 배포되면 접근 제어를 직접 구축해야 해요. 그게 되는 조직이 얼마나 될까요?</div>
@@ -391,7 +391,7 @@
           </div>
           <!-- 마무리 -->
           <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">맞는 지적이에요. 보안 요건 점검 없이 현장 배포하면 안 됩니다. 임원 결정 포인트에 나온 것처럼 도입 전에 보안·규제 요건 먼저 확인하세요.</div>

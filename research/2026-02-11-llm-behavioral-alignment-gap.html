@@ -27,50 +27,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <style>
-    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
-    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
-    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #1A1A1A; white-space: nowrap; }
-    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
-    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
-    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
-    .styled-table tbody tr:hover { background: #eef3ff; }
-    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
-    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
-    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
-    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
-    .styled-table .warning-row td { background: #fff5f5 !important; color: #c0392b !important; }
-    .styled-table .warning-row td:first-child { color: #c0392b !important; }
-    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
-
-    .stat-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
-    .stat-card { flex: 1; min-width: 130px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-align: center; }
-    .stat-card .stat-num { font-size: 2rem; font-weight: 800; color: #1A1A1A; line-height: 1.1; }
-    .stat-card .stat-label { font-size: 0.75rem; color: #888; margin-top: 4px; }
-
-    .methodology-box { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
-    .methodology-box strong { color: #92400e; }
-
-    /* Dark mode */
-    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
-    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
-    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
-    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
-    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
-    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .warning-row td { background: #2a1010 !important; color: #f87171 !important; }
-    [data-theme="dark"] .styled-table .warning-row td:first-child { color: #f87171 !important; }
-    [data-theme="dark"] .table-caption { color: #666; }
-    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
-    [data-theme="dark"] .stat-card .stat-label { color: #777; }
-    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
-    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
-  </style>
+  
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -218,8 +175,8 @@
               <strong>SJT(상황 판단 테스트)란:</strong> 심리학에서 쓰는 평가 방식입니다. "당신은 공감적인 사람입니까?"라고 직접 묻는 대신, 현실적인 상황을 제시하고 행동 선택을 관찰합니다. 자기 보고보다 실제 성향을 정확히 측정합니다.
             </div>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>단계</th><th>처리 방법</th><th>규모</th></tr>
                 </thead>
@@ -231,7 +188,7 @@
                   <tr class="highlight-row"><td>행동 평가</td><td>시나리오당 10명의 인간 평가자 + 25개 LLM</td><td>23,000건</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Taubenfeld 외 (2026), Table 1.</div>
+              <div class="post-table-source">출처: Taubenfeld 외 (2026), Table 1.</div>
             </div>
           </section>
 
@@ -241,8 +198,8 @@
 
             <p><strong>첫째, AI의 자기 보고는 실제 행동을 예측하지 못합니다.</strong> 모든 모델이 충동성 자기 보고에서 7점 중 4점 미만을 기록했습니다. "나는 충동적이지 않다"고 답한 것입니다. 그런데 실제 시나리오에서는 50% 이상 충동적 행동을 선택했습니다. 자기 보고 점수 차이가 큰 모델 간에도 실제 행동 차이는 작았습니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr>
                     <th>측정 방식</th>
@@ -263,7 +220,7 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Taubenfeld 외 (2026), Figure 6.</div>
+              <div class="post-table-source">출처: Taubenfeld 외 (2026), Figure 6.</div>
             </div>
 
             <p><strong>둘째, 인간이 동의하는 상황에서도 AI는 반대로 행동합니다.</strong> 인간 평가자 80% 이상이 동일한 행동을 선택한 시나리오가 있습니다. 프론티어 모델도 이 중 15~20%에서 인간 합의의 반대편을 선택했습니다. 소규모 모델은 그 비율이 훨씬 높았습니다.</p>
@@ -273,8 +230,8 @@
 
             <p><strong>넷째, 모델 간에 일관된 편향 패턴이 있습니다.</strong> 연구팀은 4가지 성향(공감, 감정 조절, 자기주장, 충동성)을 측정했습니다. 모든 모델이 비슷한 방향으로 인간과 달랐습니다. 예를 들어, 인간이 감정 절제를 택하는 상황에서 AI는 감정 표현을 권했습니다. 인간이 직업적 냉정함을 선호하는 상황에서 AI는 "진정성 있는 취약함"을 추천했습니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr>
                     <th>상황</th>
@@ -304,11 +261,11 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Taubenfeld 외 (2026), 사례 분석 결과.</div>
+              <div class="post-table-source">출처: Taubenfeld 외 (2026), 사례 분석 결과.</div>
             </div>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr>
                     <th>측정 성향</th>
@@ -323,7 +280,7 @@
                   <tr><td>충동성</td><td>41%</td><td>자기 보고와 행동 간 최대 괴리</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Taubenfeld 외 (2026), Table 2.</div>
+              <div class="post-table-source">출처: Taubenfeld 외 (2026), Table 2.</div>
             </div>
           </section>
 
@@ -420,7 +377,7 @@
               </div>
 
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">그래도 "AI가 충동적이냐 물으면 아니라고 하고 실제로는 50% 이상 충동적으로 행동한다"는 결과는 실무에서 느끼는 감각과 딱 맞아요. 팀원들한테 AI를 신뢰하라고 설득하기가 왜 그렇게 어려운지 설명이 되더라고요.</div>
@@ -428,7 +385,7 @@
               </div>
 
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">"감각과 맞다"는 게 근거가 되면 확증 편향이에요. 방향성으로 참고하는 건 좋은데, 이걸 임원 보고서에 그대로 쓰면 안 됩니다. 재현 연구가 나올 때까지 기다려야 해요.</div>
@@ -451,7 +408,7 @@
               </div>
 
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">행동 테스트 설계 현실을 말씀드리면, 시나리오 10개 만들고 팀원 5명 비교하는 데 반나절이에요. 분기 1회면 연 2일 투자입니다. 고객 응대에 AI 쓰는 팀이면 충분히 할 수 있는 비용이에요.</div>
@@ -459,7 +416,7 @@
               </div>
 
               <div class="rt-comment rt-reply rt-reply-2" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">저 해봤는데요. 시나리오를 뭘로 쓸지가 진짜 어려워요. 특히 "화난 고객이 환불 요구할 때" 같은 걸 만들려면 우리 실제 케이스를 꺼내야 하는데, 그러면 팀원들이 불편해하더라고요. 설계부터 논의가 필요해요.</div>
@@ -467,7 +424,7 @@
               </div>
 
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">불편하면 더 해야 합니다. 실제 케이스가 불편한 이유가 AI 행동이 기대와 달랐기 때문 아닌가요. 그게 정확히 검증해야 할 지점이에요.</div>
@@ -490,7 +447,7 @@
               </div>
 
               <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:48px; margin-top:16px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">공급업체한테 "우리 업무 맥락 시나리오로 테스트해 달라"고 요청하는 것부터 시작해요. 못 한다고 하면 그게 이미 신호예요. 마케팅 말고 행동을 보여달라는 거잖아요.</div>

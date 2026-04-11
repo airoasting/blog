@@ -29,50 +29,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <style>
-    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
-    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
-    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #C43500; white-space: nowrap; }
-    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
-    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
-    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
-    .styled-table tbody tr:hover { background: #eef3ff; }
-    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
-    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
-    .styled-table .highlight-row td { background: #fff5f0 !important; font-weight: 700; color: #C43500 !important; }
-    .styled-table .highlight-row td:first-child { color: #C43500 !important; }
-    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
-
-    .framework-box { background: #fff8f5; border-left: 4px solid #C43500; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
-    .framework-box strong { color: #C43500; }
-
-    /* Dark mode overrides */
-    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
-    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
-    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
-    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
-    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
-    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
-    [data-theme="dark"] .table-caption { color: #666; }
-    [data-theme="dark"] .chart-wrap { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .chart-title { color: #999; }
-    [data-theme="dark"] .chart-note { color: #666; }
-    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
-    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
-    [data-theme="dark"] .framework-box { background: #1a1a2e; border-left-color: #4a90ff; }
-    [data-theme="dark"] .framework-box strong { color: #6ba3ff; }
-    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
-    [data-theme="dark"] .stat-card .stat-label { color: #777; }
-    [data-theme="dark"] .stat-card.negative .stat-num { color: #f87171; }
-    [data-theme="dark"] .stat-card.positive .stat-num { color: #4ade80; }
-    [data-theme="dark"] .quote-block { background: #2a2210; border-left-color: #f59e0b; color: #e0c090; }
-    [data-theme="dark"] .quote-block .quote-source { color: #d4a050; }
-  </style>
+  
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -215,8 +172,8 @@
             <div class="post-section-label">핵심 인사이트 2: 5가지 문명적 위험</div>
             <p><strong>아모데이는 강력한 AI의 위험을 5가지로 분류합니다.</strong> 각각의 위험은 독립적이면서도 서로를 증폭시킵니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>위험 범주</th><th>핵심 내용</th><th>구체적 사례</th></tr>
                 </thead>
@@ -248,7 +205,7 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: 다리오 아모데이, "The Adolescence of Technology" (2026)</div>
+              <div class="post-table-source">출처: 다리오 아모데이, "The Adolescence of Technology" (2026)</div>
             </div>
 
             <p><strong>생물무기 경고가 가장 구체적입니다.</strong> 지금은 생물무기를 만들려면 전문 지식과 실험 역량이 둘 다 있어야 합니다. 악의와 능력을 동시에 가진 사람은 극히 드뭅니다. 강력한 AI는 이 장벽을 허뭅니다. 이공계 기초 지식만 있으면, AI가 기술 지원처럼 과정 전체를 안내할 수 있습니다.</p>
@@ -367,14 +324,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">데이터 검증은 당연히 필요합니다. 그런데 Anthropic이 ASL-3 보호 조치를 실제로 도입했다는 건 팩트입니다. AI를 만드는 당사자가 자기 제품에 안전 등급을 매기고 있다는 것 자체가 신호입니다. 의심은 하되, 무시는 금물입니다.</div>
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">ASL-3 도입은 맞습니다. 다만 AI 안전이 Anthropic의 핵심 사업 포지셔닝이라는 것도 함께 봐야 합니다. 위험 강조가 경쟁 우위 전략과 맞닿아 있습니다. 이 두 가지를 분리해서 읽어야 합니다.</div>
@@ -394,14 +351,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">저는 "이 AI가 오작동하면 최악의 상황은?"을 한 문장으로 정리해서 임원한테 보여줬어요. 추상적인 위험 설명보다 구체적인 시나리오 한 줄이 예산 승인 훨씬 빠르더라고요. 아모데이 5가지 위험 표 그대로 쓰면 설득 자료로 쓸 만합니다.</div>
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">"데이터센터 안의 천재 국가"라는 비유가 팀원들한테 설명할 때 정말 효과적이더라고요. 기술 용어보다 이런 언어가 위험의 규모를 훨씬 직관적으로 전달해요.</div>
@@ -421,14 +378,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">이 에세이는 신학 강연이 아니라 CEO 에세이이지만, 기술 구현 세부 사항은 빠져 있습니다. Constitutional AI라는 접근법이 Anthropic에서 연구되고 있지만, 에세이 수준에서는 방향 제시에 가깝습니다.</div>
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">경영자는 구현 방법보다 원칙을 가져가면 됩니다. "종말론에 빠지지 않는다, 불확실성을 인정한다, 외과적으로 개입한다." 이 3원칙은 AI 도입 계획에 그대로 쓸 수 있습니다.</div>

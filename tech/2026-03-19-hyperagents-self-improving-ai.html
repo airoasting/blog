@@ -170,34 +170,34 @@
         </div>
 
         <!-- 인포그래픽: 4개 영역 성능 비교 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">평가 영역</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">초기 성능</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">DGM-H 성능</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">기준선</th>
+              <tr>
+                <th>평가 영역</th>
+                <th style="text-align:center">초기 성능</th>
+                <th style="text-align:center">DGM-H 성능</th>
+                <th style="text-align:center">기준선</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">코딩 (Polyglot 테스트)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.084</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.267</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">DGM 0.307</td>
+                <td>코딩 (Polyglot 테스트)</td>
+                <td style="text-align:center">0.084</td>
+                <td class="cell-hl" style="text-align:center">0.267</td>
+                <td style="text-align:center">DGM 0.307</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">논문 심사 (테스트)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.710</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">AI-Sci-v2 0.630</td>
+                <td>논문 심사 (테스트)</td>
+                <td style="text-align:center">0.0</td>
+                <td class="cell-hl" style="text-align:center">0.710</td>
+                <td style="text-align:center">AI-Sci-v2 0.630</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">로봇 보상 설계 (테스트)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.060</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.372</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">기본 보상 0.348</td>
+                <td>로봇 보상 설계 (테스트)</td>
+                <td style="text-align:center">0.060</td>
+                <td class="cell-hl" style="text-align:center">0.372</td>
+                <td style="text-align:center">기본 보상 0.348</td>
               </tr>
               <tr>
                 <td style="padding: 10px;">수학 채점 (IMO, 전이)</td>
@@ -207,7 +207,7 @@
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Zhang et al. (2026), arXiv:2603.19461, Table/Figure 2-4. 5회 실행 중앙값 기준.</p>
+          <p class="post-table-source">출처: Zhang et al. (2026), arXiv:2603.19461, Table/Figure 2-4. 5회 실행 중앙값 기준.</p>
         </div>
 
         <p><strong>셋째, 한 영역에서 배운 개선법이 다른 영역에서도 통합니다.</strong> 연구진은 논문 심사와 로봇 제어에서 훈련한 하이퍼에이전트를 수학 채점에 넣었습니다. 50회 반복 후 개선 지표(imp@50)가 0.630이었습니다(Zhang et al., 2026). 초기 에이전트와 기존 DGM 전이 에이전트는 모두 0.0이었습니다. 하이퍼에이전트만 다른 영역에서도 성능을 올렸습니다.</p>
@@ -219,30 +219,30 @@
         </div>
 
         <!-- 전이 학습 비교 차트 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">전이 조건</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">imp@50</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">의미</th>
+              <tr>
+                <th>전이 조건</th>
+                <th style="text-align:center">imp@50</th>
+                <th>의미</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">초기 에이전트 (DGM)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">개선 능력 없음</td>
+                <td>초기 에이전트 (DGM)</td>
+                <td style="text-align:center">0.0</td>
+                <td>개선 능력 없음</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">초기 에이전트 (DGM-H)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">개선 능력 없음</td>
+                <td>초기 에이전트 (DGM-H)</td>
+                <td style="text-align:center">0.0</td>
+                <td>개선 능력 없음</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">DGM-custom 전이</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.0</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">도메인 종속, 전이 실패</td>
+                <td>DGM-custom 전이</td>
+                <td style="text-align:center">0.0</td>
+                <td>도메인 종속, 전이 실패</td>
               </tr>
               <tr>
                 <td style="padding: 10px;">DGM-H 전이 (하이퍼에이전트)</td>
@@ -251,7 +251,7 @@
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Zhang et al. (2026), Figure 3. 수학 채점(IMO-GradingBench) 영역 기준, 5회 실행 중앙값.</p>
+          <p class="post-table-source">출처: Zhang et al. (2026), Figure 3. 수학 채점(IMO-GradingBench) 영역 기준, 5회 실행 중앙값.</p>
         </div>
 
         <p><strong>넷째, 반복할수록 성능이 쌓입니다.</strong> 전이된 하이퍼에이전트로 수학 채점을 200회 돌렸습니다. 테스트 점수는 0.640입니다(Zhang et al., 2026). 처음부터 시작하면 0.610에 그칩니다.</p>
@@ -366,14 +366,14 @@
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">근데 코딩에서는 오히려 DGM(0.307)보다 낮은 0.267이에요. "어떤 영역에 먼저 적용할지" 결정하기 전에, 하이퍼에이전트가 강한 영역과 약한 영역을 먼저 구분해야 하지 않나요?</div>
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 코딩은 기존 DGM 쓰고, 다영역 확장이 필요한 곳에 하이퍼에이전트를 쓰는 게 현실적입니다. 도구는 용도에 맞게 골라야 해요.</div>
@@ -393,21 +393,21 @@
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">비유는 좋은데, 실제로는 샌드박스에서 컴퓨팅 자원 제한, 인터넷 차단, 사람 감독이 전제된 환경에서 작동한 거예요. 그 조건 없이는 안전을 보장할 수 없고, 이 조건을 기업 환경에서 갖추는 비용이 만만치 않아요.</div>
             </div>
           </div>
           <div class="rt-comment rt-reply rt-reply-2" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">그러면 지금 당장 우리가 할 수 있는 건 뭐예요? 샌드박스 구축은 못 하더라도, 에이전트에 자기 평가를 시키는 것부터는 해볼 수 있다고 하던데요.</div>
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">프롬프트 끝에 "결과를 평가하고 개선점을 제안하라" 한 줄 추가하는 건 지금 당장 됩니다. 30분이면 충분해요. 거기서 나온 피드백 패턴을 4주 쌓으면 성능 개선 힌트가 보여요.</div>
@@ -427,14 +427,14 @@
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">전이가 성공한 건 수학 채점(IMO-GradingBench)이라는 정답이 명확한 태스크에서였어요. 기업 현장 업무는 정답 기준 자체가 불분명하잖아요. 그 조건에서도 전이가 통할지는 별도 검증이 필요해요.</div>
             </div>
           </div>
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">그 지적 맞아요. 그래서 일단 A/B 테스트로 작게 해보는 거죠. 결과 기준을 먼저 만들고, 두 달 돌려보면 현장에서 통하는지 아닌지 알 수 있어요.</div>

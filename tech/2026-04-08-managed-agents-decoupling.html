@@ -180,50 +180,50 @@
         <p><strong>다섯째, 응답 지연이 크게 줄었습니다.</strong> 분리 후 p50 응답 시간이 60% 감소했습니다. p95 응답 시간은 90% 이상 줄었습니다(Martin et al., 2026). 운영체제가 하드웨어를 추상화했듯이, 안정된 인터페이스가 구현 변화를 흡수합니다. 하네스가 상태를 갖지 않아 수평 확장이 가능합니다.</p>
 
         <!-- 비교 테이블 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">항목</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">기존 (결합)</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">신규 (분리)</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">효과</th>
+              <tr>
+                <th>항목</th>
+                <th style="text-align:center">기존 (결합)</th>
+                <th style="text-align:center">신규 (분리)</th>
+                <th style="text-align:center">효과</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">p50 응답 시간</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">기준</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">60% 감소</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">체감 속도 향상</td>
+                <td>p50 응답 시간</td>
+                <td style="text-align:center">기준</td>
+                <td class="cell-hl" style="text-align:center">60% 감소</td>
+                <td style="text-align:center">체감 속도 향상</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">p95 응답 시간</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">기준</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">90%+ 감소</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">최악 지연 제거</td>
+                <td>p95 응답 시간</td>
+                <td style="text-align:center">기준</td>
+                <td class="cell-hl" style="text-align:center">90%+ 감소</td>
+                <td style="text-align:center">최악 지연 제거</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">장애 복구</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">세션 유실</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">자동 재개</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">작업 연속성</td>
+                <td>장애 복구</td>
+                <td style="text-align:center">세션 유실</td>
+                <td class="cell-hl" style="text-align:center">자동 재개</td>
+                <td style="text-align:center">작업 연속성</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">확장 방식</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">수직 확장</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">수평 확장</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">비용 효율</td>
+                <td>확장 방식</td>
+                <td style="text-align:center">수직 확장</td>
+                <td class="cell-hl" style="text-align:center">수평 확장</td>
+                <td style="text-align:center">비용 효율</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">보안 경계</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">동일 환경</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">분리 격리</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">인증 정보 보호</td>
+                <td>보안 경계</td>
+                <td style="text-align:center">동일 환경</td>
+                <td class="cell-hl" style="text-align:center">분리 격리</td>
+                <td style="text-align:center">인증 정보 보호</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Martin, Cemaj, Cohen (2026), Anthropic Engineering.</p>
+          <p class="post-table-source">출처: Martin, Cemaj, Cohen (2026), Anthropic Engineering.</p>
         </div>
 
         <figure style="margin: 24px 0; text-align: center;">
@@ -341,7 +341,7 @@
           </div>
           <!-- 반박 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">잠깐요. p50 60%, p95 90% 감소는 Anthropic 자사 호스팅 서비스 기준이잖아요. 자체 인프라에서 같은 수치가 나온다는 근거가 있어요?</div>
@@ -349,7 +349,7 @@
           </div>
           <!-- 재반박 -->
           <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">수치는 참고값이에요. 분리 설계 원칙 자체는 인프라 종류와 무관하게 적용됩니다. 검증은 자기 환경에서 하세요.</div>
@@ -371,7 +371,7 @@
           </div>
           <!-- 동의심화 댓글 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">"아마도"면 외부 저장 안 된 겁니다. 확인 방법은 간단해요. 에이전트 프로세스 강제 종료 후 재시작해서 작업 이어지는지 보면 됩니다. 30분이면 판명 나요.</div>
@@ -379,7 +379,7 @@
           </div>
           <!-- 전혀다른각도 댓글 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">저는 이 글의 "반려동물 관리"라는 비유가 마음에 걸려요. 에이전트를 교체 가능한 부품처럼 여기는 문화가 팀에 어떤 영향을 줄지 생각해봤나요? 사람들이 AI에 애착을 갖는 게 꼭 나쁜 건 아닐 수도 있거든요.</div>
@@ -401,7 +401,7 @@
           </div>
           <!-- 답변 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">에이전트 1~2개면 단일 환경이 효율적이에요. 이 설계는 대규모 운영 전제입니다. 본문에도 나와 있어요. 지금 당장 적용할 이유 없습니다.</div>
@@ -409,7 +409,7 @@
           </div>
           <!-- 태클 -->
           <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-            <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">그런데 지금 인증 정보가 코드 실행 공간에 노출되는지는 규모와 상관없이 확인해야 하지 않나요? 보안 경계는 에이전트 개수 문제가 아니잖아요.</div>
@@ -417,7 +417,7 @@
           </div>
           <!-- 마무리 -->
           <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-            <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
             <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
               <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
               <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 작은 팀도 보안 경계는 지금 점검하세요. 아키텍처 분리는 나중에 해도 되지만, 인증 정보 노출은 지금 당장 확인해야 합니다.</div>

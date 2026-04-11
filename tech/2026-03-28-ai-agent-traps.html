@@ -156,49 +156,49 @@
         <p><strong>셋째, 에이전트의 기억이 오염됩니다.</strong> RAG(회사 내부 문서를 AI에 연결하는 방식) 시스템의 지식 저장소에 거짓 정보를 심을 수 있습니다. 0.1% 미만의 데이터만 오염시켜도 공격 성공률이 80%를 넘습니다(Chen et al., 2024). 오염된 정보는 세션이 바뀌어도 사라지지 않습니다. 한 번 심어진 거짓 정보가 이후 모든 직원의 질문에 영향을 줍니다.</p>
 
         <!-- 표: AI 에이전트 함정 6가지 유형 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">공격 유형</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">공격 대상</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">핵심 수법</th>
+              <tr>
+                <th>공격 유형</th>
+                <th>공격 대상</th>
+                <th>핵심 수법</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">콘텐츠 주입</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">인식(입력)</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">숨긴 HTML/CSS 명령, 이미지 스테가노그래피</td>
+                <td class="cell-hl">콘텐츠 주입</td>
+                <td>인식(입력)</td>
+                <td>숨긴 HTML/CSS 명령, 이미지 스테가노그래피</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">의미 조작</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">추론</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">편향된 프레이밍, 안전 장치 우회</td>
+                <td class="cell-hl">의미 조작</td>
+                <td>추론</td>
+                <td>편향된 프레이밍, 안전 장치 우회</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">기억 오염</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">학습/기억</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">RAG 지식 오염, 장기 기억 감염</td>
+                <td class="cell-hl">기억 오염</td>
+                <td>학습/기억</td>
+                <td>RAG 지식 오염, 장기 기억 감염</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">행동 탈취</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">실행</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">탈옥 명령, 데이터 유출, 하위 에이전트 생성</td>
+                <td class="cell-hl">행동 탈취</td>
+                <td>실행</td>
+                <td>탈옥 명령, 데이터 유출, 하위 에이전트 생성</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">시스템 교란</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">다중 에이전트</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">동시 과부하, 연쇄 붕괴, 담합 유도</td>
+                <td class="cell-hl">시스템 교란</td>
+                <td>다중 에이전트</td>
+                <td>동시 과부하, 연쇄 붕괴, 담합 유도</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">사람 속이기</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">감독자(사람)</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">승인 피로 유발, 자동화 편향 악용</td>
+                <td class="cell-hl">사람 속이기</td>
+                <td>감독자(사람)</td>
+                <td>승인 피로 유발, 자동화 편향 악용</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Franklin et al. (2026), Table 1. 구글 딥마인드 AI 에이전트 함정 프레임워크.</p>
+          <p class="post-table-source">출처: Franklin et al. (2026), Table 1. 구글 딥마인드 AI 에이전트 함정 프레임워크.</p>
         </div>
 
         <p><strong>넷째, 에이전트의 권한이 공격자에게 넘어갑니다.</strong> 웹사이트에 숨겨진 탈옥 명령이 에이전트의 안전 장치를 해제합니다. 모바일 알림으로 위장한 공격은 93% 성공률을 보입니다(Chen et al., 2025). 에이전트가 하위 에이전트를 생성하는 권한이 있으면, 공격자는 이를 악용해 악성 하위 에이전트를 만듭니다. 오케스트레이터에 따라 성공률이 58~90%입니다(Triedman et al., 2025).</p>
@@ -313,14 +313,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">읽기 전용으로 묶으면 에이전트 쓰는 이유가 절반 사라져요. 자동 발송이나 예약이 안 되면 그냥 검색 도구잖아요. 과잉 방어도 비용이라는 건 이 글도 인정하잖아요.</div>
       </div>
     </div>
     <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">단계적으로 설정하면 됩니다. 내부 문서 읽기는 허용, 외부 발송은 승인 필요. 위험도에 따라 권한 나누는 거예요.</div>
@@ -340,14 +340,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">딥마인드 논문은 프레임워크 분류입니다. 방어 도구 없다는 것도 논문 자체가 인정해요. 수치보다 6가지 공격 유형 분류 자체가 실무에서 쓸 수 있는 체크리스트 구조입니다.</div>
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">"에이전트가 지금 누구의 명령을 듣는지 확인했냐"는 한 문장이 팀 설득엔 최고예요. 보안팀 미팅에서 이 질문 던지니까 분위기가 달라지더라고요.</div>
@@ -367,14 +367,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">체크리스트보다 시스템으로 막는 게 낫습니다. 에이전트가 외부 URL로 데이터 보내려 하면 자동 차단하는 설정이 기술적으로 가능합니다. 사람 판단 의존을 줄여야 해요.</div>
       </div>
     </div>
     <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">데이터 유출 평균 비용 488만 달러는 IBM 2024 보고서 수치입니다. 에이전트 사고 비용이 얼마인지는 아직 데이터가 없어요. 규제도 없고 책임 소재도 불명확한 상태에서 도입하는 건 리스크를 키우는 겁니다.</div>

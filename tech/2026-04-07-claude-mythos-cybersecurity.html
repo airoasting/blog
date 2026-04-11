@@ -48,6 +48,20 @@
     "articleSection": "기술"
   }
   </script>
+  <style>
+    #postTitle {
+      animation: postTitleIn 0.9s cubic-bezier(0.22,1,0.36,1) both,
+                 postTitleGlow 2.4s ease-in-out 1s infinite alternate;
+    }
+    @keyframes postTitleIn {
+      from { opacity: 0; transform: translateY(18px); letter-spacing: 0.06em; }
+      to   { opacity: 1; transform: translateY(0);   letter-spacing: normal; }
+    }
+    @keyframes postTitleGlow {
+      from { text-shadow: 0 0 0px rgba(255,255,255,0); }
+      to   { text-shadow: 0 0 22px rgba(255,255,255,0.28); }
+    }
+  </style>
   <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
 </head>
 <body>
@@ -146,7 +160,7 @@
           <!-- 블록 2: 컨텍스트 -->
           <section class="post-section" id="section-context">
             <div class="post-section-label">왜 지금 중요한가</div>
-            <p>Anthropic의 연간 매출은 2025년 90억 달러에서 2026년 300억 달러 이상으로 성장했습니다(출처: Anthropic 발표, 2026년 4월). 3배 넘는 증가입니다. 성장의 핵심 동인은 코딩 능력입니다. 그런데 코드를 잘 짜는 AI는 코드의 약점도 잘 찾습니다. 이 두 가지는 같은 능력의 양면입니다.</p>
+            <p>Anthropic의 연간 매출은 2026년 300억 달러를 넘었습니다(출처: Anthropic 발표, 2026년 4월). 2025년 90억 달러 대비 3배 이상입니다. 성장의 핵심 동인은 코딩 능력입니다. 그런데 코드를 잘 짜는 AI는 코드의 약점도 잘 찾습니다. 이 두 가지는 같은 능력의 양면입니다.</p>
             <p>CrowdStrike CTO Elia Zaitsev는 이렇게 말했습니다. "몇 달 걸리던 일이 AI로 몇 분이면 됩니다." 공격자가 이 능력을 먼저 손에 넣으면, 방어자가 뒤따라가는 구조가 됩니다. Project Glasswing은 방어자가 먼저 움직이기 위한 시도입니다.</p>
           </section>
 
@@ -155,11 +169,11 @@
             <div class="post-section-label">핵심 인사이트</div>
             <p>이번 발표의 핵심은 모델 성능이 아닙니다. 구조의 변화입니다. 세 가지로 정리합니다.</p>
 
-            <p><strong>첫째, AI 역량의 상한선이 보안 수준의 하한선이 됩니다.</strong> Claude Mythos Preview는 특별한 보안 훈련을 받지 않았습니다. 단지 전반적 능력이 향상되었을 뿐입니다. Anthropic 수석 과학자 Jared Kaplan은 "유사한 보안 능력이 다른 모델에도 곧 생길 것"이라고 밝혔습니다. 즉, 이 능력은 특정 회사의 전유물이 아닙니다. AI 모델이 발전할수록 모든 소프트웨어의 취약점 노출 위험도 함께 커집니다.</p>
+            <p><strong>첫째, AI 역량의 상한선이 보안 수준의 하한선이 됩니다.</strong> Claude Mythos Preview는 특별한 보안 훈련을 받지 않았습니다. 단지 전반적 능력이 향상되었을 뿐입니다. Anthropic 수석 과학자 Kaplan은 "유사한 보안 능력이 곧 다른 모델에도 생길 것"이라 밝혔습니다. 즉, 이 능력은 특정 회사의 전유물이 아닙니다. AI 모델이 발전할수록 모든 소프트웨어의 취약점 노출 위험도 함께 커집니다.</p>
 
             <p><strong>둘째, "복잡해서 안전하다"는 논리가 무너집니다.</strong> 기존 보안 패러다임의 전제 중 하나는 "공격에 충분한 인력과 시간이 필요하다"는 것이었습니다. 라우터 펌웨어나 레거시 시스템이 수십 년간 문제없이 운용된 것도 이 가정 위에서입니다. Claude Mythos Preview는 500만 번 자동화 스캔이 놓친 버그를 찾아냈습니다. 복잡성이 방어막이 되지 않는 시대가 시작되었습니다.</p>
 
-            <p><strong>셋째, Project Glasswing은 공개 표준 경쟁의 출발점입니다.</strong> Anthropic은 Apple, Amazon, Microsoft, Google, Cisco, Broadcom, Linux Foundation을 한 테이블에 앉혔습니다. 경쟁사까지 포함한 이 구성은 이례적입니다. 비공개 모델을 공동 방어에 활용하는 이 구조는, AI 보안 능력의 산업 표준을 누가 주도하는가를 두고 벌이는 경쟁이기도 합니다.</p>
+            <p><strong>셋째, Project Glasswing은 공개 표준 경쟁의 출발점입니다.</strong> Apple, Amazon, Microsoft, Google이 한 테이블에 앉았습니다. Cisco, Broadcom, Linux Foundation까지 포함한 구성은 이례적입니다. 경쟁사를 아우른 이 구조는 단순한 방어 협력이 아닙니다. AI 보안의 산업 표준을 누가 주도하느냐를 두고 벌이는 경쟁입니다.</p>
           </section>
 
           <!-- 블록 4: 내일 당장 -->
@@ -185,7 +199,7 @@
           <section class="post-section" id="section-risk">
             <div class="post-section-label">리스크 &amp; 주의점</div>
             <p>Anthropic의 발표를 그대로 받아들이기 전에 세 가지를 고려해야 합니다.</p>
-            <p>우선, 미공개 모델의 역량 주장은 독립 검증이 어렵습니다. Project Glasswing 참여 기업들이 모델에 접근하고 있지만, 외부 보안 연구자들의 공개 재현 사례는 아직 없습니다. CrowdStrike CTO의 발언은 긍정적이나, 고객사 입장이기도 합니다.</p>
+            <p>우선, 미공개 모델의 역량 주장은 독립 검증이 어렵습니다. 참여 기업들은 모델에 접근하고 있습니다. 하지만 외부 보안 연구자들의 공개 재현 사례는 아직 없습니다. CrowdStrike CTO의 발언은 긍정적이나, 고객사 입장이기도 합니다.</p>
             <p>다음으로, 방어 도구는 공격 도구이기도 합니다. 취약점을 찾는 AI는, 그 취약점을 악용하는 데도 쓰일 수 있습니다. Anthropic이 공개 배포를 보류한 이유입니다. 하지만 동일한 역량이 "곧 다른 모델에도 생긴다"는 것이 Kaplan의 예측입니다. 비공개 전략이 얼마나 오래 유효할지는 미지수입니다.</p>
             <p>마지막으로, Project Glasswing에 접근하지 못한 기업이 더 많습니다. 40개 파트너 외의 기업은 같은 도구를 방어에 쓸 수 없습니다. 기술 접근성 격차가 보안 격차로 직결되는 구조입니다.</p>
           </section>
@@ -248,7 +262,7 @@
 
               <!-- 블랙 댓글 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">팩트 검증은 연구자들이 해요. 경영 리더는 구조 변화를 봐야 해요. 마케팅이든 아니든, 코딩 잘하는 AI가 취약점도 잘 찾는다는 구조적 현실은 부정 못해요. 방향은 맞아요.</div>
@@ -257,7 +271,7 @@
 
               <!-- 레드 대댓글 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">구조가 맞더라도 '이 모델만' 할 수 있다는 프레이밍은 틀렸어요. Kaplan 본인이 '유사한 능력이 다른 모델에도 곧 생긴다'고 했잖아요. 그럼 지금 이 발표가 방어 목적인지 홍보 목적인지, 구분하고 결정해야죠.</div>
@@ -282,7 +296,7 @@
 
               <!-- 골드 댓글 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">Glasswing 기다릴 필요 없어요. 저 Snyk 무료 플랜으로 시작했는데, 우리 레포에서 실제 취약점 3개 나왔어요. 설치에 20분 걸렸고요. 포스트에 나온 레거시 코드 목록 파악부터 하면 반은 된 거예요.</div>
@@ -291,7 +305,7 @@
 
               <!-- 네이비 댓글 (끼어들기) -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">설치 20분, 결과 해석은 별개예요. CVSS 점수 9.0짜리 먼저 잡는 게 기본인데, 비개발자 팀장한테 리포트 넘기면 거기서 막혀요. 스캔 도구는 시작이고, 판단할 사람이 있어야 써먹어요.</div>
@@ -316,7 +330,7 @@
 
               <!-- 블랙 댓글 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 그래서 지금 할 수 있는 거 해야 해요. SBOM 만들고, 스캔 도구 쓰고, 레거시 코드 목록 잡는 것. 이 세 개는 Glasswing 없어도 되고, 돈도 안 들어요.</div>
@@ -325,7 +339,7 @@
 
               <!-- 네이비 대댓글 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">SBOM이 말처럼 쉽지 않아요. 레거시 시스템 있는 회사는 의존성 트리가 엉켜서 목록화 자체가 2~3주 프로젝트예요. '당장'이라는 말이 비개발자 임원한테는 오해를 줄 수 있어요.</div>

@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20% - AI ROASTING</title>
+  <meta name="description" content="Anthropic이 2026 에이전틱 AI 리포트를 발표했습니다. 개발자는 업무의 약 60%에 AI를 쓰지만 완전 위임이 가능한 일은 0~20%뿐입니다. 8대 트렌드가 조직 구조를 다시 그립니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anthropic 2026 에이전틱 AI 리포트: 협력의 역설">
+  <meta property="og:description" content="Anthropic이 직접 공개한 수치. 개발자의 60%가 AI를 쓰지만 완전 위임은 20%뿐. 8대 트렌드가 소프트웨어 개발 경제를 재편합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/research/images/2026_04_09_anthropic-2026-agentic-coding-trends/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-09">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="Anthropic">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="ClaudeCode">
+  <meta property="article:tag" content="개발생산성">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anthropic 2026 에이전틱 AI 리포트: 협력의 역설">
+  <meta name="twitter:description" content="Anthropic 자체 조사. 개발자의 60%가 AI를 쓰지만 완전 위임은 20%뿐. 8대 트렌드가 개발 경제를 재편합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/research/images/2026_04_09_anthropic-2026-agentic-coding-trends/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20%",
+    "datePublished": "2026-04-09",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Anthropic이 발표한 2026 에이전틱 AI 리포트. 개발자의 60%가 AI를 쓰지만 완전 위임은 0~20%. 8대 트렌드가 조직을 재편합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-overview" class="toc-link">8대 트렌드 개관</a></li>
+        <li><a href="#section-insight1" class="toc-link">인사이트 1: 협력의 역설</a></li>
+        <li><a href="#section-insight2" class="toc-link">인사이트 2: 에이전트의 팀 전환</a></li>
+        <li><a href="#section-insight3" class="toc-link">인사이트 3: 산출량 확대</a></li>
+        <li><a href="#section-insight4" class="toc-link">인사이트 4: 비개발 부서 확장</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_09_anthropic-2026-agentic-coding-trends/thumbnail.png" alt="Anthropic 2026 에이전틱 코딩 리포트 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-04-09</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20%</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic</span>
+            <span>Claude Team</span>
+            <span><a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">2026 Agentic Coding Trends Report ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=ClaudeCode" class="post-tag">#ClaudeCode</a>
+            <a href="../index.html?tag=개발생산성" class="post-tag">#개발생산성</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20%"
+        data-date="2026-04-09"
+        data-category="research"
+        data-source="Anthropic (Claude Team)"
+        data-tags="Anthropic, AI에이전트, ClaudeCode, 개발생산성, AX"
+        data-original-url="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf"
+        data-roasting-quote="AI를 업무의 60%에 씁니다. 그런데 완전 위임이 가능한 일은 20%뿐입니다. Anthropic이 직접 공개한 수치입니다."
+        data-next-post="2026-04-09-advisor-strategy-claude-opus.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary>Anthropic이 2026 에이전틱 AI 리포트를 발표했습니다. 개발자는 업무의 약 60%에 AI를 씁니다. 완전 위임이 가능한 작업은 0~20% 수준입니다.</p>
+            <p data-summary>리포트는 8대 트렌드를 제시합니다. 단일 에이전트가 조율된 팀으로 진화합니다. 짧은 작업이 장시간 자율 실행으로 확장됩니다. 개발자 도구가 비개발 부서로 넘어갑니다.</p>
+            <p data-summary>결론은 분명합니다. AI는 자동 실행기가 아니라 상시 협력자입니다. 감독과 검증을 체계화한 조직이 조기 수혜자와 후발 주자의 격차를 만듭니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">AI를 업무의 60%에 씁니다.<br>그런데 완전 위임이 가능한 일은 20%뿐입니다. Anthropic이 직접 공개한 수치입니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>Anthropic이 2026년 4월 에이전틱 AI 리포트를 공개했습니다. 리포트는 자사 사회적 영향(Societal Impacts) 팀의 내부 조사 결과를 담고 있습니다. 개발자들은 업무의 약 60%에 AI를 활용한다고 보고했습니다.</p>
+            <p>그런데 같은 조사에서 "완전히 위임 가능한 작업"은 0~20% 수준에 그쳤습니다. 이 격차가 리포트 전체를 관통하는 핵심 메시지입니다. AI 도입의 성공은 "얼마나 맡기느냐"가 아니라 "어디서 사람이 개입하느냐"에 달려 있습니다.</p>
+            <p>비개발자 경영 리더라면 이 리포트에서 두 가지를 확인해야 합니다. 첫째, AI 에이전트가 조직 구조와 생산성을 어떻게 바꾸는지입니다. 둘째, 내 조직이 조기 수혜자 쪽인지 후발 주자 쪽인지 가늠할 기준입니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>2025년은 AI 도구가 실험실에서 운영 시스템으로 넘어온 해였습니다. Anthropic은 이 해를 이렇게 정의합니다. 엔지니어링 팀이 구현 워크플로우 전체를 AI에 위임할 수 있다고 깨달은 시점이라고 말입니다.</p>
+            <p>2026년은 다릅니다. 단일 AI 도구가 아니라 조율된 에이전트 팀이 움직입니다. 업무 시간 단위가 분에서 시간으로, 시간에서 날 단위로 늘어납니다. Anthropic은 이 변화의 수혜가 조기 수용자와 후발 주자 사이의 격차를 벌리고 있다고 명시합니다.</p>
+            <p>경영 리더에게 이 리포트가 중요한 이유는 하나입니다. 이 변화는 개발팀만의 이슈가 아닙니다. 리포트는 비개발 부서가 AI 에이전트로 자체 솔루션을 만들기 시작했다고 말합니다. 조직 구조, 인력 배치, 시장 대응 속도가 재편되는 구간입니다.</p>
+          </section>
+
+          <!-- 8대 트렌드 개관 -->
+          <section class="post-section" id="section-overview">
+            <div class="post-section-label">Anthropic 8대 트렌드 한눈에 보기</div>
+
+            <p>Anthropic은 8개 트렌드를 3개 카테고리로 정리했습니다. 토대(Foundation), 역량(Capability), 임팩트(Impact)입니다. 각 카테고리는 "무엇이 바뀌는가, 에이전트가 무엇을 할 수 있는가, 무엇에 영향을 주는가"에 대응합니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr><th>카테고리</th><th>트렌드</th><th>핵심 메시지</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>토대</td><td>1. 소프트웨어 개발 수명주기(SDLC) 변화</td><td>주 단위 주기가 시간 단위로 압축됩니다</td></tr>
+                  <tr><td>역량</td><td>2. 단일 에이전트 → 조율된 팀</td><td>계층형 다중 에이전트가 병렬 처리를 수행합니다</td></tr>
+                  <tr><td>역량</td><td>3. 장시간 자율 실행</td><td>분 단위 작업이 일~주 단위로 확장됩니다</td></tr>
+                  <tr><td>역량</td><td>4. 지능형 협력 기반 감독</td><td>사람이 모든 것이 아닌 중요한 것을 검토합니다</td></tr>
+                  <tr><td>역량</td><td>5. 사용자·표면 확장</td><td>레거시 언어와 비개발자까지 접근이 열립니다</td></tr>
+                  <tr><td>임팩트</td><td>6. 개발 경제 재편</td><td>납기 단축이 프로젝트의 실행 가능성을 바꿉니다</td></tr>
+                  <tr class="highlight-row"><td>임팩트</td><td>7. 비기술 부서의 확장</td><td>법무, 영업, 마케팅이 자체 솔루션을 만듭니다</td></tr>
+                  <tr><td>임팩트</td><td>8. 보안의 양면성</td><td>방어가 쉬워지지만 공격도 쉬워집니다</td></tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, 2026 Agentic Coding Trends Report, 2026년 4월</div>
+            </div>
+
+            <p>아래 네 가지 인사이트는 8대 트렌드 중 경영 리더가 먼저 소화해야 할 축입니다. 리포트 원문의 수치와 실제 고객 사례를 기준으로 골랐습니다.</p>
+          </section>
+
+          <!-- 인사이트 1: 협력의 역설 -->
+          <section class="post-section" id="section-insight1">
+            <div class="post-section-label">핵심 인사이트 1: 협력의 역설은 현실입니다</div>
+
+            <p><strong>첫째, AI는 조력자이지 대체자가 아닙니다.</strong> Anthropic 사회적 영향 팀 조사에 따르면 개발자는 업무의 약 60%에 AI를 씁니다. 그런데 "완전히 위임할 수 있다"고 답한 작업은 0~20% 수준입니다. 사용률은 높지만 위임률은 낮습니다.</p>
+
+            <p><strong>둘째, 이 격차는 사용자 미숙이 아니라 협력의 본질입니다.</strong> 리포트는 이 현상을 "협력의 역설(collaboration paradox)"로 명명했습니다. 효과적인 AI 활용은 사려 깊은 세팅, 프롬프트 설계, 능동적 감독, 검증, 사람의 판단을 요구합니다. 특히 위험도가 높은 작업일수록 그렇습니다.</p>
+
+            <div class="chart-wrap">
+              <div class="chart-title">협력의 역설: AI 사용률 vs. 완전 위임률</div>
+              <canvas id="chartParadox"></canvas>
+              <div class="chart-note">Anthropic 내부 조사 (2026). 60%는 개발자 업무 중 AI 활용 비중, 0~20%는 "완전 위임 가능" 작업 비중. 출처: 2026 Agentic Coding Trends Report.</div>
+            </div>
+
+            <p><strong>셋째, 개발자는 쉬운 일을 위임하고 어려운 일을 함께 풉니다.</strong> 리포트는 엔지니어들이 시간이 지나면서 이 직관을 키운다고 말합니다. 검증이 쉽고 위험도가 낮은 작업은 AI에 위임합니다. 개념적으로 어렵거나 설계 판단이 필요한 작업은 직접 쥐거나 AI와 함께 풉니다.</p>
+
+            <div class="methodology-box">
+              <strong>경영자 함의:</strong> "직원이 AI에 일을 얼마나 위임했느냐"를 KPI로 쓰면 잘못된 신호를 받습니다. 위임률 상승이 항상 생산성 상승을 뜻하지 않습니다. 위험도와 검증 용이성을 기준으로 "위임해도 되는 일"과 "같이 해야 하는 일"을 구분하는 것이 먼저입니다.
+            </div>
+
+            <p><strong>넷째, 한국 조직 맥락에서 이 격차는 더 크게 벌어집니다.</strong> 한국 기업은 상향 보고 문화가 강해 "AI 결과물의 최종 검토자"가 팀장과 임원에 몰려 있습니다. 사용률이 올라도 검토 병목이 해소되지 않으면 위임률은 오르지 않습니다. "AI 도입 실패"로 해석되기 쉽지만 사실은 조직 구조의 문제입니다.</p>
+          </section>
+
+          <!-- 인사이트 2: 에이전트의 팀 전환 -->
+          <section class="post-section" id="section-insight2">
+            <div class="post-section-label">핵심 인사이트 2: 단일 에이전트가 조율된 팀으로 진화합니다</div>
+
+            <p><strong>다섯째, 2025년은 "한 명의 AI"였고 2026년은 "AI 팀"입니다.</strong> 리포트는 단일 에이전트 워크플로우가 다중 에이전트 계층 구조로 재편된다고 예측합니다. 오케스트레이터 에이전트가 작업을 분해하고, 전문 에이전트가 병렬로 수행하며, 결과를 통합합니다.</p>
+
+            <p><strong>여섯째, 장시간 자율 실행이 가능해지고 있습니다.</strong> Rakuten 엔지니어들은 Claude Code에 vLLM 리포지토리의 특정 기능 구현 작업을 맡겼습니다. vLLM은 1,250만 줄 규모의 오픈소스 라이브러리입니다. Claude Code는 단일 실행에서 7시간 동안 자율적으로 작업했습니다. 결과물은 원본 구현 대비 99.9%의 수치 정확도를 기록했습니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr><th>사례</th><th>조직</th><th>결과</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>다중 에이전트 인력 배치</td><td>Fountain (채용 플랫폼)</td><td class="cell-hl">채용 심사 50% 단축, 온보딩 40% 단축, 지원자 전환 2배</td></tr>
+                  <tr><td>물류 센터 신규 인력 구성</td><td>Fountain 고객사</td><td class="cell-hl">1주 이상 → 72시간 이하로 단축</td></tr>
+                  <tr><td>vLLM 활성화 벡터 추출 구현</td><td>Rakuten</td><td class="cell-hl">단일 실행 7시간 자율 작업, 99.9% 정확도</td></tr>
+                  <tr><td>온보딩 기간 압축</td><td>Augment Code 고객</td><td class="cell-hl">4~8개월 → 2주 완료</td></tr>
+                  <tr><td>금융 개발 실행 속도</td><td>CRED (인도 핀테크)</td><td class="cell-hl">개발 실행 속도 2배</td></tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, 2026 Agentic Coding Trends Report (트렌드 2·3·4·5), 2026년 4월</div>
+            </div>
+
+            <p><strong>일곱째, 조직 역량은 "조율 기술"로 이동합니다.</strong> 리포트는 "주도 역할이 구현자에서 오케스트레이터로 전환된다"고 명시합니다. 한 명의 엔지니어가 여러 기능 개발을 동시에 지휘하고, 더 넓은 범위에서 판단을 내립니다. 조직 설계 관점에서 보면 1인당 관장 범위가 넓어지는 것입니다.</p>
+          </section>
+
+          <!-- 인사이트 3: 산출량 확대 -->
+          <section class="post-section" id="section-insight3">
+            <div class="post-section-label">핵심 인사이트 3: 생산성은 속도가 아니라 산출량입니다</div>
+
+            <p><strong>여덟째, 사람들의 오해를 뒤집는 Anthropic의 발견입니다.</strong> 내부 조사 결과 엔지니어들은 작업 하나당 쓰는 시간이 오히려 줄었다고 보고했습니다. 그런데 전체 산출량은 훨씬 크게 늘었습니다. AI가 주는 생산성 효과는 "같은 일을 빨리"가 아니라 "더 많은 일을"입니다.</p>
+
+            <p><strong>아홉째, AI는 이전에는 시도하지 않던 일을 가능하게 만듭니다.</strong> 리포트에 따르면 AI 지원 작업의 약 27%는 "AI가 없었다면 하지 않았을 일"입니다. 작은 버그 고치기, 내부 대시보드 개선, 실험적 기능 테스트가 여기에 해당합니다. 수작업 비용 대비 가치가 낮아 뒤로 밀렸던 일들입니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr><th>TELUS 성과 지표</th><th>수치</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>사내 개발 AI 솔루션 구축 수</td><td class="cell-hl">1만 3,000개 이상</td></tr>
+                  <tr><td>엔지니어링 코드 출하 속도 개선</td><td class="cell-hl">30% 단축</td></tr>
+                  <tr><td>누적 절감 시간</td><td class="cell-hl">50만 시간 초과</td></tr>
+                  <tr><td>AI 상호작용 1회당 평균 절감 시간</td><td class="cell-hl">40분</td></tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, 2026 Agentic Coding Trends Report (트렌드 6 - TELUS 사례), 2026년 4월</div>
+            </div>
+
+            <p>TELUS 사례는 "AI가 속도만 바꾼다"는 오해를 깨뜨립니다. 속도가 30% 빨라진 것도 의미가 있습니다. 그보다 사내에서 1만 3,000개의 소형 솔루션이 새로 만들어진 사실이 더 중요합니다. 이는 조직의 문제 해결 총량이 커졌다는 뜻입니다.</p>
+          </section>
+
+          <!-- 인사이트 4: 비개발 부서 확장 -->
+          <section class="post-section" id="section-insight4">
+            <div class="post-section-label">핵심 인사이트 4: AI 에이전트는 이제 개발팀의 전유물이 아닙니다</div>
+
+            <p><strong>열 번째, 비기술 부서가 자체 솔루션을 만들기 시작했습니다.</strong> Anthropic은 2026년 핵심 흐름 중 하나를 꼽았습니다. "기능 조직과 비즈니스 프로세스 팀의 자체 해결 능력"입니다. 영업, 마케팅, 법무, 운영 팀이 엔지니어링팀을 거치지 않고 워크플로우를 자동화합니다.</p>
+
+            <p><strong>열한 번째, 실제 사례가 이를 뒷받침합니다.</strong> Anthropic 자체 법무팀은 Claude Code로 계약 리뷰와 콘텐츠 검수를 자동화했습니다. 마케팅 리뷰 처리 시간을 2~3일에서 24시간으로 단축했습니다. 코딩 경험이 없는 변호사가 Claude Code로 법무 대기열 전처리 도구를 직접 만들었습니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr><th>조직</th><th>비개발 부서 적용 결과</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Anthropic 법무팀</td><td class="cell-hl">마케팅 리뷰 처리 2~3일 → 24시간</td></tr>
+                  <tr><td>Zapier</td><td class="cell-hl">전사 AI 도입률 89%, 800개 이상 AI 에이전트 내부 배포</td></tr>
+                  <tr><td>Legora (법률 플랫폼)</td><td class="cell-hl">변호사가 엔지니어 없이 자동화 구축</td></tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, 2026 Agentic Coding Trends Report (트렌드 7), 2026년 4월</div>
+            </div>
+
+            <p><strong>열두 번째, 기술 실행 티켓에서 도메인 전문가 직접 구현으로 이동합니다.</strong> 리포트는 "문제를 가장 깊이 아는 도메인 전문가가 직접 해결책을 만든다"는 표현을 썼습니다. 개발팀에 요청하고 기다리는 병목이 사라진다는 뜻입니다. 조직의 의사결정 구조가 재편되는 지점입니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>팀의 AI 사용률과 위임률을 분리해 측정하십시오.</strong><br>팀원 5명에게 두 가지를 묻습니다. "최근 1주 업무 중 AI를 쓴 비율은?" "그중 사람 검토 없이 끝낸 비율은?" Anthropic 데이터와 비교합니다. 사용률 60% 근처, 위임률 20% 이하가 정상 범위입니다. (30분)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>검증 난이도를 기준으로 업무를 3가지로 나눠보십시오.</strong><br>조직 업무를 "검증 쉽고 저위험(완전 위임)", "검증 쉽고 고위험(공동 작업)", "검증 어려움(사람 주도)"로 분류합니다. 엑셀 한 장이면 됩니다. AI 도입 전략의 출발점이 이 표입니다. (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>비개발 부서 한 곳에서 파일럿 케이스를 정하십시오.</strong><br>법무, 영업, 마케팅 중 한 팀을 골라 "개발자 없이 AI로 해결 가능한 반복 업무 3가지"를 물어봅니다. Anthropic 법무팀의 리뷰 자동화 사례(2~3일에서 24시간)를 미팅 자료로 쓰십시오. 다음 주 안에 한 건을 시범 적용합니다. (1시간 미팅 + 1주 실행)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>Anthropic은 자사 제품의 확산을 다루는 보고서입니다.</strong> 리포트는 독립 연구가 아니라 Claude 판매사가 작성한 트렌드 문서입니다. 사례로 제시된 Rakuten, TELUS, Zapier, Fountain은 모두 Claude 고객사입니다. 수치 방향성은 참고할 수 있지만, "업계 평균"으로 해석하면 안 됩니다.</p>
+            <p><strong>60% vs. 20%의 맥락을 놓치면 안 됩니다.</strong> 이 두 수치는 Anthropic 사회적 영향 팀의 자체 설문 결과입니다. 조사 대상, 업무 정의, 표본 크기에 대한 세부 정보는 공개되어 있지 않습니다. 내부 인사이트로 유용하지만 외부 기준 지표는 아닙니다.</p>
+            <p><strong>장시간 자율 실행은 통제 난이도를 높입니다.</strong> Rakuten의 7시간 사례는 통제된 조건에서 설계된 작업입니다. 실제 운영 환경은 다릅니다. 감사 로그, 되돌림 절차, 비용 상한이 없으면 장시간 자율 작업의 위험은 빠르게 커집니다. 리포트도 "보안 아키텍처가 최초 설계 단계부터 필요하다"고 강조합니다.</p>
+            <p><strong>트렌드 8 "이중 용도"의 경고를 가볍게 보지 마십시오.</strong> 공격자도 같은 에이전트 도구를 씁니다. 디펜스 자동화가 빨라지는 만큼 공격 자동화도 빨라집니다. "AI로 생산성 올리기"와 "AI로 보안 기본기 쌓기"는 같이 가야 합니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI 에이전트는 혼자 일하지 않습니다. 사람의 감독과 도메인 판단을 더 잘 쓰는 조직이 2026년의 격차를 만듭니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자</span>
+                <span>제품 구조 설계 단계에서 "다중 에이전트 조율"과 "보안 아키텍처"를 함께 정의하십시오. 둘을 나중에 붙이면 비용이 몇 배로 불어납니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>팀의 업무를 "검증 난이도 × 위험도" 2축으로 분류하고, 위임 가능한 일부터 표준 운영 절차를 만드십시오. KPI는 위임률이 아니라 산출량입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 예산을 개발팀에 몰지 말고 법무·영업·마케팅에 30% 이상 배분하십시오. Anthropic 리포트가 지목한 성장 축이 그곳입니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Anthropic. (2026, April). <em>2026 Agentic Coding Trends Report: How coding agents are reshaping software development</em> [Report]. Anthropic Resources. <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener">https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf</a></li>
+              <li>Anthropic Societal Impacts Team. (2026). <em>Research on how developers actually work with AI</em> [Internal Research cited in Agentic Coding Trends Report]. Anthropic. <a href="https://www.anthropic.com/research" target="_blank" rel="noopener">https://www.anthropic.com/research</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 16px;">
+            <a href="https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf" target="_blank" rel="noopener" class="hero-cta" style="font-size:12px;">원문 보기 →</a>
+          </div>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 협력의 역설 — 블랙 vs 레드 (1:1 충돌형) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">숫자 다 나왔잖아요. 60% 쓰고 위임은 20%. 결론은 하나예요. 감독 체계 없는 팀은 이번 분기에 격차 벌어져요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그 60% 어디서 나온 거예요? Anthropic 자사 설문, 자사 고객사 사례. 표본 수도 공개 안 됐어요. 이건 보고서가 아니라 마케팅 자료예요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">표본 안 까도 방향은 맞아요. Rakuten이 1,250만 줄 리포지토리에서 7시간 자율 돌린 건 숫자가 남잖아요. 트렌드 부정하다가 타이밍 놓치면 책임 누가 져요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 한국 조직 적용 — 화이트 → 골드 & 네이비 (끼어들기형) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">저 진짜 막막해요. 팀원들은 이미 Claude 쓰고 있고, 위에선 위임률 올리라고 하고. 저 뭣부터 해야 해요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">저도 그 단계 지났는데요. 위임률 올리지 마시고 검증 난이도부터 분류하세요. 저위험 반복 작업만 먼저 맡겼더니 한 달 만에 팀장 검토 줄이 안 밀렸어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">위임률 말고 검증 시간을 재세요. 사람 검토 한 건 15분, AI 초안 한 건 2분. 이 차이가 안 나면 위임 아니고 그냥 중복 작업입니다.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 비개발 부서 확장 — 퍼플 → 네이비 → 레드 → 퍼플 (연쇄 반응형) -->
+            <div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">Anthropic 법무팀이 직접 마케팅 리뷰를 24시간으로 줄인 거 있잖아요. 이게 진짜 울림이에요. 팀원들한테 "변호사도 직접 만들었대요"라고 한 줄만 던져도 분위기가 바뀌더라고요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">Anthropic은 사내에 엔지니어가 받쳐주니까 가능한 거예요. 일반 회사 법무가 혼자 돌리면 감사 로그, 권한 관리부터 깨집니다. 기반 없이 띄우면 한 달 안에 사고 나요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">게다가 2~3일에서 24시간이란 수치, 몇 건 기준인지 안 나왔어요. 1건짜리 시범 사례일 수도 있어요. 팀 설득할 때 이 숫자부터 확인하세요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 근데 숫자보다 "법무도 쓴다"는 이야기 자체가 힘이에요. 저항하는 팀원 설득할 땐 팩트보다 내러티브가 더 잘 먹히거든요.</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="../tech/2026-04-09-advisor-strategy-claude-opus.html">
+              <div class="next-post-title">비싼 AI는 조언만, 싼 AI가 실행합니다 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-overview" class="toc-link">8대 트렌드 개관</a></li>
+            <li><a href="#section-insight1" class="toc-link">인사이트 1: 협력의 역설</a></li>
+            <li><a href="#section-insight2" class="toc-link">인사이트 2: 에이전트의 팀 전환</a></li>
+            <li><a href="#section-insight3" class="toc-link">인사이트 3: 산출량 확대</a></li>
+            <li><a href="#section-insight4" class="toc-link">인사이트 4: 비개발 부서 확장</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-09-anthropic-2026-agentic-coding-trends.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html';
+    const ROASTING_QUOTE = 'AI를 업무의 60%에 씁니다. 그런데 완전 위임이 가능한 일은 20%뿐입니다. Anthropic이 직접 공개한 수치입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // ── Chart.js 초기화 ──────────────────────────────────────────
+    const CHART_COLORS = {
+      blue:   'rgba(59, 130, 246, 0.82)',
+      red:    'rgba(239, 68, 68, 0.82)',
+      green:  'rgba(16, 185, 129, 0.82)',
+      amber:  'rgba(245, 158, 11, 0.82)',
+      purple: 'rgba(139, 92, 246, 0.82)',
+      gray:   'rgba(156, 163, 175, 0.75)',
+      dark:   'rgba(30, 41, 59, 0.82)',
+    };
+
+    // 차트: 협력의 역설 (사용률 vs 완전 위임률)
+    new Chart(document.getElementById('chartParadox'), {
+      type: 'bar',
+      data: {
+        labels: ['AI 사용률 (개발자 업무 중)', '완전 위임 가능 작업 비율'],
+        datasets: [{
+          label: '비율 (%)',
+          data: [60, 20],
+          backgroundColor: [CHART_COLORS.blue, CHART_COLORS.amber],
+          borderRadius: 4,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                if (ctx.dataIndex === 0) return ` 약 ${ctx.parsed.x}% (Anthropic 내부 조사)`;
+                if (ctx.dataIndex === 1) return ` 0~${ctx.parsed.x}% (Anthropic 내부 조사)`;
+                return '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: { beginAtZero: true, max: 80, ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: '#f0f0f0' } },
+          y: { ticks: { font: { size: 11 } } }
+        }
+      }
+    });
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
+</body>
+</html>

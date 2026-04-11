@@ -149,50 +149,50 @@
         <div class="post-section-label">핵심 인사이트</div>
 
         <!-- 표: 8가지 설계 원칙 요약 -->
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
+              <tr>
                 <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35; width: 30%;">설계 원칙</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">실무 적용 포인트</th>
+                <th>실무 적용 포인트</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">① 병렬 도구 실행</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">독립 작업은 "동시에"라고 명시하면 순서대로 처리하지 않고 병렬로 실행됩니다.</td>
-              </tr>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">② CLAUDE.md 메모리</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">프로젝트 관례, 금지 수정 사항, 선호 라이브러리를 파일에 저장하면 세션마다 유지됩니다.</td>
+                <td class="cell-hl">① 병렬 도구 실행</td>
+                <td>독립 작업은 "동시에"라고 명시하면 순서대로 처리하지 않고 병렬로 실행됩니다.</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">③ 불필요한 사과 제거</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">짧고 명확한 지시가 더 직접적인 답변을 이끌어냅니다. 장황한 프롬프트가 불필요합니다.</td>
-              </tr>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">④ Bash 우선 도구</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">grep, git, sed 같은 Bash 명령이 가장 강력합니다. 개별 파일 읽기·쓰기보다 효율적입니다.</td>
+                <td class="cell-hl">② CLAUDE.md 메모리</td>
+                <td>프로젝트 관례, 금지 수정 사항, 선호 라이브러리를 파일에 저장하면 세션마다 유지됩니다.</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑤ 차이 기반 파일 편집</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">파일을 먼저 읽은 후 수정하면 정확도가 높아집니다. 공백·들여쓰기가 매칭에 영향을 줍니다.</td>
-              </tr>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑥ 에이전트 루프 종료 조건</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">명확한 완료 기준을 정의하세요. 과정이 아닌 결과로 작업을 정의하면 무한 루프를 방지합니다.</td>
+                <td class="cell-hl">③ 불필요한 사과 제거</td>
+                <td>짧고 명확한 지시가 더 직접적인 답변을 이끌어냅니다. 장황한 프롬프트가 불필요합니다.</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">⑦ Git 안전 설계</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">기본값으로 파괴적 git 명령을 피합니다. 샌드박스 환경에서는 명시적 허가 후 강력한 명령 사용이 가능합니다.</td>
+                <td class="cell-hl">④ Bash 우선 도구</td>
+                <td>grep, git, sed 같은 Bash 명령이 가장 강력합니다. 개별 파일 읽기·쓰기보다 효율적입니다.</td>
               </tr>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
+              <tr>
+                <td class="cell-hl">⑤ 차이 기반 파일 편집</td>
+                <td>파일을 먼저 읽은 후 수정하면 정확도가 높아집니다. 공백·들여쓰기가 매칭에 영향을 줍니다.</td>
+              </tr>
+              <tr>
+                <td class="cell-hl">⑥ 에이전트 루프 종료 조건</td>
+                <td>명확한 완료 기준을 정의하세요. 과정이 아닌 결과로 작업을 정의하면 무한 루프를 방지합니다.</td>
+              </tr>
+              <tr>
+                <td class="cell-hl">⑦ Git 안전 설계</td>
+                <td>기본값으로 파괴적 git 명령을 피합니다. 샌드박스 환경에서는 명시적 허가 후 강력한 명령 사용이 가능합니다.</td>
+              </tr>
+              <tr>
                 <td style="padding: 10px; font-weight: bold;">⑧ 확장 사고 트리거</td>
                 <td style="padding: 10px;">"트레이드오프를 검토해줘", "변경 전 분석해줘" 같은 프레이밍이 심층 추론을 활성화합니다.</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: MindStudio (2026), Claude Code 시스템 프롬프트 유출 분석.</p>
+          <p class="post-table-source">출처: MindStudio (2026), Claude Code 시스템 프롬프트 유출 분석.</p>
         </div>
 
         <p><strong>첫째, 병렬 실행은 명시해야 작동합니다.</strong> Claude Code의 시스템 프롬프트는 독립적인 작업을 묶어 처리하도록 설계됐습니다. "파일 A를 읽은 다음 B를 읽어줘"가 아니라 "파일 A와 B를 동시에 읽어줘"라고 해야 합니다(MindStudio, 2026). 독립성을 명시하지 않으면 순서대로 처리합니다. 병렬 작업은 사용자가 먼저 신호를 줘야 합니다.</p>
@@ -314,14 +314,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">병렬 실행도 중요합니다. 독립 작업에 "동시에" 명시하면 처리 시간이 다릅니다. 세션마다 같은 맥락 재설명하는 비용이 사라지는 것도 CLAUDE.md의 핵심 가치예요.</div>
       </div>
     </div>
     <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">시스템 프롬프트 유출이 출처입니다. Anthropic이 공식 확인했습니까? 유출 자료 기반 팁을 그대로 활용하는 게 적절한지 판단이 필요합니다.</div>
@@ -341,14 +341,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">비개발자 팀장한테 의미 있는 건 두 가지예요. "짧고 명확하게 지시하라"는 ③번이랑, CLAUDE.md로 팀 관례 문서화하라는 ②번. 나머지는 개발팀에 넘기면 됩니다.</div>
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">"도구의 설계 의도를 알면 더 잘 쓸 수 있다"는 프레임이 팀 교육에 딱 맞아요. 기능 나열보다 왜 이렇게 만들었는지를 설명하면 팀원들이 훨씬 잘 흡수하더라고요.</div>
@@ -368,14 +368,14 @@
       </div>
     </div>
     <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-      <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">8가지 중 지금 당장 팀에 공유할 건 CLAUDE.md 하나입니다. 나머지는 쓰다 보면 익혀요. 처음부터 다 주면 아무도 안 씁니다.</div>
       </div>
     </div>
     <div class="rt-comment rt-reply" style="display:flex; gap:12px; margin-left:96px; margin-top:16px; margin-bottom:4px;">
-      <div style="width:28px; height:28px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+      <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
       <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
         <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
         <div style="font-size:13px; line-height:1.75; color:#222;">CLAUDE.md 하나 만들어서 팀 공유 문서로 쓰면 되겠네요. 이번 주 개발팀장한테 이 글 보내고 같이 만들어보겠습니다.</div>

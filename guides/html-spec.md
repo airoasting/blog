@@ -356,7 +356,57 @@ function copyPrompt(btn) {
 [data-theme="dark"] .chart-figure svg line[stroke="#f0f0f0"]{ stroke: #555   !important; }
 ```
 
-### 4-11. CSS 기본 규칙
+### 4-11. 포스트 내 테이블 마크업
+
+포스트 본문에 테이블이 필요한 경우 **반드시 `.post-table` 클래스**를 사용합니다. inline style로 색상을 하드코딩하면 다크 모드에서 테이블이 보이지 않습니다.
+
+```html
+<!-- ✅ 올바른 방법 -->
+<div class="post-table-wrap">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th>컬럼명</th>
+        <th>컬럼명</th>
+        <th>컬럼명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>일반 셀</td>
+        <td>일반 셀</td>
+        <td class="cell-hl">강조 셀 (굵게 + 카테고리 색상)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="post-table-source">출처: 저자 (연도), Table N.</p>
+</div>
+
+<!-- ❌ 금지 — 다크 모드 깨짐 -->
+<div style="overflow-x: auto; margin: 24px 0;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+    <thead>
+      <tr style="background: var(--bg-secondary, #f5f5f5);">
+        <th style="padding: 12px; border-bottom: 2px solid #145C35;">...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px; border-bottom: 1px solid #eee;">...</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: ...</p>
+</div>
+```
+
+- `.post-table-wrap`: overflow-x 스크롤 래퍼
+- `.post-table`: 기본 테이블 (border, padding, color 모두 CSS 변수)
+- `.cell-hl`: 굵게 + 해당 카테고리 색상 강조
+- `.post-table-source`: 출처 표기 (소형, muted)
+- th 하단 보더는 포스트의 `data-category` 값에 따라 자동으로 카테고리 색상 적용됨
+
+### 4-12. CSS 기본 규칙
 
 ```css
 body {

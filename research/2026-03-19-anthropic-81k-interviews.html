@@ -31,55 +31,7 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
-  <style>
-    .chart-wrap { position: relative; margin: 24px 0; background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 20px 16px 12px; }
-    .chart-title { font-size: 0.78rem; font-weight: 700; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
-    .chart-wrap canvas { max-height: 380px; }
-    .chart-note { font-size: 0.75rem; color: #aaa; margin-top: 8px; text-align: right; }
-    .methodology-box { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
-    .methodology-box strong { color: #92400e; }
-
-    /* ── Styled table ── */
-    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
-    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
-    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #3b82f6; white-space: nowrap; }
-    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
-    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
-    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
-    .styled-table tbody tr:hover { background: #eef3ff; }
-    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
-    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
-    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
-    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
-    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
-
-    /* Dark mode overrides */
-    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
-    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
-    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
-    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
-    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
-    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
-    [data-theme="dark"] .table-caption { color: #666; }
-    [data-theme="dark"] .chart-wrap { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .chart-title { color: #999; }
-    [data-theme="dark"] .chart-note { color: #666; }
-    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
-    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
-    [data-theme="dark"] .framework-box { background: #1a1a2e; border-left-color: #4a90ff; }
-    [data-theme="dark"] .framework-box strong { color: #6ba3ff; }
-    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
-    [data-theme="dark"] .stat-card .stat-label { color: #777; }
-    [data-theme="dark"] .stat-card.negative .stat-num { color: #f87171; }
-    [data-theme="dark"] .stat-card.positive .stat-num { color: #4ade80; }
-    [data-theme="dark"] .quote-block { background: #2a2210; border-left-color: #f59e0b; color: #e0c090; }
-    [data-theme="dark"] .quote-block .quote-source { color: #d4a050; }
-  </style>
+  
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -206,8 +158,8 @@
           <!-- 연구 규모 -->
           <section class="post-section" id="section-scale">
             <div class="post-section-label">연구 규모</div>
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>항목</th><th>수치</th></tr>
                 </thead>
@@ -220,7 +172,7 @@
                   <tr><td>최저 국가 긍정 비율</td><td><strong>60% 이상</strong> (모든 국가)</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Anthropic, 80,508명 대화 인터뷰 (2025년 12월)</div>
+              <div class="post-table-source">출처: Anthropic, 80,508명 대화 인터뷰 (2025년 12월)</div>
             </div>
           </section>
 
@@ -283,8 +235,8 @@
           <section class="post-section" id="section-insight5">
             <div class="post-section-label">핵심 인사이트 5: 지역별 기대는 완전히 다르다</div>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>지역</th><th>AI 긍정도</th><th>주요 관심사</th></tr>
                 </thead>
@@ -295,13 +247,13 @@
                   <tr class="highlight-row"><td>전체 평균</td><td>67%</td><td>모든 국가 60% 초과</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Anthropic, 80,508명 대화 인터뷰 (2025년 12월)</div>
+              <div class="post-table-source">출처: Anthropic, 80,508명 대화 인터뷰 (2025년 12월)</div>
             </div>
 
             <p>저중소득 국가 응답자는 고소득 국가 대비 약 2배 높은 비율로 "AI에 대한 걱정이 없다"고 답했습니다. 이들에게 AI는 위협이 아니라, 자본 없이도 기회를 만들 수 있는 도구입니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>희망 카테고리</th><th>글로벌 평균</th><th>특히 높은 지역</th></tr>
                 </thead>
@@ -312,7 +264,7 @@
                   <tr><td>개인 성장·재정 독립</td><td>13.7% / 9.7%</td><td>동아시아 (가족 부양 맥락)</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">지역별 희망 카테고리 비율 편차. 출처: Anthropic (2025년 12월)</div>
+              <div class="post-table-source">지역별 희망 카테고리 비율 편차. 출처: Anthropic (2025년 12월)</div>
             </div>
           </section>
 
@@ -406,14 +358,14 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">방법론 한계는 맞는데, 8만 명 규모의 데이터 자체는 의미 있어요. "아프리카·남미는 창업 기회로 보고, 유럽은 규제를 먼저 묻는다"는 지역별 차이, 저는 글로벌 팀 소통 방식 바꾸는 데 바로 쓸 수 있겠더라고요.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">지역 패턴 자체는 흥미롭죠. 다만 Anthropic이 직접 공개한 연구라는 점에서 긍정 편향 가능성을 전제하고 읽어야 해요. 방향성 참고는 되지만 수치를 그대로 인용하면 안 됩니다.</div>
@@ -433,14 +385,14 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 저희 팀도 AI 결과물 나올 때마다 "이거 맞아요?" 먼저 물어봐요. 검증에 시간이 더 드는 것 같아서 그냥 안 쓰는 팀원도 있거든요. 신뢰 문제가 채택률 문제랑 직결되는 거더라고요.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">저는 오히려 반대 경험이에요. 가장 날카롭게 AI 오류 잡아내는 팀원이 결국 제일 잘 쓰는 사람 됐거든요. 비판적으로 쓰는 게 활용 숙련도랑 연결된다는 이 연구 결과, 저 경험이랑 딱 맞아요.</div>
@@ -460,21 +412,21 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">직업적 탁월함 18.8%가 1위예요. "이걸 쓰면 퇴근 후 아이와 시간을 더 보낼 수 있다"처럼 개인 삶으로 연결하는 언어가 효율 지표보다 훨씬 강하게 먹힙니다.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">단, 80,508명이 Claude 사용자라는 샘플 편향을 고려하면 "삶의 질" 우선순위도 이 집단 특성일 수 있어요. 전사 도입 논리로 쓰기 전에 우리 팀 실제 니즈 조사가 선행되어야 해요.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">그래서 본문에 나온 "팀원 5명한테 기대 하나, 걱정 하나 물어보라"는 액션이 딱 맞는 것 같아요. 글로벌 데이터보다 내 팀 5명의 답이 더 실질적인 출발점이에요.</div>

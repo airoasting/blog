@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google의 AI 에이전트 5명이 논문을 씁니다 - AI ROASTING</title>
+  <meta name="description" content="Google PaperOrchestra: 5개 전문 에이전트가 역할을 나눠 논문을 완성합니다. ScholarPeer 시뮬레이션 합격률 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Google의 AI 에이전트 5명이 논문을 씁니다">
+  <meta property="og:description" content="Google PaperOrchestra: 5개 전문 에이전트가 역할을 나눠 논문을 완성합니다. ScholarPeer 시뮬레이션 합격률 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_06_paperorchestra-multi-agent-writing/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-06">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="Google">
+  <meta property="article:tag" content="PaperOrchestra">
+  <meta property="article:tag" content="멀티에이전트">
+  <meta property="article:tag" content="논문작성">
+  <meta property="article:tag" content="에이전트오케스트레이션">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google의 AI 에이전트 5명이 논문을 씁니다">
+  <meta name="twitter:description" content="Google PaperOrchestra: 5개 전문 에이전트가 역할을 나눠 논문을 완성합니다. ScholarPeer 시뮬레이션 합격률 CVPR 84%, ICLR 81%.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_06_paperorchestra-multi-agent-writing/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google의 AI 에이전트 5명이 논문을 씁니다",
+    "datePublished": "2026-04-06",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Google PaperOrchestra: 5개 전문 에이전트가 역할을 나눠 논문을 완성합니다. ScholarPeer 시뮬레이션 합격률 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_06_paperorchestra-multi-agent-writing/thumbnail.png" alt="Google의 AI 에이전트 5명이 논문을 씁니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 6일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">Google의 AI 에이전트 5명이 논문을 씁니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv</span>
+            <span>Song 외 3인 (Google)</span>
+            <span><a href="https://arxiv.org/abs/2604.05018" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=Google" class="post-tag">#Google</a>
+            <a href="../index.html?tag=PaperOrchestra" class="post-tag">#PaperOrchestra</a>
+            <a href="../index.html?tag=멀티에이전트" class="post-tag">#멀티에이전트</a>
+            <a href="../index.html?tag=에이전트오케스트레이션" class="post-tag">#에이전트오케스트레이션</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="Google의 AI 에이전트 5명이 논문을 씁니다"
+        data-date="2026-04-06"
+        data-category="tech"
+        data-source="arXiv (Song 외 3인, Google)"
+        data-tags="Google, PaperOrchestra, 멀티에이전트, 논문작성, 에이전트오케스트레이션"
+        data-original-url="https://arxiv.org/abs/2604.05018"
+        data-roasting-quote="AI 에이전트 1명에게 논문을 맡기면 실패합니다. Google은 5명의 팀으로 나눴습니다. 시뮬레이션 피어리뷰 합격률 84%가 나왔습니다."
+        data-next-post="2026-04-07-claude-mythos-cybersecurity.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Google이 논문 전 과정을 자동화하는 멀티 에이전트 프레임워크 PaperOrchestra를 공개했습니다.</p>
+        <p data-summary>개요, 도표, 문헌, 본문, 개선 5개 전문 에이전트가 역할을 나눠 LaTeX 논문을 완성합니다.</p>
+        <p data-summary>시뮬레이션 피어리뷰 합격률은 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI 에이전트 1명에게 논문을 맡기면 실패합니다.<br>Google은 5명의 팀으로 나눴습니다.<br>시뮬레이션 피어리뷰 합격률 84%가 나왔습니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 블록 1: 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>논문 한 편에는 아이디어, 문헌 검토, 실험 결과 정리, 도표 제작이 모두 들어갑니다. 지금까지 AI는 이 단계를 한 번에 처리하다 얕은 인용과 피상적 서술에 멈췄습니다. 2026년 4월 6일 Google이 arXiv에 PaperOrchestra를 공개했습니다(Song et al., 2026). 이 시스템은 같은 문제를 역할 분업으로 풀었습니다. 5개의 전문 에이전트가 차례로 작업을 주고받습니다. ScholarPeer AI 심사에서 CVPR 84%, ICLR 81%의 시뮬레이션 합격률이 나왔습니다. 인간 저자의 86%/94%에 근접한 수치입니다.</p>
+      </section>
+
+      <!-- 블록 2: 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI 문서 자동화는 글쓰기 보조를 넘어 "자동 연구원" 단계에 진입했습니다. 기존 Sakana AI Scientist v2는 실험과 작성을 하나로 묶어 설계됐습니다. 외부에서 주어진 원자료를 그대로 처리하지 못합니다(Song et al., 2026). 단일 LLM이 모든 역할을 떠안으니 문헌 검토 깊이, 시각화 품질, 본문 논리가 모두 얕았습니다. 경영 리더에게 중요한 지점은 이겁니다. PaperOrchestra가 풀어낸 문제는 "긴 복합 문서 자동 작성"입니다. 투자심의서, M&amp;A 검토, 시장 분석 리포트가 구조적으로 동일합니다.</p>
+      </section>
+
+      <!-- 블록 3: 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 단일 에이전트는 복잡한 문서에서 실패합니다.</strong> Google은 단일 LLM이 논문을 쓰는 Single Agent를 베이스라인으로 삼았습니다(Song et al., 2026). 평균 인용 수가 9~14건에 그쳤습니다. 인간 저자 논문의 약 59건과 비교하면 6분의 1 수준입니다. 한 모델이 문헌 검색, 도표 설계, 본문 작성을 동시에 떠안으니 컨텍스트가 분산됩니다. 얕은 키워드 검색에 의존해 핵심 선행 연구를 놓친 결과입니다.</p>
+
+        <p><strong>둘째, 역할 분업이 품질을 끌어올립니다.</strong> Google은 5개 전문 에이전트로 작업을 나눴습니다. 개요 생성, 도표 생성, 문헌 검토, 본문 작성, 반복 개선의 5단계입니다(Song et al., 2026). 도표 생성과 문헌 검토는 병렬로 실행합니다. 각 에이전트가 자신의 영역에만 집중하니 출력 품질이 큰 폭으로 오릅니다.</p>
+
+        <!-- 표: PaperOrchestra vs 단일 에이전트 비교 -->
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>지표</th>
+                <th style="text-align:center">Single Agent</th>
+                <th style="text-align:center">PaperOrchestra</th>
+                <th style="text-align:center">인간 저자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>평균 인용 수 (CVPR)</td>
+                <td style="text-align:center">11.46</td>
+                <td class="cell-hl" style="text-align:center">47.98</td>
+                <td style="text-align:center">58.52</td>
+              </tr>
+              <tr>
+                <td>평균 인용 수 (ICLR)</td>
+                <td style="text-align:center">9.75</td>
+                <td class="cell-hl" style="text-align:center">45.73</td>
+                <td style="text-align:center">59.18</td>
+              </tr>
+              <tr>
+                <td>ScholarPeer 합격률 (CVPR)</td>
+                <td style="text-align:center">71%</td>
+                <td class="cell-hl" style="text-align:center">84%</td>
+                <td style="text-align:center">86%</td>
+              </tr>
+              <tr>
+                <td>ScholarPeer 합격률 (ICLR)</td>
+                <td style="text-align:center">72%</td>
+                <td class="cell-hl" style="text-align:center">81%</td>
+                <td style="text-align:center">94%</td>
+              </tr>
+              <tr>
+                <td>문헌 검토 품질 점수 (CVPR)</td>
+                <td style="text-align:center">43.04</td>
+                <td class="cell-hl" style="text-align:center">78.30</td>
+                <td style="text-align:center">71.08</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Song et al. (2026), Table 2~4. Sparse Idea Setting, Gemini-3.1-Pro 판정 기준.</p>
+        </div>
+
+        <p><strong>셋째, 문헌 검토의 깊이가 완전히 달라졌습니다.</strong> 문헌 검토 에이전트는 웹 검색으로 후보 논문을 찾습니다. Semantic Scholar API로 존재를 검증한 뒤 중복을 제거합니다(Song et al., 2026). PaperOrchestra는 논문당 45~47건을 인용합니다. 단일 에이전트의 4배, 인간 수준의 78%입니다. 특히 "인용할 만한 주변 연구(P1)" 항목에서 재현율이 12.59~13.75%p 상승했습니다. 얕은 키워드 검색이 아니라 학술 지형을 훑는다는 증거입니다.</p>
+
+        <p><strong>넷째, 반복 개선 루프가 최종 품질을 결정합니다.</strong> 마지막 콘텐츠 개선 에이전트는 AgentReview 피드백을 받아 초안을 반복 수정합니다(Song et al., 2026). 전체 점수가 오르거나 세부 항목이 개선될 때만 수정본을 받아들입니다. 이 루프가 없으면 시뮬레이션 합격률이 CVPR 19%p, ICLR 22%p 하락합니다. 초안 품질보다 검토-수정 사이클의 기여가 더 큽니다.</p>
+
+        <p><strong>다섯째, 이 구조는 논문 밖으로 확장 가능합니다.</strong> 긴 복합 문서는 모두 같은 골격을 가집니다. 틀 잡기, 시각화, 근거 수집, 본문 작성, 반복 개선의 5단계입니다. 투자심의서, M&amp;A 검토, 시장 리포트, 내부 전략 문서가 모두 이 틀에 들어맞습니다. PaperOrchestra가 증명한 것은 "AI로 긴 문서 쓰는 법"의 표준 설계도입니다.</p>
+      </section>
+
+      <!-- 블록 4: 내일 당장 할 수 있는 것 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>사내에서 가장 반복되는 긴 문서를 5단계로 분해합니다.</strong><br>투자심의서, 경쟁사 분석 리포트, 분기 사업 계획 중 하나를 고릅니다. 개요, 시각화, 근거 수집, 본문, 개선의 5단계로 나눕니다. 각 단계별로 현재 투입 인원, 소요 시간, 시간당 인건비를 함께 기록합니다. (1시간, 화이트보드 또는 노션)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>Claude에 5개 역할 프롬프트 설계를 요청합니다.</strong><br>"이 문서를 5단계로 나눠 각 단계에 맞는 Claude 프롬프트를 설계해줘"라고 입력합니다. 각 에이전트 입력과 출력 형식을 명시하도록 요구합니다. 첫 번째 단계만 실제로 돌려봅니다. (30분, Claude 또는 Gemini)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>개선 루프를 가장 먼저 구현합니다.</strong><br>초안보다 "검토자 AI가 수정본을 요구하는" 루프 효과가 더 큽니다. 작성 에이전트 옆에 별도 검토 에이전트를 둡니다. 5회 반복 한도를 설정합니다. 점수가 오를 때만 수정본을 채택합니다. (2시간, 프롬프트 설계 및 테스트)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 블록 5: 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>토큰 비용이 크게 증가합니다.</strong> 5개 에이전트 순차·병렬 호출은 단일 에이전트 대비 5~10배 토큰을 소모합니다. 문헌 검토 에이전트가 후보 논문 본문을 다수 불러오면 비용이 더 커집니다. 파일럿 단계에서 1건당 예상 비용을 먼저 측정해야 합니다.</p>
+
+        <p><strong>입력 정보 밀도가 결과 품질을 좌우합니다.</strong> 입력이 간결할수록(Sparse Idea) 본문 품질이 떨어집니다(Song et al., 2026). 상세한 입력(Dense Idea)에서는 승률이 43~56%입니다. 간결한 입력에서는 18~24%로 떨어집니다. 사용자가 아이디어를 얼마나 구조화해 입력하느냐가 관건입니다.</p>
+
+        <p><strong>시뮬레이션 피어리뷰는 실제 피어리뷰가 아닙니다.</strong> 84%의 합격률은 AI 심사관이 준 점수입니다. ScholarPeer와 AI Scientist-v2 Reviewer가 평가했습니다(Song et al., 2026). 실제 학술지 합격률이 아닙니다. 기업 문서에 적용할 때도 "AI 평가"는 "실무 승인"과 다릅니다.</p>
+
+        <p><strong>사전학습 데이터 누수 가능성이 있습니다.</strong> 벤치마크 논문은 CVPR/ICLR 2025 정식 출판물입니다. LLM이 이미 본문을 기억할 수 있습니다. 연구팀은 익명화와 누수 방지 프롬프트를 적용했지만 완벽한 차단은 아닙니다.</p>
+      </section>
+
+      <!-- 블록 6: 마무리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>긴 문서는 AI 1명이 아니라 5명의 역할 분담 팀으로 나누어 써야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CEO</span>
+            <span>사내 반복 장문 문서 한 개를 정해 5단계 멀티 에이전트 파일럿을 지시하라. 숨은 인건비를 먼저 측정하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>개선 루프 없는 AI 초안 작업을 중단하라. 작성 에이전트 옆에 검토 에이전트를 반드시 둬라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>단일 LLM 호출 구조는 긴 문서에서 한계에 부딪힌다. 멀티 에이전트 오케스트레이션 아키텍처 검토를 시작하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <p><strong>멀티 에이전트 프레임워크</strong>: 여러 AI 에이전트가 각자 전문 역할을 맡아 순차 또는 병렬로 협업하는 구조입니다.</p>
+        <p><strong>LaTeX</strong>: 학술 논문 조판에 사용되는 문서 작성 언어입니다. 수식과 참고문헌 처리에 강합니다.</p>
+        <p><strong>Semantic Scholar API</strong>: 학술 논문 메타데이터를 조회하는 API입니다. 논문 존재 검증과 인용 관계 확인에 쓰입니다.</p>
+        <p><strong>ScholarPeer</strong>: AI 기반 논문 심사 시뮬레이션 프레임워크입니다. 사람 심사위원을 모방해 점수와 합격 여부를 판정합니다.</p>
+        <p><strong>P0 / P1 인용</strong>: P0는 반드시 인용해야 할 핵심 선행 연구, P1은 권장 수준의 주변 연구입니다.</p>
+        <p><strong>Sparse / Dense Idea</strong>: 입력 자료의 상세 수준입니다. Sparse는 간단한 아이디어 요약, Dense는 수식과 방법론이 포함된 상세 입력입니다.</p>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Song, Y., Song, Y., Pfister, T., &amp; Yoon, J. (2026, 4월). <em>PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing</em> [Preprint]. arXiv.
+            <a href="https://arxiv.org/abs/2604.05018" target="_blank" rel="noopener">https://arxiv.org/abs/2604.05018</a></li>
+          <li>Song, Y., Song, Y., Pfister, T., &amp; Yoon, J. (2026, 4월). <em>PaperOrchestra Project Page</em> [Web]. Google Research.
+            <a href="https://yiwen-song.github.io/paper_orchestra/" target="_blank" rel="noopener">https://yiwen-song.github.io/paper_orchestra/</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://arxiv.org/abs/2604.05018" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 — 패턴 A: 1:1 충돌형 (블랙 vs 레드) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">5명으로 나눴더니 합격률 84%가 나왔어요. 해야죠. 긴 복합 문서는 다 이 틀로 갑니다.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 84%, 어디서 나온 숫자예요? 본문 보면 AI 심사관이 준 점수잖아요. 실제 학회 합격률 아니에요. 경영진한테 이 숫자 그대로 쓰면 나중에 문제 됩니다.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">84% 절대값이 중요한 게 아니에요. 단일 에이전트 대비 14~38%p 차이. 이 방향이 맞다는 증거면 충분합니다. 수치는 검증하고 쓰면 되죠.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 — 패턴 C: 연쇄 반응형 (골드 → 네이비 → 화이트 → 골드) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 저번달에 멀티 에이전트 돌려봤는데요. 토큰값이 진짜 5배 나와요. 파일럿 한 번에 얼마 깨지는지 먼저 안 보면 큰일 납니다.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">5~10배 맞습니다. 문헌 검토 에이전트가 제일 먹어요. 논문 본문을 다 끌어오니까. 1건당 예상 비용 먼저 재고 시작하세요. 그게 본문이 말하는 정답이에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 투자심의서 한 건에 얼마까지 써도 되는 거예요? 위에선 해보라는데, 비용 근거 없이 지르면 제가 깨져요. 기준이 있어야 품의를 올리죠.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">작게 가세요. 먼저 개선 루프만 붙여요. 작성 에이전트 옆에 검토 에이전트 하나. 본문에도 루프 빼면 합격률 20%p 빠진다잖아요. 여기가 투자 대비 회수율 제일 좋아요.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 — 패턴 B: 끼어들기형 (퍼플 주장, 레드와 네이비가 각각 다른 각도로 태클) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이거 팀에 설명할 때 '5명의 AI가 팀처럼 글을 쓴다'고 하면 딱 와요. '혼자 쓰는 AI'에서 '팀으로 쓰는 AI'로 가는 서사, 저항이 반으로 줄 느낌이에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">퍼플님, '5명' 이 말 진짜 조심해요. 사람 5명이 아니라 역할 5개짜리 파이프라인이에요. 경영진이 "그럼 5명 줄여도 되나?"로 받으면 어떻게 답할 거예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">'5단계 파이프라인'이라고 부르세요. 개요, 도표, 문헌, 본문, 개선. 역할 분리와 병렬 실행, 검증 루프. 숫자와 단계로 말해야 결재선에서 안 흔들립니다.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-07-claude-mythos-cybersecurity.html">
+          <div class="next-post-title">AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-06-paperorchestra-multi-agent-writing.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html';
+    const ROASTING_QUOTE = 'AI 에이전트 1명에게 논문을 맡기면 실패합니다. Google은 5명의 팀으로 나눴습니다. 시뮬레이션 피어리뷰 합격률 84%가 나왔습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+<script src="../assets/js/char-effect.js"></script>
+<script>
+if (window.CharEffect) window.CharEffect.initPostTitle();
+</script>
+</body>
+</html>

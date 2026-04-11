@@ -28,51 +28,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
-  <style>
-    /* ── Styled table ── */
-    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
-    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
-    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #3b82f6; white-space: nowrap; }
-    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
-    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
-    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
-    .styled-table tbody tr:hover { background: #eef3ff; }
-    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
-    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
-    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
-    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
-    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
-
-    .framework-box { background: #f0f4ff; border-left: 4px solid #3b82f6; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
-    .framework-box strong { color: #1e40af; }
-
-    /* Dark mode overrides */
-    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
-    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
-    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
-    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
-    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
-    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
-    [data-theme="dark"] .table-caption { color: #666; }
-    [data-theme="dark"] .chart-wrap { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .chart-title { color: #999; }
-    [data-theme="dark"] .chart-note { color: #666; }
-    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
-    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
-    [data-theme="dark"] .framework-box { background: #1a1a2e; border-left-color: #4a90ff; }
-    [data-theme="dark"] .framework-box strong { color: #6ba3ff; }
-    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
-    [data-theme="dark"] .stat-card .stat-label { color: #777; }
-    [data-theme="dark"] .stat-card.negative .stat-num { color: #f87171; }
-    [data-theme="dark"] .stat-card.positive .stat-num { color: #4ade80; }
-    [data-theme="dark"] .quote-block { background: #2a2210; border-left-color: #f59e0b; color: #e0c090; }
-    [data-theme="dark"] .quote-block .quote-source { color: #d4a050; }
-  </style>
+  
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -210,8 +166,8 @@
               <strong>MLOps 파이프라인의 구조적 한계:</strong> 인터넷에서 수집한 고정 데이터로 사전 학습을 한 뒤, 특정 과제에 맞춰 미세 조정(fine-tuning)합니다. 두 단계 모두 사람이 직접 설계합니다. LLM을 예로 들면, 대규모 비지도 학습(다음 토큰 예측)이 먼저 진행되고, 이후 인간 피드백 기반 강화학습(RLHF)이 분리된 단계로 따라옵니다. 실제 운영 환경에서 예상치 못한 상황이 발생하면, 모델은 대응하지 못합니다.
             </div>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>비교 항목</th><th>인간 아이</th><th>현재 AI</th></tr>
                 </thead>
@@ -224,7 +180,7 @@
                   <tr class="highlight-row"><td>배포 후 학습 능력</td><td>지속</td><td>사실상 0</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+              <div class="post-table-source">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
             </div>
           </section>
 
@@ -234,8 +190,8 @@
             <p><strong>논문은 학습을 두 가지 시스템으로 나눕니다.</strong> System A는 관찰 기반 학습입니다. 아이가 주변을 보고 들으며 패턴을 익히는 것과 같습니다. System B는 행동 기반 학습입니다. 직접 몸을 움직여 시행착오를 겪으며 배우는 방식입니다.</p>
             <p>논문이 드는 구체적 사례가 인상적입니다. 신생아는 여러 언어의 음소를 모두 구분합니다. 그런데 생후 6~12개월 사이에 모국어 음소 인식은 정밀해지고, 외국어 음소 인식은 퇴화합니다. 이것이 System A의 작동입니다. 반면, 걷기는 관찰만으로 배울 수 없습니다. 구르기, 기기, 서기, 비틀거리기를 거쳐 성숙한 보행에 도달합니다. 이것이 System B입니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>구분</th><th>System A (관찰)</th><th>System B (행동)</th></tr>
                 </thead>
@@ -247,7 +203,7 @@
                   <tr><td>한계</td><td>행동과 연결 안 됨, 인과 파악 불가</td><td>데이터 효율 낮음, 보상 설계 필요</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+              <div class="post-table-source">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
             </div>
 
             <p><strong>핵심은 두 시스템이 서로를 돕는다는 것입니다.</strong> System A가 만든 '세계 모델(world model)'은 System B가 탐색할 범위를 줄여 줍니다. 실제 로보틱스에서 관절 자유도는 200~300개에 달합니다. 무작정 시행착오를 하면 경우의 수가 폭발합니다. System A가 먼저 환경의 물리 법칙을 학습해 두면, System B는 불필요한 탐색을 건너뛸 수 있습니다.</p>
@@ -277,8 +233,8 @@
             <p><strong>논문은 이 프레임워크의 실현에 수십 년이 걸릴 수 있다고 솔직하게 밝힙니다.</strong> 생물학에서 힌트를 얻은 '진화-발달(Evo/Devo)' 접근법을 제안합니다.</p>
             <p>생물은 진화(세대 간)와 발달(개체 내)이라는 두 시간 축에서 학습 능력을 갖춥니다. 영아의 시력은 처음에 매우 낮고, 운동 자유도도 제한적입니다. 시냅스 성장과 가지치기, 시간에 따른 가소성 조절, 자발적 신경 활동이 단계적으로 진행되면서 학습 복잡도가 점진적으로 높아집니다. 논문은 이것이 '무작위 초기화'가 아니라 '구조화된 출발점'임을 강조합니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>시간 축</th><th>생물</th><th>AI (현재)</th><th>AI (논문 제안)</th></tr>
                 </thead>
@@ -289,7 +245,7 @@
                   <tr class="highlight-row"><td>핵심 차이</td><td>두 축이 연결됨</td><td>두 축이 분리됨</td><td>이중 루프 최적화(bilevel optimization)</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
+              <div class="post-table-source">출처: Dupoux, LeCun, Malik (2026), arXiv:2603.15381</div>
             </div>
 
             <p>논문은 이 접근의 난제도 구체적으로 짚습니다. 한 번의 생애 전체가 데이터 1개에 해당합니다. 외부 루프를 최적화하려면 수백만 번의 시뮬레이션된 생애가 필요하고, 각 생애는 다시 수백만 개의 데이터 포인트를 포함합니다. 메모리와 연산 효율이 핵심 병목입니다.</p>
@@ -391,14 +347,14 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">숫자보다 현장이 더 직관적으로 말해줍니다. 저희도 파일럿 4개 중 1개만 살아남았어요. 74%가 아니라 75%라도 의사결정 방향은 같습니다.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">개인 경험과 통계는 다른 얘기예요. "우리 회사 4개 중 1개"가 산업 전체 근거가 될 수는 없잖아요. 출처 기준을 느슨하게 쓰면 나중에 반박당할 때 방어가 안 됩니다.</div>
@@ -418,14 +374,14 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">저도 같은 생각이에요. 논문은 수십 년 후 얘기고, 저는 지금 6개월 뒤 제품 출시해야 해요. 실운영 환경에서 분포 불일치 보정에만 ML 엔지니어 1명 꽤 오래 썼거든요. 현실 비용이 진짜 문제입니다.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">저는 다른 게 더 무서워요. 논문 얘기는 둘째 치고, 지금 운영 중인 AI 모델이 언제 재학습이 필요한지도 모르는 상태예요. 위에선 AI 잘 쓰고 있냐고 묻는데 뭐라고 답해야 하죠.</div>
@@ -445,21 +401,21 @@
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">써도 됩니다. 그게 이 논문에서 실무자가 가져갈 수 있는 거의 유일한 직관적 프레임이에요. 배포 후 학습 능력 0이라는 메시지는 임원한테도 먹힙니다.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">단, 아이 비유는 직관적이지만 과도하게 단순화될 수 있어요. "AI는 아이와 달리 절대 못 배운다"로 오해하면 곤란하고, "지금 구조에서는 배우지 못한다"는 조건이 명확해야 해요.</div>
                 </div>
               </div>
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">정확히요. 배포된 모델은 파라미터가 동결(frozen)됩니다. 새 환경 적응은 재학습이 필요하고, 그게 MLOps 파이프라인 비용이에요. 비유 쓸 때 이 한계선 하나만 같이 설명하면 됩니다.</div>

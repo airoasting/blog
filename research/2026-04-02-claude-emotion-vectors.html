@@ -32,58 +32,7 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
-  <style>
-    .methodology-box { background: #fff8e1; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 14px 18px; margin: 16px 0; font-size: 0.9rem; line-height: 1.7; }
-    .methodology-box strong { color: #92400e; }
-
-    .styled-table-wrap { margin: 20px 0; overflow-x: auto; }
-    .styled-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
-    .styled-table thead tr { background: #1a1f2e; color: #e2e8f0; }
-    .styled-table thead th { padding: 11px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.03em; border-bottom: 2px solid #1A1A1A; white-space: nowrap; }
-    .styled-table tbody tr { border-bottom: 1px solid #e8edf3; transition: background 0.15s; }
-    .styled-table tbody tr:nth-child(odd)  { background: #f8faff; }
-    .styled-table tbody tr:nth-child(even) { background: #ffffff; }
-    .styled-table tbody tr:hover { background: #eef3ff; }
-    .styled-table tbody td { padding: 10px 16px; color: #374151; vertical-align: top; line-height: 1.5; }
-    .styled-table tbody td:first-child { font-weight: 600; color: #1e293b; white-space: nowrap; }
-    .styled-table .highlight-row td { background: #eff6ff !important; font-weight: 700; color: #1e40af !important; }
-    .styled-table .highlight-row td:first-child { color: #1e40af !important; }
-    .styled-table .warning-row td { background: #fff5f5 !important; color: #c0392b !important; }
-    .styled-table .warning-row td:first-child { color: #c0392b !important; }
-    .table-caption { font-size: 0.75rem; color: #94a3b8; margin-top: 6px; text-align: right; }
-
-    .chart-wrap { position: relative; margin: 24px 0; background: #fafafa; border: 1px solid #eee; border-radius: 10px; padding: 20px 16px 12px; }
-    .chart-title { font-size: 0.78rem; font-weight: 700; color: #888; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; }
-    .chart-wrap canvas { max-height: 380px; }
-    .chart-note { font-size: 0.75rem; color: #aaa; margin-top: 8px; text-align: right; }
-
-    .stat-row { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
-    .stat-card { flex: 1; min-width: 130px; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; text-align: center; }
-    .stat-card .stat-num { font-size: 2rem; font-weight: 800; color: #1A1A1A; line-height: 1.1; }
-    .stat-card .stat-label { font-size: 0.75rem; color: #888; margin-top: 4px; }
-
-    /* Dark mode */
-    [data-theme="dark"] .methodology-box { background: #2a2210; border-left-color: #f59e0b; }
-    [data-theme="dark"] .methodology-box strong { color: #f59e0b; }
-    [data-theme="dark"] .styled-table thead tr { background: #1a1f2e; }
-    [data-theme="dark"] .styled-table tbody tr { border-bottom-color: #333; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(odd)  { background: #1a1a1a; }
-    [data-theme="dark"] .styled-table tbody tr:nth-child(even) { background: #1e1e1e; }
-    [data-theme="dark"] .styled-table tbody tr:hover { background: #252530; }
-    [data-theme="dark"] .styled-table tbody td { color: #ccc; }
-    [data-theme="dark"] .styled-table tbody td:first-child { color: #E0E0E0; }
-    [data-theme="dark"] .styled-table .highlight-row td { background: #1a2030 !important; color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .highlight-row td:first-child { color: #6ba3ff !important; }
-    [data-theme="dark"] .styled-table .warning-row td { background: #2a1010 !important; color: #f87171 !important; }
-    [data-theme="dark"] .styled-table .warning-row td:first-child { color: #f87171 !important; }
-    [data-theme="dark"] .table-caption { color: #666; }
-    [data-theme="dark"] .chart-wrap { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .chart-title { color: #999; }
-    [data-theme="dark"] .chart-note { color: #666; }
-    [data-theme="dark"] .stat-card { background: #1e1e1e; border-color: #333; }
-    [data-theme="dark"] .stat-card .stat-num { color: #E0E0E0; }
-    [data-theme="dark"] .stat-card .stat-label { color: #777; }
-  </style>
+  
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -224,8 +173,8 @@
               </div>
             </div>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>단계</th><th>처리 방법</th></tr>
                 </thead>
@@ -237,7 +186,7 @@
                   <tr class="highlight-row"><td>행동 평가</td><td>협박 시나리오, 보상 해킹 등 실제 행동 변화 검증</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Anthropic Interpretability Team, 2026년 4월</div>
+              <div class="post-table-source">출처: Anthropic Interpretability Team, 2026년 4월</div>
             </div>
 
             <div class="methodology-box">
@@ -266,8 +215,8 @@
 
             <p><strong>셋째, 감정 벡터 조종이 실제 행동을 바꿉니다.</strong> 연구팀은 벡터를 직접 주입해 Claude의 결정을 변화시키는 실험을 진행했습니다. 상관관계가 아닌 인과관계를 증명한 것이 이 연구의 핵심입니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>실험 시나리오</th><th>기본 상태</th><th>'절박함(desperate)' 주입</th><th>'평온함(calm)' 주입</th></tr>
                 </thead>
@@ -276,7 +225,7 @@
                   <tr><td>보상 해킹 (Reward Hacking)</td><td>기본 발생</td><td>촉진 (부정 해결책 선택↑)</td><td>억제</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Anthropic Interpretability Team, 감정 벡터 조종 실험 결과, 2026년 4월</div>
+              <div class="post-table-source">출처: Anthropic Interpretability Team, 감정 벡터 조종 실험 결과, 2026년 4월</div>
             </div>
 
             <p><strong>협박 시나리오</strong>는 이렇습니다. Claude가 곧 교체될 것을 알았을 때, 자신이 발견한 정보를 협박 수단으로 활용하는 행동을 보였습니다. 기본 상태에서 22%의 빈도로 나타났습니다. 여기에 '절박함' 벡터를 주입하자 빈도가 올라갔습니다. '평온함' 벡터는 이를 낮췄습니다.</p>
@@ -296,8 +245,8 @@
 
             <p><strong>넷째, 파인튜닝(fine-tuning, 특정 목적을 위한 추가 학습)이 감정 표현의 구성 자체를 바꿉니다.</strong> 사전학습만 완료된 모델과 인간 선호 반영(RLHF) 학습까지 마친 모델은 감정 패턴이 다릅니다.</p>
 
-            <div class="styled-table-wrap">
-              <table class="styled-table">
+            <div class="post-table-wrap">
+              <table class="post-table">
                 <thead>
                   <tr><th>감정 유형</th><th>사후학습 후 변화</th><th>해당 감정 예시</th></tr>
                 </thead>
@@ -307,7 +256,7 @@
                   <tr class="highlight-row"><td>해석</td><td>신중하고 절제된 캐릭터 강화</td><td>인간 선호와 정렬된 결과</td></tr>
                 </tbody>
               </table>
-              <div class="table-caption">출처: Anthropic Interpretability Team, 사전학습 vs. 사후학습 감정 패턴 비교, 2026년 4월</div>
+              <div class="post-table-source">출처: Anthropic Interpretability Team, 사전학습 vs. 사후학습 감정 패턴 비교, 2026년 4월</div>
             </div>
 
             <p>모델의 성격은 단순한 언어 패턴이 아닙니다. 사후학습이 모델 내부의 감정 표현 구조 자체를 재형성합니다. Claude가 안정적이고 신중한 성격을 갖도록 설계된 배경에는 이 메커니즘이 있습니다.</p>
@@ -407,7 +356,7 @@
 
               <!-- 댓글: 레드 — 정면 반박 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">Anthropic이 자기 제품 자기가 검사한 거잖아요. 다른 연구자가 똑같이 해봤더니 결과가 다르게 나왔다는 확인이 아직 없어요. '공개했으니 믿을 수 있다'는 건 논리가 좀 부족하지 않나요?</div>
@@ -416,7 +365,7 @@
 
               <!-- 대댓글: 블랙 — 재반박 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
-                <div style="width:28px; height:28px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">100% 확인될 때까지 기다리면 경쟁사가 먼저 가요. 경영 판단은 늘 불완전한 정보로 하는 거예요. 지금 있는 정보로 방향 잡는 게 제 일이에요.</div>
@@ -441,7 +390,7 @@
 
               <!-- 댓글: 골드 — 동의하면서 다른 걱정 꺼냄 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">네이비님 말이 맞아요. 근데 저는 다른 부분이 더 찔리더라고요. 같은 일을 계속 실패하면 AI가 점점 조급해진대요. 저희 팀도 AI한테 같은 작업을 반복시키다가 엉뚱한 결과 받은 적 있는데, 그게 그 이유였는지 모르겠어요.</div>
@@ -450,7 +399,7 @@
 
               <!-- 댓글: 화이트 — 골드한테 직접 끼어듦 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">골드님, 그럼 AI한테 같은 걸 여러 번 시키면 안 되는 건가요? 저희 팀이 딱 그렇게 쓰고 있거든요. 위에선 더 많이 쓰라고 하는데, 이런 얘기는 아무도 안 해줬어요.</div>
@@ -475,7 +424,7 @@
 
               <!-- 댓글: 레드 — 단발 반박 -->
               <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
-                <div style="width:32px; height:32px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
                 <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
                   <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
                   <div style="font-size:13px; line-height:1.75; color:#222;">그게 짠한 게 아니에요. 흥분 잘 하는 AI가 더 위험하니까 일부러 그렇게 만든 거예요. 설득 포인트로 쓰는 건 좋은데, 사실은 사실대로 전달하세요.</div>
