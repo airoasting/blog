@@ -61,7 +61,7 @@ window.POSTS_DATA = {
       "next_post": "2026-04-07-culture-that-ate-silicon-valley.html"
     },
     {
-      "title": "문화가 실리콘밸리를 먹었다: Anthropic의 역전",
+      "title": "Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다",
       "date": "2026-04-07",
       "category": "leader",
       "source": "Substack (Raj Sarkar)",
@@ -181,19 +181,19 @@ window.POSTS_DATA = {
       "next_post": "2026-04-06-sam-altman-can-he-be-trusted.html"
     },
     {
-      "title": "샘 올트먼, 신뢰할 수 있는가",
+      "title": "샘 알트만, 신뢰할 수 있는가",
       "date": "2026-04-06",
       "category": "leader",
       "source": "The New Yorker (Ronan Farrow, Andrew Marantz)",
       "tags": ["Sam Altman", "OpenAI", "AI안전", "AI거버넌스"],
       "slug": "2026-04-06-sam-altman-can-he-be-trusted",
       "file": "leader/2026-04-06-sam-altman-can-he-be-trusted.html",
-      "summary": "The New Yorker가 100명 이상을 인터뷰하고 내부 문건 70페이지를 검토했습니다. OpenAI 공동창업자들은 올트먼의 거짓말 패턴을 공식 기록으로 남겼고, 조사 결과는 서면 없이 구두로만 공유됐습니다. OpenAI는 안전 전담 팀을 해산하고 1조 달러 기업가치로 IPO를 준비 중입니다.",
+      "summary": "The New Yorker가 100명 이상을 인터뷰하고 내부 문건 70페이지를 검토했습니다. OpenAI 공동창업자들은 알트만의 거짓말 패턴을 공식 기록으로 남겼고, 조사 결과는 서면 없이 구두로만 공유됐습니다. OpenAI는 안전 전담 팀을 해산하고 1조 달러 기업가치로 IPO를 준비 중입니다.",
       "roasting_quote": "70페이지 내부 고발 문건이 있습니다. 조사 결과는 구두로만 공유하고 문서는 남기지 않았습니다. AI 역사상 가장 강력한 기업의 신뢰성 검증이 그렇게 끝났습니다.",
       "next_post": "2026-04-06-sam-altman-superintelligence-new-deal.html"
     },
     {
-      "title": "샘 올트먼의 초지능 뉴딜, 진심인가 전략인가",
+      "title": "샘 알트만의 초지능 뉴딜, 진심인가 전략인가",
       "date": "2026-04-06",
       "category": "leader",
       "source": "Axios (Mike Allen, Jim VandeHei)",

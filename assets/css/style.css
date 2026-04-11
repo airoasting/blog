@@ -1389,7 +1389,8 @@ img {
 .post[data-category="company"]  .post-table .cell-hl { color: var(--cat-company);  font-weight: 700; }
 .post[data-category="tech"]     .post-table .cell-hl { color: var(--cat-tech);     font-weight: 700; }
 .post[data-category="survival"] .post-table .cell-hl { color: var(--cat-survival); font-weight: 700; }
-.post-table-source { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+.post-table-source,
+.post-section .post-table-source { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
 
 /* --- Chart --- */
 .chart-wrap { margin: 24px 0; }

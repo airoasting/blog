@@ -19,12 +19,12 @@
 - 2026-04-09 [기술] 비싼 AI는 조언만, 싼 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
 - 2026-04-09 [기업] Gen AI 로봇이 서비스업을 다시 설계합니다 — /blog/company/2026-04-09-gen-ai-robots-reshaping-services.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
-- 2026-04-07 [리더] 문화가 실리콘밸리를 먹었다: Anthropic의 역전 — /blog/leader/2026-04-07-culture-that-ate-silicon-valley.html
+- 2026-04-07 [리더] Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다 — /blog/leader/2026-04-07-culture-that-ate-silicon-valley.html
 - 2026-04-06 [기술] Google의 AI 에이전트 5명이 논문을 씁니다 — /blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html
-- 2026-04-06 [리더] 샘 올트먼, 신뢰할 수 있는가 — /blog/leader/2026-04-06-sam-altman-can-he-be-trusted.html
+- 2026-04-06 [리더] 샘 알트만, 신뢰할 수 있는가 — /blog/leader/2026-04-06-sam-altman-can-he-be-trusted.html
 - 2026-04-08 [생존] 직원 80%가 이미 떠났다, AI 성과가 0인 이유 — /blog/survival/2026-04-08-gallup-engagement-ai-paradox.html
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
-- 2026-04-06 [리더] 샘 올트먼의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html
+- 2026-04-06 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html
 - 2026-04-03 [생존] 개발자 전면 자동화, 예측 시점이 2년 당겨졌다 — /blog/survival/2026-04-03-ai-coder-automation-timeline.html
 - 2026-04-03 [리더] 카파시: LLM이 내 위키를 대신 쓴다 — /blog/leader/2026-04-03-karpathy-llm-knowledge-base.html
 - 2026-04-02 [기술] Gemma 4, 크기의 상식을 깨는 오픈 모델 — /blog/tech/2026-04-02-gemma-4-open-model.html

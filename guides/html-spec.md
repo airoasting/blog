@@ -403,7 +403,7 @@ function copyPrompt(btn) {
 - `.post-table-wrap`: overflow-x 스크롤 래퍼
 - `.post-table`: 기본 테이블 (border, padding, color 모두 CSS 변수)
 - `.cell-hl`: 굵게 + 해당 카테고리 색상 강조
-- `.post-table-source`: 출처 표기 (소형, muted)
+- `.post-table-source`: 출처 표기 (소형, muted) — `.post-section p`보다 specificity가 낮으므로 반드시 `<p class="post-table-source">` 형태로 사용. 인라인 스타일 금지
 - th 하단 보더는 포스트의 `data-category` 값에 따라 자동으로 카테고리 색상 적용됨
 
 ### 4-12. CSS 기본 규칙
