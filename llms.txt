@@ -14,8 +14,14 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html
+- 2026-04-09 [리서치] Anthropic 2026 에이전틱 코딩 리포트: 60%는 쓰지만 완전 위임은 20% — /blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html
+- 2026-04-09 [기술] 비싼 AI는 조언만, 싼 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
 - 2026-04-09 [기업] Gen AI 로봇이 서비스업을 다시 설계합니다 — /blog/company/2026-04-09-gen-ai-robots-reshaping-services.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
+- 2026-04-07 [리더] 문화가 실리콘밸리를 먹었다: Anthropic의 역전 — /blog/leader/2026-04-07-culture-that-ate-silicon-valley.html
+- 2026-04-06 [기술] Google의 AI 에이전트 5명이 논문을 씁니다 — /blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html
+- 2026-04-06 [리더] 샘 올트먼, 신뢰할 수 있는가 — /blog/leader/2026-04-06-sam-altman-can-he-be-trusted.html
 - 2026-04-08 [생존] 직원 80%가 이미 떠났다, AI 성과가 0인 이유 — /blog/survival/2026-04-08-gallup-engagement-ai-paradox.html
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
 - 2026-04-06 [리더] 샘 올트먼의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html

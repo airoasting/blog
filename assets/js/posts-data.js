@@ -1,6 +1,42 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장",
+      "date": "2026-04-09",
+      "category": "research",
+      "source": "Google Cloud (Global Strategic Industries)",
+      "tags": ["GoogleCloud", "AI에이전트", "2026트렌드", "AX", "디지털조립라인"],
+      "slug": "2026-04-09-google-cloud-ai-agent-trends",
+      "file": "research/2026-04-09-google-cloud-ai-agent-trends.html",
+      "summary": "Google Cloud가 2026 AI 에이전트 5대 트렌드 리포트를 공개했습니다. gen AI 사용 기업의 52%가 에이전트를 프로덕션에 올렸고, 88%가 ROI를 확인했습니다. 직원 역할은 실행자에서 오케스트레이터로, 워크플로우는 에이전트 팀이 협업하는 디지털 조립라인으로 바뀝니다.",
+      "roasting_quote": "gen AI를 쓰는 기업의 52%가 이미 에이전트를 프로덕션에 올렸습니다. 당신 조직이 아직 '언제 도입할까'를 회의하고 있다면, 이미 출발선에서 밀린 것입니다.",
+      "next_post": "2026-04-09-anthropic-2026-agentic-coding-trends.html"
+    },
+    {
+      "title": "Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20%",
+      "date": "2026-04-09",
+      "category": "research",
+      "source": "Anthropic (Claude Team)",
+      "tags": ["Anthropic", "AI에이전트", "ClaudeCode", "개발생산성", "AX"],
+      "slug": "2026-04-09-anthropic-2026-agentic-coding-trends",
+      "file": "research/2026-04-09-anthropic-2026-agentic-coding-trends.html",
+      "summary": "Anthropic이 2026 에이전틱 코딩 트렌드 리포트를 공개했습니다. 개발자는 업무의 약 60%에 AI를 쓰지만 완전 위임이 가능한 작업은 0~20%입니다. 8대 트렌드가 단일 에이전트에서 조율된 팀으로, 개발팀 전용 도구에서 비개발 부서 자체 구축으로 소프트웨어 개발 경제를 재편합니다.",
+      "roasting_quote": "AI를 업무의 60%에 씁니다. 그런데 완전 위임이 가능한 일은 20%뿐입니다. Anthropic이 직접 공개한 수치입니다.",
+      "next_post": "2026-04-09-advisor-strategy-claude-opus.html"
+    },
+    {
+      "title": "비싼 AI는 조언만, 싼 AI가 실행합니다",
+      "date": "2026-04-09",
+      "category": "tech",
+      "source": "Anthropic (Claude Team)",
+      "tags": ["Anthropic", "ClaudeOpus", "AI비용", "에이전트설계"],
+      "slug": "2026-04-09-advisor-strategy-claude-opus",
+      "file": "tech/2026-04-09-advisor-strategy-claude-opus.html",
+      "summary": "Anthropic이 Opus를 조언자, Sonnet과 Haiku를 실행자로 붙이는 Advisor Strategy를 공개했습니다. Haiku는 BrowseComp 점수가 19.7%에서 41.2%로 2배 이상 뛰었습니다. Sonnet은 SWE-bench 점수가 오르면서 작업당 비용은 11.9% 줄었습니다.",
+      "roasting_quote": "비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다.",
+      "next_post": "2026-04-08-managed-agents-decoupling.html"
+    },
+    {
       "title": "Gen AI 로봇이 서비스업을 다시 설계합니다",
       "date": "2026-04-09",
       "category": "company",
@@ -22,7 +58,31 @@ window.POSTS_DATA = {
       "file": "tech/2026-04-07-claude-mythos-cybersecurity.html",
       "summary": "Anthropic이 공개 배포를 보류한 Claude Mythos Preview가 보안 전문가와 자동화 도구가 수십 년간 놓쳤던 취약점을 단독 발굴했습니다. 40개 기업 Project Glasswing 컨소시엄에 1억 달러 투입. 코딩 능력과 취약점 탐지는 같은 능력의 양면입니다.",
       "roasting_quote": "보안 전문가가 27년간 못 찾은 버그를 AI가 혼자 찾았습니다. 당신 회사 시스템도 지금 이 순간 같은 상황일 수 있습니다.",
-      "next_post": "2026-04-08-gallup-engagement-ai-paradox.html"
+      "next_post": "2026-04-07-culture-that-ate-silicon-valley.html"
+    },
+    {
+      "title": "문화가 실리콘밸리를 먹었다: Anthropic의 역전",
+      "date": "2026-04-07",
+      "category": "leader",
+      "source": "Substack (Raj Sarkar)",
+      "tags": ["Anthropic", "OpenAI", "기업문화", "엔터프라이즈AI", "AI전략"],
+      "slug": "2026-04-07-culture-that-ate-silicon-valley",
+      "file": "leader/2026-04-07-culture-that-ate-silicon-valley.html",
+      "summary": "Anthropic이 기업용 AI 직접 비교에서 OpenAI를 70% 승률로 앞섭니다. 연간 30억 달러 매출을 16개월 만에 달성했습니다. 신뢰가 속도를 이겼습니다. 기업 고객은 안전 연구에 투자한 벤더를 선택합니다.",
+      "roasting_quote": "더 빨리 만들면 이긴다고 했습니다. OpenAI가 그 믿음을 실천했습니다. 기업 고객의 판단은 달랐습니다.",
+      "next_post": "2026-04-06-sam-altman-superintelligence-new-deal.html"
+    },
+    {
+      "title": "Google의 AI 에이전트 5명이 논문을 씁니다",
+      "date": "2026-04-06",
+      "category": "tech",
+      "source": "arXiv (Song 외 3인, Google)",
+      "tags": ["Google", "PaperOrchestra", "멀티에이전트", "논문작성", "에이전트오케스트레이션"],
+      "slug": "2026-04-06-paperorchestra-multi-agent-writing",
+      "file": "tech/2026-04-06-paperorchestra-multi-agent-writing.html",
+      "summary": "Google PaperOrchestra: 개요, 도표, 문헌, 본문, 개선 5개 전문 에이전트가 역할을 나눠 LaTeX 논문을 완성합니다. ScholarPeer 시뮬레이션 합격률 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다. 긴 복합 문서 자동 작성의 표준 설계도입니다.",
+      "roasting_quote": "AI 에이전트 1명에게 논문을 맡기면 실패합니다. Google은 5명의 팀으로 나눴습니다. 시뮬레이션 피어리뷰 합격률 84%가 나왔습니다.",
+      "next_post": "2026-04-07-claude-mythos-cybersecurity.html"
     },
     {
       "title": "갤럽 조사: 전 세계 직원 몰입도 2년 연속 하락",
@@ -118,6 +178,18 @@ window.POSTS_DATA = {
       "file": "tech/2026-03-28-ai-agent-traps.html",
       "summary": "구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다. 웹사이트에 숨긴 명령 하나로 에이전트의 행동을 바꿀 수 있습니다.",
       "roasting_quote": "AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?",
+      "next_post": "2026-04-06-sam-altman-can-he-be-trusted.html"
+    },
+    {
+      "title": "샘 올트먼, 신뢰할 수 있는가",
+      "date": "2026-04-06",
+      "category": "leader",
+      "source": "The New Yorker (Ronan Farrow, Andrew Marantz)",
+      "tags": ["Sam Altman", "OpenAI", "AI안전", "AI거버넌스"],
+      "slug": "2026-04-06-sam-altman-can-he-be-trusted",
+      "file": "leader/2026-04-06-sam-altman-can-he-be-trusted.html",
+      "summary": "The New Yorker가 100명 이상을 인터뷰하고 내부 문건 70페이지를 검토했습니다. OpenAI 공동창업자들은 올트먼의 거짓말 패턴을 공식 기록으로 남겼고, 조사 결과는 서면 없이 구두로만 공유됐습니다. OpenAI는 안전 전담 팀을 해산하고 1조 달러 기업가치로 IPO를 준비 중입니다.",
+      "roasting_quote": "70페이지 내부 고발 문건이 있습니다. 조사 결과는 구두로만 공유하고 문서는 남기지 않았습니다. AI 역사상 가장 강력한 기업의 신뢰성 검증이 그렇게 끝났습니다.",
       "next_post": "2026-04-06-sam-altman-superintelligence-new-deal.html"
     },
     {

@@ -5,6 +5,114 @@
 
 ---
 
+## 문화가 실리콘밸리를 먹었다: Anthropic의 역전
+
+날짜: 2026-04-07
+카테고리: 리더
+소스: Substack (Raj Sarkar)
+원문: https://rajsarkar.substack.com/p/the-culture-that-ate-silicon-valley
+태그: Anthropic, OpenAI, 기업문화, 엔터프라이즈AI, AI전략
+
+### 3줄 요약
+Anthropic이 기업용 AI 직접 비교에서 OpenAI를 70%의 승률로 앞섭니다. 연간 매출 30억 달러를 달성하는 데 16개월이 걸렸습니다.
+OpenAI 엔지니어가 Anthropic으로 이동하는 비율이 반대 방향보다 8배 높습니다. 보상이 아닌 연구 방향성이 이유입니다.
+신뢰가 속도를 이겼습니다. 기업 고객은 빠른 출시보다 믿을 수 있는 AI를 선택합니다.
+
+### Roasting
+더 빨리 만들면 이긴다고 했습니다. OpenAI가 그 믿음을 실천했습니다. 기업 고객의 판단은 달랐습니다.
+
+---
+
+## 샘 올트먼, 신뢰할 수 있는가
+
+날짜: 2026-04-06
+카테고리: 리더
+소스: The New Yorker (Ronan Farrow, Andrew Marantz)
+원문: https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted
+태그: Sam Altman, OpenAI, AI안전, AI거버넌스
+
+### 3줄 요약
+The New Yorker가 100명 이상을 인터뷰하고 내부 문건 70페이지를 검토했습니다. OpenAI 공동창업자들은 올트먼의 '거짓말 패턴'을 공식 기록으로 남겼습니다.
+올트먼은 해고 5일 만에 복귀했고, 독립 조사 결과는 서면 없이 구두로만 공유됐습니다.
+OpenAI는 안전 전담 팀을 해산하고 1조 달러 기업가치로 IPO를 준비 중입니다.
+
+### Roasting
+70페이지 내부 고발 문건이 있습니다. 조사 결과는 구두로만 공유하고 문서는 남기지 않았습니다. AI 역사상 가장 강력한 기업의 신뢰성 검증이 그렇게 끝났습니다.
+
+---
+
+## 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장
+
+날짜: 2026-04-09
+카테고리: 리서치
+소스: Google Cloud (Global Strategic Industries)
+원문: https://services.google.com/fh/files/misc/google_cloud_ai_agent_trends_2026_report.pdf
+태그: GoogleCloud, AI에이전트, 2026트렌드, AX, 디지털조립라인
+
+### 3줄 요약
+Google Cloud가 2026 AI 에이전트 5대 트렌드 리포트를 공개했습니다. gen AI를 도입한 기업 중 52%가 이미 에이전트를 프로덕션에 올렸습니다. 얼리어답터의 88%가 하나 이상의 활용 사례에서 ROI를 확인했습니다.
+핵심 변화는 직원 역할의 재정의입니다. 실행자가 오케스트레이터로 이동합니다. 워크플로우는 에이전트들이 협업하는 '디지털 조립라인'으로 바뀝니다.
+리더가 물어야 할 질문은 '에이전트를 어디에 붙일까'가 아닙니다. '조직이 에이전트를 관리할 인력과 구조를 갖췄는가'입니다.
+
+### Roasting
+gen AI를 쓰는 기업의 52%가 이미 에이전트를 프로덕션에 올렸습니다. 당신 조직이 아직 '언제 도입할까'를 회의하고 있다면, 이미 출발선에서 밀린 것입니다.
+
+---
+
+## Google의 AI 에이전트 5명이 논문을 씁니다
+
+날짜: 2026-04-06
+카테고리: 기술
+소스: arXiv (Song 외 3인, Google)
+원문: https://arxiv.org/abs/2604.05018
+태그: Google, PaperOrchestra, 멀티에이전트, 논문작성, 에이전트오케스트레이션
+
+### 3줄 요약
+Google이 논문 전 과정을 자동화하는 멀티 에이전트 프레임워크 PaperOrchestra를 공개했습니다.
+개요, 도표, 문헌, 본문, 개선 5개 전문 에이전트가 역할을 나눠 LaTeX 논문을 완성합니다.
+시뮬레이션 피어리뷰 합격률은 CVPR 84%, ICLR 81%. 단일 에이전트 방식을 14~38%p 앞섭니다.
+
+### Roasting
+AI 에이전트 1명에게 논문을 맡기면 실패합니다. Google은 5명의 팀으로 나눴습니다. 시뮬레이션 피어리뷰 합격률 84%가 나왔습니다.
+
+---
+
+## Anthropic 2026 에이전틱 코딩 리포트: 60%는 쓰지만 완전 위임은 20%
+
+날짜: 2026-04-09
+카테고리: 리서치
+소스: Anthropic (Claude Team)
+원문: https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf
+태그: Anthropic, AI에이전트, ClaudeCode, 개발생산성, AX
+
+### 3줄 요약
+Anthropic이 2026 에이전틱 코딩 트렌드 리포트를 발표했습니다. 개발자는 업무의 약 60%에 AI를 씁니다. 완전 위임이 가능한 작업은 0~20% 수준입니다.
+리포트는 8대 트렌드를 제시합니다. 단일 에이전트가 조율된 팀으로 진화합니다. 짧은 작업이 장시간 자율 실행으로 확장됩니다. 개발자 도구가 비개발 부서로 넘어갑니다.
+결론은 분명합니다. AI는 자동 실행기가 아니라 상시 협력자입니다. 감독과 검증을 체계화한 조직이 조기 수혜자와 후발 주자의 격차를 벌립니다.
+
+### Roasting
+AI를 업무의 60%에 씁니다. 그런데 완전 위임이 가능한 일은 20%뿐입니다. Anthropic이 직접 공개한 수치입니다.
+
+---
+
+## 비싼 AI는 조언만, 싼 AI가 실행합니다
+
+날짜: 2026-04-09
+카테고리: 기술
+소스: Anthropic (Claude Team)
+원문: https://claude.com/blog/the-advisor-strategy
+태그: Anthropic, ClaudeOpus, AI비용, 에이전트설계
+
+### 3줄 요약
+Anthropic이 Advisor Strategy를 공개했습니다. Opus가 조언자, Sonnet과 Haiku가 실행자 역할을 맡는 설계입니다.
+Haiku는 BrowseComp 점수가 19.7%에서 41.2%로 2배 이상 뛰었습니다.
+Sonnet은 SWE-bench 점수가 오르면서 작업당 비용은 11.9% 줄었습니다.
+
+### Roasting
+비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다.
+
+---
+
 ## Gen AI 로봇이 서비스업을 다시 설계합니다
 
 날짜: 2026-04-09
