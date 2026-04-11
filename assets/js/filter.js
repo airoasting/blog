@@ -53,25 +53,29 @@
               </button>`;
     }).join('');
 
-    // Collect unique tags from posts (source excluded — shown on cards separately)
-    const allTags = new Set();
+    // Collect tags with counts
+    const tagCount = {};
     allPosts.forEach(p => {
-      if (p.tags) p.tags.forEach(t => allTags.add(t));
+      if (p.tags) p.tags.forEach(t => { tagCount[t] = (tagCount[t] || 0) + 1; });
     });
 
-    const tagHTML = Array.from(allTags).map(tag => {
-      const isActive = activeTag === tag;
-      return `<button class="filter-pill${isActive ? ' active' : ''}"
-                data-tag="${tag}">#${tag}</button>`;
-    }).join('');
+    const tagHTML = Object.entries(tagCount)
+      .sort((a, b) => b[1] - a[1])
+      .map(([tag, count]) => {
+        const isActive = activeTag === tag;
+        return `<button class="filter-pill${isActive ? ' active' : ''}" data-tag="${tag}">#${tag}<span class="filter-pill-count">${count}</span></button>`;
+      }).join('');
 
     const nlTab = `<button class="filter-tab filter-tab-newsletter" data-category="newsletter" style="--cat-color:var(--cat-newsletter,#7C3AED)">뉴스레터</button>`;
+    const hasActiveTag = !!activeTag;
 
     container.innerHTML = `
-      <div class="filter-tabs">${catHTML}${nlTab}</div>
-      <div class="filter-pills-wrap">
+      <div class="filter-bar-row">
+        <div class="filter-tabs">${catHTML}${nlTab}</div>
+        <button class="filter-pills-toggle${hasActiveTag ? ' has-active' : ''}" id="filterPillsToggle"># 태그</button>
+      </div>
+      <div class="filter-pills-wrap${hasActiveTag ? ' open' : ''}" id="filterPillsWrap">
         <div class="filter-pills" id="filterPills">${tagHTML}</div>
-        <button class="filter-pills-toggle" id="filterPillsToggle">전체 보기 +</button>
       </div>
     `;
 
@@ -103,13 +107,16 @@
       });
     });
 
-    // Toggle button for pills collapse/expand
-    var pills = document.getElementById('filterPills');
+    // Toggle button for pills
+    var wrap = document.getElementById('filterPillsWrap');
     var toggle = document.getElementById('filterPillsToggle');
-    if (pills && toggle) {
+    if (wrap && toggle) {
+      // Keep open if a tag is active
+      if (hasActiveTag) wrap.classList.add('open');
       toggle.addEventListener('click', function () {
-        var expanded = pills.classList.toggle('expanded');
-        toggle.textContent = expanded ? '접기 −' : '전체 보기 +';
+        var open = wrap.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        document.getElementById('filterBar')?.classList.toggle('pills-open', open);
       });
     }
   }
@@ -125,6 +132,9 @@
     if (activeTag) {
       filtered = filtered.filter(p => p.tags && p.tags.includes(activeTag));
     }
+
+    // Always sort by date descending
+    filtered = filtered.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // Dispatch custom event for home.js to pick up
     window.dispatchEvent(new CustomEvent('postsFiltered', {

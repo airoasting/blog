@@ -322,13 +322,14 @@
     if (isArchiveMode) return;
     const filtered = e.detail.posts || [];
     const category = e.detail.category || null;
+    const tag = e.detail.tag || null;
 
-    // Merge with newsletters unless a specific category is active
+    // Merge with newsletters only when no filter is active
     let mergedList;
     if (category === 'newsletter') {
       mergedList = nlData;
-    } else if (category) {
-      mergedList = filtered; // category filter: posts only
+    } else if (category || tag) {
+      mergedList = filtered; // category or tag filter: posts only
     } else {
       mergedList = [...filtered, ...nlData].sort((a, b) => new Date(b.date) - new Date(a.date));
     }

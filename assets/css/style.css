@@ -2740,10 +2740,16 @@ img {
   border-bottom: 1px solid var(--border-variant);
 }
 
+.filter-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .filter-tabs {
   display: flex;
   gap: 8px;
-  margin-bottom: 12px;
+  flex: 1;
   overflow-x: auto;
   overflow-y: visible;
   -webkit-overflow-scrolling: touch;
@@ -2790,48 +2796,70 @@ img {
 .filter-tab[data-category="survival"].active { color: var(--cat-survival); }
 
 .filter-pills-wrap {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.filter-pills-wrap.open {
+  max-height: 500px;
+}
+
+.filter-bar.pills-open {
+  padding-bottom: 40px;
 }
 
 .filter-pills {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  flex: 1;
-  max-height: 66px;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 4px 4px 6px;
-  margin: -4px -4px -6px;
+  padding: 12px 0 0;
 }
 
-.filter-pills.expanded {
-  max-height: 1000px;
-}
-
-/* M3 Assist Chip — toggle */
+/* 태그 토글 버튼 */
 .filter-pills-toggle {
-  display: block;
   flex-shrink: 0;
   white-space: nowrap;
   border: 1px solid var(--border);
   background: none;
   font-family: var(--font-meta);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
-  padding: 5px 10px;
+  padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 2px;
-  transition: background 0.15s, color 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  margin-bottom: 6px;
 }
 
-.filter-pills-toggle:hover {
+.filter-pills-toggle:hover,
+.filter-pills-toggle.open {
   background: var(--border);
   color: var(--text);
+}
+
+.filter-pills-toggle.has-active {
+  border-color: var(--cat-newsletter, #7C3AED);
+  color: var(--cat-newsletter, #7C3AED);
+}
+
+.filter-pill-count {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--nm-dark);
+  padding: 1px 6px;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.filter-pill.active .filter-pill-count {
+  background: currentColor;
+  color: var(--nm-bg);
+  opacity: 0.25;
 }
 
 /* Neumorphism Assist Chip — tag pill */
