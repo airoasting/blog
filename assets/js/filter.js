@@ -68,42 +68,45 @@
 
     const nlTab = `<button class="filter-tab filter-tab-newsletter" data-category="newsletter" style="--cat-color:var(--cat-newsletter,#7C3AED)">뉴스레터</button>`;
     const hasActiveTag = !!activeTag;
+    const wasOpen = document.getElementById('filterPillsWrap')?.classList.contains('open') || hasActiveTag;
 
     container.innerHTML = `
       <div class="filter-bar-row">
-        <div class="filter-tabs">${catHTML}${nlTab}</div>
-        <button class="filter-pills-toggle${hasActiveTag ? ' has-active' : ''}" id="filterPillsToggle"># 태그</button>
+        <div class="filter-tabs-scroll"><div class="filter-tabs">${catHTML}${nlTab}</div></div>
+        <button class="filter-pills-toggle${hasActiveTag ? ' has-active' : ''}${wasOpen ? ' open' : ''}" id="filterPillsToggle"># 태그</button>
       </div>
-      <div class="filter-pills-wrap${hasActiveTag ? ' open' : ''}" id="filterPillsWrap">
+      <div class="filter-pills-wrap${wasOpen ? ' open' : ''}" id="filterPillsWrap">
         <div class="filter-pills" id="filterPills">${tagHTML}</div>
       </div>
     `;
+    if (wasOpen) container.classList.add('pills-open');
 
     // Bind events
     container.querySelectorAll('.filter-tab').forEach(btn => {
       btn.addEventListener('click', () => {
+        const barTop = container.getBoundingClientRect().top;
         const cat = btn.dataset.category;
         if (cat === 'newsletter') {
           activeCategory = 'newsletter';
-          updateURL();
-          renderFilterBar();
-          applyFilter();
-          return;
+        } else {
+          activeCategory = cat === 'all' ? null : cat;
         }
-        activeCategory = cat === 'all' ? null : cat;
         updateURL();
         renderFilterBar();
         applyFilter();
+        window.scrollBy(0, container.getBoundingClientRect().top - barTop);
       });
     });
 
     container.querySelectorAll('.filter-pill').forEach(btn => {
       btn.addEventListener('click', () => {
+        const barTop = container.getBoundingClientRect().top;
         const tag = btn.dataset.tag;
         activeTag = activeTag === tag ? null : tag;
         updateURL();
         renderFilterBar();
         applyFilter();
+        window.scrollBy(0, container.getBoundingClientRect().top - barTop);
       });
     });
 

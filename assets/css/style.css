@@ -2761,23 +2761,27 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
+  min-width: 0;
+}
+
+.filter-tabs-scroll {
+  flex: 1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 4px;
+}
+
+.filter-tabs-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-tabs {
   display: flex;
   gap: 8px;
-  flex: 1;
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding-bottom: 6px;
-  padding-top: 4px;
+  width: max-content;
 }
 
-.filter-tabs::-webkit-scrollbar {
-  display: none;
-}
 
 /* Neumorphism Filter Chip */
 .filter-tab {
