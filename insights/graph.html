@@ -13,39 +13,47 @@
     .graph-controls {
       display: flex;
       align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      padding: 14px 24px;
+      gap: 8px;
+      flex-wrap: nowrap;
+      padding: 10px 16px;
       background: rgba(255,255,255,0.04);
       border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+    .graph-controls::-webkit-scrollbar { display: none; }
     .graph-controls .ctrl-label {
-      font-size: 12px;
+      font-size: 11px;
       color: rgba(255,255,255,0.45);
       font-family: 'Pretendard', sans-serif;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-right: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .filter-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 5px 14px;
+      gap: 5px;
+      padding: 5px 12px;
       border-radius: 100px;
       border: 1.5px solid currentColor;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.18s;
       background: transparent;
       font-family: 'Pretendard', sans-serif;
       opacity: 0.55;
+      white-space: nowrap;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
     }
     .filter-pill.active { opacity: 1; }
-    .filter-pill:hover { opacity: 0.9; transform: translateY(-1px); }
+    .filter-pill:hover { opacity: 0.9; }
     .filter-pill .pill-dot {
-      width: 7px; height: 7px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: currentColor;
       flex-shrink: 0;
@@ -53,29 +61,40 @@
     .ctrl-sep {
       width: 1px; height: 20px;
       background: rgba(255,255,255,0.15);
-      margin: 0 4px;
+      margin: 0 2px;
+      flex-shrink: 0;
     }
     .ctrl-stats {
       margin-left: auto;
-      font-size: 12px;
+      font-size: 11px;
       color: rgba(255,255,255,0.4);
       font-family: 'Pretendard', sans-serif;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .ctrl-stats strong { color: rgba(255,255,255,0.75); font-weight: 600; }
 
     /* ── Canvas ── */
     .graph-canvas-wrap {
       width: 100%;
-      height: calc(100vh - 148px);
+      height: calc(100dvh - 148px);
       position: relative;
       overflow: hidden;
+      touch-action: none;
     }
     #graphSvg {
       width: 100%;
       height: 100%;
       cursor: grab;
+      touch-action: none;
     }
     #graphSvg:active { cursor: grabbing; }
+
+    /* 노드 탭 히트 영역 확장 */
+    .g-node .hit-area {
+      fill: transparent;
+      stroke: none;
+    }
 
     /* D3 elements */
     .g-link {
@@ -154,12 +173,38 @@
       z-index: 9999;
       opacity: 0;
       transform: translateY(6px);
-      transition: opacity 0.18s, transform 0.18s;
+      transition: opacity 0.2s, transform 0.2s;
       font-family: 'Pretendard', sans-serif;
     }
     .graph-tooltip.show {
       opacity: 1;
       transform: translateY(0);
+    }
+    /* 모바일: 하단 고정 패널 */
+    @media (max-width: 768px) {
+      .graph-tooltip {
+        left: 0 !important;
+        top: auto !important;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px 20px 32px;
+        transform: translateY(100%);
+        pointer-events: auto;
+      }
+      .graph-tooltip.show {
+        transform: translateY(0);
+      }
+      /* 드래그 핸들 */
+      .graph-tooltip::before {
+        content: '';
+        display: block;
+        width: 36px; height: 4px;
+        background: #E0E0E0;
+        border-radius: 2px;
+        margin: 0 auto 16px;
+      }
     }
     .tt-badge {
       display: inline-block;
@@ -278,13 +323,8 @@
       line-height: 1.8;
       pointer-events: none;
     }
-    .graph-instructions kbd {
-      background: rgba(255,255,255,0.12);
-      border-radius: 4px;
-      padding: 1px 5px;
-      font-size: 10px;
-      color: rgba(255,255,255,0.65);
-      font-family: monospace;
+    @media (max-width: 768px) {
+      .graph-instructions { display: none; }
     }
 
     /* ── Loading State ── */
@@ -311,23 +351,32 @@
 
     /* Page title row */
     .graph-page-header {
-      padding: 20px 24px 0;
+      padding: 16px 20px 0;
       background: #0A0F1E;
       display: flex;
       align-items: baseline;
-      gap: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .graph-page-title {
       font-family: 'Pretendard', sans-serif;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 800;
       color: #fff;
       margin: 0;
     }
     .graph-page-sub {
       font-family: 'Pretendard', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       color: rgba(255,255,255,0.35);
+    }
+    @media (max-width: 768px) {
+      .graph-page-header { padding: 12px 16px 0; }
+      .graph-page-title { font-size: 16px; }
+      .graph-page-sub { font-size: 11px; }
+      .graph-legend { display: none; }
+      .zoom-reset-btn { top: 12px; right: 12px; padding: 7px 11px; font-size: 11px; }
+      .graph-canvas-wrap { height: calc(100dvh - 120px); }
     }
   </style>
 </head>
@@ -438,6 +487,9 @@
 (function() {
 'use strict';
 
+/* ── 모바일 감지 ── */
+const isMobile = ('ontouchstart' in window) || (window.innerWidth <= 768);
+
 /* ── Newsletter tags (parsed from newsletter/content/nl-XX.md) ── */
 const NL_TAGS = {"1":["OpenAI","Meta","AI에이전트","AI전략","규제","일자리","스타트업"],"2":["Anthropic","OpenAI","Meta","DeepSeek","AI전략","규제","반도체"],"3":["Anthropic","OpenAI","Claude","ChatGPT","Google","AI에이전트","AI전략"],"4":["Anthropic","OpenAI","ChatGPT","Google","NVIDIA","AI에이전트","반도체"],"5":["Anthropic","OpenAI","Claude","ChatGPT","Google","AI에이전트","AI전략"],"6":["Anthropic","OpenAI","Claude","ChatGPT","AI전략","규제","로봇"],"7":["DeepSeek","AI전략","규제","일자리","로봇","반도체","AGI"],"8":["OpenAI","ChatGPT","AI전략","규제","반도체","스타트업","한국AI"],"9":["OpenAI","ChatGPT","AI에이전트","AI전략","AGI","ASI","스타트업"],"10":["Meta","DeepSeek","AI에이전트","AI전략","로봇","스타트업","LLM"],"11":["Anthropic","OpenAI","Claude","ChatGPT","Meta","AI전략","규제"],"12":["Claude","ChatGPT","DeepSeek","AI에이전트","AI전략","규제","ClaudeCode"],"13":["Claude","ChatGPT","DeepSeek","AI에이전트","AI전략","규제","스타트업"],"14":["Anthropic","OpenAI","ChatGPT","Meta","AI에이전트","규제","반도체"],"15":["Anthropic","OpenAI","ChatGPT","AI전략","규제","일자리","스타트업"],"16":["OpenAI","Claude","AI에이전트","AI전략","규제","일자리","반도체"],"17":["Anthropic","OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제"],"18":["Anthropic","OpenAI","ChatGPT","AI전략","일자리","로봇","스타트업"],"19":["OpenAI","Claude","ChatGPT","Google","AI전략","규제","일자리"],"20":["Anthropic","OpenAI","Google","AI에이전트","AI전략","규제","로봇"],"21":["OpenAI","ChatGPT","AI에이전트","AI전략","규제","일자리","로봇"],"22":["ChatGPT","DeepSeek","AI전략","규제","일자리","반도체","AGI"],"23":["OpenAI","AI에이전트","AI전략","규제","일자리","AGI","스타트업"],"24":["Anthropic","Claude","ChatGPT","AI에이전트","AI전략","규제","로봇"],"25":["OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제","AGI"],"26":["OpenAI","ChatGPT","AI에이전트","AI전략","규제","일자리","반도체"],"27":["Anthropic","Google","AI전략","규제","일자리","반도체","한국AI"],"28":["AI전략","규제","반도체","스타트업","저작권","LLM","보안"],"29":["AI에이전트","AI전략","규제","스타트업","보안","코딩","조직설계"],"30":["OpenAI","ChatGPT","DeepSeek","AI전략","규제","로봇","반도체"],"31":["OpenAI","AI에이전트","AI전략","로봇","스타트업","코딩","조직설계"],"32":["OpenAI","AI에이전트","AI전략","로봇","반도체","AGI","스타트업"],"33":["Anthropic","OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제"],"34":["Anthropic","OpenAI","Claude","AI에이전트","규제","반도체","저작권"],"35":["AI에이전트","AI전략","일자리","반도체","스타트업","저작권","보안"],"36":["OpenAI","Claude","AI에이전트","AI전략","규제","로봇","AGI"],"37":["Anthropic","Claude","AI에이전트","일자리","스타트업","한국AI","ClaudeCode"],"38":["OpenAI","Claude","ChatGPT","규제","일자리","AGI","스타트업"],"39":["AI에이전트","AI전략","규제","일자리","로봇","스타트업","한국AI"],"40":["Claude","ChatGPT","Google","AI에이전트","AI전략","규제","반도체"],"41":["OpenAI","AI전략","규제","반도체","스타트업","저작권","한국AI"],"42":["Anthropic","OpenAI","Claude","ChatGPT","AI에이전트","AI전략","규제"],"43":["OpenAI","AI전략","규제","일자리","저작권","조직설계","데이터"]};
 
@@ -459,21 +511,32 @@ const CAT_LABEL = {
 /* ── Tooltip ── */
 const tooltip = document.getElementById('graphTooltip');
 
-function showTooltip(event, node, degree) {
+function renderTooltipContent(node, degree) {
   const c = CAT[node.category] || CAT.research;
   const tags = (node.tags || []).slice(0, 5);
+  const openBtn = node.url
+    ? `<a href="${node.url}" target="${node.type === 'newsletter' ? '_blank' : '_self'}"
+         style="display:inline-block;margin-top:10px;padding:7px 16px;background:${c.badge};color:#fff;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">
+         아티클 열기 →</a>`
+    : '';
   tooltip.innerHTML = `
     <div class="tt-badge" style="background:${c.badge};">${CAT_LABEL[node.category] || node.category}</div>
     <div class="tt-title">${node.title}</div>
     <div class="tt-meta">${node.date || ''} ${node.source ? '· ' + node.source : ''}</div>
     ${tags.length ? `<div class="tt-tags">${tags.map(t => `<span class="tt-tag">${t}</span>`).join('')}</div>` : ''}
     <div class="tt-connections">연결 아티클 <span>${degree}</span>개</div>
+    ${isMobile ? openBtn : ''}
   `;
+}
+
+function showTooltip(event, node, degree) {
+  renderTooltipContent(node, degree);
   tooltip.classList.add('show');
-  moveTooltip(event);
+  if (!isMobile) moveTooltip(event);
 }
 
 function moveTooltip(event) {
+  if (isMobile) return;
   const pad = 16;
   const tw = tooltip.offsetWidth || 300;
   const th = tooltip.offsetHeight || 120;
@@ -487,6 +550,14 @@ function moveTooltip(event) {
 
 function hideTooltip() {
   tooltip.classList.remove('show');
+}
+
+/* 모바일: 툴팁 외부 탭 시 닫기 */
+if (isMobile) {
+  tooltip.style.pointerEvents = 'auto';
+  document.addEventListener('touchstart', e => {
+    if (!tooltip.contains(e.target)) hideTooltip();
+  }, { passive: true });
 }
 
 /* ── Main ── */
@@ -574,9 +645,11 @@ function buildGraph(posts) {
   });
   nodes.forEach(n => { n.degree = degreeMap[n.id] || 0; });
 
-  /* Node radius: sqrt scale */
+  /* Node radius: sqrt scale (모바일은 더 크게) */
   const maxDeg = d3.max(nodes, n => n.degree) || 1;
-  const rScale = d3.scaleSqrt().domain([0, maxDeg]).range([8, 28]);
+  const rMin = isMobile ? 11 : 8;
+  const rMax = isMobile ? 32 : 28;
+  const rScale = d3.scaleSqrt().domain([0, maxDeg]).range([rMin, rMax]);
   nodes.forEach(n => { n.r = rScale(n.degree); });
 
   /* 허브 임계값: 상위 10% */
@@ -671,6 +744,11 @@ function buildGraph(posts) {
   /* 고립/허브 클래스 */
   nodeSel.classed('isolated', d => d.degree <= 1);
   nodeSel.classed('hub', d => d.degree >= hubThreshold && d.degree > 2);
+
+  /* 히트 영역 확장 (탭/클릭 정확도 향상) */
+  nodeSel.append('circle')
+    .attr('class', 'hit-area')
+    .attr('r', d => d.r + (isMobile ? 12 : 6));
 
   /* Circle */
   nodeSel.append('circle')
