@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 로스팅 · 진단 보고서</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; word-break: keep-all; }
+
+  body {
+    font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+    background: #e8e6e1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .slide {
+    width: 1280px;
+    height: 720px;
+    background: #fff;
+    display: grid;
+    grid-template-rows: 68px 1fr 64px;
+    overflow: hidden;
+    transform-origin: center center;
+    transform: scale(var(--slide-scale, 1));
+  }
+
+  /* ── 헤더 ── */
+  .header {
+    border-bottom: 2px solid #111;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .header-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #777;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  .header-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.01em;
+  }
+
+  .header-right {
+    font-size: 11px;
+    color: #777;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* ── 본문 ── */
+  .body {
+    display: grid;
+    grid-template-columns: 520px 1px 290px 1px 1fr;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .col-divider { background: #ebebeb; flex-shrink: 0; }
+
+  /* 1열: Executive Summary */
+  .col-exec {
+    padding: 28px 36px 28px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+  }
+
+  .col-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #777;
+    font-weight: 600;
+  }
+
+  .exec-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #111;
+    padding: 3px 8px;
+    border-radius: 2px;
+  }
+
+  .exec-headline {
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+  }
+
+  .exec-body {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.8;
+    flex: 1;
+  }
+
+  .verdict {
+    background: #C43500;
+    padding: 14px 16px;
+    border-radius: 3px;
+  }
+
+  .verdict p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .verdict strong { color: #fff; font-weight: 800; }
+
+  /* 2열: 시간순 인식 변화 */
+  .col-timeline {
+    padding: 28px 36px;
+    display: flex;
+    flex-direction: column;
+    background: #fafaf9;
+    overflow: hidden;
+  }
+
+  .timeline-rows {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0;
+  }
+
+  .trow {
+    display: grid;
+    grid-template-columns: 56px 1fr 1fr;
+    gap: 0 16px;
+    flex: 1;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+    padding: 10px 0;
+  }
+
+  .trow:last-child { border-bottom: none; }
+
+  .trow-date {
+    font-size: 11px;
+    font-weight: 700;
+    color: #777;
+    letter-spacing: 0.02em;
+  }
+
+  .trow-date.now { color: #C43500; }
+
+  .trow-question {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.5;
+    padding-right: 12px;
+    border-right: 1px solid #e8e8e8;
+  }
+
+  .trow-question.now { color: #333; }
+
+  .trow-answer {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.5;
+    padding-left: 4px;
+  }
+
+  .trow-answer.now {
+    color: #C43500;
+    font-weight: 700;
+  }
+
+  /* 타임라인 헤더 */
+  .trow-head {
+    display: grid;
+    grid-template-columns: 56px 1fr 1fr;
+    gap: 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0;
+  }
+
+  .trow-head span {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #777;
+    font-weight: 600;
+  }
+
+  /* 3열: 시사점 */
+  .col-impl {
+    padding: 28px 60px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .impl-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0;
+  }
+
+  .impl {
+    padding: 12px 0;
+    border-bottom: 1px solid #ebebeb;
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .impl:first-child { padding-top: 0; }
+  .impl:last-child { border-bottom: none; }
+
+  .impl-idx {
+    font-size: 11px;
+    font-weight: 800;
+    color: #C43500;
+    padding-top: 1px;
+  }
+
+  .impl-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 4px;
+    line-height: 1.35;
+  }
+
+  .impl-desc {
+    font-size: 11.5px;
+    color: #666;
+    line-height: 1.65;
+  }
+
+  .evidence-strip {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .ev-pill {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .ev-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .ev-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  .ev-src {
+    font-size: 10px;
+    color: #777;
+  }
+
+  /* ── 푸터 ── */
+  .footer {
+    border-top: 1px solid #ebebeb;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .footer-note {
+    font-size: 10.5px;
+    color: #777;
+  }
+
+  .footer-brand {
+    font-size: 10.5px;
+    color: #777;
+    letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <div>
+      <p class="header-eyebrow">AI 로스팅 · 탐색적 분석 보고서</p>
+      <p class="header-title">조직은 왜 AI 도입에 실패하는가: 뉴스레터 43편 + 포스트 60편이 가리키는 하나의 답</p>
+    </div>
+    <div class="header-right">
+      2025년 6월 · 2026년 4월<br>
+      103편 종합
+    </div>
+  </div>
+
+  <!-- 본문 -->
+  <div class="body">
+
+    <!-- 1열: 시간순 인식 변화 -->
+    <div class="col-timeline">
+      <p class="col-label" style="margin-bottom:14px;">시간순 인식 변화 · 핵심 질문이 어떻게 바뀌었는가</p>
+
+      <div class="trow-head">
+        <span>시기</span>
+        <span>당시의 질문</span>
+        <span>도달한 인식</span>
+      </div>
+
+      <div class="timeline-rows">
+
+        <div class="trow">
+          <span class="trow-date">2025.06</span>
+          <p class="trow-question">누가 AI 시장을 가져가는가?</p>
+          <p class="trow-answer">빅테크 영토전쟁. 기술보다 생태계가 해자다.</p>
+        </div>
+
+        <div class="trow">
+          <span class="trow-date">2025.09</span>
+          <p class="trow-question">AI는 정말 효과가 있는가?</p>
+          <p class="trow-answer">프로젝트 95%가 실패한다. 버블 가능성이 보인다.</p>
+        </div>
+
+        <div class="trow">
+          <span class="trow-date">2025.11</span>
+          <p class="trow-question">왜 일부만 성공하는가?</p>
+          <p class="trow-answer">알고리즘이 아닌 GPU·전력·인프라가 진짜 해자다.</p>
+        </div>
+
+        <div class="trow">
+          <span class="trow-date">2026.02</span>
+          <p class="trow-question">현장에서는 무슨 일이 벌어지는가?</p>
+          <p class="trow-answer">효율은 올랐으나 역량이 줄고, 기대만 높아진다.</p>
+        </div>
+
+        <div class="trow">
+          <span class="trow-date now">2026.03↑</span>
+          <p class="trow-question now">기술 한계는 사라졌다. 이제 무엇이 문제인가?</p>
+          <p class="trow-answer now">조직이 속도를 따라갈 수 있는가. 이것만 남았다.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-divider"></div>
+
+    <!-- 2열: Executive Summary -->
+    <div class="col-exec">
+      <div>
+        <p class="col-label" style="margin-bottom:12px;">Executive Summary</p>
+        <span class="exec-tag">핵심 결론</span>
+        <h2 class="exec-headline" style="margin-top:12px;">
+          기술이 문제가<br>아닙니다.<br>
+          조직이 문제입니다.
+        </h2>
+      </div>
+
+      <p class="exec-body">
+        AI 성능은 이미 임계점을 넘었습니다.
+        실패는 기술에서 일어나지 않습니다.
+        기술을 받아들이는 속도를 조직이
+        따라가지 못할 때 일어납니다.<br><br>
+        103편이 추적한 것은 AI의 발전이
+        아니라, 그 속도를 감당하지 못하는
+        조직의 마찰입니다.
+      </p>
+
+      <div class="verdict">
+        <p>
+          <strong>한 줄 요약:</strong> AI 도입 실패는 관리의 문제입니다.
+          기술이 앞서갈수록 조직 설계가 더 중요해집니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-divider"></div>
+
+    <!-- 3열: 시사점 + 근거 수치 -->
+    <div class="col-impl">
+      <p class="col-label" style="margin-bottom:14px;">경영진이 지금 해야 할 것</p>
+
+      <div class="impl-list">
+        <div class="impl">
+          <span class="impl-idx">01</span>
+          <div>
+            <p class="impl-title">위임할 일과 직접 배울 일을 구분하십시오</p>
+            <p class="impl-desc">AI에 모두 맡기면 역량이 사라집니다. 기준이 없으면 팀 전체가 의존 상태에 빠집니다.</p>
+          </div>
+        </div>
+
+        <div class="impl">
+          <span class="impl-idx">02</span>
+          <div>
+            <p class="impl-title">성과 기준을 속도가 아닌 판단력으로 바꾸십시오</p>
+            <p class="impl-desc">AI가 속도를 높이면 기대가 자동으로 오릅니다. 이 악순환을 끊으려면 평가 기준부터 바꿔야 합니다.</p>
+          </div>
+        </div>
+
+        <div class="impl">
+          <span class="impl-idx">03</span>
+          <div>
+            <p class="impl-title">조직 재설계는 2027년 이전에 끝내야 합니다</p>
+            <p class="impl-desc">자동화 시점이 2027년으로 앞당겨졌습니다. 조직 구조를 바꾸는 데 최소 18개월이 필요합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-strip">
+        <div class="ev-pill">
+          <span class="ev-num">−17%</span>
+          <div>
+            <p class="ev-desc">AI 사용 개발자의 학습 성과 하락</p>
+            <p class="ev-src">Anthropic RCT, n=52</p>
+          </div>
+        </div>
+        <div class="ev-pill">
+          <span class="ev-num">53%</span>
+          <div>
+            <p class="ev-desc">낮은 품질인 줄 알면서도 결과물을 그대로 전송</p>
+            <p class="ev-src">BetterUp 직장인 조사</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <p class="footer-note">출처: Anthropic, HBR, BetterUp, Nature, arXiv, OpenClaw, Karpathy, Daniel Kokotajlo 외</p>
+    <span class="footer-brand">airoasting.github.io/blog</span>
+  </div>
+
+</div>
+<script>
+  function scaleSlide() {
+    const scaleX = window.innerWidth / 1280;
+    const scaleY = window.innerHeight / 720;
+    const scale = Math.min(scaleX, scaleY);
+    document.querySelector('.slide').style.transform = `scale(${scale})`;
+  }
+  scaleSlide();
+  window.addEventListener('resize', scaleSlide);
+</script>
+</body>
+</html>

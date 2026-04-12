@@ -15,21 +15,26 @@
 
 ## 최신 포스트
 - 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html
-- 2026-04-09 [리서치] Anthropic 2026 에이전틱 코딩 리포트: 60%는 쓰지만 완전 위임은 20% — /blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html
-- 2026-04-09 [기술] 비싼 AI는 조언만, 싼 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
+- 2026-04-09 [리서치] Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20% — /blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html
+- 2026-04-09 [기술] 비싼 AI가 조언하고, 저렴한 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
 - 2026-04-09 [기업] Gen AI 로봇이 서비스업을 다시 설계합니다 — /blog/company/2026-04-09-gen-ai-robots-reshaping-services.html
+- 2026-04-08 [생존] 갤럽 조사: 전 세계 직원 몰입도 2년 연속 하락 — /blog/survival/2026-04-08-gallup-engagement-ai-paradox.html
+- 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
+- 2026-04-08 [기술] Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 — /blog/tech/2026-04-08-claude-code-hidden-features.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
-- 2026-04-07 [리더] Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다 — /blog/leader/2026-04-07-culture-that-ate-silicon-valley.html
+- 2026-04-07 [기업] Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다 — /blog/company/2026-04-07-culture-that-ate-silicon-valley.html
+- 2026-04-07 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html
+- 2026-04-07 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-04-07-llm-behavioral-alignment-gap.html
+- 2026-04-07 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-04-07-ai-agent-traps.html
 - 2026-04-06 [기술] Google의 AI 에이전트 5명이 논문을 씁니다 — /blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html
 - 2026-04-06 [리더] 샘 알트만, 신뢰할 수 있는가 — /blog/leader/2026-04-06-sam-altman-can-he-be-trusted.html
-- 2026-04-08 [생존] 직원 80%가 이미 떠났다, AI 성과가 0인 이유 — /blog/survival/2026-04-08-gallup-engagement-ai-paradox.html
-- 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
 - 2026-04-06 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html
 - 2026-04-03 [생존] 개발자 전면 자동화, 예측 시점이 2년 당겨졌다 — /blog/survival/2026-04-03-ai-coder-automation-timeline.html
 - 2026-04-03 [리더] 카파시: LLM이 내 위키를 대신 쓴다 — /blog/leader/2026-04-03-karpathy-llm-knowledge-base.html
 - 2026-04-02 [기술] Gemma 4, 크기의 상식을 깨는 오픈 모델 — /blog/tech/2026-04-02-gemma-4-open-model.html
 - 2026-04-02 [기술] AI는 당신의 감정에 관심 없습니다 — /blog/tech/2026-04-02-ai-emotion-prompts.html
 - 2026-04-02 [리서치] Claude 안의 감정: 171개 벡터가 행동을 결정한다 — /blog/research/2026-04-02-claude-emotion-vectors.html
+- 2026-04-01 [기술] Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 — /blog/tech/2026-04-01-claude-code-hidden-features.html
 - 2026-04-01 [리서치] Nature가 AI에 선을 긋다, 학술 출판의 새 기준 — /blog/research/2026-04-01-nature-ai-editorial-policy.html
 - 2026-03-31 [기술] AI가 AI를 설계한다, 사람 없이 — /blog/tech/2026-03-31-asi-evolve-ai-accelerates-ai.html
 - 2026-03-31 [리더] 전 구글 임원의 경고: 준비할 시간이 2년입니다 — /blog/leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html
@@ -66,6 +71,7 @@
 - 2026-01-25 [리더] 아모데이가 경고한 AI의 5가지 위험 — /blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html
 - 2026-01-21 [리더] AGI 이후의 세계: 하사비스와 아모데이가 충돌한 5가지 쟁점 — /blog/leader/2026-01-21-hassabis-amodei-agi-debate.html
 - 2026-01-16 [리서치] Workslop은 개인의 게으름이 아니라 경영 실패다 — /blog/research/2026-01-16-workslop-pressure-cooker.html
+- 2026-01-10 [리더] 일론 머스크가 바라보는 AI의 미래 — /blog/leader/2026-01-10-elon-musk-vision-of-ai-future.html
 - 2025-12-17 [리더] 지능의 미래: 데미스 하사비스가 그리는 AGI 로드맵 — /blog/leader/2025-12-17-demis-hassabis-future-of-intelligence.html
 - 2025-11-10 [리더] 피터 틸의 적그리스도 강연: 275억 달러 투자자의 종말론이 AI 산업에 던지는 질문 — /blog/leader/2025-11-10-peter-thiel-antichrist-lectures.html
 - 2025-10-27 [기술] AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다 — /blog/tech/2025-10-27-artificial-hivemind.html
@@ -73,3 +79,103 @@
 - 2025-10-03 [기술] 소셜 미디어 사용 시간, 2022년에 정점을 찍다 — /blog/tech/2025-10-03-social-media-peak.html
 - 2025-09-22 [리서치] AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다 — /blog/research/2025-09-22-workslop.html
 - 2025-09-10 [리서치] AI를 많이 쓸수록 비판적 사고력이 떨어진다 — /blog/research/2025-09-10-ai-cognitive-offloading.html
+- 2025-08-28 [기업] 엘론 머스크가 애플, 오픈AI를 고소한 이유 — /blog/company/2025-08-28-why-elon-musk-sued-apple-and-openai.html
+- 2025-08-23 [기업] 인텔 3대 주주가 된 미국 정부 — /blog/company/2025-08-23-us-government-becomes-third-largest-intel-shareholder.html
+- 2025-08-20 [리서치] MIT 보고서의 진짜 의미 — /blog/research/2025-08-20-the-real-meaning-of-mit-report.html
+- 2025-08-17 [기술] 2025 베이징, 첫 휴머노이드 로봇 대회 — /blog/tech/2025-08-17-2025-beijing-first-humanoid-robot-competition.html
+- 2025-08-15 [기술] 음성 기술로 승부를 거는 메타 AI — /blog/tech/2025-08-15-meta-ai-betting-on-voice-technology.html
+- 2025-08-10 [기술] DeepSeek-R2 출시가 늦어지는 이유 — /blog/tech/2025-08-10-why-deepseek-r2-launch-is-delayed.html
+- 2025-08-05 [기술] 중국의 개방형 AI — /blog/tech/2025-08-05-chinas-open-source-ai.html
+- 2025-08-05 [기업] K-AI 사업에 선정된 5개 기업 — /blog/company/2025-08-05-five-companies-selected-for-k-ai-project.html
+- 2025-07-25 [기업] 국가 AI 파운데이션 모델 사업 — /blog/company/2025-07-25-national-ai-foundation-model-project.html
+- 2025-07-20 [기술] GPU 한계를 뛰어넘은 중국 AI 모델의 약진 — /blog/tech/2025-07-20-china-ai-models-surpassing-gpu-limits.html
+- 2025-07-15 [기업] 젠슨 황 대표가 중국에 가는 이유 — /blog/company/2025-07-15-why-jensen-huang-is-going-to-china.html
+- 2025-07-15 [리더] 메타가 ASI를 선언한 이유 — /blog/leader/2025-07-15-why-meta-declared-asi.html
+- 2025-07-10 [리서치] 좌편향 AI를 금지하라 — /blog/research/2025-07-10-ban-left-biased-ai.html
+- 2025-07-10 [기업] OpenAI를 더 이상 선두로 볼 수 없는 이유 — /blog/company/2025-07-10-why-openai-is-no-longer-the-leader.html
+- 2025-07-05 [생존] 왜 어른들은 하는데 우리는 못하게 하나요? — /blog/survival/2025-07-05-why-can-adults-do-it-but-not-us.html
+- 2025-07-01 [기업] 구글과 애플의 지도 반출 요청 — /blog/company/2025-07-01-google-apple-map-data-export-request.html
+- 2025-06-27 [기술] AI로 해석하는 인간 유전자 정보 — /blog/tech/2025-06-27-interpreting-human-genetics-with-ai.html
+- 2025-06-25 [기업] 미국 스테이블 코인 법안에 대한 기대와 우려 — /blog/company/2025-06-25-us-stablecoin-bill-hopes-and-concerns.html
+- 2025-06-20 [기업] 컨닝도 AI 사업의 기회다 — /blog/company/2025-06-20-cheating-is-also-an-ai-business-opportunity.html
+- 2025-06-20 [리더] 구글 딥마인드 CEO의 비전 — /blog/leader/2025-06-20-google-deepmind-ceo-vision.html
+- 2025-06-20 [리서치] 합법적으로 구매한 책은 공정이용, 해적판은 침해 — /blog/research/2025-06-20-legally-bought-books-fair-use-pirated-books-infringement.html
+- 2025-06-15 [기업] 퍼플렉시티가 크롬을 인수하려는 이유 — /blog/company/2025-06-15-why-perplexity-wants-to-acquire-chrome.html
+- 2025-06-14 [기술] 애플 WWDC 2025에 혁신은 없었다 — /blog/tech/2025-06-14-no-innovation-at-apple-wwdc-2025.html
+- 2025-06-13 [리서치] AI 시대의 저작권 딜레마 — /blog/research/2025-06-13-copyright-dilemma-in-ai-era.html
+- 2025-06-10 [생존] 21대 대선이 드러낸 세대 간 차이에 대한 생각 — /blog/survival/2025-06-10-korean-election-generational-divide.html
+- 2025-06-10 [기업] 소송 후 협상 — /blog/company/2025-06-10-negotiation-after-lawsuit.html
+- 2025-06-10 [기업] 스포티파이, 애플 제국에 균열을 낸 숨은 주역 — /blog/company/2025-06-10-spotify-the-hidden-force-cracking-apple-empire.html
+- 2025-06-07 [기업] 콘텐츠 플랫폼의 새로운 고민 — /blog/company/2025-06-07-new-concerns-for-content-platforms.html
+- 2025-06-05 [기업] 브라질 시장을 공략 중인 중국 빅테크 — /blog/company/2025-06-05-chinese-bigtech-targeting-brazil-market.html
+- 2025-05-25 [기업] AI가 결제하는 시대, 과세는 가능할까? — /blog/company/2025-05-25-can-ai-payments-be-taxed.html
+- 2025-05-25 [기술] GPT-5가 보여준 한계와 다음 — /blog/tech/2025-05-25-gpt5-limitations-and-whats-next.html
+- 2025-05-25 [생존] AI 시대 교사의 역할 — /blog/survival/2025-05-25-teachers-role-in-ai-era.html
+- 2025-05-25 [기업] 중국이 자국 EV 1위 기업에 경고하고 있는 이유 — /blog/company/2025-05-25-why-china-is-warning-its-top-ev-company.html
+- 2025-05-20 [기술] 인간이 되려는 AI vs. 인간을 위한 AI — /blog/tech/2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans.html
+- 2025-05-20 [리더] 앤스로픽 CPO가 말하는 PM의 역량 — /blog/leader/2025-05-20-anthropic-cpo-on-pm-competencies.html
+- 2025-05-20 [생존] 생성형 AI가 청년층 고용에 미치는 효과 — /blog/survival/2025-05-20-generative-ai-effect-on-youth-employment.html
+- 2025-05-20 [기업] OpenAI의 윈드서프 인수 무산 — /blog/company/2025-05-20-openai-windsurf-acquisition-falls-through.html
+- 2025-05-20 [기업] 스테이블 코인, 달러 패권의 비밀 병기 — /blog/company/2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony.html
+- 2025-05-15 [생존] 마이크로소프트의 대규모 구조조정 — /blog/survival/2025-05-15-microsoft-large-scale-layoffs.html
+- 2025-05-15 [기술] 삭제한 대화까지 보존하라? — /blog/tech/2025-05-15-preserve-even-deleted-conversations.html
+- 2025-05-15 [리더] 샘 알트만의 ‘부드러운 특이점’에 대한 생각 — /blog/leader/2025-05-15-thoughts-on-sam-altman-soft-singularity.html
+- 2025-05-12 [기업] 트럼프 대통령이 저작권청장을 해임한 이유 — /blog/company/2025-05-12-why-trump-fired-the-copyright-office-director.html
+- 2025-05-10 [기업] 기술 주권의 시험대, 아세안 시장 — /blog/company/2025-05-10-asean-market-test-of-tech-sovereignty.html
+- 2025-05-10 [리서치] 아이들이 AI 챗봇과 나누는 대화 — /blog/research/2025-05-10-conversations-children-have-with-ai-chatbots.html
+- 2025-05-10 [리더] 장강명의 『먼저 온 미래』 — /blog/leader/2025-05-10-jang-kangmyoung-the-future-that-came-first.html
+- 2025-05-10 [기술] 험난한 Chat GPT-5 개발 과정 — /blog/tech/2025-05-10-the-rocky-road-to-chatgpt5.html
+- 2025-05-10 [기술] 사람들은 왜 ChatGPT-4o를 그리워할까? — /blog/tech/2025-05-10-why-people-miss-chatgpt-4o.html
+- 2025-05-10 [생존] AI는 정말 우리의 일을 대신할까? — /blog/survival/2025-05-10-will-ai-really-replace-our-work.html
+- 2025-05-05 [기업] 퓨리오사AI — /blog/company/2025-05-05-furiosa-ai.html
+- 2025-05-05 [기업] 구글 모빌리티 전략에 대한 두 가지 시선 — /blog/company/2025-05-05-two-views-on-google-mobility-strategy.html
+- 2025-05-05 [기업] 한국이 AI G3가 되기 위해서는 — /blog/company/2025-05-05-what-korea-needs-to-become-ai-g3.html
+- 2025-05-01 [생존] AI 시대, 일잘러는 달라야 합니다 — /blog/survival/2025-05-01-high-performers-must-be-different-in-ai-era.html
+- 2025-05-01 [기업] 인도네시아 스타트업 스캔들 — /blog/company/2025-05-01-indonesia-startup-scandal.html
+- 2025-04-25 [기업] 2025 상하이 모터쇼가 보여준 충격 — /blog/company/2025-04-25-2025-shanghai-motor-show-shock.html
+- 2025-04-25 [리서치] AI는 우리를 더 똑똑하게 만들까? — /blog/research/2025-04-25-does-ai-make-us-smarter.html
+- 2025-04-25 [리서치] AI를 잘 쓰는 법, 검색과는 달라야 합니다 — /blog/research/2025-04-25-using-ai-well-different-from-search.html
+- 2025-04-21 [기술] 중국 로봇, 하프 마라톤에 서다 — /blog/tech/2025-04-21-china-robots-run-half-marathon.html
+- 2025-04-20 [리서치] AI가 만든 생산성 증가의 역설 — /blog/research/2025-04-20-paradox-of-ai-driven-productivity-gains.html
+- 2025-04-20 [기술] 어떤 AI 모델을 쓸까? — /blog/tech/2025-04-20-which-ai-model-should-you-use.html
+- 2025-04-20 [생존] AI 시대, 누가 먼저 밀려날까? — /blog/survival/2025-04-20-who-gets-displaced-first-in-ai-era.html
+- 2025-04-16 [리서치] 좋은 질문이 더 중요합니다 — /blog/research/2025-04-16-good-questions-matter-more.html
+- 2025-04-15 [리서치] 아가사 크리스티의 글쓰기 강의 — /blog/research/2025-04-15-agatha-christie-writing-lessons.html
+- 2025-04-15 [리서치] AI, 학습의 시대에서 경험의 시대로 — /blog/research/2025-04-15-ai-from-learning-era-to-experience-era.html
+- 2025-04-15 [기업] 중국 AI 빅테크 BAM이 한국에 던지는 질문 — /blog/company/2025-04-15-questions-china-ai-bigtech-bam-poses-to-korea.html
+- 2025-04-10 [생존] AI 시대, 응답 과잉 사회 — /blog/survival/2025-04-10-ai-era-response-overload-society.html
+- 2025-04-10 [기술] 경량화 LLM을 선보인 네이버 AI — /blog/tech/2025-04-10-naver-ai-introduces-lightweight-llm.html
+- 2025-04-10 [리서치] 대학이 AI를 받아들이는 세 가지 방식 — /blog/research/2025-04-10-three-ways-universities-adopt-ai.html
+- 2025-04-10 [기업] AI First 선언이 중요한 이유 — /blog/company/2025-04-10-why-ai-first-declaration-matters.html
+- 2025-04-10 [기업] 마누스 AI가 싱가포르로 이전한 이유 — /blog/company/2025-04-10-why-manus-ai-moved-to-singapore.html
+- 2025-04-05 [기업] 숏츠피케이션 시대, 콘텐츠 산업의 위기 — /blog/company/2025-04-05-shortsification-era-content-industry-crisis.html
+- 2025-04-01 [생존] AI는 이제 ‘이야기’를 빼앗고 있다 — /blog/survival/2025-04-01-ai-is-stealing-our-stories.html
+- 2025-04-01 [기업] 중국 디지털 ID 제도의 명암 — /blog/company/2025-04-01-light-and-shadow-of-china-digital-id-system.html
+- 2025-04-01 [기술] 한국인이 가장 많이 사용하는 AI 서비스 — /blog/tech/2025-04-01-most-used-ai-services-by-koreans.html
+- 2025-03-25 [생존] '한국은 끝났다'라는 주장에 대한 생각 — /blog/survival/2025-03-25-koreas-end-or-transition.html
+- 2025-03-20 [리서치] AI 트렌드에 대한 생각 — /blog/research/2025-03-20-ai-trends-2025-agents-verticals-biz.html
+- 2025-03-20 [기업] 양재, AI 허브가 될 수 있을까? — /blog/company/2025-03-20-can-yangjae-become-an-ai-hub.html
+- 2025-03-15 [기술] 320억 개 vs. 6,710억 개 — /blog/tech/2025-03-15-30b-vs-671b-parameters.html
+- 2025-03-15 [기술] 이 목소리, 진짜일까? — /blog/tech/2025-03-15-is-this-voice-real.html
+- 2025-03-15 [기술] KT의 한국적 AI 모델, ‘믿:음 2.0’ — /blog/tech/2025-03-15-kt-korean-ai-model-mideum-2.html
+- 2025-03-15 [기술] 최적화 AI는 새로운 가능성의 시대를 열 것입니다 — /blog/tech/2025-03-15-optimization-ai-new-era.html
+- 2025-03-15 [기업] 기술이 국경이 된 시대 — /blog/company/2025-03-15-when-technology-becomes-borders.html
+- 2025-03-10 [생존] AI 시대 생존 전략 — /blog/survival/2025-03-10-ai-era-survival-strategy.html
+- 2025-03-10 [기술] AI의 의도적인 거짓말 — /blog/tech/2025-03-10-ai-intentional-lies-reward-hacking.html
+- 2025-03-10 [기업] 한국, AI G3 국가가 되기 위한 5가지 요건 — /blog/company/2025-03-10-five-conditions-for-korea-to-become-ai-g3.html
+- 2025-03-10 [기업] 기술이 국경이 된 시대, 우리는 어디에 서 있는가 — /blog/company/2025-03-10-where-do-we-stand-when-tech-becomes-borders.html
+- 2025-03-05 [기업] AI 시대 일의 구조 재설계에 대한 생각 — /blog/company/2025-03-05-redesigning-work-structure-in-ai-era.html
+- 2025-03-05 [기업] 네이버 이해진 의장 복귀 이유를 추정해 본다면 — /blog/company/2025-03-05-speculating-why-naver-lee-haejin-returned.html
+- 2025-03-01 [리서치] 한미일 2030 세대의 AI 사용법 — /blog/research/2025-03-01-how-korea-us-japan-gen-z-use-ai.html
+- 2025-02-20 [기업] 소버린 AI — /blog/company/2025-02-20-sovereign-ai.html
+- 2025-02-15 [기술] LLM은 더 작고 똑똑해질 것입니다 — /blog/tech/2025-02-15-llms-will-get-smaller-and-smarter.html
+- 2024-11-01 [리더] 제프리 힌튼 교수가 바라보는 AI — /blog/leader/2024-11-01-geoffrey-hinton-on-ai-danger.html
+- 2024-10-15 [리서치] AI 열풍 너머, 세 가지 붕괴 시나리오 — /blog/research/2024-10-15-ai-bubble-three-collapse-scenarios.html
+- 2024-10-05 [기술] 실리콘밸리 AI 칩 스타트업 Cerebras의 상장 도전 — /blog/tech/2024-10-05-cerebras-ipo-vs-nvidia.html
+- 2024-09-27 [기업] AI 스타트업과 손잡은 존윅 제작사 — /blog/company/2024-09-27-lionsgate-runway-ai-partnership.html
+- 2024-09-10 [리서치] 테드 창이 바라보는 생성형 AI — /blog/research/2024-09-10-ted-chiang-generative-ai-blurry-jpeg.html
+- 2024-08-25 [기술] AI 거품론을 이해하는 3가지 코드 — /blog/tech/2024-08-25-ai-bubble-three-codes-data-chip-biz.html
+- 2024-08-20 [기업] AI 스타트업을 인수하는 새로운 방법 — /blog/company/2024-08-20-acqui-hire-new-way-to-buy-ai-startups.html
+- 2024-08-10 [기술] AI 서비스의 5대 트렌드 — /blog/tech/2024-08-10-top-50-ai-services-five-trends.html
+- 2024-08-05 [기업] AI 시대, 미디어의 미래 — /blog/company/2024-08-05-ai-era-future-of-media.html
+- 2024-07-20 [기업] 카카오와 네이버의 10년 뒤 미래는 어떠할까? — /blog/company/2024-07-20-kakao-naver-future-in-ai-era.html

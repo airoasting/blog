@@ -146,7 +146,7 @@
     function renderFeaturedHero(post){
       if(!featuredHero) return;
       var catLabel = CATEGORY_LABELS[post.category] || post.category;
-      var url = './' + post.slug + '.html';
+      var url = '../' + post.file;
       var d = new Date(post.date + 'T00:00:00');
       var heroDate = d.getFullYear()+'년 '+(d.getMonth()+1)+'월 '+d.getDate()+'일';
       featuredHero.setAttribute('data-hero-cat', post.category);
@@ -174,7 +174,7 @@
 
     function postToCard(post){
       var catLabel = CATEGORY_LABELS[post.category] || post.category;
-      var url = './' + post.slug + '.html';
+      var url = '../' + post.file;
       var seriesBadge = '';
       if(post.series){
         var order = post.series_order ? ' #'+post.series_order : '';

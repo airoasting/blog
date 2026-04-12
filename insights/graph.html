@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지식 그래프 — AI ROASTING</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* ── Page Shell ── */
+    body { margin: 0; overflow-x: hidden; }
+
+    /* ── Controls Bar ── */
+    .graph-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 14px 24px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .graph-controls .ctrl-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Pretendard', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-right: 4px;
+    }
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 100px;
+      border: 1.5px solid currentColor;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+      background: transparent;
+      font-family: 'Pretendard', sans-serif;
+      opacity: 0.55;
+    }
+    .filter-pill.active { opacity: 1; }
+    .filter-pill:hover { opacity: 0.9; transform: translateY(-1px); }
+    .filter-pill .pill-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .ctrl-sep {
+      width: 1px; height: 20px;
+      background: rgba(255,255,255,0.15);
+      margin: 0 4px;
+    }
+    .ctrl-stats {
+      margin-left: auto;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Pretendard', sans-serif;
+    }
+    .ctrl-stats strong { color: rgba(255,255,255,0.75); font-weight: 600; }
+
+    /* ── Canvas ── */
+    .graph-canvas-wrap {
+      width: 100%;
+      height: calc(100vh - 148px);
+      position: relative;
+      overflow: hidden;
+    }
+    #graphSvg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    #graphSvg:active { cursor: grabbing; }
+
+    /* D3 elements */
+    .g-link {
+      stroke-opacity: 0.3;
+      transition: stroke-opacity 0.2s;
+    }
+    .g-link.faded { stroke-opacity: 0.04; }
+    .g-link.highlighted { stroke-opacity: 0.9; }
+
+    .g-node { cursor: pointer; }
+    .g-node circle {
+      transition: fill-opacity 0.2s, filter 0.2s;
+    }
+    /* 고립 노드(연결 ≤1): 작고 반투명 */
+    .g-node.isolated circle {
+      fill-opacity: 0.25;
+      stroke-opacity: 0.35;
+    }
+    /* 허브 노드(연결 상위 10%): 테두리 글로우 */
+    .g-node.hub circle {
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 6px currentColor);
+    }
+    .g-node.faded circle { fill-opacity: 0.06; stroke-opacity: 0.15; }
+    .g-node.faded text { opacity: 0.08; }
+    .g-node.highlighted circle {
+      stroke-width: 3;
+      filter: drop-shadow(0 0 12px currentColor);
+    }
+
+    /* ── Zoom reset button ── */
+    .zoom-reset-btn {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(10,15,30,0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: all 0.18s;
+      letter-spacing: 0.02em;
+    }
+    .zoom-reset-btn:hover {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border-color: rgba(255,255,255,0.3);
+    }
+
+    .node-label {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      font-weight: 600;
+      fill: #fff;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Tooltip Card ── */
+    .graph-tooltip {
+      position: fixed;
+      top: 0; left: 0;
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      max-width: 300px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12);
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.18s, transform 0.18s;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .graph-tooltip.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .tt-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 100px;
+      margin-bottom: 9px;
+      color: #fff;
+      letter-spacing: 0.03em;
+    }
+    .tt-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .tt-meta {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .tt-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .tt-tag {
+      font-size: 11px;
+      background: #F2F0EB;
+      color: #555;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+    .tt-connections {
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #F0F0F0;
+      padding-top: 8px;
+    }
+    .tt-connections span { font-weight: 700; color: #333; }
+
+    /* ── Legend ── */
+    .graph-legend {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(10,15,30,0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .legend-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 7px;
+    }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+    .legend-hint {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+    .legend-hint-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 5px;
+    }
+    .hint-circle {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+    }
+    .hint-circle.lg { width: 14px; height: 14px; }
+
+    /* ── Instructions overlay ── */
+    .graph-instructions {
+      position: absolute;
+      top: 20px;
+      left: 24px;
+      background: rgba(10,15,30,0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      pointer-events: none;
+    }
+    .graph-instructions kbd {
+      background: rgba(255,255,255,0.12);
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: 10px;
+      color: rgba(255,255,255,0.65);
+      font-family: monospace;
+    }
+
+    /* ── Loading State ── */
+    .graph-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 14px;
+      gap: 16px;
+    }
+    .loading-spinner {
+      width: 36px; height: 36px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top-color: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Page title row */
+    .graph-page-header {
+      padding: 20px 24px 0;
+      background: #0A0F1E;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .graph-page-title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
+    }
+    .graph-page-sub {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header"></header>
+<script>window.HEADER_CONFIG = { activeCat: 'graph' };</script>
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/header.js"></script>
+
+<div style="background:#0A0F1E;">
+  <div class="graph-page-header">
+    <h1 class="graph-page-title">지식 그래프</h1>
+    <span class="graph-page-sub">AI ROASTING 아티클 · 뉴스레터 연결 지도</span>
+  </div>
+
+  <div class="graph-controls" id="graphControls">
+    <span class="ctrl-label">카테고리</span>
+    <button class="filter-pill active" data-cat="all" style="color:#aaa;">
+      <span class="pill-dot" style="background:#aaa;"></span>전체
+    </button>
+    <button class="filter-pill active" data-cat="research" style="color:#60A5FA;">
+      <span class="pill-dot"></span>리서치
+    </button>
+    <button class="filter-pill active" data-cat="leader" style="color:#FB923C;">
+      <span class="pill-dot"></span>리더
+    </button>
+    <button class="filter-pill active" data-cat="company" style="color:#38BDF8;">
+      <span class="pill-dot"></span>기업
+    </button>
+    <button class="filter-pill active" data-cat="tech" style="color:#4ADE80;">
+      <span class="pill-dot"></span>기술
+    </button>
+    <button class="filter-pill active" data-cat="survival" style="color:#F87171;">
+      <span class="pill-dot"></span>생존
+    </button>
+    <button class="filter-pill active" data-cat="newsletter" style="color:#C084FC;">
+      <span class="pill-dot"></span>뉴스레터
+    </button>
+    <div class="ctrl-sep"></div>
+    <div class="ctrl-stats" id="graphStats">로딩 중...</div>
+  </div>
+
+  <div class="graph-canvas-wrap">
+    <div class="graph-loading" id="graphLoading">
+      <div class="loading-spinner"></div>
+      <span>그래프 생성 중...</span>
+    </div>
+
+    <svg id="graphSvg">
+      <defs>
+        <marker id="arrow" viewBox="0 -3 8 6" refX="8" refY="0"
+          markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M0,-3L8,0L0,3" fill="rgba(255,255,255,0.3)"/>
+        </marker>
+      </defs>
+    </svg>
+
+    <div class="graph-instructions">
+      <div>🖱 드래그로 이동 · 스크롤로 확대/축소</div>
+      <div>● 클릭: 연결된 노드만 표시</div>
+      <div>● 더블클릭: 아티클 열기</div>
+      <div>● 빈 곳 클릭: 전체 보기</div>
+    </div>
+
+    <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
+
+    <div class="graph-legend">
+      <div class="legend-title">카테고리</div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터
+      </div>
+      <div class="legend-hint">
+        <div class="legend-hint-row">
+          <div class="hint-circle"></div><span>연결 적음</span>
+        </div>
+        <div class="legend-hint-row">
+          <div class="hint-circle lg"></div><span>연결 많음 (허브)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="graph-tooltip" id="graphTooltip"></div>
+
+<!-- D3.js v7 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<!-- Newsletter data -->
+<script src="../assets/js/newsletter-data.js"></script>
+
+<script>
+(function() {
+'use strict';
+
+/* ── Newsletter tags (parsed from newsletter/content/nl-XX.md) ── */
+const NL_TAGS = {"1":["OpenAI","Meta","AI에이전트","AI전략","규제","일자리","스타트업"],"2":["Anthropic","OpenAI","Meta","DeepSeek","AI전략","규제","반도체"],"3":["Anthropic","OpenAI","Claude","ChatGPT","Google","AI에이전트","AI전략"],"4":["Anthropic","OpenAI","ChatGPT","Google","NVIDIA","AI에이전트","반도체"],"5":["Anthropic","OpenAI","Claude","ChatGPT","Google","AI에이전트","AI전략"],"6":["Anthropic","OpenAI","Claude","ChatGPT","AI전략","규제","로봇"],"7":["DeepSeek","AI전략","규제","일자리","로봇","반도체","AGI"],"8":["OpenAI","ChatGPT","AI전략","규제","반도체","스타트업","한국AI"],"9":["OpenAI","ChatGPT","AI에이전트","AI전략","AGI","ASI","스타트업"],"10":["Meta","DeepSeek","AI에이전트","AI전략","로봇","스타트업","LLM"],"11":["Anthropic","OpenAI","Claude","ChatGPT","Meta","AI전략","규제"],"12":["Claude","ChatGPT","DeepSeek","AI에이전트","AI전략","규제","ClaudeCode"],"13":["Claude","ChatGPT","DeepSeek","AI에이전트","AI전략","규제","스타트업"],"14":["Anthropic","OpenAI","ChatGPT","Meta","AI에이전트","규제","반도체"],"15":["Anthropic","OpenAI","ChatGPT","AI전략","규제","일자리","스타트업"],"16":["OpenAI","Claude","AI에이전트","AI전략","규제","일자리","반도체"],"17":["Anthropic","OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제"],"18":["Anthropic","OpenAI","ChatGPT","AI전략","일자리","로봇","스타트업"],"19":["OpenAI","Claude","ChatGPT","Google","AI전략","규제","일자리"],"20":["Anthropic","OpenAI","Google","AI에이전트","AI전략","규제","로봇"],"21":["OpenAI","ChatGPT","AI에이전트","AI전략","규제","일자리","로봇"],"22":["ChatGPT","DeepSeek","AI전략","규제","일자리","반도체","AGI"],"23":["OpenAI","AI에이전트","AI전략","규제","일자리","AGI","스타트업"],"24":["Anthropic","Claude","ChatGPT","AI에이전트","AI전략","규제","로봇"],"25":["OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제","AGI"],"26":["OpenAI","ChatGPT","AI에이전트","AI전략","규제","일자리","반도체"],"27":["Anthropic","Google","AI전략","규제","일자리","반도체","한국AI"],"28":["AI전략","규제","반도체","스타트업","저작권","LLM","보안"],"29":["AI에이전트","AI전략","규제","스타트업","보안","코딩","조직설계"],"30":["OpenAI","ChatGPT","DeepSeek","AI전략","규제","로봇","반도체"],"31":["OpenAI","AI에이전트","AI전략","로봇","스타트업","코딩","조직설계"],"32":["OpenAI","AI에이전트","AI전략","로봇","반도체","AGI","스타트업"],"33":["Anthropic","OpenAI","ChatGPT","Google","AI에이전트","AI전략","규제"],"34":["Anthropic","OpenAI","Claude","AI에이전트","규제","반도체","저작권"],"35":["AI에이전트","AI전략","일자리","반도체","스타트업","저작권","보안"],"36":["OpenAI","Claude","AI에이전트","AI전략","규제","로봇","AGI"],"37":["Anthropic","Claude","AI에이전트","일자리","스타트업","한국AI","ClaudeCode"],"38":["OpenAI","Claude","ChatGPT","규제","일자리","AGI","스타트업"],"39":["AI에이전트","AI전략","규제","일자리","로봇","스타트업","한국AI"],"40":["Claude","ChatGPT","Google","AI에이전트","AI전략","규제","반도체"],"41":["OpenAI","AI전략","규제","반도체","스타트업","저작권","한국AI"],"42":["Anthropic","OpenAI","Claude","ChatGPT","AI에이전트","AI전략","규제"],"43":["OpenAI","AI전략","규제","일자리","저작권","조직설계","데이터"]};
+
+/* ── Color map ── */
+const CAT = {
+  research:   { stroke: '#60A5FA', fill: 'rgba(96,165,250,0.18)',   text: '#93C5FD', badge: '#2563EB' },
+  leader:     { stroke: '#FB923C', fill: 'rgba(251,146,60,0.18)',   text: '#FCA86A', badge: '#EA580C' },
+  company:    { stroke: '#38BDF8', fill: 'rgba(56,189,248,0.18)',   text: '#67D4FC', badge: '#0284C7' },
+  tech:       { stroke: '#4ADE80', fill: 'rgba(74,222,128,0.18)',   text: '#86EFAC', badge: '#16A34A' },
+  survival:   { stroke: '#F87171', fill: 'rgba(248,113,113,0.18)', text: '#FCA5A5', badge: '#DC2626' },
+  newsletter: { stroke: '#C084FC', fill: 'rgba(192,132,252,0.18)', text: '#D8B4FE', badge: '#9333EA' },
+};
+
+const CAT_LABEL = {
+  research: '리서치', leader: '리더', company: '기업',
+  tech: '기술', survival: '생존', newsletter: '뉴스레터'
+};
+
+/* ── Tooltip ── */
+const tooltip = document.getElementById('graphTooltip');
+
+function showTooltip(event, node, degree) {
+  const c = CAT[node.category] || CAT.research;
+  const tags = (node.tags || []).slice(0, 5);
+  tooltip.innerHTML = `
+    <div class="tt-badge" style="background:${c.badge};">${CAT_LABEL[node.category] || node.category}</div>
+    <div class="tt-title">${node.title}</div>
+    <div class="tt-meta">${node.date || ''} ${node.source ? '· ' + node.source : ''}</div>
+    ${tags.length ? `<div class="tt-tags">${tags.map(t => `<span class="tt-tag">${t}</span>`).join('')}</div>` : ''}
+    <div class="tt-connections">연결 아티클 <span>${degree}</span>개</div>
+  `;
+  tooltip.classList.add('show');
+  moveTooltip(event);
+}
+
+function moveTooltip(event) {
+  const pad = 16;
+  const tw = tooltip.offsetWidth || 300;
+  const th = tooltip.offsetHeight || 120;
+  let x = event.clientX + pad;
+  let y = event.clientY + pad;
+  if (x + tw > window.innerWidth - pad) x = event.clientX - tw - pad;
+  if (y + th > window.innerHeight - pad) y = event.clientY - th - pad;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+}
+
+function hideTooltip() {
+  tooltip.classList.remove('show');
+}
+
+/* ── Main ── */
+fetch('../posts-index.json')
+  .then(r => r.json())
+  .then(data => buildGraph(data.posts || []))
+  .catch(err => {
+    document.getElementById('graphLoading').innerHTML =
+      '<div style="color:#F87171;font-size:14px;">데이터 로드 실패: ' + err.message + '</div>';
+  });
+
+function buildGraph(posts) {
+  /* 1. Nodes */
+  const nodes = [];
+
+  posts.forEach(p => {
+    nodes.push({
+      id: p.slug || p.file,
+      title: p.title,
+      category: p.category || 'research',
+      tags: p.tags || [],
+      date: p.date,
+      source: p.source || '',
+      url: '../' + p.file,
+      type: 'post',
+      summary: p.summary || ''
+    });
+  });
+
+  const newsletters = window.NEWSLETTER_DATA || [];
+  newsletters.forEach(n => {
+    nodes.push({
+      id: 'nl-' + n.ep,
+      title: 'NL #' + n.ep + ' ' + n.title,
+      category: 'newsletter',
+      tags: NL_TAGS[String(n.ep)] || [],
+      date: n.date,
+      source: 'AI ROASTING 뉴스레터',
+      url: n.url,
+      type: 'newsletter',
+      ep: n.ep
+    });
+  });
+
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+
+  /* 2. Edges — shared tags (너무 흔한 태그는 제외) */
+  const tagMap = {};
+  nodes.forEach(n => {
+    (n.tags || []).forEach(tag => {
+      if (!tagMap[tag]) tagMap[tag] = [];
+      tagMap[tag].push(n.id);
+    });
+  });
+
+  /* 너무 범용적인 태그는 연결선 생성에서 제외 (의미 있는 연결만 남김) */
+  const GENERIC_TAGS = new Set(['AI전략','규제','AI에이전트','스타트업','일자리','AI','데이터','조직설계','Anthropic','OpenAI','Claude','ChatGPT','Google','Meta']);
+  const edgeWeights = {};
+  Object.entries(tagMap).forEach(([tag, ids]) => {
+    if (GENERIC_TAGS.has(tag)) return; // 너무 범용적인 태그 스킵
+    if (ids.length > 60) return;       // 60개 이상 노드에 등장하는 태그도 제외
+    for (let i = 0; i < ids.length; i++) {
+      for (let j = i + 1; j < ids.length; j++) {
+        const key = [ids[i], ids[j]].sort().join('\x00');
+        edgeWeights[key] = (edgeWeights[key] || 0) + 1;
+      }
+    }
+  });
+
+  /* 뉴스레터 체인 제거 — 태그 기반 연결만 사용하여 자연 분산 */
+
+  /* 최소 1개 이상 공유 태그인 엣지만 사용 */
+  const links = Object.entries(edgeWeights)
+    .filter(([, w]) => w >= 1)
+    .map(([key, weight]) => {
+      const [source, target] = key.split('\x00');
+      return { source, target, weight };
+    });
+
+  /* 3. Degree map */
+  const degreeMap = {};
+  links.forEach(l => {
+    degreeMap[l.source] = (degreeMap[l.source] || 0) + 1;
+    degreeMap[l.target] = (degreeMap[l.target] || 0) + 1;
+  });
+  nodes.forEach(n => { n.degree = degreeMap[n.id] || 0; });
+
+  /* Node radius: sqrt scale */
+  const maxDeg = d3.max(nodes, n => n.degree) || 1;
+  const rScale = d3.scaleSqrt().domain([0, maxDeg]).range([8, 28]);
+  nodes.forEach(n => { n.r = rScale(n.degree); });
+
+  /* 허브 임계값: 상위 10% */
+  const hubThreshold = d3.quantile(nodes.map(n => n.degree).sort(d3.ascending), 0.9);
+
+  /* 4. Stats */
+  document.getElementById('graphStats').innerHTML =
+    '노드 <strong>' + nodes.length + '</strong>개 &nbsp;·&nbsp; 연결선 <strong>' + links.length + '</strong>개';
+
+  /* 5. D3 setup */
+  const svg = d3.select('#graphSvg');
+  const wrap = document.querySelector('.graph-canvas-wrap');
+  const W = wrap.clientWidth;
+  const H = wrap.clientHeight;
+
+  const g = svg.append('g');
+
+  /* Zoom */
+  const zoom = d3.zoom()
+    .scaleExtent([0.2, 4])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
+
+  /* Seed positions: blog posts near center, newsletter ring on periphery */
+  nodes.forEach((n, i) => {
+    if (n.type === 'newsletter') {
+      const angle = (i / nodes.filter(x => x.type === 'newsletter').length) * 2 * Math.PI;
+      n.x = W/2 + Math.cos(angle) * 220;
+      n.y = H/2 + Math.sin(angle) * 220;
+    } else {
+      const angle = Math.random() * 2 * Math.PI;
+      const rad = Math.random() * 150;
+      n.x = W/2 + Math.cos(angle) * rad;
+      n.y = H/2 + Math.sin(angle) * rad;
+    }
+  });
+
+  /* 뉴스레터를 링 반경으로 초기 배치 */
+  const NL_RADIUS = Math.min(W, H) * 0.32;
+  const nlAll = nodes.filter(n => n.type === 'newsletter');
+  nlAll.forEach((n, i) => {
+    const angle = (i / nlAll.length) * 2 * Math.PI;
+    n.x = W/2 + Math.cos(angle) * NL_RADIUS;
+    n.y = H/2 + Math.sin(angle) * NL_RADIUS;
+  });
+
+  /* Force simulation */
+  const sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id)
+      .distance(d => Math.max(80, 150 - (d.weight || 1) * 10))
+      .strength(d => {
+        const sNL = (typeof d.source === 'object' ? d.source.type : '') === 'newsletter';
+        const tNL = (typeof d.target === 'object' ? d.target.type : '') === 'newsletter';
+        /* 뉴스레터↔블로그 연결은 약하게 (링 유지) */
+        return (sNL || tNL) ? 0.04 : Math.min(0.35, 0.06 + (d.weight || 1) * 0.04);
+      }))
+    .force('charge', d3.forceManyBody().strength(d => -Math.max(250, d.r * 24)))
+    /* 뉴스레터 전용: 특정 반경 링에 배치 */
+    .force('radial', d3.forceRadial(NL_RADIUS, W/2, H/2)
+      .strength(d => d.type === 'newsletter' ? 0.6 : 0))
+    /* 블로그 포스트는 중앙으로 */
+    .force('center', d3.forceCenter(W / 2, H / 2).strength(0.08))
+    .force('x', d3.forceX(W / 2).strength(d => d.type === 'newsletter' ? 0 : 0.03))
+    .force('y', d3.forceY(H / 2).strength(d => d.type === 'newsletter' ? 0 : 0.03))
+    .force('collide', d3.forceCollide().radius(d => d.r + 16).strength(0.9))
+    .alphaDecay(0.018);
+
+  /* 6. Render links */
+  const linkG = g.append('g').attr('class', 'links-group');
+  const linkSel = linkG.selectAll('line')
+    .data(links)
+    .join('line')
+    .attr('class', 'g-link')
+    .attr('stroke', d => {
+      const src = nodeById.get(typeof d.source === 'string' ? d.source : d.source.id);
+      return src ? CAT[src.category].stroke : '#fff';
+    })
+    .attr('stroke-width', d => Math.min(3, 1 + (d.weight || 1) * 0.4));
+
+  /* 7. Render nodes */
+  const nodeG = g.append('g').attr('class', 'nodes-group');
+  const nodeSel = nodeG.selectAll('g.g-node')
+    .data(nodes)
+    .join('g')
+    .attr('class', 'g-node')
+    .call(d3.drag()
+      .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+    );
+
+  /* 고립/허브 클래스 */
+  nodeSel.classed('isolated', d => d.degree <= 1);
+  nodeSel.classed('hub', d => d.degree >= hubThreshold && d.degree > 2);
+
+  /* Circle */
+  nodeSel.append('circle')
+    .attr('r', d => d.r)
+    .attr('fill', d => CAT[d.category].fill)
+    .attr('stroke', d => CAT[d.category].stroke)
+    .attr('stroke-width', d => d.degree >= hubThreshold ? 2.5 : 1.5);
+
+  /* Label — 기본 숨김, 클릭 시 표시 */
+  nodeSel.each(function(d) {
+    const el = d3.select(this);
+    const words = d.title.split(/\s+/);
+    const maxChars = 10;
+    let line1 = '', line2 = '';
+    for (const w of words) {
+      if (!line1) { line1 = w; }
+      else if ((line1 + ' ' + w).length <= maxChars) { line1 += ' ' + w; }
+      else if (!line2) { line2 = w; }
+      else if ((line2 + ' ' + w).length <= maxChars) { line2 += ' ' + w; }
+      else break;
+    }
+    const fs = 9;
+    if (line2) {
+      el.append('text').attr('class', 'node-label').attr('y', -5).attr('font-size', fs).text(line1);
+      el.append('text').attr('class', 'node-label').attr('y', +6).attr('font-size', fs).text(line2.length > maxChars ? line2.slice(0, maxChars-1)+'…' : line2);
+    } else {
+      el.append('text').attr('class', 'node-label').attr('font-size', fs).text(line1.length > maxChars ? line1.slice(0,maxChars-1)+'…' : line1);
+    }
+    /* 기본적으로 숨김 */
+    el.selectAll('text').style('display', 'none');
+  });
+
+  /* 8. Interaction state */
+  let selectedNode = null;   // 클릭으로 선택된 노드
+
+  function getNeighborSet(d) {
+    const s = new Set([d.id]);
+    links.forEach(l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      if (sid === d.id) s.add(tid);
+      if (tid === d.id) s.add(sid);
+    });
+    return s;
+  }
+
+  function applyFocus(d) {
+    const neighborSet = getNeighborSet(d);
+    nodeSel.classed('faded', n => !neighborSet.has(n.id));
+    nodeSel.classed('highlighted', n => n.id === d.id);
+    linkSel
+      .classed('faded', l => {
+        const sid = typeof l.source === 'string' ? l.source : l.source.id;
+        const tid = typeof l.target === 'string' ? l.target : l.target.id;
+        return sid !== d.id && tid !== d.id;
+      })
+      .classed('highlighted', l => {
+        const sid = typeof l.source === 'string' ? l.source : l.source.id;
+        const tid = typeof l.target === 'string' ? l.target : l.target.id;
+        return sid === d.id || tid === d.id;
+      });
+    /* 연결 노드에만 레이블 표시 */
+    nodeSel.selectAll('text').style('display', function() {
+      const nd = d3.select(this.parentNode).datum();
+      return neighborSet.has(nd.id) ? null : 'none';
+    });
+  }
+
+  function clearFocus() {
+    selectedNode = null;
+    nodeSel.classed('faded', false).classed('highlighted', false);
+    linkSel.classed('faded', false).classed('highlighted', false);
+    /* 모든 레이블 숨김 */
+    nodeSel.selectAll('text').style('display', 'none');
+  }
+
+  /* Hover: tooltip only (no focus when a node is already selected) */
+  nodeSel
+    .on('mouseenter', function(event, d) {
+      if (!selectedNode) applyFocus(d);
+      showTooltip(event, d, d.degree);
+    })
+    .on('mousemove', moveTooltip)
+    .on('mouseleave', function() {
+      if (!selectedNode) clearFocus();
+      hideTooltip();
+    });
+
+  /* Single click: lock focus on this node (연결 노드만 표시) */
+  nodeSel.on('click', function(event, d) {
+    event.stopPropagation();
+    if (selectedNode && selectedNode.id === d.id) {
+      clearFocus();   // 같은 노드 다시 클릭 → 해제
+    } else {
+      selectedNode = d;
+      applyFocus(d);
+    }
+  });
+
+  /* Double click: navigate to article */
+  nodeSel.on('dblclick', function(event, d) {
+    event.stopPropagation();
+    if (d.url) window.open(d.url, d.type === 'newsletter' ? '_blank' : '_self');
+  });
+
+  /* Click on empty canvas → clear focus */
+  svg.on('click', function() {
+    clearFocus();
+    hideTooltip();
+  });
+
+  /* 9. Tick */
+  sim.on('tick', () => {
+    linkSel
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+
+  /* Fit to view after simulation settles */
+  function fitToView() {
+    const padding = 60;
+    const xs = nodes.map(n => n.x).filter(v => isFinite(v));
+    const ys = nodes.map(n => n.y).filter(v => isFinite(v));
+    if (!xs.length) return;
+    const x0 = Math.min(...xs), x1 = Math.max(...xs);
+    const y0 = Math.min(...ys), y1 = Math.max(...ys);
+    const bW = x1 - x0 || 1, bH = y1 - y0 || 1;
+    const scale = Math.min(0.95, (W - padding*2) / bW, (H - padding*2) / bH);
+    const tx = W/2 - scale * (x0 + bW/2);
+    const ty = H/2 - scale * (y0 + bH/2);
+    svg.transition().duration(800)
+      .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+    document.getElementById('graphLoading').style.display = 'none';
+  }
+
+  sim.on('end', fitToView);
+  setTimeout(fitToView, 4000);
+
+  /* Zoom reset button */
+  document.getElementById('zoomResetBtn').addEventListener('click', fitToView);
+
+  /* 10. Category filter */
+  let activeCategories = new Set(['research','leader','company','tech','survival','newsletter']);
+
+  document.getElementById('graphControls').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-pill');
+    if (!btn) return;
+    const cat = btn.dataset.cat;
+
+    if (cat === 'all') {
+      if (activeCategories.size === 6) {
+        activeCategories.clear();
+        document.querySelectorAll('.filter-pill:not([data-cat="all"])').forEach(b => b.classList.remove('active'));
+      } else {
+        activeCategories = new Set(['research','leader','company','tech','survival','newsletter']);
+        document.querySelectorAll('.filter-pill:not([data-cat="all"])').forEach(b => b.classList.add('active'));
+      }
+      btn.classList.toggle('active', activeCategories.size > 0);
+    } else {
+      if (activeCategories.has(cat)) {
+        activeCategories.delete(cat);
+        btn.classList.remove('active');
+      } else {
+        activeCategories.add(cat);
+        btn.classList.add('active');
+      }
+      document.querySelector('[data-cat="all"]').classList.toggle('active', activeCategories.size === 6);
+    }
+
+    nodeSel.style('display', d => activeCategories.has(d.category) ? null : 'none');
+    linkSel.style('display', l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      const sn = nodeById.get(sid);
+      const tn = nodeById.get(tid);
+      return (sn && activeCategories.has(sn.category)) && (tn && activeCategories.has(tn.category)) ? null : 'none';
+    });
+  });
+
+  /* Start at identity */
+  svg.call(zoom.transform, d3.zoomIdentity);
+}
+
+})();
+</script>
+</body>
+</html>

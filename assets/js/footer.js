@@ -1,7 +1,7 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/(research|leader|company|tech|survival|about|newsletter)\//.test(loc)) {
+  if (/\/(research|leader|company|tech|survival|about|newsletter|insights)\//.test(loc)) {
     prefix = '../';
   }
 
@@ -27,6 +27,7 @@
           '<div class="footer-heading">정보</div>' +
           '<ul class="footer-links">' +
             '<li><a href="' + prefix + 'about/index.html">프로젝트 소개</a></li>' +
+            '<li><a href="' + prefix + 'insights/insights.html">분기별 인사이트</a></li>' +
           '</ul>' +
           '<div class="footer-heading footer-social-heading">소셜</div>' +
           '<div class="footer-social">' +

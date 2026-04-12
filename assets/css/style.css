@@ -253,6 +253,23 @@ img {
   color: #C4B5FD;
 }
 
+/* ── 지식 그래프 nav link ── */
+.main-nav .nav-graph {
+  color: #10B981;
+  font-weight: 700;
+}
+.main-nav .nav-graph:hover { color: #059669; }
+.main-nav .nav-graph.active {
+  border-bottom-color: #10B981;
+  color: #10B981;
+}
+[data-theme="dark"] .main-nav .nav-graph { color: #6EE7B7; }
+[data-theme="dark"] .main-nav .nav-graph:hover { color: #A7F3D0; }
+[data-theme="dark"] .main-nav .nav-graph.active {
+  border-bottom-color: #6EE7B7;
+  color: #6EE7B7;
+}
+
 /* ── 홈 뉴스레터 그리드 ── */
 :root { --cat-newsletter: #7C3AED; }
 .nl-home-grid {
