@@ -573,11 +573,14 @@ function hideTooltip() {
   tooltip.classList.remove('show');
 }
 
-/* 모바일: 툴팁 외부 탭 시 닫기 */
+/* 모바일: 툴팁 외부 탭 시 닫기 (노드 탭은 제외 — click 핸들러에서 처리) */
 if (isMobile) {
   tooltip.style.pointerEvents = 'auto';
   document.addEventListener('touchstart', e => {
-    if (!tooltip.contains(e.target)) hideTooltip();
+    const isSvgNode = e.target.closest('circle, .node, [data-node]') ||
+                      e.target.tagName === 'circle' ||
+                      e.target.closest('svg');
+    if (!tooltip.contains(e.target) && !isSvgNode) hideTooltip();
   }, { passive: true });
 }
 
@@ -846,26 +849,30 @@ function buildGraph(posts) {
     nodeSel.selectAll('text').style('display', 'none');
   }
 
-  /* Hover: tooltip only (no focus when a node is already selected) */
-  nodeSel
-    .on('mouseenter', function(event, d) {
-      if (!selectedNode) applyFocus(d);
-      showTooltip(event, d, d.degree);
-    })
-    .on('mousemove', moveTooltip)
-    .on('mouseleave', function() {
-      if (!selectedNode) clearFocus();
-      hideTooltip();
-    });
+  /* Hover: tooltip only (no focus when a node is already selected) — 데스크톱 전용 */
+  if (!isMobile) {
+    nodeSel
+      .on('mouseenter', function(event, d) {
+        if (!selectedNode) applyFocus(d);
+        showTooltip(event, d, d.degree);
+      })
+      .on('mousemove', moveTooltip)
+      .on('mouseleave', function() {
+        if (!selectedNode) clearFocus();
+        hideTooltip();
+      });
+  }
 
   /* Single click: lock focus on this node (연결 노드만 표시) */
   nodeSel.on('click', function(event, d) {
     event.stopPropagation();
     if (selectedNode && selectedNode.id === d.id) {
       clearFocus();   // 같은 노드 다시 클릭 → 해제
+      if (isMobile) hideTooltip();
     } else {
       selectedNode = d;
       applyFocus(d);
+      if (isMobile) showTooltip(event, d, d.degree);
     }
   });
 

@@ -1,6 +1,25 @@
 {
   "posts": [
     {
+      "title": "스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다",
+      "date": "2026-04-13",
+      "category": "tech",
+      "source": "Stanford HAI (AI Index 팀)",
+      "tags": [
+        "AI인덱스",
+        "미중AI경쟁",
+        "AI투자",
+        "AI채택",
+        "환경비용",
+        "AI인재"
+      ],
+      "slug": "2026-04-13-stanford-ai-index-2026-12-takeaways",
+      "file": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html",
+      "summary": "스탠퍼드 HAI가 AI 인덱스 2026을 발표했습니다. 미국과 중국의 AI 성능 격차는 2.7%p까지 줄었고, 글로벌 기업 AI 투자는 5817억 달러로 전년 대비 130% 증가했습니다. 생성형 AI는 3년 만에 전 세계 인구의 53%가 채택했습니다.",
+      "roasting_quote": "미국이 중국보다 겨우 2.7%p 앞서 있습니다. 당신 조직의 AI 전략은 이 숫자를 알고 있습니까?",
+      "next_post": "tech/2026-04-09-advisor-strategy-claude-opus.html"
+    },
+    {
       "title": "구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장",
       "date": "2026-04-09",
       "category": "research",
@@ -16,7 +35,7 @@
       "file": "research/2026-04-09-google-cloud-ai-agent-trends.html",
       "summary": "Google Cloud가 2026 AI 에이전트 5대 트렌드 리포트를 공개했습니다. gen AI 사용 기업의 52%가 에이전트를 프로덕션에 올렸고, 88%가 ROI를 확인했습니다. 직원 역할은 실행자에서 오케스트레이터로, 워크플로우는 에이전트 팀이 협업하는 디지털 조립라인으로 바뀝니다.",
       "roasting_quote": "gen AI를 쓰는 기업의 52%가 이미 에이전트를 프로덕션에 올렸습니다. 당신 조직이 아직 '언제 도입할까'를 회의하고 있다면, 이미 출발선에서 밀린 것입니다.",
-      "next_post": "research/2026-04-09-anthropic-2026-agentic-coding-trends.html"
+      "next_post": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html"
     },
     {
       "title": "Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20%",

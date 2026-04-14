@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html
 - 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html
 - 2026-04-09 [리서치] Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20% — /blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html
 - 2026-04-09 [기술] 비싼 AI가 조언하고, 저렴한 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
