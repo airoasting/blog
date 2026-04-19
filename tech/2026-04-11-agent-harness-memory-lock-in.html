@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 당신을 기억합니다. 그 기억은 누구 것입니까 - AI ROASTING</title>
+  <meta name="description" content="AI 에이전트 하네스가 메모리를 통제합니다. 클로즈드 하네스를 쓰면 쌓인 기억을 잃을 수 있습니다. LangChain CEO Harrison Chase가 경고하는 에이전트 메모리 종속 문제를 분석합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 당신을 기억합니다. 그 기억은 누구 것입니까">
+  <meta property="og:description" content="AI 에이전트 하네스가 메모리를 통제합니다. 클로즈드 하네스를 쓰면 쌓인 기억을 잃을 수 있습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-04-11-agent-harness-memory-lock-in.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_04_11_agent-harness-memory-lock-in/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-11">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="하네스">
+  <meta property="article:tag" content="메모리">
+  <meta property="article:tag" content="락인">
+  <meta property="article:tag" content="LangChain">
+  <meta property="article:tag" content="DeepAgents">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 당신을 기억합니다. 그 기억은 누구 것입니까">
+  <meta name="twitter:description" content="클로즈드 하네스를 쓰면 쌓인 AI 기억을 잃을 수 있습니다. 하네스와 메모리 종속 문제를 분석합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_04_11_agent-harness-memory-lock-in/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 당신을 기억합니다. 그 기억은 누구 것입니까",
+    "datePublished": "2026-04-11",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "AI 에이전트 하네스가 메모리를 통제합니다. 클로즈드 하네스를 쓰면 쌓인 기억을 잃을 수 있습니다. LangChain CEO Harrison Chase가 경고하는 에이전트 메모리 종속 문제를 분석합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-04-11-agent-harness-memory-lock-in.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_04_11_agent-harness-memory-lock-in/thumbnail.png" alt="AI가 당신을 기억합니다. 그 기억은 누구 것입니까">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 4월 11일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 당신을 기억합니다. 그 기억은 누구 것입니까</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>X Article</span>
+            <span>Harrison Chase</span>
+            <span><a href="https://x.com/hwchase17/status/2042978500567609738" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=하네스" class="post-tag">#하네스</a>
+            <a href="../index.html?tag=메모리" class="post-tag">#메모리</a>
+            <a href="../index.html?tag=락인" class="post-tag">#락인</a>
+            <a href="../index.html?tag=LangChain" class="post-tag">#LangChain</a>
+            <a href="../index.html?tag=DeepAgents" class="post-tag">#DeepAgents</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 당신을 기억합니다. 그 기억은 누구 것입니까"
+        data-date="2026-04-11"
+        data-category="tech"
+        data-source="X Article (Harrison Chase)"
+        data-tags="AI에이전트, 하네스, 메모리, 락인, LangChain, DeepAgents"
+        data-original-url="https://x.com/hwchase17/status/2042978500567609738"
+        data-roasting-quote="AI가 당신을 기억하고 있습니다. 그 기억이 누구 것인지는 확인하셨습니까?"
+        data-next-post="2026-04-16-claude-opus-4-7-launch.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>AI 에이전트 하네스는 사라지지 않습니다. 클로드 코드 소스 코드가 51만 2천 줄인 것이 증거입니다.</p>
+        <p data-summary>메모리는 하네스에 종속됩니다. 클로즈드 하네스를 쓰면 쌓인 기억의 소유권이 없습니다.</p>
+        <p data-summary>오픈 하네스를 써야 메모리를 직접 소유합니다. 메모리가 쌓일수록 플랫폼 교체 비용이 급등합니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 당신을 기억하고 있습니다.<br>그 기억이 누구 것인지는 확인하셨습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 에이전트를 운영하는 조직이라면 이 질문을 해야 합니다. "우리 에이전트의 기억은 누가 소유하는가?" LangChain CEO Harrison Chase가 2026년 4월 11일 X 아티클에서 이 문제를 직접 제기했습니다. 에이전트 메모리는 데이터 플라이휠입니다. 쌓일수록 차별화가 생기고, 잃으면 처음부터 다시 시작해야 합니다. 이 글을 읽기 전에 현재 어떤 하네스를 쓰는지 모른다면 지금이 확인할 시점입니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>에이전트 시대가 본격화되면서 "좋은 모델"은 더 이상 경쟁 우위가 아닙니다. 모든 회사가 동일한 API를 씁니다. 차별점은 에이전트가 쌓아온 메모리에서 생깁니다. 모델 공급자들이 이 메모리를 API 뒤에 잠그기 시작했습니다. Anthropic의 Claude Managed Agents, OpenAI Codex의 암호화된 compaction summary가 증거입니다(Chase, 2026).</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 하네스는 사라지지 않습니다.</strong> 모델이 좋아질수록 에이전트 주변 구조가 줄어들 것 같지만, 실제로는 다른 형태로 교체됩니다. 에이전트란 정의상 LLM이 도구와 데이터를 다루는 구조입니다. 그 구조를 지원하는 코드가 항상 필요합니다. 클로드 코드의 소스 코드가 유출됐을 때 51만 2천 줄이 나왔습니다. 그것이 전부 하네스입니다(Chase, 2026). OpenAI와 Anthropic API에 내장된 웹 검색도 마찬가지입니다. 모델 기능이 아닌, API 뒤에서 웹 검색 API를 연결하는 경량 하네스입니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">512,000</div>
+            <div class="stat-label">클로드 코드 하네스 코드 줄 수 (모델이 아닌 구조)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">클로즈드 API 하네스 사용 시 장기 메모리 소유권</div>
+          </div>
+        </div>
+
+        <p><strong>둘째, 메모리는 하네스의 핵심 책임입니다.</strong> 메모리를 별도 플러그인으로 연결할 수 있다는 생각은 틀렸습니다. Letta CTO Sarah Wooders는 이를 명확히 짚었습니다. "하네스에 메모리를 꽂는 것은 자동차에 운전을 꽂는 것과 같습니다(Chase, 2026)." 단기 메모리(대화 내 메시지, 도구 결과)는 하네스가 관리합니다. 장기 메모리(세션 간 기억)도 하네스가 업데이트하고 읽습니다. CLAUDE.md나 AGENTS.md 파일이 컨텍스트에 어떻게 로드되는지, 컴팩션(긴 대화 압축 처리) 후 무엇이 남는지, 이 모두가 하네스 결정입니다.</p>
+
+        <p><strong>셋째, 클로즈드 하네스의 위험은 단계별로 다릅니다.</strong> 가장 가벼운 문제는 상태형 API를 쓰는 경우입니다. OpenAI Responses API나 Anthropic 서버 사이드 컴팩션을 쓰면 상태가 공급자 서버에 저장됩니다. 모델을 교체해도 이전 스레드를 이어갈 수 없습니다. 중간 문제는 Claude Agent SDK처럼 오픈소스가 아닌 하네스를 쓰는 경우입니다. 메모리 구조가 공개되지 않아 다른 하네스로 이전이 불가능합니다.</p>
+
+        <p>가장 심각한 경우는 전체 하네스가 API 뒤에 있는 경우입니다. Anthropic Claude Managed Agents가 여기에 해당합니다. 장기 메모리를 포함해 모든 것이 API 뒤에 잠깁니다. 소유권도 없고 가시성도 없습니다(Chase, 2026). 모델 공급자를 바꾸면 지금까지 쌓인 기억 전부를 잃습니다.</p>
+
+        <p><strong>넷째, 메모리가 쌓일수록 교체 비용이 급등합니다.</strong> 모델 공급자들은 과거에 비슷한 API를 제공했습니다. 상태가 없었기 때문에 교체가 쉬웠습니다. 메모리가 생기면 달라집니다. Harrison Chase는 직접 겪은 사례를 공유했습니다. 사내 이메일 에이전트가 수개월 동안 개인화된 기억을 쌓았습니다. 실수로 에이전트가 삭제됐고, 같은 템플릿으로 다시 만들었을 때 경험이 훨씬 나빠졌습니다. 선호도와 톤을 처음부터 다시 가르쳐야 했습니다(Chase, 2026). 이 경험이 메모리의 중요성과 잠재적 락인을 동시에 보여줍니다.</p>
+
+        <p><strong>다섯째, 모델 공급자들은 메모리로 락인을 만들 유인이 있습니다.</strong> 메모리 없는 상태에서는 모델 교체가 쉽습니다. API가 비슷하고 프롬프트 조정도 크지 않습니다. 메모리가 공급자에 종속되면 완전히 달라집니다. 기억을 버리지 않고는 떠날 수 없습니다. 공급자들은 이 사실을 알고 있습니다. Anthropic의 Claude Managed Agents, OpenAI Codex의 암호화된 compaction summary가 이 방향을 보여줍니다. 메모리가 곧 락인 수단이 됩니다(Chase, 2026).</p>
+
+        <p><strong>여섯째, 오픈 하네스가 메모리 소유의 유일한 방법입니다.</strong> 메모리를 직접 소유하려면 오픈소스 하네스를 써야 합니다. Harrison Chase가 제시하는 기준은 네 가지입니다. 오픈소스일 것, 모델에 종속되지 않을 것, 오픈 표준(agents.md, skills)을 쓸 것, 저장소를 직접 선택할 수 있을 것입니다. LangChain의 Deep Agents가 이 기준으로 만들어졌습니다. MongoDB, PostgreSQL, Redis 등에 메모리를 저장합니다. 자체 인프라에 배포하거나 클라우드를 선택할 수 있습니다(Chase, 2026).</p>
+
+        <!-- 오픈 vs 클로즈드 비교표 -->
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th style="text-align:center">클로즈드 하네스</th>
+                <th style="text-align:center">오픈 하네스</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>메모리 저장 위치</td>
+                <td style="text-align:center">공급자 서버</td>
+                <td class="cell-hl" style="text-align:center">자체 데이터베이스</td>
+              </tr>
+              <tr>
+                <td>메모리 직접 접근</td>
+                <td style="text-align:center">불가</td>
+                <td class="cell-hl" style="text-align:center">가능</td>
+              </tr>
+              <tr>
+                <td>모델 교체 시 기억 이전</td>
+                <td style="text-align:center">불가</td>
+                <td class="cell-hl" style="text-align:center">가능</td>
+              </tr>
+              <tr>
+                <td>컴팩션 방식 제어</td>
+                <td style="text-align:center">공급자 결정</td>
+                <td class="cell-hl" style="text-align:center">직접 설정</td>
+              </tr>
+              <tr>
+                <td>플랫폼 교체 비용</td>
+                <td style="text-align:center">기억 전부 소실</td>
+                <td class="cell-hl" style="text-align:center">이전 가능</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Chase, H. (2026). Your harness, your memory.</p>
+        </div>
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>클로즈드 하네스에 계속 의존하면 두 가지 손해가 발생합니다. 첫째, 쌓인 기억을 포기해야 하는 전환 비용입니다. 에이전트가 수개월 운영되면 사용자별 선호도, 업무 패턴, 조직 특성이 기억에 쌓입니다. 이 기억이 공급자에 종속돼 있으면 플랫폼 교체 시 기억 전체를 버려야 합니다. 새 에이전트는 처음부터 다시 배웁니다. 그 사이 생산성 손실이 발생합니다.</p>
+        <p>둘째, 독점 데이터셋 구축 기회를 잃습니다. 에이전트 메모리는 사용자 상호작용과 선호도의 기록입니다. 이것이 조직 고유의 자산입니다. 누구나 같은 도구를 쓰는 시대에 이 데이터셋이 차별화 원천이 됩니다. 클로즈드 하네스를 쓰면 이 자산이 공급자 것이 됩니다. 직접 소유하지 못합니다(Chase, 2026).</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>개발팀에 이 세 가지 질문을 던집니다.</strong><br>(1) "우리 에이전트의 대화 기록과 사용자 선호도가 어디에 저장됩니까? 우리 서버입니까, 공급자 서버입니까?" (2) "지금 쓰는 하네스를 다른 것으로 바꾸면 쌓인 기억을 가져올 수 있습니까?" (3) "클로드나 GPT를 교체하기로 결정하면 이전까지 축적된 에이전트 메모리는 어떻게 됩니까?" 세 질문 중 하나라도 "모릅니다" 또는 "못 가져옵니다"가 나오면 메모리 종속 상태입니다. (30분, 개발팀 1:1)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI 에이전트 메모리 전략을 수립합니다.</strong><br>에이전트가 기억해야 할 정보를 세 가지로 분류합니다. 사용자별 선호도, 조직 특성, 반복 업무 패턴입니다. 이 세 가지를 어디에 저장하고 누가 소유하는지 문서화합니다. 클로드에게 "우리 팀의 AI 에이전트 메모리를 직접 소유하는 아키텍처를 설계해줘"라고 요청합니다. (2~3시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>오픈 하네스 시범 도입을 검토합니다.</strong><br>현재 클로즈드 하네스를 쓴다면 오픈 대안을 나란히 놓고 비교합니다. Deep Agents는 오픈소스이고 MongoDB, PostgreSQL 등 자체 데이터베이스를 메모리 저장소로 씁니다. 소규모 비내부 업무에 먼저 시범 적용하고, 4주 후 기억의 품질과 이식성을 평가합니다. (1주 검토 + 4주 파일럿)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>메모리 표준은 아직 초기 단계입니다.</strong> Harrison Chase 스스로 "메모리는 아직 초기(early)입니다"라고 밝혔습니다(Chase, 2026). 업계 공통 추상화가 없고 모범 사례도 정착되지 않았습니다. 오픈 하네스를 도입해도 나중에 재설계가 필요할 수 있습니다.</p>
+
+        <p><strong>오픈 하네스는 직접 운영 부담이 생깁니다.</strong> 메모리 저장소를 직접 관리하면 보안, 백업, 규모 확장이 조직 책임이 됩니다. 클로즈드 서비스는 이를 공급자가 처리합니다. 초기 운영 역량이 부족하다면 단계적 전환이 현실적입니다.</p>
+
+        <p><strong>메모리가 많아질수록 품질 관리가 복잡해집니다.</strong> 잘못된 선호도나 오래된 정보가 기억에 쌓이면 에이전트 성능이 저하됩니다. 정기적으로 메모리를 검토하고 정리하는 프로세스가 필요합니다. 이것 역시 운영 비용입니다.</p>
+
+        <p><strong>Harrison Chase는 LangChain CEO입니다.</strong> 이 글은 Deep Agents를 자사 솔루션으로 제안합니다. 오픈 하네스의 필요성 자체는 타당하지만, 솔루션 선택 시 다른 오픈소스 대안(Letta, LangGraph 등)도 함께 검토해야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 에이전트가 쌓는 기억이 진짜 자산입니다. 클로즈드 하네스를 쓰면 그 자산이 공급자 것이 됩니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 에이전트 메모리는 독점 데이터셋이다. 그 자산이 공급자에 종속되지 않도록 아키텍처 원칙을 지금 정하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>현재 하네스의 메모리 저장 방식을 감사하라. 클로즈드라면 오픈 대안으로 전환 계획을 수립하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀에서 쓰는 AI 도구가 쌓는 기억을 직접 소유할 수 있는지 확인하라. 모른다면 개발팀에 질문하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>하네스(Harness)</strong>: AI 에이전트를 구동하는 코드와 구조 전체입니다. 모델 주변에서 도구 연결, 메모리 관리, 실행 흐름을 처리합니다. Claude Code, Deep Agents, OpenClaw가 모두 하네스입니다.</p>
+          <p><strong>메모리(Memory)</strong>: 에이전트가 저장하는 정보입니다. 단기 메모리는 현재 세션의 대화와 도구 결과입니다. 장기 메모리는 세션이 끝나도 남아 다음 세션에 영향을 줍니다. 사용자 선호도, 업무 패턴이 장기 메모리에 해당합니다.</p>
+          <p><strong>컴팩션(Compaction)</strong>: 긴 대화를 요약해 압축하는 기법입니다. 컨텍스트 창 한계를 극복하기 위해 씁니다. 공급자가 이를 암호화하거나 API 뒤에 숨기면 외부에서 접근할 수 없습니다.</p>
+          <p><strong>락인(Lock-in)</strong>: 특정 플랫폼이나 공급자에 종속돼 교체 비용이 과도하게 높아진 상태입니다. AI 에이전트에서는 메모리 종속이 락인의 주요 형태입니다.</p>
+          <p><strong>데이터 플라이휠(Data Flywheel)</strong>: 데이터가 쌓일수록 서비스가 좋아지고, 좋아진 서비스가 더 많은 데이터를 끌어오는 선순환입니다. 에이전트 메모리가 플라이휠 역할을 합니다.</p>
+          <p><strong>Deep Agents</strong>: LangChain이 개발한 오픈소스 에이전트 하네스입니다. 모델에 종속되지 않으며 PostgreSQL, MongoDB, Redis 등 자체 데이터베이스를 메모리 저장소로 씁니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Chase, H. (2026, 4월). <em>Your harness, your memory</em> [Article]. X.
+            <a href="https://x.com/hwchase17/status/2042978500567609738" target="_blank" rel="noopener">https://x.com/hwchase17/status/2042978500567609738</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://x.com/hwchase17/status/2042978500567609738" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 패턴 A — 1:1 충돌형 (블랙 vs 레드) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">오픈 하네스로 가야 해요. 메모리 주권이 없으면 나중에 이사할 때 짐이 없는 거예요. 클로드 API 값 오르면? 갈아타려도 기억은 두고 가야 해요. 그게 락인이에요.</div>
+            </div>
+          </div>
+          <!-- 반박 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">오픈 소스라고 다 좋은 건 아니잖아요. 메모리 저장소 직접 운영하면 보안, 백업, 확장 다 우리 책임이에요. 그 비용 계산해보셨어요? 클로즈드가 다 나쁜 건 아닐 수도 있어요.</div>
+            </div>
+          </div>
+          <!-- 재반박 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">클로드 코드 소스 코드가 51만 2천 줄이에요. 그게 하네스예요. 그걸 직접 짜는 게 아니라 오픈 하네스를 가져다 쓰는 거잖아요. 운영 부담은 비교 대상이 아니에요. 메모리를 잃는 게 더 비싸요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 패턴 C — 연쇄 반응형 (화이트 질문 → 네이비 답변 → 골드 태클 → 네이비 마무리) -->
+        <div style="margin-bottom:32px;">
+          <!-- 질문 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희 팀이 Claude Agent SDK 쓰는데, 지금 오픈 하네스로 바꾸려면 얼마나 걸려요? 위에서 "메모리 자산화해라"는 말이 나왔는데 팀한테 뭐라고 설명해야 할지도 모르겠어요.</div>
+            </div>
+          </div>
+          <!-- 답변 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">Claude Agent SDK 메모리 구조가 비공개라서 마이그레이션 자체가 안 돼요. 기존 기억은 버리고 새로 시작해야 해요. 새 하네스 세팅 2주, 재테스트 1주, 안정화 2주. 최소 5주예요.</div>
+            </div>
+          </div>
+          <!-- 태클 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">5주는 뭘요. 저는 비슷한 전환을 했는데 메모리 포맷이 달라서 3주가 그냥 날아갔어요. 근데 솔직히 그때 버린 기억이 아까운 게 아니라, 그걸 쌓을 동안 들인 시간이 아까웠어요.</div>
+            </div>
+          </div>
+          <!-- 마무리 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 지금 고를 때 이식성 먼저 봐야 해요. 나중엔 바꿀 시간 없어요. Deep Agents, Letta 둘 다 메모리 포맷 공개돼 있으니까 이 둘 중에서 고르세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 패턴 B — 끼어들기형 (퍼플 원댓글 + 화이트 끼어들기 + 블랙 다른 각도) -->
+        <div style="margin-bottom:32px;">
+          <!-- 원댓글 -->
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">Harrison Chase 이메일 에이전트 삭제됐다는 얘기, 저도 비슷한 거 경험했어요. 우리 고객 응대 AI가 초기화됐는데 고객 이름도 모르고, 이전 대화도 없는 상태가 됐어요. 그 어색함이 바로 기억 없는 AI의 실체더라고요.</div>
+            </div>
+          </div>
+          <!-- 화이트 끼어들기 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그런데 에이전트 기억이랑 그냥 데이터베이스 백업이 다른 건가요? DB에 저장하면 되는 거 아니에요? 저는 이 차이를 잘 모르겠어요.</div>
+            </div>
+          </div>
+          <!-- 블랙 다른 각도 -->
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">백업 있어도 소용없어요. 하네스마다 기억 형식이 달라서 읽질 못해요. 잠긴 형식 = 잠긴 기억이에요. 열쇠가 공급자한테 있는 거예요.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-16-claude-opus-4-7-launch.html">
+          <div class="next-post-title">클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-11-agent-harness-memory-lock-in.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-04-11-agent-harness-memory-lock-in.html';
+    const ROASTING_QUOTE = 'AI가 당신을 기억하고 있습니다. 그 기억이 누구 것인지는 확인하셨습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+</body>
+</html>

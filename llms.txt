@@ -14,7 +14,10 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-16 [기술] 클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 — /blog/tech/2026-04-16-claude-opus-4-7-launch.html
+- 2026-04-14 [리서치] AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장 — /blog/research/2026-04-14-automated-alignment-researchers.html
 - 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html
+- 2026-04-11 [기술] AI가 당신을 기억합니다. 그 기억은 누구 것입니까 — /blog/tech/2026-04-11-agent-harness-memory-lock-in.html
 - 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html
 - 2026-04-09 [리서치] Anthropic 2026 에이전틱 AI 리포트: 60%는 쓰지만 완전 위임은 20% — /blog/research/2026-04-09-anthropic-2026-agentic-coding-trends.html
 - 2026-04-09 [기술] 비싼 AI가 조언하고, 저렴한 AI가 실행합니다 — /blog/tech/2026-04-09-advisor-strategy-claude-opus.html
@@ -64,10 +67,12 @@
 - 2026-03-06 [리더] 카파시의 AutoResearch: AI가 밤새 스스로 연구하는 시대 — /blog/leader/2026-03-18-karpathy-autoresearch.html
 - 2026-03-05 [생존] AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 — /blog/survival/2026-03-05-ai-labor-market-exposure.html
 - 2026-03-05 [리서치] AI 도구 3개 넘으면 생산성이 떨어진다 — /blog/research/2026-03-05-brain-fry.html
+- 2026-03-02 [생존] AI 해고 함정: 기업이 자를수록 모두가 손해 보는 이유 — /blog/survival/2026-03-02-ai-layoff-trap.html
 - 2026-02-23 [기술] AI는 왜 사람처럼 행동하는가 (멀티 페르소나) — /blog/tech/2026-02-23-persona-selection-model.html
 - 2026-02-12 [리더] 재미로 만들어 GitHub 18만 스타: OpenClaw 창시자의 에이전트 엔지니어링 선언 — /blog/leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html
 - 2026-02-11 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
 - 2026-02-09 [리서치] AI는 일을 줄이지 않는다, 더 늘리고 있다 — /blog/research/2026-02-09-ai-intensifies-work.html
+- 2026-02-02 [리서치] 블랙박스 AI를 맞춤 조종하는 어드바이저 모델 — /blog/research/2026-02-02-advisor-model-black-box-llm.html
 - 2026-02-01 [생존] AI를 쓸수록 실력이 떨어진다 — /blog/survival/2026-02-01-ai-skill-erosion-anthropic-study.html
 - 2026-01-25 [리더] 아모데이가 경고한 AI의 5가지 위험 — /blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html
 - 2026-01-21 [리더] AGI 이후의 세계: 하사비스와 아모데이가 충돌한 5가지 쟁점 — /blog/leader/2026-01-21-hassabis-amodei-agi-debate.html

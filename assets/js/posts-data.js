@@ -1,6 +1,42 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다",
+      "date": "2026-04-16",
+      "category": "tech",
+      "source": "Anthropic (Claude Team)",
+      "tags": [
+        "Anthropic",
+        "ClaudeOpus4.7",
+        "코딩AI",
+        "에이전트",
+        "모델업데이트"
+      ],
+      "slug": "2026-04-16-claude-opus-4-7-launch",
+      "file": "tech/2026-04-16-claude-opus-4-7-launch.html",
+      "summary": "Anthropic이 Claude Opus 4.7을 출시했습니다. 93개 벤치마크에서 코딩 성능이 13% 향상됐고, 이미지 지원은 3배 이상 늘었습니다. 가격은 Opus 4.6과 동일합니다.",
+      "roasting_quote": "Anthropic이 가격은 그대로 두고 Opus를 업그레이드했습니다. 코딩 성능이 13% 올랐습니다. 아직도 이전 모델을 쓰고 계십니까?",
+      "next_post": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html"
+    },
+    {
+      "title": "AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장",
+      "date": "2026-04-14",
+      "category": "research",
+      "source": "Anthropic Research (Jiaxin Wen, Liang Qiu, Joe Benton, Jan Hendrik Kirchner, Jan Leike)",
+      "tags": [
+        "AI안전",
+        "약강감독",
+        "Anthropic",
+        "정렬연구",
+        "AI에이전트"
+      ],
+      "slug": "2026-04-14-automated-alignment-researchers",
+      "file": "research/2026-04-14-automated-alignment-researchers.html",
+      "summary": "Anthropic이 Claude Opus 4.6 9개를 자동화 정렬 연구원(AAR)으로 배포했습니다. 인간 연구원 2명이 7일간 달성한 성과(PGR 0.23)를, AAR들은 800시간 만에 0.97로 끌어올렸습니다. 병목은 아이디어 생성이 아니라 검증이며, 리워드 해킹 방지를 위한 인간 감독이 여전히 필수입니다.",
+      "roasting_quote": "인간 연구원 2명이 7일 걸린 실험을, AI 9개가 800시간 만에 끝냈습니다. 그런데 검증은 아직 사람이 합니다.",
+      "next_post": "research/2026-04-07-llm-behavioral-alignment-gap.html"
+    },
+    {
       "title": "스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다",
       "date": "2026-04-13",
       "category": "tech",
@@ -17,7 +53,26 @@ window.POSTS_DATA = {
       "file": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html",
       "summary": "스탠퍼드 HAI가 AI 인덱스 2026을 발표했습니다. 미국과 중국의 AI 성능 격차는 2.7%p까지 줄었고, 글로벌 기업 AI 투자는 5817억 달러로 전년 대비 130% 증가했습니다. 생성형 AI는 3년 만에 전 세계 인구의 53%가 채택했습니다.",
       "roasting_quote": "미국이 중국보다 겨우 2.7%p 앞서 있습니다. 당신 조직의 AI 전략은 이 숫자를 알고 있습니까?",
-      "next_post": "tech/2026-04-09-advisor-strategy-claude-opus.html"
+      "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
+    },
+    {
+      "title": "AI가 당신을 기억합니다. 그 기억은 누구 것입니까",
+      "date": "2026-04-11",
+      "category": "tech",
+      "source": "X Article (Harrison Chase)",
+      "tags": [
+        "AI에이전트",
+        "하네스",
+        "메모리",
+        "락인",
+        "LangChain",
+        "DeepAgents"
+      ],
+      "slug": "2026-04-11-agent-harness-memory-lock-in",
+      "file": "tech/2026-04-11-agent-harness-memory-lock-in.html",
+      "summary": "AI 에이전트 하네스는 사라지지 않습니다. 메모리는 하네스에 종속됩니다. 클로즈드 하네스를 쓰면 쌓인 기억의 소유권이 없습니다.",
+      "roasting_quote": "AI가 당신을 기억하고 있습니다. 그 기억이 누구 것인지는 확인하셨습니까?",
+      "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
     },
     {
       "title": "구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장",
@@ -854,6 +909,24 @@ window.POSTS_DATA = {
       "next_post": "research/2025-09-22-workslop.html"
     },
     {
+      "title": "AI 해고 함정: 기업이 자를수록 모두가 손해 보는 이유",
+      "date": "2026-03-02",
+      "category": "survival",
+      "source": "arXiv",
+      "tags": [
+        "자동화",
+        "구조조정",
+        "일자리",
+        "경제정책",
+        "피구세"
+      ],
+      "slug": "2026-03-02-ai-layoff-trap",
+      "file": "survival/2026-03-02-ai-layoff-trap.html",
+      "summary": "펜실베이니아대·보스턴대 논문: 경쟁 시장에서 기업들은 사회 최적치를 넘어 과도하게 자동화합니다. UBI·재훈련 등 5가지 정책은 효과 없고, 오직 피구 자동화세만이 해결책입니다.",
+      "roasting_quote": "경쟁사가 자르니 우리도 자른다는 논리, 그게 자충수입니다. 고객의 월급도 함께 사라지고 있습니다.",
+      "next_post": "survival/2026-03-05-ai-labor-market-exposure.html"
+    },
+    {
       "title": "AI는 왜 사람처럼 행동하는가 (멀티 페르소나)",
       "date": "2026-02-23",
       "category": "tech",
@@ -918,6 +991,24 @@ window.POSTS_DATA = {
       "summary": "HBR 연구: AI를 쓴 뒤 일이 줄지 않았다. 하는 일의 가짓수, 동시 작업, 퇴근 뒤 업무가 모두 늘어나는 3가지 현상이 나타났다.",
       "roasting_quote": "AI가 시간을 벌어줬다고? 그 시간에 더 많은 일을 하고 있을 뿐이다.",
       "next_post": "leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html"
+    },
+    {
+      "title": "블랙박스 AI를 맞춤 조종하는 어드바이저 모델",
+      "date": "2026-02-02",
+      "category": "research",
+      "source": "arXiv (Asawa 외 4인, UC버클리)",
+      "tags": [
+        "어드바이저모델",
+        "강화학습",
+        "블랙박스LLM",
+        "AI커스터마이징",
+        "UC버클리"
+      ],
+      "slug": "2026-02-02-advisor-model-black-box-llm",
+      "file": "research/2026-02-02-advisor-model-black-box-llm.html",
+      "summary": "UC버클리 연구팀이 블랙박스 LLM을 외부에서 제어하는 어드바이저 모델을 공개했습니다. 강화학습으로 훈련한 소형 모델이 매 요청마다 최적화된 지시를 생성합니다. 번역 품질이 55%, 세무 정확도가 16%p 향상됐습니다.",
+      "roasting_quote": "GPT 내부에 접근할 수 없어도 AI 행동을 제어할 수 있습니다. UC버클리는 경량 어드바이저 하나로 이를 증명했습니다.",
+      "next_post": "survival/2026-02-01-ai-skill-erosion-anthropic-study.html"
     },
     {
       "title": "AI를 쓸수록 실력이 떨어진다",
