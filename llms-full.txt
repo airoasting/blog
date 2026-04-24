@@ -5,6 +5,60 @@
 
 ---
 
+## DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다
+
+날짜: 2026-04-24
+카테고리: 기술
+소스: DeepSeek (DeepSeek 연구팀)
+원문: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+태그: DeepSeek, MoE, 코딩AI, 오픈소스AI, AI가격
+
+### 3줄 요약
+DeepSeek이 2026년 4월 24일 V4-Pro를 공개했습니다. 총 1.6조 파라미터 규모의 MoE 모델입니다.
+LiveCodeBench 코딩 벤치마크에서 93.5%로 1위를 기록했습니다. Claude Opus 4.6(88.8%)과 GPT-5.4를 앞섰습니다.
+출력 비용은 100만 토큰당 $3.48로, Claude Opus 4.6($25)의 약 7분의 1입니다. MIT 라이선스로 완전 오픈소스입니다.
+
+### Roasting
+엔비디아 없이 만든 모델이 코딩 벤치마크 1위입니다. 지금 쓰는 AI 구독료, 합리적이십니까?
+
+---
+
+## Claude Code 품질이 6주간 하락한 진짜 이유
+
+날짜: 2026-04-23
+카테고리: 기술
+소스: Anthropic Engineering Blog (Anthropic)
+원문: https://www.anthropic.com/engineering/april-23-postmortem
+태그: ClaudeCode, Anthropic, AI품질, 에이전트, 포스트모텀
+
+### 3줄 요약
+Anthropic이 2026년 3~4월 Claude Code에서 세 가지 품질 저하 문제가 연달아 발생했음을 공식 확인했습니다.
+추론 노력 기본값 변경, 프롬프트 캐시 버그, 시스템 프롬프트 압축이 각각 원인이었습니다.
+2026년 4월 20일(v2.1.116) 기준 모두 수정됐으며, 구독자 사용량 한도는 전원 리셋됐습니다.
+
+### Roasting
+Anthropic이 직접 Claude Code를 세 번 망가뜨렸습니다. 6주간 조용히. 당신의 조직은 AI 도구 성능 저하를 감지할 수 있습니까?
+
+---
+
+## GPT-5.5, 에이전트 코딩 1위를 가져갔습니다
+
+날짜: 2026-04-23
+카테고리: 기술
+소스: OpenAI (OpenAI Team)
+원문: https://openai.com/index/introducing-gpt-5-5/
+태그: OpenAI, GPT-5.5, 에이전트, 코딩AI, API가격, 모델비교
+
+### 3줄 요약
+OpenAI가 2026년 4월 23일 GPT-5.5를 출시했습니다.
+에이전트 코딩 벤치마크에서 82.7%를 기록해 Claude Opus 4.7을 13.3포인트 앞섰습니다.
+API 가격은 GPT-5.4의 2배이며, 일부 벤치마크에서는 Claude에 뒤집니다.
+
+### Roasting
+API 가격이 GPT-5.4의 2배입니다. OpenAI는 이것을 '새로운 지능의 등급'이라고 부릅니다. 그 등급이 예산을 두 배로 올릴 가치가 있는지 먼저 계산하십시오.
+
+---
+
 ## 블랙박스 AI를 맞춤 조종하는 어드바이저 모델
 
 날짜: 2026-02-02

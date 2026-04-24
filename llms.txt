@@ -14,6 +14,9 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-24 [기술] DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다 — /blog/tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html
+- 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
+- 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
 - 2026-04-16 [기술] 클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 — /blog/tech/2026-04-16-claude-opus-4-7-launch.html
 - 2026-04-14 [리서치] AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장 — /blog/research/2026-04-14-automated-alignment-researchers.html
 - 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html

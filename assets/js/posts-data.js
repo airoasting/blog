@@ -1,6 +1,61 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다",
+      "date": "2026-04-24",
+      "category": "tech",
+      "source": "DeepSeek (DeepSeek 연구팀)",
+      "tags": [
+        "DeepSeek",
+        "MoE",
+        "코딩AI",
+        "오픈소스AI",
+        "AI가격"
+      ],
+      "slug": "2026-04-24-deepseek-v4-pro-coding-benchmark",
+      "file": "tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html",
+      "summary": "DeepSeek이 V4-Pro를 공개했습니다. LiveCodeBench 코딩 벤치마크 93.5%로 1위, 출력 비용은 Claude Opus 4.6의 7분의 1입니다. 엔비디아 없이 만든 모델이 프론티어에 도달했습니다.",
+      "roasting_quote": "엔비디아 없이 만든 모델이 코딩 벤치마크 1위입니다. 지금 쓰는 AI 구독료, 합리적이십니까?",
+      "next_post": "tech/2026-04-23-claude-code-quality-incident-postmortem.html"
+    },
+    {
+      "title": "Claude Code 품질이 6주간 하락한 진짜 이유",
+      "date": "2026-04-23",
+      "category": "tech",
+      "source": "Anthropic Engineering Blog (Anthropic)",
+      "tags": [
+        "ClaudeCode",
+        "Anthropic",
+        "AI품질",
+        "에이전트",
+        "포스트모텀"
+      ],
+      "slug": "2026-04-23-claude-code-quality-incident-postmortem",
+      "file": "tech/2026-04-23-claude-code-quality-incident-postmortem.html",
+      "summary": "Anthropic이 2026년 3~4월 Claude Code에서 세 가지 품질 저하 문제가 연달아 발생했음을 공식 확인했습니다. 추론 기본값 변경, 캐시 버그, 시스템 프롬프트 압축이 원인이었습니다. 4월 20일(v2.1.116) 기준 모두 수정됐습니다.",
+      "roasting_quote": "Anthropic이 직접 Claude Code를 세 번 망가뜨렸습니다. 6주간 조용히. 당신의 조직은 AI 도구 성능 저하를 감지할 수 있습니까?",
+      "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
+    },
+    {
+      "title": "GPT-5.5, 에이전트 코딩 1위를 가져갔습니다",
+      "date": "2026-04-23",
+      "category": "tech",
+      "source": "OpenAI (OpenAI Team)",
+      "tags": [
+        "OpenAI",
+        "GPT-5.5",
+        "에이전트",
+        "코딩AI",
+        "API가격",
+        "모델비교"
+      ],
+      "slug": "2026-04-23-gpt-5-5-agentic-coding",
+      "file": "tech/2026-04-23-gpt-5-5-agentic-coding.html",
+      "summary": "OpenAI가 GPT-5.5를 출시했습니다. Terminal-Bench 2.0에서 82.7%로 Claude를 13포인트 앞섰습니다. API 가격은 GPT-5.4의 2배입니다.",
+      "roasting_quote": "API 가격이 GPT-5.4의 2배입니다. OpenAI는 이것을 '새로운 지능의 등급'이라고 부릅니다. 그 등급이 예산을 두 배로 올릴 가치가 있는지 먼저 계산하십시오.",
+      "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
+    },
+    {
       "title": "클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다",
       "date": "2026-04-16",
       "category": "tech",
@@ -16,7 +71,7 @@ window.POSTS_DATA = {
       "file": "tech/2026-04-16-claude-opus-4-7-launch.html",
       "summary": "Anthropic이 Claude Opus 4.7을 출시했습니다. 93개 벤치마크에서 코딩 성능이 13% 향상됐고, 이미지 지원은 3배 이상 늘었습니다. 가격은 Opus 4.6과 동일합니다.",
       "roasting_quote": "Anthropic이 가격은 그대로 두고 Opus를 업그레이드했습니다. 코딩 성능이 13% 올랐습니다. 아직도 이전 모델을 쓰고 계십니까?",
-      "next_post": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html"
+      "next_post": "tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html"
     },
     {
       "title": "AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장",
