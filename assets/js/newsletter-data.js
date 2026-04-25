@@ -4,7 +4,7 @@ window.NEWSLETTER_DATA = [
     "title": "AI 코딩 캠프에 간 애플 시리 엔지니어 200명",
     "date": "2026-04-25",
     "img": "nl-45.png",
-    "url": "#"
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-45-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-8xqac/"
   },
   {
     "ep": 44,
