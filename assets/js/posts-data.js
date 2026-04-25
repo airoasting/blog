@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "AI 에이전트가 실제로 거래했습니다: Anthropic의 시장 실험",
+      "title": "AI 에이전트가 실제로 거래했습니다: Anthropic의 거래 실험",
       "date": "2026-04-24",
       "category": "research",
       "source": "Anthropic (Anthropic Research Team)",
