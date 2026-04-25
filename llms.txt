@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-24 [리서치] AI 에이전트가 실제로 거래했습니다: Anthropic의 시장 실험 — /blog/research/2026-04-24-anthropic-project-deal-agent-economy.html
 - 2026-04-24 [기술] DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다 — /blog/tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html
 - 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
 - 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
