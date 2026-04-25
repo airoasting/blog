@@ -1,6 +1,24 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "잭 도시: 회사는 위계가 아니라 지능입니다",
+      "date": "2026-04-13",
+      "category": "leader",
+      "source": "Long Strange Trip Podcast (Brian Halligan, Jack Dorsey, Roelof Botha)",
+      "tags": [
+        "잭도시",
+        "블록",
+        "조직설계",
+        "AI에이전트",
+        "미들매니저"
+      ],
+      "slug": "2026-04-13-jack-dorsey-company-as-intelligence",
+      "file": "leader/2026-04-13-jack-dorsey-company-as-intelligence.html",
+      "summary": "잭 도시는 블록 직원 4,000명을 해고하고 회사를 '미니 AGI'로 재설계 중입니다. 위계는 2,000년 된 정보 전달 프로토콜에 불과하며, 역할은 IC·DRI·플레이어 코치 셋만 남습니다. 한국 경영자 책상 위로도 같은 질문이 곧 도착합니다.",
+      "roasting_quote": "잭 도시는 직원 40%를 자르고 회사를 '지능'으로 다시 만들고 있습니다. 당신의 조직도는 아직 2,000년 전 로마 군대를 닮아 있지 않습니까?",
+      "next_post": "leader/2026-04-07-sam-altman-superintelligence-new-deal.html"
+    },
+    {
       "title": "하버드 교수들이 말하는 '좋은 학습자'의 조건",
       "date": "2026-04-14",
       "category": "leader",
@@ -16,7 +34,7 @@ window.POSTS_DATA = {
       "file": "leader/2026-04-14-harvard-what-makes-a-good-learner.html",
       "summary": "하버드 교수진은 점수가 아닌 자질로 좋은 학습자를 정의합니다. 호기심, 성장 마인드셋, 목적 의식이 AI 시대 핵심 역량입니다. '좋은 학생'과 '좋은 학습자'의 차이가 조직 경쟁력을 가릅니다.",
       "roasting_quote": "우리는 오랫동안 '좋은 학생'을 채용해왔습니다. 하버드 교수들은 AI 시대에 필요한 것은 '좋은 학습자'라고 말합니다.",
-      "next_post": ""
+      "next_post": "leader/2026-04-13-jack-dorsey-company-as-intelligence.html"
     },
     {
       "title": "AI 도구에도 소득 격차가 있습니다",
