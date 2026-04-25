@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "하버드 교수들이 말하는 '좋은 학습자'의 조건",
+      "date": "2026-04-14",
+      "category": "leader",
+      "source": "Harvard Gazette (Sy Boles)",
+      "tags": [
+        "학습",
+        "성장마인드셋",
+        "인재개발",
+        "리더십",
+        "조직학습"
+      ],
+      "slug": "2026-04-14-harvard-what-makes-a-good-learner",
+      "file": "leader/2026-04-14-harvard-what-makes-a-good-learner.html",
+      "summary": "하버드 교수진은 점수가 아닌 자질로 좋은 학습자를 정의합니다. 호기심, 성장 마인드셋, 목적 의식이 AI 시대 핵심 역량입니다. '좋은 학생'과 '좋은 학습자'의 차이가 조직 경쟁력을 가릅니다.",
+      "roasting_quote": "우리는 오랫동안 '좋은 학생'을 채용해왔습니다. 하버드 교수들은 AI 시대에 필요한 것은 '좋은 학습자'라고 말합니다.",
+      "next_post": ""
+    },
+    {
       "title": "AI 도구에도 소득 격차가 있습니다",
       "date": "2026-04-22",
       "category": "survival",
@@ -16,7 +34,7 @@
       "file": "survival/2026-04-22-ai-tool-income-gap.html",
       "summary": "Epoch AI가 미국 성인 5,000명을 조사한 결과, Claude 사용자의 80%는 고소득 가구, Meta AI 사용자의 32%는 저소득 가구에 속합니다. AI 서비스마다 사용 계층이 뚜렷이 갈리는 지금, 기업의 AI 접근성 정책이 조직 경쟁력을 결정합니다.",
       "roasting_quote": "Claude 못 쓰면 뒤처진다고요? 팀원이 어떤 AI를 쓰는지조차 모르는 경영자가 이미 뒤처져 있습니다.",
-      "next_post": "survival/2026-04-08-gallup-engagement-ai-paradox.html"
+      "next_post": "leader/2026-04-14-harvard-what-makes-a-good-learner.html"
     },
     {
       "title": "DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다",

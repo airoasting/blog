@@ -18,6 +18,7 @@
 - 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
 - 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
 - 2026-04-16 [기술] 클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 — /blog/tech/2026-04-16-claude-opus-4-7-launch.html
+- 2026-04-14 [리더] 하버드 교수들이 말하는 '좋은 학습자'의 조건 — /blog/leader/2026-04-14-harvard-what-makes-a-good-learner.html
 - 2026-04-14 [리서치] AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장 — /blog/research/2026-04-14-automated-alignment-researchers.html
 - 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html
 - 2026-04-11 [기술] AI가 당신을 기억합니다. 그 기억은 누구 것입니까 — /blog/tech/2026-04-11-agent-harness-memory-lock-in.html
