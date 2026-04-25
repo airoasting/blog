@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "AI 도구에도 소득 격차가 있습니다",
+      "date": "2026-04-22",
+      "category": "survival",
+      "source": "Epoch AI (Caroline Falkman Olsson, Jaeho Lee)",
+      "tags": [
+        "AI격차",
+        "소득불평등",
+        "AI접근성",
+        "직업생존",
+        "EpochAI"
+      ],
+      "slug": "2026-04-22-ai-tool-income-gap",
+      "file": "survival/2026-04-22-ai-tool-income-gap.html",
+      "summary": "Epoch AI가 미국 성인 5,000명을 조사한 결과, Claude 사용자의 80%는 고소득 가구, Meta AI 사용자의 32%는 저소득 가구에 속합니다. AI 서비스마다 사용 계층이 뚜렷이 갈리는 지금, 기업의 AI 접근성 정책이 조직 경쟁력을 결정합니다.",
+      "roasting_quote": "Claude 못 쓰면 뒤처진다고요? 팀원이 어떤 AI를 쓰는지조차 모르는 경영자가 이미 뒤처져 있습니다.",
+      "next_post": "survival/2026-04-08-gallup-engagement-ai-paradox.html"
+    },
+    {
       "title": "DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다",
       "date": "2026-04-24",
       "category": "tech",
@@ -16,7 +34,7 @@
       "file": "tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html",
       "summary": "DeepSeek이 V4-Pro를 공개했습니다. LiveCodeBench 코딩 벤치마크 93.5%로 1위, 출력 비용은 Claude Opus 4.6의 7분의 1입니다. 엔비디아 없이 만든 모델이 프론티어에 도달했습니다.",
       "roasting_quote": "엔비디아 없이 만든 모델이 코딩 벤치마크 1위입니다. 지금 쓰는 AI 구독료, 합리적이십니까?",
-      "next_post": "tech/2026-04-23-claude-code-quality-incident-postmortem.html"
+      "next_post": "survival/2026-04-22-ai-tool-income-gap.html"
     },
     {
       "title": "Claude Code 품질이 6주간 하락한 진짜 이유",
