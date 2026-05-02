@@ -697,56 +697,98 @@ function buildGraph(posts) {
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  /* ── 뉴런 형태 정의 ──
-     세포체(soma) + 5개 수상돌기(dendrite) + 축삭(axon) + 종말부(terminal arborization).
-     소마는 좌측 중앙, 수상돌기는 좌측·상하로 부채꼴, 축삭은 우측으로 길게.
-     스크린 좌표 y-down: θ=0 우측, θ=π/2 아래, θ=π 좌측, θ=3π/2 위쪽. */
+  /* ── 측면도 뇌(brain lateral view) ──
+     대뇌(cerebrum: 좌측 frontal lobe → 우측 occipital lobe, 하부 temporal lobe) +
+     소뇌(cerebellum: 우하단 줄무늬 타원) + 뇌간(brainstem: 대뇌-소뇌 사이 연결).
+     스크린 좌표 y-down. */
   const cx = W / 2, cy = H / 2;
   const minDim = Math.min(W, H);
 
-  /* 세포체(soma) — 좌측 1/3 지점, 더 작게 해서 분기와 대비 */
-  const somaCx = W * 0.30;
-  const somaCy = H * 0.52;
-  const somaR  = Math.max(50, Math.min(W, H) * 0.10);
-
-  /* 축삭(axon) — soma에서 우측으로 길게 뻗음, 끝에 종말부 */
-  const axonStart = { x: somaCx + somaR * 0.95, y: somaCy };
-  const axonEnd   = { x: W * 0.94, y: H * 0.50 };
-  const axonCtrl  = { x: (axonStart.x + axonEnd.x) / 2, y: somaCy - minDim * 0.06 };
-  const terminalR = Math.max(60, minDim * 0.14);
-
-  /* 수상돌기(dendrites) 5개 — 좌측 부채꼴(상하·좌측)로 분기, 길게 */
-  const DENDRITES = [
-    { angle: Math.PI * 0.58, length: minDim * 0.62 },  /* 좌하 */
-    { angle: Math.PI * 0.82, length: minDim * 0.64 },  /* 좌하-측 */
-    { angle: Math.PI * 1.00, length: minDim * 0.70 },  /* 정좌 (가장 긴 apical) */
-    { angle: Math.PI * 1.18, length: minDim * 0.62 },  /* 좌상-측 */
-    { angle: Math.PI * 1.42, length: minDim * 0.54 },  /* 좌상 */
+  /* 대뇌 윤곽 — 정규화 좌표(0~1)를 캔버스로 매핑.
+     좌측 frontal부터 시계방향으로 위→occipital→하부 temporal→다시 frontal로 닫힘. */
+  const CEREBRUM_NORM = [
+    [0.07, 0.45], [0.07, 0.32], [0.10, 0.20], [0.16, 0.12],
+    [0.26, 0.06], [0.40, 0.03], [0.55, 0.03], [0.69, 0.06],
+    [0.79, 0.13], [0.85, 0.22], [0.87, 0.34], [0.86, 0.44],
+    [0.83, 0.52], [0.77, 0.57], [0.71, 0.60],
+    /* brainstem 부착 노치 */
+    [0.66, 0.62], [0.62, 0.66],
+    /* 측두엽(temporal lobe) 하부로 살짝 돌출 */
+    [0.55, 0.70], [0.46, 0.72], [0.36, 0.71],
+    [0.27, 0.67], [0.18, 0.61], [0.11, 0.54],
   ];
+  const CEREBRUM_POLY = CEREBRUM_NORM.map(([x, y]) => [W * x, H * y]);
 
-  /* 각 수상돌기는 세포체 경계에서 시작해 일차 줄기 끝점, 거기서 Y자로 두 개의 sub-branch */
-  const DENDRITE_GEOMETRY = DENDRITES.map(d => {
-    const sx = somaCx + somaR * 0.92 * Math.cos(d.angle);
-    const sy = somaCy + somaR * 0.92 * Math.sin(d.angle);
-    const ex = somaCx + d.length * Math.cos(d.angle);
-    const ey = somaCy + d.length * Math.sin(d.angle);
-    const subLen = d.length * 0.55;
-    const fork = 0.42;
-    const sub1 = {
-      x: ex + subLen * Math.cos(d.angle + fork),
-      y: ey + subLen * Math.sin(d.angle + fork),
-    };
-    const sub2 = {
-      x: ex + subLen * Math.cos(d.angle - fork),
-      y: ey + subLen * Math.sin(d.angle - fork),
-    };
-    return { start: { x: sx, y: sy }, end: { x: ex, y: ey }, sub1, sub2, angle: d.angle };
-  });
+  /* 소뇌(cerebellum) — 우하단, 가로로 살짝 길고 줄무늬 텍스처 */
+  const CRBM_CX = W * 0.81;
+  const CRBM_CY = H * 0.74;
+  const CRBM_RX = minDim * 0.16;
+  const CRBM_RY = minDim * 0.13;
+  const CEREBELLUM_POLY = [];
+  for (let i = 0; i < 80; i++) {
+    const t = (i / 80) * 2 * Math.PI;
+    /* 하부 살짝 평탄, 좌측(대뇌쪽) 안쪽 평탄 */
+    let r = 1;
+    let dt = t - Math.PI / 2;
+    while (dt > Math.PI) dt -= 2 * Math.PI;
+    while (dt < -Math.PI) dt += 2 * Math.PI;
+    r -= 0.05 * Math.exp(-Math.pow(dt * 1.6, 2));
+    let dt2 = t - Math.PI;
+    while (dt2 > Math.PI) dt2 -= 2 * Math.PI;
+    while (dt2 < -Math.PI) dt2 += 2 * Math.PI;
+    r -= 0.10 * Math.exp(-Math.pow(dt2 * 1.5, 2));
+    CEREBELLUM_POLY.push([
+      CRBM_CX + r * CRBM_RX * Math.cos(t),
+      CRBM_CY + r * CRBM_RY * Math.sin(t),
+    ]);
+  }
 
-  /* 카테고리 → 분기 매핑.
-     5개 카테고리는 각각 하나의 수상돌기, 뉴스레터는 축삭+종말부.
-     인덱스가 없는 카테고리는 hash로 분배. */
-  const CAT_TO_DENDRITE = { research: 2, leader: 4, company: 0, tech: 3, survival: 1 };
+  /* 뇌간(brainstem) — 대뇌 하부에서 비스듬히 우측 아래로 */
+  const BST_TOP = { x: W * 0.62, y: H * 0.65 };
+  const BST_BOT = { x: W * 0.69, y: H * 0.88 };
+  const BST_HALF = minDim * 0.035;
+  function brainstemPoly() {
+    const dx = BST_BOT.x - BST_TOP.x;
+    const dy = BST_BOT.y - BST_TOP.y;
+    const L = Math.hypot(dx, dy) || 1;
+    const nx = -dy / L * BST_HALF, ny = dx / L * BST_HALF;
+    return [
+      [BST_TOP.x + nx, BST_TOP.y + ny],
+      [BST_BOT.x + nx, BST_BOT.y + ny],
+      [BST_BOT.x - nx, BST_BOT.y - ny],
+      [BST_TOP.x - nx, BST_TOP.y - ny],
+    ];
+  }
+  const BRAINSTEM_POLY = brainstemPoly();
+
+  function pointInPolygon(x, y, poly) {
+    let inside = false;
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i][0], yi = poly[i][1];
+      const xj = poly[j][0], yj = poly[j][1];
+      const intersect = ((yi > y) !== (yj > y)) &&
+                        (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+      if (intersect) inside = !inside;
+    }
+    return inside;
+  }
+
+  function polyBBox(poly) {
+    let xmin = Infinity, ymin = Infinity, xmax = -Infinity, ymax = -Infinity;
+    poly.forEach(([x, y]) => {
+      if (x < xmin) xmin = x; if (x > xmax) xmax = x;
+      if (y < ymin) ymin = y; if (y > ymax) ymax = y;
+    });
+    return { xmin, ymin, xmax, ymax };
+  }
+  function polyCentroid(poly) {
+    let sx = 0, sy = 0;
+    poly.forEach(([x, y]) => { sx += x; sy += y; });
+    return [sx / poly.length, sy / poly.length];
+  }
+  const CEREBRUM_BBOX   = polyBBox(CEREBRUM_POLY);
+  const CEREBELLUM_BBOX = polyBBox(CEREBELLUM_POLY);
+  const BRAINSTEM_BBOX  = polyBBox(BRAINSTEM_POLY);
 
   /* 안정적 hash → 0~1 사이 의사난수 3개 추출 */
   function hashRand(id) {
@@ -764,114 +806,89 @@ function buildGraph(posts) {
     return [a, b, c];
   }
 
-  /* 노드별 컴파트먼트 + 타깃 위치 계산 */
-  nodes.forEach(n => {
-    const [r1, r2, r3] = hashRand(n.id);
-    const isHub = n.degree >= hubThreshold && n.degree > 2;
-    /* 허브는 무조건 soma, 일반 노드는 ~22% 확률로 soma */
-    const inSoma = isHub || r1 < 0.22;
-
-    if (inSoma) {
-      /* 세포체 내부 무작위 점 (반지름 균등 분포) */
-      const rho = Math.sqrt(r2) * somaR * 0.92;
-      const phi = r3 * 2 * Math.PI;
-      n.tx = somaCx + rho * Math.cos(phi);
-      n.ty = somaCy + rho * Math.sin(phi);
-      n.zone = 0; /* soma */
-      n.x = n.tx; n.y = n.ty;
-      return;
+  /* 노드 컴파트먼트 배정.
+     - 뉴스레터 → 소뇌(cerebellum)
+     - 그 외 → 대뇌(cerebrum). 일부 허브는 뇌간(brainstem)에 배치. */
+  function placeInPoly(seed, poly, bbox) {
+    const [r1, r2, r3] = seed;
+    /* hash 기반 결정적 무작위 점, polygon 안에 들어갈 때까지 회전 */
+    for (let k = 0; k < 60; k++) {
+      const a = ((r1 * 9301 + r2 * 49297 + k * 233280) % 100000) / 100000;
+      const b = ((r2 * 9301 + r3 * 49297 + k * 233281) % 100000) / 100000;
+      const px = bbox.xmin + a * (bbox.xmax - bbox.xmin);
+      const py = bbox.ymin + b * (bbox.ymax - bbox.ymin);
+      if (pointInPolygon(px, py, poly)) return [px, py];
     }
+    /* 못 찾으면 centroid */
+    return polyCentroid(poly);
+  }
+
+  nodes.forEach(n => {
+    const seed = hashRand(n.id);
+    const [r1] = seed;
+    const isHub = n.degree >= hubThreshold && n.degree > 2;
 
     if (n.category === 'newsletter') {
-      /* 뉴스레터: 일부는 축삭 줄기, 대부분은 종말부 */
-      if (r2 < 0.70) {
-        /* terminal arborization — 우측 끝 클러스터, 별모양 살짝 가지치기 */
-        const branchAngle = Math.floor(r3 * 5) * (2 * Math.PI / 5);
-        const branchLen = (0.4 + 0.6 * r2 / 0.70) * terminalR;
-        const jitter = (r1 - 0.22) * 30;
-        n.tx = axonEnd.x + branchLen * Math.cos(branchAngle) + jitter * Math.cos(branchAngle + Math.PI/2) * 0.4;
-        n.ty = axonEnd.y + branchLen * Math.sin(branchAngle) + jitter * Math.sin(branchAngle + Math.PI/2) * 0.4;
-        n.zone = 7; /* terminal */
-      } else {
-        /* axon 줄기 — quadratic bezier 위에 분포 */
-        const t = (r2 - 0.70) / 0.30;
-        const ix = (1 - t) * (1 - t) * axonStart.x + 2 * (1 - t) * t * axonCtrl.x + t * t * axonEnd.x;
-        const iy = (1 - t) * (1 - t) * axonStart.y + 2 * (1 - t) * t * axonCtrl.y + t * t * axonEnd.y;
-        const perp = (r3 - 0.5) * 28;
-        n.tx = ix;
-        n.ty = iy + perp;
-        n.zone = 6; /* axon shaft */
-      }
-      n.x = n.tx; n.y = n.ty;
-      return;
-    }
-
-    /* 그 외 카테고리 → 정해진 dendrite */
-    let didx = CAT_TO_DENDRITE[n.category];
-    if (didx === undefined) didx = Math.floor(r1 * DENDRITE_GEOMETRY.length);
-    const D = DENDRITE_GEOMETRY[didx];
-
-    /* 메인 줄기 50%, 두 sub-branch 각각 25% */
-    let p0, p1;
-    if (r2 < 0.50) {
-      p0 = D.start; p1 = D.end;
-    } else if (r2 < 0.75) {
-      p0 = D.end; p1 = D.sub1;
+      const [px, py] = placeInPoly(seed, CEREBELLUM_POLY, CEREBELLUM_BBOX);
+      n.tx = px; n.ty = py;
+      n.zone = 'cerebellum';
+    } else if (isHub && r1 < 0.18) {
+      /* 일부 허브 노드는 뇌간으로 — 핵심 통과 지점 */
+      const [px, py] = placeInPoly(seed, BRAINSTEM_POLY, BRAINSTEM_BBOX);
+      n.tx = px; n.ty = py;
+      n.zone = 'brainstem';
     } else {
-      p0 = D.end; p1 = D.sub2;
+      const [px, py] = placeInPoly(seed, CEREBRUM_POLY, CEREBRUM_BBOX);
+      n.tx = px; n.ty = py;
+      n.zone = 'cerebrum';
     }
-
-    const t = 0.05 + r3 * 0.95;
-    const px = p0.x + (p1.x - p0.x) * t;
-    const py = p0.y + (p1.y - p0.y) * t;
-
-    /* 줄기 직각 방향 jitter — 끝으로 갈수록 가늘어짐 */
-    const dx = p1.x - p0.x;
-    const dy = p1.y - p0.y;
-    const len = Math.hypot(dx, dy) || 1;
-    const nx = -dy / len, ny = dx / len;
-    const taper = 1 - t * 0.55;
-    const jitter = (r1 - 0.5) * 36 * taper;
-
-    n.tx = px + nx * jitter;
-    n.ty = py + ny * jitter;
-    n.zone = 1 + didx; /* dendrite branch idx 1..5 */
     n.x = n.tx; n.y = n.ty;
   });
 
-  /* 호환용: 일부 코드가 n.side를 참조해도 안전하게 기본값 부여 */
-  nodes.forEach(n => { n.side = n.zone <= 5 ? -1 : 1; });
+  /* 호환용 side 값 */
+  nodes.forEach(n => {
+    n.side = n.zone === 'cerebellum' ? 1 : -1;
+  });
 
-  /* 커스텀 force: 캔버스 박스 밖으로 너무 멀어지지 않게 가벼운 안전장치만 */
-  function neuronContainForce(alpha) {
+  /* 커스텀 force: 노드를 자기 영역(polygon) 안에 가둠 */
+  function brainContainForce(alpha) {
     nodes.forEach(n => {
+      const poly = n.zone === 'cerebellum' ? CEREBELLUM_POLY
+                : n.zone === 'brainstem'   ? BRAINSTEM_POLY
+                : CEREBRUM_POLY;
+      const center = n.zone === 'cerebellum' ? [CRBM_CX, CRBM_CY]
+                  : n.zone === 'brainstem'   ? [(BST_TOP.x+BST_BOT.x)/2, (BST_TOP.y+BST_BOT.y)/2]
+                  : polyCentroid(CEREBRUM_POLY);
+
       if (!isFinite(n.x) || !isFinite(n.y)) {
         n.x = n.tx; n.y = n.ty; n.vx = 0; n.vy = 0;
       }
-      const margin = 30;
-      if (n.x < margin) n.vx += (margin - n.x) * 0.20;
-      else if (n.x > W - margin) n.vx += (W - margin - n.x) * 0.20;
-      if (n.y < margin) n.vy += (margin - n.y) * 0.20;
-      else if (n.y > H - margin) n.vy += (H - margin - n.y) * 0.20;
+
+      if (!pointInPolygon(n.x, n.y, poly)) {
+        const dx = center[0] - n.x;
+        const dy = center[1] - n.y;
+        const d = Math.hypot(dx, dy) || 1;
+        n.vx = n.vx * 0.4 + (dx / d) * 9;
+        n.vy = n.vy * 0.4 + (dy / d) * 9;
+      }
     });
   }
+  /* 컨테인 force 별칭 (force simulation에서 'neuron' 키로 등록되었으므로) */
+  const neuronContainForce = brainContainForce;
 
   /* Force simulation
-     forceX/Y로 각 노드를 자기 컴파트먼트 타깃 위치로 강하게 끌어당기고,
-     서로 다른 분기를 가로지르는 link는 약화시켜 뉴런 윤곽을 유지한다. */
+     forceX/Y로 각 노드를 자기 영역(대뇌/소뇌/뇌간) 타깃 위치로 끌어당기고,
+     서로 다른 영역을 가로지르는 link는 약화시켜 뇌 윤곽을 유지한다. */
   const sim = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id)
       .distance(d => Math.max(30, 65 - (d.weight || 1) * 4))
       .strength(d => {
-        const sz = (typeof d.source === 'object') ? d.source.zone : 0;
-        const tz = (typeof d.target === 'object') ? d.target.zone : 0;
+        const sz = (typeof d.source === 'object') ? d.source.zone : '';
+        const tz = (typeof d.target === 'object') ? d.target.zone : '';
         const base = Math.min(0.22, 0.05 + (d.weight || 1) * 0.03);
-        /* 같은 분기 또는 한쪽이 soma면 정상 strength */
-        const sameZone = sz === tz;
-        const involvesSoma = sz === 0 || tz === 0;
-        const axonTerminal = (sz === 6 && tz === 7) || (sz === 7 && tz === 6);
-        if (sameZone || involvesSoma || axonTerminal) return base;
-        return base * 0.08; /* 분기 가로지르기 → 약화 */
+        /* 같은 영역 또는 한쪽이 brainstem(중계)이면 정상 strength */
+        if (sz === tz || sz === 'brainstem' || tz === 'brainstem') return base;
+        return base * 0.08; /* 대뇌↔소뇌 직접 link 약화 */
       }))
     .force('charge', d3.forceManyBody()
       .strength(d => -Math.max(16, d.r * 2))
@@ -879,85 +896,83 @@ function buildGraph(posts) {
     .force('targetX', d3.forceX(d => d.tx).strength(0.42))
     .force('targetY', d3.forceY(d => d.ty).strength(0.42))
     .force('collide', d3.forceCollide().radius(d => d.r + 3).strength(0.95))
-    .force('neuron', neuronContainForce)
+    .force('brain', brainContainForce)
     .alphaDecay(0.028);
 
-  /* 5b. 뉴런 골격(skeleton) — soma 원 + 수상돌기 줄기/Y가지 + 축삭 곡선 + 종말부 가지.
-     노드 뒤 배경에 선으로 그려 뉴런 형태를 명시적으로 보여준다. */
-  const skelG = g.append('g').attr('class', 'neuron-skeleton')
+  /* 5b. 측면도 뇌 골격(skeleton) — 대뇌 윤곽 + 소뇌 줄무늬 + 뇌간.
+     노드 뒤 배경에 그려 뇌 형태를 명시적으로 보여준다. */
+  const skelG = g.append('g').attr('class', 'brain-skeleton')
     .attr('fill', 'none')
-    .attr('stroke', 'rgba(190,210,250,0.40)')
-    .attr('stroke-width', 1.6)
-    .attr('stroke-linecap', 'round');
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-linejoin', 'round');
 
-  /* soma — 발광하는 원형 외곽 */
-  skelG.append('circle')
-    .attr('cx', somaCx).attr('cy', somaCy).attr('r', somaR)
-    .attr('fill', 'rgba(180,200,240,0.06)')
-    .attr('stroke', 'rgba(200,220,255,0.55)')
-    .attr('stroke-width', 2)
-    .attr('filter', 'drop-shadow(0 0 6px rgba(160,200,255,0.35))');
-
-  /* 수상돌기 줄기 + Y자 sub-branch (각 카테고리 색으로 살짝 어둡게) */
-  const DENDRITE_COLORS = ['#67D4FC', '#FCA5A5', '#93C5FD', '#86EFAC', '#FCA86A'];
-  DENDRITE_GEOMETRY.forEach((D, i) => {
-    const stroke = DENDRITE_COLORS[i] || '#9bd';
-    /* 메인 줄기: soma 경계 → 끝점 */
-    const ctrlX = (D.start.x + D.end.x) / 2 + (D.end.y - D.start.y) * 0.06;
-    const ctrlY = (D.start.y + D.end.y) / 2 - (D.end.x - D.start.x) * 0.06;
-    skelG.append('path')
-      .attr('d', `M ${D.start.x} ${D.start.y} Q ${ctrlX} ${ctrlY} ${D.end.x} ${D.end.y}`)
-      .attr('stroke', stroke).attr('stroke-opacity', 0.42)
-      .attr('stroke-width', 2.4);
-    /* Y자 sub-branches — 끝으로 갈수록 가늘게 */
-    skelG.append('path')
-      .attr('d', `M ${D.end.x} ${D.end.y} L ${D.sub1.x} ${D.sub1.y}`)
-      .attr('stroke', stroke).attr('stroke-opacity', 0.30)
-      .attr('stroke-width', 1.4);
-    skelG.append('path')
-      .attr('d', `M ${D.end.x} ${D.end.y} L ${D.sub2.x} ${D.sub2.y}`)
-      .attr('stroke', stroke).attr('stroke-opacity', 0.30)
-      .attr('stroke-width', 1.4);
-    /* sub-branch 끝에 작은 spinule (가시) 두 개 — 진짜 수상돌기 가시처럼 */
-    [D.sub1, D.sub2].forEach((sub, j) => {
-      const dirX = sub.x - D.end.x, dirY = sub.y - D.end.y;
-      const len = Math.hypot(dirX, dirY) || 1;
-      const ux = dirX / len, uy = dirY / len;
-      const spinL = 14;
-      skelG.append('path')
-        .attr('d', `M ${sub.x} ${sub.y} L ${sub.x + (ux * 0.4 - uy * 0.7) * spinL} ${sub.y + (uy * 0.4 + ux * 0.7) * spinL}`)
-        .attr('stroke', stroke).attr('stroke-opacity', 0.22)
-        .attr('stroke-width', 1.1);
-      skelG.append('path')
-        .attr('d', `M ${sub.x} ${sub.y} L ${sub.x + (ux * 0.4 + uy * 0.7) * spinL} ${sub.y + (uy * 0.4 - ux * 0.7) * spinL}`)
-        .attr('stroke', stroke).attr('stroke-opacity', 0.22)
-        .attr('stroke-width', 1.1);
-    });
-  });
-
-  /* 축삭 — soma → 종말부, quadratic bezier (보라색 발광) */
-  skelG.append('path')
-    .attr('d', `M ${axonStart.x} ${axonStart.y} Q ${axonCtrl.x} ${axonCtrl.y} ${axonEnd.x} ${axonEnd.y}`)
-    .attr('stroke', '#C084FC').attr('stroke-opacity', 0.55)
-    .attr('stroke-width', 2.6)
-    .attr('filter', 'drop-shadow(0 0 4px rgba(192,132,252,0.4))');
-
-  /* 종말부(terminal arborization) — 7방향 가지 + 끝에 작은 시냅스 점 */
-  const TERM_BRANCHES = 7;
-  for (let k = 0; k < TERM_BRANCHES; k++) {
-    const a = (k / TERM_BRANCHES) * 2 * Math.PI - Math.PI / 2;
-    const tipX = axonEnd.x + terminalR * 1.0 * Math.cos(a);
-    const tipY = axonEnd.y + terminalR * 1.0 * Math.sin(a);
-    skelG.append('path')
-      .attr('d', `M ${axonEnd.x} ${axonEnd.y} L ${tipX} ${tipY}`)
-      .attr('stroke', '#C084FC').attr('stroke-opacity', 0.40)
-      .attr('stroke-width', 1.6);
-    /* 시냅스 단추(boutons) */
-    skelG.append('circle')
-      .attr('cx', tipX).attr('cy', tipY).attr('r', 3)
-      .attr('fill', 'rgba(216,180,254,0.55)')
-      .attr('stroke', 'none');
+  /* 다각형을 SVG path 'd' 문자열로 변환 (닫힘 곡선) */
+  function polyToPath(poly) {
+    return 'M ' + poly.map(([x, y]) => x.toFixed(1) + ' ' + y.toFixed(1)).join(' L ') + ' Z';
   }
+
+  /* 대뇌 — 부드러운 외곽 + 옅은 채움 */
+  skelG.append('path')
+    .attr('d', polyToPath(CEREBRUM_POLY))
+    .attr('fill', 'rgba(180,200,240,0.04)')
+    .attr('stroke', 'rgba(200,220,255,0.55)')
+    .attr('stroke-width', 2.2)
+    .attr('filter', 'drop-shadow(0 0 8px rgba(160,200,255,0.30))');
+
+  /* 대뇌 내부 gyri/sulci — 뇌주름 느낌의 옅은 곡선 */
+  const cerebrumCenter = polyCentroid(CEREBRUM_POLY);
+  for (let i = 0; i < 7; i++) {
+    const startX = W * (0.18 + i * 0.09);
+    const startY = H * (0.10 + (i % 2) * 0.04);
+    const endX   = W * (0.16 + i * 0.09);
+    const endY   = H * (0.55 - (i % 2) * 0.06);
+    const ctrlX  = (startX + endX) / 2 + (i % 2 === 0 ? 16 : -16);
+    const ctrlY  = (startY + endY) / 2;
+    skelG.append('path')
+      .attr('d', `M ${startX} ${startY} Q ${ctrlX} ${ctrlY} ${endX} ${endY}`)
+      .attr('stroke', 'rgba(180,200,240,0.18)')
+      .attr('stroke-width', 1.0);
+  }
+
+  /* 소뇌 — 외곽 + 평행한 줄무늬(folia) */
+  skelG.append('path')
+    .attr('d', polyToPath(CEREBELLUM_POLY))
+    .attr('fill', 'rgba(180,200,240,0.05)')
+    .attr('stroke', 'rgba(200,220,255,0.50)')
+    .attr('stroke-width', 1.8)
+    .attr('filter', 'drop-shadow(0 0 5px rgba(160,200,255,0.25))');
+
+  /* 소뇌 줄무늬 — 좌상→우하 방향의 평행 곡선 */
+  const FOLIA_COUNT = 9;
+  for (let i = 0; i < FOLIA_COUNT; i++) {
+    const t = (i + 0.5) / FOLIA_COUNT;
+    /* 소뇌 폴리곤 내부에서 좌상-우하 방향 라인 두 점 */
+    const startX = CRBM_CX - CRBM_RX * 0.95;
+    const endX   = CRBM_CX + CRBM_RX * 0.95;
+    const startY = CRBM_CY - CRBM_RY + CRBM_RY * 2 * t * 0.95;
+    const endY   = CRBM_CY - CRBM_RY * 0.55 + CRBM_RY * 2 * t * 0.95;
+    /* 곡선 */
+    const ctrlX = (startX + endX) / 2;
+    const ctrlY = (startY + endY) / 2 - 4;
+    skelG.append('path')
+      .attr('d', `M ${startX} ${startY} Q ${ctrlX} ${ctrlY} ${endX} ${endY}`)
+      .attr('stroke', 'rgba(200,220,255,0.32)')
+      .attr('stroke-width', 1.0)
+      .attr('clip-path', 'url(#cerebellumClip)');
+  }
+  /* 소뇌 줄무늬가 외곽을 넘지 않도록 clipPath */
+  const defs = svg.append('defs');
+  defs.append('clipPath').attr('id', 'cerebellumClip')
+    .append('path')
+    .attr('d', polyToPath(CEREBELLUM_POLY));
+
+  /* 뇌간 — 약간 굴곡 있는 캡슐 모양 */
+  skelG.append('path')
+    .attr('d', polyToPath(BRAINSTEM_POLY))
+    .attr('fill', 'rgba(180,200,240,0.06)')
+    .attr('stroke', 'rgba(200,220,255,0.50)')
+    .attr('stroke-width', 1.6)
+    .attr('filter', 'drop-shadow(0 0 4px rgba(160,200,255,0.25))');
 
   /* 6. Render links */
   const linkG = g.append('g').attr('class', 'links-group');
