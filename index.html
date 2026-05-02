@@ -171,7 +171,7 @@
     .nlr-header{display:flex;align-items:center;gap:12px;padding:16px 20px 16px 24px;border-bottom:1px solid rgba(124,58,237,0.12);background:rgba(124,58,237,0.04);flex-shrink:0;}
     [data-theme="dark"] .nlr-header{border-bottom-color:rgba(124,58,237,0.2);background:rgba(124,58,237,0.07);}
     .nlr-ep-pill{display:inline-flex;align-items:center;background:#7C3AED;color:#fff;font-size:11px;font-weight:800;letter-spacing:0.06em;padding:4px 11px;border-radius:100px;flex-shrink:0;}
-    .nlr-header-title{flex:1;font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.4;word-break:keep-all;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+    .nlr-header-title{flex:1 1 0;min-width:0;font-size:14px;font-weight:700;color:#1a1a2e;line-height:1.4;word-break:keep-all;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     [data-theme="dark"] .nlr-header-title{color:#e8e0ff;}
     .nlr-actions{display:flex;align-items:center;gap:8px;flex-shrink:0;}
     .nlr-li-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1.5px solid #7C3AED;color:#7C3AED;font-size:12px;font-weight:700;padding:6px 14px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:background 0.18s,color 0.18s;line-height:1;}
@@ -209,7 +209,7 @@
     .nlr-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;height:200px;gap:16px;color:#999;}
     .nlr-spinner{width:28px;height:28px;border:2.5px solid rgba(124,58,237,0.2);border-top-color:#7C3AED;border-radius:50%;animation:nlr-spin 0.7s linear infinite;}
     @keyframes nlr-spin{to{transform:rotate(360deg);}}
-    @media(max-width:600px){.nlr-backdrop{padding:0;align-items:flex-end;}.nlr-window{border-radius:24px 24px 0 0;max-height:92vh;width:100%;}.nlr-body{padding:24px 20px 40px;}.nlr-li-btn span{display:none;}.nlr-li-btn{padding:6px 10px;}}
+    @media(max-width:600px){.nlr-backdrop{padding:0;align-items:flex-end;}.nlr-window{border-radius:24px 24px 0 0;max-height:92vh;width:100%;}.nlr-header{padding:14px 16px;gap:8px;}.nlr-header-title{font-size:13px;}.nlr-body{padding:24px 20px 40px;}.nlr-li-btn span{display:none;}.nlr-li-btn{padding:6px 10px;}}
   </style>
   <div id="nlReader" class="nlr-backdrop" role="dialog" aria-modal="true" aria-label="뉴스레터 리더">
     <div class="nlr-window">

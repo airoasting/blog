@@ -777,15 +777,15 @@
       flex-shrink: 0;
     }
     .nlr-header-title {
-      flex: 1;
+      flex: 1 1 0;
+      min-width: 0;
       font-size: 14px; font-weight: 700;
       color: #1a1a2e;
       line-height: 1.4;
       word-break: keep-all;
       overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     [data-theme="dark"] .nlr-header-title { color: #e8e0ff; }
 

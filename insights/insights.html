@@ -589,10 +589,10 @@
       padding: 4px 11px; border-radius: 100px; flex-shrink: 0;
     }
     .nlr-header-title {
-      flex: 1; font-size: 14px; font-weight: 700;
+      flex: 1 1 0; min-width: 0;
+      font-size: 14px; font-weight: 700;
       color: var(--text); line-height: 1.4; word-break: keep-all;
-      overflow: hidden; display: -webkit-box;
-      -webkit-line-clamp: 1; -webkit-box-orient: vertical;
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
     [data-theme="dark"] .nlr-header-title { color: var(--text); }
     .nlr-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
