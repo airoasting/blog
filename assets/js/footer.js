@@ -28,6 +28,7 @@
           '<ul class="footer-links">' +
             '<li><a href="' + prefix + 'about/index.html">프로젝트 소개</a></li>' +
             '<li><a href="' + prefix + 'insights/insights.html">분기별 인사이트</a></li>' +
+            '<li><a href="' + prefix + 'insights/graph.html">지식 그래프</a></li>' +
           '</ul>' +
           '<div class="footer-heading footer-social-heading">소셜</div>' +
           '<div class="footer-social">' +

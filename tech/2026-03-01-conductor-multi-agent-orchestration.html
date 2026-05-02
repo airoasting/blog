@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법 - AI ROASTING</title>
+  <meta name="description" content="Sakana AI가 7B 지휘자 모델로 GPT-5, Gemini, Claude를 조율해 GPQA Diamond 87.5%, AIME25 93.3% 최고 기록을 냈습니다. AI 에이전트 성능은 단일 모델 규모가 아니라 조율 설계에서 결정됩니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법">
+  <meta property="og:description" content="7B 지휘자 모델이 GPT-5와 Gemini 2.5를 조율해 GPQA Diamond 87.5% 전체 최고 기록을 달성했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-03-01-conductor-multi-agent-orchestration.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_03_01_conductor-multi-agent-orchestration/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-03-01">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="멀티에이전트">
+  <meta property="article:tag" content="강화학습">
+  <meta property="article:tag" content="에이전트조율">
+  <meta property="article:tag" content="LLM">
+  <meta property="article:tag" content="Sakana AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법">
+  <meta name="twitter:description" content="7B 지휘자가 GPQA Diamond 87.5%, AIME25 93.3% 전체 최고 기록. 조율 설계가 성능을 결정합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_03_01_conductor-multi-agent-orchestration/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법",
+    "datePublished": "2026-03-01",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Sakana AI가 7B 지휘자 모델로 GPT-5, Gemini, Claude를 조율해 GPQA Diamond 87.5%, AIME25 93.3% 최고 기록을 냈습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-03-01-conductor-multi-agent-orchestration.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_03_01_conductor-multi-agent-orchestration/thumbnail.png" alt="AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 3월 1일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv</span>
+            <span>Stefan Nielsen 외 5인 (Sakana AI)</span>
+            <span><a href="https://arxiv.org/abs/2512.04388" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=멀티에이전트" class="post-tag">#멀티에이전트</a>
+            <a href="../index.html?tag=강화학습" class="post-tag">#강화학습</a>
+            <a href="../index.html?tag=에이전트조율" class="post-tag">#에이전트조율</a>
+            <a href="../index.html?tag=LLM" class="post-tag">#LLM</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden
+        data-title="AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법"
+        data-date="2026-03-01"
+        data-category="tech"
+        data-source="arXiv (Stefan Nielsen 외 5인, Sakana AI)"
+        data-tags="AI에이전트, 멀티에이전트, 강화학습, 에이전트조율, LLM, Sakana AI"
+        data-original-url="https://arxiv.org/abs/2512.04388"
+        data-roasting-quote="7B짜리 지휘자가 GPT-5를 이겼습니다. 가장 비싼 모델 하나에 의존하는 전략, 재검토할 때입니다."
+        data-next-post="2026-04-23-gpt-5-5-agentic-coding.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary>Sakana AI가 7B 파라미터 지휘자 AI를 강화학습으로 훈련했습니다. 이 모델은 GPT-5, Gemini 2.5, Claude를 자동으로 조율합니다.</p>
+        <p data-summary>GPQA Diamond 87.5%, AIME25 93.3%로 모든 벤치마크에서 최고 기록을 달성했습니다. 단일 프론티어 모델을 모두 앞섰습니다.</p>
+        <p data-summary>AI 에이전트 성능을 결정하는 것은 단일 모델의 규모가 아닙니다. 조율 설계가 결과를 바꿉니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">7B짜리 지휘자가 GPT-5를 이겼습니다.<br>가장 비싼 모델 하나에 의존하는 전략, 재검토할 때입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>가장 비싼 AI 하나를 구독해도 최선의 결과를 보장하지 않습니다. Sakana AI의 Conductor 논문이 이를 증명했습니다. 70억 파라미터 소형 모델이 GPT-5, Gemini 2.5 Pro, Claude Sonnet을 지휘했습니다. 단독 모델보다 높은 성능이 나왔습니다(Nielsen 외, 2026). AI 에이전트를 운영하거나 도입을 검토하는 조직이라면 조율 설계 방식을 다시 살펴봐야 합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>기업들이 AI 에이전트에 본격 투자하는 시점에 이 논문이 발표됐습니다. 지금까지는 가장 강력한 단일 모델을 선택하는 것이 최선이라는 전제가 지배적이었습니다. Conductor는 이 전제를 데이터로 뒤집었습니다. 소형 지휘자 모델이 여러 대형 모델을 조율하면 단독 최강 모델을 일관되게 앞섭니다(Nielsen 외, 2026). AI 에이전트 도입 방향과 예산 배분을 새로 고민해야 합니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 7B 지휘자가 4개 주요 벤치마크에서 모두 최고 기록을 세웠습니다.</strong> GPQA Diamond에서 87.5%로 Gemini 2.5(84.8%)를 2.7%p 앞섰습니다. AIME25 수학 경시도 93.3%로 GPT-5(90.8%)를 넘었습니다(Nielsen 외, 2026). LiveCodeBench와 BigCodeBench에서도 기존 최고치를 모두 갱신했습니다. 특정 분야가 아닌 모든 분야에서 일관된 우위입니다.</p>
+
+        <p>팀장 관점에서 핵심 메시지는 하나입니다. 지금 쓰는 가장 비싼 모델 하나보다 여러 모델을 조율하는 설계가 더 나은 결과를 냅니다. 비용을 더 쓰지 않아도 성능을 높일 수 있다는 의미입니다.</p>
+
+        <!-- 핵심 수치 카드 -->
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">87.5%</div>
+            <div class="stat-label">GPQA Diamond (전체 최고 기록)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">93.3%</div>
+            <div class="stat-label">AIME25 수학 경시 (전체 최고 기록)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">7B</div>
+            <div class="stat-label">Conductor 파라미터 수 (지휘자 모델 규모)</div>
+          </div>
+        </div>
+
+        <!-- 벤치마크 성능 비교 테이블 -->
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>벤치마크</th>
+                <th style="text-align:center">Conductor</th>
+                <th style="text-align:center">이전 최고</th>
+                <th style="text-align:center">차이</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPQA Diamond (추론)</td>
+                <td class="cell-hl" style="text-align:center">87.5%</td>
+                <td style="text-align:center">84.8% (Gemini 2.5)</td>
+                <td class="cell-hl" style="text-align:center">+2.7%p</td>
+              </tr>
+              <tr>
+                <td>AIME25 (수학 경시)</td>
+                <td class="cell-hl" style="text-align:center">93.3%</td>
+                <td style="text-align:center">90.8% (GPT-5)</td>
+                <td class="cell-hl" style="text-align:center">+2.5%p</td>
+              </tr>
+              <tr>
+                <td>LiveCodeBench (코딩)</td>
+                <td class="cell-hl" style="text-align:center">83.93%</td>
+                <td style="text-align:center">82.90% (GPT-5)</td>
+                <td class="cell-hl" style="text-align:center">+1.0%p</td>
+              </tr>
+              <tr>
+                <td>BigCodeBench (코딩)</td>
+                <td class="cell-hl" style="text-align:center">37.86%</td>
+                <td style="text-align:center">37.51% (Gemini 2.5)</td>
+                <td class="cell-hl" style="text-align:center">+0.35%p</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Nielsen 외 (2026), Table 1. 프리프린트 논문 기준.</p>
+        </div>
+
+        <!-- Figure 1: 리더보드 -->
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2512.04388v4/figs/leaderboard_vert2.png" alt="Conductor가 GPQA Diamond와 LiveCodeBench에서 최고 성능을 달성한 리더보드 차트" loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            Figure 1. Conductor가 GPQA Diamond와 LiveCodeBench 리더보드 최상단을 차지했습니다. (단일 모델과 멀티에이전트 시스템을 모두 앞선 결과입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Nielsen 외 (2026), arXiv:2512.04388v4</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, Conductor는 문제를 분해하고 적합한 AI에 자동 배정합니다.</strong> 지휘자 모델은 복잡한 과제를 받으면 세 가지를 결정합니다. 어떤 하위 과제로 나눌지, 각 단계에 어느 AI를 배정할지, 이전 단계 결과를 어디까지 공유할지입니다(Nielsen 외, 2026). 이 조율 전략 전체를 자연어로 출력하고, 각 단계별 AI가 순서대로 실행합니다. 지금까지 팀장이나 프롬프트 엔지니어가 직접 설계하던 워크플로우를 AI가 대신 만드는 것입니다. 조직 내 AI 담당자의 역할이 "프롬프트 작성자"에서 "조율 구조 설계자"로 바뀌기 시작했습니다.</p>
+
+        <p><strong>셋째, 기존 멀티에이전트 방식보다 API 호출을 적게 쓰면서도 성능이 높습니다.</strong> Conductor의 평균 워크플로우 단계는 3단계입니다. 최대 허용 단계(5단계) 대비 40%를 줄인 것으로, 비용 절감 유도 없이 학습된 결과입니다(Nielsen 외, 2026). Mixture-of-Agents, MASRouter 등 기존 방식 대비 10~15%p 높은 성능을 적은 API 호출로 달성했습니다.</p>
+
+        <!-- Figure 5: 성능 vs 효율 -->
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2512.04388v4/figs/calls_v_performance.png" alt="Conductor가 적은 API 호출로 기존 멀티에이전트 방식보다 높은 성능을 달성함을 보여주는 그래프" loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            Figure 5. 성능과 API 호출 효율 비교. Conductor는 기존 멀티에이전트 방법보다 API를 적게 쓰면서도 성능을 앞섭니다. (비용 대비 성능 면에서 가장 효율적인 구간에 위치합니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Nielsen 외 (2026), arXiv:2512.04388v4</span>
+          </figcaption>
+        </figure>
+
+        <!-- Figure 4: 멀티에이전트 비교 -->
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2512.04388v4/figs/fugu_rl_indist_plot_v2.png" alt="Conductor가 Mixture-of-Agents, MASRouter 등 기존 멀티에이전트 방식을 전 벤치마크에서 앞서는 비교 그래프" loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            Figure 4. Conductor와 기존 멀티에이전트 방식의 성능 비교. MMLU, RLPR, LiveCodeBench, MATH500 모두에서 Conductor가 우위를 보입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Nielsen 외 (2026), arXiv:2512.04388v4</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>넷째, 재귀 호출 구조로 어려운 문제에서 스스로를 지휘합니다.</strong> 확장 기능으로 Conductor가 자기 자신을 작업자로 지정할 수 있습니다. 초기 조율 전략이 부족하면 재귀적으로 재조율합니다(Nielsen 외, 2026). BigCodeBench에서 재귀 적용 시 37.8%에서 40.0%로 성능이 올랐습니다. 단순히 더 큰 모델을 쓰지 않고도 추론 시간에 성능을 높이는 새로운 방법입니다.</p>
+
+        <!-- 재귀 성능 비교 테이블 -->
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>조율 방식</th>
+                <th style="text-align:center">AIME25</th>
+                <th style="text-align:center">BigCodeBench</th>
+                <th style="text-align:center">GPQA Diamond</th>
+                <th style="text-align:center">평균</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Conductor (기본)</td>
+                <td style="text-align:center">66.67%</td>
+                <td style="text-align:center">37.8%</td>
+                <td style="text-align:center">81.31%</td>
+                <td style="text-align:center">61.93%</td>
+              </tr>
+              <tr>
+                <td>Conductor (재귀 적용)</td>
+                <td style="text-align:center">66.67%</td>
+                <td class="cell-hl" style="text-align:center">40.0%</td>
+                <td class="cell-hl" style="text-align:center">82.32%</td>
+                <td class="cell-hl" style="text-align:center">63.00%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Nielsen 외 (2026), Table 2. 재귀 호출 적용 전후 비교.</p>
+        </div>
+
+        <p><strong>다섯째, 어려운 문제일수록 더 많은 단계를 자동 배정합니다.</strong> 단순 사실 확인 과제에는 2단계, 복잡한 코딩 과제에는 3~4단계를 할당합니다. 이 난이도 감지 능력은 명시적 훈련 없이 강화학습 과정에서 스스로 생겨났습니다(Nielsen 외, 2026). 비용을 줄이면서 어려운 문제에는 더 집중하는 구조입니다.</p>
+
+        <!-- Figure 8: 과제 적응성 -->
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2512.04388v4/figs/num_steps_fig.png" alt="과제 난이도에 따라 Conductor가 워크플로우 단계 수를 자동으로 조정하는 것을 보여주는 그래프" loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            Figure 8. 과제 난이도와 워크플로우 단계 수의 관계. 어려운 과제에 더 많은 단계를 자동 배정합니다. (이 특성은 명시적 훈련 없이 강화학습으로 자연히 나타났습니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Nielsen 외 (2026), arXiv:2512.04388v4</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>멀티에이전트 워크플로우를 이미 운영 중인 조직이라면 호출 효율 차이가 직접적인 비용으로 연결됩니다. Conductor는 최대 허용 단계 대비 평균 40% 적은 API 호출로 더 높은 성능을 냅니다(Nielsen 외, 2026). Mixture-of-Agents 방식을 현재 5단계로 운영 중이라면, 같은 예산으로 처리 가능한 작업량이 늘어납니다. 오픈소스로 공개된 모델 가중치를 활용하면 지휘자 모델 자체의 추가 비용도 최소화됩니다.</p>
+        <p>조율 설계 없이 단일 최강 모델만 쓰는 방식도 비용 관점에서 불리합니다. 개방형 에이전트 풀에서 Conductor는 Claude Sonnet 4 단독 대비 약 10%p 높은 성능을 냈습니다(Nielsen 외, 2026). 동일 작업에서 더 낮은 성능으로 더 많은 비용을 지출하는 상황입니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>현재 AI 업무 중 복잡한 작업 목록을 만듭니다.</strong><br>2단계 이상의 판단이 필요한 업무를 고릅니다. 예: 시장 조사 후 전략 초안 작성, 데이터 분석 후 보고서 생성. 팀장 지시문: "현재 Claude나 GPT로 처리하는 업무 중 '분석 → 작성' 또는 '검색 → 판단' 구조인 것을 다음 주 회의까지 3개 찾아 보고하라." (30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>Conductor 원리를 프롬프트로 직접 구현합니다.</strong><br>Conductor를 도입하지 않아도 핵심 원리는 지금 바로 적용할 수 있습니다. Claude에 다음 지시문을 입력합니다: "이 업무를 3단계로 분리하라. 1단계: 핵심 정보만 추출해 목록으로 정리. 2단계: 목록을 기반으로 논리적 분석 수행. 3단계: 분석 결과로 보고서 초안 작성. 각 단계 완료 후 다음 단계를 진행하라." 기존 단일 프롬프트 결과와 비교해 품질 차이를 확인합니다. (1시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>현재 멀티에이전트 워크플로우 비용을 계산합니다.</strong><br>이미 여러 AI API를 연결해 쓰는 팀이라면 호출 횟수를 확인합니다. Conductor 방식으로 평균 40% 줄이면 얼마가 절감되는지 시뮬레이션합니다. Claude에 요청: "지난달 AI API 청구서에서 총 호출 수와 비용을 알려 주겠다. 호출을 40% 줄였을 때 월 절감액을 계산하라." CTO에게: "Conductor 조율 방식 도입 가능성을 2주 내 검토해 보고하라." (1시간)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 & 주의점</div>
+
+        <p><strong>프리프린트 논문으로 피어리뷰가 완료되지 않았습니다.</strong> arXiv 논문은 동료 검증 전 단계입니다. 벤치마크 수치는 논문 저자 기준이며 독립적 재현 결과가 아닙니다. 조직 전략 변경의 근거로 삼기 전에 공식 발표 또는 외부 검증 결과를 추가로 확인해야 합니다.</p>
+
+        <p><strong>Worker 모델 API 비용은 여전히 발생합니다.</strong> Conductor 자체는 소형 모델이지만, 실제 작업을 수행하는 Worker는 GPT-5, Gemini 2.5, Claude 같은 프론티어 모델입니다. 각 단계마다 이 모델들의 API 비용이 청구됩니다. 단일 모델 대비 호출 효율이 높더라도 총비용이 늘어날 수 있습니다.</p>
+
+        <p><strong>Conductor 직접 훈련은 상당한 컴퓨팅이 필요합니다.</strong> 논문의 훈련 환경은 NVIDIA H100 80GB GPU 2장입니다. 오픈소스 모델 가중치를 활용하면 훈련 없이도 사용할 수 있지만, 자체 업무에 맞게 재훈련하려면 전문 인프라가 필요합니다.</p>
+
+        <p><strong>고비용 프론티어 모델 의존이 비용 불평등을 심화할 수 있습니다.</strong> 논문 저자들도 명시적으로 인정한 한계입니다. Conductor가 최고 성능을 내려면 GPT-5와 Gemini 2.5 같은 유료 프론티어 모델이 Worker로 필요합니다. 오픈소스 모델만 쓰는 경우 성능 차이가 발생합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>성능을 결정하는 것은 모델 규모가 아니라 조율 설계입니다. AI 에이전트 전략을 단일 모델 선택에서 조율 아키텍처 설계로 전환해야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>가장 비싼 AI 구독에 집중하는 전략을 재검토하십시오. 조율 설계에 투자하면 같은 예산으로 더 나은 결과를 냅니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>현재 AI 워크플로우에서 단계별 분해와 모델 배정 구조를 도입하는 PoC를 2주 내 설계하십시오.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>복잡한 업무를 단계별로 나눠 각 단계에 특화된 AI를 배정하는 방식을 1개 업무에 실험하십시오.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>멀티에이전트 시스템</strong>: 여러 AI 모델이 협력해 하나의 과제를 처리하는 구조입니다. 각 모델이 서로 다른 역할을 맡아 순서대로 또는 병렬로 작업합니다.</p>
+          <p><strong>오케스트레이션(조율)</strong>: AI 에이전트 시스템에서 여러 모델의 역할, 순서, 정보 흐름을 설계하는 과정입니다. Conductor는 이 조율을 자동화합니다.</p>
+          <p><strong>GRPO (Grouped Relative Policy Optimization)</strong>: DeepSeek-R1이 사용한 강화학습 알고리즘입니다. Conductor는 이 방식으로 훈련해 조율 전략을 스스로 학습했습니다.</p>
+          <p><strong>GPQA Diamond</strong>: 대학원 수준의 물리, 화학, 생물 문제 198개로 구성된 AI 추론 벤치마크입니다. 전문가도 틀리는 문제들을 포함합니다.</p>
+          <p><strong>AIME25</strong>: 미국 수학 올림피아드 예선 2025년 문제 30개로 구성된 수학 추론 벤치마크입니다. 최상위 수학 경쟁자 수준의 문제입니다.</p>
+          <p><strong>LiveCodeBench</strong>: 코딩 경진대회 문제를 실시간으로 업데이트하는 코딩 벤치마크입니다. 학습 데이터 오염 가능성이 낮아 신뢰도가 높습니다.</p>
+          <p><strong>재귀 호출 (Recursive Topology)</strong>: Conductor가 자기 자신을 Worker로 지정해 조율을 반복하는 구조입니다. 초기 전략이 부족하면 스스로 재시도합니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Nielsen, S., Cetin, E., Schwendeman, P., Sun, Q., Xu, J., &amp; Tang, Y. (2026, 3월). <em>Learning to Orchestrate Agents in Natural Language with the Conductor</em> [Preprint]. arXiv.
+            <a href="https://arxiv.org/abs/2512.04388" target="_blank" rel="noopener">https://arxiv.org/abs/2512.04388</a></li>
+        </ul>
+      </section>
+
+      <!-- Original Link -->
+      <div style="margin-top: 4px;">
+        <a href="https://arxiv.org/abs/2512.04388" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 라운드테이블 댓글 (persona-comment 스킬이 자동 삽입 예정) -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+        <p style="color:#aaa; font-size:13px;">라운드테이블 댓글이 곧 추가됩니다.</p>
+      </section>
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- Next Post Recommendation -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-04-23-gpt-5-5-agentic-coding.html">
+          <div class="next-post-title">GPT-5.5 에이전틱 코딩, 무엇이 달라졌습니까 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+
+      </div><!-- /post-body-layout -->
+    </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const ROASTING_QUOTE = "7B짜리 지휘자가 GPT-5를 이겼습니다. 가장 비싼 모델 하나에 의존하는 전략, 재검토할 때입니다.";
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+</body>
+</html>

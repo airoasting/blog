@@ -14,14 +14,18 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-04-30 [기술] GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다 — /blog/tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html
+- 2026-04-30 [생존] AI에게 인생 상담? 4건 중 1건은 동조였습니다 — /blog/survival/2026-04-30-claude-personal-guidance-sycophancy.html
+- 2026-03-01 [기술] AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법 — /blog/tech/2026-03-01-conductor-multi-agent-orchestration.html
 - 2026-04-24 [리서치] AI 에이전트가 실제로 거래했습니다: Anthropic의 거래 실험 — /blog/research/2026-04-24-anthropic-project-deal-agent-economy.html
+- 2026-04-13 [리더] 잭 도시: 회사는 위계가 아니라 지능입니다 — /blog/leader/2026-04-13-jack-dorsey-company-as-intelligence.html
+- 2026-04-14 [리더] 하버드 교수들이 말하는 '좋은 학습자'의 조건 — /blog/leader/2026-04-14-harvard-what-makes-a-good-learner.html
+- 2026-04-22 [생존] AI 도구에도 소득 격차가 있습니다 — /blog/survival/2026-04-22-ai-tool-income-gap.html
 - 2026-04-24 [기술] DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다 — /blog/tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html
 - 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
 - 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
 - 2026-04-16 [기술] 클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 — /blog/tech/2026-04-16-claude-opus-4-7-launch.html
-- 2026-04-14 [리더] 하버드 교수들이 말하는 '좋은 학습자'의 조건 — /blog/leader/2026-04-14-harvard-what-makes-a-good-learner.html
 - 2026-04-14 [리서치] AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장 — /blog/research/2026-04-14-automated-alignment-researchers.html
-- 2026-04-13 [리더] 잭 도시: 회사는 위계가 아니라 지능입니다 — /blog/leader/2026-04-13-jack-dorsey-company-as-intelligence.html
 - 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html
 - 2026-04-11 [기술] AI가 당신을 기억합니다. 그 기억은 누구 것입니까 — /blog/tech/2026-04-11-agent-harness-memory-lock-in.html
 - 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html

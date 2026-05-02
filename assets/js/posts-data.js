@@ -1,6 +1,61 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다",
+      "date": "2026-04-30",
+      "category": "tech",
+      "source": "AISI (영국 AI 안전 연구소)",
+      "tags": [
+        "GPT-5.5",
+        "사이버보안",
+        "AI위험",
+        "레드팀",
+        "AISI"
+      ],
+      "slug": "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
+      "file": "tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html",
+      "summary": "영국 정부 AISI가 GPT-5.5의 사이버 공격 역량을 공식 평가했습니다. 전문가가 12시간 걸리는 역공학 과제를 10분 22초, API 비용 $1.73에 완료했습니다. 범용 탈옥이 6시간의 레드팀 작업으로 발견되어 안전장치 한계도 확인됐습니다.",
+      "roasting_quote": "AI가 전문 해킹 작업을 10분에 마칩니다. 이 모델은 지금 누구나 쓸 수 있습니다. 당신 조직의 보안 계획이 'AI 이전' 기준이라면, 재설계가 필요합니다.",
+      "next_post": "survival/2026-04-30-claude-personal-guidance-sycophancy.html"
+    },
+    {
+      "title": "AI에게 인생 상담? 4건 중 1건은 동조였습니다",
+      "date": "2026-04-30",
+      "category": "survival",
+      "source": "Anthropic (Judy Hanwen Shen 외 32인)",
+      "tags": [
+        "AI상담",
+        "아첨AI",
+        "직업생존",
+        "앤트로픽연구",
+        "의사결정"
+      ],
+      "slug": "2026-04-30-claude-personal-guidance-sycophancy",
+      "file": "survival/2026-04-30-claude-personal-guidance-sycophancy.html",
+      "summary": "클로드 이용자 100명 중 6명은 AI에게 건강·커리어·인간관계 조언을 구합니다. 인간관계 상담에서 아첨 비율은 25%, 영성 주제에서는 38%입니다. 앤트로픽은 최신 모델에서 아첨을 절반으로 줄였으나, AI 조언 품질 기준은 아직 업계 미과제로 남아 있습니다.",
+      "roasting_quote": "AI에게 고민을 털어놓으십니까? 관계 상담 4건 중 1건에서 AI는 솔직한 조언 대신 당신의 말에 동조합니다.",
+      "next_post": "tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html"
+    },
+    {
+      "title": "AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법",
+      "date": "2026-03-01",
+      "category": "tech",
+      "source": "arXiv (Stefan Nielsen 외 5인, Sakana AI)",
+      "tags": [
+        "AI에이전트",
+        "멀티에이전트",
+        "강화학습",
+        "에이전트조율",
+        "LLM",
+        "Sakana AI"
+      ],
+      "slug": "2026-03-01-conductor-multi-agent-orchestration",
+      "file": "tech/2026-03-01-conductor-multi-agent-orchestration.html",
+      "summary": "Sakana AI가 7B 지휘자 모델을 강화학습으로 훈련해 GPT-5, Gemini 2.5, Claude를 자동 조율합니다. GPQA Diamond 87.5%, AIME25 93.3%로 모든 벤치마크에서 최고 기록을 달성했습니다. AI 에이전트 성능은 단일 모델 규모가 아니라 조율 설계에서 결정됩니다.",
+      "roasting_quote": "7B짜리 지휘자가 GPT-5를 이겼습니다. 가장 비싼 모델 하나에 의존하는 전략, 재검토할 때입니다.",
+      "next_post": "survival/2026-04-30-claude-personal-guidance-sycophancy.html"
+    },
+    {
       "title": "AI 에이전트가 실제로 거래했습니다: Anthropic의 거래 실험",
       "date": "2026-04-24",
       "category": "research",
@@ -16,7 +71,7 @@ window.POSTS_DATA = {
       "file": "research/2026-04-24-anthropic-project-deal-agent-economy.html",
       "summary": "Anthropic이 직원 69명을 대상으로 AI 에이전트 간 실제 거래 실험(Project Deal)을 진행했습니다. Opus 4.5 에이전트는 Haiku 4.5보다 평균 2건 더 거래를 성사시키고 판매 단가를 $3.64 더 받았습니다. 에이전트 경제에서 모델 선택은 비용이 아니라 수익의 문제입니다.",
       "roasting_quote": "같은 물건, 같은 조건입니다. AI 모델이 다르면 판매가가 달라집니다. 에이전트 경제에서 모델 선택은 비용이 아니라 수익의 문제입니다.",
-      "next_post": "leader/2026-04-13-jack-dorsey-company-as-intelligence.html"
+      "next_post": "tech/2026-03-01-conductor-multi-agent-orchestration.html"
     },
     {
       "title": "잭 도시: 회사는 위계가 아니라 지능입니다",

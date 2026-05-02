@@ -1125,4 +1125,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2026-03-01-conductor-multi-agent-orchestration.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-04-30-claude-personal-guidance-sycophancy.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
