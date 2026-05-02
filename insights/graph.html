@@ -697,69 +697,49 @@ function buildGraph(posts) {
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  /* ── 뇌 실루엣 정의 ──
-     좌·우 반구를 explicit하게 두 개의 콩팥(bean) 모양으로 정의.
-     스크린 좌표(y-down)에서 θ=0 우측, θ=-π/2 위쪽. */
+  /* ── 측면도 뇌 실루엣 ── 좌측 frontal pole부터 시계방향으로 cerebrum + cerebellum + brainstem 연결 한 폴리곤. */
   const cx = W / 2, cy = H / 2;
 
-  /* 전체 뇌 박스 크기 (top-down view 비율, 좌우로 약간 길게) */
-  const brainTotalW = Math.min(W * 0.74, H * 1.18);
-  const brainTotalH = Math.min(W * 0.42, H * 0.62);
+  /* 캔버스 종횡비를 고려해 뇌가 화면 중앙에 잘 들어가도록 스케일/오프셋 계산.
+     기준 캔버스 (1280x680)에 맞게 그리고, 안전 여백 확보. */
+  const TARGET_AR = 1280 / 680;
+  const fitW = Math.min(W * 0.95, H * 0.95 * TARGET_AR);
+  const fitH = fitW / TARGET_AR;
+  const offX = (W - fitW) / 2;
+  const offY = (H - fitH) / 2;
+  function nx(u) { return offX + u * fitW; }
+  function ny(v) { return offY + v * fitH; }
 
-  /* 각 반구: 세로(앞-뒤)로 길고, 가운데에 명확한 fissure 갭 */
-  const hemiOffsetX = brainTotalW * 0.275;
-  const hemiW = brainTotalW * 0.215;
-  const hemiH = brainTotalH * 0.55;
+  /* 단일 뇌 외곽 폴리곤 — 정규화 (u,v) ∈ [0,1] */
+  const BRAIN_NORM = [
+    [0.05, 0.50], [0.04, 0.40], [0.04, 0.30], [0.07, 0.20], [0.12, 0.12],
+    [0.20, 0.07], [0.30, 0.04], [0.42, 0.03], [0.54, 0.04], [0.65, 0.07],
+    [0.74, 0.13], [0.81, 0.21], [0.85, 0.31], [0.86, 0.42], [0.87, 0.50],
+    /* 후두-소뇌 경계 */
+    [0.86, 0.55], [0.89, 0.60], [0.92, 0.66], [0.93, 0.74], [0.91, 0.81],
+    [0.86, 0.86], [0.79, 0.86], [0.74, 0.82],
+    /* 뇌간 (brainstem) */
+    [0.73, 0.86], [0.74, 0.94], [0.69, 0.98], [0.65, 0.97], [0.64, 0.90],
+    [0.63, 0.78],
+    /* 측두엽 하부 곡선 */
+    [0.55, 0.74], [0.45, 0.76], [0.35, 0.74], [0.25, 0.71], [0.16, 0.66],
+    [0.10, 0.60], [0.07, 0.55],
+  ];
+  const BRAIN_POLY = BRAIN_NORM.map(([u, v]) => [nx(u), ny(v)]);
 
-  /* 반구 contour: side는 -1(좌)/+1(우).
-     안쪽(반구 중심에서 fissure 방향)을 평탄하게 만들어 콩팥 모양을 형성.
-     앞쪽(위, θ=-π/2)에 frontal lobe 약간 돌출, 뒤쪽(아래, θ=π/2)에 occipital 약간. */
-  function hemiContour(theta, side) {
-    let r = 1;
-    /* 부드러운 gyri 굴곡 */
-    r += 0.04 * Math.sin(theta * 7 + 0.4 * side);
+  /* 카테고리별 sub-region 중심(u,v) + 반경(u,v) — 단일 실루엣 안에서 영역 분리 */
+  const REGIONS = {
+    research:   { cu: 0.17, cv: 0.40, ru: 0.10, rv: 0.18, label: '리서치' },
+    leader:     { cu: 0.40, cv: 0.16, ru: 0.13, rv: 0.10, label: '리더' },
+    company:    { cu: 0.66, cv: 0.30, ru: 0.13, rv: 0.18, label: '기업' },
+    tech:       { cu: 0.42, cv: 0.40, ru: 0.10, rv: 0.12, label: '기술' },
+    survival:   { cu: 0.32, cv: 0.62, ru: 0.13, rv: 0.10, label: '생존' },
+    newsletter: { cu: 0.85, cv: 0.66, ru: 0.07, rv: 0.13, label: '뉴스레터' },
+  };
+  /* 허브 노드는 brainstem 영역에 일부 배치 */
+  const BRAINSTEM_REGION = { cu: 0.685, cv: 0.90, ru: 0.04, rv: 0.07, label: '뇌간' };
 
-    /* 안쪽(fissure 쪽) 평탄화: 좌반구는 θ=0, 우반구는 θ=π */
-    const innerAngle = side < 0 ? 0 : Math.PI;
-    let dt = theta - innerAngle;
-    while (dt > Math.PI) dt -= 2 * Math.PI;
-    while (dt < -Math.PI) dt += 2 * Math.PI;
-    /* 안쪽을 더 평탄하게 (콩팥 모양) */
-    r -= 0.20 * Math.exp(-Math.pow(dt * 1.3, 2));
-
-    /* frontal lobe 둥글게 약간 돌출 (위) */
-    let dtf = theta - (-Math.PI / 2);
-    while (dtf > Math.PI) dtf -= 2 * Math.PI;
-    while (dtf < -Math.PI) dtf += 2 * Math.PI;
-    r += 0.04 * Math.exp(-Math.pow(dtf * 1.4, 2));
-
-    /* occipital 약간 평탄 (아래 뒤) */
-    let dto = theta - (Math.PI / 2);
-    while (dto > Math.PI) dto -= 2 * Math.PI;
-    while (dto < -Math.PI) dto += 2 * Math.PI;
-    r -= 0.05 * Math.exp(-Math.pow(dto * 1.6, 2));
-
-    return r;
-  }
-
-  function buildHemiPolygon(side) {
-    const cx_h = cx + side * hemiOffsetX;
-    const poly = [];
-    const N = 200;
-    for (let i = 0; i < N; i++) {
-      const theta = (i / N) * 2 * Math.PI;
-      const r = hemiContour(theta, side);
-      poly.push([
-        cx_h + r * hemiW * Math.cos(theta),
-        cy + r * hemiH * Math.sin(theta)
-      ]);
-    }
-    return poly;
-  }
-
-  const LEFT_HEMI_POLY = buildHemiPolygon(-1);
-  const RIGHT_HEMI_POLY = buildHemiPolygon(+1);
-
+  /* point-in-polygon */
   function pointInPolygon(x, y, poly) {
     let inside = false;
     for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
@@ -772,103 +752,189 @@ function buildGraph(posts) {
     return inside;
   }
 
-  /* 안정적인 짝/홀 배정: id 기반 hash → 항상 동일 반구 */
-  function nodeSide(n) {
-    let h = 0;
-    const s = n.id || '';
-    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-    return (h & 1) === 0 ? -1 : 1;
+  /* 안정적 hash → 0~1 의사난수 */
+  function hashRand(id) {
+    let h = 2166136261 | 0;
+    const s = id || '';
+    for (let i = 0; i < s.length; i++) {
+      h ^= s.charCodeAt(i); h = Math.imul(h, 16777619);
+    }
+    const a = ((h >>> 0) % 10000) / 10000;
+    h = Math.imul(h ^ (h >>> 13), 1597334677);
+    const b = ((h >>> 0) % 10000) / 10000;
+    h = Math.imul(h ^ (h >>> 17), 2654435761);
+    const c = ((h >>> 0) % 10000) / 10000;
+    return [a, b, c];
   }
-  nodes.forEach(n => { n.side = nodeSide(n); });
 
-  /* 카테고리 균형: 좌·우 노드 수 차이가 크면 일부 강제로 옮김 */
-  (function balanceHemispheres() {
-    const left = nodes.filter(n => n.side < 0);
-    const right = nodes.filter(n => n.side > 0);
-    const diff = left.length - right.length;
-    if (Math.abs(diff) <= 2) return;
-    const fromArr = diff > 0 ? left : right;
-    const moves = Math.floor(Math.abs(diff) / 2);
-    for (let i = 0; i < moves; i++) fromArr[i].side = -fromArr[i].side;
-  })();
+  /* 영역(타원 bbox) 내부 + 뇌 실루엣 안쪽인 점 찾기 */
+  function placeInRegion(seed, region) {
+    const [r1, r2, r3] = seed;
+    for (let k = 0; k < 80; k++) {
+      const a = ((r1 * 9301 + r2 * 49297 + k * 233280) % 100000) / 100000;
+      const b = ((r2 * 9301 + r3 * 49297 + k * 233281) % 100000) / 100000;
+      /* 타원 균등 샘플 */
+      const rho = Math.sqrt(a);
+      const phi = b * 2 * Math.PI;
+      const u = region.cu + rho * region.ru * Math.cos(phi);
+      const v = region.cv + rho * region.rv * Math.sin(phi);
+      const px = nx(u), py = ny(v);
+      if (pointInPolygon(px, py, BRAIN_POLY)) return [px, py];
+    }
+    return [nx(region.cu), ny(region.cv)];
+  }
 
-  /* 각 노드의 타깃 위치: 자기 반구 폴리곤 내부의 무작위 점 */
+  /* 노드 컴파트먼트 + 결정적 좌표 배정 */
   nodes.forEach(n => {
-    const poly = n.side < 0 ? LEFT_HEMI_POLY : RIGHT_HEMI_POLY;
-    const cx_h = cx + n.side * hemiOffsetX;
-    let placed = false;
-    for (let k = 0; k < 100 && !placed; k++) {
-      const px = cx_h + (Math.random() - 0.5) * 2 * hemiW * 1.10;
-      const py = cy + (Math.random() - 0.5) * 2 * hemiH * 1.10;
-      if (pointInPolygon(px, py, poly)) {
-        n.tx = px; n.ty = py;
-        n.x = px; n.y = py;
-        placed = true;
-      }
+    const seed = hashRand(n.id);
+    const [r1] = seed;
+    const isHub = n.degree >= hubThreshold && n.degree > 2;
+    let region;
+    if (n.category === 'newsletter') {
+      region = REGIONS.newsletter;
+      n.zone = 'cerebellum';
+    } else if (isHub && r1 < 0.18) {
+      region = BRAINSTEM_REGION;
+      n.zone = 'brainstem';
+    } else if (REGIONS[n.category]) {
+      region = REGIONS[n.category];
+      n.zone = n.category;
+    } else {
+      region = REGIONS.research;
+      n.zone = 'research';
     }
-    if (!placed) {
-      n.tx = cx_h; n.ty = cy;
-      n.x = n.tx; n.y = n.ty;
-    }
+    const [px, py] = placeInRegion(seed, region);
+    n.tx = px; n.ty = py;
+    n.x = px; n.y = py;
   });
 
-  /* 커스텀 force: 노드를 자기 반구 폴리곤 안에 가둠.
-     노드의 시각적 반지름(r)까지 고려해서 fissure 영역을 깨끗하게 유지. */
-  function brainContainForce(alpha) {
-    /* 각 노드 중심이 들어갈 수 있는 안쪽 한계선 (노드 r 만큼 떨어뜨림) */
-    nodes.forEach(n => {
-      const poly = n.side < 0 ? LEFT_HEMI_POLY : RIGHT_HEMI_POLY;
-      const cx_h = cx + n.side * hemiOffsetX;
-      const r = n.r || 10;
+  /* 호환용 side */
+  nodes.forEach(n => { n.side = n.zone === 'cerebellum' ? 1 : -1; });
 
-      /* 안전장치: 위치가 NaN이거나 극단값이면 타깃으로 리셋 */
-      if (!isFinite(n.x) || !isFinite(n.y) ||
-          Math.abs(n.x - cx) > brainTotalW ||
-          Math.abs(n.y - cy) > brainTotalH) {
+  /* 컨테인 force: 노드를 뇌 실루엣 안에 가둠 */
+  function brainContainForce(alpha) {
+    nodes.forEach(n => {
+      if (!isFinite(n.x) || !isFinite(n.y)) {
         n.x = n.tx; n.y = n.ty; n.vx = 0; n.vy = 0;
       }
-
-      if (!pointInPolygon(n.x, n.y, poly)) {
-        /* 폴리곤 밖이면 자기 반구 중심으로 끌어당김 */
-        const dx = cx_h - n.x;
-        const dy = cy - n.y;
+      if (!pointInPolygon(n.x, n.y, BRAIN_POLY)) {
+        const dx = n.tx - n.x, dy = n.ty - n.y;
         const d = Math.hypot(dx, dy) || 1;
-        n.vx = n.vx * 0.4 + (dx / d) * 10;
-        n.vy = n.vy * 0.4 + (dy / d) * 10;
-      }
-
-      /* fissure 영역 침범 방지: 노드의 시각적 가장자리가 중앙선을 넘으면 밀어냄.
-         좌반구 노드는 x + r < cx 유지, 우반구 노드는 x - r > cx 유지. */
-      if (n.side < 0 && n.x + r > cx - 4) {
-        n.vx += (cx - 4 - r - n.x) * 0.5;
-      } else if (n.side > 0 && n.x - r < cx + 4) {
-        n.vx += (cx + 4 + r - n.x) * 0.5;
+        n.vx = n.vx * 0.3 + (dx / d) * 12;
+        n.vy = n.vy * 0.3 + (dy / d) * 12;
       }
     });
   }
 
-  /* Force simulation
-     forceX/Y로 각 노드를 자기 반구 내부 타깃 위치로 강하게 끌어당기고,
-     반구 간 link는 약화시켜 fissure 갭을 유지한다. */
+  /* Force simulation — 각 노드를 자기 영역 좌표에 강하게 고정.
+     link force는 매우 약하게 해서 노드가 영역 밖으로 끌려나가지 않도록. */
   const sim = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id)
-      .distance(d => Math.max(30, 65 - (d.weight || 1) * 4))
-      .strength(d => {
-        /* 다른 반구를 가로지르는 link는 매우 약화 */
-        const ss = (typeof d.source === 'object') ? d.source.side : 0;
-        const ts = (typeof d.target === 'object') ? d.target.side : 0;
-        const crossHemi = ss * ts < 0;
-        const base = Math.min(0.22, 0.05 + (d.weight || 1) * 0.03);
-        return crossHemi ? base * 0.10 : base;
-      }))
+      .distance(d => Math.max(30, 60 - (d.weight || 1) * 3))
+      .strength(0.015))
     .force('charge', d3.forceManyBody()
-      .strength(d => -Math.max(16, d.r * 2))
-      .distanceMax(hemiW * 0.7))
-    .force('targetX', d3.forceX(d => d.tx).strength(0.34))
-    .force('targetY', d3.forceY(d => d.ty).strength(0.36))
-    .force('collide', d3.forceCollide().radius(d => d.r + 3).strength(0.95))
+      .strength(d => -Math.max(8, d.r * 1.2))
+      .distanceMax(80))
+    .force('targetX', d3.forceX(d => d.tx).strength(0.85))
+    .force('targetY', d3.forceY(d => d.ty).strength(0.85))
+    .force('collide', d3.forceCollide().radius(d => d.r + 2).strength(0.92))
     .force('brain', brainContainForce)
-    .alphaDecay(0.028);
+    .alphaDecay(0.05);
+
+  /* 5b. 측면도 뇌 골격(skeleton) — 노드 뒤 배경에 굵게 그려 형태를 명시.
+     실루엣 외곽 + 옅은 채움, 내부 gyri 굴곡, 소뇌 folia 줄무늬, 부위 레이블. */
+  const skelG = g.append('g').attr('class', 'brain-skeleton')
+    .attr('fill', 'none')
+    .attr('stroke-linecap', 'round')
+    .attr('stroke-linejoin', 'round');
+
+  function polyToPath(poly) {
+    return 'M ' + poly.map(([x, y]) => x.toFixed(1) + ' ' + y.toFixed(1)).join(' L ') + ' Z';
+  }
+
+  /* 외곽 — 굵은 외곽선과 옅은 채움 */
+  skelG.append('path')
+    .attr('d', polyToPath(BRAIN_POLY))
+    .attr('fill', 'rgba(180,200,240,0.05)')
+    .attr('stroke', 'rgba(220,235,255,0.85)')
+    .attr('stroke-width', 3.0)
+    .attr('filter', 'drop-shadow(0 0 10px rgba(160,200,255,0.35))');
+
+  /* 대뇌 내부 gyri/sulci — 손그린 풍의 옅은 곡선 */
+  const GYRI = [
+    /* [u1, v1, ctrlu, ctrlv, u2, v2] */
+    [0.10, 0.30, 0.18, 0.18, 0.28, 0.10],
+    [0.18, 0.42, 0.26, 0.30, 0.38, 0.16],
+    [0.26, 0.50, 0.36, 0.40, 0.50, 0.20],
+    [0.34, 0.58, 0.46, 0.46, 0.62, 0.20],
+    [0.42, 0.62, 0.56, 0.50, 0.74, 0.26],
+    [0.50, 0.62, 0.62, 0.50, 0.78, 0.36],
+    [0.20, 0.20, 0.40, 0.10, 0.62, 0.10],
+    [0.16, 0.50, 0.36, 0.56, 0.60, 0.58],
+  ];
+  GYRI.forEach(([u1, v1, ucu, ucv, u2, v2]) => {
+    skelG.append('path')
+      .attr('d', `M ${nx(u1)} ${ny(v1)} Q ${nx(ucu)} ${ny(ucv)} ${nx(u2)} ${ny(v2)}`)
+      .attr('stroke', 'rgba(180,200,240,0.30)')
+      .attr('stroke-width', 1.2);
+  });
+
+  /* 대뇌-소뇌 경계선 (옅게) */
+  skelG.append('path')
+    .attr('d', `M ${nx(0.79)} ${ny(0.50)} Q ${nx(0.83)} ${ny(0.55)} ${nx(0.86)} ${ny(0.50)}`)
+    .attr('stroke', 'rgba(220,235,255,0.55)')
+    .attr('stroke-width', 1.6);
+  /* 소뇌 위쪽 분리 곡선 */
+  skelG.append('path')
+    .attr('d', `M ${nx(0.78)} ${ny(0.55)} Q ${nx(0.85)} ${ny(0.60)} ${nx(0.92)} ${ny(0.66)}`)
+    .attr('stroke', 'rgba(220,235,255,0.55)')
+    .attr('stroke-width', 1.6);
+
+  /* 소뇌 folia 줄무늬 — 평행 곡선, 외곽 안쪽으로만 */
+  const FOLIA = [
+    [0.80, 0.60, 0.85, 0.62, 0.92, 0.66],
+    [0.79, 0.65, 0.85, 0.67, 0.92, 0.71],
+    [0.79, 0.70, 0.85, 0.72, 0.92, 0.76],
+    [0.79, 0.75, 0.85, 0.77, 0.91, 0.81],
+    [0.81, 0.80, 0.85, 0.83, 0.88, 0.84],
+  ];
+  FOLIA.forEach(([u1, v1, ucu, ucv, u2, v2]) => {
+    skelG.append('path')
+      .attr('d', `M ${nx(u1)} ${ny(v1)} Q ${nx(ucu)} ${ny(ucv)} ${nx(u2)} ${ny(v2)}`)
+      .attr('stroke', 'rgba(220,235,255,0.55)')
+      .attr('stroke-width', 1.1);
+  });
+
+  /* 뇌간 가운데 세로선 (해부학적 디테일) */
+  skelG.append('path')
+    .attr('d', `M ${nx(0.685)} ${ny(0.84)} L ${nx(0.685)} ${ny(0.95)}`)
+    .attr('stroke', 'rgba(220,235,255,0.40)')
+    .attr('stroke-width', 1.0);
+
+  /* 부위 레이블 (대뇌/소뇌/뇌간) — 외부에 leader line 포함 */
+  const LABELS = [
+    { txt: '대뇌',   tu: 0.16, tv: -0.04, lx1: 0.18, ly1: 0.02, lx2: 0.28, ly2: 0.10 },
+    { txt: '소뇌',   tu: 0.95, tv: 0.50,  lx1: 0.93, ly1: 0.55, lx2: 0.89, ly2: 0.62 },
+    { txt: '뇌간',   tu: 0.45, tv: 1.04,  lx1: 0.50, ly1: 1.02, lx2: 0.66, ly2: 0.94 },
+  ];
+  const labelG = g.append('g').attr('class', 'brain-labels');
+  LABELS.forEach(L => {
+    labelG.append('path')
+      .attr('d', `M ${nx(L.lx1)} ${ny(L.ly1)} L ${nx(L.lx2)} ${ny(L.ly2)}`)
+      .attr('stroke', 'rgba(220,235,255,0.55)')
+      .attr('stroke-width', 1.2)
+      .attr('fill', 'none');
+    labelG.append('text')
+      .attr('x', nx(L.tu))
+      .attr('y', ny(L.tv))
+      .attr('fill', 'rgba(230,240,255,0.85)')
+      .attr('font-size', 14)
+      .attr('font-weight', 600)
+      .attr('font-family', 'Pretendard, sans-serif')
+      .attr('text-anchor', L.tu < 0.3 ? 'start' : L.tu > 0.7 ? 'end' : 'middle')
+      .attr('dominant-baseline', 'middle')
+      .text(L.txt);
+  });
 
   /* 6. Render links */
   const linkG = g.append('g').attr('class', 'links-group');
@@ -1027,25 +1093,27 @@ function buildGraph(posts) {
     nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
   });
 
-  /* Fit to view after simulation settles */
+  /* Fit to view — 뇌 폴리곤 bbox + 레이블 여유 공간 기준 */
   function fitToView() {
-    const padding = 60;
-    const xs = nodes.map(n => n.x).filter(v => isFinite(v));
-    const ys = nodes.map(n => n.y).filter(v => isFinite(v));
-    if (!xs.length) return;
+    const padTop = 50, padBot = 60, padLeft = 60, padRight = 100;
+    const xs = BRAIN_POLY.map(p => p[0]);
+    const ys = BRAIN_POLY.map(p => p[1]);
     const x0 = Math.min(...xs), x1 = Math.max(...xs);
     const y0 = Math.min(...ys), y1 = Math.max(...ys);
-    const bW = x1 - x0 || 1, bH = y1 - y0 || 1;
-    const scale = Math.min(0.95, (W - padding*2) / bW, (H - padding*2) / bH);
-    const tx = W/2 - scale * (x0 + bW/2);
-    const ty = H/2 - scale * (y0 + bH/2);
-    svg.transition().duration(800)
+    const bW = x1 - x0, bH = y1 - y0;
+    const availW = W - padLeft - padRight;
+    const availH = H - padTop - padBot;
+    const scale = Math.min(0.95, availW / bW, availH / bH);
+    const tx = padLeft + (availW - scale * bW) / 2 - scale * x0;
+    const ty = padTop + (availH - scale * bH) / 2 - scale * y0;
+    svg.transition().duration(600)
       .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
-    document.getElementById('graphLoading').style.display = 'none';
+    const loadingEl = document.getElementById('graphLoading');
+    if (loadingEl) loadingEl.style.display = 'none';
   }
 
   sim.on('end', fitToView);
-  setTimeout(fitToView, 4000);
+  setTimeout(fitToView, 1200);
 
   /* Zoom reset button */
   document.getElementById('zoomResetBtn').addEventListener('click', fitToView);
