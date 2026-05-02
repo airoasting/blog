@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지식 그래프 — AI ROASTING</title>
+  <title>지식 그래프 · AI ROASTING</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
     /* ── Page Shell ── */
@@ -573,7 +573,7 @@ function hideTooltip() {
   tooltip.classList.remove('show');
 }
 
-/* 모바일: 툴팁 외부 탭 시 닫기 (노드 탭은 제외 — click 핸들러에서 처리) */
+/* 모바일: 툴팁 외부 탭 시 닫기 (노드 탭은 click 핸들러에서 처리) */
 if (isMobile) {
   tooltip.style.pointerEvents = 'auto';
   document.addEventListener('touchstart', e => {
@@ -628,7 +628,7 @@ function buildGraph(posts) {
 
   const nodeById = new Map(nodes.map(n => [n.id, n]));
 
-  /* 2. Edges — shared tags (너무 흔한 태그는 제외) */
+  /* 2. Edges: 공유 태그 기반 (너무 흔한 태그는 제외) */
   const tagMap = {};
   nodes.forEach(n => {
     (n.tags || []).forEach(tag => {
@@ -651,7 +651,7 @@ function buildGraph(posts) {
     }
   });
 
-  /* 뉴스레터 체인 제거 — 태그 기반 연결만 사용하여 자연 분산 */
+  /* 뉴스레터 체인은 만들지 않고, 태그 기반 연결만 사용해 자연 분산 */
 
   /* 최소 1개 이상 공유 태그인 엣지만 사용 */
   const links = Object.entries(edgeWeights)
@@ -698,46 +698,73 @@ function buildGraph(posts) {
   svg.call(zoom);
 
   /* ── 뇌 실루엣 정의 ──
-     스크린 좌표(y-down)에서 θ=0 우측, θ=-π/2 위쪽.
-     좌·우 반구를 분리한 longitudinal fissure + 표면 굴곡(gyri). */
+     좌·우 반구를 explicit하게 두 개의 콩팥(bean) 모양으로 정의.
+     스크린 좌표(y-down)에서 θ=0 우측, θ=-π/2 위쪽. */
   const cx = W / 2, cy = H / 2;
-  const brainScaleX = Math.min(W * 0.42, H * 0.62);
-  const brainScaleY = Math.min(W * 0.30, H * 0.44);
 
-  function brainRadius(theta) {
+  /* 전체 뇌 박스 크기 (top-down view 비율, 좌우로 약간 길게) */
+  const brainTotalW = Math.min(W * 0.74, H * 1.18);
+  const brainTotalH = Math.min(W * 0.42, H * 0.62);
+
+  /* 각 반구: 세로(앞-뒤)로 길고, 가운데에 명확한 fissure 갭 */
+  const hemiOffsetX = brainTotalW * 0.275;
+  const hemiW = brainTotalW * 0.215;
+  const hemiH = brainTotalH * 0.55;
+
+  /* 반구 contour: side는 -1(좌)/+1(우).
+     안쪽(반구 중심에서 fissure 방향)을 평탄하게 만들어 콩팥 모양을 형성.
+     앞쪽(위, θ=-π/2)에 frontal lobe 약간 돌출, 뒤쪽(아래, θ=π/2)에 occipital 약간. */
+  function hemiContour(theta, side) {
     let r = 1;
-    /* 부드러운 굴곡 (작게) — 윤곽이 뇌처럼 살짝 우글거림 */
-    r += 0.04 * Math.sin(theta * 6 + 0.3);
-    /* 상단 중앙 fissure (θ = -π/2): 깊고 좁은 V자 함몰 */
-    let dt = theta - (-Math.PI / 2);
+    /* 부드러운 gyri 굴곡 */
+    r += 0.04 * Math.sin(theta * 7 + 0.4 * side);
+
+    /* 안쪽(fissure 쪽) 평탄화: 좌반구는 θ=0, 우반구는 θ=π */
+    const innerAngle = side < 0 ? 0 : Math.PI;
+    let dt = theta - innerAngle;
     while (dt > Math.PI) dt -= 2 * Math.PI;
     while (dt < -Math.PI) dt += 2 * Math.PI;
-    /* sigma 작게 → 좁고 깊은 V */
-    r -= 0.55 * Math.exp(-Math.pow(dt * 3.4, 2));
-    /* 하단 약한 평탄 */
-    let db = theta - Math.PI / 2;
-    while (db > Math.PI) db -= 2 * Math.PI;
-    while (db < -Math.PI) db += 2 * Math.PI;
-    r -= 0.06 * Math.exp(-Math.pow(db * 1.5, 2));
+    /* 안쪽을 더 평탄하게 (콩팥 모양) */
+    r -= 0.20 * Math.exp(-Math.pow(dt * 1.3, 2));
+
+    /* frontal lobe 둥글게 약간 돌출 (위) */
+    let dtf = theta - (-Math.PI / 2);
+    while (dtf > Math.PI) dtf -= 2 * Math.PI;
+    while (dtf < -Math.PI) dtf += 2 * Math.PI;
+    r += 0.04 * Math.exp(-Math.pow(dtf * 1.4, 2));
+
+    /* occipital 약간 평탄 (아래 뒤) */
+    let dto = theta - (Math.PI / 2);
+    while (dto > Math.PI) dto -= 2 * Math.PI;
+    while (dto < -Math.PI) dto += 2 * Math.PI;
+    r -= 0.05 * Math.exp(-Math.pow(dto * 1.6, 2));
+
     return r;
   }
 
-  const BRAIN_POLYGON = [];
-  const BRAIN_SAMPLES = 280;
-  for (let i = 0; i < BRAIN_SAMPLES; i++) {
-    const theta = (i / BRAIN_SAMPLES) * 2 * Math.PI;
-    const r = brainRadius(theta);
-    BRAIN_POLYGON.push([
-      cx + r * brainScaleX * Math.cos(theta),
-      cy + r * brainScaleY * Math.sin(theta)
-    ]);
+  function buildHemiPolygon(side) {
+    const cx_h = cx + side * hemiOffsetX;
+    const poly = [];
+    const N = 200;
+    for (let i = 0; i < N; i++) {
+      const theta = (i / N) * 2 * Math.PI;
+      const r = hemiContour(theta, side);
+      poly.push([
+        cx_h + r * hemiW * Math.cos(theta),
+        cy + r * hemiH * Math.sin(theta)
+      ]);
+    }
+    return poly;
   }
 
-  function pointInBrain(x, y) {
+  const LEFT_HEMI_POLY = buildHemiPolygon(-1);
+  const RIGHT_HEMI_POLY = buildHemiPolygon(+1);
+
+  function pointInPolygon(x, y, poly) {
     let inside = false;
-    for (let i = 0, j = BRAIN_POLYGON.length - 1; i < BRAIN_POLYGON.length; j = i++) {
-      const xi = BRAIN_POLYGON[i][0], yi = BRAIN_POLYGON[i][1];
-      const xj = BRAIN_POLYGON[j][0], yj = BRAIN_POLYGON[j][1];
+    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+      const xi = poly[i][0], yi = poly[i][1];
+      const xj = poly[j][0], yj = poly[j][1];
       const intersect = ((yi > y) !== (yj > y)) &&
                         (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
       if (intersect) inside = !inside;
@@ -745,103 +772,100 @@ function buildGraph(posts) {
     return inside;
   }
 
-  /* 좌·우 반구 분리: 노드 절반은 왼쪽, 절반은 오른쪽 반구로 배정.
-     타깃 샘플링 시 longitudinal fissure 영역(상단 중앙 세로 띠)은 제외해서
-     반구 분리가 시각적으로 드러나도록 한다. */
-  function fissureHalfGap(y) {
-    /* 위에서 아래로 갈수록 좁아지는 V자 갭의 절반폭. 절반 이상까지 내려옴 */
-    const yTop = cy - brainScaleY * 0.95;
-    const yBot = cy + brainScaleY * 0.40;
-    if (y > yBot) return 0;
-    /* topness: 상단(=1) ~ 갭 끝(=0) */
-    const topness = Math.max(0, Math.min(1, (yBot - y) / (yBot - yTop)));
-    /* 위쪽 끝에서 brainScaleX * 0.20, 아래로 갈수록 0 */
-    return brainScaleX * 0.20 * Math.pow(topness, 1.4);
+  /* 안정적인 짝/홀 배정: id 기반 hash → 항상 동일 반구 */
+  function nodeSide(n) {
+    let h = 0;
+    const s = n.id || '';
+    for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+    return (h & 1) === 0 ? -1 : 1;
   }
-  function inFissureZone(x, y) {
-    return Math.abs(x - cx) < fissureHalfGap(y);
-  }
+  nodes.forEach(n => { n.side = nodeSide(n); });
 
-  /* 각 노드에 뇌 영역 내부의 타깃 위치를 배정 (rejection sampling) */
-  nodes.forEach((n, i) => {
-    /* 짝/홀로 좌/우 반구 강제 (링크가 있어도 fissure 유지) */
-    const preferLeft = i % 2 === 0;
+  /* 카테고리 균형: 좌·우 노드 수 차이가 크면 일부 강제로 옮김 */
+  (function balanceHemispheres() {
+    const left = nodes.filter(n => n.side < 0);
+    const right = nodes.filter(n => n.side > 0);
+    const diff = left.length - right.length;
+    if (Math.abs(diff) <= 2) return;
+    const fromArr = diff > 0 ? left : right;
+    const moves = Math.floor(Math.abs(diff) / 2);
+    for (let i = 0; i < moves; i++) fromArr[i].side = -fromArr[i].side;
+  })();
+
+  /* 각 노드의 타깃 위치: 자기 반구 폴리곤 내부의 무작위 점 */
+  nodes.forEach(n => {
+    const poly = n.side < 0 ? LEFT_HEMI_POLY : RIGHT_HEMI_POLY;
+    const cx_h = cx + n.side * hemiOffsetX;
     let placed = false;
-    for (let k = 0; k < 80 && !placed; k++) {
-      const px = cx + (Math.random() - 0.5) * 2 * brainScaleX * 1.05;
-      const py = cy + (Math.random() - 0.5) * 2 * brainScaleY * 1.05;
-      if (!pointInBrain(px, py)) continue;
-      if (inFissureZone(px, py)) continue;
-      /* 반구 강제 */
-      if (preferLeft && px > cx - brainScaleX * 0.02) continue;
-      if (!preferLeft && px < cx + brainScaleX * 0.02) continue;
-      n.x = px; n.y = py;
-      n.tx = px; n.ty = py;
-      placed = true;
+    for (let k = 0; k < 100 && !placed; k++) {
+      const px = cx_h + (Math.random() - 0.5) * 2 * hemiW * 1.10;
+      const py = cy + (Math.random() - 0.5) * 2 * hemiH * 1.10;
+      if (pointInPolygon(px, py, poly)) {
+        n.tx = px; n.ty = py;
+        n.x = px; n.y = py;
+        placed = true;
+      }
     }
     if (!placed) {
-      /* fallback: 무조건 반구 영역 안에 배치 */
-      const sign = preferLeft ? -1 : 1;
-      n.tx = cx + sign * brainScaleX * (0.2 + Math.random() * 0.5);
-      n.ty = cy + (Math.random() - 0.5) * brainScaleY * 1.2;
+      n.tx = cx_h; n.ty = cy;
       n.x = n.tx; n.y = n.ty;
     }
   });
 
-  /* 커스텀 force: 뇌 다각형 안에 노드를 가둠 (하드 클램프)
-     + 상단 중앙 fissure(세로 갭)으로 좌/우 반구 분리 */
+  /* 커스텀 force: 노드를 자기 반구 폴리곤 안에 가둠.
+     노드의 시각적 반지름(r)까지 고려해서 fissure 영역을 깨끗하게 유지. */
   function brainContainForce(alpha) {
-    const fissureWidth = brainScaleX * 0.10;
+    /* 각 노드 중심이 들어갈 수 있는 안쪽 한계선 (노드 r 만큼 떨어뜨림) */
     nodes.forEach(n => {
-      /* 안전장치 */
+      const poly = n.side < 0 ? LEFT_HEMI_POLY : RIGHT_HEMI_POLY;
+      const cx_h = cx + n.side * hemiOffsetX;
+      const r = n.r || 10;
+
+      /* 안전장치: 위치가 NaN이거나 극단값이면 타깃으로 리셋 */
       if (!isFinite(n.x) || !isFinite(n.y) ||
-          Math.abs(n.x - cx) > brainScaleX * 3 ||
-          Math.abs(n.y - cy) > brainScaleY * 3) {
+          Math.abs(n.x - cx) > brainTotalW ||
+          Math.abs(n.y - cy) > brainTotalH) {
         n.x = n.tx; n.y = n.ty; n.vx = 0; n.vy = 0;
       }
-      if (!pointInBrain(n.x, n.y)) {
-        /* 다각형 밖이면 즉시 안쪽으로 끌어당김 */
-        const dx = cx - n.x;
+
+      if (!pointInPolygon(n.x, n.y, poly)) {
+        /* 폴리곤 밖이면 자기 반구 중심으로 끌어당김 */
+        const dx = cx_h - n.x;
         const dy = cy - n.y;
         const d = Math.hypot(dx, dy) || 1;
         n.vx = n.vx * 0.4 + (dx / d) * 10;
         n.vy = n.vy * 0.4 + (dy / d) * 10;
       }
-      /* fissure: V자 갭 안쪽 노드를 좌/우로 강하게 밀어냄 */
-      const halfGap = fissureHalfGap(n.y);
-      if (halfGap > 0) {
-        const dx = n.x - cx;
-        if (Math.abs(dx) < halfGap) {
-          const sign = dx >= 0 ? 1 : Math.random() < 0.5 ? -1 : 1;
-          /* alpha 무관, 일관된 갭 유지 */
-          const inside = 1 - Math.abs(dx) / halfGap;
-          n.vx += (dx >= 0 ? 1 : -1) * inside * 9;
-          /* 추가 안전: vx 방향 반전 */
-          if ((dx >= 0 && n.vx < 0) || (dx < 0 && n.vx > 0)) n.vx *= 0.3;
-        }
+
+      /* fissure 영역 침범 방지: 노드의 시각적 가장자리가 중앙선을 넘으면 밀어냄.
+         좌반구 노드는 x + r < cx 유지, 우반구 노드는 x - r > cx 유지. */
+      if (n.side < 0 && n.x + r > cx - 4) {
+        n.vx += (cx - 4 - r - n.x) * 0.5;
+      } else if (n.side > 0 && n.x - r < cx + 4) {
+        n.vx += (cx + 4 + r - n.x) * 0.5;
       }
     });
   }
 
   /* Force simulation
-     - forceX/Y 로 사전 배정된 타깃 위치(뇌 영역 내부 균등분포)에 끌어당김
-     - charge 약하게, link 그대로 → 토픽별 클러스터링은 살아남되 뇌 모양 유지 */
+     forceX/Y로 각 노드를 자기 반구 내부 타깃 위치로 강하게 끌어당기고,
+     반구 간 link는 약화시켜 fissure 갭을 유지한다. */
   const sim = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id)
-      .distance(d => Math.max(30, 70 - (d.weight || 1) * 5))
+      .distance(d => Math.max(30, 65 - (d.weight || 1) * 4))
       .strength(d => {
-        /* 연결된 두 노드가 다른 반구(타깃 기준)면 link strength 약화 */
-        const sx = (typeof d.source === 'object') ? d.source.tx : null;
-        const tx = (typeof d.target === 'object') ? d.target.tx : null;
-        const crossHemi = (sx != null && tx != null) && ((sx - cx) * (tx - cx) < 0);
+        /* 다른 반구를 가로지르는 link는 매우 약화 */
+        const ss = (typeof d.source === 'object') ? d.source.side : 0;
+        const ts = (typeof d.target === 'object') ? d.target.side : 0;
+        const crossHemi = ss * ts < 0;
         const base = Math.min(0.22, 0.05 + (d.weight || 1) * 0.03);
-        return crossHemi ? base * 0.25 : base;
+        return crossHemi ? base * 0.10 : base;
       }))
     .force('charge', d3.forceManyBody()
-      .strength(d => -Math.max(20, d.r * 2.5))
-      .distanceMax(brainScaleX * 0.4))
-    .force('targetX', d3.forceX(d => d.tx).strength(0.32))
-    .force('targetY', d3.forceY(d => d.ty).strength(0.34))
+      .strength(d => -Math.max(16, d.r * 2))
+      .distanceMax(hemiW * 0.7))
+    .force('targetX', d3.forceX(d => d.tx).strength(0.34))
+    .force('targetY', d3.forceY(d => d.ty).strength(0.36))
     .force('collide', d3.forceCollide().radius(d => d.r + 3).strength(0.95))
     .force('brain', brainContainForce)
     .alphaDecay(0.028);
@@ -886,7 +910,7 @@ function buildGraph(posts) {
     .attr('stroke', d => CAT[d.category].stroke)
     .attr('stroke-width', d => d.degree >= hubThreshold ? 2.5 : 1.5);
 
-  /* Label — 기본 숨김, 클릭 시 표시 */
+  /* Label: 기본 숨김, 클릭 시 표시 */
   nodeSel.each(function(d) {
     const el = d3.select(this);
     const words = d.title.split(/\s+/);
@@ -954,7 +978,7 @@ function buildGraph(posts) {
     nodeSel.selectAll('text').style('display', 'none');
   }
 
-  /* Hover: tooltip only (no focus when a node is already selected) — 데스크톱 전용 */
+  /* Hover: tooltip only (no focus when a node is already selected). 데스크톱 전용 */
   if (!isMobile) {
     nodeSel
       .on('mouseenter', function(event, d) {
