@@ -784,14 +784,14 @@ function buildGraph(posts) {
     n.x = px; n.y = py;
   });
 
-  /* 컨테인 force: 노드를 뇌 실루엣 안에 가둠 */
+  /* 컨테인 force: 노드가 뇌 폴리곤 밖으로 나가면 원래 자리(tx,ty)로 끌어당김 */
   function brainContainForce(alpha) {
     nodes.forEach(n => {
       if (!isFinite(n.x) || !isFinite(n.y)) {
-        n.x = POLY_CX; n.y = POLY_CY; n.vx = 0; n.vy = 0;
+        n.x = n.tx; n.y = n.ty; n.vx = 0; n.vy = 0;
       }
       if (!pointInPolygon(n.x, n.y, BRAIN_POLY)) {
-        const dx = POLY_CX - n.x, dy = POLY_CY - n.y;
+        const dx = n.tx - n.x, dy = n.ty - n.y;
         const d = Math.hypot(dx, dy) || 1;
         n.vx = n.vx * 0.3 + (dx / d) * 14;
         n.vy = n.vy * 0.3 + (dy / d) * 14;
@@ -799,20 +799,20 @@ function buildGraph(posts) {
     });
   }
 
-  /* Force simulation — 카테고리 클러스터링 제거.
-     약한 중심 인력 + 링크 인력으로 연결된 노드끼리만 자연스럽게 모임. */
+  /* Force simulation — 초기 뇌 분포 좌표(tx,ty)에 강하게 고정해 뇌 모양 유지.
+     link는 약하게 (시각적 연결선만), 카테고리 영역 분리는 없음. */
   const sim = d3.forceSimulation(nodes)
     .force('link', d3.forceLink(links).id(d => d.id)
-      .distance(d => Math.max(28, 55 - (d.weight || 1) * 3))
-      .strength(0.18))
+      .distance(d => Math.max(30, 60 - (d.weight || 1) * 3))
+      .strength(0.015))
     .force('charge', d3.forceManyBody()
-      .strength(d => -Math.max(14, d.r * 1.6))
-      .distanceMax(120))
-    .force('centerX', d3.forceX(POLY_CX).strength(0.04))
-    .force('centerY', d3.forceY(POLY_CY).strength(0.04))
+      .strength(d => -Math.max(8, d.r * 1.2))
+      .distanceMax(80))
+    .force('targetX', d3.forceX(d => d.tx).strength(0.85))
+    .force('targetY', d3.forceY(d => d.ty).strength(0.85))
     .force('collide', d3.forceCollide().radius(d => d.r + 2).strength(0.92))
     .force('brain', brainContainForce)
-    .alphaDecay(0.04);
+    .alphaDecay(0.05);
 
   /* 5b. 외곽선·내부 굴곡·부위 레이블 모두 제거 — 노드 분포 자체로 뇌 형태가 드러남 */
 
