@@ -727,17 +727,18 @@ function buildGraph(posts) {
   ];
   const BRAIN_POLY = BRAIN_NORM.map(([u, v]) => [nx(u), ny(v)]);
 
-  /* 카테고리별 sub-region 중심(u,v) + 반경(u,v) — 단일 실루엣 안에서 영역 분리 */
+  /* 카테고리별 sub-region 중심(u,v) + 반경(u,v) — 단일 실루엣 안에서 영역 분리.
+     반경을 넉넉하게 잡아 노드 분포만으로 뇌 실루엣이 드러나도록 함. */
   const REGIONS = {
-    research:   { cu: 0.17, cv: 0.40, ru: 0.10, rv: 0.18, label: '리서치' },
-    leader:     { cu: 0.40, cv: 0.16, ru: 0.13, rv: 0.10, label: '리더' },
-    company:    { cu: 0.66, cv: 0.30, ru: 0.13, rv: 0.18, label: '기업' },
-    tech:       { cu: 0.42, cv: 0.40, ru: 0.10, rv: 0.12, label: '기술' },
-    survival:   { cu: 0.32, cv: 0.62, ru: 0.13, rv: 0.10, label: '생존' },
-    newsletter: { cu: 0.85, cv: 0.66, ru: 0.07, rv: 0.13, label: '뉴스레터' },
+    research:   { cu: 0.18, cv: 0.40, ru: 0.16, rv: 0.26, label: '리서치' },
+    leader:     { cu: 0.42, cv: 0.18, ru: 0.20, rv: 0.14, label: '리더' },
+    company:    { cu: 0.66, cv: 0.32, ru: 0.18, rv: 0.24, label: '기업' },
+    tech:       { cu: 0.44, cv: 0.42, ru: 0.18, rv: 0.20, label: '기술' },
+    survival:   { cu: 0.34, cv: 0.62, ru: 0.20, rv: 0.16, label: '생존' },
+    newsletter: { cu: 0.85, cv: 0.68, ru: 0.10, rv: 0.16, label: '뉴스레터' },
   };
   /* 허브 노드는 brainstem 영역에 일부 배치 */
-  const BRAINSTEM_REGION = { cu: 0.685, cv: 0.90, ru: 0.04, rv: 0.07, label: '뇌간' };
+  const BRAINSTEM_REGION = { cu: 0.685, cv: 0.90, ru: 0.05, rv: 0.08, label: '뇌간' };
 
   /* point-in-polygon */
   function pointInPolygon(x, y, poly) {
@@ -841,100 +842,7 @@ function buildGraph(posts) {
     .force('brain', brainContainForce)
     .alphaDecay(0.05);
 
-  /* 5b. 측면도 뇌 골격(skeleton) — 노드 뒤 배경에 굵게 그려 형태를 명시.
-     실루엣 외곽 + 옅은 채움, 내부 gyri 굴곡, 소뇌 folia 줄무늬, 부위 레이블. */
-  const skelG = g.append('g').attr('class', 'brain-skeleton')
-    .attr('fill', 'none')
-    .attr('stroke-linecap', 'round')
-    .attr('stroke-linejoin', 'round');
-
-  function polyToPath(poly) {
-    return 'M ' + poly.map(([x, y]) => x.toFixed(1) + ' ' + y.toFixed(1)).join(' L ') + ' Z';
-  }
-
-  /* 외곽 — 굵은 외곽선과 옅은 채움 */
-  skelG.append('path')
-    .attr('d', polyToPath(BRAIN_POLY))
-    .attr('fill', 'rgba(180,200,240,0.05)')
-    .attr('stroke', 'rgba(220,235,255,0.85)')
-    .attr('stroke-width', 3.0)
-    .attr('filter', 'drop-shadow(0 0 10px rgba(160,200,255,0.35))');
-
-  /* 대뇌 내부 gyri/sulci — 손그린 풍의 옅은 곡선 */
-  const GYRI = [
-    /* [u1, v1, ctrlu, ctrlv, u2, v2] */
-    [0.10, 0.30, 0.18, 0.18, 0.28, 0.10],
-    [0.18, 0.42, 0.26, 0.30, 0.38, 0.16],
-    [0.26, 0.50, 0.36, 0.40, 0.50, 0.20],
-    [0.34, 0.58, 0.46, 0.46, 0.62, 0.20],
-    [0.42, 0.62, 0.56, 0.50, 0.74, 0.26],
-    [0.50, 0.62, 0.62, 0.50, 0.78, 0.36],
-    [0.20, 0.20, 0.40, 0.10, 0.62, 0.10],
-    [0.16, 0.50, 0.36, 0.56, 0.60, 0.58],
-  ];
-  GYRI.forEach(([u1, v1, ucu, ucv, u2, v2]) => {
-    skelG.append('path')
-      .attr('d', `M ${nx(u1)} ${ny(v1)} Q ${nx(ucu)} ${ny(ucv)} ${nx(u2)} ${ny(v2)}`)
-      .attr('stroke', 'rgba(180,200,240,0.30)')
-      .attr('stroke-width', 1.2);
-  });
-
-  /* 대뇌-소뇌 경계선 (옅게) */
-  skelG.append('path')
-    .attr('d', `M ${nx(0.79)} ${ny(0.50)} Q ${nx(0.83)} ${ny(0.55)} ${nx(0.86)} ${ny(0.50)}`)
-    .attr('stroke', 'rgba(220,235,255,0.55)')
-    .attr('stroke-width', 1.6);
-  /* 소뇌 위쪽 분리 곡선 */
-  skelG.append('path')
-    .attr('d', `M ${nx(0.78)} ${ny(0.55)} Q ${nx(0.85)} ${ny(0.60)} ${nx(0.92)} ${ny(0.66)}`)
-    .attr('stroke', 'rgba(220,235,255,0.55)')
-    .attr('stroke-width', 1.6);
-
-  /* 소뇌 folia 줄무늬 — 평행 곡선, 외곽 안쪽으로만 */
-  const FOLIA = [
-    [0.80, 0.60, 0.85, 0.62, 0.92, 0.66],
-    [0.79, 0.65, 0.85, 0.67, 0.92, 0.71],
-    [0.79, 0.70, 0.85, 0.72, 0.92, 0.76],
-    [0.79, 0.75, 0.85, 0.77, 0.91, 0.81],
-    [0.81, 0.80, 0.85, 0.83, 0.88, 0.84],
-  ];
-  FOLIA.forEach(([u1, v1, ucu, ucv, u2, v2]) => {
-    skelG.append('path')
-      .attr('d', `M ${nx(u1)} ${ny(v1)} Q ${nx(ucu)} ${ny(ucv)} ${nx(u2)} ${ny(v2)}`)
-      .attr('stroke', 'rgba(220,235,255,0.55)')
-      .attr('stroke-width', 1.1);
-  });
-
-  /* 뇌간 가운데 세로선 (해부학적 디테일) */
-  skelG.append('path')
-    .attr('d', `M ${nx(0.685)} ${ny(0.84)} L ${nx(0.685)} ${ny(0.95)}`)
-    .attr('stroke', 'rgba(220,235,255,0.40)')
-    .attr('stroke-width', 1.0);
-
-  /* 부위 레이블 (대뇌/소뇌/뇌간) — 외부에 leader line 포함 */
-  const LABELS = [
-    { txt: '대뇌',   tu: 0.16, tv: -0.04, lx1: 0.18, ly1: 0.02, lx2: 0.28, ly2: 0.10 },
-    { txt: '소뇌',   tu: 0.95, tv: 0.50,  lx1: 0.93, ly1: 0.55, lx2: 0.89, ly2: 0.62 },
-    { txt: '뇌간',   tu: 0.45, tv: 1.04,  lx1: 0.50, ly1: 1.02, lx2: 0.66, ly2: 0.94 },
-  ];
-  const labelG = g.append('g').attr('class', 'brain-labels');
-  LABELS.forEach(L => {
-    labelG.append('path')
-      .attr('d', `M ${nx(L.lx1)} ${ny(L.ly1)} L ${nx(L.lx2)} ${ny(L.ly2)}`)
-      .attr('stroke', 'rgba(220,235,255,0.55)')
-      .attr('stroke-width', 1.2)
-      .attr('fill', 'none');
-    labelG.append('text')
-      .attr('x', nx(L.tu))
-      .attr('y', ny(L.tv))
-      .attr('fill', 'rgba(230,240,255,0.85)')
-      .attr('font-size', 14)
-      .attr('font-weight', 600)
-      .attr('font-family', 'Pretendard, sans-serif')
-      .attr('text-anchor', L.tu < 0.3 ? 'start' : L.tu > 0.7 ? 'end' : 'middle')
-      .attr('dominant-baseline', 'middle')
-      .text(L.txt);
-  });
+  /* 5b. 외곽선·내부 굴곡·부위 레이블 모두 제거 — 노드 분포 자체로 뇌 형태가 드러남 */
 
   /* 6. Render links */
   const linkG = g.append('g').attr('class', 'links-group');
@@ -1093,9 +1001,9 @@ function buildGraph(posts) {
     nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
   });
 
-  /* Fit to view — 뇌 폴리곤 bbox + 레이블 여유 공간 기준 */
+  /* Fit to view — 뇌 폴리곤 bbox 기준 (레이블 제거로 좌우 여백 균형) */
   function fitToView() {
-    const padTop = 50, padBot = 60, padLeft = 60, padRight = 100;
+    const padTop = 40, padBot = 40, padLeft = 60, padRight = 60;
     const xs = BRAIN_POLY.map(p => p[0]);
     const ys = BRAIN_POLY.map(p => p[1]);
     const x0 = Math.min(...xs), x1 = Math.max(...xs);
