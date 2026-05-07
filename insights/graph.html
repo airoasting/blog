@@ -66,10 +66,23 @@
     }
     .ctrl-stats strong { color: rgba(255,255,255,0.75); font-weight: 600; }
 
+    /* ── Page Layout: 헤더+컨트롤 아래 남은 영역을 캔버스가 정확히 채움 ── */
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; }
+    #site-header { flex-shrink: 0; }
+    .graph-shell {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .graph-controls { flex-shrink: 0; }
+
     /* ── Canvas ── */
     .graph-canvas-wrap {
       width: 100%;
-      height: calc(100dvh - 148px);
+      flex: 1 1 auto;
+      min-height: 0;
       position: relative;
       overflow: hidden;
       touch-action: none;
@@ -399,7 +412,6 @@
       .graph-page-sub { font-size: 11px; }
       .graph-legend { display: none; }
       .zoom-reset-btn { top: 12px; right: 12px; padding: 7px 11px; font-size: 11px; }
-      .graph-canvas-wrap { height: calc(100dvh - 120px); }
       .graph-controls-inner { padding: 0 16px; }
     }
   </style>
@@ -411,7 +423,7 @@
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/header.js"></script>
 
-<div style="background:#0A0F1E;">
+<div class="graph-shell" style="background:#0A0F1E;">
   <div class="graph-controls" id="graphControls">
     <div class="graph-controls-inner">
       <span class="ctrl-label">카테고리</span>
@@ -973,30 +985,26 @@ function buildGraph(posts) {
     nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
   });
 
-  /* Fit to view — 뇌 폴리곤 bbox를 가시 영역(범례·instructions 패널 제외)의 정중앙에 배치 */
+  /* Fit to view — 노드들의 실제 bbox를 캔버스 정중앙에 배치 */
   function fitToView(animate = true) {
-    /* 캔버스 현재 크기 재측정 (리사이즈 대응) */
     const wrap = document.querySelector('.graph-canvas-wrap');
     const Wnow = wrap.clientWidth;
     const Hnow = wrap.clientHeight;
 
-    /* 데스크톱: 범례(우측 ~220px)·instructions(좌측 ~210px) 너비만큼 안쪽 여백 */
-    const isDesktop = !isMobile && Wnow > 768;
-    const padTop = 40, padBot = 40;
-    const padLeft = isDesktop ? 40 : 24;
-    const padRight = isDesktop ? 40 : 24;
-
-    const xs = BRAIN_POLY.map(p => p[0]);
-    const ys = BRAIN_POLY.map(p => p[1]);
+    /* 노드 실제 좌표 bbox 사용 (시뮬레이션 후 위치 반영) */
+    const xs = nodes.map(n => n.x);
+    const ys = nodes.map(n => n.y);
     const x0 = Math.min(...xs), x1 = Math.max(...xs);
     const y0 = Math.min(...ys), y1 = Math.max(...ys);
     const bW = x1 - x0, bH = y1 - y0;
-    const availW = Wnow - padLeft - padRight;
-    const availH = Hnow - padTop - padBot;
-    const scale = Math.min(0.95, availW / bW, availH / bH);
-    /* 뇌 bbox의 중심을 가시 영역의 중심에 맞추는 변환 */
-    const tx = (Wnow - scale * bW) / 2 - scale * x0;
-    const ty = (Hnow - scale * bH) / 2 - scale * y0;
+    const cxNodes = (x0 + x1) / 2;
+    const cyNodes = (y0 + y1) / 2;
+
+    const pad = 60;
+    const scale = Math.min(0.95, (Wnow - pad * 2) / bW, (Hnow - pad * 2) / bH);
+    /* 노드 bbox의 중심을 화면 정중앙(Wnow/2, Hnow/2)으로 이동 */
+    const tx = Wnow / 2 - scale * cxNodes;
+    const ty = Hnow / 2 - scale * cyNodes;
     const t = d3.zoomIdentity.translate(tx, ty).scale(scale);
     if (animate) {
       svg.transition().duration(600).call(zoom.transform, t);
