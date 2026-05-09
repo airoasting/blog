@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "AI가 문서를 읽고 도메인 전문가로 거듭납니다",
+      "date": "2026-04-30",
+      "category": "tech",
+      "source": "arXiv (Si 외 8인)",
+      "tags": [
+        "AI에이전트",
+        "컨텍스트학습",
+        "멀티에이전트",
+        "자동화",
+        "논문리뷰"
+      ],
+      "slug": "2026-04-30-ctx2skill-context-learning",
+      "file": "tech/2026-04-30-ctx2skill-context-learning.html",
+      "summary": "청화대·일리노이대 공동 연구팀이 AI 모델이 복잡한 문서를 읽고 스스로 전문 기술을 추출하는 프레임워크 Ctx2Skill을 발표했습니다. 5개 AI 에이전트가 인간 주석 없이 서로 경쟁하며 기술을 자동 정제합니다. GPT-5.1 기준 컨텍스트 학습 성능이 21.1%에서 25.8%로 향상됐습니다(프리프린트 논문).",
+      "roasting_quote": "직원이 업무 매뉴얼을 숙달하는 데 수개월이 걸립니다. AI는 같은 문서로 전문가 수준 기술을 스스로 추출합니다. 신입 교육 예산을 다시 검토해야 할 때입니다.",
+      "next_post": "tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html"
+    },
+    {
       "title": "GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다",
       "date": "2026-04-30",
       "category": "tech",
@@ -16,7 +34,7 @@
       "file": "tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html",
       "summary": "영국 정부 AISI가 GPT-5.5의 사이버 공격 역량을 공식 평가했습니다. 전문가가 12시간 걸리는 역공학 과제를 10분 22초, API 비용 $1.73에 완료했습니다. 범용 탈옥이 6시간의 레드팀 작업으로 발견되어 안전장치 한계도 확인됐습니다.",
       "roasting_quote": "AI가 전문 해킹 작업을 10분에 마칩니다. 이 모델은 지금 누구나 쓸 수 있습니다. 당신 조직의 보안 계획이 'AI 이전' 기준이라면, 재설계가 필요합니다.",
-      "next_post": "survival/2026-04-30-claude-personal-guidance-sycophancy.html"
+      "next_post": "tech/2026-04-30-ctx2skill-context-learning.html"
     },
     {
       "title": "AI에게 인생 상담? 4건 중 1건은 동조였습니다",
