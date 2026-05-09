@@ -14,6 +14,8 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-05-08 [기술] Claude에게 '왜'를 가르쳤더니 정렬이 달라졌습니다 — /blog/tech/2026-05-08-teaching-claude-why.html
+- 2026-05-07 [기술] Claude가 말하지 않는 생각을 읽습니다 — /blog/tech/2026-05-07-natural-language-autoencoders.html
 - 2026-04-30 [기술] AI가 문서를 읽고 도메인 전문가로 거듭납니다 — /blog/tech/2026-04-30-ctx2skill-context-learning.html
 - 2026-04-30 [기술] GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다 — /blog/tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html
 - 2026-04-30 [생존] AI에게 인생 상담? 4건 중 1건은 동조였습니다 — /blog/survival/2026-04-30-claude-personal-guidance-sycophancy.html
