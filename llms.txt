@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-05-10 [리더] 가리 탄: AI를 채팅창 대신 운영체제로 만드는 법 — /blog/leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html
 - 2026-04-14 [기업] 도시 모드: AI 시대 경영 리더를 위한 4원칙 — /blog/company/2026-04-14-dorsey-mode-ai-org-design.html
 - 2026-05-08 [기술] Claude에게 '왜'를 가르쳤더니 정렬이 달라졌습니다 — /blog/tech/2026-05-08-teaching-claude-why.html
 - 2026-05-07 [기술] Claude가 말하지 않는 생각을 읽습니다 — /blog/tech/2026-05-07-natural-language-autoencoders.html
