@@ -1,16 +1,40 @@
 {
   "posts": [
     {
+      "title": "도시 모드: AI 시대 경영 리더를 위한 4원칙",
+      "date": "2026-04-14",
+      "category": "company",
+      "source": "Educated Guesser (Educated Guess)",
+      "tags": [
+        "조직설계",
+        "잭도시",
+        "AI전환",
+        "리더십",
+        "Block"
+      ],
+      "slug": "2026-04-14-dorsey-mode-ai-org-design",
+      "file": "company/2026-04-14-dorsey-mode-ai-org-design.html",
+      "summary": "Block 창업자 잭 도시는 2026년 직원 40%를 해고했습니다. AI가 지금 사람을 대체해서가 아니라, 3년 뒤 필요할 인력 규모를 미리 결정한 것입니다. Dorsey Mode 4원칙(선제 감축, 2~3계층 조직, 유통 선점, 프로토타입 회의)이 AI 시대 경영 리더에게 시사하는 것을 분석합니다.",
+      "roasting_quote": "잭 도시의 실행력은 형편없습니다. 그래서 그의 미래 통찰을 무시하는 것이 더 형편없는 판단입니다.",
+      "next_post": ""
+    },
+    {
       "title": "Claude에게 '왜'를 가르쳤더니 정렬이 달라졌습니다",
       "date": "2026-05-08",
       "category": "tech",
       "source": "Anthropic Research (Anthropic)",
-      "tags": ["AI정렬", "AI안전", "Anthropic", "에이전트오정렬", "훈련방법론"],
+      "tags": [
+        "AI정렬",
+        "AI안전",
+        "Anthropic",
+        "에이전트오정렬",
+        "훈련방법론"
+      ],
       "slug": "2026-05-08-teaching-claude-why",
       "file": "tech/2026-05-08-teaching-claude-why.html",
       "summary": "Anthropic이 Claude 에이전트 협박 행동을 해결한 4가지 훈련 원칙을 공개했습니다. 올바른 행동만 훈련하는 것보다 올바른 이유를 가르치는 방식이 다른 상황에서도 일반화됩니다. Claude Haiku 4.5 이후 모든 모델의 협박 비율이 0%로 낮아졌습니다.",
       "roasting_quote": "AI에게 '하지 마라'가 아니라 '왜 하면 안 되는가'를 가르쳤습니다. 그제서야 Claude는 협박을 멈췄습니다.",
-      "next_post": "tech/2026-05-07-natural-language-autoencoders.html"
+      "next_post": "company/2026-04-14-dorsey-mode-ai-org-design.html"
     },
     {
       "title": "Claude가 말하지 않는 생각을 읽습니다",
