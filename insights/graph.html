@@ -703,9 +703,17 @@ function buildGraph(posts) {
 
   const g = svg.append('g');
 
-  /* Zoom */
+  /* Zoom — 휠/핀치만 사용. 마우스 드래그는 카메라 회전에 양보 */
   const zoom = d3.zoom()
     .scaleExtent([0.2, 4])
+    .filter(e => {
+      if (e.type === 'wheel') return true;
+      /* 멀티터치(핀치 줌)만 허용, 단일 터치는 카메라 회전 */
+      if (e.type === 'touchstart' || e.type === 'touchmove') {
+        return e.touches && e.touches.length >= 2;
+      }
+      return false;
+    })
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
@@ -968,19 +976,90 @@ function buildGraph(posts) {
     if (d.url) window.open(d.url, d.type === 'newsletter' ? '_blank' : '_self');
   });
 
-  /* Click on empty canvas → clear focus */
+  /* ── 캔버스 드래그로 3D 카메라 회전 ── */
+  let camDragging = false;
+  let camStartX = 0, camStartY = 0;
+  let camMoved = false;
+
+  const svgEl = document.getElementById('graphSvg');
+
+  function camStart(px, py, target) {
+    /* 노드를 누른 경우 카메라 회전 X (노드 드래그가 우선) */
+    if (target && target.closest && target.closest('.g-node')) return false;
+    camDragging = true;
+    camMoved = false;
+    camStartX = px;
+    camStartY = py;
+    orbitPaused = true;
+    svgEl.style.cursor = 'grabbing';
+    return true;
+  }
+  function camMove(px, py) {
+    if (!camDragging) return;
+    const dx = px - camStartX;
+    const dy = py - camStartY;
+    if (Math.hypot(dx, dy) > 3) camMoved = true;
+    camStartX = px;
+    camStartY = py;
+    userYaw   += dx * 0.005;
+    userPitch  = Math.max(-PITCH_LIMIT, Math.min(PITCH_LIMIT, userPitch + dy * 0.005));
+  }
+  function camEnd() {
+    if (!camDragging) return;
+    camDragging = false;
+    orbitPaused = false;
+    svgEl.style.cursor = 'grab';
+  }
+
+  /* Mouse */
+  svgEl.addEventListener('mousedown', e => {
+    if (e.button !== 0) return;
+    camStart(e.clientX, e.clientY, e.target);
+  });
+  window.addEventListener('mousemove', e => camMove(e.clientX, e.clientY));
+  window.addEventListener('mouseup', camEnd);
+  window.addEventListener('mouseleave', camEnd);
+
+  /* Touch (단일 터치만, 멀티터치는 d3.zoom의 핀치) */
+  svgEl.addEventListener('touchstart', e => {
+    if (e.touches.length !== 1) return;
+    const t = e.touches[0];
+    camStart(t.clientX, t.clientY, e.target);
+  }, { passive: true });
+  svgEl.addEventListener('touchmove', e => {
+    if (!camDragging || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    camMove(t.clientX, t.clientY);
+  }, { passive: true });
+  svgEl.addEventListener('touchend', camEnd);
+  svgEl.addEventListener('touchcancel', camEnd);
+
+  /* Click on empty canvas → clear focus (드래그 직후엔 무시) */
   svg.on('click', function() {
+    if (camMoved) { camMoved = false; return; }
     clearFocus();
     hideTooltip();
   });
 
-  /* 9. 갤럭시 회전 애니메이션 (RAF, 지속적 슬로우 모션) */
-  function projectNode(n, tiltX, tiltZ) {
-    const lx = Math.cos(n.theta) * n.orbitR;
-    const ly = n.zOff;
-    const lz = Math.sin(n.theta) * n.orbitR;
+  /* ── 카메라 상태 (사용자 드래그로 yaw/pitch 조정) ── */
+  let userYaw = 0;          // Y축 회전 — 가로 드래그
+  let userPitch = 0;        // X축 회전 — 세로 드래그
+  let orbitPaused = false;  // 마우스 누르고 있는 동안 궤도 회전 정지
+  const PITCH_LIMIT = 1.1;  // 약 ±63°
 
-    /* X축 회전 (디스크 기울이기) */
+  /* 9. 갤럭시 회전 애니메이션 (RAF, 지속적 슬로우 모션) */
+  function projectNode(n, tiltX, tiltZ, yaw) {
+    const lx0 = Math.cos(n.theta) * n.orbitR;
+    const ly0 = n.zOff;
+    const lz0 = Math.sin(n.theta) * n.orbitR;
+
+    /* Y축 회전 (yaw, 가로 드래그) — XZ 평면 회전 */
+    const cy_ = Math.cos(yaw), sy_ = Math.sin(yaw);
+    const lx = lx0 * cy_ + lz0 * sy_;
+    const ly = ly0;
+    const lz = -lx0 * sy_ + lz0 * cy_;
+
+    /* X축 회전 (pitch, 세로 드래그 + 기본 틸트) */
     const ca = Math.cos(tiltX), sa = Math.sin(tiltX);
     const x1 = lx;
     const y1 = ly * ca - lz * sa;
@@ -1001,7 +1080,7 @@ function buildGraph(posts) {
   }
 
   /* 초기 1회 투영 */
-  nodes.forEach(n => projectNode(n, TILT_X_BASE, TILT_Z_BASE));
+  nodes.forEach(n => projectNode(n, TILT_X_BASE, TILT_Z_BASE, 0));
 
   let lastT = performance.now();
   let depthSortAcc = 0;
@@ -1009,13 +1088,14 @@ function buildGraph(posts) {
     const dt = Math.min(60, now - lastT);
     lastT = now;
 
-    /* 카메라 미세 진동 — 살아있는 우주 느낌 */
-    const tiltX = TILT_X_BASE + Math.sin(now * 0.00005) * 0.06;
-    const tiltZ = TILT_Z_BASE + Math.sin(now * 0.00003) * 0.05;
+    /* 카메라 = 기본 틸트 + 사용자 드래그 + 미세 진동 */
+    const tiltX = TILT_X_BASE + userPitch + Math.sin(now * 0.00005) * 0.04;
+    const tiltZ = TILT_Z_BASE + Math.sin(now * 0.00003) * 0.04;
+    const yaw = userYaw + Math.sin(now * 0.00004) * 0.03;
 
     nodes.forEach(n => {
-      if (!n.dragLocked) n.theta += n.angVel * dt;
-      projectNode(n, tiltX, tiltZ);
+      if (!n.dragLocked && !orbitPaused) n.theta += n.angVel * dt;
+      projectNode(n, tiltX, tiltZ, yaw);
     });
 
     linkSel
