@@ -103,11 +103,15 @@
 
     /* D3 elements */
     .g-link {
-      stroke-opacity: 0.3;
-      transition: stroke-opacity 0.2s;
+      stroke-opacity: 0.08;
+      transition: stroke-opacity 0.25s, stroke-width 0.2s;
     }
-    .g-link.faded { stroke-opacity: 0.04; }
-    .g-link.highlighted { stroke-opacity: 0.9; }
+    .g-link.faded { stroke-opacity: 0.015; }
+    .g-link.highlighted {
+      stroke-opacity: 0.92;
+      stroke-width: 2 !important;
+      filter: drop-shadow(0 0 4px currentColor);
+    }
 
     .g-node { cursor: pointer; }
     .g-node circle {
@@ -1117,11 +1121,7 @@ function buildGraph(posts) {
 
     linkSel
       .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x).attr('y2', d => d.target.y)
-      .attr('stroke-opacity', d => {
-        const avg = (((d.source.depthScale || 1) + (d.target.depthScale || 1)) / 2);
-        return Math.max(0.06, Math.min(0.45, 0.18 * avg));
-      });
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
 
     nodeSel
       .attr('transform', d => `translate(${d.x},${d.y}) scale(${d.depthScale.toFixed(3)})`)
