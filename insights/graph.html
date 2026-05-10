@@ -423,7 +423,7 @@
 <script src="../assets/js/theme.js"></script>
 <script src="../assets/js/header.js"></script>
 
-<div class="graph-shell" style="background:#0A0F1E;">
+<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 55%, #1A1140 0%, #0B0820 35%, #050310 70%, #020108 100%);">
   <div class="graph-controls" id="graphControls">
     <div class="graph-controls-inner">
       <span class="ctrl-label">카테고리</span>
@@ -709,50 +709,16 @@ function buildGraph(posts) {
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  /* ── 측면도 뇌 실루엣 ── 좌측 frontal pole부터 시계방향으로 cerebrum + cerebellum + brainstem 연결 한 폴리곤. */
+  /* ── 3D 갤럭시 셋업 ── 중앙 태양을 중심으로 별들이 도는 은하계 */
   const cx = W / 2, cy = H / 2;
+  const GALAXY_RADIUS = Math.min(W, H) * 0.42;
+  const ARMS = 3;                 // 나선 팔 개수
+  const ARM_TIGHTNESS = 2.2;      // 로그 나선 감김 강도
+  const TILT_X_BASE = 0.58;       // 디스크 기울기 (rad, ≈33°)
+  const TILT_Z_BASE = 0.12;       // 롤
+  const PERSPECTIVE_D = 1800;     // 원근 거리
 
-  /* 캔버스 종횡비를 고려해 뇌가 화면 중앙에 잘 들어가도록 스케일/오프셋 계산.
-     기준 캔버스 (1280x680)에 맞게 그리고, 안전 여백 확보. */
-  const TARGET_AR = 1280 / 680;
-  const fitW = Math.min(W * 0.95, H * 0.95 * TARGET_AR);
-  const fitH = fitW / TARGET_AR;
-  const offX = (W - fitW) / 2;
-  const offY = (H - fitH) / 2;
-  function nx(u) { return offX + u * fitW; }
-  function ny(v) { return offY + v * fitH; }
-
-  /* 단일 뇌 외곽 폴리곤 — 정규화 (u,v) ∈ [0,1] */
-  const BRAIN_NORM = [
-    [0.05, 0.50], [0.04, 0.40], [0.04, 0.30], [0.07, 0.20], [0.12, 0.12],
-    [0.20, 0.07], [0.30, 0.04], [0.42, 0.03], [0.54, 0.04], [0.65, 0.07],
-    [0.74, 0.13], [0.81, 0.21], [0.85, 0.31], [0.86, 0.42], [0.87, 0.50],
-    /* 후두-소뇌 경계 */
-    [0.86, 0.55], [0.89, 0.60], [0.92, 0.66], [0.93, 0.74], [0.91, 0.81],
-    [0.86, 0.86], [0.79, 0.86], [0.74, 0.82],
-    /* 뇌간 (brainstem) */
-    [0.73, 0.86], [0.74, 0.94], [0.69, 0.98], [0.65, 0.97], [0.64, 0.90],
-    [0.63, 0.78],
-    /* 측두엽 하부 곡선 */
-    [0.55, 0.74], [0.45, 0.76], [0.35, 0.74], [0.25, 0.71], [0.16, 0.66],
-    [0.10, 0.60], [0.07, 0.55],
-  ];
-  const BRAIN_POLY = BRAIN_NORM.map(([u, v]) => [nx(u), ny(v)]);
-
-  /* point-in-polygon */
-  function pointInPolygon(x, y, poly) {
-    let inside = false;
-    for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
-      const xi = poly[i][0], yi = poly[i][1];
-      const xj = poly[j][0], yj = poly[j][1];
-      const intersect = ((yi > y) !== (yj > y)) &&
-                        (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-      if (intersect) inside = !inside;
-    }
-    return inside;
-  }
-
-  /* 안정적 hash → 0~1 의사난수 */
+  /* 안정적 hash → 0~1 의사난수 (4개) */
   function hashRand(id) {
     let h = 2166136261 | 0;
     const s = id || '';
@@ -764,69 +730,97 @@ function buildGraph(posts) {
     const b = ((h >>> 0) % 10000) / 10000;
     h = Math.imul(h ^ (h >>> 17), 2654435761);
     const c = ((h >>> 0) % 10000) / 10000;
-    return [a, b, c];
+    h = Math.imul(h ^ (h >>> 7), 374761393);
+    const d2 = ((h >>> 0) % 10000) / 10000;
+    return [a, b, c, d2];
   }
 
-  /* 뇌 폴리곤 bbox */
-  const POLY_XS = BRAIN_POLY.map(p => p[0]);
-  const POLY_YS = BRAIN_POLY.map(p => p[1]);
-  const POLY_X0 = Math.min(...POLY_XS), POLY_X1 = Math.max(...POLY_XS);
-  const POLY_Y0 = Math.min(...POLY_YS), POLY_Y1 = Math.max(...POLY_YS);
-  const POLY_CX = (POLY_X0 + POLY_X1) / 2;
-  const POLY_CY = (POLY_Y0 + POLY_Y1) / 2;
-
-  /* 뇌 폴리곤 안쪽에 골고루 — rejection sampling */
-  function placeInBrain(seed) {
-    const [r1, r2, r3] = seed;
-    for (let k = 0; k < 200; k++) {
-      const a = ((r1 * 9301 + r2 * 49297 + k * 233280) % 100000) / 100000;
-      const b = ((r2 * 9301 + r3 * 49297 + k * 233281) % 100000) / 100000;
-      const px = POLY_X0 + a * (POLY_X1 - POLY_X0);
-      const py = POLY_Y0 + b * (POLY_Y1 - POLY_Y0);
-      if (pointInPolygon(px, py, BRAIN_POLY)) return [px, py];
-    }
-    return [POLY_CX, POLY_CY];
-  }
-
-  /* 카테고리 무관, 모든 노드를 뇌 전체에 결정적으로 분산 배치 */
+  /* 노드별 궤도 파라미터 (한 번만 계산, ID 기반 결정적) */
   nodes.forEach(n => {
-    const seed = hashRand(n.id);
-    const [px, py] = placeInBrain(seed);
-    n.tx = px; n.ty = py;
-    n.x = px; n.y = py;
+    const [s1, s2, s3, s4] = hashRand(n.id);
+
+    /* 반경 정규화 (0.08 ~ 1.0): 허브일수록 안쪽으로 집중 */
+    const hubBias = (n.degree && hubThreshold)
+      ? Math.min(1, n.degree / Math.max(1, hubThreshold))
+      : 0;
+    const radNorm = Math.max(
+      0.1,
+      Math.sqrt(s1) * (1 - hubBias * 0.45) + (1 - hubBias) * 0.04
+    );
+
+    /* 나선 팔 + 로그 나선 + 약간의 산포 */
+    const armIdx = Math.floor(s2 * ARMS);
+    const armBase = (armIdx / ARMS) * Math.PI * 2;
+    const spiralOffset = Math.log(radNorm * 4 + 1) * ARM_TIGHTNESS;
+    const jitter = (s3 - 0.5) * 0.7 * (1 - radNorm * 0.4);
+    const theta = armBase + spiralOffset + jitter;
+
+    n.orbitR = radNorm * GALAXY_RADIUS;
+    n.theta = theta;
+    /* 케플러 근사: 안쪽 빠름, 바깥 느림 */
+    n.angVel = 0.00012 / Math.max(0.32, Math.sqrt(radNorm));
+    /* 디스크 두께: 약간의 z 변동 (안쪽일수록 두껍게) */
+    n.zOff = ((s4 - 0.5) * 0.8 + Math.sin(theta * 2) * 0.2)
+      * GALAXY_RADIUS * (0.04 + (1 - radNorm) * 0.05);
+
+    /* 초기 평면 위치 (tick 첫 프레임 전 fallback) */
+    n.x = cx + Math.cos(theta) * n.orbitR;
+    n.y = cy + Math.sin(theta) * n.orbitR;
+    n.depthScale = 1;
+    n.zDepth = 0;
   });
 
-  /* 컨테인 force: 노드가 뇌 폴리곤 밖으로 나가면 원래 자리(tx,ty)로 끌어당김 */
-  function brainContainForce(alpha) {
-    nodes.forEach(n => {
-      if (!isFinite(n.x) || !isFinite(n.y)) {
-        n.x = n.tx; n.y = n.ty; n.vx = 0; n.vy = 0;
-      }
-      if (!pointInPolygon(n.x, n.y, BRAIN_POLY)) {
-        const dx = n.tx - n.x, dy = n.ty - n.y;
-        const d = Math.hypot(dx, dy) || 1;
-        n.vx = n.vx * 0.3 + (dx / d) * 14;
-        n.vy = n.vy * 0.3 + (dy / d) * 14;
-      }
+  /* 배경 별들 (정적 캔버스 좌표) */
+  const starsG = svg.insert('g', ':first-child').attr('class', 'stars-bg');
+  const STAR_COUNT = isMobile ? 140 : 240;
+  const starData = [];
+  for (let i = 0; i < STAR_COUNT; i++) {
+    starData.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.2 + 0.3,
+      o: Math.random() * 0.45 + 0.15,
     });
   }
+  const starSel = starsG.selectAll('circle').data(starData).join('circle')
+    .attr('cx', d => d.x).attr('cy', d => d.y).attr('r', d => d.r)
+    .attr('fill', '#FFFFFF').attr('opacity', d => d.o);
+  /* 깜박임 (subtle twinkle) */
+  starSel.each(function(d) {
+    const c = d3.select(this);
+    const dur = 2200 + Math.random() * 4200;
+    const delay = Math.random() * 3000;
+    function twinkle() {
+      c.transition().delay(delay).duration(dur).attr('opacity', d.o * 0.25)
+        .transition().duration(dur).attr('opacity', d.o)
+        .on('end', twinkle);
+    }
+    twinkle();
+  });
 
-  /* Force simulation — 초기 뇌 분포 좌표(tx,ty)에 강하게 고정해 뇌 모양 유지.
-     link는 약하게 (시각적 연결선만), 카테고리 영역 분리는 없음. */
-  const sim = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id)
-      .distance(d => Math.max(30, 60 - (d.weight || 1) * 3))
-      .strength(0.015))
-    .force('charge', d3.forceManyBody()
-      .strength(d => -Math.max(8, d.r * 1.2))
-      .distanceMax(80))
-    .force('targetX', d3.forceX(d => d.tx).strength(0.85))
-    .force('targetY', d3.forceY(d => d.ty).strength(0.85))
-    .force('collide', d3.forceCollide().radius(d => d.r + 2).strength(0.92))
-    .force('brain', brainContainForce)
-    .alphaDecay(0.05);
+  /* ── 중앙 태양 (글로우 + 코어 + 펄스) ── */
+  const sunG = g.append('g').attr('class', 'sun-group').attr('pointer-events', 'none');
+  const sunHalo = sunG.append('circle')
+    .attr('cx', cx).attr('cy', cy).attr('r', 110)
+    .attr('fill', 'rgba(255,200,120,0.04)');
+  sunG.append('circle')
+    .attr('cx', cx).attr('cy', cy).attr('r', 64)
+    .attr('fill', 'rgba(255,200,120,0.09)');
+  sunG.append('circle')
+    .attr('cx', cx).attr('cy', cy).attr('r', 30)
+    .attr('fill', 'rgba(255,220,150,0.30)');
+  sunG.append('circle')
+    .attr('cx', cx).attr('cy', cy).attr('r', 12)
+    .attr('fill', '#FFEFC8')
+    .style('filter', 'drop-shadow(0 0 18px rgba(255,200,120,0.95))');
+  (function pulseSun() {
+    sunHalo.transition().duration(3600).attr('r', 130).attr('opacity', 0.55)
+      .transition().duration(3600).attr('r', 110).attr('opacity', 1)
+      .on('end', pulseSun);
+  })();
 
-  /* 5b. 외곽선·내부 굴곡·부위 레이블 모두 제거 — 노드 분포 자체로 뇌 형태가 드러남 */
+  /* sim 호환 더미 (이후 코드의 sim 참조를 무력화) */
+  const sim = { alphaTarget: () => sim, restart: () => sim, on: () => sim };
 
   /* 6. Render links */
   const linkG = g.append('g').attr('class', 'links-group');
@@ -847,9 +841,16 @@ function buildGraph(posts) {
     .join('g')
     .attr('class', 'g-node')
     .call(d3.drag()
-      .on('start', (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-      .on('drag',  (e, d) => { d.fx = e.x; d.fy = e.y; })
-      .on('end',   (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+      .on('start', (e, d) => { d.dragLocked = true; })
+      .on('drag',  (e, d) => { d.x = e.x; d.y = e.y; })
+      .on('end',   (e, d) => {
+        /* 드래그 종료 위치 → 새 궤도 파라미터 (단순 역사상) */
+        const dx = e.x - cx, dy = e.y - cy;
+        d.orbitR = Math.max(40, Math.min(GALAXY_RADIUS * 1.3, Math.hypot(dx, dy)));
+        d.theta = Math.atan2(dy, dx);
+        d.zOff = 0;
+        d.dragLocked = false;
+      })
     );
 
   /* 고립/허브 클래스 */
@@ -975,36 +976,90 @@ function buildGraph(posts) {
     hideTooltip();
   });
 
-  /* 9. Tick */
-  sim.on('tick', () => {
-    linkSel
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y);
-    nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
-  });
+  /* 9. 갤럭시 회전 애니메이션 (RAF, 지속적 슬로우 모션) */
+  function projectNode(n, tiltX, tiltZ) {
+    const lx = Math.cos(n.theta) * n.orbitR;
+    const ly = n.zOff;
+    const lz = Math.sin(n.theta) * n.orbitR;
 
-  /* Fit to view — 노드들의 실제 bbox를 캔버스 정중앙에 배치 */
+    /* X축 회전 (디스크 기울이기) */
+    const ca = Math.cos(tiltX), sa = Math.sin(tiltX);
+    const x1 = lx;
+    const y1 = ly * ca - lz * sa;
+    const z1 = ly * sa + lz * ca;
+
+    /* Z축 롤 */
+    const cb = Math.cos(tiltZ), sb = Math.sin(tiltZ);
+    const x2 = x1 * cb - y1 * sb;
+    const y2 = x1 * sb + y1 * cb;
+    const z2 = z1;
+
+    /* 원근 투영 */
+    const scale = PERSPECTIVE_D / (PERSPECTIVE_D - z2);
+    n.x = cx + x2 * scale;
+    n.y = cy + y2 * scale;
+    n.depthScale = scale;
+    n.zDepth = z2;
+  }
+
+  /* 초기 1회 투영 */
+  nodes.forEach(n => projectNode(n, TILT_X_BASE, TILT_Z_BASE));
+
+  let lastT = performance.now();
+  let depthSortAcc = 0;
+  function tick(now) {
+    const dt = Math.min(60, now - lastT);
+    lastT = now;
+
+    /* 카메라 미세 진동 — 살아있는 우주 느낌 */
+    const tiltX = TILT_X_BASE + Math.sin(now * 0.00005) * 0.06;
+    const tiltZ = TILT_Z_BASE + Math.sin(now * 0.00003) * 0.05;
+
+    nodes.forEach(n => {
+      if (!n.dragLocked) n.theta += n.angVel * dt;
+      projectNode(n, tiltX, tiltZ);
+    });
+
+    linkSel
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y)
+      .attr('stroke-opacity', d => {
+        const avg = (((d.source.depthScale || 1) + (d.target.depthScale || 1)) / 2);
+        return Math.max(0.06, Math.min(0.45, 0.18 * avg));
+      });
+
+    nodeSel
+      .attr('transform', d => `translate(${d.x},${d.y}) scale(${d.depthScale.toFixed(3)})`)
+      .style('opacity', d => Math.max(0.45, Math.min(1, 0.55 + (d.depthScale - 1) * 0.9)));
+
+    /* 깊이 정렬: 0.5초마다 (성능 보호) — 멀리 있는 노드가 뒤로 */
+    depthSortAcc += dt;
+    if (depthSortAcc > 500) {
+      depthSortAcc = 0;
+      nodeSel.sort((a, b) => a.zDepth - b.zDepth);
+    }
+
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  /* Fit to view — 갤럭시 중심을 화면 정중앙에 배치 */
   function fitToView(animate = true) {
     const wrap = document.querySelector('.graph-canvas-wrap');
     const Wnow = wrap.clientWidth;
     const Hnow = wrap.clientHeight;
 
-    /* 노드 실제 좌표 bbox 사용 (시뮬레이션 후 위치 반영) */
-    const xs = nodes.map(n => n.x);
-    const ys = nodes.map(n => n.y);
-    const x0 = Math.min(...xs), x1 = Math.max(...xs);
-    const y0 = Math.min(...ys), y1 = Math.max(...ys);
-    const bW = x1 - x0, bH = y1 - y0;
-    const cxNodes = (x0 + x1) / 2;
-    const cyNodes = (y0 + y1) / 2;
-
-    const pad = 60;
-    const scale = Math.min(0.95, (Wnow - pad * 2) / bW, (Hnow - pad * 2) / bH);
-    /* 노드 bbox의 중심을 화면 정중앙(Wnow/2, Hnow/2)으로 이동 */
-    const tx = Wnow / 2 - scale * cxNodes;
-    const ty = Hnow / 2 - scale * cyNodes;
+    /* 갤럭시는 (cx, cy)에서 ±GALAXY_RADIUS * 1.2 영역 (틸트 후 y는 더 좁음) */
+    const targetW = GALAXY_RADIUS * 2.4;
+    const targetH = GALAXY_RADIUS * 2.4 * 0.85;
+    const pad = 40;
+    const scale = Math.min(
+      1.0,
+      (Wnow - pad * 2) / targetW,
+      (Hnow - pad * 2) / targetH
+    );
+    const tx = Wnow / 2 - scale * cx;
+    const ty = Hnow / 2 - scale * cy;
     const t = d3.zoomIdentity.translate(tx, ty).scale(scale);
     if (animate) {
       svg.transition().duration(600).call(zoom.transform, t);
@@ -1015,10 +1070,9 @@ function buildGraph(posts) {
     if (loadingEl) loadingEl.style.display = 'none';
   }
 
-  sim.on('end', () => fitToView(true));
-  /* 초기에 즉시 가운데 배치 (시뮬레이션 시작 전) */
+  /* 초기 fit + 짧은 지연 후 한 번 더 (레이아웃 안정 대비) */
   fitToView(false);
-  setTimeout(() => fitToView(true), 1200);
+  setTimeout(() => fitToView(false), 60);
 
   /* 창 리사이즈 시 다시 가운데 정렬 */
   let resizeTimer;
