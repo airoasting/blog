@@ -108,9 +108,9 @@
     }
     .g-link.faded { stroke-opacity: 0.015; }
     .g-link.highlighted {
-      stroke-opacity: 0.92;
-      stroke-width: 2 !important;
-      filter: drop-shadow(0 0 4px currentColor);
+      stroke-opacity: 0.95;
+      stroke-width: 2.4 !important;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.55));
     }
 
     .g-node { cursor: pointer; }
@@ -561,7 +561,7 @@ function renderTooltipContent(node, degree) {
     <div class="tt-title">${node.title}</div>
     <div class="tt-meta">${node.date || ''} ${node.source ? '· ' + node.source : ''}</div>
     ${tags.length ? `<div class="tt-tags">${tags.map(t => `<span class="tt-tag">${t}</span>`).join('')}</div>` : ''}
-    <div class="tt-connections">연결 아티클 <span>${degree}</span>개</div>
+    <div class="tt-connections">연결 아티클 <span>${degree}</span>개 · 가장 관련 깊은 ${Math.min(degree, 6)}개 강조</div>
     ${isMobile ? openBtn : ''}
   `;
 }
@@ -920,33 +920,49 @@ function buildGraph(posts) {
   /* 8. Interaction state */
   let selectedNode = null;   // 클릭으로 선택된 노드
 
-  function getNeighborSet(d) {
-    const s = new Set([d.id]);
+  /* 호버한 노드에서 가장 관련 깊은 상위 N개 엣지만 강조 */
+  const TOP_RELATED = 6;
+
+  function getTopRelated(d) {
+    const my = [];
     links.forEach(l => {
       const sid = typeof l.source === 'string' ? l.source : l.source.id;
       const tid = typeof l.target === 'string' ? l.target : l.target.id;
-      if (sid === d.id) s.add(tid);
-      if (tid === d.id) s.add(sid);
+      if (sid === d.id || tid === d.id) my.push(l);
     });
-    return s;
+    /* 가중치(공유 태그 수) 내림차순, 동률은 weight·degree 가중 */
+    my.sort((a, b) => {
+      const wa = (a.weight || 0), wb = (b.weight || 0);
+      if (wb !== wa) return wb - wa;
+      const aOther = ((typeof a.source === 'string' ? a.source : a.source.id) === d.id)
+        ? (typeof a.target === 'string' ? a.target : a.target.id)
+        : (typeof a.source === 'string' ? a.source : a.source.id);
+      const bOther = ((typeof b.source === 'string' ? b.source : b.source.id) === d.id)
+        ? (typeof b.target === 'string' ? b.target : b.target.id)
+        : (typeof b.source === 'string' ? b.source : b.source.id);
+      const aN = nodeById.get(aOther), bN = nodeById.get(bOther);
+      return ((bN && bN.degree) || 0) - ((aN && aN.degree) || 0);
+    });
+    const top = my.slice(0, TOP_RELATED);
+    const topSet = new Set(top);
+    const neighborSet = new Set([d.id]);
+    top.forEach(l => {
+      const sid = typeof l.source === 'string' ? l.source : l.source.id;
+      const tid = typeof l.target === 'string' ? l.target : l.target.id;
+      neighborSet.add(sid);
+      neighborSet.add(tid);
+    });
+    return { topSet, neighborSet };
   }
 
   function applyFocus(d) {
-    const neighborSet = getNeighborSet(d);
+    const { topSet, neighborSet } = getTopRelated(d);
     nodeSel.classed('faded', n => !neighborSet.has(n.id));
     nodeSel.classed('highlighted', n => n.id === d.id);
     linkSel
-      .classed('faded', l => {
-        const sid = typeof l.source === 'string' ? l.source : l.source.id;
-        const tid = typeof l.target === 'string' ? l.target : l.target.id;
-        return sid !== d.id && tid !== d.id;
-      })
-      .classed('highlighted', l => {
-        const sid = typeof l.source === 'string' ? l.source : l.source.id;
-        const tid = typeof l.target === 'string' ? l.target : l.target.id;
-        return sid === d.id || tid === d.id;
-      });
-    /* 연결 노드에만 레이블 표시 */
+      .classed('faded', l => !topSet.has(l))
+      .classed('highlighted', l => topSet.has(l));
+    /* 관련 노드에만 레이블 표시 */
     nodeSel.selectAll('text').style('display', function() {
       const nd = d3.select(this.parentNode).datum();
       return neighborSet.has(nd.id) ? null : 'none';
