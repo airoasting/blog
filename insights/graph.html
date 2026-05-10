@@ -681,10 +681,10 @@ function buildGraph(posts) {
   });
   nodes.forEach(n => { n.degree = degreeMap[n.id] || 0; });
 
-  /* Node radius: sqrt scale (모바일은 더 크게) */
+  /* Node radius: sqrt scale — 갤럭시에서는 더 작고 정돈된 별 느낌 */
   const maxDeg = d3.max(nodes, n => n.degree) || 1;
-  const rMin = isMobile ? 11 : 8;
-  const rMax = isMobile ? 32 : 28;
+  const rMin = isMobile ? 7 : 5;
+  const rMax = isMobile ? 20 : 16;
   const rScale = d3.scaleSqrt().domain([0, maxDeg]).range([rMin, rMax]);
   nodes.forEach(n => { n.r = rScale(n.degree); });
 
@@ -709,14 +709,12 @@ function buildGraph(posts) {
     .on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  /* ── 3D 갤럭시 셋업 ── 중앙 태양을 중심으로 별들이 도는 은하계 */
+  /* ── 3D 갤럭시 셋업 ── 중앙 태양을 중심으로 별들이 360° 퍼져 도는 은하계 */
   const cx = W / 2, cy = H / 2;
-  const GALAXY_RADIUS = Math.min(W, H) * 0.42;
-  const ARMS = 3;                 // 나선 팔 개수
-  const ARM_TIGHTNESS = 2.2;      // 로그 나선 감김 강도
-  const TILT_X_BASE = 0.58;       // 디스크 기울기 (rad, ≈33°)
-  const TILT_Z_BASE = 0.12;       // 롤
-  const PERSPECTIVE_D = 1800;     // 원근 거리
+  const GALAXY_RADIUS = Math.min(W, H) * 0.46;
+  const TILT_X_BASE = 0.55;       // 디스크 기울기 (rad, ≈31°)
+  const TILT_Z_BASE = 0.10;       // 롤
+  const PERSPECTIVE_D = 2000;     // 원근 거리
 
   /* 안정적 hash → 0~1 의사난수 (4개) */
   function hashRand(id) {
@@ -735,33 +733,28 @@ function buildGraph(posts) {
     return [a, b, c, d2];
   }
 
-  /* 노드별 궤도 파라미터 (한 번만 계산, ID 기반 결정적) */
+  /* 노드별 궤도 파라미터 (한 번만 계산, ID 기반 결정적)
+     나선 팔 없이 360° 균등 분포 + 면적 균등(sqrt) 반경 분포로 자연스러운 디스크 형성 */
   nodes.forEach(n => {
     const [s1, s2, s3, s4] = hashRand(n.id);
 
-    /* 반경 정규화 (0.08 ~ 1.0): 허브일수록 안쪽으로 집중 */
+    /* 반경: sqrt 분포로 면적 균등. 허브는 살짝 안쪽, 일반 노드는 전체 영역 */
     const hubBias = (n.degree && hubThreshold)
       ? Math.min(1, n.degree / Math.max(1, hubThreshold))
       : 0;
-    const radNorm = Math.max(
-      0.1,
-      Math.sqrt(s1) * (1 - hubBias * 0.45) + (1 - hubBias) * 0.04
-    );
+    /* 안쪽 코어(~0.18) 비워서 태양과 겹치지 않게, 바깥은 넓게 */
+    const radNormRaw = Math.sqrt(s1);
+    const radNorm = 0.18 + radNormRaw * 0.82 * (1 - hubBias * 0.25);
 
-    /* 나선 팔 + 로그 나선 + 약간의 산포 */
-    const armIdx = Math.floor(s2 * ARMS);
-    const armBase = (armIdx / ARMS) * Math.PI * 2;
-    const spiralOffset = Math.log(radNorm * 4 + 1) * ARM_TIGHTNESS;
-    const jitter = (s3 - 0.5) * 0.7 * (1 - radNorm * 0.4);
-    const theta = armBase + spiralOffset + jitter;
+    /* 각도: 완전 균등 분포 (s2 자체가 0~1) + 미세 jitter (s3) */
+    const theta = s2 * Math.PI * 2 + (s3 - 0.5) * 0.05;
 
     n.orbitR = radNorm * GALAXY_RADIUS;
     n.theta = theta;
     /* 케플러 근사: 안쪽 빠름, 바깥 느림 */
-    n.angVel = 0.00012 / Math.max(0.32, Math.sqrt(radNorm));
-    /* 디스크 두께: 약간의 z 변동 (안쪽일수록 두껍게) */
-    n.zOff = ((s4 - 0.5) * 0.8 + Math.sin(theta * 2) * 0.2)
-      * GALAXY_RADIUS * (0.04 + (1 - radNorm) * 0.05);
+    n.angVel = 0.00010 / Math.max(0.4, Math.sqrt(radNorm));
+    /* 디스크 두께: 안쪽일수록 두껍게, 바깥은 얇은 디스크 */
+    n.zOff = (s4 - 0.5) * GALAXY_RADIUS * (0.05 + (1 - radNorm) * 0.07);
 
     /* 초기 평면 위치 (tick 첫 프레임 전 fallback) */
     n.x = cx + Math.cos(theta) * n.orbitR;
@@ -862,12 +855,17 @@ function buildGraph(posts) {
     .attr('class', 'hit-area')
     .attr('r', d => d.r + (isMobile ? 12 : 6));
 
-  /* Circle */
+  /* Circle — 별처럼 채워진 형태 + 외곽 빛 */
   nodeSel.append('circle')
     .attr('r', d => d.r)
-    .attr('fill', d => CAT[d.category].fill)
+    .attr('fill', d => CAT[d.category].stroke)
+    .attr('fill-opacity', 0.85)
     .attr('stroke', d => CAT[d.category].stroke)
-    .attr('stroke-width', d => d.degree >= hubThreshold ? 2.5 : 1.5);
+    .attr('stroke-width', d => d.degree >= hubThreshold ? 1.5 : 0.8)
+    .attr('stroke-opacity', 0.9)
+    .style('filter', d => d.degree >= hubThreshold
+      ? `drop-shadow(0 0 6px ${CAT[d.category].stroke})`
+      : `drop-shadow(0 0 3px ${CAT[d.category].stroke})`);
 
   /* Label: 기본 숨김, 클릭 시 표시 */
   nodeSel.each(function(d) {
