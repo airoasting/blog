@@ -741,32 +741,46 @@ function buildGraph(posts) {
     return [a, b, c, d2];
   }
 
-  /* 노드별 궤도 파라미터 (한 번만 계산, ID 기반 결정적)
-     나선 팔 없이 360° 균등 분포 + 면적 균등(sqrt) 반경 분포로 자연스러운 디스크 형성 */
+  /* 노드별 궤도 파라미터 — 3D 타원체(oblate spheroid) 부피에 분산 배치
+     수평 반경 a = GALAXY_RADIUS, 수직 반경 b = a * VERT_RATIO (= 약간 납작한 은하 bulge) */
+  const VERT_RATIO = 0.55;
   nodes.forEach(n => {
     const [s1, s2, s3, s4] = hashRand(n.id);
 
-    /* 반경: sqrt 분포로 면적 균등. 허브는 살짝 안쪽, 일반 노드는 전체 영역 */
+    /* 허브는 안쪽으로 살짝 집중 */
     const hubBias = (n.degree && hubThreshold)
       ? Math.min(1, n.degree / Math.max(1, hubThreshold))
       : 0;
-    /* 안쪽 코어(~0.18) 비워서 태양과 겹치지 않게, 바깥은 넓게 */
-    const radNormRaw = Math.sqrt(s1);
-    const radNorm = 0.18 + radNormRaw * 0.82 * (1 - hubBias * 0.25);
 
-    /* 각도: 완전 균등 분포 (s2 자체가 0~1) + 미세 jitter (s3) */
-    const theta = s2 * Math.PI * 2 + (s3 - 0.5) * 0.05;
+    /* 3D 반경 (정규화). 코어(0.2) 비우고, 바깥까지 채움. cbrt = 부피 균등 */
+    const r3D = 0.2 + Math.cbrt(s1) * 0.8 * (1 - hubBias * 0.2);
 
-    n.orbitR = radNorm * GALAXY_RADIUS;
-    n.theta = theta;
-    /* 케플러 근사: 안쪽 빠름, 바깥 느림 */
-    n.angVel = 0.00010 / Math.max(0.4, Math.sqrt(radNorm));
-    /* 디스크 두께: 안쪽일수록 두껍게, 바깥은 얇은 디스크 */
-    n.zOff = (s4 - 0.5) * GALAXY_RADIUS * (0.05 + (1 - radNorm) * 0.07);
+    /* 단위 구 위 균등 방향: u ∈ [-1,1] (cos polar), 방위각 az */
+    const u = 2 * s2 - 1;
+    const sinPolar = Math.sqrt(Math.max(0, 1 - u * u));
+    const az = s3 * Math.PI * 2;
+
+    /* 타원체 좌표계 안의 3D 위치 */
+    const px = sinPolar * Math.cos(az) * GALAXY_RADIUS * r3D;
+    const py = u * GALAXY_RADIUS * VERT_RATIO * r3D;
+    const pz = sinPolar * Math.sin(az) * GALAXY_RADIUS * r3D;
+
+    /* Y축 회전(궤도)을 위한 표현으로 변환:
+       (orbitR, theta) = XZ 평면 극좌표, height = Y */
+    n.orbitR = Math.hypot(px, pz);
+    n.theta = Math.atan2(pz, px);
+    n.height = py;
+
+    /* 미세 theta 흔들림 (시각적 풍부함) */
+    n.theta += (s4 - 0.5) * 0.04;
+
+    /* 케플러 근사: 안쪽 빠름, 바깥 느림 (수평 거리 기준) */
+    const rNorm = Math.max(0.2, n.orbitR / GALAXY_RADIUS);
+    n.angVel = 0.00010 / Math.max(0.4, Math.sqrt(rNorm));
 
     /* 초기 평면 위치 (tick 첫 프레임 전 fallback) */
-    n.x = cx + Math.cos(theta) * n.orbitR;
-    n.y = cy + Math.sin(theta) * n.orbitR;
+    n.x = cx + Math.cos(n.theta) * n.orbitR;
+    n.y = cy + n.height;
     n.depthScale = 1;
     n.zDepth = 0;
   });
@@ -849,7 +863,7 @@ function buildGraph(posts) {
         const dx = e.x - cx, dy = e.y - cy;
         d.orbitR = Math.max(40, Math.min(GALAXY_RADIUS * 1.3, Math.hypot(dx, dy)));
         d.theta = Math.atan2(dy, dx);
-        d.zOff = 0;
+        d.height = 0;
         d.dragLocked = false;
       })
     );
@@ -943,15 +957,18 @@ function buildGraph(posts) {
     nodeSel.selectAll('text').style('display', 'none');
   }
 
-  /* Hover: tooltip only (no focus when a node is already selected). 데스크톱 전용 */
+  /* Hover: 노드 위에 마우스 올리면 회전 일시정지 + 포커스/툴팁 */
   if (!isMobile) {
     nodeSel
       .on('mouseenter', function(event, d) {
+        orbitPaused = true;
         if (!selectedNode) applyFocus(d);
         showTooltip(event, d, d.degree);
       })
       .on('mousemove', moveTooltip)
       .on('mouseleave', function() {
+        /* 카메라 드래그 중이면 그대로 정지 유지 */
+        if (!camDragging) orbitPaused = false;
         if (!selectedNode) clearFocus();
         hideTooltip();
       });
@@ -1050,7 +1067,7 @@ function buildGraph(posts) {
   /* 9. 갤럭시 회전 애니메이션 (RAF, 지속적 슬로우 모션) */
   function projectNode(n, tiltX, tiltZ, yaw) {
     const lx0 = Math.cos(n.theta) * n.orbitR;
-    const ly0 = n.zOff;
+    const ly0 = n.height;
     const lz0 = Math.sin(n.theta) * n.orbitR;
 
     /* Y축 회전 (yaw, 가로 드래그) — XZ 평면 회전 */
