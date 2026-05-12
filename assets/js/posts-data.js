@@ -1,10 +1,10 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "가리 탄: AI를 채팅창 대신 운영체제로 만드는 법",
+      "title": "개리 탄: AI를 채팅창 대신 운영체제로 만드는 법",
       "date": "2026-05-10",
       "category": "leader",
-      "source": "X (가리 탄, @garrytan)",
+      "source": "X (개리 탄, @garrytan)",
       "tags": [
         "AI에이전트",
         "생산성",
@@ -14,7 +14,7 @@ window.POSTS_DATA = {
       ],
       "slug": "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
       "file": "leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html",
-      "summary": "YC CEO 가리 탄이 X에서 직접 공개한 개인 AI 운영체제 구조입니다. 100개 스킬 파일과 10만 페이지 지식 베이스로 구성된 복리 시스템이 핵심입니다. AI를 채팅창이 아닌 운영체제로 구축하는 것이 다음 5년의 핵심 경쟁력입니다.",
+      "summary": "YC CEO 개리 탄이 X에서 직접 공개한 개인 AI 운영체제 구조입니다. 100개 스킬 파일과 10만 페이지 지식 베이스로 구성된 복리 시스템이 핵심입니다. AI를 채팅창이 아닌 운영체제로 구축하는 것이 다음 5년의 핵심 경쟁력입니다.",
       "roasting_quote": "AI를 채팅창으로만 쓰고 계십니까? YC CEO는 AI에게 100가지 스킬을 가르쳐 조직을 운영합니다.",
       "next_post": "company/2026-04-14-dorsey-mode-ai-org-design.html"
     },
