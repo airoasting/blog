@@ -1,0 +1,24 @@
+{
+  "_comment": "수동 편집 가능. canonical: 표준명 → alias 배열. slugMap: 한국어 → 영문 slug (결정론적 캐시). blacklist: 개념 제외. domainKeywords: 우선 매칭.",
+  "version": 1,
+  "canonical": {
+    "AI 에이전트": ["AI에이전트", "AI agent", "에이전트", "agent"],
+    "조직설계": ["조직 설계", "org design", "organization design"],
+    "프롬프팅": ["프롬프트", "prompting", "prompt engineering"],
+    "AI 안전": ["AI안전", "AI safety"],
+    "AI 정렬": ["AI alignment", "정렬"]
+  },
+  "slugMap": {
+    "AI 에이전트": "ai-agent",
+    "조직설계": "organizational-design",
+    "프롬프팅": "prompting",
+    "AI 안전": "ai-safety",
+    "AI 정렬": "ai-alignment"
+  },
+  "blacklist": ["AI", "데이터", "사용자", "회사", "사람", "분석", "방법", "내용", "결과"],
+  "domainKeywords": [
+    "AI에이전트", "AI전략", "AI안전", "AI정렬", "AGI", "ASI", "MCP", "LLM", "RAG",
+    "ClaudeCode", "Claude", "ChatGPT", "Anthropic", "OpenAI", "Google", "Meta",
+    "조직설계", "프롬프팅", "메타프롬프팅", "코딩에이전트", "개인AI", "지식관리"
+  ]
+}

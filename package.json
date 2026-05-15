@@ -1,0 +1,16 @@
+{
+  "name": "ai-roasting-blog",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "wiki": "node scripts/wiki-brain/index.js",
+    "wiki:enrich": "node scripts/wiki-brain/index.js --enrich",
+    "wiki:dry": "node scripts/wiki-brain/index.js --dry-run",
+    "wiki:test": "node --test scripts/wiki-brain/__tests__"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "cheerio": "^1.0.0",
+    "gray-matter": "^4.0.3"
+  }
+}
