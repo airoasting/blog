@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Graph · AI ROASTING · Blog</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+  <style>
+    /* ── Page Shell ── */
+    body { margin: 0; overflow-x: hidden; }
+
+    /* ── Controls Bar ── */
+    .graph-controls {
+      padding: 8px 0 10px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .graph-controls .ctrl-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      font-family: 'Pretendard', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 100px;
+      border: 1.5px solid currentColor;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.18s;
+      background: transparent;
+      font-family: 'Pretendard', sans-serif;
+      opacity: 0.55;
+      white-space: nowrap;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .filter-pill.active { opacity: 1; }
+    .filter-pill:hover { opacity: 0.9; }
+    .filter-pill .pill-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .ctrl-sep {
+      width: 1px; height: 20px;
+      background: rgba(255,255,255,0.15);
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+    .ctrl-stats {
+      margin-left: auto;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Pretendard', sans-serif;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ctrl-stats strong { color: rgba(255,255,255,0.75); font-weight: 600; }
+
+    /* ── Page Layout: 헤더+컨트롤 아래 남은 영역을 캔버스가 정확히 채움 ── */
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; }
+    #site-header { flex-shrink: 0; }
+    .graph-shell {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .graph-controls { flex-shrink: 0; }
+
+    /* ── Canvas ── */
+    .graph-canvas-wrap {
+      width: 100%;
+      flex: 1 1 auto;
+      min-height: 0;
+      position: relative;
+      overflow: hidden;
+      touch-action: none;
+    }
+    #graphSvg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      touch-action: none;
+    }
+    #graphSvg:active { cursor: grabbing; }
+
+    /* 노드 탭 히트 영역 확장 */
+    .g-node .hit-area {
+      fill: transparent;
+      stroke: none;
+    }
+
+    /* D3 elements */
+    .g-link {
+      stroke-opacity: 0.08;
+      transition: stroke-opacity 0.25s, stroke-width 0.2s;
+    }
+    .g-link.faded { stroke-opacity: 0.015; }
+    .g-link.highlighted {
+      stroke-opacity: 0.95;
+      stroke-width: 2.4 !important;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.55));
+    }
+
+    .g-node { cursor: pointer; }
+    .g-node circle {
+      transition: fill-opacity 0.2s, filter 0.2s;
+    }
+    /* 고립 노드(연결 ≤1): 작고 반투명 */
+    .g-node.isolated circle {
+      fill-opacity: 0.25;
+      stroke-opacity: 0.35;
+    }
+    /* 허브 노드(연결 상위 10%): 테두리 글로우 */
+    .g-node.hub circle {
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 6px currentColor);
+    }
+    .g-node.faded circle { fill-opacity: 0.06; stroke-opacity: 0.15; }
+    .g-node.faded text { opacity: 0.08; }
+    .g-node.highlighted circle {
+      stroke-width: 3;
+      filter: drop-shadow(0 0 12px currentColor);
+    }
+
+    /* ── Zoom reset button (뉴모피즘) ── */
+    .zoom-reset-btn {
+      position: absolute;
+      top: 20px;
+      right: max(24px, calc(50% - 516px));
+      background: #0E1628;
+      border: none;
+      border-radius: 10px;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 9px 16px;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      box-shadow:
+        -3px -3px 7px rgba(255,255,255,0.06),
+         3px  3px 8px rgba(0,0,0,0.55),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
+      transition: box-shadow 0.18s, color 0.18s;
+    }
+    .zoom-reset-btn:hover {
+      color: #fff;
+      box-shadow:
+        -2px -2px 5px rgba(255,255,255,0.08),
+         2px  2px 6px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .zoom-reset-btn:active {
+      box-shadow:
+        inset -2px -2px 5px rgba(255,255,255,0.05),
+        inset  2px  2px 6px rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.5);
+    }
+
+    .node-label {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      font-weight: 600;
+      fill: #fff;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ── Tooltip Card ── */
+    .graph-tooltip {
+      position: fixed;
+      top: 0; left: 0;
+      background: #fff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      max-width: 300px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12);
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.2s, transform 0.2s;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .graph-tooltip.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* 모바일: 하단 고정 패널 */
+    @media (max-width: 768px) {
+      .graph-tooltip {
+        left: 0 !important;
+        top: auto !important;
+        bottom: 0;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px 20px 32px;
+        transform: translateY(100%);
+        pointer-events: auto;
+      }
+      .graph-tooltip.show {
+        transform: translateY(0);
+      }
+      /* 드래그 핸들 */
+      .graph-tooltip::before {
+        content: '';
+        display: block;
+        width: 36px; height: 4px;
+        background: #E0E0E0;
+        border-radius: 2px;
+        margin: 0 auto 16px;
+      }
+    }
+    .tt-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 100px;
+      margin-bottom: 9px;
+      color: #fff;
+      letter-spacing: 0.03em;
+    }
+    .tt-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+    .tt-meta {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+    .tt-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+    .tt-tag {
+      font-size: 11px;
+      background: #F2F0EB;
+      color: #555;
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+    .tt-connections {
+      font-size: 12px;
+      color: #666;
+      border-top: 1px solid #F0F0F0;
+      padding-top: 8px;
+    }
+    .tt-connections span { font-weight: 700; color: #333; }
+
+    /* ── Legend ── */
+    .graph-legend {
+      position: absolute;
+      bottom: 54px;
+      right: max(24px, calc(50% - 516px));
+      cursor: grab;
+      user-select: none;
+      background: rgba(10,15,30,0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 16px 20px;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+    }
+    .legend-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 7px;
+    }
+    .legend-item:last-child { margin-bottom: 0; }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+    }
+    .legend-hint {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+    .legend-hint-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 5px;
+    }
+    .hint-circle {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+    }
+    .hint-circle.lg { width: 14px; height: 14px; }
+
+    /* ── Instructions overlay ── */
+    .graph-instructions {
+      position: absolute;
+      top: 20px;
+      left: max(24px, calc(50% - 516px));
+      background: rgba(10,15,30,0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-family: 'Pretendard', sans-serif;
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .graph-instructions { display: none; }
+    }
+
+    /* ── Loading State ── */
+    .graph-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-family: 'Pretendard', sans-serif;
+      font-size: 14px;
+      gap: 16px;
+    }
+    .loading-spinner {
+      width: 36px; height: 36px;
+      border: 3px solid rgba(255,255,255,0.1);
+      border-top-color: rgba(255,255,255,0.6);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Page title row */
+    .graph-page-header {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 24px 0;
+      background: transparent;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .graph-page-title {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
+    }
+    .graph-page-sub {
+      font-family: 'Pretendard', sans-serif;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* Controls bar: 내부 콘텐츠만 컨테이너 정렬 */
+    .graph-controls-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 4px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .graph-controls-inner::-webkit-scrollbar { display: none; }
+
+    @media (max-width: 768px) {
+      .graph-page-header { padding: 12px 16px 0; }
+      .graph-page-title { font-size: 16px; }
+      .graph-page-sub { font-size: 11px; }
+      .graph-legend { display: none; }
+      .zoom-reset-btn { top: 12px; right: 12px; padding: 7px 11px; font-size: 11px; }
+      .graph-controls-inner { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header id="site-header"></header>
+<script>window.HEADER_CONFIG = { activeCat: 'graph' };</script>
+<script src="../assets/js/theme.js"></script>
+<script src="../assets/js/header.js"></script>
+
+<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 55%, #1A1140 0%, #0B0820 35%, #050310 70%, #020108 100%);">
+  <div class="graph-controls" id="graphControls">
+    <div class="graph-controls-inner">
+      <span class="ctrl-label">카테고리</span>
+      <button class="filter-pill active" data-cat="all" style="color:#aaa;">
+        <span class="pill-dot" style="background:#aaa;"></span>전체
+      </button>
+      <button class="filter-pill active" data-cat="research" style="color:#60A5FA;">
+        <span class="pill-dot"></span>리서치
+      </button>
+      <button class="filter-pill active" data-cat="leader" style="color:#FB923C;">
+        <span class="pill-dot"></span>리더
+      </button>
+      <button class="filter-pill active" data-cat="company" style="color:#38BDF8;">
+        <span class="pill-dot"></span>기업
+      </button>
+      <button class="filter-pill active" data-cat="tech" style="color:#4ADE80;">
+        <span class="pill-dot"></span>기술
+      </button>
+      <button class="filter-pill active" data-cat="survival" style="color:#F87171;">
+        <span class="pill-dot"></span>생존
+      </button>
+      <button class="filter-pill active" data-cat="newsletter" style="color:#C084FC;">
+        <span class="pill-dot"></span>뉴스레터
+      </button>
+      <div class="ctrl-sep"></div>
+      <div class="ctrl-stats" id="graphStats">로딩 중...</div>
+    </div>
+  </div>
+
+  <div class="graph-canvas-wrap">
+    <div class="graph-loading" id="graphLoading">
+      <div class="loading-spinner"></div>
+      <span>그래프 생성 중...</span>
+    </div>
+
+    <svg id="graphSvg">
+      <defs>
+        <marker id="arrow" viewBox="0 -3 8 6" refX="8" refY="0"
+          markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M0,-3L8,0L0,3" fill="rgba(255,255,255,0.3)"/>
+        </marker>
+      </defs>
+    </svg>
+
+    <div class="graph-instructions">
+      <div>🖱 드래그로 이동 · 스크롤로 확대/축소</div>
+      <div>● 클릭: 연결된 노드만 표시</div>
+      <div>● 더블클릭: 아티클 열기</div>
+      <div>● 빈 곳 클릭: 전체 보기</div>
+    </div>
+
+    <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
+
+    <div class="graph-legend">
+      <div class="legend-title">카테고리</div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터
+      </div>
+      <div class="legend-hint">
+        <div class="legend-hint-row">
+          <div class="hint-circle"></div><span>연결 적음</span>
+        </div>
+        <div class="legend-hint-row">
+          <div class="hint-circle lg"></div><span>연결 많음 (허브)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="graph-tooltip" id="graphTooltip"></div>
+
+
+<!-- D3.js v7 -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(function() {
+  'use strict';
+  const CAT = {
+    research:   { stroke: '#60A5FA', fill: 'rgba(96,165,250,0.18)',   text: '#93C5FD', badge: '#2563EB' },
+    leader:     { stroke: '#FB923C', fill: 'rgba(251,146,60,0.18)',   text: '#FCA86A', badge: '#EA580C' },
+    company:    { stroke: '#38BDF8', fill: 'rgba(56,189,248,0.18)',   text: '#67D4FC', badge: '#0284C7' },
+    tech:       { stroke: '#4ADE80', fill: 'rgba(74,222,128,0.18)',   text: '#86EFAC', badge: '#16A34A' },
+    survival:   { stroke: '#F87171', fill: 'rgba(248,113,113,0.18)', text: '#FCA5A5', badge: '#DC2626' },
+    newsletter: { stroke: '#C084FC', fill: 'rgba(192,132,252,0.18)', text: '#D8B4FE', badge: '#9333EA' }
+  };
+  const CAT_LABEL = { research: '리서치', leader: '리더', company: '기업', tech: '기술', survival: '생존', newsletter: '뉴스레터' };
+  const isMobile = ('ontouchstart' in window) || (window.innerWidth <= 768);
+  const tooltip = document.getElementById('graphTooltip');
+
+  function showTooltip(event, d) {
+    const c = CAT[d.category] || CAT.research;
+    tooltip.innerHTML = '<div class="tt-badge" style="background:' + c.badge + ';">' + (CAT_LABEL[d.category] || d.category) + '</div>'
+      + '<div class="tt-title">' + d.name + '</div>'
+      + '<div class="tt-meta">' + d.frequency + '개 콘텐츠에서 등장</div>'
+      + '<div class="tt-meta" style="margin-top:8px;line-height:1.5;color:#555;">' + (d.definition || '') + '</div>'
+      + '<div class="tt-connections">연결 개념 <span>' + d.degree + '</span>개 · 상위 ' + Math.min(d.degree, 6) + '개 강조</div>'
+      + (isMobile ? '<a href="concepts/' + d.slug + '.html" style="display:inline-block;margin-top:10px;padding:7px 16px;background:' + c.badge + ';color:#fff;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;">Wiki 페이지 열기 →</a>' : '');
+    tooltip.classList.add('show');
+    if (!isMobile) moveTooltip(event);
+  }
+  function moveTooltip(event) {
+    if (isMobile) return;
+    const pad = 16, tw = tooltip.offsetWidth || 300, th = tooltip.offsetHeight || 120;
+    let x = event.clientX + pad, y = event.clientY + pad;
+    if (x + tw > window.innerWidth - pad) x = event.clientX - tw - pad;
+    if (y + th > window.innerHeight - pad) y = event.clientY - th - pad;
+    tooltip.style.left = x + 'px'; tooltip.style.top = y + 'px';
+  }
+  function hideTooltip() { tooltip.classList.remove('show'); }
+  if (isMobile) {
+    tooltip.style.pointerEvents = 'auto';
+    document.addEventListener('touchstart', e => {
+      if (!tooltip.contains(e.target) && !e.target.closest('circle, .g-node, svg')) hideTooltip();
+    }, { passive: true });
+  }
+
+  fetch('concepts-data.json')
+    .then(r => r.json())
+    .then(data => buildWikiGraph(data))
+    .catch(err => {
+      const el = document.getElementById('graphLoading');
+      if (el) el.innerHTML = '<div style="color:#F87171;font-size:14px;">데이터 로드 실패: ' + err.message + '</div>';
+    });
+
+  function buildWikiGraph(data) {
+    const nameToSlug = new Map(data.concepts.map(c => [c.name, c.slug]));
+    const nodes = data.concepts.map(c => ({
+      id: c.slug, name: c.name, slug: c.slug, category: c.category || 'research',
+      frequency: c.frequency, definition: c.definition
+    }));
+    const links = data.relationships.map(r => ({
+      source: nameToSlug.get(r.source), target: nameToSlug.get(r.target), weight: r.strength
+    })).filter(l => l.source && l.target);
+
+    const wrap = document.querySelector('.graph-canvas-wrap');
+    wrap.innerHTML = '<svg id="graphSvg"></svg>';
+    const svg = d3.select('#graphSvg');
+    const W = wrap.clientWidth, H = wrap.clientHeight;
+
+    const rMin = isMobile ? 9 : 7;
+    const rMax = isMobile ? 24 : 20;
+    const maxFreq = d3.max(nodes, n => n.frequency) || 1;
+    const rScale = d3.scaleSqrt().domain([0, maxFreq]).range([rMin, rMax]);
+    nodes.forEach(n => { n.r = rScale(n.frequency); });
+
+    const degreeMap = {};
+    links.forEach(l => { degreeMap[l.source] = (degreeMap[l.source] || 0) + 1; degreeMap[l.target] = (degreeMap[l.target] || 0) + 1; });
+    nodes.forEach(n => { n.degree = degreeMap[n.id] || 0; });
+    const hubThreshold = d3.quantile(nodes.map(n => n.degree).sort(d3.ascending), 0.9) || 0;
+
+    const stats = document.getElementById('graphStats');
+    if (stats) stats.innerHTML = '<strong>' + nodes.length + '</strong>개 개념 · <strong>' + links.length + '</strong>개 관계';
+
+    const g = svg.append('g');
+    const zoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => g.attr('transform', e.transform));
+    svg.call(zoom);
+
+    const link = g.append('g').selectAll('line').data(links).enter().append('line')
+      .attr('class', 'g-link').attr('stroke', '#ffffff')
+      .attr('stroke-width', d => Math.max(0.5, Math.min(3, d.weight * 0.5)));
+
+    const node = g.append('g').selectAll('g').data(nodes).enter().append('g')
+      .attr('class', d => 'g-node' + (d.degree >= hubThreshold && hubThreshold > 0 ? ' hub' : '') + (d.degree <= 1 ? ' isolated' : ''))
+      .on('click', (e, d) => { if (!isMobile) window.location.href = 'concepts/' + d.slug + '.html'; })
+      .on('mouseover', (e, d) => { highlight(d); showTooltip(e, d); })
+      .on('mousemove', (e) => moveTooltip(e))
+      .on('mouseout', () => { unhighlight(); if (!isMobile) hideTooltip(); });
+
+    node.append('circle')
+      .attr('r', d => d.r)
+      .attr('fill', d => CAT[d.category].fill)
+      .attr('stroke', d => CAT[d.category].stroke)
+      .attr('stroke-width', 1.5);
+
+    node.append('text').attr('class', 'node-label')
+      .attr('y', d => d.r + 14)
+      .attr('font-size', d => Math.max(10, Math.min(14, d.r * 0.7)))
+      .attr('fill', d => CAT[d.category].text)
+      .text(d => d.name);
+
+    function highlight(d) {
+      const linked = new Set([d.id]);
+      const myEdges = links
+        .filter(l => (l.source.id || l.source) === d.id || (l.target.id || l.target) === d.id)
+        .sort((a, b) => b.weight - a.weight).slice(0, 6);
+      myEdges.forEach(l => {
+        linked.add(typeof l.source === 'object' ? l.source.id : l.source);
+        linked.add(typeof l.target === 'object' ? l.target.id : l.target);
+      });
+      node.classed('faded', n => !linked.has(n.id)).classed('highlighted', n => n.id === d.id);
+      link.classed('faded', l => !myEdges.includes(l)).classed('highlighted', l => myEdges.includes(l));
+    }
+    function unhighlight() {
+      node.classed('faded', false).classed('highlighted', false);
+      link.classed('faded', false).classed('highlighted', false);
+    }
+
+    d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(80).strength(d => Math.min(0.6, d.weight * 0.1)))
+      .force('charge', d3.forceManyBody().strength(-280))
+      .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('collide', d3.forceCollide(d => d.r + 6))
+      .on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+      });
+
+    const resetBtn = document.getElementById('zoomReset');
+    if (resetBtn) resetBtn.onclick = () => svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+  }
+})();
+</script>
+</body>
+</html>
