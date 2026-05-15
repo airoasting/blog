@@ -36,15 +36,13 @@ function assignSlugs(concepts, aliases, { existing = {} } = {}) {
 
 function applyTranslatedSlugs(concepts, translations, aliases) {
   const used = new Set(concepts.filter(c => !c.slug.startsWith('_pending_')).map(c => c.slug));
+  if (!aliases.slugMap) aliases.slugMap = {};
   for (const c of concepts) {
     if (!c.slug.startsWith('_pending_')) continue;
     const translated = translations[c.name];
     const base = translated ? kebab(translated) : (kebab(c.name) || 'concept');
     c.slug = ensureUnique(base || 'concept', used);
-    if (translated) {
-      if (!aliases.slugMap) aliases.slugMap = {};
-      aliases.slugMap[c.name] = c.slug;
-    }
+    aliases.slugMap[c.name] = c.slug;
   }
   return concepts;
 }

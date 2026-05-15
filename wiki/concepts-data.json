@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-15T14:10:45.698Z",
+  "generatedAt": "2026-05-15T14:21:29.028Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 153,
-    "totalRelationships": 999,
+    "totalConcepts": 148,
+    "totalRelationships": 924,
     "totalPosts": 186,
     "totalNewsletters": 47
   },
@@ -1142,66 +1142,6 @@
       "needs_manual_review": true
     },
     {
-      "id": "용어-설명",
-      "slug": "용어-설명",
-      "name": "용어 설명",
-      "aliases": [],
-      "definition": "용어 설명는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 15,
-      "category": "tech",
-      "posts": [
-        "2026-03-26-ai-scientist-nature",
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-02-ai-emotion-prompts",
-        "2026-04-02-gemma-4-open-model",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-04-08-managed-agents-decoupling",
-        "2026-04-09-advisor-strategy-claude-opus",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2026-04-30-claude-personal-guidance-sycophancy",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-05-08-teaching-claude-why"
-      ],
-      "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": true
-    },
-    {
-      "id": "금주의-ai-로스팅",
-      "slug": "금주의-ai-로스팅",
-      "name": "금주의 AI 로스팅",
-      "aliases": [],
-      "definition": "금주의 AI 로스팅는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 15,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-1",
-        "nl-2",
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-7",
-        "nl-8",
-        "nl-9",
-        "nl-10",
-        "nl-11",
-        "nl-12",
-        "nl-13",
-        "nl-14",
-        "nl-27"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": true
-    },
-    {
       "id": "lg",
       "slug": "lg",
       "name": "LG",
@@ -1292,35 +1232,6 @@
       "needs_manual_review": true
     },
     {
-      "id": "이번-주-ai-소식",
-      "slug": "이번-주-ai-소식",
-      "name": "이번 주 AI 소식",
-      "aliases": [],
-      "definition": "이번 주 AI 소식는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 14,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-1",
-        "nl-2",
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-7",
-        "nl-8",
-        "nl-9",
-        "nl-10",
-        "nl-11",
-        "nl-12",
-        "nl-13",
-        "nl-14"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": true
-    },
-    {
       "id": "eu",
       "slug": "eu",
       "name": "EU",
@@ -1376,33 +1287,6 @@
       ],
       "firstSeen": "2026-03-06",
       "lastSeen": "2026-03-06",
-      "needs_manual_review": true
-    },
-    {
-      "id": "내일-당장-실행할-것",
-      "slug": "내일-당장-실행할-것",
-      "name": "내일 당장 실행할 것",
-      "aliases": [],
-      "definition": "내일 당장 실행할 것는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 12,
-      "category": "company",
-      "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2025-05-01-indonesia-startup-scandal",
-        "2025-05-05-furiosa-ai",
-        "2025-05-05-two-views-on-google-mobility-strategy",
-        "2025-05-25-teachers-role-in-ai-era",
-        "2025-05-25-why-china-is-warning-its-top-ev-company",
-        "2025-06-05-chinese-bigtech-targeting-brazil-market",
-        "2025-06-07-new-concerns-for-content-platforms",
-        "2025-06-10-korean-election-generational-divide",
-        "2025-06-10-negotiation-after-lawsuit",
-        "2025-06-10-spotify-the-hidden-force-cracking-apple-empire",
-        "2025-08-20-the-real-meaning-of-mit-report"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-01",
-      "lastSeen": "2025-08-20",
       "needs_manual_review": true
     },
     {
@@ -3158,24 +3042,6 @@
       "needs_manual_review": true
     },
     {
-      "id": "리스크-amp-주의점",
-      "slug": "리스크-amp-주의점",
-      "name": "리스크 &amp; 주의점",
-      "aliases": [],
-      "definition": "리스크 &amp; 주의점는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2026-02-01-ai-skill-erosion-anthropic-study",
-        "2026-03-10-openclaw-rl",
-        "2026-03-16-attention-residuals-kimi"
-      ],
-      "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": true
-    },
-    {
       "id": "멀티에이전트",
       "slug": "멀티에이전트",
       "name": "멀티에이전트",
@@ -3979,16 +3845,6 @@
     },
     {
       "source": "Claude",
-      "target": "용어 설명",
-      "strength": 12
-    },
-    {
-      "source": "Claude",
-      "target": "금주의 AI 로스팅",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
       "target": "LG",
       "strength": 2
     },
@@ -4001,11 +3857,6 @@
       "source": "Claude",
       "target": "SK",
       "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "이번 주 AI 소식",
-      "strength": 6
     },
     {
       "source": "Claude",
@@ -4409,11 +4260,6 @@
     },
     {
       "source": "OpenAI",
-      "target": "금주의 AI 로스팅",
-      "strength": 11
-    },
-    {
-      "source": "OpenAI",
       "target": "LG",
       "strength": 5
     },
@@ -4426,11 +4272,6 @@
       "source": "OpenAI",
       "target": "SK",
       "strength": 9
-    },
-    {
-      "source": "OpenAI",
-      "target": "이번 주 AI 소식",
-      "strength": 11
     },
     {
       "source": "OpenAI",
@@ -4849,16 +4690,6 @@
     },
     {
       "source": "ChatGPT",
-      "target": "용어 설명",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "금주의 AI 로스팅",
-      "strength": 10
-    },
-    {
-      "source": "ChatGPT",
       "target": "LG",
       "strength": 6
     },
@@ -4871,11 +4702,6 @@
       "source": "ChatGPT",
       "target": "SK",
       "strength": 6
-    },
-    {
-      "source": "ChatGPT",
-      "target": "이번 주 AI 소식",
-      "strength": 10
     },
     {
       "source": "ChatGPT",
@@ -5239,16 +5065,6 @@
     },
     {
       "source": "Anthropic",
-      "target": "용어 설명",
-      "strength": 6
-    },
-    {
-      "source": "Anthropic",
-      "target": "금주의 AI 로스팅",
-      "strength": 8
-    },
-    {
-      "source": "Anthropic",
       "target": "LG",
       "strength": 3
     },
@@ -5261,11 +5077,6 @@
       "source": "Anthropic",
       "target": "SK",
       "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "이번 주 AI 소식",
-      "strength": 7
     },
     {
       "source": "Anthropic",
@@ -5574,11 +5385,6 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "용어 설명",
-      "strength": 11
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "MIT",
       "strength": 2
     },
@@ -5814,16 +5620,6 @@
     },
     {
       "source": "LLM",
-      "target": "용어 설명",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "금주의 AI 로스팅",
-      "strength": 5
-    },
-    {
-      "source": "LLM",
       "target": "LG",
       "strength": 4
     },
@@ -5836,11 +5632,6 @@
       "source": "LLM",
       "target": "SK",
       "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "이번 주 AI 소식",
-      "strength": 5
     },
     {
       "source": "LLM",
@@ -6124,11 +5915,6 @@
     },
     {
       "source": "GPU",
-      "target": "금주의 AI 로스팅",
-      "strength": 5
-    },
-    {
-      "source": "GPU",
       "target": "LG",
       "strength": 7
     },
@@ -6141,11 +5927,6 @@
       "source": "GPU",
       "target": "SK",
       "strength": 8
-    },
-    {
-      "source": "GPU",
-      "target": "이번 주 AI 소식",
-      "strength": 4
     },
     {
       "source": "GPU",
@@ -6449,16 +6230,6 @@
     },
     {
       "source": "API",
-      "target": "용어 설명",
-      "strength": 5
-    },
-    {
-      "source": "API",
-      "target": "금주의 AI 로스팅",
-      "strength": 2
-    },
-    {
-      "source": "API",
       "target": "LG",
       "strength": 2
     },
@@ -6471,11 +6242,6 @@
       "source": "API",
       "target": "SK",
       "strength": 5
-    },
-    {
-      "source": "API",
-      "target": "이번 주 AI 소식",
-      "strength": 2
     },
     {
       "source": "API",
@@ -6699,23 +6465,8 @@
     },
     {
       "source": "Google",
-      "target": "용어 설명",
-      "strength": 5
-    },
-    {
-      "source": "Google",
-      "target": "금주의 AI 로스팅",
-      "strength": 4
-    },
-    {
-      "source": "Google",
       "target": "SK",
       "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "이번 주 AI 소식",
-      "strength": 3
     },
     {
       "source": "Google",
@@ -6949,11 +6700,6 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "용어 설명",
-      "strength": 5
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "MIT",
       "strength": 2
     },
@@ -7059,11 +6805,6 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "리스크 &amp; 주의점",
-      "strength": 3
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "HTML",
       "strength": 2
     },
@@ -7120,11 +6861,6 @@
     {
       "source": "AI 에이전트",
       "target": "AI전략",
-      "strength": 4
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "용어 설명",
       "strength": 4
     },
     {
@@ -7264,11 +7000,6 @@
     },
     {
       "source": "AGI",
-      "target": "금주의 AI 로스팅",
-      "strength": 3
-    },
-    {
-      "source": "AGI",
       "target": "LG",
       "strength": 3
     },
@@ -7276,11 +7007,6 @@
       "source": "AGI",
       "target": "SK",
       "strength": 4
-    },
-    {
-      "source": "AGI",
-      "target": "이번 주 AI 소식",
-      "strength": 3
     },
     {
       "source": "AGI",
@@ -7394,11 +7120,6 @@
     },
     {
       "source": "IT",
-      "target": "용어 설명",
-      "strength": 6
-    },
-    {
-      "source": "IT",
       "target": "LG",
       "strength": 2
     },
@@ -7461,11 +7182,6 @@
       "source": "IT",
       "target": "기술패권",
       "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "용어 설명",
-      "strength": 5
     },
     {
       "source": "CTO",
@@ -7589,11 +7305,6 @@
     },
     {
       "source": "ROI",
-      "target": "내일 당장 실행할 것",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
       "target": "MCP",
       "strength": 2
     },
@@ -7674,23 +7385,8 @@
     },
     {
       "source": "Meta",
-      "target": "용어 설명",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "금주의 AI 로스팅",
-      "strength": 5
-    },
-    {
-      "source": "Meta",
       "target": "MIT",
       "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "이번 주 AI 소식",
-      "strength": 5
     },
     {
       "source": "Meta",
@@ -7729,18 +7425,8 @@
     },
     {
       "source": "IPO",
-      "target": "금주의 AI 로스팅",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
       "target": "SK",
       "strength": 4
-    },
-    {
-      "source": "IPO",
-      "target": "이번 주 AI 소식",
-      "strength": 2
     },
     {
       "source": "IPO",
@@ -7953,119 +7639,9 @@
       "strength": 2
     },
     {
-      "source": "용어 설명",
-      "target": "RAG",
-      "strength": 3
-    },
-    {
-      "source": "용어 설명",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "용어 설명",
-      "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "LG",
-      "strength": 5
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "이번 주 AI 소식",
-      "strength": 14
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "AMD",
-      "strength": 4
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "SNS",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "ASI",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "KT",
-      "strength": 5
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "IMO",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "KAIST",
-      "strength": 3
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "NC",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "DRAM",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "GENIUS",
-      "strength": 2
-    },
-    {
-      "source": "금주의 AI 로스팅",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
       "source": "LG",
       "target": "SK",
       "strength": 4
-    },
-    {
-      "source": "LG",
-      "target": "이번 주 AI 소식",
-      "strength": 5
     },
     {
       "source": "LG",
@@ -8104,11 +7680,6 @@
     },
     {
       "source": "MIT",
-      "target": "이번 주 AI 소식",
-      "strength": 2
-    },
-    {
-      "source": "MIT",
       "target": "GPQA",
       "strength": 2
     },
@@ -8121,11 +7692,6 @@
       "source": "MIT",
       "target": "AI도입",
       "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "이번 주 AI 소식",
-      "strength": 4
     },
     {
       "source": "SK",
@@ -8199,76 +7765,6 @@
     },
     {
       "source": "SK",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "AMD",
-      "strength": 4
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "SNS",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "ASI",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "KT",
-      "strength": 5
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "IMO",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "KAIST",
-      "strength": 3
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "NC",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "DRAM",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
-      "target": "GENIUS",
-      "strength": 2
-    },
-    {
-      "source": "이번 주 AI 소식",
       "target": "CHIPS",
       "strength": 2
     },
@@ -8376,11 +7872,6 @@
       "source": "AMD",
       "target": "WSJ",
       "strength": 3
-    },
-    {
-      "source": "내일 당장 실행할 것",
-      "target": "BYD",
-      "strength": 2
     },
     {
       "source": "SNS",

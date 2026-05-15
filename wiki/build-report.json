@@ -1,23 +1,23 @@
 {
-  "buildAt": "2026-05-15T14:10:45.698Z",
-  "duration": 0.601,
+  "buildAt": "2026-05-15T14:21:29.028Z",
+  "duration": 0.212,
   "concepts": {
-    "total": 153,
+    "total": 148,
     "validDefinitions": 0,
-    "needsReview": 153
+    "needsReview": 148
   },
   "relationships": {
-    "total": 999
+    "total": 924
   },
   "coverage": {
-    "postsWithConcepts": 181,
+    "postsWithConcepts": 180,
     "totalPosts": 186
   },
   "inject": {
-    "updated": 0,
-    "inserted": 176,
-    "unchanged": 0,
-    "skipped": 10
+    "updated": 26,
+    "inserted": 0,
+    "unchanged": 149,
+    "skipped": 11
   },
   "needsManualReview": [
     {
@@ -109,14 +109,6 @@
       "slug": "aws"
     },
     {
-      "name": "용어 설명",
-      "slug": "용어-설명"
-    },
-    {
-      "name": "금주의 AI 로스팅",
-      "slug": "금주의-ai-로스팅"
-    },
-    {
       "name": "LG",
       "slug": "lg"
     },
@@ -129,20 +121,12 @@
       "slug": "sk"
     },
     {
-      "name": "이번 주 AI 소식",
-      "slug": "이번-주-ai-소식"
-    },
-    {
       "name": "EU",
       "slug": "eu"
     },
     {
       "name": "AMD",
       "slug": "amd"
-    },
-    {
-      "name": "내일 당장 실행할 것",
-      "slug": "내일-당장-실행할-것"
     },
     {
       "name": "SNS",
@@ -475,10 +459,6 @@
     {
       "name": "GDP",
       "slug": "gdp"
-    },
-    {
-      "name": "리스크 &amp; 주의점",
-      "slug": "리스크-amp-주의점"
     },
     {
       "name": "멀티에이전트",
