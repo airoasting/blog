@@ -6,7 +6,9 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/(research|leader|company|tech|survival|newsletter|about|insights)\//.test(loc)) {
+  if (/\/wiki\/concepts(\/|$)/.test(loc)) {
+    prefix = '../../';
+  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|wiki)(\/|$)/.test(loc)) {
     prefix = '../';
   }
 
