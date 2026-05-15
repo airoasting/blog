@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -28,6 +26,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -111,15 +110,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="&quot;아니, 그거 말고&quot; 한 마디가 AI를 훈련시킨다: OpenClaw-RL"
-        data-date="2026-03-10"
-        data-category="tech"
-        data-source="arXiv (Yinjie Wang, Ling Yang 외)"
-        data-tags="AI에이전트, 강화학습, OpenClaw, RLHF, 자동화"
-        data-original-url="https://arxiv.org/abs/2603.10165"
-        data-roasting-quote="당신이 AI에게 '아니, 그거 말고'라고 할 때마다 세상에서 가장 값비싼 피드백이 쓰레기통으로 갑니다. Princeton이 그걸 주워서 학습 데이터로 바꿨습니다. 36번 대화, 비용 0원, 성능 376% 향상."
-        data-next-post=""></div>
+      <div id="postData" hidden="" data-title="&quot;아니, 그거 말고&quot; 한 마디가 AI를 훈련시킨다: OpenClaw-RL" data-date="2026-03-10" data-category="tech" data-source="arXiv (Yinjie Wang, Ling Yang 외)" data-tags="AI에이전트, 강화학습, OpenClaw, RLHF, 자동화" data-original-url="https://arxiv.org/abs/2603.10165" data-roasting-quote="당신이 AI에게 '아니, 그거 말고'라고 할 때마다 세상에서 가장 값비싼 피드백이 쓰레기통으로 갑니다. Princeton이 그걸 주워서 학습 데이터로 바꿨습니다. 36번 대화, 비용 0원, 성능 376% 향상." data-next-post=""></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -128,9 +119,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>당신이 AI에게 "아니, 그거 말고"라고 교정할 때마다 버려지던 피드백이 있습니다. Princeton 연구팀은 이 피드백을 학습 데이터로 바꾸는 시스템, OpenClaw-RL을 만들었습니다.</p>
-        <p data-summary>엔지니어도, 재훈련도, 다운타임도 없이 36회 대화만으로 AI 개인화 점수가 0.17에서 0.81로 뛰었습니다. 채점 AI가 24번 사용되는 동안 더 따뜻하고 상세한 피드백을 쓰는 법을 스스로 배웠습니다.</p>
-        <p data-summary>핵심 원리는 단순합니다. 사용자가 같은 질문을 다시 하면 AI가 실패한 것이고, 대화가 자연스럽게 이어지면 성공한 것입니다. AI는 이 신호만으로 사용자가 원하는 것을 파악하고 스스로 조정합니다.</p>
+        <p data-summary="">당신이 AI에게 "아니, 그거 말고"라고 교정할 때마다 버려지던 피드백이 있습니다. Princeton 연구팀은 이 피드백을 학습 데이터로 바꾸는 시스템, OpenClaw-RL을 만들었습니다.</p>
+        <p data-summary="">엔지니어도, 재훈련도, 다운타임도 없이 36회 대화만으로 AI 개인화 점수가 0.17에서 0.81로 뛰었습니다. 채점 AI가 24번 사용되는 동안 더 따뜻하고 상세한 피드백을 쓰는 법을 스스로 배웠습니다.</p>
+        <p data-summary="">핵심 원리는 단순합니다. 사용자가 같은 질문을 다시 하면 AI가 실패한 것이고, 대화가 자연스럽게 이어지면 성공한 것입니다. AI는 이 신호만으로 사용자가 원하는 것을 파악하고 스스로 조정합니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -170,8 +161,8 @@
             <text x="300" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">학습 방식별 성능 비교 (16단계 기준)</text>
             <text x="300" y="42" text-anchor="middle" font-size="11" fill="#888">점수 (높을수록 좋음)</text>
             <!-- 축 -->
-            <line x1="100" y1="60" x2="100" y2="240" stroke="#ccc" stroke-width="1"/>
-            <line x1="100" y1="240" x2="520" y2="240" stroke="#ccc" stroke-width="1"/>
+            <line x1="100" y1="60" x2="100" y2="240" stroke="#ccc" stroke-width="1"></line>
+            <line x1="100" y1="240" x2="520" y2="240" stroke="#ccc" stroke-width="1"></line>
             <!-- Y축 라벨 -->
             <text x="92" y="72" text-anchor="end" font-size="10" fill="#888">1.0</text>
             <text x="92" y="117" text-anchor="end" font-size="10" fill="#888">0.75</text>
@@ -179,27 +170,27 @@
             <text x="92" y="207" text-anchor="end" font-size="10" fill="#888">0.25</text>
             <text x="92" y="244" text-anchor="end" font-size="10" fill="#888">0</text>
             <!-- 그리드 -->
-            <line x1="100" y1="117" x2="520" y2="117" stroke="#eee" stroke-width="1"/>
-            <line x1="100" y1="162" x2="520" y2="162" stroke="#eee" stroke-width="1"/>
-            <line x1="100" y1="207" x2="520" y2="207" stroke="#eee" stroke-width="1"/>
+            <line x1="100" y1="117" x2="520" y2="117" stroke="#eee" stroke-width="1"></line>
+            <line x1="100" y1="162" x2="520" y2="162" stroke="#eee" stroke-width="1"></line>
+            <line x1="100" y1="207" x2="520" y2="207" stroke="#eee" stroke-width="1"></line>
             <!-- 바: Baseline 0.17 -->
-            <rect x="130" y="209" width="60" height="31" rx="3" fill="#E8E8E8" stroke="#ccc"/>
+            <rect x="130" y="209" width="60" height="31" rx="3" fill="#E8E8E8" stroke="#ccc"></rect>
             <text x="160" y="202" text-anchor="middle" font-size="12" fill="#888" font-weight="600">0.17</text>
             <text x="160" y="264" text-anchor="middle" font-size="11" fill="#555">Baseline</text>
             <!-- 바: Binary RL 0.23 -->
-            <rect x="230" y="199" width="60" height="41" rx="3" fill="#B0BEC5" stroke="#78909C"/>
+            <rect x="230" y="199" width="60" height="41" rx="3" fill="#B0BEC5" stroke="#78909C"></rect>
             <text x="260" y="192" text-anchor="middle" font-size="12" fill="#78909C" font-weight="600">0.23</text>
             <text x="260" y="264" text-anchor="middle" font-size="11" fill="#555">Binary RL</text>
             <!-- 바: OPD 0.72 -->
-            <rect x="330" y="111" width="60" height="129" rx="3" fill="#A5D6A7" stroke="#145C35"/>
+            <rect x="330" y="111" width="60" height="129" rx="3" fill="#A5D6A7" stroke="#145C35"></rect>
             <text x="360" y="104" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">0.72</text>
             <text x="360" y="264" text-anchor="middle" font-size="11" fill="#555">OPD</text>
             <!-- 바: Combined 0.81 -->
-            <rect x="430" y="95" width="60" height="145" rx="3" fill="#145C35" stroke="#0d3d22"/>
+            <rect x="430" y="95" width="60" height="145" rx="3" fill="#145C35" stroke="#0d3d22"></rect>
             <text x="460" y="88" text-anchor="middle" font-size="12" fill="#145C35" font-weight="700">0.81</text>
             <text x="460" y="264" text-anchor="middle" font-size="11" fill="#1a1a1a" font-weight="600">Combined</text>
             <!-- 향상폭 표시 -->
-            <line x1="160" y1="76" x2="460" y2="76" stroke="#c43500" stroke-width="1" stroke-dasharray="3,2"/>
+            <line x1="160" y1="76" x2="460" y2="76" stroke="#c43500" stroke-width="1" stroke-dasharray="3,2"></line>
             <text x="310" y="70" text-anchor="middle" font-size="11" fill="#c43500" font-weight="600">+376% (0.17 → 0.81)</text>
           </svg>
           <figcaption>논문 Table 3 기반 재구성. 채점만(Binary RL, 0.23)으로는 거의 개선이 없고, 교정만(OPD, 0.72)으로도 한계가 있지만, 둘을 합치면 0.81로 376% 향상됩니다. "뭐가 틀렸는지"와 "어떻게 고칠지"를 동시에 알아야 AI가 빠르게 학습합니다.</figcaption>
@@ -245,48 +236,48 @@
           <svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;height:auto;background:#fafaf9;border-radius:8px;">
             <text x="360" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">OpenClaw-RL 비동기 아키텍처</text>
             <!-- 4개 모듈 -->
-            <rect x="40" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"/>
+            <rect x="40" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"></rect>
             <text x="110" y="82" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">Policy Serving</text>
             <text x="110" y="98" text-anchor="middle" font-size="10" fill="#666">(SGLang)</text>
 
-            <rect x="220" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"/>
+            <rect x="220" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"></rect>
             <text x="290" y="82" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">Environment</text>
             <text x="290" y="98" text-anchor="middle" font-size="10" fill="#666">(HTTP/API)</text>
 
-            <rect x="400" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"/>
+            <rect x="400" y="60" width="140" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"></rect>
             <text x="470" y="82" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">Reward Judging</text>
             <text x="470" y="98" text-anchor="middle" font-size="10" fill="#666">(PRM)</text>
 
-            <rect x="580" y="60" width="120" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"/>
+            <rect x="580" y="60" width="120" height="50" rx="6" fill="#e8f5e9" stroke="#145C35" stroke-width="1.5"></rect>
             <text x="640" y="82" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">Policy Training</text>
             <text x="640" y="98" text-anchor="middle" font-size="10" fill="#666">(Megatron)</text>
 
             <!-- 화살표들 -->
-            <line x1="180" y1="85" x2="220" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"/>
-            <line x1="360" y1="85" x2="400" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"/>
-            <line x1="540" y1="85" x2="580" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"/>
+            <line x1="180" y1="85" x2="220" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"></line>
+            <line x1="360" y1="85" x2="400" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"></line>
+            <line x1="540" y1="85" x2="580" y2="85" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowG)"></line>
 
             <!-- 비동기 라벨 -->
             <text x="360" y="138" text-anchor="middle" font-size="11" fill="#c43500" font-weight="600">비동기: 모듈 간 조정 오버헤드 0</text>
 
             <!-- 하단: 5가지 에이전트 유형 -->
             <text x="360" y="170" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">지원하는 에이전트 유형</text>
-            <rect x="40" y="185" width="120" height="34" rx="4" fill="#fff" stroke="#145C35"/>
+            <rect x="40" y="185" width="120" height="34" rx="4" fill="#fff" stroke="#145C35"></rect>
             <text x="100" y="206" text-anchor="middle" font-size="11" fill="#145C35">대화 (Personal)</text>
-            <rect x="175" y="185" width="100" height="34" rx="4" fill="#fff" stroke="#145C35"/>
+            <rect x="175" y="185" width="100" height="34" rx="4" fill="#fff" stroke="#145C35"></rect>
             <text x="225" y="206" text-anchor="middle" font-size="11" fill="#145C35">터미널</text>
-            <rect x="290" y="185" width="80" height="34" rx="4" fill="#fff" stroke="#145C35"/>
+            <rect x="290" y="185" width="80" height="34" rx="4" fill="#fff" stroke="#145C35"></rect>
             <text x="330" y="206" text-anchor="middle" font-size="11" fill="#145C35">GUI</text>
-            <rect x="385" y="185" width="80" height="34" rx="4" fill="#fff" stroke="#145C35"/>
+            <rect x="385" y="185" width="80" height="34" rx="4" fill="#fff" stroke="#145C35"></rect>
             <text x="425" y="206" text-anchor="middle" font-size="11" fill="#145C35">SWE</text>
-            <rect x="480" y="185" width="110" height="34" rx="4" fill="#fff" stroke="#145C35"/>
+            <rect x="480" y="185" width="110" height="34" rx="4" fill="#fff" stroke="#145C35"></rect>
             <text x="535" y="206" text-anchor="middle" font-size="11" fill="#145C35">도구 호출</text>
 
             <!-- 환경 규모 -->
             <text x="360" y="248" text-anchor="middle" font-size="11" fill="#888">동시 환경: 터미널 128개, GUI/SWE 64개, 도구 호출 32개</text>
 
             <defs>
-              <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#145C35"/></marker>
+              <marker id="arrowG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#145C35"></path></marker>
             </defs>
           </svg>
           <figcaption>논문 Figure 2 기반 재구성. 4개 모듈이 완전히 비동기로 작동하며, 5가지 에이전트 유형을 하나의 파이프라인에서 동시에 훈련합니다.</figcaption>
@@ -497,7 +488,22 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/강화학습.html" class="concept-chip">강화학습</a>
+      <a href="../wiki/concepts/rlhf.html" class="concept-chip">RLHF</a>
+      <a href="../wiki/concepts/자동화.html" class="concept-chip">자동화</a>
+      <a href="../wiki/concepts/리스크-amp-주의점.html" class="concept-chip">리스크 &amp; 주의점</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -552,5 +558,5 @@
 <script>
 if (window.CharEffect) window.CharEffect.initPostTitle();
 </script>
-</body>
-</html>
+
+</body></html>

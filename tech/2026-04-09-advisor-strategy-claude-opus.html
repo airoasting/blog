@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -28,6 +26,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -102,15 +101,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="비싼 AI가 조언하고, 저렴한 AI가 실행합니다"
-        data-date="2026-04-09"
-        data-category="tech"
-        data-source="Anthropic (Claude Team)"
-        data-tags="Anthropic, ClaudeOpus, AI비용, 에이전트설계"
-        data-original-url="https://claude.com/blog/the-advisor-strategy"
-        data-roasting-quote="비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다."
-        data-next-post="2026-04-08-managed-agents-decoupling.html"></div>
+      <div id="postData" hidden="" data-title="비싼 AI가 조언하고, 저렴한 AI가 실행합니다" data-date="2026-04-09" data-category="tech" data-source="Anthropic (Claude Team)" data-tags="Anthropic, ClaudeOpus, AI비용, 에이전트설계" data-original-url="https://claude.com/blog/the-advisor-strategy" data-roasting-quote="비싼 Opus를 모든 요청에 쓰고 있습니까? Anthropic은 최고 모델을 조언자로만 붙였더니 Haiku 점수가 2배가 됐습니다." data-next-post="2026-04-08-managed-agents-decoupling.html"></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -119,9 +110,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>Anthropic이 Advisor Strategy를 공개했습니다. Opus가 조언자, Sonnet과 Haiku가 실행자 역할을 맡는 설계입니다.</p>
-        <p data-summary>Haiku는 BrowseComp 점수가 19.7%에서 41.2%로 2배 이상 뛰었습니다.</p>
-        <p data-summary>Sonnet은 SWE-bench 점수가 오르면서 작업당 비용은 11.9% 줄었습니다.</p>
+        <p data-summary="">Anthropic이 Advisor Strategy를 공개했습니다. Opus가 조언자, Sonnet과 Haiku가 실행자 역할을 맡는 설계입니다.</p>
+        <p data-summary="">Haiku는 BrowseComp 점수가 19.7%에서 41.2%로 2배 이상 뛰었습니다.</p>
+        <p data-summary="">Sonnet은 SWE-bench 점수가 오르면서 작업당 비용은 11.9% 줄었습니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -241,7 +232,7 @@
 
       <!-- 리스크 -->
       <section class="post-section" id="section-risk">
-        <div class="post-section-label">리스크 & 주의점</div>
+        <div class="post-section-label">리스크 &amp; 주의점</div>
 
         <p><strong>벤치마크는 Anthropic 자사 측정치입니다.</strong> SWE-bench Multilingual과 BrowseComp 수치는 Anthropic 블로그 발표 기준입니다. 실제 서비스 환경에서는 결과가 달라질 수 있습니다. 반드시 자사 데이터로 재측정해야 합니다.</p>
 
@@ -430,7 +421,22 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/anthropic.html" class="concept-chip">Anthropic</a>
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/cto.html" class="concept-chip">CTO</a>
+      <a href="../wiki/concepts/용어-설명.html" class="concept-chip">용어 설명</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -481,5 +487,6 @@
   <script>
   if (window.CharEffect) window.CharEffect.initPostTitle();
   </script>
-</body>
-</html>
+
+
+</body></html>

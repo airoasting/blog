@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -29,6 +27,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -104,15 +103,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="Claude Code 품질이 6주간 하락한 진짜 이유"
-        data-date="2026-04-23"
-        data-category="tech"
-        data-source="Anthropic Engineering Blog (Anthropic)"
-        data-tags="ClaudeCode, Anthropic, AI품질, 에이전트, 포스트모텀"
-        data-original-url="https://www.anthropic.com/engineering/april-23-postmortem"
-        data-roasting-quote="Anthropic이 직접 Claude Code를 세 번 망가뜨렸습니다. 6주간 조용히. 당신의 조직은 AI 도구 성능 저하를 감지할 수 있습니까?"
-        data-next-post="2026-04-16-claude-opus-4-7-launch.html"></div>
+      <div id="postData" hidden="" data-title="Claude Code 품질이 6주간 하락한 진짜 이유" data-date="2026-04-23" data-category="tech" data-source="Anthropic Engineering Blog (Anthropic)" data-tags="ClaudeCode, Anthropic, AI품질, 에이전트, 포스트모텀" data-original-url="https://www.anthropic.com/engineering/april-23-postmortem" data-roasting-quote="Anthropic이 직접 Claude Code를 세 번 망가뜨렸습니다. 6주간 조용히. 당신의 조직은 AI 도구 성능 저하를 감지할 수 있습니까?" data-next-post="2026-04-16-claude-opus-4-7-launch.html"></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -121,9 +112,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>Anthropic이 2026년 3~4월 Claude Code에서 세 가지 품질 저하 문제가 연달아 발생했음을 공식 확인했습니다.</p>
-        <p data-summary>추론 노력 기본값 변경, 프롬프트 캐시 버그, 시스템 프롬프트 압축이 각각 원인이었습니다.</p>
-        <p data-summary>2026년 4월 20일(v2.1.116) 기준 모두 수정됐으며, 구독자 사용량 한도는 전원 리셋됐습니다.</p>
+        <p data-summary="">Anthropic이 2026년 3~4월 Claude Code에서 세 가지 품질 저하 문제가 연달아 발생했음을 공식 확인했습니다.</p>
+        <p data-summary="">추론 노력 기본값 변경, 프롬프트 캐시 버그, 시스템 프롬프트 압축이 각각 원인이었습니다.</p>
+        <p data-summary="">2026년 4월 20일(v2.1.116) 기준 모두 수정됐으며, 구독자 사용량 한도는 전원 리셋됐습니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -238,7 +229,7 @@
 
       <!-- 리스크 -->
       <section class="post-section" id="section-risk">
-        <div class="post-section-label">리스크 & 주의점</div>
+        <div class="post-section-label">리스크 &amp; 주의점</div>
 
         <p><strong>AI 도구를 블랙박스로 쓰면 성능 저하를 알아채기 어렵습니다.</strong> Anthropic 내부 평가도 초기에 이 문제를 발견하지 못했습니다(Anthropic, 2026). 내부 테스트 버전이 공개 버전과 달랐기 때문입니다. 조직 내부에서도 AI 결과를 검토 없이 채택하는 문화라면, 품질 저하가 의사결정으로 이어질 수 있습니다.</p>
 
@@ -450,7 +441,22 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/anthropic.html" class="concept-chip">Anthropic</a>
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/cto.html" class="concept-chip">CTO</a>
+      <a href="../wiki/concepts/ui.html" class="concept-chip">UI</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -501,5 +507,6 @@
   <script>
   if (window.CharEffect) window.CharEffect.initPostTitle();
   </script>
-</body>
-</html>
+
+
+</body></html>

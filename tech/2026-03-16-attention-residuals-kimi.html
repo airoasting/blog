@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -27,6 +25,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -110,15 +109,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다"
-        data-date="2026-03-16"
-        data-category="tech"
-        data-source="arXiv (Kimi Team, Moonshot AI)"
-        data-tags="Transformer, Kimi, LLM, 모델아키텍처, AI인프라"
-        data-original-url="https://arxiv.org/abs/2603.15031"
-        data-roasting-quote="Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았습니다. 모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했습니까?"
-        data-next-post=""></div>
+      <div id="postData" hidden="" data-title="AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다" data-date="2026-03-16" data-category="tech" data-source="arXiv (Kimi Team, Moonshot AI)" data-tags="Transformer, Kimi, LLM, 모델아키텍처, AI인프라" data-original-url="https://arxiv.org/abs/2603.15031" data-roasting-quote="Transformer의 잔차 연결은 2017년부터 한 번도 바뀌지 않았습니다. 모든 층의 기여를 동일하게 더하는 게 최선이라고, 누가 증명했습니까?" data-next-post=""></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -127,9 +118,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더합니다. 모델이 깊어질수록 초기 층의 기여가 희석되는 구조적 결함입니다.</p>
-        <p data-summary>Kimi 팀이 제안한 Attention Residuals는 각 층이 이전 층의 출력을 어텐션으로 선택합니다. 입력에 따라 어떤 층의 정보를 가져올지 동적으로 결정합니다.</p>
-        <p data-summary>기존 모델에 드롭인(drop-in)으로 적용할 수 있습니다. 스케일링 법칙 실험에서 모델 크기와 무관하게 일관된 성능 향상을 확인했습니다.</p>
+        <p data-summary="">Transformer의 잔차 연결은 모든 층의 출력을 동일 가중치로 더합니다. 모델이 깊어질수록 초기 층의 기여가 희석되는 구조적 결함입니다.</p>
+        <p data-summary="">Kimi 팀이 제안한 Attention Residuals는 각 층이 이전 층의 출력을 어텐션으로 선택합니다. 입력에 따라 어떤 층의 정보를 가져올지 동적으로 결정합니다.</p>
+        <p data-summary="">기존 모델에 드롭인(drop-in)으로 적용할 수 있습니다. 스케일링 법칙 실험에서 모델 크기와 무관하게 일관된 성능 향상을 확인했습니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -167,60 +158,60 @@
             <text x="140" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">표준 잔차 연결</text>
             <text x="140" y="46" text-anchor="middle" font-size="11" fill="#888">(모든 층 가중치 = 1)</text>
             <!-- 층 박스들 -->
-            <rect x="90" y="60" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <rect x="90" y="60" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"></rect>
             <text x="140" y="80" text-anchor="middle" font-size="12" fill="#555">Layer 1</text>
-            <rect x="90" y="110" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <rect x="90" y="110" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"></rect>
             <text x="140" y="130" text-anchor="middle" font-size="12" fill="#555">Layer 2</text>
-            <rect x="90" y="160" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <rect x="90" y="160" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"></rect>
             <text x="140" y="180" text-anchor="middle" font-size="12" fill="#555">Layer 3</text>
-            <rect x="90" y="210" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"/>
+            <rect x="90" y="210" width="100" height="32" rx="4" fill="#E8E8E8" stroke="#ccc"></rect>
             <text x="140" y="230" text-anchor="middle" font-size="12" fill="#555">Layer N</text>
             <!-- 동일 가중치 화살표 -->
-            <line x1="140" y1="92" x2="140" y2="110" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
-            <line x1="140" y1="142" x2="140" y2="160" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
-            <line x1="140" y1="192" x2="140" y2="210" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"/>
+            <line x1="140" y1="92" x2="140" y2="110" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"></line>
+            <line x1="140" y1="142" x2="140" y2="160" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"></line>
+            <line x1="140" y1="192" x2="140" y2="210" stroke="#aaa" stroke-width="2" marker-end="url(#arrowGray)"></line>
             <!-- 가중치 라벨 -->
             <text x="160" y="105" font-size="11" fill="#c43500" font-weight="600">+1</text>
             <text x="160" y="155" font-size="11" fill="#c43500" font-weight="600">+1</text>
             <text x="160" y="205" font-size="11" fill="#c43500" font-weight="600">+1</text>
             <!-- 결과 -->
-            <rect x="80" y="260" width="120" height="36" rx="6" fill="#fff3f0" stroke="#c43500"/>
+            <rect x="80" y="260" width="120" height="36" rx="6" fill="#fff3f0" stroke="#c43500"></rect>
             <text x="140" y="282" text-anchor="middle" font-size="12" fill="#c43500" font-weight="600">초기 층 정보 희석</text>
 
             <!-- 구분선 -->
-            <line x1="360" y1="20" x2="360" y2="310" stroke="#E8E8E8" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="360" y1="20" x2="360" y2="310" stroke="#E8E8E8" stroke-width="1" stroke-dasharray="4,4"></line>
 
             <!-- 우측: Attention Residuals -->
             <text x="540" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Attention Residuals</text>
             <text x="540" y="46" text-anchor="middle" font-size="11" fill="#888">(입력에 따라 가중치 동적 결정)</text>
             <!-- 층 박스들 -->
-            <rect x="490" y="60" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <rect x="490" y="60" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"></rect>
             <text x="540" y="80" text-anchor="middle" font-size="12" fill="#145C35">Layer 1</text>
-            <rect x="490" y="110" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <rect x="490" y="110" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"></rect>
             <text x="540" y="130" text-anchor="middle" font-size="12" fill="#145C35">Layer 2</text>
-            <rect x="490" y="160" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <rect x="490" y="160" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"></rect>
             <text x="540" y="180" text-anchor="middle" font-size="12" fill="#145C35">Layer 3</text>
-            <rect x="490" y="210" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"/>
+            <rect x="490" y="210" width="100" height="32" rx="4" fill="#e8f5e9" stroke="#145C35"></rect>
             <text x="540" y="230" text-anchor="middle" font-size="12" fill="#145C35">Layer N</text>
             <!-- 동적 가중치 화살표 (다양한 두께) -->
-            <line x1="540" y1="92" x2="540" y2="110" stroke="#145C35" stroke-width="3" marker-end="url(#arrowGreen)"/>
-            <line x1="540" y1="142" x2="540" y2="160" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
-            <line x1="540" y1="192" x2="540" y2="210" stroke="#145C35" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+            <line x1="540" y1="92" x2="540" y2="110" stroke="#145C35" stroke-width="3" marker-end="url(#arrowGreen)"></line>
+            <line x1="540" y1="142" x2="540" y2="160" stroke="#145C35" stroke-width="1.5" marker-end="url(#arrowGreen)"></line>
+            <line x1="540" y1="192" x2="540" y2="210" stroke="#145C35" stroke-width="2.5" marker-end="url(#arrowGreen)"></line>
             <!-- 크로스 연결 (skip) -->
-            <path d="M490,76 Q440,120 490,176" fill="none" stroke="#145C35" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"/>
+            <path d="M490,76 Q440,120 490,176" fill="none" stroke="#145C35" stroke-width="2" stroke-dasharray="4,3" opacity="0.6"></path>
             <text x="432" y="130" font-size="10" fill="#145C35" font-weight="600">skip</text>
             <!-- 가중치 라벨 -->
             <text x="558" y="105" font-size="11" fill="#145C35" font-weight="600">0.6</text>
             <text x="558" y="155" font-size="11" fill="#145C35" font-weight="600">0.1</text>
             <text x="558" y="205" font-size="11" fill="#145C35" font-weight="600">0.3</text>
             <!-- 결과 -->
-            <rect x="480" y="260" width="120" height="36" rx="6" fill="#e8f5e9" stroke="#145C35"/>
+            <rect x="480" y="260" width="120" height="36" rx="6" fill="#e8f5e9" stroke="#145C35"></rect>
             <text x="540" y="282" text-anchor="middle" font-size="12" fill="#145C35" font-weight="600">중요한 층 선택 보존</text>
 
             <!-- Arrow markers -->
             <defs>
-              <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#aaa"/></marker>
-              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#145C35"/></marker>
+              <marker id="arrowGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#aaa"></path></marker>
+              <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#145C35"></path></marker>
             </defs>
           </svg>
           <figcaption>논문 Figure 1 기반 재구성. 표준 잔차 연결은 모든 층을 동일하게 더하지만, Attention Residuals는 입력에 따라 중요한 층에 더 높은 가중치를 부여합니다.</figcaption>
@@ -241,8 +232,8 @@
             <text x="300" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">스케일링 법칙: 컴퓨팅 증가에 따른 검증 손실</text>
             <text x="300" y="42" text-anchor="middle" font-size="11" fill="#888">낮을수록 좋음 (Validation Loss)</text>
             <!-- 축 -->
-            <line x1="80" y1="60" x2="80" y2="280" stroke="#ccc" stroke-width="1"/>
-            <line x1="80" y1="280" x2="560" y2="280" stroke="#ccc" stroke-width="1"/>
+            <line x1="80" y1="60" x2="80" y2="280" stroke="#ccc" stroke-width="1"></line>
+            <line x1="80" y1="280" x2="560" y2="280" stroke="#ccc" stroke-width="1"></line>
             <!-- Y축 라벨 -->
             <text x="72" y="72" text-anchor="end" font-size="10" fill="#888">3.4</text>
             <text x="72" y="127" text-anchor="end" font-size="10" fill="#888">3.2</text>
@@ -256,31 +247,31 @@
             <text x="500" y="298" text-anchor="middle" font-size="10" fill="#888">1e21</text>
             <text x="300" y="318" text-anchor="middle" font-size="11" fill="#666">Compute (FLOPs)</text>
             <!-- 그리드 -->
-            <line x1="80" y1="127" x2="560" y2="127" stroke="#eee" stroke-width="1"/>
-            <line x1="80" y1="182" x2="560" y2="182" stroke="#eee" stroke-width="1"/>
-            <line x1="80" y1="237" x2="560" y2="237" stroke="#eee" stroke-width="1"/>
+            <line x1="80" y1="127" x2="560" y2="127" stroke="#eee" stroke-width="1"></line>
+            <line x1="80" y1="182" x2="560" y2="182" stroke="#eee" stroke-width="1"></line>
+            <line x1="80" y1="237" x2="560" y2="237" stroke="#eee" stroke-width="1"></line>
             <!-- Baseline 곡선 (회색) -->
-            <polyline points="140,80 200,115 260,155 320,190 380,215 440,235 500,250" fill="none" stroke="#aaa" stroke-width="2.5"/>
-            <circle cx="140" cy="80" r="3" fill="#aaa"/><circle cx="260" cy="155" r="3" fill="#aaa"/>
-            <circle cx="380" cy="215" r="3" fill="#aaa"/><circle cx="500" cy="250" r="3" fill="#aaa"/>
+            <polyline points="140,80 200,115 260,155 320,190 380,215 440,235 500,250" fill="none" stroke="#aaa" stroke-width="2.5"></polyline>
+            <circle cx="140" cy="80" r="3" fill="#aaa"></circle><circle cx="260" cy="155" r="3" fill="#aaa"></circle>
+            <circle cx="380" cy="215" r="3" fill="#aaa"></circle><circle cx="500" cy="250" r="3" fill="#aaa"></circle>
             <!-- Block AttnRes 곡선 (초록) -->
-            <polyline points="140,75 200,108 260,145 320,178 380,200 440,218 500,232" fill="none" stroke="#145C35" stroke-width="2.5"/>
-            <circle cx="140" cy="75" r="3" fill="#145C35"/><circle cx="260" cy="145" r="3" fill="#145C35"/>
-            <circle cx="380" cy="200" r="3" fill="#145C35"/><circle cx="500" cy="232" r="3" fill="#145C35"/>
+            <polyline points="140,75 200,108 260,145 320,178 380,200 440,218 500,232" fill="none" stroke="#145C35" stroke-width="2.5"></polyline>
+            <circle cx="140" cy="75" r="3" fill="#145C35"></circle><circle cx="260" cy="145" r="3" fill="#145C35"></circle>
+            <circle cx="380" cy="200" r="3" fill="#145C35"></circle><circle cx="500" cy="232" r="3" fill="#145C35"></circle>
             <!-- Full AttnRes 곡선 (파랑) -->
-            <polyline points="140,73 200,105 260,142 320,174 380,196 440,214 500,230" fill="none" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"/>
-            <circle cx="140" cy="73" r="3" fill="#1A4A7A"/><circle cx="500" cy="230" r="3" fill="#1A4A7A"/>
+            <polyline points="140,73 200,105 260,142 320,174 380,196 440,214 500,230" fill="none" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"></polyline>
+            <circle cx="140" cy="73" r="3" fill="#1A4A7A"></circle><circle cx="500" cy="230" r="3" fill="#1A4A7A"></circle>
             <!-- 1.25x 효율 표시 -->
-            <line x1="440" y1="235" x2="500" y2="235" stroke="#c43500" stroke-width="1" stroke-dasharray="3,2"/>
-            <line x1="500" y1="232" x2="500" y2="250" stroke="#c43500" stroke-width="1.5"/>
+            <line x1="440" y1="235" x2="500" y2="235" stroke="#c43500" stroke-width="1" stroke-dasharray="3,2"></line>
+            <line x1="500" y1="232" x2="500" y2="250" stroke="#c43500" stroke-width="1.5"></line>
             <text x="510" y="244" font-size="10" fill="#c43500" font-weight="600">1.25x 효율</text>
             <!-- 범례 -->
-            <rect x="160" y="60" width="180" height="52" rx="4" fill="white" stroke="#eee"/>
-            <line x1="170" y1="74" x2="195" y2="74" stroke="#aaa" stroke-width="2.5"/>
+            <rect x="160" y="60" width="180" height="52" rx="4" fill="white" stroke="#eee"></rect>
+            <line x1="170" y1="74" x2="195" y2="74" stroke="#aaa" stroke-width="2.5"></line>
             <text x="202" y="78" font-size="11" fill="#555">Baseline</text>
-            <line x1="170" y1="92" x2="195" y2="92" stroke="#145C35" stroke-width="2.5"/>
+            <line x1="170" y1="92" x2="195" y2="92" stroke="#145C35" stroke-width="2.5"></line>
             <text x="202" y="96" font-size="11" fill="#145C35" font-weight="600">Block AttnRes</text>
-            <line x1="170" y1="104" x2="195" y2="104" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"/>
+            <line x1="170" y1="104" x2="195" y2="104" stroke="#1A4A7A" stroke-width="2" stroke-dasharray="6,3"></line>
             <text x="202" y="108" font-size="11" fill="#1A4A7A">Full AttnRes</text>
           </svg>
           <figcaption>논문 Figure 4 기반 재구성. Block AttnRes(실선, 초록)는 모든 컴퓨팅 규모에서 Baseline보다 낮은 손실을 달성합니다. 동일 성능 도달에 필요한 컴퓨팅이 1.25배 적습니다.</figcaption>
@@ -524,7 +515,20 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/ai인프라.html" class="concept-chip">AI인프라</a>
+      <a href="../wiki/concepts/리스크-amp-주의점.html" class="concept-chip">리스크 &amp; 주의점</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -579,5 +583,5 @@
 <script>
 if (window.CharEffect) window.CharEffect.initPostTitle();
 </script>
-</body>
-</html>
+
+</body></html>

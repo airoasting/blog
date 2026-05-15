@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -28,6 +26,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -101,15 +100,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="카파시: 코딩의 종말, 에이전트 위임의 시작"
-        data-date="2026-03-20"
-        data-category="leader"
-        data-source="YouTube (No Priors Podcast)"
-        data-tags="Karpathy, 코딩에이전트, AI에이전트, AI전략"
-        data-original-url="https://www.youtube.com/watch?v=kwSVtQ7dziU"
-        data-roasting-quote="카파시는 12월부터 코드를 안 씁니다. 개발팀이 아직도 직접 코딩하고 있습니까?"
-        data-next-post=""></div>
+      <div id="postData" hidden="" data-title="카파시: 코딩의 종말, 에이전트 위임의 시작" data-date="2026-03-20" data-category="leader" data-source="YouTube (No Priors Podcast)" data-tags="Karpathy, 코딩에이전트, AI에이전트, AI전략" data-original-url="https://www.youtube.com/watch?v=kwSVtQ7dziU" data-roasting-quote="카파시는 12월부터 코드를 안 씁니다. 개발팀이 아직도 직접 코딩하고 있습니까?" data-next-post=""></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -118,9 +109,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>카파시는 12월 이후 코드를 직접 쓰지 않습니다. 모든 작업을 AI 에이전트에 위임합니다.</p>
-        <p data-summary>에이전트를 병렬로 운영하고, 기능 단위로 작업을 분배합니다. 생산성의 병목이 GPU에서 토큰 처리량으로 바뀌었습니다.</p>
-        <p data-summary>카파시는 집 전체를 제어하는 홈 에이전트까지 운영합니다. 앱이 사라지고 API와 에이전트만 남는 미래를 제시합니다.</p>
+        <p data-summary="">카파시는 12월 이후 코드를 직접 쓰지 않습니다. 모든 작업을 AI 에이전트에 위임합니다.</p>
+        <p data-summary="">에이전트를 병렬로 운영하고, 기능 단위로 작업을 분배합니다. 생산성의 병목이 GPU에서 토큰 처리량으로 바뀌었습니다.</p>
+        <p data-summary="">카파시는 집 전체를 제어하는 홈 에이전트까지 운영합니다. 앱이 사라지고 API와 에이전트만 남는 미래를 제시합니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -181,7 +172,7 @@
 
       <!-- 리스크 -->
       <section class="post-section" id="section-risk">
-        <div class="post-section-label">리스크 & 주의점</div>
+        <div class="post-section-label">리스크 &amp; 주의점</div>
         <p><strong>에이전트의 코드 품질은 보장되지 않습니다.</strong> 카파시도 코드의 중요도에 따라 리뷰 강도를 조절한다고 말했습니다. 프로덕션 코드를 무검토로 적용하면 위험합니다.</p>
         <p><strong>비용 감각이 마비될 수 있습니다.</strong> 토큰 구독 한도를 채우는 것 자체가 목표가 되면 문제입니다. 불필요한 작업까지 에이전트에 위임하게 됩니다. ROI를 따져야 합니다.</p>
         <p><strong>에이전트 의존은 기초 역량을 약화시킵니다.</strong> 직접 코딩하지 않으면 에이전트의 실수를 판별하는 능력도 떨어집니다. 카파시 수준의 기초가 있어야 효과적으로 위임할 수 있습니다.</p>
@@ -349,7 +340,22 @@
         </a>
       </div>
 
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/openai.html" class="concept-chip">OpenAI</a>
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      <a href="../wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- 모바일 공유 바 -->
@@ -364,7 +370,7 @@
     <div class="ai-md-wrap">
       <div class="ai-md-header">
         <span>AI View (Markdown)</span>
-        <button class="ai-md-close" id="aiMdClose" aria-label="닫기">&times;</button>
+        <button class="ai-md-close" id="aiMdClose" aria-label="닫기">×</button>
       </div>
       <div class="ai-md-body" id="aiMdBody"></div>
     </div>
@@ -384,5 +390,6 @@ if (window.CharEffect) window.CharEffect.initPostTitle();
 </script>
 <footer id="site-footer"></footer>
 <script src="../assets/js/footer.js"></script>
-</body>
-</html>
+
+
+</body></html>

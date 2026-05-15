@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -30,6 +28,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -163,15 +162,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="AI를 쓸수록 실력이 떨어진다"
-        data-date="2026-02-01"
-        data-category="survival"
-        data-source="arXiv"
-        data-tags="AI역량, 스킬감소, Anthropic, 인재전략, 생존"
-        data-original-url="https://arxiv.org/html/2601.20245v2"
-        data-roasting-quote="AI가 코드를 대신 써준다고 좋아했습니까? 실력은 17% 빠지고, 속도는 빨라지지도 않았습니다. 감독 능력까지 잃으면 누가 AI를 감시합니까?"
-        data-next-post=""></div>
+      <div id="postData" hidden="" data-title="AI를 쓸수록 실력이 떨어진다" data-date="2026-02-01" data-category="survival" data-source="arXiv" data-tags="AI역량, 스킬감소, Anthropic, 인재전략, 생존" data-original-url="https://arxiv.org/html/2601.20245v2" data-roasting-quote="AI가 코드를 대신 써준다고 좋아했습니까? 실력은 17% 빠지고, 속도는 빨라지지도 않았습니다. 감독 능력까지 잃으면 누가 AI를 감시합니까?" data-next-post=""></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -180,9 +171,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>Anthropic이 개발자 52명을 실험한 결과, AI를 보조로 쓴 그룹은 학습 점수가 17% 낮았습니다.</p>
-        <p data-summary>AI가 코드를 대신 작성하면 개발자가 오류를 직접 겪을 기회가 사라지고, 디버깅 능력이 가장 크게 떨어집니다.</p>
-        <p data-summary>실력을 키우려면 AI에게 답을 맡기지 말고, 개념을 묻는 방식으로 활용해야 합니다.</p>
+        <p data-summary="">Anthropic이 개발자 52명을 실험한 결과, AI를 보조로 쓴 그룹은 학습 점수가 17% 낮았습니다.</p>
+        <p data-summary="">AI가 코드를 대신 작성하면 개발자가 오류를 직접 겪을 기회가 사라지고, 디버깅 능력이 가장 크게 떨어집니다.</p>
+        <p data-summary="">실력을 키우려면 AI에게 답을 맡기지 말고, 개념을 묻는 방식으로 활용해야 합니다.</p>
       </section>
 
       <!-- Roasting -->
@@ -246,7 +237,7 @@
         <div class="chart-wrap">
           <div class="chart-title">퀴즈 점수 비교: AI 그룹 vs 대조 그룹 (27점 만점)</div>
           <canvas id="chartQuizScore"></canvas>
-          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 6. Cohen's d = 0.738, p = 0.010</div>
+          <div class="chart-note">출처: Shen &amp; Tamkin (2025), Figure 6. Cohen's d = 0.738, p = 0.010</div>
         </div>
 
         <p><strong>둘째, AI를 써도 작업 속도는 빨라지지 않았습니다.</strong> AI 그룹의 과제 완료 중앙값은 19.5분, 대조 그룹은 23분이었지만, 이 차이는 통계적으로 유의미하지 않았습니다. 이유가 있습니다. 일부 참가자는 AI에게 보낼 질문을 작성하는 데만 전체 시간의 30%(최대 11분)를 소비했습니다. 코드 생성으로 아낀 시간을, AI와의 대화에 고스란히 다시 쓴 셈입니다. 생산성은 그대로인데 실력만 떨어졌습니다.</p>
@@ -256,7 +247,7 @@
         <div class="chart-wrap">
           <div class="chart-title">오류 발생 빈도 (중앙값): AI 그룹 vs 대조 그룹</div>
           <canvas id="chartErrors"></canvas>
-          <div class="chart-note">출처: Shen & Tamkin (2025), Table 4. 오류 없이 완료한 참가자: AI 그룹 10명, 대조 그룹 2명</div>
+          <div class="chart-note">출처: Shen &amp; Tamkin (2025), Table 4. 오류 없이 완료한 참가자: AI 그룹 10명, 대조 그룹 2명</div>
         </div>
 
         <p><strong>넷째, AI를 어떻게 쓰느냐에 따라 결과가 완전히 갈렸습니다.</strong> 연구진은 AI 그룹에서 6가지 사용 패턴을 발견했습니다. 코드 생성을 통째로 맡긴 참가자들은 점수가 40% 미만이었고, 개념적 질문만 던진 참가자 7명은 65~86%를 기록했습니다. AI에게 무엇을 시키느냐가 실력이 남느냐 사라지느냐를 결정합니다.</p>
@@ -264,7 +255,7 @@
         <div class="chart-wrap">
           <div class="chart-title">문항 유형별 점수 격차 (대조 그룹 대비 AI 그룹 감소폭)</div>
           <canvas id="chartQuestionType"></canvas>
-          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 8. 디버깅 영역에서 가장 큰 격차 발생</div>
+          <div class="chart-note">출처: Shen &amp; Tamkin (2025), Figure 8. 디버깅 영역에서 가장 큰 격차 발생</div>
         </div>
       </section>
 
@@ -276,7 +267,7 @@
         <div class="chart-wrap">
           <div class="chart-title">6가지 AI 사용 패턴별 퀴즈 점수 범위 (%)</div>
           <canvas id="chartPatterns"></canvas>
-          <div class="chart-note">출처: Shen & Tamkin (2025), Figure 11. 빨간색 = 저성과 패턴, 초록색 = 고성과 패턴</div>
+          <div class="chart-note">출처: Shen &amp; Tamkin (2025), Figure 11. 빨간색 = 저성과 패턴, 초록색 = 고성과 패턴</div>
         </div>
 
         <p><strong>저성과 패턴 (점수 40% 미만):</strong></p>
@@ -529,7 +520,18 @@
         </ul>
       </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/anthropic.html" class="concept-chip">Anthropic</a>
+      <a href="../wiki/concepts/비즈니스-비용.html" class="concept-chip">비즈니스 비용</a>
+      <a href="../wiki/concepts/리스크-amp-주의점.html" class="concept-chip">리스크 &amp; 주의점</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -718,5 +720,6 @@
 <script>
 if (window.CharEffect) window.CharEffect.initPostTitle();
 </script>
-</body>
-</html>
+
+
+</body></html>

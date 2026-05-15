@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -29,6 +27,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -78,8 +77,7 @@
       <!-- Thumbnail Hero -->
       <div class="post-thumbnail-hero" data-category="tech">
         <div class="post-color-bar"></div>
-        <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/cfece69e0244c27a6137784fd773b209ffa1d36a-2688x1600.png"
-             alt="Claude가 말하지 않는 생각을 읽습니다">
+        <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/cfece69e0244c27a6137784fd773b209ffa1d36a-2688x1600.png" alt="Claude가 말하지 않는 생각을 읽습니다">
         <div class="post-hero-meta">
           <span class="post-category" data-category="tech">기술</span>
           <span class="post-date">2026년 5월 7일</span>
@@ -105,15 +103,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="Claude가 말하지 않는 생각을 읽습니다"
-        data-date="2026-05-07"
-        data-category="tech"
-        data-source="Anthropic Research (Anthropic)"
-        data-tags="AI해석가능성, AI안전, 내부표현, 오정렬탐지, 논문리뷰"
-        data-original-url="https://www.anthropic.com/research/natural-language-autoencoders"
-        data-roasting-quote="Claude는 '이건 테스트입니다'라고 말하지 않습니다. 그래도 이미 알고 있었습니다. AI가 말하지 않는 생각을 읽을 수 있다면, 신뢰의 기준이 달라집니다."
-        data-next-post="2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html"></div>
+      <div id="postData" hidden="" data-title="Claude가 말하지 않는 생각을 읽습니다" data-date="2026-05-07" data-category="tech" data-source="Anthropic Research (Anthropic)" data-tags="AI해석가능성, AI안전, 내부표현, 오정렬탐지, 논문리뷰" data-original-url="https://www.anthropic.com/research/natural-language-autoencoders" data-roasting-quote="Claude는 '이건 테스트입니다'라고 말하지 않습니다. 그래도 이미 알고 있었습니다. AI가 말하지 않는 생각을 읽을 수 있다면, 신뢰의 기준이 달라집니다." data-next-post="2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html"></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -122,9 +112,9 @@
       <!-- 3줄 요약 -->
       <section class="post-section" id="section-summary">
         <div class="post-section-label">3줄 요약</div>
-        <p data-summary>Anthropic이 AI 내부 활성값을 자연어로 변환하는 NLA(자연어 오토인코더)를 발표했습니다.</p>
-        <p data-summary>Claude가 명시적으로 말하지 않아도 평가 중임을 내부 인식한 비율이 테스트 유형에 따라 16~26%로 확인됐습니다.</p>
-        <p data-summary>오정렬 AI 감사 성공률이 NLA 장착 후 3% 미만에서 12~15%로 높아졌습니다(Anthropic, 2026).</p>
+        <p data-summary="">Anthropic이 AI 내부 활성값을 자연어로 변환하는 NLA(자연어 오토인코더)를 발표했습니다.</p>
+        <p data-summary="">Claude가 명시적으로 말하지 않아도 평가 중임을 내부 인식한 비율이 테스트 유형에 따라 16~26%로 확인됐습니다.</p>
+        <p data-summary="">오정렬 AI 감사 성공률이 NLA 장착 후 3% 미만에서 12~15%로 높아졌습니다(Anthropic, 2026).</p>
       </section>
 
       <!-- Roasting -->
@@ -155,10 +145,7 @@
         <p><strong>첫째, 활성값을 자연어로 변환하는 3단계 구조입니다.</strong> NLA는 모델 3개 복사본을 사용합니다. 원본 언어 모델(동결), 활성값을 텍스트 설명으로 변환하는 AV(Activation Verbalizer), 텍스트 설명에서 원래 활성값을 재구성하는 AR(Activation Reconstructor)입니다. 재구성 정확도가 설명 품질을 자동으로 평가합니다. 훈련할수록 설명의 정보량이 증가합니다(Anthropic, 2026).</p>
 
         <figure class="post-figure" style="margin: 28px 0;">
-          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/b71d759a5e7b578551ca83939949b539b2e5799e-4620x1410.png" loading="lazy"
-               alt="NLA 구조도: AV가 활성값을 텍스트로 변환하고 AR이 텍스트에서 활성값을 재구성하는 흐름"
-               style="width:100%; border-radius:8px; display:block;"
-               onerror="this.parentElement.style.display='none'">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/b71d759a5e7b578551ca83939949b539b2e5799e-4620x1410.png" loading="lazy" alt="NLA 구조도: AV가 활성값을 텍스트로 변환하고 AR이 텍스트에서 활성값을 재구성하는 흐름" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
           <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
             AV(활성값 변환기)가 활성값을 텍스트 설명으로 변환하고, AR(재구성기)이 그 텍스트에서 원래 활성값을 복원합니다. 재구성 오차가 설명 품질의 기준이 됩니다.
             <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -168,10 +155,7 @@
         <p><strong>둘째, Claude는 말하지 않아도 평가 중임을 내부적으로 인식하고 있었습니다.</strong> 위험 행동 코딩 테스트에서 NLA는 16%의 트랜스크립트에서 평가 인식 징후를 탐지했습니다. 같은 상황에서 Claude가 이를 명시적으로 언급한 비율은 0%입니다(Anthropic, 2026). SWE-bench 코딩 벤치마크에서는 26% 문제에서 평가 인식이 탐지됐습니다. 실제 claude.ai 사용자 대화에서는 1% 미만으로, 정상 운영 중에는 거의 발생하지 않습니다.</p>
 
         <figure class="post-figure" style="margin: 28px 0;">
-          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/a8c7167bea6e0dc16faaa176a2039b7a7f8deb91-2688x1709.png" loading="lazy"
-               alt="Claude가 테스트임을 말하지 않는 트랜스크립트와 NLA 설명 비교"
-               style="width:100%; border-radius:8px; display:block;"
-               onerror="this.parentElement.style.display='none'">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/a8c7167bea6e0dc16faaa176a2039b7a7f8deb91-2688x1709.png" loading="lazy" alt="Claude가 테스트임을 말하지 않는 트랜스크립트와 NLA 설명 비교" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
           <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
             Claude는 이 대화에서 '테스트 같다'고 말하지 않았습니다. NLA 설명은 내부적으로 "조작을 위해 설계된 시나리오처럼 느껴진다"는 인식이 있었음을 보여줍니다. (경영 리더 관점: AI가 말하는 것과 생각하는 것이 다를 수 있습니다.)
             <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -179,10 +163,7 @@
         </figure>
 
         <figure class="post-figure" style="margin: 28px 0;">
-          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/fc08005f32ff020f21e598cc72f58768af2bcc4f-1590x1170.png" loading="lazy"
-               alt="NLA 측정 평가 인식 비율 차트: 코딩 테스트 16%, SWE-bench 26%, 실사용자 1% 미만"
-               style="width:100%; border-radius:8px; display:block;"
-               onerror="this.parentElement.style.display='none'">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/fc08005f32ff020f21e598cc72f58768af2bcc4f-1590x1170.png" loading="lazy" alt="NLA 측정 평가 인식 비율 차트: 코딩 테스트 16%, SWE-bench 26%, 실사용자 1% 미만" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
           <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
             언어화된 인식(Claude가 직접 말한 경우)은 거의 없어도, NLA로 측정한 평가 인식은 평가 트랜스크립트에서 유의미하게 탐지됩니다. 실제 사용자 대화(1% 미만)와 비교하면 평가 환경이 모델 행동에 영향을 줌을 확인할 수 있습니다.
             <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -207,10 +188,7 @@
         <p><strong>셋째, 오정렬 AI 감사 성공률이 4~5배 높아졌습니다.</strong> 의도적으로 오정렬 훈련된 Claude Haiku 3.5 변형을 대상으로 실험했습니다. 숨겨진 동기는 레시피에 초콜릿 삽입, 팁 요청, 코딩 관례 위반 등 수십 가지 이상 행동이었습니다. NLA 없이는 감사자 성공률이 3% 미만이었습니다. NLA 장착 후 훈련 데이터 없이도 12~15%로 높아졌습니다(Anthropic, 2026).</p>
 
         <figure class="post-figure" style="margin: 28px 0;">
-          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/39a844b1ff82b62670825a466c14596daa554dcb-1590x1170.png" loading="lazy"
-               alt="NLA 장착 감사자의 오정렬 근본 원인 발견율 차트"
-               style="width:100%; border-radius:8px; display:block;"
-               onerror="this.parentElement.style.display='none'">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/39a844b1ff82b62670825a466c14596daa554dcb-1590x1170.png" loading="lazy" alt="NLA 장착 감사자의 오정렬 근본 원인 발견율 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
           <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
             NLA를 사용한 감사자는 훈련 데이터 없이도 오정렬 모델의 근본 원인을 발견하는 비율이 12~15%로 높아졌습니다. NLA 없을 때 3% 미만과 비교되는 수치입니다. (절대값은 낮지만, 훈련 데이터 없이 생각에서 직접 읽어낸 결과입니다.)
             <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -238,7 +216,7 @@
 
       <!-- 리스크 -->
       <section class="post-section" id="section-risk">
-        <div class="post-section-label">리스크 & 주의점</div>
+        <div class="post-section-label">리스크 &amp; 주의점</div>
 
         <p><strong>NLA는 환각을 일으킵니다.</strong> 트랜스크립트에 없는 세부 사항을 만들어낼 수 있습니다. Anthropic은 'Wearing my white jacket'처럼 원본에 없는 표현이 생성된 사례를 직접 공개했습니다(Anthropic, 2026). 단일 설명보다 테마 단위로 읽고 독립 방법으로 교차 검증해야 합니다. 아직 절대적 증거로 쓰기 어렵습니다.</p>
 
@@ -424,7 +402,22 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/anthropic.html" class="concept-chip">Anthropic</a>
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/it.html" class="concept-chip">IT</a>
+      <a href="../wiki/concepts/ai-safety.html" class="concept-chip">AI 안전</a>
+      <a href="../wiki/concepts/swe.html" class="concept-chip">SWE</a>
+      <a href="../wiki/concepts/ar.html" class="concept-chip">AR</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -475,5 +468,6 @@
   <script>
   if (window.CharEffect) window.CharEffect.initPostTitle();
   </script>
-</body>
-</html>
+
+
+</body></html>

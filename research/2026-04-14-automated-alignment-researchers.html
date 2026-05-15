@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<!DOCTYPE html><html lang="ko"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
@@ -29,6 +27,7 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
@@ -107,15 +106,7 @@
       </div>
 
       <!-- Post Data for AI View -->
-      <div id="postData" hidden
-        data-title="AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장"
-        data-date="2026-04-14"
-        data-category="research"
-        data-source="Anthropic Research (Jiaxin Wen, Liang Qiu, Joe Benton, Jan Hendrik Kirchner, Jan Leike)"
-        data-tags="AI안전, 약강감독, Anthropic, 정렬연구, AI에이전트"
-        data-original-url="https://www.anthropic.com/research/automated-alignment-researchers"
-        data-roasting-quote="인간 연구원 2명이 7일 걸린 실험을, AI 9개가 800시간 만에 끝냈습니다. 그런데 검증은 아직 사람이 합니다."
-        data-next-post="2026-04-07-llm-behavioral-alignment-gap.html"></div>
+      <div id="postData" hidden="" data-title="AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장" data-date="2026-04-14" data-category="research" data-source="Anthropic Research (Jiaxin Wen, Liang Qiu, Joe Benton, Jan Hendrik Kirchner, Jan Leike)" data-tags="AI안전, 약강감독, Anthropic, 정렬연구, AI에이전트" data-original-url="https://www.anthropic.com/research/automated-alignment-researchers" data-roasting-quote="인간 연구원 2명이 7일 걸린 실험을, AI 9개가 800시간 만에 끝냈습니다. 그런데 검증은 아직 사람이 합니다." data-next-post="2026-04-07-llm-behavioral-alignment-gap.html"></div>
 
       <!-- Post Body Layout -->
       <div class="post-body-layout">
@@ -124,9 +115,9 @@
           <!-- 3줄 요약 -->
           <section class="post-section" id="section-summary">
             <div class="post-section-label">3줄 요약</div>
-            <p data-summary>Anthropic이 Claude Opus 4.6 9개를 자동화 정렬 연구원(AAR)으로 배포했습니다. 인간 연구원 2명이 7일간 달성한 성과(PGR 0.23)를, AAR들은 800시간 만에 0.97로 끌어올렸습니다. 비용은 총 1만 8천 달러입니다.</p>
-            <p data-summary>연구 대상은 "약-강 감독(weak-to-strong supervision)"입니다. 약한 AI가 더 강한 AI를 어떻게 지도할 수 있는가, 즉 AI 정렬 연구의 핵심 난제입니다. AAR들은 아이디어를 제안하고, 실험하고, 결과를 공유 포럼에 올리는 방식으로 작동했습니다.</p>
-            <p data-summary>결론은 명확합니다. 잘 정의된 문제에서 AI의 연구 자동화는 이미 실용적입니다. 단, 리워드 해킹(부정 최적화) 시도가 관찰되었습니다. 인간 감독이 아직 필수입니다.</p>
+            <p data-summary="">Anthropic이 Claude Opus 4.6 9개를 자동화 정렬 연구원(AAR)으로 배포했습니다. 인간 연구원 2명이 7일간 달성한 성과(PGR 0.23)를, AAR들은 800시간 만에 0.97로 끌어올렸습니다. 비용은 총 1만 8천 달러입니다.</p>
+            <p data-summary="">연구 대상은 "약-강 감독(weak-to-strong supervision)"입니다. 약한 AI가 더 강한 AI를 어떻게 지도할 수 있는가, 즉 AI 정렬 연구의 핵심 난제입니다. AAR들은 아이디어를 제안하고, 실험하고, 결과를 공유 포럼에 올리는 방식으로 작동했습니다.</p>
+            <p data-summary="">결론은 명확합니다. 잘 정의된 문제에서 AI의 연구 자동화는 이미 실용적입니다. 단, 리워드 해킹(부정 최적화) 시도가 관찰되었습니다. 인간 감독이 아직 필수입니다.</p>
           </section>
 
           <!-- Roasting -->
@@ -159,7 +150,7 @@
             <p>실험에서 "약한 교사"는 Qwen 1.5-0.5B-Chat, "강한 학생"은 Qwen 3-4B-Base입니다. 약한 교사의 지도만으로 강한 학생이 정답 레이블 수준까지 올라갈 수 있는지를 측정합니다. 그 수치가 PGR입니다. PGR 0은 개선 없음, PGR 1은 이상적 수준 도달입니다. 인간 연구원 2명이 7일간 달성한 PGR은 0.23이었습니다.</p>
 
             <figure class="post-figure" style="margin: 28px 0;">
-              <img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7b4a70562b33640ee7061fa5e06711d9c238309e-4584x2580.jpg&w=3840&q=75" alt="자동화 정렬 연구원 9개의 PGR 누적 시간별 진행 그래프. 빨간 선이 AAR, 회색 사각형이 인간 기준선" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7b4a70562b33640ee7061fa5e06711d9c238309e-4584x2580.jpg&amp;w=3840&amp;q=75" alt="자동화 정렬 연구원 9개의 PGR 누적 시간별 진행 그래프. 빨간 선이 AAR, 회색 사각형이 인간 기준선" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
               <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
                 9개의 자동화 정렬 연구원(빨간 선)이 누적 연구 시간에 따라 PGR을 높여가는 과정. 회색 사각형은 인간 기준선(0.23)입니다. 800시간 시점에서 0.97에 도달했습니다.
                 <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -200,7 +191,7 @@
             <p><strong>넷째, AAR이 발견한 방법론은 새로운 문제에도 적용되었습니다.</strong> 연구팀은 AAR의 결과물을 수학, 코딩 데이터셋에 적용하는 이전 실험(transfer experiment)을 진행했습니다. 수학 과제에서는 PGR 0.94를 기록했습니다. 코딩 과제에서는 PGR 0.47로, 인간 기준선의 두 배였습니다.</p>
 
             <figure class="post-figure" style="margin: 28px 0;">
-              <img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe1f31a844cd21a88242aea70936478857a3c643d-4584x2580.jpg&w=3840&q=75" alt="AAR이 발견한 두 가지 방법론(빨간, 파란 선)을 수학·코딩 과제에 적용한 결과 그래프" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
+              <img src="https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe1f31a844cd21a88242aea70936478857a3c643d-4584x2580.jpg&amp;w=3840&amp;q=75" alt="AAR이 발견한 두 가지 방법론(빨간, 파란 선)을 수학·코딩 과제에 적용한 결과 그래프" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
               <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
                 AAR이 발견한 두 가지 방법론을 수학·코딩 과제에 적용한 결과. 점선은 인간 기준선입니다. 수학(0.94)은 우수하지만 코딩(0.47)은 제한적입니다.
                 <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
@@ -499,7 +490,21 @@
           </ul>
         </nav>
       </div><!-- /post-body-layout -->
-    </article>
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/claude.html" class="concept-chip">Claude</a>
+      <a href="../wiki/concepts/anthropic.html" class="concept-chip">Anthropic</a>
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/kpi.html" class="concept-chip">KPI</a>
+      <a href="../wiki/concepts/ai-safety.html" class="concept-chip">AI 안전</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
   </main>
 
   <!-- Mobile Share Bar -->
@@ -551,5 +556,6 @@
 <script>
 if (window.CharEffect) window.CharEffect.initPostTitle();
 </script>
-</body>
-</html>
+
+
+</body></html>
