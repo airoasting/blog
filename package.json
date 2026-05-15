@@ -6,7 +6,7 @@
     "wiki": "node scripts/wiki-brain/index.js",
     "wiki:enrich": "node scripts/wiki-brain/index.js --enrich",
     "wiki:dry": "node scripts/wiki-brain/index.js --dry-run",
-    "wiki:test": "node --test scripts/wiki-brain/__tests__"
+    "wiki:test": "node --test scripts/wiki-brain/__tests__/*.test.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.0",
