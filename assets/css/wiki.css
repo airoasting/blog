@@ -1,0 +1,40 @@
+.wiki-page { max-width: 880px; margin: 40px auto; padding: 0 24px; font-family: 'Pretendard', sans-serif; }
+.wiki-breadcrumb { font-size: 13px; color: #888; margin-bottom: 24px; }
+.wiki-breadcrumb a { color: #444; text-decoration: none; }
+.wiki-hero { padding: 32px 28px; border-radius: 16px; background: #fafaf7; border: 1px solid #e8e6e0; margin-bottom: 36px; }
+.wiki-hero h1 { font-size: 32px; margin: 0 0 16px; font-weight: 800; }
+.wiki-hero .badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.wiki-hero .badge { font-size: 11px; padding: 3px 10px; border-radius: 100px; background: #fff; border: 1px solid #ddd; color: #555; }
+.wiki-hero .badge.review { background: #FFF3CD; border-color: #FFC107; color: #856404; }
+.wiki-hero .definition { font-size: 17px; line-height: 1.7; color: #222; }
+.wiki-aliases { margin-top: 16px; display: flex; gap: 6px; flex-wrap: wrap; }
+.wiki-aliases .alias { font-size: 12px; padding: 2px 8px; background: #f2f0eb; border-radius: 6px; color: #666; }
+.wiki-section { margin-bottom: 40px; }
+.wiki-section h2 { font-size: 20px; margin-bottom: 16px; color: #1a1a1a; }
+.wiki-posts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.wiki-post-card { padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid #ececec; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+.wiki-post-card:hover { border-color: #999; }
+.wiki-post-card .meta { font-size: 11px; color: #888; margin-bottom: 6px; }
+.wiki-post-card .title { font-size: 14px; line-height: 1.45; font-weight: 600; color: #222; }
+.wiki-related { display: flex; flex-wrap: wrap; gap: 10px; }
+.wiki-related .item { padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid #ececec; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
+.wiki-related .strength { font-size: 10px; padding: 2px 6px; background: #1a1a1a; color: #fff; border-radius: 4px; }
+.wiki-footer-nav { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e6e0; display: flex; justify-content: space-between; font-size: 13px; }
+.wiki-footer-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; }
+
+.wiki-index { max-width: 1100px; margin: 40px auto; padding: 0 24px; }
+.wiki-index h1 { font-size: 32px; margin-bottom: 12px; }
+.wiki-index-intro { color: #666; margin-bottom: 24px; }
+.wiki-index-intro a { color: #1a1a1a; font-weight: 700; text-decoration: none; }
+.wiki-index-search { width: 100%; padding: 12px 16px; border: 1px solid #ddd; border-radius: 10px; font-size: 14px; margin-bottom: 24px; box-sizing: border-box; }
+.wiki-concept-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.wiki-concept-tile { padding: 14px 16px; border-radius: 10px; background: #fff; border: 1px solid #ececec; text-decoration: none; color: inherit; transition: border-color 0.15s; }
+.wiki-concept-tile:hover { border-color: #999; }
+.wiki-concept-tile .name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.wiki-concept-tile .freq { font-size: 11px; color: #888; }
+
+.related-concepts { margin: 40px 0 0; padding: 24px 0 0; border-top: 1px solid #e8e6e0; }
+.related-concepts h3 { font-size: 12px; color: #666; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+.related-concepts .concept-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.related-concepts .concept-chip { font-size: 13px; padding: 6px 12px; border-radius: 100px; background: #f2f0eb; color: #444; text-decoration: none; transition: background 0.15s; }
+.related-concepts .concept-chip:hover { background: #e8e6e0; }
