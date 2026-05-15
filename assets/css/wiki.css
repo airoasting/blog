@@ -1,4 +1,4 @@
-.wiki-page { max-width: 880px; margin: 40px auto; padding: 0 24px; font-family: 'Pretendard', sans-serif; }
+.wiki-page { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; font-family: 'Pretendard', sans-serif; }
 .wiki-breadcrumb { font-size: 13px; color: #888; margin-bottom: 24px; }
 .wiki-breadcrumb a { color: #444; text-decoration: none; }
 .wiki-hero { padding: 32px 28px; border-radius: 16px; background: #fafaf7; border: 1px solid #e8e6e0; margin-bottom: 36px; }
@@ -22,7 +22,7 @@
 .wiki-footer-nav { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e6e0; display: flex; justify-content: space-between; font-size: 13px; }
 .wiki-footer-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; }
 
-.wiki-index { max-width: 1100px; margin: 40px auto; padding: 0 24px; }
+.wiki-index { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
 .wiki-index h1 { font-size: 32px; margin-bottom: 12px; }
 .wiki-index-intro { color: #666; margin-bottom: 24px; }
 .wiki-index-intro a { color: #1a1a1a; font-weight: 700; text-decoration: none; }
