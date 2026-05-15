@@ -13,7 +13,7 @@
       "slug": "claude",
       "name": "Claude",
       "aliases": [],
-      "definition": "Claude는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Anthropic이 개발한 대화형 AI 모델입니다. 안전성과 긴 추론 능력을 강점으로 코딩, 분석, 글쓰기에 널리 쓰입니다.",
       "frequency": 88,
       "category": "tech",
       "posts": [
@@ -110,14 +110,14 @@
       ],
       "firstSeen": "2024-08-10",
       "lastSeen": "2026-04-22",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "openai",
       "slug": "openai",
       "name": "OpenAI",
       "aliases": [],
-      "definition": "OpenAI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "ChatGPT와 GPT 시리즈를 만든 미국 AI 기업입니다. 샘 알트만이 이끌며 AGI 개발을 목표로 합니다.",
       "frequency": 72,
       "category": "newsletter",
       "posts": [
@@ -198,14 +198,14 @@
       ],
       "firstSeen": "2024-10-05",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "chatgpt",
       "slug": "chatgpt",
       "name": "ChatGPT",
       "aliases": [],
-      "definition": "ChatGPT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "OpenAI가 2022년 11월 출시한 대화형 AI 서비스입니다. 생성 AI 대중화의 출발점으로 평가됩니다.",
       "frequency": 65,
       "category": "newsletter",
       "posts": [
@@ -279,14 +279,14 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2026-04-22",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "anthropic",
       "slug": "anthropic",
       "name": "Anthropic",
       "aliases": [],
-      "definition": "Anthropic는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Claude를 만든 AI 안전 연구 기업입니다. OpenAI 출신들이 2021년 창업했고 안전한 AI를 목표로 합니다.",
       "frequency": 63,
       "category": "newsletter",
       "posts": [
@@ -358,14 +358,14 @@
       ],
       "firstSeen": "2024-08-10",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "리더의-결정-포인트",
       "slug": "리더의-결정-포인트",
       "name": "리더의 결정 포인트",
       "aliases": [],
-      "definition": "리더의 결정 포인트는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "이 글에서 경영 리더가 행동으로 옮길 핵심 의사결정 지점입니다.",
       "frequency": 57,
       "category": "tech",
       "posts": [
@@ -430,14 +430,14 @@
       "newsletters": [],
       "firstSeen": "2025-09-10",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "llm",
       "slug": "llm",
       "name": "LLM",
       "aliases": [],
-      "definition": "LLM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
       "frequency": 47,
       "category": "tech",
       "posts": [
@@ -493,14 +493,14 @@
       ],
       "firstSeen": "2024-08-10",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gpu",
       "slug": "gpu",
       "name": "GPU",
       "aliases": [],
-      "definition": "GPU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
       "frequency": 43,
       "category": "newsletter",
       "posts": [
@@ -552,14 +552,14 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "api",
       "slug": "api",
       "name": "API",
       "aliases": [],
-      "definition": "API는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
       "frequency": 41,
       "category": "tech",
       "posts": [
@@ -609,14 +609,14 @@
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "google",
       "slug": "google",
       "name": "Google",
       "aliases": [],
-      "definition": "Google는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "검색·광고·클라우드를 운영하는 빅테크입니다. Gemini와 DeepMind를 보유하며 AI 경쟁의 핵심 축입니다.",
       "frequency": 40,
       "category": "newsletter",
       "posts": [
@@ -665,14 +665,14 @@
       ],
       "firstSeen": "2025-02-20",
       "lastSeen": "2026-04-22",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "비즈니스-비용",
       "slug": "비즈니스-비용",
       "name": "비즈니스 비용",
       "aliases": [],
-      "definition": "비즈니스 비용는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사업 운영에 드는 비용입니다. AI는 인건비와 R&D 비용 구조를 동시에 바꿉니다.",
       "frequency": 34,
       "category": "tech",
       "posts": [
@@ -714,7 +714,7 @@
       "newsletters": [],
       "firstSeen": "2025-10-27",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai-agent",
@@ -726,7 +726,7 @@
         "에이전트",
         "agent"
       ],
-      "definition": "AI 에이전트는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
       "frequency": 28,
       "category": "tech",
       "posts": [
@@ -763,14 +763,14 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "agi",
       "slug": "agi",
       "name": "AGI",
       "aliases": [],
-      "definition": "AGI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
       "frequency": 26,
       "category": "newsletter",
       "posts": [
@@ -805,14 +805,14 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-03-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "it",
       "slug": "it",
       "name": "IT",
       "aliases": [],
-      "definition": "IT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
       "frequency": 22,
       "category": "tech",
       "posts": [
@@ -843,14 +843,14 @@
       ],
       "firstSeen": "2025-02-20",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cto",
       "slug": "cto",
       "name": "CTO",
       "aliases": [],
-      "definition": "CTO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
       "frequency": 20,
       "category": "tech",
       "posts": [
@@ -879,14 +879,14 @@
       ],
       "firstSeen": "2025-05-05",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "roi",
       "slug": "roi",
       "name": "ROI",
       "aliases": [],
-      "definition": "ROI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "투자수익률입니다. AI 도입의 비용 대비 효과를 판단하는 핵심 지표입니다.",
       "frequency": 19,
       "category": "research",
       "posts": [
@@ -914,14 +914,14 @@
       ],
       "firstSeen": "2024-08-05",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "임원",
       "slug": "임원",
       "name": "임원",
       "aliases": [],
-      "definition": "임원는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기업의 의사결정 책임자입니다. AI 시대 전략과 조직 변화를 주도합니다.",
       "frequency": 19,
       "category": "research",
       "posts": [
@@ -948,14 +948,14 @@
       "newsletters": [],
       "firstSeen": "2025-09-10",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "meta",
       "slug": "meta",
       "name": "Meta",
       "aliases": [],
-      "definition": "Meta는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "페이스북·인스타그램을 보유한 빅테크입니다. Llama 오픈소스 모델로 AI 시장에 영향을 미칩니다.",
       "frequency": 18,
       "category": "newsletter",
       "posts": [
@@ -982,14 +982,14 @@
       ],
       "firstSeen": "2025-03-20",
       "lastSeen": "2026-04-22",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ipo",
       "slug": "ipo",
       "name": "IPO",
       "aliases": [],
-      "definition": "IPO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
       "frequency": 17,
       "category": "newsletter",
       "posts": [
@@ -1015,14 +1015,14 @@
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "창업자",
       "slug": "창업자",
       "name": "창업자",
       "aliases": [],
-      "definition": "창업자는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기업을 세운 사람입니다. AI 시대 신사업의 출발점입니다.",
       "frequency": 16,
       "category": "research",
       "posts": [
@@ -1046,14 +1046,14 @@
       "newsletters": [],
       "firstSeen": "2025-09-10",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "팀장",
       "slug": "팀장",
       "name": "팀장",
       "aliases": [],
-      "definition": "팀장는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "조직의 실행 책임자입니다. AI 도입을 현장에 정착시키는 역할을 맡습니다.",
       "frequency": 16,
       "category": "research",
       "posts": [
@@ -1077,14 +1077,14 @@
       "newsletters": [],
       "firstSeen": "2025-09-10",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai전략",
       "slug": "ai전략",
       "name": "AI전략",
       "aliases": [],
-      "definition": "AI전략는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
       "frequency": 16,
       "category": "leader",
       "posts": [
@@ -1108,14 +1108,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-20",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "aws",
       "slug": "aws",
       "name": "AWS",
       "aliases": [],
-      "definition": "AWS는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Amazon의 클라우드 서비스입니다. Bedrock으로 다수의 AI 모델을 호스팅합니다.",
       "frequency": 15,
       "category": "newsletter",
       "posts": [
@@ -1139,14 +1139,14 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-03-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "lg",
       "slug": "lg",
       "name": "LG",
       "aliases": [],
-      "definition": "LG는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국의 대기업 그룹입니다. LG AI Research에서 EXAONE 모델을 개발합니다.",
       "frequency": 14,
       "category": "newsletter",
       "posts": [
@@ -1169,14 +1169,14 @@
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2025-08-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "mit",
       "slug": "mit",
       "name": "MIT",
       "aliases": [],
-      "definition": "MIT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국 매사추세츠 공대입니다. AI·로봇 연구의 중심으로 핵심 논문이 다수 나옵니다.",
       "frequency": 14,
       "category": "research",
       "posts": [
@@ -1199,14 +1199,14 @@
       ],
       "firstSeen": "2024-10-15",
       "lastSeen": "2025-08-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "sk",
       "slug": "sk",
       "name": "SK",
       "aliases": [],
-      "definition": "SK는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국의 대기업 그룹입니다. HBM을 통해 AI 메모리 시장에서 핵심 역할을 합니다.",
       "frequency": 14,
       "category": "newsletter",
       "posts": [
@@ -1229,14 +1229,14 @@
       ],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-07-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "eu",
       "slug": "eu",
       "name": "EU",
       "aliases": [],
-      "definition": "EU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "유럽연합입니다. AI Act로 세계 최초의 포괄적 AI 규제를 시행했습니다.",
       "frequency": 13,
       "category": "company",
       "posts": [
@@ -1258,14 +1258,14 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-11-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "amd",
       "slug": "amd",
       "name": "AMD",
       "aliases": [],
-      "definition": "AMD는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA에 도전하는 미국 반도체 기업입니다. MI 시리즈 가속기로 AI 시장 점유율 확대를 노립니다.",
       "frequency": 13,
       "category": "newsletter",
       "posts": [
@@ -1287,14 +1287,14 @@
       ],
       "firstSeen": "2026-03-06",
       "lastSeen": "2026-03-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "sns",
       "slug": "sns",
       "name": "SNS",
       "aliases": [],
-      "definition": "SNS는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "소셜 미디어입니다. AI 생성 콘텐츠가 정보 환경을 흔드는 주된 무대입니다.",
       "frequency": 12,
       "category": "newsletter",
       "posts": [
@@ -1315,14 +1315,14 @@
       ],
       "firstSeen": "2025-03-25",
       "lastSeen": "2025-07-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "kpi",
       "slug": "kpi",
       "name": "KPI",
       "aliases": [],
-      "definition": "KPI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
       "frequency": 11,
       "category": "research",
       "posts": [
@@ -1341,14 +1341,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-05",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "소버린ai",
       "slug": "소버린ai",
       "name": "소버린AI",
       "aliases": [],
-      "definition": "소버린AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "자국에서 만들고 운영하는 자체 AI입니다. 데이터·안보·산업 정책이 결합된 개념입니다.",
       "frequency": 11,
       "category": "tech",
       "posts": [
@@ -1367,14 +1367,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2025-08-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "mcp",
       "slug": "mcp",
       "name": "MCP",
       "aliases": [],
-      "definition": "MCP는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Model Context Protocol입니다. Anthropic이 제안한 AI와 외부 도구·데이터를 연결하는 표준입니다.",
       "frequency": 10,
       "category": "newsletter",
       "posts": [
@@ -1393,14 +1393,14 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "tpu",
       "slug": "tpu",
       "name": "TPU",
       "aliases": [],
-      "definition": "TPU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Google의 AI 전용 칩입니다. 대규모 학습에서 GPU와 경쟁합니다.",
       "frequency": 10,
       "category": "newsletter",
       "posts": [
@@ -1419,14 +1419,14 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2025-12-17",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ui",
       "slug": "ui",
       "name": "UI",
       "aliases": [],
-      "definition": "UI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사용자 인터페이스입니다. 채팅 UI가 AI 시대의 기본 상호작용으로 자리잡았습니다.",
       "frequency": 10,
       "category": "company",
       "posts": [
@@ -1445,14 +1445,14 @@
       ],
       "firstSeen": "2025-04-25",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ibm",
       "slug": "ibm",
       "name": "IBM",
       "aliases": [],
-      "definition": "IBM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기업용 AI에 집중하는 미국 IT 기업입니다. watsonx 플랫폼으로 엔터프라이즈 시장을 공략합니다.",
       "frequency": 9,
       "category": "newsletter",
       "posts": [
@@ -1470,14 +1470,14 @@
       ],
       "firstSeen": "2026-01-25",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
       "aliases": [],
-      "definition": "ASI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "초지능입니다. 거의 모든 영역에서 인간을 능가하는 AI를 의미합니다.",
       "frequency": 9,
       "category": "tech",
       "posts": [
@@ -1495,14 +1495,14 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "rag",
       "slug": "rag",
       "name": "RAG",
       "aliases": [],
-      "definition": "RAG는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
       "frequency": 9,
       "category": "tech",
       "posts": [
@@ -1519,7 +1519,7 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai-safety",
@@ -1529,7 +1529,7 @@
         "AI안전",
         "AI safety"
       ],
-      "definition": "AI 안전는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
       "frequency": 8,
       "category": "tech",
       "posts": [
@@ -1545,14 +1545,14 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-02-23",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai전환",
       "slug": "ai전환",
       "name": "AI전환",
       "aliases": [],
-      "definition": "AI전환는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "조직의 일하는 방식을 AI 중심으로 재설계하는 변화입니다. DX의 다음 단계로 평가됩니다.",
       "frequency": 8,
       "category": "company",
       "posts": [
@@ -1568,14 +1568,14 @@
       "newsletters": [],
       "firstSeen": "2024-07-20",
       "lastSeen": "2026-03-09",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "kt",
       "slug": "kt",
       "name": "KT",
       "aliases": [],
-      "definition": "KT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국의 통신·플랫폼 기업입니다. 마이크로소프트와 협력해 AI 인프라를 확장합니다.",
       "frequency": 8,
       "category": "newsletter",
       "posts": [
@@ -1592,14 +1592,14 @@
       ],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-07-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai규제",
       "slug": "ai규제",
       "name": "AI규제",
       "aliases": [],
-      "definition": "AI규제는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 개발과 사용에 대한 법·제도적 통제입니다. EU AI Act가 글로벌 기준의 출발점입니다.",
       "frequency": 7,
       "category": "leader",
       "posts": [
@@ -1614,14 +1614,14 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-01-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "uc",
       "slug": "uc",
       "name": "UC",
       "aliases": [],
-      "definition": "UC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국 University of California입니다. UC 버클리 등이 AI 연구의 핵심 거점입니다.",
       "frequency": 7,
       "category": "research",
       "posts": [
@@ -1637,14 +1637,14 @@
       ],
       "firstSeen": "2025-04-10",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "arc",
       "slug": "arc",
       "name": "ARC",
       "aliases": [],
-      "definition": "ARC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "ARC-AGI 벤치마크입니다. 패턴 추론으로 진정한 일반 지능을 측정한다고 평가됩니다.",
       "frequency": 7,
       "category": "newsletter",
       "posts": [
@@ -1660,14 +1660,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "pdf",
       "slug": "pdf",
       "name": "PDF",
       "aliases": [],
-      "definition": "PDF는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "문서 표준 포맷입니다. AI가 가장 자주 처리하는 비정형 문서 형식입니다.",
       "frequency": 7,
       "category": "newsletter",
       "posts": [
@@ -1683,14 +1683,14 @@
       ],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "tv",
       "slug": "tv",
       "name": "TV",
       "aliases": [],
-      "definition": "TV는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "방송 TV에서 OTT·스트리밍으로 이동했습니다. 콘텐츠 산업의 AI 적용 최전선입니다.",
       "frequency": 7,
       "category": "company",
       "posts": [
@@ -1706,14 +1706,14 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-04-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ftc",
       "slug": "ftc",
       "name": "FTC",
       "aliases": [],
-      "definition": "FTC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국 연방거래위원회입니다. 빅테크의 AI 시장 지배력을 감시합니다.",
       "frequency": 7,
       "category": "newsletter",
       "posts": [
@@ -1729,14 +1729,14 @@
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2024-08-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "생산성",
       "slug": "생산성",
       "name": "생산성",
       "aliases": [],
-      "definition": "생산성는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
       "frequency": 6,
       "category": "research",
       "posts": [
@@ -1750,14 +1750,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-05",
       "lastSeen": "2026-01-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gpqa",
       "slug": "gpqa",
       "name": "GPQA",
       "aliases": [],
-      "definition": "GPQA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "물리·화학·생물 박사 수준 문제 벤치마크입니다. 최상위 LLM의 추론 능력 측정에 쓰입니다.",
       "frequency": 6,
       "category": "tech",
       "posts": [
@@ -1772,14 +1772,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "nvidia",
       "slug": "nvidia",
       "name": "NVIDIA",
       "aliases": [],
-      "definition": "NVIDIA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 학습용 GPU를 거의 독점하는 미국 반도체 기업입니다. 시가총액 기준 세계 최상위입니다.",
       "frequency": 6,
       "category": "tech",
       "posts": [
@@ -1794,14 +1794,14 @@
       ],
       "firstSeen": "2025-07-20",
       "lastSeen": "2025-07-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cpu",
       "slug": "cpu",
       "name": "CPU",
       "aliases": [],
-      "definition": "CPU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "중앙 처리 장치입니다. AI 학습보다 추론·범용 연산에서 여전히 핵심입니다.",
       "frequency": 6,
       "category": "newsletter",
       "posts": [
@@ -1816,14 +1816,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ip",
       "slug": "ip",
       "name": "IP",
       "aliases": [],
-      "definition": "IP는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "지식재산권 또는 인터넷 프로토콜입니다. AI 학습 데이터 권리 논쟁의 중심입니다.",
       "frequency": 6,
       "category": "tech",
       "posts": [
@@ -1838,7 +1838,7 @@
       ],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "organizational-design",
@@ -1849,7 +1849,7 @@
         "org design",
         "organization design"
       ],
-      "definition": "조직설계는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
       "frequency": 6,
       "category": "company",
       "posts": [
@@ -1863,14 +1863,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-05",
       "lastSeen": "2025-04-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "oecd",
       "slug": "oecd",
       "name": "OECD",
       "aliases": [],
-      "definition": "OECD는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "경제협력개발기구입니다. AI 원칙으로 회원국 정책 방향을 조율합니다.",
       "frequency": 6,
       "category": "tech",
       "posts": [
@@ -1885,14 +1885,14 @@
       ],
       "firstSeen": "2025-03-25",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "swe",
       "slug": "swe",
       "name": "SWE",
       "aliases": [],
-      "definition": "SWE는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "SWE-bench를 가리킵니다. 실제 GitHub 이슈를 푸는 코딩 능력 평가입니다.",
       "frequency": 6,
       "category": "tech",
       "posts": [
@@ -1907,14 +1907,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "tsmc",
       "slug": "tsmc",
       "name": "TSMC",
       "aliases": [],
-      "definition": "TSMC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "세계 최대 파운드리 기업입니다. NVIDIA·Apple·AMD의 첨단 반도체를 위탁 생산합니다.",
       "frequency": 6,
       "category": "newsletter",
       "posts": [
@@ -1929,14 +1929,14 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2024-08-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
       "aliases": [],
-      "definition": "HBM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
       "frequency": 6,
       "category": "newsletter",
       "posts": [
@@ -1951,14 +1951,14 @@
       ],
       "firstSeen": "2025-07-15",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "vc",
       "slug": "vc",
       "name": "VC",
       "aliases": [],
-      "definition": "VC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "벤처 캐피털입니다. AI 스타트업 투자의 핵심 자본입니다.",
       "frequency": 5,
       "category": "company",
       "posts": [
@@ -1971,14 +1971,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "강화학습",
       "slug": "강화학습",
       "name": "강화학습",
       "aliases": [],
-      "definition": "강화학습는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "보상 신호로 행동을 학습하는 머신러닝 방법입니다. 추론 능력 향상의 핵심 기법으로 부상했습니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -1991,14 +1991,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-15",
       "lastSeen": "2025-04-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "llms",
       "slug": "llms",
       "name": "LLMs",
       "aliases": [],
-      "definition": "LLMs는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
       "frequency": 5,
       "category": "research",
       "posts": [
@@ -2011,14 +2011,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-25",
       "lastSeen": "2026-03-17",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "hr",
       "slug": "hr",
       "name": "HR",
       "aliases": [],
-      "definition": "HR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "인사 부서입니다. AI 도입에 따른 조직과 역할 변화를 설계합니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2032,14 +2032,14 @@
       ],
       "firstSeen": "2025-04-01",
       "lastSeen": "2026-03-09",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "imo",
       "slug": "imo",
       "name": "IMO",
       "aliases": [],
-      "definition": "IMO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "국제수학올림피아드입니다. 최상위 AI 모델의 수학 추론 능력 검증에 쓰입니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2053,14 +2053,14 @@
       ],
       "firstSeen": "2026-03-10",
       "lastSeen": "2026-03-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "rlhf",
       "slug": "rlhf",
       "name": "RLHF",
       "aliases": [],
-      "definition": "RLHF는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "인간 피드백 기반 강화학습입니다. 사람의 선호를 반영해 모델을 정렬하는 핵심 기법입니다.",
       "frequency": 5,
       "category": "research",
       "posts": [
@@ -2073,14 +2073,14 @@
       "newsletters": [],
       "firstSeen": "2025-07-10",
       "lastSeen": "2026-02-11",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gtc",
       "slug": "gtc",
       "name": "GTC",
       "aliases": [],
-      "definition": "GTC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA의 연례 개발자 행사입니다. AI 산업 방향성의 풍향계로 작동합니다.",
       "frequency": 5,
       "category": "company",
       "posts": [
@@ -2094,14 +2094,14 @@
       ],
       "firstSeen": "2026-03-16",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cfo",
       "slug": "cfo",
       "name": "CFO",
       "aliases": [],
-      "definition": "CFO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
       "frequency": 5,
       "category": "leader",
       "posts": [
@@ -2115,14 +2115,14 @@
       ],
       "firstSeen": "2026-03-17",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "dc",
       "slug": "dc",
       "name": "DC",
       "aliases": [],
-      "definition": "DC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "데이터센터입니다. AI 학습·추론을 위한 핵심 인프라입니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2136,14 +2136,14 @@
       ],
       "firstSeen": "2025-07-05",
       "lastSeen": "2025-07-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "claudecode",
       "slug": "claudecode",
       "name": "ClaudeCode",
       "aliases": [],
-      "definition": "ClaudeCode는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Anthropic의 코딩 에이전트 CLI입니다. Claude로 코드베이스를 직접 조작합니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2156,14 +2156,14 @@
       "newsletters": [],
       "firstSeen": "2026-04-01",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "url",
       "slug": "url",
       "name": "URL",
       "aliases": [],
-      "definition": "URL는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "웹 주소입니다. AI가 웹을 탐색·인용할 때 가장 기본이 되는 식별자입니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2176,14 +2176,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "pm",
       "slug": "pm",
       "name": "PM",
       "aliases": [],
-      "definition": "PM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "프로덕트 매니저입니다. AI 기능 기획과 제품 출시를 주도합니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2197,14 +2197,14 @@
       ],
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai정책",
       "slug": "ai정책",
       "name": "AI정책",
       "aliases": [],
-      "definition": "AI정책는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "정부 차원의 AI 진흥·규제 방향입니다. 산업 경쟁력과 안전 사이의 균형이 쟁점입니다.",
       "frequency": 5,
       "category": "company",
       "posts": [
@@ -2217,14 +2217,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "jp",
       "slug": "jp",
       "name": "JP",
       "aliases": [],
-      "definition": "JP는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "JPMorgan을 가리키는 약칭입니다. AI를 적극 도입한 대형 금융사로 자주 인용됩니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2238,14 +2238,14 @@
       ],
       "firstSeen": "2026-04-06",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "id",
       "slug": "id",
       "name": "ID",
       "aliases": [],
-      "definition": "ID는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "신원 식별 정보입니다. AI 시대 인증과 봇 구분의 핵심 자산입니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2259,14 +2259,14 @@
       ],
       "firstSeen": "2025-04-01",
       "lastSeen": "2025-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ax",
       "slug": "ax",
       "name": "AX",
       "aliases": [],
-      "definition": "AX는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI Transformation의 약칭입니다. 디지털 전환에 이은 AI 기반 사업 변혁을 가리킵니다.",
       "frequency": 5,
       "category": "tech",
       "posts": [
@@ -2279,14 +2279,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-05-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "pc",
       "slug": "pc",
       "name": "PC",
       "aliases": [],
-      "definition": "PC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "개인용 컴퓨터입니다. 온디바이스 AI 시대에 NPU 탑재 모델로 다시 주목받습니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2300,14 +2300,14 @@
       ],
       "firstSeen": "2025-03-25",
       "lastSeen": "2025-03-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "rtx",
       "slug": "rtx",
       "name": "RTX",
       "aliases": [],
-      "definition": "RTX는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA의 소비자용 GPU 라인업입니다. 게이밍과 개인 AI 추론에 쓰입니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2321,14 +2321,14 @@
       ],
       "firstSeen": "2025-07-15",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "dna",
       "slug": "dna",
       "name": "DNA",
       "aliases": [],
-      "definition": "DNA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "유전 정보를 담은 분자입니다. AI 기반 생명과학에서 단백질·약물 설계에 활용됩니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2342,14 +2342,14 @@
       ],
       "firstSeen": "2025-04-01",
       "lastSeen": "2025-06-27",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "nyt",
       "slug": "nyt",
       "name": "NYT",
       "aliases": [],
-      "definition": "NYT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "뉴욕타임스입니다. OpenAI를 상대로 학습 데이터 무단 사용을 두고 소송 중입니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2363,14 +2363,14 @@
       ],
       "firstSeen": "2025-06-13",
       "lastSeen": "2025-06-13",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cnbc",
       "slug": "cnbc",
       "name": "CNBC",
       "aliases": [],
-      "definition": "CNBC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국 경제 방송입니다. AI 기업 실적과 시장 반응을 빠르게 다룹니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2384,14 +2384,14 @@
       ],
       "firstSeen": "2025-07-10",
       "lastSeen": "2025-07-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "kaist",
       "slug": "kaist",
       "name": "KAIST",
       "aliases": [],
-      "definition": "KAIST는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국과학기술원입니다. 한국 AI 연구의 중심 대학으로 인재를 배출합니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [
@@ -2405,14 +2405,14 @@
       ],
       "firstSeen": "2025-03-20",
       "lastSeen": "2025-07-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "mgx",
       "slug": "mgx",
       "name": "MGX",
       "aliases": [],
-      "definition": "MGX는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "UAE 주도의 AI 투자 펀드입니다. 중동 자본이 미국 AI 인프라에 유입되는 통로입니다.",
       "frequency": 5,
       "category": "newsletter",
       "posts": [],
@@ -2425,14 +2425,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "기술주권",
       "slug": "기술주권",
       "name": "기술주권",
       "aliases": [],
-      "definition": "기술주권는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "핵심 기술을 자국 능력으로 확보하려는 전략입니다. AI 시대의 안보 개념으로 부상했습니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2444,14 +2444,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "엔비디아",
       "slug": "엔비디아",
       "name": "엔비디아",
       "aliases": [],
-      "definition": "엔비디아는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA의 한글 표기입니다. AI GPU 시장의 사실상 독점 사업자입니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2463,14 +2463,14 @@
       "newsletters": [],
       "firstSeen": "2024-10-05",
       "lastSeen": "2025-08-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gdpr",
       "slug": "gdpr",
       "name": "GDPR",
       "aliases": [],
-      "definition": "GDPR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "EU의 일반 개인정보보호 규정입니다. AI 학습 데이터 활용의 글로벌 기준이 됐습니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2483,14 +2483,14 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-05-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "byd",
       "slug": "byd",
       "name": "BYD",
       "aliases": [],
-      "definition": "BYD는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "중국 최대 전기차 기업입니다. 배터리 수직계열화로 글로벌 EV 시장에 영향력을 키웁니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2502,14 +2502,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-25",
       "lastSeen": "2025-06-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "플랫폼전략",
       "slug": "플랫폼전략",
       "name": "플랫폼전략",
       "aliases": [],
-      "definition": "플랫폼전략는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "참여자를 모아 가치를 만드는 사업 전략입니다. AI가 새 플랫폼 경쟁의 축이 됩니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2521,14 +2521,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-05",
       "lastSeen": "2025-06-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai도입",
       "slug": "ai도입",
       "name": "AI도입",
       "aliases": [],
-      "definition": "AI도입는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기업이 AI를 업무에 실제로 적용하는 과정입니다. 도구 선택보다 워크플로 재설계가 핵심입니다.",
       "frequency": 4,
       "category": "research",
       "posts": [
@@ -2540,14 +2540,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-01-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "deepmind",
       "slug": "deepmind",
       "name": "DeepMind",
       "aliases": [],
-      "definition": "DeepMind는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Google이 인수한 영국 AI 연구소입니다. 알파고와 AlphaFold로 유명하며 데미스 하사비스가 이끕니다.",
       "frequency": 4,
       "category": "leader",
       "posts": [
@@ -2559,14 +2559,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-15",
       "lastSeen": "2026-03-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "자동화",
       "slug": "자동화",
       "name": "자동화",
       "aliases": [],
-      "definition": "자동화는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사람의 개입 없이 작업을 처리하는 시스템입니다. AI 에이전트가 자동화의 새 단계를 엽니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2578,14 +2578,14 @@
       "newsletters": [],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "구조조정",
       "slug": "구조조정",
       "name": "구조조정",
       "aliases": [],
-      "definition": "구조조정는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "조직 인력과 사업을 재편하는 일입니다. AI 자동화 영향으로 화이트칼라까지 확산됐습니다.",
       "frequency": 4,
       "category": "survival",
       "posts": [
@@ -2597,14 +2597,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "hbr",
       "slug": "hbr",
       "name": "HBR",
       "aliases": [],
-      "definition": "HBR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Harvard Business Review입니다. AI 도입 사례와 조직 변화 연구를 주로 다룹니다.",
       "frequency": 4,
       "category": "research",
       "posts": [
@@ -2616,14 +2616,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-09",
       "lastSeen": "2026-03-17",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai인프라",
       "slug": "ai인프라",
       "name": "AI인프라",
       "aliases": [],
-      "definition": "AI인프라는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 학습과 추론에 필요한 컴퓨팅·전력·네트워크 일체를 가리킵니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2635,14 +2635,14 @@
       "newsletters": [],
       "firstSeen": "2025-08-23",
       "lastSeen": "2025-08-23",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "crm",
       "slug": "crm",
       "name": "CRM",
       "aliases": [],
-      "definition": "CRM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "고객관계관리 시스템입니다. AI 에이전트가 영업과 지원 업무를 자동화하는 영역입니다.",
       "frequency": 4,
       "category": "company",
       "posts": [
@@ -2655,14 +2655,14 @@
       ],
       "firstSeen": "2025-03-05",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "claude-2",
       "slug": "claude-2",
       "name": "CLAUDE",
       "aliases": [],
-      "definition": "CLAUDE는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "프로젝트 컨텍스트를 기록한 마크다운 파일명입니다. Claude Code가 자동으로 읽습니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2674,14 +2674,14 @@
       "newsletters": [],
       "firstSeen": "2026-04-01",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "mmlu",
       "slug": "mmlu",
       "name": "MMLU",
       "aliases": [],
-      "definition": "MMLU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "다과목 객관식 벤치마크입니다. LLM의 일반 지식 폭을 측정합니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2694,14 +2694,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "uae",
       "slug": "uae",
       "name": "UAE",
       "aliases": [],
-      "definition": "UAE는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "아랍에미리트입니다. 정부 주도로 AI 인프라와 모델에 대규모 투자합니다.",
       "frequency": 4,
       "category": "newsletter",
       "posts": [
@@ -2714,14 +2714,14 @@
       ],
       "firstSeen": "2025-02-20",
       "lastSeen": "2025-02-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ciso",
       "slug": "ciso",
       "name": "CISO",
       "aliases": [],
-      "definition": "CISO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "최고정보보안책임자입니다. AI 시대 데이터·모델 보안을 책임집니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2733,14 +2733,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "sf",
       "slug": "sf",
       "name": "SF",
       "aliases": [],
-      "definition": "SF는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "샌프란시스코입니다. OpenAI·Anthropic 등 주요 AI 기업의 본거지입니다.",
       "frequency": 4,
       "category": "leader",
       "posts": [
@@ -2753,14 +2753,14 @@
       ],
       "firstSeen": "2024-09-10",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "deepseek",
       "slug": "deepseek",
       "name": "DeepSeek",
       "aliases": [],
-      "definition": "DeepSeek는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "중국의 오픈소스 LLM 개발 기업입니다. 저비용 고성능 모델로 2025년 초 시장을 흔들었습니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2772,14 +2772,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2025-08-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "저작권",
       "slug": "저작권",
       "name": "저작권",
       "aliases": [],
-      "definition": "저작권는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "창작물에 대한 법적 권리입니다. AI 학습 데이터와 출력물에 대한 분쟁이 진행 중입니다.",
       "frequency": 4,
       "category": "research",
       "posts": [
@@ -2791,14 +2791,14 @@
       "newsletters": [],
       "firstSeen": "2024-09-10",
       "lastSeen": "2025-06-13",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai윤리",
       "slug": "ai윤리",
       "name": "AI윤리",
       "aliases": [],
-      "definition": "AI윤리는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 개발과 사용에서 지켜야 할 도덕적 원칙입니다. 안전·공정·투명성·책임이 핵심입니다.",
       "frequency": 4,
       "category": "research",
       "posts": [
@@ -2810,14 +2810,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-01",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "wwdc",
       "slug": "wwdc",
       "name": "WWDC",
       "aliases": [],
-      "definition": "WWDC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Apple의 연례 개발자 행사입니다. 온디바이스 AI 전략을 공개하는 무대입니다.",
       "frequency": 4,
       "category": "newsletter",
       "posts": [
@@ -2830,14 +2830,14 @@
       ],
       "firstSeen": "2025-06-13",
       "lastSeen": "2025-06-14",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "딥마인드",
       "slug": "딥마인드",
       "name": "딥마인드",
       "aliases": [],
-      "definition": "딥마인드는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "DeepMind의 한글 표기입니다. Google 산하 AI 연구소로 AlphaGo와 AlphaFold를 만들었습니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2849,14 +2849,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-15",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "한국ai",
       "slug": "한국ai",
       "name": "한국AI",
       "aliases": [],
-      "definition": "한국AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국이 자체적으로 만드는 AI입니다. 한국어 처리, 산업 적용, 인재 생태계가 과제입니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2868,14 +2868,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "arr",
       "slug": "arr",
       "name": "ARR",
       "aliases": [],
-      "definition": "ARR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "연간 반복 매출입니다. SaaS·AI 서비스 기업의 핵심 성장 지표입니다.",
       "frequency": 4,
       "category": "newsletter",
       "posts": [
@@ -2888,14 +2888,14 @@
       ],
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "반도체",
       "slug": "반도체",
       "name": "반도체",
       "aliases": [],
-      "definition": "반도체는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 시대 전략 자원입니다. 미국·중국·한국·대만이 패권을 다투는 영역입니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2907,14 +2907,14 @@
       "newsletters": [],
       "firstSeen": "2024-08-25",
       "lastSeen": "2025-08-23",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "exaone",
       "slug": "exaone",
       "name": "EXAONE",
       "aliases": [],
-      "definition": "EXAONE는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "LG AI Research의 자체 LLM입니다. 한국어 처리와 산업용 활용에 강점이 있습니다.",
       "frequency": 4,
       "category": "tech",
       "posts": [
@@ -2927,14 +2927,14 @@
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2025-07-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "nc",
       "slug": "nc",
       "name": "NC",
       "aliases": [],
-      "definition": "NC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "엔씨소프트의 약칭입니다. 게임 기반 자체 LLM 개발로 한국 AI 시장에 참여합니다.",
       "frequency": 4,
       "category": "newsletter",
       "posts": [],
@@ -2946,14 +2946,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "dram",
       "slug": "dram",
       "name": "DRAM",
       "aliases": [],
-      "definition": "DRAM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "주기억장치 메모리입니다. AI 수요로 가격과 공급 균형이 빠르게 흔들립니다.",
       "frequency": 4,
       "category": "newsletter",
       "posts": [],
@@ -2965,14 +2965,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ev",
       "slug": "ev",
       "name": "EV",
       "aliases": [],
-      "definition": "EV는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "전기차입니다. AI·자율주행과 결합해 자동차 산업을 재정의합니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -2984,14 +2984,14 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-05-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "dma",
       "slug": "dma",
       "name": "DMA",
       "aliases": [],
-      "definition": "DMA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "EU 디지털 시장법입니다. 게이트키퍼로 지정된 빅테크의 자사 우대를 제한합니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3003,14 +3003,14 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-06-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "샘알트만",
       "slug": "샘알트만",
       "name": "샘알트만",
       "aliases": [],
-      "definition": "샘알트만는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "OpenAI CEO입니다. AGI 개발과 거버넌스 논쟁의 중심 인물입니다.",
       "frequency": 3,
       "category": "leader",
       "posts": [
@@ -3021,14 +3021,14 @@
       "newsletters": [],
       "firstSeen": "2025-05-15",
       "lastSeen": "2025-05-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gdp",
       "slug": "gdp",
       "name": "GDP",
       "aliases": [],
-      "definition": "GDP는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "국내총생산입니다. AI 생산성 효과가 거시 경제에 어떻게 반영될지 논쟁이 있습니다.",
       "frequency": 3,
       "category": "survival",
       "posts": [
@@ -3039,14 +3039,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-25",
       "lastSeen": "2025-11-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "멀티에이전트",
       "slug": "멀티에이전트",
       "name": "멀티에이전트",
       "aliases": [],
-      "definition": "멀티에이전트는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3057,14 +3057,14 @@
       "newsletters": [],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "노동시장",
       "slug": "노동시장",
       "name": "노동시장",
       "aliases": [],
-      "definition": "노동시장는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
       "frequency": 3,
       "category": "survival",
       "posts": [
@@ -3075,14 +3075,14 @@
       "newsletters": [],
       "firstSeen": "2025-05-10",
       "lastSeen": "2026-03-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "gpts",
       "slug": "gpts",
       "name": "GPTs",
       "aliases": [],
-      "definition": "GPTs는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "ChatGPT 위에 만드는 맞춤형 챗봇입니다. OpenAI가 2023년 말 도입했습니다.",
       "frequency": 3,
       "category": "survival",
       "posts": [
@@ -3093,14 +3093,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-03-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "rl",
       "slug": "rl",
       "name": "RL",
       "aliases": [],
-      "definition": "RL는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "강화학습입니다. 보상을 통해 행동을 학습하는 머신러닝 패러다임입니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3111,14 +3111,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2025-02-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "asml",
       "slug": "asml",
       "name": "ASML",
       "aliases": [],
-      "definition": "ASML는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "EUV 노광장비를 독점 공급하는 네덜란드 기업입니다. 첨단 반도체 생산의 병목 지점입니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3130,14 +3130,14 @@
       ],
       "firstSeen": "2026-03-16",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "디지털전환",
       "slug": "디지털전환",
       "name": "디지털전환",
       "aliases": [],
-      "definition": "디지털전환는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "사업과 운영을 디지털 기반으로 재설계하는 변화입니다. AI 전환의 토대가 됩니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3148,14 +3148,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-25",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "nvlink",
       "slug": "nvlink",
       "name": "NVLink",
       "aliases": [],
-      "definition": "NVLink는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA의 GPU 간 고속 연결 기술입니다. 대규모 모델 학습에 필수입니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3167,14 +3167,14 @@
       ],
       "firstSeen": "2025-07-15",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "html",
       "slug": "html",
       "name": "HTML",
       "aliases": [],
-      "definition": "HTML는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "웹 페이지를 정의하는 마크업 언어입니다. AI 코딩 도구의 가장 흔한 출력물입니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3185,14 +3185,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "karpathy",
       "slug": "karpathy",
       "name": "Karpathy",
       "aliases": [],
-      "definition": "Karpathy는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "전 OpenAI·Tesla 핵심 연구자 안드레이 카파시입니다. 실용 AI 교육으로 영향력이 큽니다.",
       "frequency": 3,
       "category": "leader",
       "posts": [
@@ -3203,14 +3203,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-06",
       "lastSeen": "2026-03-06",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "readme",
       "slug": "readme",
       "name": "README",
       "aliases": [],
-      "definition": "README는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "프로젝트 설명 파일입니다. AI 코딩 에이전트가 우선 읽는 컨텍스트 출발점입니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3221,14 +3221,14 @@
       "newsletters": [],
       "firstSeen": "2026-03-06",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "metr",
       "slug": "metr",
       "name": "METR",
       "aliases": [],
-      "definition": "METR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 에이전트 자율 작업 시간을 측정하는 평가 기관입니다. 작업 길이로 능력을 정량화합니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3240,14 +3240,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai거버넌스",
       "slug": "ai거버넌스",
       "name": "AI거버넌스",
       "aliases": [],
-      "definition": "AI거버넌스는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
       "frequency": 3,
       "category": "research",
       "posts": [
@@ -3258,14 +3258,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-01",
       "lastSeen": "2025-04-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "오픈소스ai",
       "slug": "오픈소스ai",
       "name": "오픈소스AI",
       "aliases": [],
-      "definition": "오픈소스AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "가중치와 코드를 공개한 AI 모델입니다. Meta Llama가 시장을 흔든 기점이 됐습니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3276,14 +3276,14 @@
       "newsletters": [],
       "firstSeen": "2025-07-20",
       "lastSeen": "2025-07-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "bmw",
       "slug": "bmw",
       "name": "BMW",
       "aliases": [],
-      "definition": "BMW는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "독일 프리미엄 자동차 기업입니다. AI·소프트웨어 정의 차량으로 전환에 투자합니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3295,14 +3295,14 @@
       ],
       "firstSeen": "2025-04-25",
       "lastSeen": "2025-04-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "sdk",
       "slug": "sdk",
       "name": "SDK",
       "aliases": [],
-      "definition": "SDK는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "소프트웨어 개발 키트입니다. AI 기능을 앱에 통합하는 도구 모음입니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3314,14 +3314,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "코딩ai",
       "slug": "코딩ai",
       "name": "코딩AI",
       "aliases": [],
-      "definition": "코딩AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "코드를 생성하고 디버깅하는 AI입니다. 소프트웨어 개발의 생산성과 인력 구조를 바꿉니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3332,14 +3332,14 @@
       "newsletters": [],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ar",
       "slug": "ar",
       "name": "AR",
       "aliases": [],
-      "definition": "AR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "증강현실입니다. 빅테크가 AI와 결합해 차세대 인터페이스로 추진합니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3351,14 +3351,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "생성ai",
       "slug": "생성ai",
       "name": "생성AI",
       "aliases": [],
-      "definition": "생성AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "텍스트·이미지·음성을 새로 만들어내는 AI입니다. 콘텐츠 산업의 비용 구조를 재편합니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3369,14 +3369,14 @@
       "newsletters": [],
       "firstSeen": "2024-08-10",
       "lastSeen": "2025-04-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "bbc",
       "slug": "bbc",
       "name": "BBC",
       "aliases": [],
-      "definition": "BBC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "영국 공영방송입니다. AI 규제와 사회 영향에 대한 보도가 강합니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3388,14 +3388,14 @@
       ],
       "firstSeen": "2025-04-15",
       "lastSeen": "2025-04-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "메타",
       "slug": "메타",
       "name": "메타",
       "aliases": [],
-      "definition": "메타는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Meta의 한글 표기입니다. 페이스북·인스타그램을 보유한 빅테크로 Llama 모델을 공개합니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3406,14 +3406,14 @@
       "newsletters": [],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-08-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "콘텐츠산업",
       "slug": "콘텐츠산업",
       "name": "콘텐츠산업",
       "aliases": [],
-      "definition": "콘텐츠산업는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "영상·음악·게임 등 콘텐츠를 만드는 산업입니다. 생성 AI로 제작 비용 구조가 변합니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3424,14 +3424,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-05",
       "lastSeen": "2025-06-13",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cpo",
       "slug": "cpo",
       "name": "CPO",
       "aliases": [],
-      "definition": "CPO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "최고제품책임자입니다. AI 기반 제품 전략을 책임집니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3443,14 +3443,14 @@
       ],
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "네이버",
       "slug": "네이버",
       "name": "네이버",
       "aliases": [],
-      "definition": "네이버는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "한국의 대표 인터넷 기업입니다. HyperCLOVA X로 자체 한국어 AI 모델을 운영합니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3461,14 +3461,14 @@
       "newsletters": [],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-04-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "mau",
       "slug": "mau",
       "name": "MAU",
       "aliases": [],
-      "definition": "MAU는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "월간 활성 사용자입니다. AI 서비스 채택 속도를 가늠하는 기준 지표입니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3479,14 +3479,14 @@
       "newsletters": [],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-04-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "빅테크",
       "slug": "빅테크",
       "name": "빅테크",
       "aliases": [],
-      "definition": "빅테크는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "구글·메타·아마존·애플·마이크로소프트 같은 거대 기술 기업입니다. AI 경쟁의 주역입니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3497,14 +3497,14 @@
       "newsletters": [],
       "firstSeen": "2024-08-20",
       "lastSeen": "2025-07-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "데이터주권",
       "slug": "데이터주권",
       "name": "데이터주권",
       "aliases": [],
-      "definition": "데이터주권는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "데이터를 자국 영역과 법 아래 두려는 정책입니다. AI 시대에 새 의미를 얻고 있습니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3515,14 +3515,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-20",
       "lastSeen": "2025-07-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "기술패권",
       "slug": "기술패권",
       "name": "기술패권",
       "aliases": [],
-      "definition": "기술패권는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "기술 우위로 글로벌 영향력을 확보하는 경쟁입니다. 미국과 중국의 핵심 전선입니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3533,14 +3533,14 @@
       "newsletters": [],
       "firstSeen": "2025-02-20",
       "lastSeen": "2025-03-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "미중갈등",
       "slug": "미중갈등",
       "name": "미중갈등",
       "aliases": [],
-      "definition": "미중갈등는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI·반도체를 둘러싼 미국과 중국의 패권 경쟁입니다. 수출통제와 표준 분리가 진행됩니다.",
       "frequency": 3,
       "category": "company",
       "posts": [
@@ -3551,14 +3551,14 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-04-10",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai서비스",
       "slug": "ai서비스",
       "name": "AI서비스",
       "aliases": [],
-      "definition": "AI서비스는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI 기능을 핵심으로 제공하는 제품·서비스입니다. SaaS 시장의 새 카테고리로 부상했습니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3569,14 +3569,14 @@
       "newsletters": [],
       "firstSeen": "2024-08-10",
       "lastSeen": "2025-04-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "중국ai",
       "slug": "중국ai",
       "name": "중국AI",
       "aliases": [],
-      "definition": "중국AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "중국이 자체 개발하는 AI입니다. DeepSeek 이후 비용·성능 양 측면에서 경쟁력을 보였습니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3587,14 +3587,14 @@
       "newsletters": [],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-08-05",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "오픈ai",
       "slug": "오픈ai",
       "name": "오픈AI",
       "aliases": [],
-      "definition": "오픈AI는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "OpenAI의 한글 표기입니다. ChatGPT를 만든 미국 AI 기업입니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3605,14 +3605,14 @@
       "newsletters": [],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "genius",
       "slug": "genius",
       "name": "GENIUS",
       "aliases": [],
-      "definition": "GENIUS는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국의 AI 안전·경쟁력 관련 법안 약칭입니다. 모델 책임과 표준화를 다룹니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3624,14 +3624,14 @@
       ],
       "firstSeen": "2025-06-25",
       "lastSeen": "2025-06-25",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "cuda",
       "slug": "cuda",
       "name": "CUDA",
       "aliases": [],
-      "definition": "CUDA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "NVIDIA의 GPU 프로그래밍 플랫폼입니다. AI 생태계 잠금 효과의 핵심입니다.",
       "frequency": 3,
       "category": "tech",
       "posts": [
@@ -3643,14 +3643,14 @@
       ],
       "firstSeen": "2024-10-05",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "lm",
       "slug": "lm",
       "name": "LM",
       "aliases": [],
-      "definition": "LM는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Language Model의 약칭입니다. 텍스트의 확률 분포를 학습하는 모델로 LLM의 일반 개념입니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [
@@ -3662,14 +3662,14 @@
       ],
       "firstSeen": "2025-04-20",
       "lastSeen": "2025-04-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai대체",
       "slug": "ai대체",
       "name": "AI대체",
       "aliases": [],
-      "definition": "AI대체는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "AI가 사람의 업무를 대신 수행하는 현상입니다. 단순 반복 업무부터 시작해 전문직까지 확산 중입니다.",
       "frequency": 3,
       "category": "survival",
       "posts": [
@@ -3680,14 +3680,14 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "chips",
       "slug": "chips",
       "name": "CHIPS",
       "aliases": [],
-      "definition": "CHIPS는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "미국의 반도체 지원법입니다. 자국 내 반도체 생산 회귀를 유도합니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [],
@@ -3698,14 +3698,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ft",
       "slug": "ft",
       "name": "FT",
       "aliases": [],
-      "definition": "FT는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "Financial Times입니다. AI 산업·정책을 심층 보도하는 영국 매체입니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [],
@@ -3716,14 +3716,14 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "wsj",
       "slug": "wsj",
       "name": "WSJ",
       "aliases": [],
-      "definition": "WSJ는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "월스트리트저널입니다. AI 산업과 거시 경제 이슈를 비판적으로 다룹니다.",
       "frequency": 3,
       "category": "newsletter",
       "posts": [],
@@ -3734,7 +3734,7 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": true
+      "needs_manual_review": false
     }
   ],
   "relationships": [
