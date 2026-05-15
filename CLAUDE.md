@@ -58,15 +58,40 @@
 ## 워크플로우
 
 ```
-소스 URL → /create-post → (자동) /publish-post → /update-insights → /persona-comment
+소스 URL → /create-post → (자동) /publish-post → /update-insights → /persona-comment → /update-wiki
 ```
 
 - `/create-post`가 초고 + Navy 평가(3라운드) 완료 후 publish-post를 **자동 순차 실행** (중간 승인 없음)
 - publish-post: 최종 게이트 검수 + 자동 수정 + 인덱스 등록 + `node sync-posts.js` + 발행
 - update-insights: publish-post 완료 후 **자동 실행** (중간 승인 없음)
 - persona-comment: update-insights 완료 후 **자동 실행** (중간 승인 없음)
+- update-wiki: persona-comment 완료 후 **자동 실행**. 개념 추출 · 위키 페이지 · 그래프 · 포스트 링크를 재생성
 - edit-post는 파이프라인에서 제외됨. 기존 포스트 수동 퇴고 시에만 사용
-- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`, `/persona-comment <파일>`
+- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`, `/persona-comment <파일>`, `/update-wiki`
+
+## Wiki Brain 시스템
+
+블로그의 모든 포스트와 뉴스레터에서 개념을 자동 추출해 `wiki/`에 위키 페이지와 개념 네트워크 그래프를 생성합니다.
+
+```
+빌드 명령:   npm run wiki              (전체 빌드)
+            npm run wiki -- --dry-run (검증만)
+            npm run wiki:test         (단위 테스트)
+
+산출물:     wiki/concepts-data.json   (단일 진실 소스)
+            wiki/concepts/[slug].html (개념별 위키 페이지)
+            wiki/index.html           (전체 카탈로그 + 검색)
+            wiki/graph.html           (D3.js 네트워크 시각화)
+            wiki/build-report.json    (KPI · 검수 대상 목록)
+
+수동 편집:  config/concept-aliases.json
+            - canonical: alias → 표준명 매핑
+            - slugMap: 한국어 개념 → 영문 slug 캐시 (자동 누적)
+            - blacklist: 개념 제외 단어
+            - domainKeywords: 우선 매칭 키워드
+```
+
+ANTHROPIC_API_KEY가 환경변수로 설정되어 있으면 Claude API로 정의를 생성합니다. 없으면 fallback 정의가 들어가고 모든 개념이 `needs_manual_review` 플래그를 받습니다.
 
 ## 스킬
 
@@ -77,3 +102,4 @@
 | `/publish-post <파일>` | 5관점 검수 + 인덱스 업데이트 + 발행 |
 | `/update-insights <파일>` | insights.html 해당 분기에 인사이트 카드 추가 |
 | `/persona-comment <파일>` | 포스트 하단에 6인 페르소나 라운드테이블 댓글 삽입 |
+| `/update-wiki` | wiki-brain 재빌드 (개념 추출 + 위키 + 그래프) |
