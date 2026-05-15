@@ -3151,7 +3151,7 @@ img {
   z-index: 300;
   background: #0D1117;
   color: #C9D1D9;
-  font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.7;
   overflow-y: auto;
