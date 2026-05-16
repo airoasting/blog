@@ -270,6 +270,11 @@ img {
   color: #6EE7B7;
 }
 
+/* ── 위키브레인 nav link ── */
+.main-nav .nav-wiki {
+  font-weight: 700;
+}
+
 /* ── 홈 뉴스레터 그리드 ── */
 :root { --cat-newsletter: #7C3AED; }
 .nl-home-grid {

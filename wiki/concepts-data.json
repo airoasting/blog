@@ -1,365 +1,13 @@
 {
-  "generatedAt": "2026-05-15T14:21:29.028Z",
+  "generatedAt": "2026-05-16T02:15:58.840Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 148,
-    "totalRelationships": 924,
+    "totalConcepts": 81,
+    "totalRelationships": 272,
     "totalPosts": 186,
     "totalNewsletters": 47
   },
   "concepts": [
-    {
-      "id": "claude",
-      "slug": "claude",
-      "name": "Claude",
-      "aliases": [],
-      "definition": "Anthropic이 개발한 대화형 AI 모델입니다. 안전성과 긴 추론 능력을 강점으로 코딩, 분석, 글쓰기에 널리 쓰입니다.",
-      "frequency": 88,
-      "category": "tech",
-      "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-03-05-ai-labor-market-exposure",
-        "2026-03-16-attention-residuals-kimi",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-19-anthropic-81k-interviews",
-        "2026-03-19-hyperagents-self-improving-ai",
-        "2026-03-19-pm-on-ai-exponential",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-03-23-two-paths-for-software",
-        "2026-03-23-vibe-physics-ai-grad-student",
-        "2026-03-26-ai-scientist-nature",
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2026-03-31-mo-gawdat-face-rip-dystopia-survival",
-        "2026-04-02-ai-emotion-prompts",
-        "2026-04-02-claude-emotion-vectors",
-        "2026-04-03-ai-coder-automation-timeline",
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-08-managed-agents-decoupling",
-        "2026-04-09-advisor-strategy-claude-opus",
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-11-agent-harness-memory-lock-in",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-04-14-harvard-what-makes-a-good-learner",
-        "2026-04-16-claude-opus-4-7-launch",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-04-24-anthropic-project-deal-agent-economy",
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2026-04-30-claude-personal-guidance-sycophancy",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-04-25-using-ai-well-different-from-search",
-        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
-        "2026-02-11-llm-behavioral-alignment-gap",
-        "2025-05-20-anthropic-cpo-on-pm-competencies",
-        "2026-04-06-sam-altman-superintelligence-new-deal",
-        "2025-03-05-redesigning-work-structure-in-ai-era",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-03-15-when-technology-becomes-borders",
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2024-08-10-top-50-ai-services-five-trends",
-        "2025-03-10-ai-intentional-lies-reward-hacking",
-        "2025-04-20-which-ai-model-should-you-use",
-        "2026-03-28-ai-agent-traps",
-        "2026-04-01-claude-code-hidden-features",
-        "2025-03-10-ai-era-survival-strategy",
-        "2026-04-22-ai-tool-income-gap"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-5",
-        "nl-6",
-        "nl-11",
-        "nl-12",
-        "nl-13",
-        "nl-16",
-        "nl-19",
-        "nl-24",
-        "nl-34",
-        "nl-36",
-        "nl-37",
-        "nl-38",
-        "nl-40",
-        "nl-42",
-        "nl-44",
-        "nl-45"
-      ],
-      "firstSeen": "2024-08-10",
-      "lastSeen": "2026-04-22",
-      "needs_manual_review": false
-    },
-    {
-      "id": "openai",
-      "slug": "openai",
-      "name": "OpenAI",
-      "aliases": [],
-      "definition": "ChatGPT와 GPT 시리즈를 만든 미국 AI 기업입니다. 샘 알트만이 이끌며 AGI 개발을 목표로 합니다.",
-      "frequency": 72,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-07-new-concerns-for-content-platforms",
-        "2025-10-09-sam-altman-openai-four-bets",
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
-        "2026-03-05-ai-labor-market-exposure",
-        "2026-03-16-nvidia-nemoclaw",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-11-agent-harness-memory-lock-in",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-04-16-good-questions-matter-more",
-        "2025-06-13-copyright-dilemma-in-ai-era",
-        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
-        "2025-07-10-ban-left-biased-ai",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-07-15-why-meta-declared-asi",
-        "2026-01-10-elon-musk-vision-of-ai-future",
-        "2026-04-06-sam-altman-superintelligence-new-deal",
-        "2025-02-20-sovereign-ai",
-        "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
-        "2025-04-10-why-manus-ai-moved-to-singapore",
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2024-10-05-cerebras-ipo-vs-nvidia",
-        "2025-03-10-ai-intentional-lies-reward-hacking",
-        "2025-04-20-which-ai-model-should-you-use",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2025-05-10-why-people-miss-chatgpt-4o",
-        "2025-05-25-gpt5-limitations-and-whats-next",
-        "2025-03-10-ai-era-survival-strategy",
-        "2025-05-20-generative-ai-effect-on-youth-employment"
-      ],
-      "newsletters": [
-        "nl-1",
-        "nl-2",
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-8",
-        "nl-9",
-        "nl-11",
-        "nl-13",
-        "nl-14",
-        "nl-15",
-        "nl-16",
-        "nl-17",
-        "nl-18",
-        "nl-19",
-        "nl-20",
-        "nl-21",
-        "nl-23",
-        "nl-24",
-        "nl-25",
-        "nl-30",
-        "nl-31",
-        "nl-32",
-        "nl-33",
-        "nl-34",
-        "nl-36",
-        "nl-38",
-        "nl-41",
-        "nl-42",
-        "nl-43",
-        "nl-44"
-      ],
-      "firstSeen": "2024-10-05",
-      "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "chatgpt",
-      "slug": "chatgpt",
-      "name": "ChatGPT",
-      "aliases": [],
-      "definition": "OpenAI가 2022년 11월 출시한 대화형 AI 서비스입니다. 생성 AI 대중화의 출발점으로 평가됩니다.",
-      "frequency": 65,
-      "category": "newsletter",
-      "posts": [
-        "2025-10-09-sam-altman-openai-four-bets",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-09-ai-last-mile-transformation",
-        "2026-03-16-why-ai-cant-learn",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-23-vibe-physics-ai-grad-student",
-        "2026-03-31-mo-gawdat-face-rip-dystopia-survival",
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-04-30-claude-personal-guidance-sycophancy",
-        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
-        "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
-        "2025-03-01-how-korea-us-japan-gen-z-use-ai",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2025-04-25-using-ai-well-different-from-search",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
-        "2024-07-20-kakao-naver-future-in-ai-era",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-04-05-shortsification-era-content-industry-crisis",
-        "2025-05-25-can-ai-payments-be-taxed",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2024-08-10-top-50-ai-services-five-trends",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-03-15-30b-vs-671b-parameters",
-        "2025-04-20-which-ai-model-should-you-use",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2025-05-10-why-people-miss-chatgpt-4o",
-        "2025-03-10-ai-era-survival-strategy",
-        "2025-04-20-who-gets-displaced-first-in-ai-era",
-        "2026-04-22-ai-tool-income-gap"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-8",
-        "nl-9",
-        "nl-11",
-        "nl-12",
-        "nl-13",
-        "nl-14",
-        "nl-15",
-        "nl-17",
-        "nl-18",
-        "nl-19",
-        "nl-21",
-        "nl-22",
-        "nl-24",
-        "nl-25",
-        "nl-26",
-        "nl-30",
-        "nl-33",
-        "nl-38",
-        "nl-40",
-        "nl-42",
-        "nl-45",
-        "nl-46"
-      ],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2026-04-22",
-      "needs_manual_review": false
-    },
-    {
-      "id": "anthropic",
-      "slug": "anthropic",
-      "name": "Anthropic",
-      "aliases": [],
-      "definition": "Claude를 만든 AI 안전 연구 기업입니다. OpenAI 출신들이 2021년 창업했고 안전한 AI를 목표로 합니다.",
-      "frequency": 63,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-07-new-concerns-for-content-platforms",
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-01-21-hassabis-amodei-agi-debate",
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-01-ai-skill-erosion-anthropic-study",
-        "2026-02-23-persona-selection-model",
-        "2026-03-05-ai-labor-market-exposure",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-19-anthropic-81k-interviews",
-        "2026-03-19-pm-on-ai-exponential",
-        "2026-03-23-vibe-physics-ai-grad-student",
-        "2026-04-02-claude-emotion-vectors",
-        "2026-04-03-ai-coder-automation-timeline",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-08-managed-agents-decoupling",
-        "2026-04-09-advisor-strategy-claude-opus",
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-11-agent-harness-memory-lock-in",
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-04-16-claude-opus-4-7-launch",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2026-04-24-anthropic-project-deal-agent-economy",
-        "2026-04-30-claude-personal-guidance-sycophancy",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-06-13-copyright-dilemma-in-ai-era",
-        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
-        "2025-05-20-anthropic-cpo-on-pm-competencies",
-        "2025-07-15-why-meta-declared-asi",
-        "2024-08-20-acqui-hire-new-way-to-buy-ai-startups",
-        "2025-02-20-sovereign-ai",
-        "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2024-08-10-top-50-ai-services-five-trends",
-        "2025-03-10-ai-intentional-lies-reward-hacking",
-        "2026-04-01-claude-code-hidden-features",
-        "2025-03-10-ai-era-survival-strategy",
-        "2025-05-20-generative-ai-effect-on-youth-employment"
-      ],
-      "newsletters": [
-        "nl-2",
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-11",
-        "nl-14",
-        "nl-15",
-        "nl-17",
-        "nl-18",
-        "nl-20",
-        "nl-27",
-        "nl-33",
-        "nl-34",
-        "nl-37",
-        "nl-42",
-        "nl-44"
-      ],
-      "firstSeen": "2024-08-10",
-      "lastSeen": "2026-04-01",
-      "needs_manual_review": false
-    },
     {
       "id": "리더의-결정-포인트",
       "slug": "리더의-결정-포인트",
@@ -609,62 +257,6 @@
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-04-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "google",
-      "slug": "google",
-      "name": "Google",
-      "aliases": [],
-      "definition": "검색·광고·클라우드를 운영하는 빅테크입니다. Gemini와 DeepMind를 보유하며 AI 경쟁의 핵심 축입니다.",
-      "frequency": 40,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-07-new-concerns-for-content-platforms",
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-03-10-alphago-10-years",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2026-03-31-mo-gawdat-face-rip-dystopia-survival",
-        "2026-04-02-gemma-4-open-model",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2026-04-09-google-cloud-ai-agent-trends",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-05-08-teaching-claude-why",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-06-13-copyright-dilemma-in-ai-era",
-        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
-        "2026-02-11-llm-behavioral-alignment-gap",
-        "2025-07-15-why-meta-declared-asi",
-        "2025-02-20-sovereign-ai",
-        "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2025-04-20-which-ai-model-should-you-use",
-        "2026-03-28-ai-agent-traps",
-        "2025-03-10-ai-era-survival-strategy",
-        "2026-04-22-ai-tool-income-gap"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-4",
-        "nl-5",
-        "nl-17",
-        "nl-19",
-        "nl-20",
-        "nl-25",
-        "nl-27",
-        "nl-33",
-        "nl-40",
-        "nl-45"
-      ],
-      "firstSeen": "2025-02-20",
-      "lastSeen": "2026-04-22",
       "needs_manual_review": false
     },
     {
@@ -951,40 +543,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "meta",
-      "slug": "meta",
-      "name": "Meta",
-      "aliases": [],
-      "definition": "페이스북·인스타그램을 보유한 빅테크입니다. Llama 오픈소스 모델로 AI 시장에 영향을 미칩니다.",
-      "frequency": 18,
-      "category": "newsletter",
-      "posts": [
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-03-19-hyperagents-self-improving-ai",
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2026-04-02-gemma-4-open-model",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-06-13-copyright-dilemma-in-ai-era",
-        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
-        "2026-04-22-ai-tool-income-gap"
-      ],
-      "newsletters": [
-        "nl-1",
-        "nl-2",
-        "nl-10",
-        "nl-11",
-        "nl-14"
-      ],
-      "firstSeen": "2025-03-20",
-      "lastSeen": "2026-04-22",
-      "needs_manual_review": false
-    },
-    {
       "id": "ipo",
       "slug": "ipo",
       "name": "IPO",
@@ -1108,213 +666,6 @@
       "newsletters": [],
       "firstSeen": "2025-02-20",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": false
-    },
-    {
-      "id": "aws",
-      "slug": "aws",
-      "name": "AWS",
-      "aliases": [],
-      "definition": "Amazon의 클라우드 서비스입니다. Bedrock으로 다수의 AI 모델을 호스팅합니다.",
-      "frequency": 15,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2025-03-10-where-do-we-stand-when-tech-becomes-borders"
-      ],
-      "newsletters": [
-        "nl-7",
-        "nl-19",
-        "nl-20",
-        "nl-21",
-        "nl-24",
-        "nl-33",
-        "nl-34",
-        "nl-38",
-        "nl-40",
-        "nl-44",
-        "nl-45",
-        "nl-46"
-      ],
-      "firstSeen": "2025-03-10",
-      "lastSeen": "2025-03-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "lg",
-      "slug": "lg",
-      "name": "LG",
-      "aliases": [],
-      "definition": "한국의 대기업 그룹입니다. LG AI Research에서 EXAONE 모델을 개발합니다.",
-      "frequency": 14,
-      "category": "newsletter",
-      "posts": [
-        "2025-05-05-furiosa-ai",
-        "2025-03-20-can-yangjae-become-an-ai-hub",
-        "2025-07-25-national-ai-foundation-model-project",
-        "2025-08-05-five-companies-selected-for-k-ai-project",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-03-15-30b-vs-671b-parameters",
-        "2025-04-10-naver-ai-introduces-lightweight-llm",
-        "2025-07-20-china-ai-models-surpassing-gpu-limits"
-      ],
-      "newsletters": [
-        "nl-5",
-        "nl-6",
-        "nl-7",
-        "nl-8",
-        "nl-14",
-        "nl-23"
-      ],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2025-08-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "mit",
-      "slug": "mit",
-      "name": "MIT",
-      "aliases": [],
-      "definition": "미국 매사추세츠 공대입니다. AI·로봇 연구의 중심으로 핵심 논문이 다수 나옵니다.",
-      "frequency": 14,
-      "category": "research",
-      "posts": [
-        "2025-08-20-the-real-meaning-of-mit-report",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2024-10-15-ai-bubble-three-collapse-scenarios",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-04-21-china-robots-run-half-marathon"
-      ],
-      "newsletters": [
-        "nl-10",
-        "nl-11",
-        "nl-21",
-        "nl-24"
-      ],
-      "firstSeen": "2024-10-15",
-      "lastSeen": "2025-08-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "sk",
-      "slug": "sk",
-      "name": "SK",
-      "aliases": [],
-      "definition": "한국의 대기업 그룹입니다. HBM을 통해 AI 메모리 시장에서 핵심 역할을 합니다.",
-      "frequency": 14,
-      "category": "newsletter",
-      "posts": [
-        "2025-03-15-when-technology-becomes-borders",
-        "2025-07-25-national-ai-foundation-model-project"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-7",
-        "nl-8",
-        "nl-12",
-        "nl-16",
-        "nl-17",
-        "nl-19",
-        "nl-20",
-        "nl-23",
-        "nl-24",
-        "nl-29",
-        "nl-41"
-      ],
-      "firstSeen": "2025-03-15",
-      "lastSeen": "2025-07-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "eu",
-      "slug": "eu",
-      "name": "EU",
-      "aliases": [],
-      "definition": "유럽연합입니다. AI Act로 세계 최초의 포괄적 AI 규제를 시행했습니다.",
-      "frequency": 13,
-      "category": "company",
-      "posts": [
-        "2025-06-10-spotify-the-hidden-force-cracking-apple-empire",
-        "2025-11-10-peter-thiel-antichrist-lectures",
-        "2026-03-02-ai-layoff-trap",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2024-07-20-kakao-naver-future-in-ai-era",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system",
-        "2025-05-05-what-korea-needs-to-become-ai-g3",
-        "2025-05-25-can-ai-payments-be-taxed"
-      ],
-      "newsletters": [
-        "nl-12",
-        "nl-23",
-        "nl-39",
-        "nl-45",
-        "nl-47"
-      ],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2025-11-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "amd",
-      "slug": "amd",
-      "name": "AMD",
-      "aliases": [],
-      "definition": "NVIDIA에 도전하는 미국 반도체 기업입니다. MI 시리즈 가속기로 AI 시장 점유율 확대를 노립니다.",
-      "frequency": 13,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-18-karpathy-autoresearch"
-      ],
-      "newsletters": [
-        "nl-5",
-        "nl-8",
-        "nl-9",
-        "nl-10",
-        "nl-15",
-        "nl-17",
-        "nl-23",
-        "nl-26",
-        "nl-30",
-        "nl-37",
-        "nl-40",
-        "nl-47"
-      ],
-      "firstSeen": "2026-03-06",
-      "lastSeen": "2026-03-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "sns",
-      "slug": "sns",
-      "name": "SNS",
-      "aliases": [],
-      "definition": "소셜 미디어입니다. AI 생성 콘텐츠가 정보 환경을 흔드는 주된 무대입니다.",
-      "frequency": 12,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-10-korean-election-generational-divide",
-        "2026-04-02-ai-emotion-prompts",
-        "2025-04-21-china-robots-run-half-marathon",
-        "2025-03-25-koreas-end-or-transition",
-        "2025-07-05-why-can-adults-do-it-but-not-us"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-7",
-        "nl-16",
-        "nl-17",
-        "nl-20",
-        "nl-33",
-        "nl-42"
-      ],
-      "firstSeen": "2025-03-25",
-      "lastSeen": "2025-07-05",
       "needs_manual_review": false
     },
     {
@@ -1448,31 +799,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ibm",
-      "slug": "ibm",
-      "name": "IBM",
-      "aliases": [],
-      "definition": "기업용 AI에 집중하는 미국 IT 기업입니다. watsonx 플랫폼으로 엔터프라이즈 시장을 공략합니다.",
-      "frequency": 9,
-      "category": "newsletter",
-      "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-03-16-why-world-runs-on-sap",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-04-07-ai-agent-traps",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [
-        "nl-20",
-        "nl-21",
-        "nl-25",
-        "nl-37"
-      ],
-      "firstSeen": "2026-01-25",
-      "lastSeen": "2026-03-28",
-      "needs_manual_review": false
-    },
-    {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
@@ -1571,30 +897,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "kt",
-      "slug": "kt",
-      "name": "KT",
-      "aliases": [],
-      "definition": "한국의 통신·플랫폼 기업입니다. 마이크로소프트와 협력해 AI 인프라를 확장합니다.",
-      "frequency": 8,
-      "category": "newsletter",
-      "posts": [
-        "2025-07-25-national-ai-foundation-model-project",
-        "2025-03-15-kt-korean-ai-model-mideum-2"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-5",
-        "nl-6",
-        "nl-7",
-        "nl-8",
-        "nl-32"
-      ],
-      "firstSeen": "2025-03-15",
-      "lastSeen": "2025-07-25",
-      "needs_manual_review": false
-    },
-    {
       "id": "ai규제",
       "slug": "ai규제",
       "name": "AI규제",
@@ -1614,121 +916,6 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-01-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "uc",
-      "slug": "uc",
-      "name": "UC",
-      "aliases": [],
-      "definition": "미국 University of California입니다. UC 버클리 등이 AI 연구의 핵심 거점입니다.",
-      "frequency": 7,
-      "category": "research",
-      "posts": [
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-16-why-ai-cant-learn",
-        "2025-04-10-three-ways-universities-adopt-ai",
-        "2025-06-25-us-stablecoin-bill-hopes-and-concerns",
-        "2025-07-15-why-jensen-huang-is-going-to-china"
-      ],
-      "newsletters": [
-        "nl-35",
-        "nl-44"
-      ],
-      "firstSeen": "2025-04-10",
-      "lastSeen": "2025-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "arc",
-      "slug": "arc",
-      "name": "ARC",
-      "aliases": [],
-      "definition": "ARC-AGI 벤치마크입니다. 패턴 추론으로 진정한 일반 지능을 측정한다고 평가됩니다.",
-      "frequency": 7,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-31-asi-evolve-ai-accelerates-ai"
-      ],
-      "newsletters": [
-        "nl-5",
-        "nl-17",
-        "nl-24",
-        "nl-25",
-        "nl-36",
-        "nl-38"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "pdf",
-      "slug": "pdf",
-      "name": "PDF",
-      "aliases": [],
-      "definition": "문서 표준 포맷입니다. AI가 가장 자주 처리하는 비정형 문서 형식입니다.",
-      "frequency": 7,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-02-11-llm-behavioral-alignment-gap",
-        "2026-04-06-sam-altman-superintelligence-new-deal",
-        "2025-04-20-which-ai-model-should-you-use"
-      ],
-      "newsletters": [
-        "nl-23",
-        "nl-26",
-        "nl-33"
-      ],
-      "firstSeen": "2025-04-20",
-      "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "tv",
-      "slug": "tv",
-      "name": "TV",
-      "aliases": [],
-      "definition": "방송 TV에서 OTT·스트리밍으로 이동했습니다. 콘텐츠 산업의 AI 적용 최전선입니다.",
-      "frequency": 7,
-      "category": "company",
-      "posts": [
-        "2025-04-25-does-ai-make-us-smarter",
-        "2024-07-20-kakao-naver-future-in-ai-era",
-        "2024-08-05-ai-era-future-of-media",
-        "2024-09-27-lionsgate-runway-ai-partnership"
-      ],
-      "newsletters": [
-        "nl-2",
-        "nl-20",
-        "nl-30"
-      ],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2025-04-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ftc",
-      "slug": "ftc",
-      "name": "FTC",
-      "aliases": [],
-      "definition": "미국 연방거래위원회입니다. 빅테크의 AI 시장 지배력을 감시합니다.",
-      "frequency": 7,
-      "category": "newsletter",
-      "posts": [
-        "2024-08-20-acqui-hire-new-way-to-buy-ai-startups"
-      ],
-      "newsletters": [
-        "nl-13",
-        "nl-15",
-        "nl-19",
-        "nl-21",
-        "nl-23",
-        "nl-25"
-      ],
-      "firstSeen": "2024-08-20",
-      "lastSeen": "2024-08-20",
       "needs_manual_review": false
     },
     {
@@ -1772,28 +959,6 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "nvidia",
-      "slug": "nvidia",
-      "name": "NVIDIA",
-      "aliases": [],
-      "definition": "AI 학습용 GPU를 거의 독점하는 미국 반도체 기업입니다. 시가총액 기준 세계 최상위입니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2025-07-20-china-ai-models-surpassing-gpu-limits"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-44"
-      ],
-      "firstSeen": "2025-07-20",
-      "lastSeen": "2025-07-20",
       "needs_manual_review": false
     },
     {
@@ -1866,28 +1031,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "oecd",
-      "slug": "oecd",
-      "name": "OECD",
-      "aliases": [],
-      "definition": "경제협력개발기구입니다. AI 원칙으로 회원국 정책 방향을 조율합니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-04-07-ai-agent-traps",
-        "2025-05-25-can-ai-payments-be-taxed",
-        "2026-03-28-ai-agent-traps",
-        "2025-03-25-koreas-end-or-transition",
-        "2025-05-10-will-ai-really-replace-our-work"
-      ],
-      "newsletters": [
-        "nl-46"
-      ],
-      "firstSeen": "2025-03-25",
-      "lastSeen": "2026-03-28",
-      "needs_manual_review": false
-    },
-    {
       "id": "swe",
       "slug": "swe",
       "name": "SWE",
@@ -1907,28 +1050,6 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "tsmc",
-      "slug": "tsmc",
-      "name": "TSMC",
-      "aliases": [],
-      "definition": "세계 최대 파운드리 기업입니다. NVIDIA·Apple·AMD의 첨단 반도체를 위탁 생산합니다.",
-      "frequency": 6,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2024-08-25-ai-bubble-three-codes-data-chip-biz"
-      ],
-      "newsletters": [
-        "nl-8",
-        "nl-10",
-        "nl-20",
-        "nl-45"
-      ],
-      "firstSeen": "2024-08-25",
-      "lastSeen": "2024-08-25",
       "needs_manual_review": false
     },
     {
@@ -2014,27 +1135,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "hr",
-      "slug": "hr",
-      "name": "HR",
-      "aliases": [],
-      "definition": "인사 부서입니다. AI 도입에 따른 조직과 역할 변화를 설계합니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-09-ai-last-mile-transformation",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2025-04-01-most-used-ai-services-by-koreans"
-      ],
-      "newsletters": [
-        "nl-34",
-        "nl-36"
-      ],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2026-03-09",
-      "needs_manual_review": false
-    },
-    {
       "id": "imo",
       "slug": "imo",
       "name": "IMO",
@@ -2076,27 +1176,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "gtc",
-      "slug": "gtc",
-      "name": "GTC",
-      "aliases": [],
-      "definition": "NVIDIA의 연례 개발자 행사입니다. AI 산업 방향성의 풍향계로 작동합니다.",
-      "frequency": 5,
-      "category": "company",
-      "posts": [
-        "2026-03-16-nvidia-nemoclaw",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-03-17-nvidia-gtc26-keynote"
-      ],
-      "newsletters": [
-        "nl-39",
-        "nl-40"
-      ],
-      "firstSeen": "2026-03-16",
-      "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
       "id": "cfo",
       "slug": "cfo",
       "name": "CFO",
@@ -2115,67 +1194,6 @@
       ],
       "firstSeen": "2026-03-17",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "dc",
-      "slug": "dc",
-      "name": "DC",
-      "aliases": [],
-      "definition": "데이터센터입니다. AI 학습·추론을 위한 핵심 인프라입니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2025-07-05-why-can-adults-do-it-but-not-us"
-      ],
-      "newsletters": [
-        "nl-12",
-        "nl-20",
-        "nl-44"
-      ],
-      "firstSeen": "2025-07-05",
-      "lastSeen": "2025-07-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "claudecode",
-      "slug": "claudecode",
-      "name": "ClaudeCode",
-      "aliases": [],
-      "definition": "Anthropic의 코딩 에이전트 CLI입니다. Claude로 코드베이스를 직접 조작합니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-03-19-pm-on-ai-exponential",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2026-04-01-claude-code-hidden-features"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-04-01",
-      "lastSeen": "2026-04-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "url",
-      "slug": "url",
-      "name": "URL",
-      "aliases": [],
-      "definition": "웹 주소입니다. AI가 웹을 탐색·인용할 때 가장 기본이 되는 식별자입니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-03-19-pm-on-ai-exponential",
-        "2026-03-31-mo-gawdat-face-rip-dystopia-survival",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-28",
-      "lastSeen": "2026-03-28",
       "needs_manual_review": false
     },
     {
@@ -2220,48 +1238,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "jp",
-      "slug": "jp",
-      "name": "JP",
-      "aliases": [],
-      "definition": "JPMorgan을 가리키는 약칭입니다. AI를 적극 도입한 대형 금융사로 자주 인용됩니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-28",
-        "nl-41",
-        "nl-44"
-      ],
-      "firstSeen": "2026-04-06",
-      "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "id",
-      "slug": "id",
-      "name": "ID",
-      "aliases": [],
-      "definition": "신원 식별 정보입니다. AI 시대 인증과 봇 구분의 핵심 자산입니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-04-08-managed-agents-decoupling",
-        "2026-04-16-claude-opus-4-7-launch",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-4"
-      ],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2025-04-01",
-      "needs_manual_review": false
-    },
-    {
       "id": "ax",
       "slug": "ax",
       "name": "AX",
@@ -2279,152 +1255,6 @@
       "newsletters": [],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-05-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "pc",
-      "slug": "pc",
-      "name": "PC",
-      "aliases": [],
-      "definition": "개인용 컴퓨터입니다. 온디바이스 AI 시대에 NPU 탑재 모델로 다시 주목받습니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2025-03-25-koreas-end-or-transition"
-      ],
-      "newsletters": [
-        "nl-15",
-        "nl-30",
-        "nl-41"
-      ],
-      "firstSeen": "2025-03-25",
-      "lastSeen": "2025-03-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "rtx",
-      "slug": "rtx",
-      "name": "RTX",
-      "aliases": [],
-      "definition": "NVIDIA의 소비자용 GPU 라인업입니다. 게이밍과 개인 AI 추론에 쓰입니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2025-07-15-why-jensen-huang-is-going-to-china"
-      ],
-      "newsletters": [
-        "nl-14",
-        "nl-15",
-        "nl-17"
-      ],
-      "firstSeen": "2025-07-15",
-      "lastSeen": "2025-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "dna",
-      "slug": "dna",
-      "name": "DNA",
-      "aliases": [],
-      "definition": "유전 정보를 담은 분자입니다. AI 기반 생명과학에서 단백질·약물 설계에 활용됩니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2025-04-15-agatha-christie-writing-lessons",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system",
-        "2025-06-27-interpreting-human-genetics-with-ai"
-      ],
-      "newsletters": [
-        "nl-3",
-        "nl-8"
-      ],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2025-06-27",
-      "needs_manual_review": false
-    },
-    {
-      "id": "nyt",
-      "slug": "nyt",
-      "name": "NYT",
-      "aliases": [],
-      "definition": "뉴욕타임스입니다. OpenAI를 상대로 학습 데이터 무단 사용을 두고 소송 중입니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-13-copyright-dilemma-in-ai-era"
-      ],
-      "newsletters": [
-        "nl-25",
-        "nl-26",
-        "nl-27",
-        "nl-30"
-      ],
-      "firstSeen": "2025-06-13",
-      "lastSeen": "2025-06-13",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cnbc",
-      "slug": "cnbc",
-      "name": "CNBC",
-      "aliases": [],
-      "definition": "미국 경제 방송입니다. AI 기업 실적과 시장 반응을 빠르게 다룹니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2025-07-10-ban-left-biased-ai"
-      ],
-      "newsletters": [
-        "nl-10",
-        "nl-17",
-        "nl-39",
-        "nl-47"
-      ],
-      "firstSeen": "2025-07-10",
-      "lastSeen": "2025-07-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "kaist",
-      "slug": "kaist",
-      "name": "KAIST",
-      "aliases": [],
-      "definition": "한국과학기술원입니다. 한국 AI 연구의 중심 대학으로 인재를 배출합니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [
-        "2025-03-20-can-yangjae-become-an-ai-hub",
-        "2025-07-25-national-ai-foundation-model-project"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-6",
-        "nl-7"
-      ],
-      "firstSeen": "2025-03-20",
-      "lastSeen": "2025-07-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "mgx",
-      "slug": "mgx",
-      "name": "MGX",
-      "aliases": [],
-      "definition": "UAE 주도의 AI 투자 펀드입니다. 중동 자본이 미국 AI 인프라에 유입되는 통로입니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-15",
-        "nl-16",
-        "nl-18",
-        "nl-27",
-        "nl-32"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -2447,25 +1277,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "엔비디아",
-      "slug": "엔비디아",
-      "name": "엔비디아",
-      "aliases": [],
-      "definition": "NVIDIA의 한글 표기입니다. AI GPU 시장의 사실상 독점 사업자입니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2025-05-05-furiosa-ai",
-        "2025-07-15-why-jensen-huang-is-going-to-china",
-        "2024-10-05-cerebras-ipo-vs-nvidia",
-        "2025-08-10-why-deepseek-r2-launch-is-delayed"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-10-05",
-      "lastSeen": "2025-08-10",
-      "needs_manual_review": false
-    },
-    {
       "id": "gdpr",
       "slug": "gdpr",
       "name": "GDPR",
@@ -2483,25 +1294,6 @@
       ],
       "firstSeen": "2024-07-20",
       "lastSeen": "2025-05-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "byd",
-      "slug": "byd",
-      "name": "BYD",
-      "aliases": [],
-      "definition": "중국 최대 전기차 기업입니다. 배터리 수직계열화로 글로벌 EV 시장에 영향력을 키웁니다.",
-      "frequency": 4,
-      "category": "company",
-      "posts": [
-        "2025-05-25-why-china-is-warning-its-top-ev-company",
-        "2025-06-05-chinese-bigtech-targeting-brazil-market",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2025-04-25-2025-shanghai-motor-show-shock"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2025-06-05",
       "needs_manual_review": false
     },
     {
@@ -2543,25 +1335,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "deepmind",
-      "slug": "deepmind",
-      "name": "DeepMind",
-      "aliases": [],
-      "definition": "Google이 인수한 영국 AI 연구소입니다. 알파고와 AlphaFold로 유명하며 데미스 하사비스가 이끕니다.",
-      "frequency": 4,
-      "category": "leader",
-      "posts": [
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-01-21-hassabis-amodei-agi-debate",
-        "2026-03-10-alphago-10-years",
-        "2025-04-15-ai-from-learning-era-to-experience-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-15",
-      "lastSeen": "2026-03-10",
-      "needs_manual_review": false
-    },
-    {
       "id": "자동화",
       "slug": "자동화",
       "name": "자동화",
@@ -2597,25 +1370,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "hbr",
-      "slug": "hbr",
-      "name": "HBR",
-      "aliases": [],
-      "definition": "Harvard Business Review입니다. AI 도입 사례와 조직 변화 연구를 주로 다룹니다.",
-      "frequency": 4,
-      "category": "research",
-      "posts": [
-        "2026-03-09-ai-last-mile-transformation",
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-04-09-gen-ai-robots-reshaping-services"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-09",
-      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -2658,25 +1412,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "claude-2",
-      "slug": "claude-2",
-      "name": "CLAUDE",
-      "aliases": [],
-      "definition": "프로젝트 컨텍스트를 기록한 마크다운 파일명입니다. Claude Code가 자동으로 읽습니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-11-agent-harness-memory-lock-in",
-        "2026-04-01-claude-code-hidden-features"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-04-01",
-      "lastSeen": "2026-04-01",
-      "needs_manual_review": false
-    },
-    {
       "id": "mmlu",
       "slug": "mmlu",
       "name": "MMLU",
@@ -2697,26 +1432,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "uae",
-      "slug": "uae",
-      "name": "UAE",
-      "aliases": [],
-      "definition": "아랍에미리트입니다. 정부 주도로 AI 인프라와 모델에 대규모 투자합니다.",
-      "frequency": 4,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2025-02-20-sovereign-ai"
-      ],
-      "newsletters": [
-        "nl-17",
-        "nl-43"
-      ],
-      "firstSeen": "2025-02-20",
-      "lastSeen": "2025-02-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "ciso",
       "slug": "ciso",
       "name": "CISO",
@@ -2733,45 +1448,6 @@
       "newsletters": [],
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
-      "needs_manual_review": false
-    },
-    {
-      "id": "sf",
-      "slug": "sf",
-      "name": "SF",
-      "aliases": [],
-      "definition": "샌프란시스코입니다. OpenAI·Anthropic 등 주요 AI 기업의 본거지입니다.",
-      "frequency": 4,
-      "category": "leader",
-      "posts": [
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-33"
-      ],
-      "firstSeen": "2024-09-10",
-      "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "deepseek",
-      "slug": "deepseek",
-      "name": "DeepSeek",
-      "aliases": [],
-      "definition": "중국의 오픈소스 LLM 개발 기업입니다. 저비용 고성능 모델로 2025년 초 시장을 흔들었습니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-07-20-china-ai-models-surpassing-gpu-limits",
-        "2025-08-10-why-deepseek-r2-launch-is-delayed"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2025-08-10",
       "needs_manual_review": false
     },
     {
@@ -2810,45 +1486,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-01",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "wwdc",
-      "slug": "wwdc",
-      "name": "WWDC",
-      "aliases": [],
-      "definition": "Apple의 연례 개발자 행사입니다. 온디바이스 AI 전략을 공개하는 무대입니다.",
-      "frequency": 4,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-13-copyright-dilemma-in-ai-era",
-        "2025-06-14-no-innovation-at-apple-wwdc-2025"
-      ],
-      "newsletters": [
-        "nl-1",
-        "nl-45"
-      ],
-      "firstSeen": "2025-06-13",
-      "lastSeen": "2025-06-14",
-      "needs_manual_review": false
-    },
-    {
-      "id": "딥마인드",
-      "slug": "딥마인드",
-      "name": "딥마인드",
-      "aliases": [],
-      "definition": "DeepMind의 한글 표기입니다. Google 산하 AI 연구소로 AlphaGo와 AlphaFold를 만들었습니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2025-06-20-google-deepmind-ceo-vision",
-        "2025-03-15-optimization-ai-new-era",
-        "2025-06-27-interpreting-human-genetics-with-ai",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-15",
-      "lastSeen": "2026-03-28",
       "needs_manual_review": false
     },
     {
@@ -2910,45 +1547,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "exaone",
-      "slug": "exaone",
-      "name": "EXAONE",
-      "aliases": [],
-      "definition": "LG AI Research의 자체 LLM입니다. 한국어 처리와 산업용 활용에 강점이 있습니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-03-15-30b-vs-671b-parameters",
-        "2025-07-20-china-ai-models-surpassing-gpu-limits"
-      ],
-      "newsletters": [
-        "nl-5"
-      ],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2025-07-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "nc",
-      "slug": "nc",
-      "name": "NC",
-      "aliases": [],
-      "definition": "엔씨소프트의 약칭입니다. 게임 기반 자체 LLM 개발로 한국 AI 시장에 참여합니다.",
-      "frequency": 4,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-7",
-        "nl-8",
-        "nl-23",
-        "nl-31"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
       "id": "dram",
       "slug": "dram",
       "name": "DRAM",
@@ -2984,43 +1582,6 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-05-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "dma",
-      "slug": "dma",
-      "name": "DMA",
-      "aliases": [],
-      "definition": "EU 디지털 시장법입니다. 게이트키퍼로 지정된 빅테크의 자사 우대를 제한합니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2025-06-10-spotify-the-hidden-force-cracking-apple-empire",
-        "2024-07-20-kakao-naver-future-in-ai-era"
-      ],
-      "newsletters": [
-        "nl-45"
-      ],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2025-06-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "샘알트만",
-      "slug": "샘알트만",
-      "name": "샘알트만",
-      "aliases": [],
-      "definition": "OpenAI CEO입니다. AGI 개발과 거버넌스 논쟁의 중심 인물입니다.",
-      "frequency": 3,
-      "category": "leader",
-      "posts": [
-        "2025-10-09-sam-altman-openai-four-bets",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2025-05-15-thoughts-on-sam-altman-soft-singularity"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-15",
-      "lastSeen": "2025-05-15",
       "needs_manual_review": false
     },
     {
@@ -3114,25 +1675,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "asml",
-      "slug": "asml",
-      "name": "ASML",
-      "aliases": [],
-      "definition": "EUV 노광장비를 독점 공급하는 네덜란드 기업입니다. 첨단 반도체 생산의 병목 지점입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-16-tech-layoffs-tracker"
-      ],
-      "newsletters": [
-        "nl-13",
-        "nl-20"
-      ],
-      "firstSeen": "2026-03-16",
-      "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
       "id": "디지털전환",
       "slug": "디지털전환",
       "name": "디지털전환",
@@ -3148,79 +1690,6 @@
       "newsletters": [],
       "firstSeen": "2025-03-25",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "nvlink",
-      "slug": "nvlink",
-      "name": "NVLink",
-      "aliases": [],
-      "definition": "NVIDIA의 GPU 간 고속 연결 기술입니다. 대규모 모델 학습에 필수입니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2025-07-15-why-jensen-huang-is-going-to-china"
-      ],
-      "newsletters": [
-        "nl-15"
-      ],
-      "firstSeen": "2025-07-15",
-      "lastSeen": "2025-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "html",
-      "slug": "html",
-      "name": "HTML",
-      "aliases": [],
-      "definition": "웹 페이지를 정의하는 마크업 언어입니다. AI 코딩 도구의 가장 흔한 출력물입니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-keynote",
-        "2026-04-07-ai-agent-traps",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-28",
-      "lastSeen": "2026-03-28",
-      "needs_manual_review": false
-    },
-    {
-      "id": "karpathy",
-      "slug": "karpathy",
-      "name": "Karpathy",
-      "aliases": [],
-      "definition": "전 OpenAI·Tesla 핵심 연구자 안드레이 카파시입니다. 실용 AI 교육으로 영향력이 큽니다.",
-      "frequency": 3,
-      "category": "leader",
-      "posts": [
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-03-karpathy-llm-knowledge-base"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-06",
-      "lastSeen": "2026-03-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "readme",
-      "slug": "readme",
-      "name": "README",
-      "aliases": [],
-      "definition": "프로젝트 설명 파일입니다. AI 코딩 에이전트가 우선 읽는 컨텍스트 출발점입니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2026-03-18-karpathy-autoresearch",
-        "2026-04-08-claude-code-hidden-features",
-        "2026-04-01-claude-code-hidden-features"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-06",
-      "lastSeen": "2026-04-01",
       "needs_manual_review": false
     },
     {
@@ -3279,25 +1748,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "bmw",
-      "slug": "bmw",
-      "name": "BMW",
-      "aliases": [],
-      "definition": "독일 프리미엄 자동차 기업입니다. AI·소프트웨어 정의 차량으로 전환에 투자합니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2025-04-25-2025-shanghai-motor-show-shock"
-      ],
-      "newsletters": [
-        "nl-25"
-      ],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2025-04-25",
-      "needs_manual_review": false
-    },
-    {
       "id": "sdk",
       "slug": "sdk",
       "name": "SDK",
@@ -3335,25 +1785,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ar",
-      "slug": "ar",
-      "name": "AR",
-      "aliases": [],
-      "definition": "증강현실입니다. 빅테크가 AI와 결합해 차세대 인터페이스로 추진합니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2026-05-07-natural-language-autoencoders"
-      ],
-      "newsletters": [
-        "nl-18",
-        "nl-19"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
       "id": "생성ai",
       "slug": "생성ai",
       "name": "생성AI",
@@ -3369,43 +1800,6 @@
       "newsletters": [],
       "firstSeen": "2024-08-10",
       "lastSeen": "2025-04-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "bbc",
-      "slug": "bbc",
-      "name": "BBC",
-      "aliases": [],
-      "definition": "영국 공영방송입니다. AI 규제와 사회 영향에 대한 보도가 강합니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2025-04-15-agatha-christie-writing-lessons"
-      ],
-      "newsletters": [
-        "nl-10",
-        "nl-42"
-      ],
-      "firstSeen": "2025-04-15",
-      "lastSeen": "2025-04-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "메타",
-      "slug": "메타",
-      "name": "메타",
-      "aliases": [],
-      "definition": "Meta의 한글 표기입니다. 페이스북·인스타그램을 보유한 빅테크로 Llama 모델을 공개합니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-07-15-why-meta-declared-asi",
-        "2025-08-15-meta-ai-betting-on-voice-technology"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2025-08-15",
       "needs_manual_review": false
     },
     {
@@ -3443,24 +1837,6 @@
       ],
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "네이버",
-      "slug": "네이버",
-      "name": "네이버",
-      "aliases": [],
-      "definition": "한국의 대표 인터넷 기업입니다. HyperCLOVA X로 자체 한국어 AI 모델을 운영합니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2024-07-20-kakao-naver-future-in-ai-era",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-04-10-naver-ai-introduces-lightweight-llm"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2025-04-10",
       "needs_manual_review": false
     },
     {
@@ -3590,43 +1966,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "오픈ai",
-      "slug": "오픈ai",
-      "name": "오픈AI",
-      "aliases": [],
-      "definition": "OpenAI의 한글 표기입니다. ChatGPT를 만든 미국 AI 기업입니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2025-05-20-openai-windsurf-acquisition-falls-through",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2025-05-15-preserve-even-deleted-conversations"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "genius",
-      "slug": "genius",
-      "name": "GENIUS",
-      "aliases": [],
-      "definition": "미국의 AI 안전·경쟁력 관련 법안 약칭입니다. 모델 책임과 표준화를 다룹니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2025-06-25-us-stablecoin-bill-hopes-and-concerns"
-      ],
-      "newsletters": [
-        "nl-2",
-        "nl-5"
-      ],
-      "firstSeen": "2025-06-25",
-      "lastSeen": "2025-06-25",
-      "needs_manual_review": false
-    },
-    {
       "id": "cuda",
       "slug": "cuda",
       "name": "CUDA",
@@ -3646,25 +1985,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "lm",
-      "slug": "lm",
-      "name": "LM",
-      "aliases": [],
-      "definition": "Language Model의 약칭입니다. 텍스트의 확률 분포를 학습하는 모델로 LLM의 일반 개념입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2025-04-20-which-ai-model-should-you-use"
-      ],
-      "newsletters": [
-        "nl-36",
-        "nl-45"
-      ],
-      "firstSeen": "2025-04-20",
-      "lastSeen": "2025-04-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "ai대체",
       "slug": "ai대체",
       "name": "AI대체",
@@ -3681,1629 +2001,10 @@
       "firstSeen": "2025-04-20",
       "lastSeen": "2025-05-20",
       "needs_manual_review": false
-    },
-    {
-      "id": "chips",
-      "slug": "chips",
-      "name": "CHIPS",
-      "aliases": [],
-      "definition": "미국의 반도체 지원법입니다. 자국 내 반도체 생산 회귀를 유도합니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-8",
-        "nl-10",
-        "nl-19"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "ft",
-      "slug": "ft",
-      "name": "FT",
-      "aliases": [],
-      "definition": "Financial Times입니다. AI 산업·정책을 심층 보도하는 영국 매체입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-25",
-        "nl-27",
-        "nl-44"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "wsj",
-      "slug": "wsj",
-      "name": "WSJ",
-      "aliases": [],
-      "definition": "월스트리트저널입니다. AI 산업과 거시 경제 이슈를 비판적으로 다룹니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-26",
-        "nl-40",
-        "nl-47"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
     }
   ],
   "relationships": [
     {
-      "source": "Claude",
-      "target": "OpenAI",
-      "strength": 34
-    },
-    {
-      "source": "Claude",
-      "target": "ChatGPT",
-      "strength": 33
-    },
-    {
-      "source": "Claude",
-      "target": "Anthropic",
-      "strength": 42
-    },
-    {
-      "source": "Claude",
-      "target": "리더의 결정 포인트",
-      "strength": 36
-    },
-    {
-      "source": "Claude",
-      "target": "LLM",
-      "strength": 21
-    },
-    {
-      "source": "Claude",
-      "target": "GPU",
-      "strength": 12
-    },
-    {
-      "source": "Claude",
-      "target": "API",
-      "strength": 24
-    },
-    {
-      "source": "Claude",
-      "target": "Google",
-      "strength": 23
-    },
-    {
-      "source": "Claude",
-      "target": "비즈니스 비용",
-      "strength": 20
-    },
-    {
-      "source": "Claude",
-      "target": "AI 에이전트",
-      "strength": 22
-    },
-    {
-      "source": "Claude",
-      "target": "AGI",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "IT",
-      "strength": 12
-    },
-    {
-      "source": "Claude",
-      "target": "CTO",
-      "strength": 16
-    },
-    {
-      "source": "Claude",
-      "target": "ROI",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "임원",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "Meta",
-      "strength": 9
-    },
-    {
-      "source": "Claude",
-      "target": "IPO",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "창업자",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "팀장",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "AI전략",
-      "strength": 7
-    },
-    {
-      "source": "Claude",
-      "target": "AWS",
-      "strength": 8
-    },
-    {
-      "source": "Claude",
-      "target": "LG",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "MIT",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "SK",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "EU",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "AMD",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "SNS",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "KPI",
-      "strength": 7
-    },
-    {
-      "source": "Claude",
-      "target": "MCP",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "TPU",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "UI",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "IBM",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "ASI",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "RAG",
-      "strength": 7
-    },
-    {
-      "source": "Claude",
-      "target": "AI 안전",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "AI전환",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "KT",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "UC",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "ARC",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "PDF",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "생산성",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "GPQA",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "NVIDIA",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "CPU",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "IP",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "조직설계",
-      "strength": 6
-    },
-    {
-      "source": "Claude",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "SWE",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "강화학습",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "LLMs",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "HR",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "IMO",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "RLHF",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "ClaudeCode",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "URL",
-      "strength": 5
-    },
-    {
-      "source": "Claude",
-      "target": "PM",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "JP",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "ID",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "AX",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "자동화",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "HBR",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "CRM",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "CLAUDE",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "MMLU",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "CISO",
-      "strength": 4
-    },
-    {
-      "source": "Claude",
-      "target": "SF",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "ARR",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "DRAM",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "멀티에이전트",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "GPTs",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "HTML",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "Karpathy",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "README",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "METR",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "SDK",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "코딩AI",
-      "strength": 3
-    },
-    {
-      "source": "Claude",
-      "target": "AR",
-      "strength": 2
-    },
-    {
-      "source": "Claude",
-      "target": "LM",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "ChatGPT",
-      "strength": 34
-    },
-    {
-      "source": "OpenAI",
-      "target": "Anthropic",
-      "strength": 36
-    },
-    {
-      "source": "OpenAI",
-      "target": "리더의 결정 포인트",
-      "strength": 12
-    },
-    {
-      "source": "OpenAI",
-      "target": "LLM",
-      "strength": 20
-    },
-    {
-      "source": "OpenAI",
-      "target": "GPU",
-      "strength": 23
-    },
-    {
-      "source": "OpenAI",
-      "target": "API",
-      "strength": 15
-    },
-    {
-      "source": "OpenAI",
-      "target": "Google",
-      "strength": 23
-    },
-    {
-      "source": "OpenAI",
-      "target": "비즈니스 비용",
-      "strength": 11
-    },
-    {
-      "source": "OpenAI",
-      "target": "AI 에이전트",
-      "strength": 10
-    },
-    {
-      "source": "OpenAI",
-      "target": "AGI",
-      "strength": 17
-    },
-    {
-      "source": "OpenAI",
-      "target": "IT",
-      "strength": 7
-    },
-    {
-      "source": "OpenAI",
-      "target": "CTO",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "ROI",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "임원",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "Meta",
-      "strength": 10
-    },
-    {
-      "source": "OpenAI",
-      "target": "IPO",
-      "strength": 12
-    },
-    {
-      "source": "OpenAI",
-      "target": "창업자",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "팀장",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "AI전략",
-      "strength": 9
-    },
-    {
-      "source": "OpenAI",
-      "target": "AWS",
-      "strength": 11
-    },
-    {
-      "source": "OpenAI",
-      "target": "LG",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "MIT",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "SK",
-      "strength": 9
-    },
-    {
-      "source": "OpenAI",
-      "target": "EU",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "AMD",
-      "strength": 8
-    },
-    {
-      "source": "OpenAI",
-      "target": "SNS",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "KPI",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "소버린AI",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "MCP",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "TPU",
-      "strength": 7
-    },
-    {
-      "source": "OpenAI",
-      "target": "UI",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "IBM",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "ASI",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "AI 안전",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "KT",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "AI규제",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "UC",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "ARC",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "PDF",
-      "strength": 5
-    },
-    {
-      "source": "OpenAI",
-      "target": "TV",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "FTC",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "NVIDIA",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "CPU",
-      "strength": 6
-    },
-    {
-      "source": "OpenAI",
-      "target": "IP",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "SWE",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "HBM",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "VC",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "HR",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "IMO",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "GTC",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "CFO",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "DC",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "JP",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "PC",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "RTX",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "NYT",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "CNBC",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "KAIST",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "MGX",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "CLAUDE",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "UAE",
-      "strength": 4
-    },
-    {
-      "source": "OpenAI",
-      "target": "SF",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "WWDC",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "ARR",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "NC",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "DRAM",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "샘알트만",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "노동시장",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "GPTs",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "ASML",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "NVLink",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "Karpathy",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "SDK",
-      "strength": 3
-    },
-    {
-      "source": "OpenAI",
-      "target": "AR",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "기술패권",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "미중갈등",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "오픈AI",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "GENIUS",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "LM",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
-      "source": "OpenAI",
-      "target": "FT",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "Anthropic",
-      "strength": 21
-    },
-    {
-      "source": "ChatGPT",
-      "target": "리더의 결정 포인트",
-      "strength": 13
-    },
-    {
-      "source": "ChatGPT",
-      "target": "LLM",
-      "strength": 18
-    },
-    {
-      "source": "ChatGPT",
-      "target": "GPU",
-      "strength": 14
-    },
-    {
-      "source": "ChatGPT",
-      "target": "API",
-      "strength": 14
-    },
-    {
-      "source": "ChatGPT",
-      "target": "Google",
-      "strength": 18
-    },
-    {
-      "source": "ChatGPT",
-      "target": "비즈니스 비용",
-      "strength": 7
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI 에이전트",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AGI",
-      "strength": 13
-    },
-    {
-      "source": "ChatGPT",
-      "target": "IT",
-      "strength": 7
-    },
-    {
-      "source": "ChatGPT",
-      "target": "CTO",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "ROI",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "임원",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "Meta",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "IPO",
-      "strength": 7
-    },
-    {
-      "source": "ChatGPT",
-      "target": "팀장",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI전략",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AWS",
-      "strength": 9
-    },
-    {
-      "source": "ChatGPT",
-      "target": "LG",
-      "strength": 6
-    },
-    {
-      "source": "ChatGPT",
-      "target": "MIT",
-      "strength": 7
-    },
-    {
-      "source": "ChatGPT",
-      "target": "SK",
-      "strength": 6
-    },
-    {
-      "source": "ChatGPT",
-      "target": "EU",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AMD",
-      "strength": 8
-    },
-    {
-      "source": "ChatGPT",
-      "target": "SNS",
-      "strength": 4
-    },
-    {
-      "source": "ChatGPT",
-      "target": "KPI",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "소버린AI",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "MCP",
-      "strength": 7
-    },
-    {
-      "source": "ChatGPT",
-      "target": "TPU",
-      "strength": 4
-    },
-    {
-      "source": "ChatGPT",
-      "target": "IBM",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "ASI",
-      "strength": 4
-    },
-    {
-      "source": "ChatGPT",
-      "target": "RAG",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI전환",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "KT",
-      "strength": 4
-    },
-    {
-      "source": "ChatGPT",
-      "target": "UC",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "ARC",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "PDF",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "TV",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "FTC",
-      "strength": 5
-    },
-    {
-      "source": "ChatGPT",
-      "target": "GPQA",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "NVIDIA",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "CPU",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "IP",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "조직설계",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "SWE",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "HBM",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "LLMs",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "IMO",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "PC",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "RTX",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "NYT",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "KAIST",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "MGX",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI도입",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "HBR",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "UAE",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "SF",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "EXAONE",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "DRAM",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "DMA",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "GPTs",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "NVLink",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "AR",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "생성AI",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "네이버",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "MAU",
-      "strength": 3
-    },
-    {
-      "source": "ChatGPT",
-      "target": "LM",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
-      "source": "ChatGPT",
-      "target": "WSJ",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "리더의 결정 포인트",
-      "strength": 20
-    },
-    {
-      "source": "Anthropic",
-      "target": "LLM",
-      "strength": 11
-    },
-    {
-      "source": "Anthropic",
-      "target": "GPU",
-      "strength": 12
-    },
-    {
-      "source": "Anthropic",
-      "target": "API",
-      "strength": 13
-    },
-    {
-      "source": "Anthropic",
-      "target": "Google",
-      "strength": 23
-    },
-    {
-      "source": "Anthropic",
-      "target": "비즈니스 비용",
-      "strength": 15
-    },
-    {
-      "source": "Anthropic",
-      "target": "AI 에이전트",
-      "strength": 12
-    },
-    {
-      "source": "Anthropic",
-      "target": "AGI",
-      "strength": 6
-    },
-    {
-      "source": "Anthropic",
-      "target": "IT",
-      "strength": 8
-    },
-    {
-      "source": "Anthropic",
-      "target": "CTO",
-      "strength": 9
-    },
-    {
-      "source": "Anthropic",
-      "target": "ROI",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "임원",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "Meta",
-      "strength": 9
-    },
-    {
-      "source": "Anthropic",
-      "target": "IPO",
-      "strength": 6
-    },
-    {
-      "source": "Anthropic",
-      "target": "창업자",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "팀장",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "AI전략",
-      "strength": 6
-    },
-    {
-      "source": "Anthropic",
-      "target": "AWS",
-      "strength": 7
-    },
-    {
-      "source": "Anthropic",
-      "target": "LG",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "MIT",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "SK",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "AMD",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "SNS",
-      "strength": 5
-    },
-    {
-      "source": "Anthropic",
-      "target": "KPI",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "소버린AI",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "MCP",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "TPU",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "IBM",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "ASI",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "AI 안전",
-      "strength": 7
-    },
-    {
-      "source": "Anthropic",
-      "target": "KT",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "UC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "ARC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "TV",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "NVIDIA",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "CPU",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "SWE",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "DC",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "ClaudeCode",
-      "strength": 5
-    },
-    {
-      "source": "Anthropic",
-      "target": "PM",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "ID",
-      "strength": 4
-    },
-    {
-      "source": "Anthropic",
-      "target": "PC",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "RTX",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "NYT",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "KAIST",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "MGX",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "CLAUDE",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "UAE",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "ARR",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "노동시장",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "GPTs",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "NVLink",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "README",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "METR",
-      "strength": 3
-    },
-    {
-      "source": "Anthropic",
-      "target": "SDK",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "AR",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "빅테크",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "기술패권",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "GENIUS",
-      "strength": 2
-    },
-    {
-      "source": "Anthropic",
-      "target": "FT",
-      "strength": 2
-    },
-    {
       "source": "리더의 결정 포인트",
       "target": "LLM",
       "strength": 7
@@ -5317,11 +2018,6 @@
       "source": "리더의 결정 포인트",
       "target": "API",
       "strength": 12
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "Google",
-      "strength": 11
     },
     {
       "source": "리더의 결정 포인트",
@@ -5360,11 +2056,6 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "Meta",
-      "strength": 3
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "IPO",
       "strength": 2
     },
@@ -5382,16 +2073,6 @@
       "source": "리더의 결정 포인트",
       "target": "AI전략",
       "strength": 9
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "EU",
-      "strength": 3
     },
     {
       "source": "리더의 결정 포인트",
@@ -5445,23 +2126,8 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "HR",
-      "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "CFO",
       "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "ClaudeCode",
-      "strength": 3
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "URL",
-      "strength": 4
     },
     {
       "source": "리더의 결정 포인트",
@@ -5480,11 +2146,6 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "자동화",
       "strength": 2
     },
@@ -5492,11 +2153,6 @@
       "source": "리더의 결정 포인트",
       "target": "구조조정",
       "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "HBR",
-      "strength": 4
     },
     {
       "source": "리더의 결정 포인트",
@@ -5510,22 +2166,12 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "샘알트만",
-      "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "GDP",
       "strength": 2
     },
     {
       "source": "리더의 결정 포인트",
       "target": "멀티에이전트",
-      "strength": 3
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "Karpathy",
       "strength": 3
     },
     {
@@ -5560,11 +2206,6 @@
     },
     {
       "source": "LLM",
-      "target": "Google",
-      "strength": 9
-    },
-    {
-      "source": "LLM",
       "target": "비즈니스 비용",
       "strength": 6
     },
@@ -5600,42 +2241,12 @@
     },
     {
       "source": "LLM",
-      "target": "Meta",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
       "target": "IPO",
       "strength": 3
     },
     {
       "source": "LLM",
       "target": "AI전략",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "AWS",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "LG",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "MIT",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "AMD",
       "strength": 3
     },
     {
@@ -5685,22 +2296,7 @@
     },
     {
       "source": "LLM",
-      "target": "KT",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
       "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "PDF",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "FTC",
       "strength": 2
     },
     {
@@ -5711,11 +2307,6 @@
     {
       "source": "LLM",
       "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "NVIDIA",
       "strength": 2
     },
     {
@@ -5735,11 +2326,6 @@
     },
     {
       "source": "LLM",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
       "target": "HBM",
       "strength": 3
     },
@@ -5747,11 +2333,6 @@
       "source": "LLM",
       "target": "LLMs",
       "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "HR",
-      "strength": 2
     },
     {
       "source": "LLM",
@@ -5765,23 +2346,8 @@
     },
     {
       "source": "LLM",
-      "target": "JP",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
       "target": "AX",
       "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "PC",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "KAIST",
-      "strength": 2
     },
     {
       "source": "LLM",
@@ -5790,23 +2356,8 @@
     },
     {
       "source": "LLM",
-      "target": "HBR",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "SF",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
       "target": "한국AI",
       "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "EXAONE",
-      "strength": 2
     },
     {
       "source": "LLM",
@@ -5830,22 +2381,12 @@
     },
     {
       "source": "LLM",
-      "target": "네이버",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
       "target": "AI서비스",
       "strength": 2
     },
     {
       "source": "GPU",
       "target": "API",
-      "strength": 11
-    },
-    {
-      "source": "GPU",
-      "target": "Google",
       "strength": 11
     },
     {
@@ -5885,11 +2426,6 @@
     },
     {
       "source": "GPU",
-      "target": "Meta",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
       "target": "IPO",
       "strength": 7
     },
@@ -5906,41 +2442,6 @@
     {
       "source": "GPU",
       "target": "AI전략",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
-      "target": "AWS",
-      "strength": 8
-    },
-    {
-      "source": "GPU",
-      "target": "LG",
-      "strength": 7
-    },
-    {
-      "source": "GPU",
-      "target": "MIT",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "SK",
-      "strength": 8
-    },
-    {
-      "source": "GPU",
-      "target": "EU",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "AMD",
-      "strength": 8
-    },
-    {
-      "source": "GPU",
-      "target": "SNS",
       "strength": 4
     },
     {
@@ -5965,11 +2466,6 @@
     },
     {
       "source": "GPU",
-      "target": "IBM",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
       "target": "ASI",
       "strength": 2
     },
@@ -5980,37 +2476,7 @@
     },
     {
       "source": "GPU",
-      "target": "KT",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
-      "target": "ARC",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "PDF",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "TV",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
       "target": "GPQA",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
-      "target": "NVIDIA",
       "strength": 4
     },
     {
@@ -6025,11 +2491,6 @@
     },
     {
       "source": "GPU",
-      "target": "TSMC",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
       "target": "HBM",
       "strength": 3
     },
@@ -6040,53 +2501,8 @@
     },
     {
       "source": "GPU",
-      "target": "GTC",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
-      "target": "DC",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "PC",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "RTX",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "NYT",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "CNBC",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "MGX",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
       "target": "기술주권",
       "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "엔비디아",
-      "strength": 2
     },
     {
       "source": "GPU",
@@ -6100,16 +2516,6 @@
     },
     {
       "source": "GPU",
-      "target": "UAE",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "DeepSeek",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
       "target": "한국AI",
       "strength": 2
     },
@@ -6120,32 +2526,12 @@
     },
     {
       "source": "GPU",
-      "target": "EXAONE",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "NC",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
       "target": "DRAM",
       "strength": 2
     },
     {
       "source": "GPU",
       "target": "RL",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "NVLink",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "Karpathy",
       "strength": 2
     },
     {
@@ -6167,16 +2553,6 @@
       "source": "GPU",
       "target": "중국AI",
       "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "WSJ",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "Google",
-      "strength": 8
     },
     {
       "source": "API",
@@ -6210,11 +2586,6 @@
     },
     {
       "source": "API",
-      "target": "Meta",
-      "strength": 3
-    },
-    {
-      "source": "API",
       "target": "IPO",
       "strength": 2
     },
@@ -6222,41 +2593,6 @@
       "source": "API",
       "target": "AI전략",
       "strength": 5
-    },
-    {
-      "source": "API",
-      "target": "AWS",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "LG",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "SK",
-      "strength": 5
-    },
-    {
-      "source": "API",
-      "target": "EU",
-      "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "AMD",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "SNS",
-      "strength": 2
     },
     {
       "source": "API",
@@ -6280,33 +2616,13 @@
     },
     {
       "source": "API",
-      "target": "IBM",
-      "strength": 2
-    },
-    {
-      "source": "API",
       "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "UC",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "ARC",
       "strength": 2
     },
     {
       "source": "API",
       "target": "GPQA",
       "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "NVIDIA",
-      "strength": 2
     },
     {
       "source": "API",
@@ -6330,48 +2646,13 @@
     },
     {
       "source": "API",
-      "target": "ClaudeCode",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "ID",
-      "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "RTX",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "CLAUDE",
-      "strength": 4
-    },
-    {
-      "source": "API",
       "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "UAE",
-      "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "DeepSeek",
       "strength": 2
     },
     {
       "source": "API",
       "target": "멀티에이전트",
       "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "README",
-      "strength": 2
     },
     {
       "source": "API",
@@ -6394,256 +2675,6 @@
       "strength": 2
     },
     {
-      "source": "API",
-      "target": "LM",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "비즈니스 비용",
-      "strength": 6
-    },
-    {
-      "source": "Google",
-      "target": "AI 에이전트",
-      "strength": 7
-    },
-    {
-      "source": "Google",
-      "target": "AGI",
-      "strength": 8
-    },
-    {
-      "source": "Google",
-      "target": "IT",
-      "strength": 7
-    },
-    {
-      "source": "Google",
-      "target": "CTO",
-      "strength": 6
-    },
-    {
-      "source": "Google",
-      "target": "ROI",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "임원",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "Meta",
-      "strength": 9
-    },
-    {
-      "source": "Google",
-      "target": "IPO",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "창업자",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "팀장",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "AI전략",
-      "strength": 6
-    },
-    {
-      "source": "Google",
-      "target": "AWS",
-      "strength": 8
-    },
-    {
-      "source": "Google",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "AMD",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "SNS",
-      "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "소버린AI",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "MCP",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "TPU",
-      "strength": 6
-    },
-    {
-      "source": "Google",
-      "target": "IBM",
-      "strength": 5
-    },
-    {
-      "source": "Google",
-      "target": "ASI",
-      "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "RAG",
-      "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "KT",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "ARC",
-      "strength": 4
-    },
-    {
-      "source": "Google",
-      "target": "PDF",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "NVIDIA",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "LLMs",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "RLHF",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "GTC",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "URL",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "NYT",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "MMLU",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "UAE",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "CISO",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "WWDC",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "GPTs",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "HTML",
-      "strength": 3
-    },
-    {
-      "source": "Google",
-      "target": "기술패권",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "LM",
-      "strength": 2
-    },
-    {
-      "source": "Google",
-      "target": "FT",
-      "strength": 2
-    },
-    {
       "source": "비즈니스 비용",
       "target": "AI 에이전트",
       "strength": 11
@@ -6672,11 +2703,6 @@
       "source": "비즈니스 비용",
       "target": "임원",
       "strength": 11
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "Meta",
-      "strength": 3
     },
     {
       "source": "비즈니스 비용",
@@ -6695,21 +2721,6 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "AWS",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "EU",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "KPI",
       "strength": 5
     },
@@ -6725,11 +2736,6 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "IBM",
-      "strength": 3
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "AI규제",
       "strength": 2
     },
@@ -6737,11 +2743,6 @@
       "source": "비즈니스 비용",
       "target": "GPQA",
       "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "NVIDIA",
-      "strength": 3
     },
     {
       "source": "비즈니스 비용",
@@ -6755,37 +2756,12 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "GTC",
-      "strength": 3
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "AI도입",
       "strength": 2
     },
     {
       "source": "비즈니스 비용",
-      "target": "DeepMind",
-      "strength": 3
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "자동화",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "HBR",
       "strength": 2
     },
     {
@@ -6795,22 +2771,7 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "CLAUDE",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
       "target": "GDP",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "HTML",
-      "strength": 2
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "Karpathy",
       "strength": 2
     },
     {
@@ -6845,11 +2806,6 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "Meta",
-      "strength": 4
-    },
-    {
-      "source": "AI 에이전트",
       "target": "창업자",
       "strength": 3
     },
@@ -6880,11 +2836,6 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "IBM",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
       "target": "RAG",
       "strength": 3
     },
@@ -6896,21 +2847,6 @@
     {
       "source": "AI 에이전트",
       "target": "강화학습",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "ClaudeCode",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "ID",
       "strength": 2
     },
     {
@@ -6930,11 +2866,6 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "CLAUDE",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
       "target": "CISO",
       "strength": 2
     },
@@ -6946,11 +2877,6 @@
     {
       "source": "AI 에이전트",
       "target": "GPTs",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "Karpathy",
       "strength": 2
     },
     {
@@ -6995,31 +2921,6 @@
     },
     {
       "source": "AGI",
-      "target": "AWS",
-      "strength": 4
-    },
-    {
-      "source": "AGI",
-      "target": "LG",
-      "strength": 3
-    },
-    {
-      "source": "AGI",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "AGI",
-      "target": "AMD",
-      "strength": 4
-    },
-    {
-      "source": "AGI",
-      "target": "SNS",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
       "target": "MCP",
       "strength": 3
     },
@@ -7036,21 +2937,6 @@
     {
       "source": "AGI",
       "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "KT",
-      "strength": 3
-    },
-    {
-      "source": "AGI",
-      "target": "ARC",
-      "strength": 6
-    },
-    {
-      "source": "AGI",
-      "target": "FTC",
       "strength": 2
     },
     {
@@ -7075,58 +2961,13 @@
     },
     {
       "source": "AGI",
-      "target": "RTX",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "DeepMind",
-      "strength": 3
-    },
-    {
-      "source": "AGI",
-      "target": "UAE",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "NC",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
       "target": "DRAM",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "샘알트만",
       "strength": 2
     },
     {
       "source": "IT",
       "target": "CTO",
       "strength": 3
-    },
-    {
-      "source": "IT",
-      "target": "Meta",
-      "strength": 3
-    },
-    {
-      "source": "IT",
-      "target": "AWS",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "LG",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "SK",
-      "strength": 2
     },
     {
       "source": "IT",
@@ -7150,22 +2991,7 @@
     },
     {
       "source": "IT",
-      "target": "UC",
-      "strength": 2
-    },
-    {
-      "source": "IT",
       "target": "조직설계",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "PC",
       "strength": 2
     },
     {
@@ -7175,32 +3001,12 @@
     },
     {
       "source": "IT",
-      "target": "AR",
-      "strength": 2
-    },
-    {
-      "source": "IT",
       "target": "기술패권",
       "strength": 2
     },
     {
       "source": "CTO",
-      "target": "EU",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "AMD",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
       "target": "UI",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "IBM",
       "strength": 2
     },
     {
@@ -7215,32 +3021,7 @@
     },
     {
       "source": "CTO",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
       "target": "SWE",
-      "strength": 3
-    },
-    {
-      "source": "CTO",
-      "target": "ClaudeCode",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "ID",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "CLAUDE",
       "strength": 3
     },
     {
@@ -7260,11 +3041,6 @@
     },
     {
       "source": "CTO",
-      "target": "HTML",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
       "target": "오픈소스AI",
       "strength": 2
     },
@@ -7277,11 +3053,6 @@
       "source": "ROI",
       "target": "임원",
       "strength": 4
-    },
-    {
-      "source": "ROI",
-      "target": "Meta",
-      "strength": 2
     },
     {
       "source": "ROI",
@@ -7300,11 +3071,6 @@
     },
     {
       "source": "ROI",
-      "target": "MIT",
-      "strength": 3
-    },
-    {
-      "source": "ROI",
       "target": "MCP",
       "strength": 2
     },
@@ -7315,32 +3081,12 @@
     },
     {
       "source": "ROI",
-      "target": "PDF",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
       "target": "CFO",
       "strength": 3
     },
     {
       "source": "ROI",
-      "target": "JP",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
       "target": "AI도입",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "SF",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "딥마인드",
       "strength": 2
     },
     {
@@ -7369,123 +3115,13 @@
       "strength": 2
     },
     {
-      "source": "임원",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "임원",
-      "target": "HBR",
-      "strength": 3
-    },
-    {
-      "source": "Meta",
-      "target": "AWS",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "TPU",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "NVIDIA",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "Meta",
-      "target": "WWDC",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "AWS",
-      "strength": 6
-    },
-    {
-      "source": "IPO",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "IPO",
-      "target": "EU",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "SNS",
-      "strength": 4
-    },
-    {
       "source": "IPO",
       "target": "TPU",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "IBM",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "KT",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "PDF",
-      "strength": 4
-    },
-    {
-      "source": "IPO",
-      "target": "FTC",
       "strength": 2
     },
     {
       "source": "IPO",
       "target": "CFO",
-      "strength": 3
-    },
-    {
-      "source": "IPO",
-      "target": "DC",
-      "strength": 3
-    },
-    {
-      "source": "IPO",
-      "target": "JP",
-      "strength": 4
-    },
-    {
-      "source": "IPO",
-      "target": "UAE",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "SF",
       "strength": 3
     },
     {
@@ -7509,16 +3145,6 @@
       "strength": 2
     },
     {
-      "source": "창업자",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "창업자",
-      "target": "HBR",
-      "strength": 2
-    },
-    {
       "source": "팀장",
       "target": "AI전략",
       "strength": 4
@@ -7531,16 +3157,6 @@
     {
       "source": "팀장",
       "target": "생산성",
-      "strength": 2
-    },
-    {
-      "source": "팀장",
-      "target": "DeepMind",
-      "strength": 2
-    },
-    {
-      "source": "팀장",
-      "target": "HBR",
       "strength": 2
     },
     {
@@ -7559,331 +3175,6 @@
       "strength": 3
     },
     {
-      "source": "AI전략",
-      "target": "DeepMind",
-      "strength": 3
-    },
-    {
-      "source": "AI전략",
-      "target": "Karpathy",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "MIT",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "AWS",
-      "target": "SNS",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "TPU",
-      "strength": 5
-    },
-    {
-      "source": "AWS",
-      "target": "IBM",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "ARC",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "NVIDIA",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "GTC",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "AWS",
-      "target": "DC",
-      "strength": 3
-    },
-    {
-      "source": "AWS",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "LG",
-      "target": "SK",
-      "strength": 4
-    },
-    {
-      "source": "LG",
-      "target": "AMD",
-      "strength": 3
-    },
-    {
-      "source": "LG",
-      "target": "소버린AI",
-      "strength": 5
-    },
-    {
-      "source": "LG",
-      "target": "KT",
-      "strength": 5
-    },
-    {
-      "source": "LG",
-      "target": "KAIST",
-      "strength": 4
-    },
-    {
-      "source": "LG",
-      "target": "DeepSeek",
-      "strength": 2
-    },
-    {
-      "source": "LG",
-      "target": "EXAONE",
-      "strength": 4
-    },
-    {
-      "source": "LG",
-      "target": "NC",
-      "strength": 3
-    },
-    {
-      "source": "MIT",
-      "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "MIT",
-      "target": "SWE",
-      "strength": 2
-    },
-    {
-      "source": "MIT",
-      "target": "AI도입",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "EU",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "AMD",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "SNS",
-      "strength": 4
-    },
-    {
-      "source": "SK",
-      "target": "TPU",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "KT",
-      "strength": 4
-    },
-    {
-      "source": "SK",
-      "target": "ARC",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "HBM",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "KAIST",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "NC",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "DRAM",
-      "strength": 3
-    },
-    {
-      "source": "SK",
-      "target": "SDK",
-      "strength": 2
-    },
-    {
-      "source": "SK",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
-      "source": "EU",
-      "target": "AMD",
-      "strength": 2
-    },
-    {
-      "source": "EU",
-      "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "EU",
-      "target": "CNBC",
-      "strength": 2
-    },
-    {
-      "source": "EU",
-      "target": "GDPR",
-      "strength": 3
-    },
-    {
-      "source": "EU",
-      "target": "DMA",
-      "strength": 3
-    },
-    {
-      "source": "EU",
-      "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "MCP",
-      "strength": 3
-    },
-    {
-      "source": "AMD",
-      "target": "ASI",
-      "strength": 3
-    },
-    {
-      "source": "AMD",
-      "target": "KT",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "ARC",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "PDF",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "CPU",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "PC",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "RTX",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "NYT",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "CNBC",
-      "strength": 3
-    },
-    {
-      "source": "AMD",
-      "target": "NC",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "CHIPS",
-      "strength": 2
-    },
-    {
-      "source": "AMD",
-      "target": "WSJ",
-      "strength": 3
-    },
-    {
-      "source": "SNS",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "SNS",
-      "target": "SDK",
-      "strength": 2
-    },
-    {
       "source": "KPI",
       "target": "AI 안전",
       "strength": 2
@@ -7899,28 +3190,13 @@
       "strength": 2
     },
     {
-      "source": "KPI",
-      "target": "Karpathy",
-      "strength": 2
-    },
-    {
       "source": "소버린AI",
       "target": "MCP",
       "strength": 2
     },
     {
       "source": "소버린AI",
-      "target": "KT",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
       "target": "AI정책",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
-      "target": "KAIST",
       "strength": 2
     },
     {
@@ -7932,11 +3208,6 @@
       "source": "소버린AI",
       "target": "한국AI",
       "strength": 3
-    },
-    {
-      "source": "소버린AI",
-      "target": "EXAONE",
-      "strength": 2
     },
     {
       "source": "소버린AI",
@@ -7970,77 +3241,12 @@
     },
     {
       "source": "TPU",
-      "target": "TSMC",
-      "strength": 2
-    },
-    {
-      "source": "TPU",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "TPU",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "TPU",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "UI",
-      "target": "WWDC",
-      "strength": 2
-    },
-    {
-      "source": "UI",
-      "target": "Karpathy",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "FTC",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "IBM",
-      "target": "HTML",
-      "strength": 3
-    },
-    {
-      "source": "ASI",
-      "target": "ARC",
-      "strength": 3
-    },
-    {
-      "source": "ASI",
       "target": "HBM",
       "strength": 2
     },
     {
       "source": "ASI",
-      "target": "RTX",
+      "target": "HBM",
       "strength": 2
     },
     {
@@ -8050,22 +3256,7 @@
     },
     {
       "source": "RAG",
-      "target": "OECD",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "URL",
-      "strength": 3
-    },
-    {
-      "source": "RAG",
       "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "HTML",
       "strength": 2
     },
     {
@@ -8089,56 +3280,6 @@
       "strength": 2
     },
     {
-      "source": "AI전환",
-      "target": "네이버",
-      "strength": 2
-    },
-    {
-      "source": "KT",
-      "target": "KAIST",
-      "strength": 4
-    },
-    {
-      "source": "KT",
-      "target": "NC",
-      "strength": 2
-    },
-    {
-      "source": "UC",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "ARC",
-      "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "ARC",
-      "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "PDF",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "PDF",
-      "target": "JP",
-      "strength": 2
-    },
-    {
-      "source": "PDF",
-      "target": "SF",
-      "strength": 3
-    },
-    {
-      "source": "FTC",
-      "target": "CPU",
-      "strength": 3
-    },
-    {
       "source": "생산성",
       "target": "조직설계",
       "strength": 2
@@ -8147,11 +3288,6 @@
       "source": "GPQA",
       "target": "SWE",
       "strength": 3
-    },
-    {
-      "source": "GPQA",
-      "target": "NYT",
-      "strength": 2
     },
     {
       "source": "GPQA",
@@ -8164,48 +3300,8 @@
       "strength": 2
     },
     {
-      "source": "NVIDIA",
-      "target": "GTC",
-      "strength": 2
-    },
-    {
-      "source": "NVIDIA",
-      "target": "DC",
-      "strength": 2
-    },
-    {
-      "source": "NVIDIA",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "IP",
-      "target": "오픈AI",
-      "strength": 2
-    },
-    {
-      "source": "OECD",
-      "target": "URL",
-      "strength": 2
-    },
-    {
-      "source": "OECD",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "OECD",
-      "target": "HTML",
-      "strength": 2
-    },
-    {
       "source": "SWE",
       "target": "코딩AI",
-      "strength": 2
-    },
-    {
-      "source": "TSMC",
-      "target": "CHIPS",
       "strength": 2
     },
     {
@@ -8224,48 +3320,8 @@
       "strength": 2
     },
     {
-      "source": "HR",
-      "target": "HBR",
-      "strength": 2
-    },
-    {
       "source": "RLHF",
       "target": "RL",
-      "strength": 2
-    },
-    {
-      "source": "GTC",
-      "target": "AI인프라",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "JP",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "SF",
-      "strength": 2
-    },
-    {
-      "source": "ClaudeCode",
-      "target": "CLAUDE",
-      "strength": 2
-    },
-    {
-      "source": "ClaudeCode",
-      "target": "README",
-      "strength": 2
-    },
-    {
-      "source": "URL",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "URL",
-      "target": "HTML",
       "strength": 2
     },
     {
@@ -8279,57 +3335,7 @@
       "strength": 2
     },
     {
-      "source": "JP",
-      "target": "SF",
-      "strength": 2
-    },
-    {
-      "source": "ID",
-      "target": "DNA",
-      "strength": 2
-    },
-    {
-      "source": "RTX",
-      "target": "NVLink",
-      "strength": 2
-    },
-    {
-      "source": "NYT",
-      "target": "FT",
-      "strength": 2
-    },
-    {
-      "source": "엔비디아",
-      "target": "반도체",
-      "strength": 2
-    },
-    {
-      "source": "엔비디아",
-      "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "CLAUDE",
-      "target": "README",
-      "strength": 2
-    },
-    {
       "source": "MMLU",
-      "target": "오픈소스AI",
-      "strength": 2
-    },
-    {
-      "source": "CISO",
-      "target": "HTML",
-      "strength": 2
-    },
-    {
-      "source": "DeepSeek",
-      "target": "EXAONE",
-      "strength": 2
-    },
-    {
-      "source": "DeepSeek",
       "target": "오픈소스AI",
       "strength": 2
     },

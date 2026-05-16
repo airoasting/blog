@@ -111,7 +111,17 @@
     "용어 설명",
     "금주의 AI 로스팅",
     "이번 주 AI 소식",
-    "내일 당장 실행할 것"
+    "내일 당장 실행할 것",
+    "Claude", "OpenAI", "ChatGPT", "Anthropic", "Google", "Meta",
+    "AWS", "LG", "SK", "AMD", "IBM", "TSMC", "KT", "NVIDIA",
+    "ClaudeCode", "CLAUDE", "DeepMind", "DeepSeek", "BYD", "EXAONE",
+    "NC", "ASML", "BMW", "NVLink", "RTX", "MGX", "ARC",
+    "엔비디아", "딥마인드", "메타", "네이버", "오픈AI",
+    "NYT", "CNBC", "BBC", "FT", "WSJ", "HBR", "SNS",
+    "샘알트만", "Karpathy",
+    "MIT", "UC", "KAIST", "OECD", "EU", "UAE", "WWDC", "GTC", "FTC",
+    "URL", "HTML", "PDF", "ID", "PC", "TV", "DNA", "DC", "JP", "SF",
+    "LM", "AR", "HR", "README", "GENIUS", "CHIPS", "DMA"
   ],
   "domainKeywords": [
     "AI에이전트",
