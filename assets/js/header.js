@@ -67,7 +67,7 @@
           navLink('survival', '생존') +
           '<a href="' + prefix + 'newsletter/index.html" class="nav-newsletter' + (activeCat === 'newsletter' ? ' active' : '') + '">뉴스레터</a>' +
           '<a href="' + prefix + 'insights/graph.html" class="nav-graph' + (activeCat === 'graph' ? ' active' : '') + '">지식 그래프</a>' +
-          '<a href="' + prefix + 'wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">Wiki</a>' +
+          '<a href="' + prefix + 'wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키브레인</a>' +
         '</nav>' +
       '</div>' +
     '</div>' +
@@ -82,7 +82,7 @@
       mobileLink('survival', '생존') +
       '<a href="' + prefix + 'newsletter/index.html">뉴스레터</a>' +
       '<a href="' + prefix + 'insights/graph.html">지식 그래프</a>' +
-      '<a href="' + prefix + 'wiki/index.html">Wiki</a>' +
+      '<a href="' + prefix + 'wiki/index.html">위키브레인</a>' +
     '</div>';
 
   var header = document.getElementById('site-header');
