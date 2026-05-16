@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 48,
+    "title": "빈 손으로 돌아 온 젠슨 황 대표",
+    "date": "2026-05-16",
+    "img": "nl-48.png",
+    "url": ""
+  },
+  {
     "ep": 47,
     "title": "나를 대체할 AI를 훈련시키는 메타 직원들",
     "date": "2026-05-09",
