@@ -1,23 +1,40 @@
 {
-  "buildAt": "2026-05-16T02:15:58.840Z",
-  "duration": 0.277,
+  "buildAt": "2026-05-23T10:23:33.657Z",
+  "duration": 0.357,
   "concepts": {
-    "total": 81,
+    "total": 85,
     "validDefinitions": 81,
-    "needsReview": 0
+    "needsReview": 4
   },
   "relationships": {
-    "total": 272
+    "total": 277
   },
   "coverage": {
-    "postsWithConcepts": 161,
-    "totalPosts": 186
+    "postsWithConcepts": 164,
+    "totalPosts": 189
   },
   "inject": {
-    "updated": 135,
-    "inserted": 0,
-    "unchanged": 24,
+    "updated": 11,
+    "inserted": 1,
+    "unchanged": 150,
     "skipped": 27
   },
-  "needsManualReview": []
+  "needsManualReview": [
+    {
+      "name": "AI활용",
+      "slug": "ai활용"
+    },
+    {
+      "name": "구글",
+      "slug": "구글"
+    },
+    {
+      "name": "직업변화",
+      "slug": "직업변화"
+    },
+    {
+      "name": "EPS",
+      "slug": "eps"
+    }
+  ]
 }

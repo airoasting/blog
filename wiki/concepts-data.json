@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-16T02:15:58.840Z",
+  "generatedAt": "2026-05-23T10:23:33.657Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 81,
-    "totalRelationships": 272,
-    "totalPosts": 186,
-    "totalNewsletters": 47
+    "totalConcepts": 85,
+    "totalRelationships": 277,
+    "totalPosts": 189,
+    "totalNewsletters": 49
   },
   "concepts": [
     {
@@ -14,7 +14,7 @@
       "name": "리더의 결정 포인트",
       "aliases": [],
       "definition": "이 글에서 경영 리더가 행동으로 옮길 핵심 의사결정 지점입니다.",
-      "frequency": 57,
+      "frequency": 58,
       "category": "tech",
       "posts": [
         "2025-09-10-ai-cognitive-offloading",
@@ -73,7 +73,8 @@
         "2026-04-30-ctx2skill-context-learning",
         "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
         "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why"
+        "2026-05-08-teaching-claude-why",
+        "2026-05-15-gen-ai-performance-reviews"
       ],
       "newsletters": [],
       "firstSeen": "2025-09-10",
@@ -86,7 +87,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 47,
+      "frequency": 49,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -102,6 +103,7 @@
         "2026-04-07-llm-behavioral-alignment-gap",
         "2026-04-09-gen-ai-robots-reshaping-services",
         "2026-04-11-agent-harness-memory-lock-in",
+        "2026-05-15-gen-ai-performance-reviews",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
@@ -137,7 +139,8 @@
         "nl-24",
         "nl-28",
         "nl-33",
-        "nl-41"
+        "nl-41",
+        "nl-49"
       ],
       "firstSeen": "2024-08-10",
       "lastSeen": "2026-04-06",
@@ -319,7 +322,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 28,
+      "frequency": 29,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -345,6 +348,7 @@
         "2026-04-24-anthropic-project-deal-agent-economy",
         "2026-04-30-ctx2skill-context-learning",
         "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-22-sundar-pichai-anxious-ai-future",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -363,7 +367,7 @@
       "name": "AGI",
       "aliases": [],
       "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
-      "frequency": 26,
+      "frequency": 27,
       "category": "newsletter",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -371,6 +375,7 @@
         "2026-01-21-hassabis-amodei-agi-debate",
         "2026-03-10-alphago-10-years",
         "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-05-22-sundar-pichai-anxious-ai-future",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
         "2025-06-20-google-deepmind-ceo-vision",
         "2025-07-15-why-meta-declared-asi",
@@ -405,7 +410,7 @@
       "name": "IT",
       "aliases": [],
       "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
-      "frequency": 22,
+      "frequency": 23,
       "category": "tech",
       "posts": [
         "2026-02-02-advisor-model-black-box-llm",
@@ -421,6 +426,7 @@
         "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
         "2026-05-07-natural-language-autoencoders",
         "2026-05-08-teaching-claude-why",
+        "2026-05-20-ai-slop-books-music-lawsuits-science",
         "2025-02-20-sovereign-ai",
         "2025-03-15-when-technology-becomes-borders",
         "2025-03-20-can-yangjae-become-an-ai-hub",
@@ -548,7 +554,7 @@
       "name": "IPO",
       "aliases": [],
       "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 17,
+      "frequency": 19,
       "category": "newsletter",
       "posts": [
         "2026-04-06-sam-altman-can-he-be-trusted",
@@ -569,7 +575,9 @@
         "nl-42",
         "nl-43",
         "nl-44",
-        "nl-46"
+        "nl-46",
+        "nl-48",
+        "nl-49"
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-04-06",
@@ -669,6 +677,33 @@
       "needs_manual_review": false
     },
     {
+      "id": "tpu",
+      "slug": "tpu",
+      "name": "TPU",
+      "aliases": [],
+      "definition": "Google의 AI 전용 칩입니다. 대규모 학습에서 GPU와 경쟁합니다.",
+      "frequency": 11,
+      "category": "newsletter",
+      "posts": [
+        "2025-12-17-demis-hassabis-future-of-intelligence",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2025-07-10-why-openai-is-no-longer-the-leader",
+        "2024-08-25-ai-bubble-three-codes-data-chip-biz"
+      ],
+      "newsletters": [
+        "nl-19",
+        "nl-20",
+        "nl-24",
+        "nl-28",
+        "nl-40",
+        "nl-43",
+        "nl-49"
+      ],
+      "firstSeen": "2024-08-25",
+      "lastSeen": "2025-12-17",
+      "needs_manual_review": false
+    },
+    {
       "id": "kpi",
       "slug": "kpi",
       "name": "KPI",
@@ -744,32 +779,6 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "tpu",
-      "slug": "tpu",
-      "name": "TPU",
-      "aliases": [],
-      "definition": "Google의 AI 전용 칩입니다. 대규모 학습에서 GPU와 경쟁합니다.",
-      "frequency": 10,
-      "category": "newsletter",
-      "posts": [
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2024-08-25-ai-bubble-three-codes-data-chip-biz"
-      ],
-      "newsletters": [
-        "nl-19",
-        "nl-20",
-        "nl-24",
-        "nl-28",
-        "nl-40",
-        "nl-43"
-      ],
-      "firstSeen": "2024-08-25",
-      "lastSeen": "2025-12-17",
       "needs_manual_review": false
     },
     {
@@ -919,6 +928,32 @@
       "needs_manual_review": false
     },
     {
+      "id": "organizational-design",
+      "slug": "organizational-design",
+      "name": "조직설계",
+      "aliases": [
+        "조직 설계",
+        "org design",
+        "organization design"
+      ],
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "frequency": 7,
+      "category": "company",
+      "posts": [
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2025-04-20",
+      "needs_manual_review": false
+    },
+    {
       "id": "생산성",
       "slug": "생산성",
       "name": "생산성",
@@ -959,6 +994,28 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "cfo",
+      "slug": "cfo",
+      "name": "CFO",
+      "aliases": [],
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
+      "frequency": 6,
+      "category": "leader",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
+      ],
+      "newsletters": [
+        "nl-21",
+        "nl-49"
+      ],
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -1003,31 +1060,6 @@
       ],
       "firstSeen": "2025-03-15",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "organizational-design",
-      "slug": "organizational-design",
-      "name": "조직설계",
-      "aliases": [
-        "조직 설계",
-        "org design",
-        "organization design"
-      ],
-      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
-      "frequency": 6,
-      "category": "company",
-      "posts": [
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2025-04-20",
       "needs_manual_review": false
     },
     {
@@ -1173,27 +1205,6 @@
       "newsletters": [],
       "firstSeen": "2025-07-10",
       "lastSeen": "2026-02-11",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cfo",
-      "slug": "cfo",
-      "name": "CFO",
-      "aliases": [],
-      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 5,
-      "category": "leader",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-21"
-      ],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -1566,6 +1577,42 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai활용",
+      "slug": "ai활용",
+      "name": "AI활용",
+      "aliases": [],
+      "definition": "AI활용는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2025-03-01-how-korea-us-japan-gen-z-use-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-01",
+      "lastSeen": "2025-05-01",
+      "needs_manual_review": true
+    },
+    {
+      "id": "구글",
+      "slug": "구글",
+      "name": "구글",
+      "aliases": [],
+      "definition": "구글는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "company",
+      "posts": [
+        "2025-05-05-two-views-on-google-mobility-strategy",
+        "2026-05-22-sundar-pichai-anxious-ai-future",
+        "2025-05-20-openai-windsurf-acquisition-falls-through"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-05",
+      "lastSeen": "2025-05-20",
+      "needs_manual_review": true
+    },
+    {
       "id": "ev",
       "slug": "ev",
       "name": "EV",
@@ -1746,6 +1793,24 @@
       "firstSeen": "2025-07-20",
       "lastSeen": "2025-07-20",
       "needs_manual_review": false
+    },
+    {
+      "id": "직업변화",
+      "slug": "직업변화",
+      "name": "직업변화",
+      "aliases": [],
+      "definition": "직업변화는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "survival",
+      "posts": [
+        "2026-04-03-ai-coder-automation-timeline",
+        "2026-05-20-ai-slop-books-music-lawsuits-science",
+        "2025-05-10-will-ai-really-replace-our-work"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2025-05-10",
+      "needs_manual_review": true
     },
     {
       "id": "sdk",
@@ -2001,13 +2066,31 @@
       "firstSeen": "2025-04-20",
       "lastSeen": "2025-05-20",
       "needs_manual_review": false
+    },
+    {
+      "id": "eps",
+      "slug": "eps",
+      "name": "EPS",
+      "aliases": [],
+      "definition": "EPS는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-19",
+        "nl-21",
+        "nl-49"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
     }
   ],
   "relationships": [
     {
       "source": "리더의 결정 포인트",
       "target": "LLM",
-      "strength": 7
+      "strength": 8
     },
     {
       "source": "리더의 결정 포인트",
@@ -2106,6 +2189,11 @@
     },
     {
       "source": "리더의 결정 포인트",
+      "target": "조직설계",
+      "strength": 4
+    },
+    {
+      "source": "리더의 결정 포인트",
       "target": "생산성",
       "strength": 2
     },
@@ -2116,18 +2204,13 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "조직설계",
-      "strength": 3
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "리더의 결정 포인트",
       "target": "SWE",
       "strength": 4
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "CFO",
-      "strength": 2
     },
     {
       "source": "리더의 결정 포인트",
@@ -2242,12 +2325,17 @@
     {
       "source": "LLM",
       "target": "IPO",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "LLM",
       "target": "AI전략",
       "strength": 3
+    },
+    {
+      "source": "LLM",
+      "target": "TPU",
+      "strength": 4
     },
     {
       "source": "LLM",
@@ -2263,11 +2351,6 @@
       "source": "LLM",
       "target": "MCP",
       "strength": 6
-    },
-    {
-      "source": "LLM",
-      "target": "TPU",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -2301,12 +2384,22 @@
     },
     {
       "source": "LLM",
+      "target": "조직설계",
+      "strength": 4
+    },
+    {
+      "source": "LLM",
       "target": "생산성",
       "strength": 2
     },
     {
       "source": "LLM",
       "target": "GPQA",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -2318,11 +2411,6 @@
       "source": "LLM",
       "target": "IP",
       "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "조직설계",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -2446,6 +2534,11 @@
     },
     {
       "source": "GPU",
+      "target": "TPU",
+      "strength": 7
+    },
+    {
+      "source": "GPU",
       "target": "KPI",
       "strength": 2
     },
@@ -2458,11 +2551,6 @@
       "source": "GPU",
       "target": "MCP",
       "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "TPU",
-      "strength": 7
     },
     {
       "source": "GPU",
@@ -2721,13 +2809,13 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "KPI",
-      "strength": 5
+      "target": "TPU",
+      "strength": 2
     },
     {
       "source": "비즈니스 비용",
-      "target": "TPU",
-      "strength": 2
+      "target": "KPI",
+      "strength": 5
     },
     {
       "source": "비즈니스 비용",
@@ -2782,7 +2870,7 @@
     {
       "source": "AI 에이전트",
       "target": "AGI",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -2921,12 +3009,12 @@
     },
     {
       "source": "AGI",
-      "target": "MCP",
+      "target": "TPU",
       "strength": 3
     },
     {
       "source": "AGI",
-      "target": "TPU",
+      "target": "MCP",
       "strength": 3
     },
     {
@@ -2971,12 +3059,12 @@
     },
     {
       "source": "IT",
-      "target": "소버린AI",
+      "target": "TPU",
       "strength": 2
     },
     {
       "source": "IT",
-      "target": "TPU",
+      "target": "소버린AI",
       "strength": 2
     },
     {
@@ -3117,16 +3205,21 @@
     {
       "source": "IPO",
       "target": "TPU",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "CFO",
       "strength": 3
     },
     {
       "source": "IPO",
+      "target": "CFO",
+      "strength": 4
+    },
+    {
+      "source": "IPO",
       "target": "CUDA",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "EPS",
       "strength": 2
     },
     {
@@ -3173,6 +3266,21 @@
       "source": "AI전략",
       "target": "UI",
       "strength": 3
+    },
+    {
+      "source": "TPU",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "TPU",
+      "target": "HBM",
+      "strength": 2
+    },
+    {
+      "source": "TPU",
+      "target": "EPS",
+      "strength": 2
     },
     {
       "source": "KPI",
@@ -3240,11 +3348,6 @@
       "strength": 2
     },
     {
-      "source": "TPU",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
       "source": "ASI",
       "target": "HBM",
       "strength": 2
@@ -3266,13 +3369,13 @@
     },
     {
       "source": "AI전환",
-      "target": "생산성",
-      "strength": 2
+      "target": "조직설계",
+      "strength": 3
     },
     {
       "source": "AI전환",
-      "target": "조직설계",
-      "strength": 3
+      "target": "생산성",
+      "strength": 2
     },
     {
       "source": "AI전환",
@@ -3280,8 +3383,8 @@
       "strength": 2
     },
     {
-      "source": "생산성",
-      "target": "조직설계",
+      "source": "조직설계",
+      "target": "생산성",
       "strength": 2
     },
     {
@@ -3297,6 +3400,11 @@
     {
       "source": "GPQA",
       "target": "오픈소스AI",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "EPS",
       "strength": 2
     },
     {
