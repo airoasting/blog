@@ -1566,17 +1566,6 @@
     document.getElementById('panelContent').addEventListener('click', function(e){
       var card=e.target.closest('[data-ep]');
       if(card){ e.preventDefault(); openReader(parseInt(card.dataset.ep,10)); return; }
-      var postCard=e.target.closest('a.insight-card[href]');
-      if(postCard){
-        e.preventDefault();
-        var postTitle=postCard.dataset.postTitle||'';
-        var postBody=(postCard.querySelector('.ic-body')||{}).innerHTML||'';
-        var postTheme=postCard.dataset.theme||'';
-        var postRoasting=postCard.dataset.roasting||'';
-        var postSummaries=[];
-        try{ if(postCard.dataset.summaries) postSummaries=JSON.parse(postCard.dataset.summaries); }catch(e){}
-        openPostReader(postCard.getAttribute('href'), postTitle, postBody, postTheme, postRoasting, postSummaries);
-      }
     });
 
     closeBtn.addEventListener('click', closeReader);
