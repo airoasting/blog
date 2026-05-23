@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 49,
+    "title": "다 해보겠다는 구글의 야심",
+    "date": "2026-05-23",
+    "img": "nl-49.png",
+    "url": ""
+  },
+  {
     "ep": 48,
     "title": "빈 손으로 돌아 온 젠슨 황 대표",
     "date": "2026-05-16",
