@@ -3,6 +3,36 @@
 > 운영자: AI ROASTING · 전략 컨설턴트 출신 AI 전문 강사 · 25년
 > URL: https://airoasting.github.io/blog
 
+## 순다르 피차이: AI가 불안한 건 당연합니다
+
+날짜: 2026-05-22
+카테고리: 리더
+소스: New York Times (Kevin Roose, Casey Newton)
+원문: https://www.nytimes.com/2026/05/22/podcasts/sundar-pichai-understands-why-people-are-anxious-about-ai.html
+태그: AI여론, 구글, AGI, 에이전트, AI리더십, 검색미래
+
+3줄 요약:
+- 구글 CEO 순다르 피차이는 AI 불안이 "당연하고 정당하다"고 공개적으로 인정했습니다.
+- NYT/Siena 여론조사에서 AI를 "mostly bad"로 보는 응답(35%)이 "mostly good"(16%)의 두 배를 넘었습니다.
+- 피차이는 에이전틱 코딩에서 뒤처진다고 인정하면서도 AGI가 3~10년 내 가능하다는 확신을 밝혔습니다.
+
+Roasting: AI 도입을 밀어붙이면서 직원 불안은 외면하고 계십니까? 구글 CEO조차 그 불안이 정당하다고 말합니다.
+
+## AI가 만든 콘텐츠가 세상을 덮고 있습니다
+
+날짜: 2026-05-20
+카테고리: 생존
+소스: The Washington Post (Kevin Schaul)
+원문: https://www.washingtonpost.com/technology/2026/05/20/data-shows-that-ai-slop-is-taking-over-books-lawsuits-music-science/
+태그: AI슬롭, 콘텐츠홍수, ChatGPT, 직업변화, 정보신뢰
+
+3줄 요약:
+- ChatGPT 출시 이후 전자책 주당 출판량이 3배로 늘었고, 2025년 말 신규 전자책의 절반 이상에 AI 텍스트가 포함되어 있습니다.
+- 미국 연방 법원 자기소송 비율이 역사적 평균 11%에서 17%로 올랐고, 음악 플랫폼 디저에서 AI 생성 음악 비율은 40%를 넘었습니다.
+- 학술 논문 플랫폼 arXiv 반려율은 4%에서 10~12%로 치솟았고, 신규 웹 콘텐츠의 최대 3분의 1이 AI 산출물입니다.
+
+Roasting: 전자책 두 권 중 한 권은 AI가 만들었습니다. 지금 당신이 읽는 보고서는 안전합니까?
+
 ## 개리 탄: AI를 채팅창 대신 운영체제로 만드는 법
 
 날짜: 2026-05-10

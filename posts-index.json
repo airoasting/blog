@@ -1,6 +1,61 @@
 {
   "posts": [
     {
+      "title": "순다르 피차이: AI가 불안한 건 당연합니다",
+      "date": "2026-05-22",
+      "category": "leader",
+      "source": "New York Times (Kevin Roose, Casey Newton)",
+      "tags": [
+        "AI여론",
+        "구글",
+        "AGI",
+        "에이전트",
+        "AI리더십",
+        "검색미래"
+      ],
+      "slug": "2026-05-22-sundar-pichai-anxious-ai-future",
+      "file": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html",
+      "summary": "구글 CEO 순다르 피차이가 AI 불안을 공개 인정하고 AGI 3~10년론을 제시한 이유를 설명합니다.",
+      "roasting_quote": "AI 도입을 밀어붙이면서 직원 불안은 외면하고 계십니까? 구글 CEO조차 그 불안이 정당하다고 말합니다.",
+      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
+    },
+    {
+      "title": "AI가 만든 콘텐츠가 세상을 덮고 있습니다",
+      "date": "2026-05-20",
+      "category": "survival",
+      "source": "The Washington Post (Kevin Schaul)",
+      "tags": [
+        "AI슬롭",
+        "콘텐츠홍수",
+        "ChatGPT",
+        "직업변화",
+        "정보신뢰"
+      ],
+      "slug": "2026-05-20-ai-slop-books-music-lawsuits-science",
+      "file": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html",
+      "summary": "ChatGPT 이후 전자책 주당 출판량이 3배로 늘었고, 신규 전자책의 절반 이상에 AI 텍스트가 들어갔습니다. 책·소송·음악·논문·웹, 5개 영역의 실태 데이터입니다.",
+      "roasting_quote": "전자책 두 권 중 한 권은 AI가 만들었습니다. 지금 당신이 읽는 보고서는 안전합니까?",
+      "next_post": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html"
+    },
+    {
+      "title": "AI 성과 평가, 더 그럴듯할수록 더 위험합니다",
+      "date": "2026-05-15",
+      "category": "research",
+      "source": "HBR (Chrysanthos Dellarocas)",
+      "tags": [
+        "성과평가",
+        "AI활용",
+        "HR관리",
+        "조직설계",
+        "인재관리"
+      ],
+      "slug": "2026-05-15-gen-ai-performance-reviews",
+      "file": "research/2026-05-15-gen-ai-performance-reviews.html",
+      "summary": "씨티, JP모건, BCG 등 대기업들이 AI로 성과 평가 초안을 만들고 있습니다. 문제는 AI가 내용이 아닌 표현을 개선한다는 점입니다. AI를 서술 작성이 아닌 행동 증거 발굴에 써야 합니다.",
+      "roasting_quote": "모든 성과 평가가 설득력 있게 들립니다. AI 덕분입니다. 이제 나쁜 평가를 알아채기가 더 어려워졌습니다.",
+      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
+    },
+    {
       "title": "개리 탄: AI를 채팅창 대신 운영체제로 만드는 법",
       "date": "2026-05-10",
       "category": "leader",
@@ -16,7 +71,7 @@
       "file": "leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html",
       "summary": "YC CEO 개리 탄이 X에서 직접 공개한 개인 AI 운영체제 구조입니다. 100개 스킬 파일과 10만 페이지 지식 베이스로 구성된 복리 시스템이 핵심입니다. AI를 채팅창이 아닌 운영체제로 구축하는 것이 다음 5년의 핵심 경쟁력입니다.",
       "roasting_quote": "AI를 채팅창으로만 쓰고 계십니까? YC CEO는 AI에게 100가지 스킬을 가르쳐 조직을 운영합니다.",
-      "next_post": "company/2026-04-14-dorsey-mode-ai-org-design.html"
+      "next_post": "research/2026-05-15-gen-ai-performance-reviews.html"
     },
     {
       "title": "도시 모드: AI 시대 경영 리더를 위한 4원칙",
