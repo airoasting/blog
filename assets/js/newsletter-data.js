@@ -4,7 +4,7 @@ window.NEWSLETTER_DATA = [
     "title": "교황 곁에 선 앤쓰로픽, 기업가치 9,000억 달러로 오픈AI 넘었다",
     "date": "2026-05-30",
     "img": "nl-50.png",
-    "url": ""
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-50-%EA%B5%90%ED%99%A9-%EA%B3%81%EC%97%90-%EC%84%A0-%EC%95%A4%EC%93%B0%EB%A1%9C%ED%94%BD-%EA%B8%B0%EC%97%85%EA%B0%80%EC%B9%98-9000%EC%96%B5-%EB%8B%AC%EB%9F%AC%EB%A1%9C-%EC%98%A4%ED%94%88ai-%EB%84%98%EC%97%88%EB%8B%A4-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-jtcsc/"
   },
   {
     "ep": 49,
