@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-30T07:46:23.793Z",
+  "generatedAt": "2026-05-30T08:05:00.687Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 87,
-    "totalRelationships": 283,
-    "totalPosts": 189,
+    "totalConcepts": 88,
+    "totalRelationships": 284,
+    "totalPosts": 190,
     "totalNewsletters": 50
   },
   "concepts": [
@@ -14,7 +14,7 @@
       "name": "리더의 결정 포인트",
       "aliases": [],
       "definition": "이 글에서 경영 리더가 행동으로 옮길 핵심 의사결정 지점입니다.",
-      "frequency": 58,
+      "frequency": 59,
       "category": "tech",
       "posts": [
         "2025-09-10-ai-cognitive-offloading",
@@ -74,7 +74,8 @@
         "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
         "2026-05-07-natural-language-autoencoders",
         "2026-05-08-teaching-claude-why",
-        "2026-05-15-gen-ai-performance-reviews"
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-29-openai-erdos-unit-distance-problem"
       ],
       "newsletters": [],
       "firstSeen": "2025-09-10",
@@ -1875,6 +1876,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "핵심-수치",
+      "slug": "핵심-수치",
+      "name": "핵심 수치",
+      "aliases": [],
+      "definition": "핵심 수치는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "leader",
+      "posts": [
+        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-22-sundar-pichai-anxious-ai-future",
+        "2026-05-29-openai-erdos-unit-distance-problem"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
+    },
+    {
       "id": "생성ai",
       "slug": "생성ai",
       "name": "생성AI",
@@ -3023,6 +3042,11 @@
     {
       "source": "AI 에이전트",
       "target": "코딩AI",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "핵심 수치",
       "strength": 2
     },
     {

@@ -3,6 +3,21 @@
 > 운영자: AI ROASTING · 전략 컨설턴트 출신 AI 전문 강사 · 25년
 > URL: https://airoasting.github.io/blog
 
+## AI가 80년 수학 난제를 풀었습니다
+
+날짜: 2026-05-29
+카테고리: 기술
+소스: Wall Street Journal (Ben Cohen)
+원문: https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84
+태그: OpenAI, AI수학, 에르되시문제, 조합기하학, 연구돌파구, 수학AI
+
+3줄 요약:
+- OpenAI 모델이 1946년 폴 에르되시가 제시한 '단위 거리 문제'를 자율로 해결했습니다.
+- AI는 80년간 수학자들이 시도한 방향과 반대로 접근해 반증(disproof)을 찾아냈습니다.
+- 필즈상 수상자는 "Annals of Mathematics 게재를 주저 없이 추천했을 것"이라고 평가했습니다.
+
+Roasting: 80년 묵은 수학 난제가 1,000달러에 해결됐습니다. 당신 조직의 미해결 과제는 얼마짜리입니까?
+
 ## 순다르 피차이: AI가 불안한 건 당연합니다
 
 날짜: 2026-05-22

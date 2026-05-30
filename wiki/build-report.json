@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-05-30T07:46:23.793Z",
-  "duration": 0.217,
+  "buildAt": "2026-05-30T08:05:00.687Z",
+  "duration": 0.262,
   "concepts": {
-    "total": 87,
+    "total": 88,
     "validDefinitions": 81,
-    "needsReview": 6
+    "needsReview": 7
   },
   "relationships": {
-    "total": 283
+    "total": 284
   },
   "coverage": {
-    "postsWithConcepts": 165,
-    "totalPosts": 189
+    "postsWithConcepts": 166,
+    "totalPosts": 190
   },
   "inject": {
-    "updated": 4,
+    "updated": 3,
     "inserted": 0,
-    "unchanged": 159,
+    "unchanged": 161,
     "skipped": 26
   },
   "needsManualReview": [
@@ -35,6 +35,10 @@
     {
       "name": "직업변화",
       "slug": "직업변화"
+    },
+    {
+      "name": "핵심 수치",
+      "slug": "핵심-수치"
     },
     {
       "name": "EPS",

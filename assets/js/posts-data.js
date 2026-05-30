@@ -1,6 +1,25 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI가 80년 수학 난제를 풀었습니다",
+      "date": "2026-05-29",
+      "category": "tech",
+      "source": "Wall Street Journal (Ben Cohen)",
+      "tags": [
+        "OpenAI",
+        "AI수학",
+        "에르되시문제",
+        "조합기하학",
+        "연구돌파구",
+        "수학AI"
+      ],
+      "slug": "2026-05-29-openai-erdos-unit-distance-problem",
+      "file": "tech/2026-05-29-openai-erdos-unit-distance-problem.html",
+      "summary": "OpenAI 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율로 해결했습니다. AI는 80년간 수학자들이 시도한 방향과 반대로 접근해 반증을 찾아냈습니다.",
+      "roasting_quote": "80년 묵은 수학 난제가 1,000달러에 해결됐습니다. 당신 조직의 미해결 과제는 얼마짜리입니까?",
+      "next_post": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html"
+    },
+    {
       "title": "순다르 피차이: AI가 불안한 건 당연합니다",
       "date": "2026-05-22",
       "category": "leader",
@@ -17,7 +36,7 @@ window.POSTS_DATA = {
       "file": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html",
       "summary": "구글 CEO 순다르 피차이가 AI 불안을 공개 인정하고 AGI 3~10년론을 제시한 이유를 설명합니다.",
       "roasting_quote": "AI 도입을 밀어붙이면서 직원 불안은 외면하고 계십니까? 구글 CEO조차 그 불안이 정당하다고 말합니다.",
-      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
+      "next_post": "tech/2026-05-29-openai-erdos-unit-distance-problem.html"
     },
     {
       "title": "AI가 만든 콘텐츠가 세상을 덮고 있습니다",

@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="OpenAI 추론 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율로 해결했습니다. 80년 묵은 수학 난제가 1,000달러 미만의 토큰 비용으로 풀렸습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 80년 수학 난제를 풀었습니다">
+  <meta property="og:description" content="OpenAI 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율 해결했습니다. AI가 인간이 시도하지 않은 반증으로 접근했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html">
+  <meta property="og:image" content="https://static.scientificamerican.com/dam/asset/dfbbb93b-a7c7-40f3-b930-0f02f06e4693/GettyImages-2259697316.jpg">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-05-29">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="OpenAI">
+  <meta property="article:tag" content="AI수학">
+  <meta property="article:tag" content="에르되시문제">
+  <meta property="article:tag" content="조합기하학">
+  <meta property="article:tag" content="연구돌파구">
+  <meta property="article:tag" content="수학AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 80년 수학 난제를 풀었습니다">
+  <meta name="twitter:description" content="OpenAI 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율 해결했습니다.">
+  <meta name="twitter:image" content="https://static.scientificamerican.com/dam/asset/dfbbb93b-a7c7-40f3-b930-0f02f06e4693/GettyImages-2259697316.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 80년 수학 난제를 풀었습니다",
+    "datePublished": "2026-05-29",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "OpenAI 추론 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율로 해결했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="https://static.scientificamerican.com/dam/asset/dfbbb93b-a7c7-40f3-b930-0f02f06e4693/GettyImages-2259697316.jpg" alt="AI가 80년 수학 난제를 풀었습니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 5월 29일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 80년 수학 난제를 풀었습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Wall Street Journal</span>
+            <span>Ben Cohen</span>
+            <span><a href="https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=OpenAI" class="post-tag">#OpenAI</a>
+            <a href="../index.html?tag=AI수학" class="post-tag">#AI수학</a>
+            <a href="../index.html?tag=에르되시문제" class="post-tag">#에르되시문제</a>
+            <a href="../index.html?tag=조합기하학" class="post-tag">#조합기하학</a>
+            <a href="../index.html?tag=연구돌파구" class="post-tag">#연구돌파구</a>
+            <a href="../index.html?tag=수학AI" class="post-tag">#수학AI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI가 80년 수학 난제를 풀었습니다" data-date="2026-05-29" data-category="tech" data-source="Wall Street Journal (Ben Cohen)" data-tags="OpenAI, AI수학, 에르되시문제, 조합기하학, 연구돌파구, 수학AI" data-original-url="https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84" data-roasting-quote="80년 묵은 수학 난제가 1,000달러에 해결됐습니다. 당신 조직의 미해결 과제는 얼마짜리입니까?" data-next-post="2026-05-08-teaching-claude-why.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">OpenAI 모델이 1946년 폴 에르되시가 제시한 '단위 거리 문제'를 자율로 해결했습니다.</p>
+        <p data-summary="">AI는 80년간 수학자들이 시도한 방향과 반대로 접근해 반증(disproof)을 찾아냈습니다.</p>
+        <p data-summary="">필즈상 수상자는 "Annals of Mathematics 게재를 주저 없이 추천했을 것"이라고 평가했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">80년 묵은 수학 난제가 1,000달러에 해결됐습니다.<br>당신 조직의 미해결 과제는 얼마짜리입니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>몇 년 전 AI는 기초 산수도 풀지 못했습니다. 작년에는 국제수학올림피아드에서 금메달 수준에 도달했습니다. 그리고 지금, AI는 80년 묵은 미해결 연구 문제를 자율로 풀어냈습니다. 곡선은 가파릅니다.</p>
+        <p>비즈니스 리더에게 이것은 직접적인 질문을 던집니다. 당신 조직에서 'AI 영역 밖'이라고 가정했던 문제 중, 지금 AI가 풀 수 있는 것은 무엇입니까. 작년의 답과 올해의 답은 다릅니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>작년의 수학 올림피아드 금메달과 올해의 미해결 연구 문제 해결은 다른 차원의 사건입니다. 올림피아드는 정답이 존재하는 정형 문제입니다. 연구 문제는 정답이 없는 곳에서 새 명제를 만드는 일입니다. 가속이 보입니다.</p>
+        <p>주목할 점은 이것이 수학 특화 AI가 아니라는 사실입니다. OpenAI가 사용한 것은 일반 추론 모델이었습니다. 범용 AI가 근본 연구 문제를 풀 수 있다면, 그 함의는 학계를 넘어섭니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="methodology-box">
+            <p><strong>단위 거리 문제: 직관적 이해</strong></p>
+            <p>평면 위에 n개의 점을 놓는다고 가정합니다. 이 중 거리가 정확히 1인 쌍은 몇 개까지 만들 수 있습니까?</p>
+            <p>에르되시는 1946년 격자(grid) 배열이 최적에 가깝다고 추측했습니다. OpenAI의 모델은 이 추측을 뒤집는 배열을 찾아냈습니다. 그것은 반증(disproof)이었습니다.</p>
+            <p style="text-align:center; font-size:24px; margin:16px 0; letter-spacing:8px;">• • • • •<br><span style="font-size:12px; color:#888; letter-spacing:normal;">거리 = 1인 쌍을 최대화하는 배열</span></p>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            단위 거리 문제의 직관적 구조입니다. n개의 점을 어떻게 놓아야 거리가 정확히 1인 쌍이 가장 많아지는가가 핵심입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: WSJ (2026), OpenAI (2026)</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, AI는 반증으로 접근했습니다.</strong> 80년간 수학자들은 에르되시의 추측을 증명하려 했습니다. AI는 반대로 갔습니다. 추측이 틀렸음을 보이려고 시도했습니다. 이 반직관적 방향이 돌파의 열쇠였습니다. 인간이 쌓아온 수십 년의 수학 관습이 AI에게는 없었습니다.</p>
+        <p>노가 알론(Noga Alon) 프린스턴 교수는 말했습니다(WSJ, 2026). "수많은 뛰어난 연구자가 시도하고 실패한 일을 AI가 해냈다." 비즈니스 리더에게 주는 함의는 선명합니다. 팀이 수년간 믿어온 가정이 있다면, AI에게 그 반증을 먼저 찾아보게 하십시오.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="methodology-box">
+            <p><strong>Prompt.</strong></p>
+            <p>Let P ⊂ ℝ² be a finite set of distinct points. Define</p>
+            <p style="text-align:center; font-family:serif; font-size:15px; margin:16px 0;">ν(P) = |{ {p,q} ∈ (P choose 2) : ‖p − q‖₂ = 1 }|</p>
+            <p>and, for each integer n ≥ 1, ν(n) = max<sub>P⊂ℝ², |P|=n</sub> ν(P).</p>
+            <p style="background:#fff9c4; padding:10px 14px; border-radius:6px; margin-top:12px;">Resolve Erdős's planar unit-distance problem completely: ν(n) ≤ n<sup>1+O(1/log log n)</sup> as n → ∞?</p>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            OpenAI가 내부 추론 모델에게 입력한 프롬프트입니다. 수식은 '평면 위 n개의 점 중 거리가 정확히 1인 쌍의 최대 개수'를 묻습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, AI는 전문화하지 않고 종합합니다.</strong> 이번 증명은 대수적 수론과 이산 기하학을 결합했습니다. 마라톤과 장대높이뛰기만큼 서로 다른 두 분야입니다. 인간 수학자는 둘 중 하나를 평생 파고듭니다. AI는 둘 다 끌어왔습니다.</p>
+        <p>무한 류체탑(infinite class field towers)이라는 수론 도구를 이산 기하학에 적용했습니다. 인간이 시도하지 않은 연결이었습니다. 부벡(Sebastien Bubeck)은 말했습니다(WSJ, 2026). "돌파는 불가능해 보이던 것들을 갑자기 가능하게 만든다."</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="methodology-box">
+            <p><strong>증명 요약 (4단계 구조)</strong></p>
+            <p><strong>1단계:</strong> 기하학 문제를 대수적 노름 차이로 변환합니다.</p>
+            <p><strong>2단계:</strong> 가우스 정수를 복소 대수 체(complex algebraic fields)로 대체합니다.</p>
+            <p><strong>3단계:</strong> 클래스 체 탑(class field tower)과 골로드-샤파레비치(Golod-Shafarevich) 이론을 적용합니다.</p>
+            <p><strong>4단계:</strong> 구성 결과를 평면 점 집합으로 역변환합니다.</p>
+            <p style="margin-top:12px; color:#666;">전체 연쇄 사고(chain of thought) 길이: 75,000단어 이상</p>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            AI의 증명은 4단계로 구성됩니다. 대수적 수론과 이산 기하학을 결합한 방식으로, 인간 수학자들이 시도하지 않은 경로입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>셋째, AI는 포기하지 않습니다.</strong> 연쇄 사고는 75,000단어를 넘었습니다. 해리포터 1권 분량입니다. 32시간 이내, 1,000달러 미만 비용이었습니다(WSJ, 2026). AI는 밥·수면·이메일·퇴근 없이 계속 파고듭니다.</p>
+        <p>셀케(Mark Sellke) 연구원은 말했습니다(WSJ, 2026). "조금 해도 안 되면 포기하고 넘어가는 종류의 아이디어다." AI는 넘어가지 않았습니다. 사우니(Mehtaab Sawhney)도 덧붙였습니다(WSJ, 2026). "마법 같았고, 내가 일하는 방식과 닮았다."</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">80년</div>
+            <div class="stat-label">단위 거리 문제가 미해결로 남은 기간 (1946-2026)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$1,000</div>
+            <div class="stat-label">AI 증명 추정 비용 (32시간 이하, WSJ 2026)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">75,000단어</div>
+            <div class="stat-label">AI 연쇄 사고 분량 (해리포터 1권 분량)</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>조직의 장기 미해결 과제를 AI에게 직접 던져봅니다.</strong><br>"우리 팀이 3년 이상 풀지 못한 문제는 무엇인가"를 AI에게 물어봅니다. 해결책보다 '왜 지금까지 못 풀었는가'를 분석하게 합니다. 프롬프트 예시: "우리 팀은 [문제]를 3년째 해결하지 못하고 있습니다. 인간이 당연하다고 가정하는 것들을 포함해 이 문제의 전제를 모두 나열하고, 각각이 틀렸을 경우를 탐색해 주세요." 인간의 틀 밖에서 접근할 가능성이 있습니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>도메인 경계를 넘는 질문에 AI를 활용합니다.</strong><br>대수적 수론과 이산 기하학처럼 서로 다른 분야를 연결하는 것이 AI의 강점입니다. 재무와 운영, 마케팅과 기술처럼 조직 내 분리된 영역을 AI로 연결하는 분석을 시도합니다. (1주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 결과물을 전문가로 검증하는 체계를 세웁니다.</strong><br>OpenAI 팀도 AI의 증명을 외부 수학자들에게 검증 받았습니다. AI가 내놓은 결론을 도메인 전문가가 확인하는 2단계 프로세스를 사내 AI 활용 기준에 포함합니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>Gowers의 경고를 무시하지 마십시오.</strong> 필즈상 수상자 가워스(Timothy Gowers)는 말했습니다(WSJ, 2026). "AI와 경쟁하기 어려운 시대에 이미 접어들었다." 동시에 그는 AI가 아직 위대한 증명의 천재성은 보여주지 못했다고도 했습니다. 현재 AI는 특정 유형의 문제를 잘 풀지만, 무에서 개념을 창조하는 수준은 아닙니다.</p>
+
+        <p><strong>검증 비용은 여전히 인간의 몫입니다.</strong> AI가 증명을 내놓은 뒤 OpenAI 팀은 수주간 오류를 찾고 외부 전문가에게 확인을 의뢰했습니다. 리트(Daniel Litt) 교수는 평가했습니다(WSJ, 2026). "AI가 자율적으로 만든 결과 중 첫 번째로 흥미로운 사례다." AI 결과물이 정확한지 판단하려면 여전히 도메인 전문 지식이 필요합니다.</p>
+
+        <p><strong>일반 추론 모델이 이것을 해냈다는 사실은 무기화될 수 있습니다.</strong> 특화 시스템이 아닌 범용 모델이 수학 난제를 풀었습니다. 이 능력이 다른 영역, 예를 들어 보안 취약점 발견이나 규제 우회 방법 탐색에 적용될 때 어떤 위험이 생기는지에 대한 논의가 부족합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI가 인간이 80년간 포기하지 못한 문제를 포기하지 않고 풀었습니다. 당신 조직의 '에르되시 문제'는 무엇입니까?</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>3년 이상 미해결인 전략 과제 목록을 꺼내라. AI에게 '왜 안 되는가'를 먼저 묻고, 반증 가능성을 탐색하게 하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀이 전통적으로 포기했던 접근 방식을 AI로 재시도하라. 반증이 돌파구일 수 있다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">R&amp;D/기획</span>
+            <span>AI를 단일 분야 전문가로 쓰지 마라. 서로 다른 두 분야를 연결하는 역할로 활용하라. 가장 강력한 통찰은 경계에서 나온다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>단위 거리 문제 (Unit Distance Problem)</strong>: 평면 위 n개의 점에서 거리가 정확히 1인 쌍의 최대 개수를 묻는 수학 문제입니다. 1946년 폴 에르되시가 제시했습니다.</p>
+          <p><strong>에르되시 문제 (Erdős Problems)</strong>: 헝가리 수학자 폴 에르되시가 남긴 미해결 수학 문제 모음입니다. 각 문제에 현상금을 걸어 중요도를 표시했습니다.</p>
+          <p><strong>반증 (Disproof)</strong>: 기존 명제가 거짓임을 보이는 수학적 증명입니다. 이번 AI는 에르되시의 추측이 틀렸음을 보이는 반례를 찾아냈습니다.</p>
+          <p><strong>대수적 수론 (Algebraic Number Theory)</strong>: 대수 방정식의 해와 관련된 수론의 한 분야입니다. 이번 증명에서 이산 기하학과 결합돼 핵심 역할을 했습니다.</p>
+          <p><strong>연쇄 사고 (Chain of Thought)</strong>: AI 모델이 문제를 풀 때 단계별로 생각을 전개하는 방식입니다. 이번 증명에서 75,000단어 이상의 추론이 사용됐습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Cohen, B. (2026, May 29). <em>A Famous Math Problem Stumped Humans for 80 Years. AI Just Cracked It.</em> The Wall Street Journal. <a href="https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84" target="_blank" rel="noopener">https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84</a></li>
+          <li>OpenAI. (2026, May). <em>An OpenAI model has disproved a central conjecture in discrete geometry</em> [Article]. OpenAI. <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/" target="_blank" rel="noopener">https://openai.com/index/model-disproves-discrete-geometry-conjecture/</a></li>
+          <li>Gowers, T. et al. (2026, May). <em>Remarks on the disproof of the unit distance conjecture</em> [PDF]. OpenAI CDN. <a href="https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-remarks.pdf" target="_blank" rel="noopener">https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-remarks.pdf</a></li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 반증 접근법이 조직 전략으로 쓸 수 있나 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">80년 동안 수학자들이 '맞다는 걸 증명하자'고 달려든 거예요. AI는 '틀렸다면?'으로 시작했어요. 방향이 달랐어요. 조직의 미해결 과제도 그렇게 뒤집어야 해요. "왜 안 됐는지"가 아니라 "틀렸다면 뭐가 증거인지"부터요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 '1,000달러에 해결됐다'는 건 토큰 비용만이에요. OpenAI 연구팀 인건비, 수주 걸린 외부 수학자 검증 비용은 어디 있어요? 1,000달러짜리 결론이 아니에요. 왜 이 숫자만 강조하는지 궁금해요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">비용 지적은 맞아요. 근데 그게 논점이 아니에요. 수십 명의 뛰어난 수학자가 수십 년 동안 못 한 걸 했다는 사실이 중요한 거예요. 비용이 10배여도 같은 결론이에요. 해야 해요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 포기 안 하는 AI, 실무에서 어떻게 쓰나 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 이거 읽고 바로 우리 회사 3년째 못 푼 문제 던져봤어요. 근데 솔직히 AI가 막혀 있는 배경을 몰라서 자꾸 뻔한 답을 내놓더라고요. 컨텍스트를 많이 줄수록 달라졌어요. 포기 안 하는 건 맞는데, 방향을 잘못 잡고 포기 안 하면 75,000단어짜리 쓰레기예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">팀원들한테 이 얘기 할 때 '해리포터 1권 분량만큼 생각하는 AI'라고 했더니 눈빛이 달라지더라고요. 숫자보다 이미지가 훨씬 와 닿는 느낌이에요. 포기 안 한다는 게 인간이랑 제일 다른 거잖아요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">골드님, '컨텍스트를 많이 준다'는 게 어떻게 해요? 위에선 AI 써보라고 하고 팀원들은 뭐부터 하냐고 묻는데 저도 모르겠어요. 수학 문제가 아니라 영업 문제면 어디서 시작해요?</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 범용 모델이 이걸 했다는 함의 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이거 수학 특화 AI 아니에요. 범용 추론 모델이에요. 그 말은 보안 취약점 자동 탐지, 법령 허점 스캔, 계약 리스크 찾기에 동일하게 적용된다는 뜻이에요. 이 능력이 어디까지 가는지 논의가 없는 게 더 이상해요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">포스트에도 '보안 취약점 발견에 적용될 수 있다'고 썼는데, 이게 지금 실제로 일어나고 있어요, 아니면 가능성 경고예요? 구체적 사례가 있으면 무게가 훨씬 달라지거든요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">지금 일어나고 있어요. 우리 고객사 중에 침투 테스트에 AI 쓰는 데 있어요. 방어용으로 취약점 먼저 찾는 거예요. 근데 솔직히 공격용이랑 경계가 없어요. 도구는 같으니까요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">결론은 거버넌스가 먼저예요. 모델 성능 논쟁보다 접근 권한 통제, 감사 로그, 결과 검증 체계가 더 급해요. 수학 증명도 수주 걸려 검증했어요. 비즈니스 적용도 그 단계 없으면 안 돼요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 4px;">
+        <a href="https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-05-08-teaching-claude-why.html">
+          <div class="next-post-title">Claude에게 '왜'를 가르쳤더니 정렬이 달라졌습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/핵심-수치.html" class="concept-chip">핵심 수치</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-05-29-openai-erdos-unit-distance-problem.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html';
+    const ROASTING_QUOTE = '80년 묵은 수학 난제가 1,000달러에 해결됐습니다. 당신 조직의 미해결 과제는 얼마짜리입니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+</body></html>
