@@ -1,23 +1,23 @@
 {
-  "buildAt": "2026-05-23T10:27:19.684Z",
-  "duration": 0.234,
+  "buildAt": "2026-05-30T07:46:23.793Z",
+  "duration": 0.217,
   "concepts": {
-    "total": 85,
+    "total": 87,
     "validDefinitions": 81,
-    "needsReview": 4
+    "needsReview": 6
   },
   "relationships": {
-    "total": 277
+    "total": 283
   },
   "coverage": {
-    "postsWithConcepts": 164,
+    "postsWithConcepts": 165,
     "totalPosts": 189
   },
   "inject": {
-    "updated": 0,
+    "updated": 4,
     "inserted": 0,
-    "unchanged": 162,
-    "skipped": 27
+    "unchanged": 159,
+    "skipped": 26
   },
   "needsManualReview": [
     {
@@ -29,12 +29,20 @@
       "slug": "구글"
     },
     {
+      "name": "IEEE",
+      "slug": "ieee"
+    },
+    {
       "name": "직업변화",
       "slug": "직업변화"
     },
     {
       "name": "EPS",
       "slug": "eps"
+    },
+    {
+      "name": "SEC",
+      "slug": "sec"
     }
   ]
 }

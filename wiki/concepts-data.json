@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-23T10:27:19.684Z",
+  "generatedAt": "2026-05-30T07:46:23.793Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 85,
-    "totalRelationships": 277,
+    "totalConcepts": 87,
+    "totalRelationships": 283,
     "totalPosts": 189,
-    "totalNewsletters": 49
+    "totalNewsletters": 50
   },
   "concepts": [
     {
@@ -152,7 +152,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 43,
+      "frequency": 44,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -199,7 +199,8 @@
         "nl-36",
         "nl-40",
         "nl-43",
-        "nl-47"
+        "nl-47",
+        "nl-50"
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2026-03-16",
@@ -211,7 +212,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 41,
+      "frequency": 42,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -256,7 +257,8 @@
         "nl-36",
         "nl-37",
         "nl-41",
-        "nl-45"
+        "nl-45",
+        "nl-50"
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-04-01",
@@ -480,6 +482,42 @@
       "needs_manual_review": false
     },
     {
+      "id": "ipo",
+      "slug": "ipo",
+      "name": "IPO",
+      "aliases": [],
+      "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
+      "frequency": 20,
+      "category": "newsletter",
+      "posts": [
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-04-06-sam-altman-superintelligence-new-deal",
+        "2024-08-20-acqui-hire-new-way-to-buy-ai-startups",
+        "2024-10-05-cerebras-ipo-vs-nvidia"
+      ],
+      "newsletters": [
+        "nl-7",
+        "nl-12",
+        "nl-20",
+        "nl-21",
+        "nl-26",
+        "nl-32",
+        "nl-33",
+        "nl-41",
+        "nl-42",
+        "nl-43",
+        "nl-44",
+        "nl-46",
+        "nl-48",
+        "nl-49",
+        "nl-50"
+      ],
+      "firstSeen": "2024-08-20",
+      "lastSeen": "2026-04-06",
+      "needs_manual_review": false
+    },
+    {
       "id": "roi",
       "slug": "roi",
       "name": "ROI",
@@ -546,41 +584,6 @@
       "newsletters": [],
       "firstSeen": "2025-09-10",
       "lastSeen": "2026-03-19",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ipo",
-      "slug": "ipo",
-      "name": "IPO",
-      "aliases": [],
-      "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 19,
-      "category": "newsletter",
-      "posts": [
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-06-sam-altman-superintelligence-new-deal",
-        "2024-08-20-acqui-hire-new-way-to-buy-ai-startups",
-        "2024-10-05-cerebras-ipo-vs-nvidia"
-      ],
-      "newsletters": [
-        "nl-7",
-        "nl-12",
-        "nl-20",
-        "nl-21",
-        "nl-26",
-        "nl-32",
-        "nl-33",
-        "nl-41",
-        "nl-42",
-        "nl-43",
-        "nl-44",
-        "nl-46",
-        "nl-48",
-        "nl-49"
-      ],
-      "firstSeen": "2024-08-20",
-      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -682,7 +685,7 @@
       "name": "TPU",
       "aliases": [],
       "definition": "Google의 AI 전용 칩입니다. 대규모 학습에서 GPU와 경쟁합니다.",
-      "frequency": 11,
+      "frequency": 12,
       "category": "newsletter",
       "posts": [
         "2025-12-17-demis-hassabis-future-of-intelligence",
@@ -697,7 +700,8 @@
         "nl-28",
         "nl-40",
         "nl-43",
-        "nl-49"
+        "nl-49",
+        "nl-50"
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2025-12-17",
@@ -928,6 +932,29 @@
       "needs_manual_review": false
     },
     {
+      "id": "cfo",
+      "slug": "cfo",
+      "name": "CFO",
+      "aliases": [],
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
+      "frequency": 7,
+      "category": "leader",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
+      ],
+      "newsletters": [
+        "nl-21",
+        "nl-49",
+        "nl-50"
+      ],
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-04-06",
+      "needs_manual_review": false
+    },
+    {
       "id": "organizational-design",
       "slug": "organizational-design",
       "name": "조직설계",
@@ -951,6 +978,29 @@
       "newsletters": [],
       "firstSeen": "2025-03-05",
       "lastSeen": "2025-04-20",
+      "needs_manual_review": false
+    },
+    {
+      "id": "hbm",
+      "slug": "hbm",
+      "name": "HBM",
+      "aliases": [],
+      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
+      "frequency": 7,
+      "category": "newsletter",
+      "posts": [
+        "2025-07-15-why-jensen-huang-is-going-to-china"
+      ],
+      "newsletters": [
+        "nl-4",
+        "nl-9",
+        "nl-20",
+        "nl-24",
+        "nl-35",
+        "nl-50"
+      ],
+      "firstSeen": "2025-07-15",
+      "lastSeen": "2025-07-15",
       "needs_manual_review": false
     },
     {
@@ -994,28 +1044,6 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "cfo",
-      "slug": "cfo",
-      "name": "CFO",
-      "aliases": [],
-      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 6,
-      "category": "leader",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-21",
-        "nl-49"
-      ],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -1082,28 +1110,6 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "hbm",
-      "slug": "hbm",
-      "name": "HBM",
-      "aliases": [],
-      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
-      "frequency": 6,
-      "category": "newsletter",
-      "posts": [
-        "2025-07-15-why-jensen-huang-is-going-to-china"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-9",
-        "nl-20",
-        "nl-24",
-        "nl-35"
-      ],
-      "firstSeen": "2025-07-15",
-      "lastSeen": "2025-07-15",
       "needs_manual_review": false
     },
     {
@@ -1777,6 +1783,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "ieee",
+      "slug": "ieee",
+      "name": "IEEE",
+      "aliases": [],
+      "definition": "IEEE는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-04-01-nature-ai-editorial-policy",
+        "2025-04-21-china-robots-run-half-marathon"
+      ],
+      "newsletters": [
+        "nl-50"
+      ],
+      "firstSeen": "2025-04-21",
+      "lastSeen": "2025-04-21",
+      "needs_manual_review": true
+    },
+    {
       "id": "오픈소스ai",
       "slug": "오픈소스ai",
       "name": "오픈소스AI",
@@ -2084,6 +2109,24 @@
       "firstSeen": null,
       "lastSeen": null,
       "needs_manual_review": true
+    },
+    {
+      "id": "sec",
+      "slug": "sec",
+      "name": "SEC",
+      "aliases": [],
+      "definition": "SEC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-42",
+        "nl-49",
+        "nl-50"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
     }
   ],
   "relationships": [
@@ -2129,6 +2172,11 @@
     },
     {
       "source": "리더의 결정 포인트",
+      "target": "IPO",
+      "strength": 2
+    },
+    {
+      "source": "리더의 결정 포인트",
       "target": "ROI",
       "strength": 7
     },
@@ -2136,11 +2184,6 @@
       "source": "리더의 결정 포인트",
       "target": "임원",
       "strength": 18
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "IPO",
-      "strength": 2
     },
     {
       "source": "리더의 결정 포인트",
@@ -2189,6 +2232,11 @@
     },
     {
       "source": "리더의 결정 포인트",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "리더의 결정 포인트",
       "target": "조직설계",
       "strength": 4
     },
@@ -2201,11 +2249,6 @@
       "source": "리더의 결정 포인트",
       "target": "GPQA",
       "strength": 3
-    },
-    {
-      "source": "리더의 결정 포인트",
-      "target": "CFO",
-      "strength": 2
     },
     {
       "source": "리더의 결정 포인트",
@@ -2314,6 +2357,11 @@
     },
     {
       "source": "LLM",
+      "target": "IPO",
+      "strength": 4
+    },
+    {
+      "source": "LLM",
       "target": "ROI",
       "strength": 4
     },
@@ -2321,11 +2369,6 @@
       "source": "LLM",
       "target": "임원",
       "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "IPO",
-      "strength": 4
     },
     {
       "source": "LLM",
@@ -2384,8 +2427,18 @@
     },
     {
       "source": "LLM",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "조직설계",
       "strength": 4
+    },
+    {
+      "source": "LLM",
+      "target": "HBM",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2399,11 +2452,6 @@
     },
     {
       "source": "LLM",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
       "target": "CPU",
       "strength": 2
     },
@@ -2411,11 +2459,6 @@
       "source": "LLM",
       "target": "IP",
       "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -2475,7 +2518,7 @@
     {
       "source": "GPU",
       "target": "API",
-      "strength": 11
+      "strength": 12
     },
     {
       "source": "GPU",
@@ -2504,6 +2547,11 @@
     },
     {
       "source": "GPU",
+      "target": "IPO",
+      "strength": 8
+    },
+    {
+      "source": "GPU",
       "target": "ROI",
       "strength": 6
     },
@@ -2511,11 +2559,6 @@
       "source": "GPU",
       "target": "임원",
       "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "IPO",
-      "strength": 7
     },
     {
       "source": "GPU",
@@ -2535,7 +2578,7 @@
     {
       "source": "GPU",
       "target": "TPU",
-      "strength": 7
+      "strength": 8
     },
     {
       "source": "GPU",
@@ -2564,6 +2607,16 @@
     },
     {
       "source": "GPU",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
+      "target": "HBM",
+      "strength": 4
+    },
+    {
+      "source": "GPU",
       "target": "GPQA",
       "strength": 4
     },
@@ -2576,11 +2629,6 @@
       "source": "GPU",
       "target": "SWE",
       "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "GPU",
@@ -2669,18 +2717,23 @@
     },
     {
       "source": "API",
+      "target": "IPO",
+      "strength": 3
+    },
+    {
+      "source": "API",
       "target": "ROI",
       "strength": 4
     },
     {
       "source": "API",
-      "target": "IPO",
-      "strength": 2
+      "target": "AI전략",
+      "strength": 5
     },
     {
       "source": "API",
-      "target": "AI전략",
-      "strength": 5
+      "target": "TPU",
+      "strength": 2
     },
     {
       "source": "API",
@@ -2709,6 +2762,11 @@
     },
     {
       "source": "API",
+      "target": "HBM",
+      "strength": 3
+    },
+    {
+      "source": "API",
       "target": "GPQA",
       "strength": 3
     },
@@ -2721,11 +2779,6 @@
       "source": "API",
       "target": "SWE",
       "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "HBM",
-      "strength": 2
     },
     {
       "source": "API",
@@ -2984,13 +3037,13 @@
     },
     {
       "source": "AGI",
-      "target": "임원",
-      "strength": 2
+      "target": "IPO",
+      "strength": 4
     },
     {
       "source": "AGI",
-      "target": "IPO",
-      "strength": 4
+      "target": "임원",
+      "strength": 2
     },
     {
       "source": "AGI",
@@ -3029,6 +3082,11 @@
     },
     {
       "source": "AGI",
+      "target": "HBM",
+      "strength": 3
+    },
+    {
+      "source": "AGI",
       "target": "GPQA",
       "strength": 2
     },
@@ -3036,11 +3094,6 @@
       "source": "AGI",
       "target": "CPU",
       "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "AGI",
@@ -3138,14 +3191,44 @@
       "strength": 3
     },
     {
-      "source": "ROI",
-      "target": "임원",
+      "source": "IPO",
+      "target": "ROI",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "TPU",
       "strength": 4
     },
     {
-      "source": "ROI",
-      "target": "IPO",
+      "source": "IPO",
+      "target": "CFO",
+      "strength": 5
+    },
+    {
+      "source": "IPO",
+      "target": "HBM",
       "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "CUDA",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "EPS",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "SEC",
+      "strength": 3
+    },
+    {
+      "source": "ROI",
+      "target": "임원",
+      "strength": 4
     },
     {
       "source": "ROI",
@@ -3203,26 +3286,6 @@
       "strength": 2
     },
     {
-      "source": "IPO",
-      "target": "TPU",
-      "strength": 3
-    },
-    {
-      "source": "IPO",
-      "target": "CFO",
-      "strength": 4
-    },
-    {
-      "source": "IPO",
-      "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "EPS",
-      "strength": 2
-    },
-    {
       "source": "창업자",
       "target": "팀장",
       "strength": 14
@@ -3270,16 +3333,21 @@
     {
       "source": "TPU",
       "target": "CFO",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "TPU",
       "target": "HBM",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "TPU",
       "target": "EPS",
+      "strength": 2
+    },
+    {
+      "source": "TPU",
+      "target": "SEC",
       "strength": 2
     },
     {
@@ -3324,6 +3392,11 @@
     },
     {
       "source": "MCP",
+      "target": "HBM",
+      "strength": 2
+    },
+    {
+      "source": "MCP",
       "target": "GPQA",
       "strength": 2
     },
@@ -3331,11 +3404,6 @@
       "source": "MCP",
       "target": "SWE",
       "strength": 3
-    },
-    {
-      "source": "MCP",
-      "target": "HBM",
-      "strength": 2
     },
     {
       "source": "MCP",
@@ -3383,8 +3451,23 @@
       "strength": 2
     },
     {
+      "source": "CFO",
+      "target": "EPS",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
       "source": "조직설계",
       "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "DRAM",
       "strength": 2
     },
     {
@@ -3403,18 +3486,8 @@
       "strength": 2
     },
     {
-      "source": "CFO",
-      "target": "EPS",
-      "strength": 2
-    },
-    {
       "source": "SWE",
       "target": "코딩AI",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "DRAM",
       "strength": 2
     },
     {
