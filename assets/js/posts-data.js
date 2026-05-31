@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다",
+      "title": "AI 에이전트로 논문은 75% 늘었지만 출판은 그대로였습니다",
       "date": "2026-05-27",
       "category": "research",
       "source": "Anthropic (Lyttelton, Massenkoff & Wilmers)",
@@ -38,7 +38,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
     },
     {
-      "title": "AI가 AI를 고치는 두 레버를 동시에 당겼습니다",
+      "title": "스스로 진화하는 AI, 코드를 스스로 고칩니다",
       "date": "2026-05-28",
       "category": "tech",
       "source": "arXiv (Hebbar, Manawat, Verboomen 외)",
@@ -184,7 +184,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html"
     },
     {
-      "title": "Claude에게 '왜'를 가르쳤더니 정렬이 달라졌습니다",
+      "title": "Claude에게 '왜'를 가르쳤더니 협박을 멈췄습니다",
       "date": "2026-05-08",
       "category": "tech",
       "source": "Anthropic Research (Anthropic)",
@@ -202,7 +202,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-04-14-dorsey-mode-ai-org-design.html"
     },
     {
-      "title": "Claude가 말하지 않는 생각을 읽습니다",
+      "title": "AI가 숨긴 속마음을 읽어냈습니다",
       "date": "2026-05-07",
       "category": "tech",
       "source": "Anthropic Research (Anthropic)",
