@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-05-23</lastmod>
+    <lastmod>2026-05-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -29,7 +29,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/tech/</loc>
-    <lastmod>2026-04-25</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1194,6 +1194,30 @@
   <url>
     <loc>https://airoasting.github.io/blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html</loc>
     <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2026-05-28-sia-self-improving-ai-harness-weights.html</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-05-27-ai-fomo-mastering-illusion.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-05-20-broken-ladder-wfh-not-ai.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html</loc>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

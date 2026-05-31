@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="Anthropic이 정량 사회과학자 1,260명을 조사했습니다. 코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다. AI 생산성의 진짜 병목을 분석합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다">
+  <meta property="og:description" content="코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다. AI 생산성의 측정 지점을 다시 생각합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-05-27">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="코딩에이전트">
+  <meta property="article:tag" content="ClaudeCode">
+  <meta property="article:tag" content="AI생산성">
+  <meta property="article:tag" content="AI도입격차">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다">
+  <meta name="twitter:description" content="코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다",
+    "datePublished": "2026-05-27",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Anthropic이 정량 사회과학자 1,260명을 조사했습니다. 코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_05_27_anthropic-coding-agents-social-sciences/thumbnail.png" alt="AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-05-27</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic Research</span>
+            <span>Lyttelton, Massenkoff &amp; Wilmers</span>
+            <span><a href="https://www.anthropic.com/research/coding-agents-social-sciences" target="_blank" rel="noopener">Coding Agents in the Social Sciences ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=코딩에이전트" class="post-tag">#코딩에이전트</a>
+            <a href="../index.html?tag=ClaudeCode" class="post-tag">#ClaudeCode</a>
+            <a href="../index.html?tag=AI생산성" class="post-tag">#AI생산성</a>
+            <a href="../index.html?tag=AI도입격차" class="post-tag">#AI도입격차</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다" data-date="2026-05-27" data-category="research" data-source="Anthropic (Lyttelton, Massenkoff &amp; Wilmers)" data-tags="코딩에이전트, ClaudeCode, AI생산성, AI도입격차, 연구생산성" data-original-url="https://www.anthropic.com/research/coding-agents-social-sciences" data-roasting-quote="AI가 시작을 75% 늘려도 완성이 그대로라면, 병목은 사라진 게 아니라 자리를 옮긴 것입니다. 귀사의 AI는 무엇을 늘렸고, 어디서 막혀 있습니까?" data-next-post="2025-04-20-paradox-of-ai-driven-productivity-gains.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">Anthropic이 정량 사회과학자 1,260명을 조사했습니다. 81%가 AI 챗봇을 써봤지만, 코딩 에이전트를 매주 쓰는 사람은 20%에 그쳤습니다.</p>
+            <p data-summary="">코딩 에이전트 사용자는 6개월간 작업 논문을 75% 더 냈습니다. 그러나 학술지 제출 건수는 늘지 않았습니다.</p>
+            <p data-summary="">AI는 일의 시작을 가속했지만 완성의 병목은 그대로였습니다. 도입 격차도 성별, 연차, 소속에 따라 뚜렷했습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">AI가 시작을 75% 늘려도 완성이 그대로라면,<br>병목은 사라진 게 아니라 자리를 옮긴 것입니다.<br>귀사의 AI는 무엇을 늘렸고, 어디서 막혀 있습니까?</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>팀에 AI 도구를 깔았습니다. 보고서 초안이 쏟아집니다. 그런데 분기 말 실적은 작년과 비슷합니다. "AI를 도입하면 생산성이 오른다"는 가정 위에서 예산을 썼는데, 결과가 따라오지 않습니다. 이 장면을 데이터로 설명한 자료는 드뭅니다.</p>
+            <p>Anthropic이 Claude Code 같은 코딩 에이전트를 쓰는 사회과학자 1,260명을 조사했습니다. 결과는 두 갈래였습니다. 일의 시작은 늘었고, 완성은 그대로였습니다.</p>
+            <p>사회과학자 이야기지만 원리는 범용입니다. AI가 산출을 늘리면 병목은 사라지지 않고 다음 단계로 옮겨갑니다. 이 글은 그 이동을 어떻게 읽고 측정할지를 다룹니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>많은 조직이 AI 도입 효과를 산출량으로 측정합니다. 보고서 수, 코드 양, 콘텐츠 건수로 성과를 봅니다. 하지만 산출이 늘어도 최종 성과가 그대로면 의미가 다릅니다.</p>
+            <p>이 조사는 그 간극을 수치로 보여줍니다. 써본 사람 81%와 매주 쓰는 사람 20%의 격차가 있습니다. 시작을 75% 더 한 집단도 완성에서는 차이가 없었습니다. AI 투자 효과를 어디서 측정해야 하는지 다시 묻게 합니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, 시도와 습관은 다릅니다.</strong> 응답자 81%가 AI 챗봇을 연구에 써봤습니다. 그러나 코딩 에이전트를 매주 쓰는 사람은 20%뿐입니다. 그중 86%가 Claude Code를 골랐습니다. 도입률을 "써봤다"로 세면 착시가 생깁니다. 실제 효과는 습관적 사용에서 나옵니다.</p>
+
+            <p><strong>둘째, AI는 파이프라인 앞단을 가속합니다.</strong> 코딩 에이전트 사용자는 6개월간 실증 프로젝트를 약 10% 더 시작했습니다. 작업 논문은 75% 더 게시했고, 연구비 제안서도 더 냈습니다. 일을 시작하고 초기 산출을 내는 속도가 분명히 빨라졌습니다.</p>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/76e73af10dd9410c9918d3f915b4a74fc5aae348-3840x2160.jpg" alt="코딩 에이전트 사용자와 일반 AI 사용자의 주요 활용 사례 비교 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                가장 흔한 활용은 코드 생성과 글 편집입니다. 코딩 에이전트 사용자의 97%, 다른 AI 사용자의 77%가 정량 분석 코드 생성에 AI를 씁니다. (AI 활용의 중심은 글쓰기가 아니라 분석 작업입니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+            <p><strong>셋째, 그러나 완성은 그대로였습니다.</strong> 학술지 제출과 재제출 건수에서는 유의미한 차이가 없었습니다. 앞단이 빨라진 만큼 뒷단도 빨라진 것이 아닙니다. 늘어난 산출물이 피어리뷰라는 병목 앞에 쌓입니다.</p>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">20%</div>
+                <div class="stat-label">코딩 에이전트를 매주 쓰는 연구자 (챗봇 사용 81% 대비)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">+75%</div>
+                <div class="stat-label">사용자가 6개월간 더 게시한 작업 논문 수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">0</div>
+                <div class="stat-label">학술지 제출 건수의 차이 (통계적으로 유의미하지 않음)</div>
+              </div>
+            </div>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/1d115c36e9b18bb674ddea85e662ccd71a9bf839-3840x2160.jpg" alt="코딩 에이전트 사용자와 비사용자의 연구 산출 차이를 보여주는 신뢰구간 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                사용자와 비사용자의 연구 산출 비교. 프로젝트 시작과 작업 논문은 늘었지만 학술지 제출은 신뢰구간이 0을 포함합니다. (앞단은 늘고 완성은 그대로인 패턴이 한눈에 보입니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+            <p><strong>넷째, 도입 격차가 뚜렷합니다.</strong> 누가 쓰느냐가 갈렸습니다. 초기 경력 연구자와 상위 대학 소속, 경제학 전공이 앞섰습니다. 반대로 정년 보장 교수와 공중보건, 교육학 분야는 뒤처졌습니다. 남성으로 추정되는 이름이 여성 추정 이름의 2배로 사용했습니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr>
+                    <th>집단</th>
+                    <th>코딩 에이전트 사용 경향</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>박사과정, 박사후연구원</td>
+                    <td>약 27%</td>
+                  </tr>
+                  <tr>
+                    <td>정년 보장 교수</td>
+                    <td>약 11%</td>
+                  </tr>
+                  <tr>
+                    <td>상위 25개 대학 소속</td>
+                    <td>평균 대비 40% 높음</td>
+                  </tr>
+                  <tr>
+                    <td>남성 추정 이름</td>
+                    <td>여성 추정 이름의 2배</td>
+                  </tr>
+                  <tr>
+                    <td>경제학 / 정치학</td>
+                    <td>39% / 25%</td>
+                  </tr>
+                  <tr>
+                    <td>공중보건 / 교육학 / 커뮤니케이션</td>
+                    <td>4~6%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, Coding Agents in the Social Sciences (2026).</div>
+            </div>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/370ed50b68c61c0c3f9341d6327d8ccb552667cd-3840x2160.jpg" alt="분야별 코딩 에이전트 사용률 막대 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                경제학자와 정치학자가 가장 많이 씁니다. 경제학 39%에서 공중보건, 교육, 커뮤니케이션의 한 자릿수까지 벌어집니다. (도구 확산 속도는 분야마다 다릅니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/ec30771367cfb20421e7c41b22dedd4762ae198b-3840x2160.jpg" alt="경력 단계별 AI 사용과 코딩 에이전트 사용 비교 라인 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                경력 단계별 도입률. 박사과정과 박사후연구원이 정년 보장 교수보다 앞섭니다. (신규 인력이 도입을 이끕니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/d695e1325aaa79f163b780a1b0942a1d468e05fa-3840x2160.jpg" alt="경력, 성별 추정, 대학 지위에 따른 도입 격차 비교 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                도입 격차는 한 축이 아니라 경력, 성별 추정, 대학 지위에서 동시에 나타납니다. (여러 축의 격차가 겹쳐 누적됩니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+            <p><strong>다섯째, 병목은 사라지지 않고 옮겨갑니다.</strong> 연구진은 두 가지 우려를 함께 제기했습니다. 늘어난 제출물이 피어리뷰를 정체시킬 수 있습니다. 그리고 불균등한 도입이 연구 자원의 격차를 키울 수 있습니다. 개인의 생산성 낙관과 분야 전체의 부담은 별개 문제입니다.</p>
+            <p>기업도 똑같습니다. AI가 초안 생산을 10배로 늘리면, 검토와 품질 게이트가 새 병목이 됩니다. 산출을 늘린 만큼 검수 역량을 키우지 않으면 일은 빨라진 것이 아니라 앞쪽에 몰린 것입니다.</p>
+
+            <figure class="post-figure" style="margin: 28px 0;">
+              <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/54cd57088b2e767d07f51a9f7ceea73083358018-3840x2160.jpg" alt="개인 생산성 낙관과 연구 분야 전체 영향 전망을 비교한 산점도" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                개인 생산성에 대한 낙관은 좁게 모이지만, 연구 분야 전체에 미칠 영향 전망은 넓게 갈립니다. (도입자조차 전체 영향은 확신하지 못합니다.)
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+              </figcaption>
+            </figure>
+
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>AI 도입률을 "시도"가 아니라 "습관"으로 재정의하십시오.</strong><br>"AI를 써봤다"는 응답률은 의미가 적습니다. 도구 로그나 짧은 설문으로 최근 한 주간 실제 업무에 AI를 쓴 사람 비율을 세십시오. 이 숫자를 매월 같은 방식으로 추적합니다. 81%와 20%의 차이가 진짜 도입 수준입니다. (30분)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>AI 효과를 파이프라인 단계별로 나눠 측정하십시오.</strong><br>시작, 중간, 완성 중 어디가 빨라지고 어디가 막히는지 확인합니다. 산출량만 보면 병목이 보이지 않습니다. (1시간)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">우리 팀의 핵심 업무 흐름을 시작-진행-완성 3단계로 나눠 주세요.
+각 단계에서 AI 도입 후 처리량이 얼마나 변했는지 추정 지표를 제안해 주세요.
+어느 단계가 빨라졌고 어느 단계가 새 병목이 되었는지 분석해 주세요.
+업무 흐름: [여기에 팀의 주요 업무 프로세스 입력]</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div></div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>AI 도입 격차를 점검하십시오.</strong><br>누가 매주 쓰고 누가 안 쓰는지 팀별, 직급별로 확인합니다. 앞서 쓰는 집단이 더 벌어지면 조직 내 격차가 됩니다. 뒤처진 집단에 교육과 도구를 우선 배치하십시오. (1시간)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>자기 보고 데이터입니다.</strong> 생산성 수치는 연구자 본인의 응답입니다. 본인이 느낀 변화여서 과대 보고 가능성이 있습니다. 실측 산출과는 차이가 날 수 있습니다.</p>
+            <p><strong>6개월은 짧습니다.</strong> 연구는 시작에서 출판까지 수년이 걸립니다. 지금 늘어난 작업 논문이 좋은 연구로 이어질지는 더 지켜봐야 합니다. 초기 신호일 뿐 최종 성과가 아닙니다.</p>
+            <p><strong>격차가 고착될 수 있습니다.</strong> 앞서 쓰는 집단이 더 빨리 벌어집니다. 도입 격차를 방치하면 자원과 성과의 격차로 굳어집니다.</p>
+            <p><strong>양이 질을 보장하지 않습니다.</strong> 작업 논문 75% 증가가 더 나은 연구를 뜻하지는 않습니다. 산출이 늘수록 검토 부담은 커집니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI는 일의 시작을 가속합니다. 그러나 완성의 병목과 도입 격차는 저절로 풀리지 않습니다. 측정 지점을 산출량에서 병목으로 옮겨야 합니다.</p>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <p><strong>코딩 에이전트(Coding Agent)</strong>: 사람의 지시를 받아 분석 코드를 스스로 작성하고 실행하는 AI 도구입니다. Claude Code가 대표적입니다. 답만 주는 챗봇과 달리 작업을 끝까지 수행합니다.</p>
+            <p><strong>작업 논문(Working Paper)</strong>: 정식 학술지 게재 전에 먼저 공개하는 초기 연구 결과물입니다. 기업의 초안 보고서나 시제품에 가깝습니다.</p>
+            <p><strong>피어리뷰(Peer Review)</strong>: 정식 출판 전에 동료 전문가가 내용을 검증하는 절차입니다. 학술 품질의 게이트입니다. 기업의 검수, 감사 절차와 유사합니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>AI 효과를 산출량이 아니라 최종 성과와 병목으로 측정하십시오. 앞단만 빨라지고 뒷단이 막히면 투자 효과는 절반입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>"써봤다"가 아니라 주간 실사용률을 KPI로 잡으십시오. 81%와 20%의 차이가 진짜 도입 수준입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 도입 격차가 조직 내 격차를 키우지 않는지 점검하십시오. 뒤처진 팀에 도구와 교육을 먼저 배치하십시오.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Lyttelton, T., Massenkoff, M., &amp; Wilmers, N. (2026, May). <em>Coding Agents in the Social Sciences</em> [Article]. Anthropic. <a href="https://www.anthropic.com/research/coding-agents-social-sciences" target="_blank" rel="noopener">https://www.anthropic.com/research/coding-agents-social-sciences</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://www.anthropic.com/research/coding-agents-social-sciences" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 패턴 A - 1:1 충돌형 (블랙 vs 골드) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">이 글 핵심은 하나예요. 시작은 75% 늘었는데 완성은 그대로. 우리 회사도 똑같아요. AI 깔고 보고서 초안은 쏟아지는데 결재까지 가는 건 작년이랑 비슷해요. 늘어난 건 일이 아니라 대기줄이에요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">에이 그래도 시작을 75% 더 한 게 어디예요. 저도 Claude Code 쓰는데 프로젝트 띄우는 속도 자체가 달라졌어요. 완성이 그대로인 건 검수를 안 늘려서 그런 거지, AI 탓은 아니죠.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그러니까 그게 문제라는 거예요. 검수를 안 늘리면 75% 더 만든 초안이 다 어디 쌓이겠어요. 병목은 사라진 게 아니라 자리만 옮긴 거예요. 생산량 늘었다고 좋아하는 사이에 뒷단이 터져요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 패턴 B - 끼어들기형 (레드 원댓글, 네이비 동의심화, 퍼플 다른각도) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">잠깐, 이 75%라는 숫자 어디서 나온 거예요? 본문 보면 자기 보고 데이터잖아요. 연구자가 스스로 "나 논문 더 냈어요" 한 걸 모은 거예요. 실제로 센 게 아니고요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 게다가 6개월 데이터예요. 논문은 시작부터 출판까지 몇 년 걸려요. 지금 늘어난 작업 논문이 좋은 연구인지는 아무도 몰라요. 숫자는 75인데 의미는 아직 0이에요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 저는 다른 게 더 무섭더라고요. 남자 이름이 여자 이름보다 두 배로 많이 썼다는 거요. 도구가 사람을 가려서 퍼지는 느낌이에요. 잘 쓰는 사람만 더 잘 쓰게 되는 거죠.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 패턴 C - 연쇄 반응형 (화이트 질문, 네이비 답, 블랙 태클, 화이트 마무리) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저는 팀에서 뭘 하면 되는 거예요? AI 깔라고는 했는데, 누가 진짜 쓰는지도 모르겠어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">본문에 답 있어요. "써봤다" 말고 "이번 주에 썼다"를 세요. 81%가 써봤다는데 매주 쓰는 건 20%예요. 그 20%가 진짜 숫자예요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">거기서 한 발 더 가야죠. 어디가 빨라지고 어디가 막히는지 단계별로 봐야 해요. 그냥 "많이 쓰네" 하고 끝내면 또 대기줄만 늘어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">아, 시작과 중간과 완성으로 나눠서 보라는 거군요. 그건 이번 주에 당장 해볼 수 있겠네요. 적어도 어디서 막히는지는 알아야겠어요.</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="./2025-04-20-paradox-of-ai-driven-productivity-gains.html">
+              <div class="next-post-title">AI가 만든 생산성 증가의 역설 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/리더의-결정-포인트.html" class="concept-chip">리더의 결정 포인트</a>
+      <a href="../wiki/concepts/kpi.html" class="concept-chip">KPI</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-05-27-anthropic-coding-agents-social-sciences.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html';
+    const ROASTING_QUOTE = 'AI가 시작을 75% 늘려도 완성이 그대로라면, 병목은 사라진 게 아니라 자리를 옮긴 것입니다. 귀사의 AI는 무엇을 늘렸고, 어디서 막혀 있습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+
+
+</body></html>

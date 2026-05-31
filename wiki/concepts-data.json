@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-05-30T08:05:00.687Z",
+  "generatedAt": "2026-05-31T07:42:25.293Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 88,
-    "totalRelationships": 284,
-    "totalPosts": 190,
+    "totalConcepts": 92,
+    "totalRelationships": 302,
+    "totalPosts": 194,
     "totalNewsletters": 50
   },
   "concepts": [
@@ -14,7 +14,7 @@
       "name": "리더의 결정 포인트",
       "aliases": [],
       "definition": "이 글에서 경영 리더가 행동으로 옮길 핵심 의사결정 지점입니다.",
-      "frequency": 59,
+      "frequency": 62,
       "category": "tech",
       "posts": [
         "2025-09-10-ai-cognitive-offloading",
@@ -75,6 +75,9 @@
         "2026-05-07-natural-language-autoencoders",
         "2026-05-08-teaching-claude-why",
         "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-05-27-anthropic-coding-agents-social-sciences",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
         "2026-05-29-openai-erdos-unit-distance-problem"
       ],
       "newsletters": [],
@@ -153,7 +156,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 44,
+      "frequency": 45,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -167,6 +170,7 @@
         "2026-03-20-karpathy-end-of-coding",
         "2026-04-02-gemma-4-open-model",
         "2026-04-24-deepseek-v4-pro-coding-benchmark",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
         "2025-07-15-why-meta-declared-asi",
         "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
         "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
@@ -325,7 +329,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 29,
+      "frequency": 30,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -352,6 +356,7 @@
         "2026-04-30-ctx2skill-context-learning",
         "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
         "2026-05-22-sundar-pichai-anxious-ai-future",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -452,7 +457,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 20,
+      "frequency": 21,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -469,6 +474,7 @@
         "2026-04-23-claude-code-quality-incident-postmortem",
         "2026-04-23-gpt-5-5-agentic-coding",
         "2026-04-24-deepseek-v4-pro-coding-benchmark",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
         "2026-04-01-claude-code-hidden-features"
@@ -681,6 +687,35 @@
       "needs_manual_review": false
     },
     {
+      "id": "kpi",
+      "slug": "kpi",
+      "name": "KPI",
+      "aliases": [],
+      "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
+      "frequency": 14,
+      "category": "research",
+      "posts": [
+        "2026-03-09-ai-last-mile-transformation",
+        "2026-03-18-karpathy-autoresearch",
+        "2026-03-19-anthropic-81k-interviews",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-04-08-gallup-engagement-ai-paradox",
+        "2026-04-09-anthropic-2026-agentic-coding-trends",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-05-27-anthropic-coding-agents-social-sciences",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2025-03-05-redesigning-work-structure-in-ai-era",
+        "2025-04-05-shortsification-era-content-industry-crisis",
+        "2025-04-10-why-ai-first-declaration-matters",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-03-19",
+      "needs_manual_review": false
+    },
+    {
       "id": "tpu",
       "slug": "tpu",
       "name": "TPU",
@@ -706,32 +741,6 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2025-12-17",
-      "needs_manual_review": false
-    },
-    {
-      "id": "kpi",
-      "slug": "kpi",
-      "name": "KPI",
-      "aliases": [],
-      "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
-      "frequency": 11,
-      "category": "research",
-      "posts": [
-        "2026-03-09-ai-last-mile-transformation",
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-19-anthropic-81k-interviews",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-14-automated-alignment-researchers",
-        "2025-03-05-redesigning-work-structure-in-ai-era",
-        "2025-04-05-shortsification-era-content-industry-crisis",
-        "2025-04-10-why-ai-first-declaration-matters",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-03-19",
       "needs_manual_review": false
     },
     {
@@ -813,6 +822,31 @@
       "needs_manual_review": false
     },
     {
+      "id": "rag",
+      "slug": "rag",
+      "name": "RAG",
+      "aliases": [],
+      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
+      "frequency": 10,
+      "category": "tech",
+      "posts": [
+        "2026-04-03-karpathy-llm-knowledge-base",
+        "2026-04-07-ai-agent-traps",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2025-03-05-speculating-why-naver-lee-haejin-returned",
+        "2025-07-10-why-openai-is-no-longer-the-leader",
+        "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-02-15",
+      "lastSeen": "2026-03-28",
+      "needs_manual_review": false
+    },
+    {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
@@ -835,30 +869,6 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "rag",
-      "slug": "rag",
-      "name": "RAG",
-      "aliases": [],
-      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
-      "frequency": 9,
-      "category": "tech",
-      "posts": [
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-30-ctx2skill-context-learning",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2026-03-28",
       "needs_manual_review": false
     },
     {
@@ -911,6 +921,55 @@
       "needs_manual_review": false
     },
     {
+      "id": "organizational-design",
+      "slug": "organizational-design",
+      "name": "조직설계",
+      "aliases": [
+        "조직 설계",
+        "org design",
+        "organization design"
+      ],
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "frequency": 8,
+      "category": "company",
+      "posts": [
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2025-04-20",
+      "needs_manual_review": false
+    },
+    {
+      "id": "생산성",
+      "slug": "생산성",
+      "name": "생산성",
+      "aliases": [],
+      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
+      "frequency": 7,
+      "category": "research",
+      "posts": [
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2025-09-22-workslop",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-01-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai규제",
       "slug": "ai규제",
       "name": "AI규제",
@@ -956,32 +1015,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "organizational-design",
-      "slug": "organizational-design",
-      "name": "조직설계",
-      "aliases": [
-        "조직 설계",
-        "org design",
-        "organization design"
-      ],
-      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
-      "frequency": 7,
-      "category": "company",
-      "posts": [
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-05-15-gen-ai-performance-reviews",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2025-04-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
@@ -1005,24 +1038,45 @@
       "needs_manual_review": false
     },
     {
-      "id": "생산성",
-      "slug": "생산성",
-      "name": "생산성",
+      "id": "강화학습",
+      "slug": "강화학습",
+      "name": "강화학습",
       "aliases": [],
-      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
+      "definition": "보상 신호로 행동을 학습하는 머신러닝 방법입니다. 추론 능력 향상의 핵심 기법으로 부상했습니다.",
+      "frequency": 6,
+      "category": "tech",
+      "posts": [
+        "2026-02-02-advisor-model-black-box-llm",
+        "2026-03-01-conductor-multi-agent-orchestration",
+        "2026-03-10-openclaw-rl",
+        "2026-03-31-asi-evolve-ai-accelerates-ai",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2025-04-15-ai-from-learning-era-to-experience-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-15",
+      "lastSeen": "2025-04-15",
+      "needs_manual_review": false
+    },
+    {
+      "id": "llms",
+      "slug": "llms",
+      "name": "LLMs",
+      "aliases": [],
+      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
       "frequency": 6,
       "category": "research",
       "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2025-09-22-workslop",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
+        "2026-02-02-advisor-model-black-box-llm",
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-04-07-llm-behavioral-alignment-gap",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2026-02-11-llm-behavioral-alignment-gap"
       ],
       "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-01-16",
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -1131,46 +1185,6 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "강화학습",
-      "slug": "강화학습",
-      "name": "강화학습",
-      "aliases": [],
-      "definition": "보상 신호로 행동을 학습하는 머신러닝 방법입니다. 추론 능력 향상의 핵심 기법으로 부상했습니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-03-10-openclaw-rl",
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2025-04-15-ai-from-learning-era-to-experience-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-15",
-      "lastSeen": "2025-04-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "llms",
-      "slug": "llms",
-      "name": "LLMs",
-      "aliases": [],
-      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
-      "frequency": 5,
-      "category": "research",
-      "posts": [
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2026-02-11-llm-behavioral-alignment-gap"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -1388,6 +1402,44 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-03-16",
+      "needs_manual_review": false
+    },
+    {
+      "id": "노동시장",
+      "slug": "노동시장",
+      "name": "노동시장",
+      "aliases": [],
+      "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
+      "frequency": 4,
+      "category": "survival",
+      "posts": [
+        "2026-03-05-ai-labor-market-exposure",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-05-10-will-ai-really-replace-our-work",
+        "2025-05-20-generative-ai-effect-on-youth-employment"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2026-03-05",
+      "needs_manual_review": false
+    },
+    {
+      "id": "gpts",
+      "slug": "gpts",
+      "name": "GPTs",
+      "aliases": [],
+      "definition": "ChatGPT 위에 만드는 맞춤형 챗봇입니다. OpenAI가 2023년 말 도입했습니다.",
+      "frequency": 4,
+      "category": "survival",
+      "posts": [
+        "2026-03-05-ai-labor-market-exposure",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-03-20-ai-trends-2025-agents-verticals-biz",
+        "2025-03-10-ai-era-survival-strategy"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-10",
+      "lastSeen": "2026-03-05",
       "needs_manual_review": false
     },
     {
@@ -1657,6 +1709,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "grpo",
+      "slug": "grpo",
+      "name": "GRPO",
+      "aliases": [],
+      "definition": "GRPO는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-02-02-advisor-model-black-box-llm",
+        "2026-03-31-asi-evolve-ai-accelerates-ai",
+        "2026-05-28-sia-self-improving-ai-harness-weights"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
+    },
+    {
       "id": "멀티에이전트",
       "slug": "멀티에이전트",
       "name": "멀티에이전트",
@@ -1672,42 +1742,6 @@
       "newsletters": [],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "노동시장",
-      "slug": "노동시장",
-      "name": "노동시장",
-      "aliases": [],
-      "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
-      "frequency": 3,
-      "category": "survival",
-      "posts": [
-        "2026-03-05-ai-labor-market-exposure",
-        "2025-05-10-will-ai-really-replace-our-work",
-        "2025-05-20-generative-ai-effect-on-youth-employment"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2026-03-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "gpts",
-      "slug": "gpts",
-      "name": "GPTs",
-      "aliases": [],
-      "definition": "ChatGPT 위에 만드는 맞춤형 챗봇입니다. OpenAI가 2023년 말 도입했습니다.",
-      "frequency": 3,
-      "category": "survival",
-      "posts": [
-        "2026-03-05-ai-labor-market-exposure",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-03-10-ai-era-survival-strategy"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-10",
-      "lastSeen": "2026-03-05",
       "needs_manual_review": false
     },
     {
@@ -1745,6 +1779,24 @@
       "firstSeen": "2025-03-25",
       "lastSeen": "2026-03-16",
       "needs_manual_review": false
+    },
+    {
+      "id": "ml",
+      "slug": "ml",
+      "name": "ML",
+      "aliases": [],
+      "definition": "ML는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-03-18-karpathy-autoresearch",
+        "2026-03-26-ai-scientist-nature",
+        "2026-05-28-sia-self-improving-ai-harness-weights"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-06",
+      "lastSeen": "2026-03-06",
+      "needs_manual_review": true
     },
     {
       "id": "metr",
@@ -1836,6 +1888,42 @@
       "newsletters": [],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-05-10",
+      "needs_manual_review": true
+    },
+    {
+      "id": "ssrn",
+      "slug": "ssrn",
+      "name": "SSRN",
+      "aliases": [],
+      "definition": "SSRN는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-04-07-ai-agent-traps",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-28",
+      "lastSeen": "2026-03-28",
+      "needs_manual_review": true
+    },
+    {
+      "id": "에이전트설계",
+      "slug": "에이전트설계",
+      "name": "에이전트설계",
+      "aliases": [],
+      "definition": "에이전트설계는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-04-08-managed-agents-decoupling",
+        "2026-04-09-advisor-strategy-claude-opus",
+        "2026-05-28-sia-self-improving-ai-harness-weights"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
       "needs_manual_review": true
     },
     {
@@ -2157,7 +2245,7 @@
     {
       "source": "리더의 결정 포인트",
       "target": "GPU",
-      "strength": 7
+      "strength": 8
     },
     {
       "source": "리더의 결정 포인트",
@@ -2172,7 +2260,7 @@
     {
       "source": "리더의 결정 포인트",
       "target": "AI 에이전트",
-      "strength": 17
+      "strength": 18
     },
     {
       "source": "리더의 결정 포인트",
@@ -2187,7 +2275,7 @@
     {
       "source": "리더의 결정 포인트",
       "target": "CTO",
-      "strength": 12
+      "strength": 13
     },
     {
       "source": "리더의 결정 포인트",
@@ -2222,7 +2310,7 @@
     {
       "source": "리더의 결정 포인트",
       "target": "KPI",
-      "strength": 7
+      "strength": 10
     },
     {
       "source": "리더의 결정 포인트",
@@ -2237,7 +2325,7 @@
     {
       "source": "리더의 결정 포인트",
       "target": "RAG",
-      "strength": 4
+      "strength": 5
     },
     {
       "source": "리더의 결정 포인트",
@@ -2251,17 +2339,22 @@
     },
     {
       "source": "리더의 결정 포인트",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "리더의 결정 포인트",
       "target": "조직설계",
       "strength": 4
     },
     {
       "source": "리더의 결정 포인트",
       "target": "생산성",
+      "strength": 3
+    },
+    {
+      "source": "리더의 결정 포인트",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "리더의 결정 포인트",
+      "target": "강화학습",
       "strength": 2
     },
     {
@@ -2321,6 +2414,11 @@
     },
     {
       "source": "리더의 결정 포인트",
+      "target": "ML",
+      "strength": 2
+    },
+    {
+      "source": "리더의 결정 포인트",
       "target": "METR",
       "strength": 2
     },
@@ -2333,6 +2431,11 @@
       "source": "리더의 결정 포인트",
       "target": "오픈소스AI",
       "strength": 2
+    },
+    {
+      "source": "리더의 결정 포인트",
+      "target": "에이전트설계",
+      "strength": 3
     },
     {
       "source": "리더의 결정 포인트",
@@ -2396,13 +2499,13 @@
     },
     {
       "source": "LLM",
-      "target": "TPU",
-      "strength": 4
+      "target": "KPI",
+      "strength": 3
     },
     {
       "source": "LLM",
-      "target": "KPI",
-      "strength": 3
+      "target": "TPU",
+      "strength": 4
     },
     {
       "source": "LLM",
@@ -2421,13 +2524,13 @@
     },
     {
       "source": "LLM",
-      "target": "ASI",
-      "strength": 3
+      "target": "RAG",
+      "strength": 4
     },
     {
       "source": "LLM",
-      "target": "RAG",
-      "strength": 4
+      "target": "ASI",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2441,6 +2544,16 @@
     },
     {
       "source": "LLM",
+      "target": "조직설계",
+      "strength": 4
+    },
+    {
+      "source": "LLM",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "AI규제",
       "strength": 2
     },
@@ -2451,18 +2564,13 @@
     },
     {
       "source": "LLM",
-      "target": "조직설계",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
       "target": "HBM",
       "strength": 3
     },
     {
       "source": "LLM",
-      "target": "생산성",
-      "strength": 2
+      "target": "LLMs",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2478,11 +2586,6 @@
       "source": "LLM",
       "target": "IP",
       "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "LLMs",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -2506,6 +2609,11 @@
     },
     {
       "source": "LLM",
+      "target": "GPTs",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "한국AI",
       "strength": 3
     },
@@ -2517,11 +2625,6 @@
     {
       "source": "LLM",
       "target": "멀티에이전트",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "GPTs",
       "strength": 2
     },
     {
@@ -2547,7 +2650,7 @@
     {
       "source": "GPU",
       "target": "AI 에이전트",
-      "strength": 6
+      "strength": 7
     },
     {
       "source": "GPU",
@@ -2562,7 +2665,7 @@
     {
       "source": "GPU",
       "target": "CTO",
-      "strength": 6
+      "strength": 7
     },
     {
       "source": "GPU",
@@ -2596,13 +2699,13 @@
     },
     {
       "source": "GPU",
-      "target": "TPU",
-      "strength": 8
+      "target": "KPI",
+      "strength": 3
     },
     {
       "source": "GPU",
-      "target": "KPI",
-      "strength": 2
+      "target": "TPU",
+      "strength": 8
     },
     {
       "source": "GPU",
@@ -2616,12 +2719,12 @@
     },
     {
       "source": "GPU",
-      "target": "ASI",
-      "strength": 2
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "GPU",
-      "target": "RAG",
+      "target": "ASI",
       "strength": 2
     },
     {
@@ -2636,6 +2739,11 @@
     },
     {
       "source": "GPU",
+      "target": "강화학습",
+      "strength": 3
+    },
+    {
+      "source": "GPU",
       "target": "GPQA",
       "strength": 4
     },
@@ -2647,11 +2755,6 @@
     {
       "source": "GPU",
       "target": "SWE",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "강화학습",
       "strength": 2
     },
     {
@@ -2687,6 +2790,11 @@
     {
       "source": "GPU",
       "target": "RL",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
+      "target": "ML",
       "strength": 2
     },
     {
@@ -2751,12 +2859,12 @@
     },
     {
       "source": "API",
-      "target": "TPU",
+      "target": "KPI",
       "strength": 2
     },
     {
       "source": "API",
-      "target": "KPI",
+      "target": "TPU",
       "strength": 2
     },
     {
@@ -2786,6 +2894,11 @@
     },
     {
       "source": "API",
+      "target": "강화학습",
+      "strength": 2
+    },
+    {
+      "source": "API",
       "target": "GPQA",
       "strength": 3
     },
@@ -2801,11 +2914,6 @@
     },
     {
       "source": "API",
-      "target": "강화학습",
-      "strength": 2
-    },
-    {
-      "source": "API",
       "target": "MMLU",
       "strength": 2
     },
@@ -2817,6 +2925,11 @@
     {
       "source": "API",
       "target": "오픈소스AI",
+      "strength": 2
+    },
+    {
+      "source": "API",
+      "target": "에이전트설계",
       "strength": 2
     },
     {
@@ -2881,13 +2994,13 @@
     },
     {
       "source": "비즈니스 비용",
-      "target": "TPU",
-      "strength": 2
+      "target": "KPI",
+      "strength": 5
     },
     {
       "source": "비즈니스 비용",
-      "target": "KPI",
-      "strength": 5
+      "target": "TPU",
+      "strength": 2
     },
     {
       "source": "비즈니스 비용",
@@ -2901,6 +3014,11 @@
     },
     {
       "source": "비즈니스 비용",
+      "target": "강화학습",
+      "strength": 2
+    },
+    {
+      "source": "비즈니스 비용",
       "target": "GPQA",
       "strength": 2
     },
@@ -2908,11 +3026,6 @@
       "source": "비즈니스 비용",
       "target": "SWE",
       "strength": 3
-    },
-    {
-      "source": "비즈니스 비용",
-      "target": "강화학습",
-      "strength": 2
     },
     {
       "source": "비즈니스 비용",
@@ -2936,6 +3049,11 @@
     },
     {
       "source": "비즈니스 비용",
+      "target": "에이전트설계",
+      "strength": 2
+    },
+    {
+      "source": "비즈니스 비용",
       "target": "코딩AI",
       "strength": 3
     },
@@ -2952,7 +3070,7 @@
     {
       "source": "AI 에이전트",
       "target": "CTO",
-      "strength": 10
+      "strength": 11
     },
     {
       "source": "AI 에이전트",
@@ -2982,7 +3100,7 @@
     {
       "source": "AI 에이전트",
       "target": "KPI",
-      "strength": 4
+      "strength": 5
     },
     {
       "source": "AI 에이전트",
@@ -2997,16 +3115,16 @@
     {
       "source": "AI 에이전트",
       "target": "RAG",
+      "strength": 4
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "강화학습",
       "strength": 3
     },
     {
       "source": "AI 에이전트",
       "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "강화학습",
       "strength": 2
     },
     {
@@ -3018,6 +3136,11 @@
       "source": "AI 에이전트",
       "target": "자동화",
       "strength": 3
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "GPTs",
+      "strength": 2
     },
     {
       "source": "AI 에이전트",
@@ -3036,7 +3159,12 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "GPTs",
+      "target": "ML",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "에이전트설계",
       "strength": 2
     },
     {
@@ -3096,13 +3224,13 @@
     },
     {
       "source": "AGI",
-      "target": "ASI",
-      "strength": 8
+      "target": "RAG",
+      "strength": 2
     },
     {
       "source": "AGI",
-      "target": "RAG",
-      "strength": 2
+      "target": "ASI",
+      "strength": 8
     },
     {
       "source": "AGI",
@@ -3171,12 +3299,22 @@
     },
     {
       "source": "CTO",
+      "target": "KPI",
+      "strength": 2
+    },
+    {
+      "source": "CTO",
       "target": "UI",
       "strength": 2
     },
     {
       "source": "CTO",
       "target": "RAG",
+      "strength": 3
+    },
+    {
+      "source": "CTO",
+      "target": "강화학습",
       "strength": 2
     },
     {
@@ -3208,6 +3346,16 @@
       "source": "CTO",
       "target": "오픈소스AI",
       "strength": 2
+    },
+    {
+      "source": "CTO",
+      "target": "SSRN",
+      "strength": 2
+    },
+    {
+      "source": "CTO",
+      "target": "에이전트설계",
+      "strength": 3
     },
     {
       "source": "CTO",
@@ -3355,6 +3503,31 @@
       "strength": 3
     },
     {
+      "source": "KPI",
+      "target": "AI 안전",
+      "strength": 2
+    },
+    {
+      "source": "KPI",
+      "target": "AI전환",
+      "strength": 2
+    },
+    {
+      "source": "KPI",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "KPI",
+      "target": "IP",
+      "strength": 2
+    },
+    {
+      "source": "KPI",
+      "target": "ML",
+      "strength": 2
+    },
+    {
       "source": "TPU",
       "target": "CFO",
       "strength": 3
@@ -3372,21 +3545,6 @@
     {
       "source": "TPU",
       "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "KPI",
-      "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "KPI",
-      "target": "AI전환",
-      "strength": 2
-    },
-    {
-      "source": "KPI",
-      "target": "IP",
       "strength": 2
     },
     {
@@ -3431,12 +3589,22 @@
     },
     {
       "source": "MCP",
-      "target": "DRAM",
+      "target": "GPTs",
       "strength": 2
     },
     {
       "source": "MCP",
-      "target": "GPTs",
+      "target": "DRAM",
+      "strength": 2
+    },
+    {
+      "source": "RAG",
+      "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "RAG",
+      "target": "SSRN",
       "strength": 2
     },
     {
@@ -3447,11 +3615,6 @@
     {
       "source": "ASI",
       "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "CISO",
       "strength": 2
     },
     {
@@ -3475,6 +3638,11 @@
       "strength": 2
     },
     {
+      "source": "조직설계",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
       "source": "CFO",
       "target": "EPS",
       "strength": 2
@@ -3485,13 +3653,18 @@
       "strength": 2
     },
     {
-      "source": "조직설계",
-      "target": "생산성",
+      "source": "HBM",
+      "target": "DRAM",
       "strength": 2
     },
     {
-      "source": "HBM",
-      "target": "DRAM",
+      "source": "강화학습",
+      "target": "GRPO",
+      "strength": 3
+    },
+    {
+      "source": "LLMs",
+      "target": "RLHF",
       "strength": 2
     },
     {
@@ -3520,11 +3693,6 @@
       "strength": 2
     },
     {
-      "source": "LLMs",
-      "target": "RLHF",
-      "strength": 2
-    },
-    {
       "source": "RLHF",
       "target": "RL",
       "strength": 2
@@ -3540,8 +3708,23 @@
       "strength": 2
     },
     {
+      "source": "노동시장",
+      "target": "GPTs",
+      "strength": 2
+    },
+    {
+      "source": "노동시장",
+      "target": "AI대체",
+      "strength": 2
+    },
+    {
       "source": "MMLU",
       "target": "오픈소스AI",
+      "strength": 2
+    },
+    {
+      "source": "CISO",
+      "target": "SSRN",
       "strength": 2
     },
     {
@@ -3552,11 +3735,6 @@
     {
       "source": "반도체",
       "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "노동시장",
-      "target": "AI대체",
       "strength": 2
     },
     {

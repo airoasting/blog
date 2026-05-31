@@ -15,8 +15,12 @@
 
 ## 최신 포스트
 - 2026-05-29 [기술] AI가 80년 수학 난제를 풀었습니다 — /blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html
+- 2026-05-28 [기술] AI가 AI를 고치는 두 레버를 동시에 당겼습니다 — /blog/tech/2026-05-28-sia-self-improving-ai-harness-weights.html
+- 2026-05-27 [리서치] AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다 — /blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html
+- 2026-05-27 [생존] 모두가 AI를 마스터하는데 나만 뒤처졌다는 착각 — /blog/survival/2026-05-27-ai-fomo-mastering-illusion.html
 - 2026-05-22 [리더] 순다르 피차이: AI가 불안한 건 당연합니다 — /blog/leader/2026-05-22-sundar-pichai-anxious-ai-future.html
 - 2026-05-20 [생존] AI가 만든 콘텐츠가 세상을 덮고 있습니다 — /blog/survival/2026-05-20-ai-slop-books-music-lawsuits-science.html
+- 2026-05-20 [생존] 신입 채용을 줄인 건 AI가 아니라 재택근무였습니다 — /blog/survival/2026-05-20-broken-ladder-wfh-not-ai.html
 - 2026-05-15 [리서치] AI 성과 평가, 더 그럴듯할수록 더 위험합니다 — /blog/research/2026-05-15-gen-ai-performance-reviews.html
 - 2026-05-10 [리더] 개리 탄: AI를 채팅창 대신 운영체제로 만드는 법 — /blog/leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html
 - 2026-04-14 [기업] 도시 모드: AI 시대 경영 리더를 위한 4원칙 — /blog/company/2026-04-14-dorsey-mode-ai-org-design.html

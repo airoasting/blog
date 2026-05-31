@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "AI 코딩 에이전트, 생산은 늘리고 병목은 옮겼습니다",
+      "date": "2026-05-27",
+      "category": "research",
+      "source": "Anthropic (Lyttelton, Massenkoff & Wilmers)",
+      "tags": [
+        "코딩에이전트",
+        "ClaudeCode",
+        "AI생산성",
+        "AI도입격차",
+        "연구생산성"
+      ],
+      "slug": "2026-05-27-anthropic-coding-agents-social-sciences",
+      "file": "research/2026-05-27-anthropic-coding-agents-social-sciences.html",
+      "summary": "Anthropic이 정량 사회과학자 1,260명을 조사했습니다. 코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다.",
+      "roasting_quote": "AI가 시작을 75% 늘려도 완성이 그대로라면, 병목은 사라진 게 아니라 자리를 옮긴 것입니다. 귀사의 AI는 무엇을 늘렸고, 어디서 막혀 있습니까?",
+      "next_post": "research/2025-04-20-paradox-of-ai-driven-productivity-gains.html"
+    },
+    {
       "title": "AI가 80년 수학 난제를 풀었습니다",
       "date": "2026-05-29",
       "category": "tech",
@@ -17,6 +35,43 @@
       "file": "tech/2026-05-29-openai-erdos-unit-distance-problem.html",
       "summary": "OpenAI 모델이 1946년 폴 에르되시의 단위 거리 문제를 자율로 해결했습니다. AI는 80년간 수학자들이 시도한 방향과 반대로 접근해 반증을 찾아냈습니다.",
       "roasting_quote": "80년 묵은 수학 난제가 1,000달러에 해결됐습니다. 당신 조직의 미해결 과제는 얼마짜리입니까?",
+      "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
+    },
+    {
+      "title": "AI가 AI를 고치는 두 레버를 동시에 당겼습니다",
+      "date": "2026-05-28",
+      "category": "tech",
+      "source": "arXiv (Hebbar, Manawat, Verboomen 외)",
+      "tags": [
+        "자기개선AI",
+        "에이전트",
+        "LoRA",
+        "강화학습",
+        "AlphaEvolve",
+        "에이전트설계"
+      ],
+      "slug": "2026-05-28-sia-self-improving-ai-harness-weights",
+      "file": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html",
+      "summary": "SIA는 에이전트의 스캐폴드와 모델 가중치를 동시에 자기진화시키는 프레임워크입니다. LawBench 정확도 13.5%에서 70.1%로, TriMul 12배 가속을 만들었습니다.",
+      "roasting_quote": "당신은 프롬프트만 고치고 있습니까, 모델만 튜닝하고 있습니까? AI는 둘 다 동시에 진화시키고 있습니다.",
+      "next_post": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html"
+    },
+    {
+      "title": "모두가 AI를 마스터하는데 나만 뒤처졌다는 착각",
+      "date": "2026-05-27",
+      "category": "survival",
+      "source": "Nature (Zhang-Ren Chen)",
+      "tags": [
+        "AIFOMO",
+        "생산성",
+        "지식노동",
+        "AI도구",
+        "신호와소음"
+      ],
+      "slug": "2026-05-27-ai-fomo-mastering-illusion",
+      "file": "survival/2026-05-27-ai-fomo-mastering-illusion.html",
+      "summary": "네이처 커리어 칼럼. 중국 병원 약사가 AI FOMO로 4개 기기에 에이전트 도구를 깔고 본업 연구를 2년간 멈춘 경험을 고백합니다. 가장 잘 쓰는 사람은 신호가 소음에서 분리될 때까지 기다린 사람이었습니다.",
+      "roasting_quote": "탭 47개를 열어두고 본업은 2년째 제자리입니다. AI를 따라잡고 계십니까, 아니면 따라잡는 척하고 계십니까?",
       "next_post": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html"
     },
     {
@@ -37,6 +92,24 @@
       "summary": "구글 CEO 순다르 피차이가 AI 불안을 공개 인정하고 AGI 3~10년론을 제시한 이유를 설명합니다.",
       "roasting_quote": "AI 도입을 밀어붙이면서 직원 불안은 외면하고 계십니까? 구글 CEO조차 그 불안이 정당하다고 말합니다.",
       "next_post": "tech/2026-05-29-openai-erdos-unit-distance-problem.html"
+    },
+    {
+      "title": "신입 채용을 줄인 건 AI가 아니라 재택근무였습니다",
+      "date": "2026-05-20",
+      "category": "survival",
+      "source": "SSRN (Peter John Lambert, Yannick Schindler)",
+      "tags": [
+        "신입채용",
+        "재택근무",
+        "생성형AI",
+        "노동시장",
+        "조직설계"
+      ],
+      "slug": "2026-05-20-broken-ladder-wfh-not-ai",
+      "file": "survival/2026-05-20-broken-ladder-wfh-not-ai.html",
+      "summary": "신입 채용 감소를 생성형 AI 탓으로 보는 시각이 많습니다. 2억 4,300만 건 채용 데이터를 분석한 연구는 진짜 원인이 재택근무라고 말합니다. 둘을 함께 넣으면 AI 효과는 사라집니다.",
+      "roasting_quote": "신입 채용이 줄어든 진짜 범인은 AI가 아닐 수 있습니다. 당신 조직의 재택근무 설계는 신입을 키울 수 있습니까?",
+      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
       "title": "AI가 만든 콘텐츠가 세상을 덮고 있습니다",
