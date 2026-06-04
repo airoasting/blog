@@ -146,6 +146,14 @@
 
             <p><strong>첫째, 언어만 바뀌어도 성능이 절반으로 떨어집니다.</strong> K-BrowseComp는 한국어 웹을 뒤져 답을 찾는 문제 400개로 구성됩니다. 최고 점수는 GPT-5.5의 45.67%였습니다. 같은 급 모델이 영어 BrowseComp에서는 84%를 넘깁니다. 모델 성능이 아니라 언어 환경이 격차를 만듭니다.</p>
 
+            <figure class="post-figure" style="margin: 28px auto; width: 70%;">
+              <img src="./images/2026_06_01_k-browsecomp-korean-web-agent-benchmark/figure1-accuracy-calibration.png" alt="K-BrowseComp 평가 모델의 정확도와 보정 오차 분포. 글로벌 모델일수록 좌상단 강세 영역에, 국산 모델일수록 우하단 약세 영역에 분포한다." loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                K-BrowseComp-Verified 평가 모델의 정확도(세로)와 보정 오차(가로). 정확도가 높고 보정 오차가 낮을수록 우수합니다. 음영 사분면은 모델 전체의 중앙값으로 나뉘며, 점선은 파레토 경계입니다. 글로벌 모델은 좌상단 강세 영역에, 국산 모델은 우하단 약세 영역에 몰려 있습니다.
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: Lee 외, K-BrowseComp (2026), Figure 1. 본문 데이터로 재구성.</span>
+              </figcaption>
+            </figure>
+
             <div class="stat-row">
               <div class="stat-card">
                 <div class="stat-num">45.67%</div>
