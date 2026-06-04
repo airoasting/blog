@@ -144,14 +144,16 @@ function renderGraph(rootDir, outPath) {
       link.classed('faded', false).classed('highlighted', false);
     }
 
-    const pad = 40;
+    const pad = 36;
+    const ringR = Math.min(W, H) * 0.42;
     d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(60).strength(d => Math.min(0.6, d.weight * 0.1)))
-      .force('charge', d3.forceManyBody().strength(-160).distanceMax(360))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(d => Math.min(0.5, d.weight * 0.08)))
+      .force('charge', d3.forceManyBody().strength(-340).distanceMax(520))
       .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('x', d3.forceX(W / 2).strength(d => d.degree <= 1 ? 0.45 : 0.12))
-      .force('y', d3.forceY(H / 2).strength(d => d.degree <= 1 ? 0.45 : 0.12))
-      .force('collide', d3.forceCollide(d => d.r + 6))
+      .force('radial', d3.forceRadial(d => d.degree <= 1 ? ringR : ringR * 0.55, W / 2, H / 2).strength(d => d.degree <= 1 ? 0.22 : 0.07))
+      .force('x', d3.forceX(W / 2).strength(0.03))
+      .force('y', d3.forceY(H / 2).strength(0.03))
+      .force('collide', d3.forceCollide(d => d.r + 7))
       .on('tick', () => {
         nodes.forEach(d => {
           d.x = Math.max(pad + d.r, Math.min(W - pad - d.r, d.x));
