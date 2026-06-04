@@ -12,6 +12,12 @@ function renderGraph(rootDir, outPath) {
 
   html = html.replace(/<title>[^<]*<\/title>/, '<title>Concept Graph · AI ROASTING · Blog</title>');
 
+  // wiki 그래프는 다크 그린 배경 (insights 페이지는 원본 보라색 유지)
+  html = html.replace(
+    'background:radial-gradient(ellipse at 50% 55%, #1A1140 0%, #0B0820 35%, #050310 70%, #020108 100%);',
+    'background:radial-gradient(ellipse at 50% 55%, #103024 0%, #0A2018 35%, #061310 70%, #020806 100%);'
+  );
+
   const newScript = `
 <!-- D3.js v7 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -138,12 +144,19 @@ function renderGraph(rootDir, outPath) {
       link.classed('faded', false).classed('highlighted', false);
     }
 
+    const pad = 40;
     d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(80).strength(d => Math.min(0.6, d.weight * 0.1)))
-      .force('charge', d3.forceManyBody().strength(-280))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(60).strength(d => Math.min(0.6, d.weight * 0.1)))
+      .force('charge', d3.forceManyBody().strength(-160).distanceMax(360))
       .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('x', d3.forceX(W / 2).strength(d => d.degree <= 1 ? 0.45 : 0.12))
+      .force('y', d3.forceY(H / 2).strength(d => d.degree <= 1 ? 0.45 : 0.12))
       .force('collide', d3.forceCollide(d => d.r + 6))
       .on('tick', () => {
+        nodes.forEach(d => {
+          d.x = Math.max(pad + d.r, Math.min(W - pad - d.r, d.x));
+          d.y = Math.max(pad + d.r, Math.min(H - pad - d.r, d.y));
+        });
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
         node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
       });
