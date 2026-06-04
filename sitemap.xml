@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Category Pages -->
   <url>
     <loc>https://airoasting.github.io/blog/research/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -49,7 +49,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/survival/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1218,6 +1218,24 @@
   <url>
     <loc>https://airoasting.github.io/blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html</loc>
     <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-06-02-next-era-knowledge-work.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/tech/2026-05-27-openai-self-improving-tax-agents-codex.html</loc>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

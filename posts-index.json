@@ -1,6 +1,62 @@
 {
   "posts": [
     {
+      "title": "세무 AI가 사람의 수정을 학습해 스스로 진화합니다",
+      "date": "2026-05-27",
+      "category": "tech",
+      "source": "OpenAI",
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "자기개선AI",
+        "세무자동화",
+        "피드백루프",
+        "전문서비스"
+      ],
+      "slug": "2026-05-27-openai-self-improving-tax-agents-codex",
+      "file": "tech/2026-05-27-openai-self-improving-tax-agents-codex.html",
+      "summary": "OpenAI가 Thrive·Crete와 자기개선 세무 AI를 만들었습니다. 회계사의 수정을 Codex가 평가와 코드로 바꿔, 6주 만에 정확도가 25%에서 86%로 올랐습니다.",
+      "roasting_quote": "당신 조직의 AI는 6주 만에 25%에서 86%로 좋아졌습니까, 작년 그대로입니까? 차이는 더 똑똑한 모델이 아니라 피드백 루프입니다.",
+      "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
+    },
+    {
+      "title": "개발자와 지식 노동자의 경계가 사라지고 있습니다",
+      "date": "2026-06-02",
+      "category": "survival",
+      "source": "OpenAI (The Next Era of Knowledge Work)",
+      "tags": [
+        "지식노동",
+        "AI에이전트",
+        "Codex",
+        "직업변화",
+        "조직설계"
+      ],
+      "slug": "2026-06-02-next-era-knowledge-work",
+      "file": "survival/2026-06-02-next-era-knowledge-work.html",
+      "summary": "OpenAI가 공개한 Codex 사용 데이터에서 지식 노동자가 개발자보다 3배 빠르게 AI 에이전트를 받아들입니다. 일에 가장 가까운 사람이 직접 도구를 만들면 자료를 옮기던 조직의 중간 층이 줄어듭니다.",
+      "roasting_quote": "그동안 당신 조직의 절반은 자료를 만드는 게 아니라 옮기고 맞추고 승인받는 데 시간을 썼습니다. 그 마찰이 사라지면, 그 마찰을 처리하던 자리도 함께 사라집니다.",
+      "next_post": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html"
+    },
+    {
+      "title": "GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다",
+      "date": "2026-06-01",
+      "category": "research",
+      "source": "arXiv (Nahyun Lee 외 14인)",
+      "tags": [
+        "AI에이전트",
+        "한국어AI",
+        "벤치마크",
+        "웹브라우징",
+        "언어격차",
+        "국산LLM"
+      ],
+      "slug": "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
+      "file": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html",
+      "summary": "한국어 웹 탐색 능력을 재는 벤치마크 K-BrowseComp가 공개됐습니다. 최신 모델도 30~45%에 그쳤고 국산 파운데이션 모델은 0~10%였습니다.",
+      "roasting_quote": "영어 벤치마크 84점을 보고 한국어 업무에 AI를 맡기셨습니까? 같은 모델이 한국어 웹에서는 45점을 받습니다.",
+      "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
+    },
+    {
       "title": "AI 에이전트로 논문은 75% 늘었지만 출판은 그대로였습니다",
       "date": "2026-05-27",
       "category": "research",
@@ -16,7 +72,7 @@
       "file": "research/2026-05-27-anthropic-coding-agents-social-sciences.html",
       "summary": "Anthropic이 정량 사회과학자 1,260명을 조사했습니다. 코딩 에이전트 사용자는 작업 논문을 75% 더 냈지만 학술지 제출은 그대로였습니다.",
       "roasting_quote": "AI가 시작을 75% 늘려도 완성이 그대로라면, 병목은 사라진 게 아니라 자리를 옮긴 것입니다. 귀사의 AI는 무엇을 늘렸고, 어디서 막혀 있습니까?",
-      "next_post": "research/2025-04-20-paradox-of-ai-driven-productivity-gains.html"
+      "next_post": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html"
     },
     {
       "title": "AI가 80년 수학 난제를 풀었습니다",

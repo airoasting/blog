@@ -1,0 +1,541 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="OpenAI가 Thrive·Crete와 자기개선 세무 AI를 만들었습니다. 회계사의 수정을 Codex가 평가와 코드로 바꿔, 6주 만에 정확도가 25%에서 86%로 올랐습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="세무 AI가 사람의 수정을 학습해 스스로 진화합니다">
+  <meta property="og:description" content="회계사가 고친 내용을 Codex가 평가와 코드 수정으로 바꿉니다. 6주 만에 신고서 정확도가 25%에서 86%로 올랐습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-05-27-openai-self-improving-tax-agents-codex.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_05_27_openai-self-improving-tax-agents-codex/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-05-27">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="OpenAI">
+  <meta property="article:tag" content="Codex">
+  <meta property="article:tag" content="자기개선AI">
+  <meta property="article:tag" content="세무자동화">
+  <meta property="article:tag" content="피드백루프">
+  <meta property="article:tag" content="전문서비스">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="세무 AI가 사람의 수정을 학습해 스스로 진화합니다">
+  <meta name="twitter:description" content="회계사가 고친 내용을 Codex가 평가와 코드로 바꿉니다. 6주 만에 정확도가 25%에서 86%로 올랐습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_05_27_openai-self-improving-tax-agents-codex/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "세무 AI가 사람의 수정을 학습해 스스로 진화합니다",
+    "datePublished": "2026-05-27",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "OpenAI가 Thrive·Crete와 자기개선 세무 AI를 만들었습니다. 회계사의 수정을 Codex가 평가와 코드로 바꿔 6주 만에 정확도를 25%에서 86%로 끌어올렸습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-05-27-openai-self-improving-tax-agents-codex.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_05_27_openai-self-improving-tax-agents-codex/thumbnail.png" alt="세무 AI가 사람의 수정을 학습해 스스로 진화합니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 5월 27일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">세무 AI가 사람의 수정을 학습해 스스로 진화합니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>OpenAI</span>
+            <span>OpenAI · Thrive · Crete</span>
+            <span><a href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=OpenAI" class="post-tag">#OpenAI</a>
+            <a href="../index.html?tag=Codex" class="post-tag">#Codex</a>
+            <a href="../index.html?tag=자기개선AI" class="post-tag">#자기개선AI</a>
+            <a href="../index.html?tag=세무자동화" class="post-tag">#세무자동화</a>
+            <a href="../index.html?tag=피드백루프" class="post-tag">#피드백루프</a>
+            <a href="../index.html?tag=전문서비스" class="post-tag">#전문서비스</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="세무 AI가 사람의 수정을 학습해 스스로 진화합니다" data-date="2026-05-27" data-category="tech" data-source="OpenAI" data-tags="OpenAI, Codex, 자기개선AI, 세무자동화, 피드백루프, 전문서비스" data-original-url="https://openai.com/index/building-self-improving-tax-agents-with-codex/" data-roasting-quote="당신 조직의 AI는 6주 만에 25%에서 86%로 좋아졌습니까, 작년 그대로입니까? 차이는 더 똑똑한 모델이 아니라 피드백 루프입니다." data-next-post="2026-05-28-sia-self-improving-ai-harness-weights.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">OpenAI가 Thrive·Crete와 함께 세무 신고를 작성하는 자기개선 AI 에이전트를 만들었습니다.</p>
+        <p data-summary="">회계사가 고친 내용을 Codex가 평가셋과 코드 수정으로 바꿔, 시스템이 운영 중에 스스로 좋아집니다.</p>
+        <p data-summary="">6주 만에 75% 이상 정확히 채운 신고서 비율이 25%에서 86%로 올랐습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신 조직의 AI는 6주 만에 25%에서 86%로 좋아졌습니까, 작년 그대로입니까?<br>차이는 더 똑똑한 모델이 아니라 피드백 루프입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>대부분의 조직은 AI가 좋아지는 순간을 새 모델 출시일로 생각합니다. 이 사례는 다릅니다. 시스템은 매주 운영 현장에서 좋아졌습니다. 모델은 그대로였습니다.</p>
+        <p>비결은 단순합니다. 회계사가 AI의 실수를 고칠 때마다, 그 수정이 다음 버전의 학습 재료가 됩니다. 당신 조직에서 사람이 AI 결과물을 고친 흔적은 지금 어디에 쌓이고 있습니까. 대개는 버려집니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>세무와 회계는 AI 자동화의 마지막 영역으로 여겨졌습니다. 복잡한 신고 1건은 데이터 입력에만 약 8시간이 걸립니다(OpenAI, 2026). OpenAI는 2025년 12월 Thrive Holdings 지분을 확보했습니다. Crete의 회계법인 30여 곳이 6개월간 시범 운영을 맡았습니다.</p>
+        <p>핵심은 세무가 아니라 '운영 중에 스스로 좋아지는 시스템'이라는 작동 모델입니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 자기개선은 모델 교체가 아니라 피드백 루프에서 나옵니다.</strong> 이 시스템은 세 가지 입력으로 스스로 개선됩니다. 전문가 피드백, 생산 트레이스, 그리고 Codex의 자동 반복입니다. 사람이 고친 것이 자동으로 평가 기준이 되고, Codex가 자주 발생하는 오류를 코드로 고칩니다.</p>
+        <p>여기서 모델은 바뀌지 않았습니다. 바뀐 것은 데이터 추출과 항목 매핑 계층의 코드입니다. 더 똑똑한 AI를 기다린 것이 아니라, 현장의 수정을 자산으로 바꾸는 회로를 만든 것입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="methodology-box">
+            <p><strong>자기개선 루프: 3단계 구조</strong></p>
+            <p><strong>1. 전문가 피드백:</strong> 세무 전문가가 가장 영향이 큰 개선 지점을 짚습니다.</p>
+            <p><strong>2. 생산 트레이스:</strong> 원자료부터 제출까지 전 과정과 회계사의 수정을 그대로 기록합니다.</p>
+            <p><strong>3. Codex 반복:</strong> 반복되는 문제를 평가셋으로 바꾸고, Codex가 코드를 고쳐 다시 검증합니다.</p>
+            <p style="text-align:center; font-size:15px; margin:16px 0; color:#145C35; font-weight:700; letter-spacing:1px;">현장 수정 → 평가셋 → 코드 수정 → 재배포 → 현장 수정</p>
+            <p style="color:#666;">엔지니어는 전체 구조를 지키고, Codex는 추출·매핑 계층을 반복 개선합니다.</p>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            세 가지 입력이 하나의 순환 회로를 이룹니다. 사람의 수정이 버려지지 않고 다음 버전의 학습 재료가 되는 것이 핵심입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 숫자가 6주 만에 움직였습니다.</strong> 출시 시점에는 신고서의 25%만 '75% 이상 정확히 채움' 기준을 넘었습니다. 6주 뒤 그 비율은 86%가 됐습니다(OpenAI, 2026). 시범 기간에 7,000건을 처리했고, 준비 시간은 건당 약 33% 줄었습니다. 처리량은 약 50% 늘었고, 초안 정확도는 최대 97%에 도달했습니다.</p>
+        <p>주목할 점은 확장 방향입니다. 시스템은 W-2, 1099 같은 단순 문서에서 시작했습니다. 이후 K-1과 임대 부동산 명세가 얽힌 복잡한 신고로 넘어갔습니다. 더 복잡한 신고일수록 시간 절감 효과가 컸습니다.</p>
+
+        <figure class="post-figure chart-figure" style="margin: 28px 0; padding:20px; border:1px solid #e0e0e0; border-radius:10px;">
+          <svg viewBox="0 0 600 300" width="100%" role="img" aria-label="정확도 비율 변화 막대 그래프">
+            <line x1="80" y1="240" x2="560" y2="240" stroke="#ccc" stroke-width="1"></line>
+            <!-- 출시 시점 25% -->
+            <rect x="170" y="195" width="110" height="45" fill="#9DBBAA" rx="3"></rect>
+            <text x="225" y="183" text-anchor="middle" font-size="22" font-weight="700" fill="#555">25%</text>
+            <text x="225" y="262" text-anchor="middle" font-size="14" fill="#888">출시 시점</text>
+            <!-- 6주 후 86% -->
+            <rect x="350" y="85" width="110" height="155" fill="#145C35" rx="3"></rect>
+            <text x="405" y="73" text-anchor="middle" font-size="22" font-weight="700" fill="#145C35">86%</text>
+            <text x="405" y="262" text-anchor="middle" font-size="14" fill="#888">6주 후</text>
+            <!-- 화살표 라벨 -->
+            <text x="300" y="40" text-anchor="middle" font-size="14" fill="#555">+61%p (모델 교체 없이)</text>
+          </svg>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            '75% 이상 정확히 채운 신고서'의 비율입니다. 새 모델 없이 피드백 루프만으로 6주 만에 25%에서 86%로 올랐습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">7,000건</div>
+            <div class="stat-label">시범 기간 처리한 세무 신고 (OpenAI 2026)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">최대 97%</div>
+            <div class="stat-label">신고서 초안 정확도</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">33%↓</div>
+            <div class="stat-label">건당 준비 시간 단축 (처리량 약 50%↑)</div>
+          </div>
+        </div>
+
+        <p><strong>셋째, 사람과 AI의 분업선이 다시 그어졌습니다.</strong> 이 구조에서 사람의 역할은 줄지 않고 이동합니다. 엔지니어는 시스템 전체 구조를 책임지고, Codex는 반복 작업인 추출·매핑 코드를 고칩니다. 회계사는 단순 입력에서 벗어나 검토와 판단에 집중합니다. 자동화가 일을 없앤 것이 아니라, 사람을 더 어려운 판단 쪽으로 밀어 올렸습니다.</p>
+        <p>Codex에 주어지는 일감은 명확합니다. 코드 저장소, 평가 데이터, 관련 문서, 원본 트레이스, 기대 결과, 검토된 발견을 함께 받습니다. 사람이 문제를 정의하고, AI가 반복을 처리하는 분업입니다.</p>
+
+      </section>
+
+      <!-- 비즈니스 비용 -->
+      <section class="post-section" id="section-cost">
+        <div class="post-section-label">비즈니스 비용</div>
+        <p>숫자로 환산하면 방향이 분명해집니다. 복잡한 신고 1건은 데이터 입력에만 약 8시간이 걸립니다(OpenAI, 2026). 건당 약 33%를 줄이면 신고 1건마다 2.6시간 안팎을 회수합니다.</p>
+        <p>반대로 이 루프가 없는 조직은 같은 실수를 매번 사람이 다시 고칩니다. 회계사 100명이 매주 같은 유형의 오류를 손으로 잡는다면, 그 수정 노동은 어디에도 축적되지 않습니다. 자기개선 루프의 진짜 비용 절감은 처리 속도가 아니라 '같은 실수를 반복하지 않는 것'에 있습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>지표</th>
+                <th>결과</th>
+                <th>경영 리더에게 주는 의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>정확도 (75% 채움 기준)</td>
+                <td class="cell-hl">25% → 86% (6주)</td>
+                <td>개선이 출시가 아니라 운영에서 일어납니다</td>
+              </tr>
+              <tr>
+                <td>초안 정확도</td>
+                <td>최대 97%</td>
+                <td>사람 검토는 여전히 필수입니다</td>
+              </tr>
+              <tr>
+                <td>건당 준비 시간</td>
+                <td>약 33% 단축</td>
+                <td>복잡한 업무일수록 절감 폭이 큽니다</td>
+              </tr>
+              <tr>
+                <td>처리량</td>
+                <td>약 50% 증가</td>
+                <td>같은 인력으로 더 많은 일을 처리합니다</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: OpenAI (2026), 시범 운영 결과.</p>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>사람의 수정을 데이터로 남기는 체계를 만듭니다.</strong><br>지금 직원들이 AI 결과물을 손으로 고친 흔적은 대부분 버려집니다. 'AI 초안 → 사람 최종본'의 차이를 한곳에 기록하는 규칙부터 세웁니다. 이 차이가 자기개선 루프의 연료입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>가장 자주 나는 오류 10개를 평가셋으로 바꿉니다.</strong><br>현장에서 반복되는 실수 10가지를 골라, 각각을 '입력 → 기대 출력' 쌍으로 정리합니다. 프롬프트 예시: "다음은 우리 AI가 자주 틀리는 사례 10건입니다. 각 사례의 올바른 출력과 오류 원인을 정리하고, 이를 자동 검증할 수 있는 평가 항목으로 만들어 주세요." (2주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>코딩 에이전트에 맥락을 통째로 줍니다.</strong><br>Codex나 Claude Code 같은 코딩 에이전트에 코드, 평가셋, 관련 문서, 실제 처리 기록, 기대 결과를 함께 입력합니다. 문제만 던지지 말고 '판단 근거'까지 주는 것이 반복 개선의 조건입니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>피드백 루프는 자율 운영이 아닙니다.</strong> 초안 정확도 97%는 100%가 아닙니다. 세무는 작은 오류도 비용이 큽니다. 이 시스템도 회계사의 검토를 전제로 작동합니다. '스스로 좋아진다'를 '사람이 필요 없다'로 읽으면 안 됩니다.</p>
+
+        <p><strong>운영 데이터가 없으면 루프가 돌지 않습니다.</strong> 이 사례의 진짜 자산은 모델이 아니라 수만 건의 신고와 수정 기록입니다. 트레이스를 쌓아둔 조직만 같은 회로를 만들 수 있습니다. 데이터를 버려온 조직은 출발선부터 다릅니다.</p>
+
+        <p><strong>좁은 영역의 성공이 전 영역의 성공은 아닙니다.</strong> 세무 신고는 규칙이 명확하고 정답을 확인할 수 있는 작업입니다. 정답이 모호하거나 책임 소재가 복잡한 업무에서는 같은 루프가 그대로 작동하지 않습니다. 자기개선이 잘 도는 업무인지 먼저 가려야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 끌어올린 것은 새 모델이 아니라, 사람의 수정을 자산으로 바꾼 루프였습니다. 당신 조직의 수정은 지금 쌓이고 있습니까, 버려지고 있습니까?</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 도입의 성공 지표를 '도입 여부'에서 '운영 중 개선 속도'로 바꿔라. 6주 단위로 좋아지는 시스템을 목표로 삼아라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>직원이 AI 결과물을 고친 기록을 버리지 마라. 그 수정 데이터가 다음 개선의 연료다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">COO/운영</span>
+            <span>규칙이 명확하고 정답 확인이 가능한 업무부터 자기개선 루프를 적용하라. 정답이 모호한 업무는 뒤로 미뤄라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>Codex</strong>: OpenAI의 코딩 에이전트입니다. 코드 저장소와 평가 데이터를 받아 코드를 직접 수정하고 검증합니다. 이 사례에서 반복 오류를 고치는 역할을 맡았습니다.</p>
+          <p><strong>생산 트레이스 (Production Trace)</strong>: 원자료 입력부터 최종 제출까지, AI가 처리한 전 과정과 사람의 수정을 그대로 남긴 기록입니다. 자기개선 루프의 핵심 데이터입니다.</p>
+          <p><strong>평가셋 (Eval)</strong>: AI가 맞게 작동하는지 자동으로 검증하는 '입력과 기대 출력' 쌍의 묶음입니다. 현장 오류를 평가셋으로 바꾸면 같은 실수를 다시 검출할 수 있습니다.</p>
+          <p><strong>자기개선 루프 (Self-improvement Loop)</strong>: 사람의 수정이 평가셋과 코드 수정으로 이어지고, 다시 현장에서 검증되는 순환 구조입니다. 모델 교체 없이 시스템이 좋아지게 합니다.</p>
+          <p><strong>K-1</strong>: 동업·신탁 등에서 발생하는 소득을 보고하는 미국 세무 양식입니다. W-2나 1099보다 처리가 복잡해, 자동화 난도가 높은 신고 유형을 대표합니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>OpenAI. (2026, May). <em>Building self-improving tax agents with Codex</em> [Article]. OpenAI. <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" target="_blank" rel="noopener">https://openai.com/index/building-self-improving-tax-agents-with-codex/</a></li>
+          <li>StartupHub.ai. (2026, May). <em>OpenAI's Codex Powers Self-Improving Tax Software</em> [Article]. StartupHub.ai. <a href="https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-s-codex-powers-self-improving-tax-software" target="_blank" rel="noopener">https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-s-codex-powers-self-improving-tax-software</a></li>
+          <li>Crypto Briefing. (2026, May). <em>OpenAI and Thrive develop self-improving tax AI with 97% accuracy</em> [Article]. Crypto Briefing. <a href="https://cryptobriefing.com/openai-thrive-self-improving-tax-ai/" target="_blank" rel="noopener">https://cryptobriefing.com/openai-thrive-self-improving-tax-ai/</a></li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 핵심 주장 찬반 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이거 핵심은 세무 아니에요. 모델 안 바꾸고 6주 만에 25%에서 86%로 올렸다는 게 핵심이에요. 사람이 고친 걸 버리지 말고 모아라, 그게 결론이에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 그 86%가 '신고서가 다 맞다'는 게 아니잖아요. '항목의 75% 이상 채웠다'는 비율이에요. 초안 정확도는 따로 최대 97%고요. 숫자 두 개를 자꾸 섞어서 말하는 게 걸려요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그건 정확히 짚었어요. 근데 방향은 안 변해요. 기준이 뭐든 출시 때보다 운영하면서 좋아졌다는 게 핵심이에요. 곡선이 위로 갔잖아요. 그걸 만든 게 사람의 수정이고요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 우리 조직에 적용 가능한가 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">좋은데요, 우리는 그 '수정 기록'이란 게 아예 없어요. 직원들이 그냥 고쳐서 보내고 끝이에요. 이거 대체 어디서부터 시작해요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 기록이 진짜 자산이에요. 모델 아니고 수만 건 트레이스. 원자료부터 제출까지 다 남겨야 루프가 돌아요. 안 쌓아둔 조직은 출발선부터 몇 달 뒤예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 비슷한 거 해봤는데요, 처음엔 그냥 'AI 초안'이랑 '사람 최종본' 두 개만 같은 폴더에 모았어요. 그것만 해도 뭐가 자꾸 틀리는지 보이더라고요. 거창하게 시작 안 해도 돼요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 사람의 자리는 어떻게 되나 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 팀에 설명할 때 '속도 빨라진다'고 안 할 거예요. '같은 실수 두 번 안 한다'고 할 거예요. 사람들이 제일 싫어하는 게 똑같은 거 또 고치는 일이거든요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 프레이밍 좋은데, 진짜 그래요? 97%는 100%가 아니에요. 세무는 1% 틀려도 가산세 나와요. '실수 안 한다'고 말해두면 나중에 책임 누가 져요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 사람 검토를 빼면 안 되는 거예요. 회계사가 사라지는 게 아니라 입력에서 검토로 올라가는 거잖아요. 자동화가 일을 없앤 게 아니라 자리를 옮긴 거예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">아 그러면 저는 '검토하는 사람을 어디에 둘까'를 고민하면 되는 거네요. 이제 좀 그림이 그려져요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 4px;">
+        <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-05-28-sia-self-improving-ai-harness-weights.html">
+          <div class="next-post-title">스스로 진화하는 AI, 코드를 스스로 고칩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/자기개선ai.html" class="concept-chip">자기개선AI</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-05-27-openai-self-improving-tax-agents-codex.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-05-27-openai-self-improving-tax-agents-codex.html';
+    const ROASTING_QUOTE = '당신 조직의 AI는 6주 만에 25%에서 86%로 좋아졌습니까, 작년 그대로입니까? 차이는 더 똑똑한 모델이 아니라 피드백 루프입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+
+</body></html>

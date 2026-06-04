@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개발자와 지식 노동자의 경계가 사라지고 있습니다 - AI ROASTING</title>
+  <meta name="description" content="OpenAI가 코드 에이전트 Codex 사용 데이터를 공개했습니다. 가장 빠르게 받아들이는 집단은 개발자가 아니라 지식 노동자입니다. 일이 필요한 사람이 직접 도구를 만들기 시작하면, 자료를 옮기던 조직의 중간 층이 줄어듭니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="개발자와 지식 노동자의 경계가 사라지고 있습니다">
+  <meta property="og:description" content="지식 노동자가 개발자보다 3배 빠르게 AI 에이전트를 받아들입니다. 제품 기획자가 대시보드를 직접 만들고, 연구자가 데이터 정리 스크립트를 스스로 짭니다. 누가 무엇을 하느냐의 경계가 녹고 있습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/survival/2026-06-02-next-era-knowledge-work.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/survival/images/2026_06_02_next-era-knowledge-work/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-02">
+  <meta property="article:section" content="생존">
+  <meta property="article:tag" content="지식노동">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="Codex">
+  <meta property="article:tag" content="직업변화">
+  <meta property="article:tag" content="조직설계">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="개발자와 지식 노동자의 경계가 사라지고 있습니다">
+  <meta name="twitter:description" content="지식 노동자가 개발자보다 3배 빠르게 AI 에이전트를 받아들입니다. OpenAI Codex 사용 데이터.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/survival/images/2026_06_02_next-era-knowledge-work/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "개발자와 지식 노동자의 경계가 사라지고 있습니다",
+    "datePublished": "2026-06-02",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "OpenAI가 공개한 Codex 사용 데이터. 지식 노동자가 개발자보다 3배 빠르게 AI 에이전트를 받아들이며, 개발자와 지식 노동의 경계가 흐려지고 있습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/survival/2026-06-02-next-era-knowledge-work.html",
+    "articleSection": "생존"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'survival' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="survival">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="survival">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_06_02_next-era-knowledge-work/thumbnail.png" alt="OpenAI Codex 보고서의 표지 그래픽, 따뜻한 주황 계열 추상 그라데이션">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="survival">생존</span>
+          <span class="post-date">2026년 6월 2일</span>
+          <span class="post-read-time">12분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">개발자와 지식 노동자의 경계가 사라지고 있습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>OpenAI</span>
+            <span>The Next Era of Knowledge Work</span>
+            <span><a href="https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf" target="_blank" rel="noopener">원문 보고서 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=지식노동" class="post-tag">#지식노동</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=Codex" class="post-tag">#Codex</a>
+            <a href="../index.html?tag=직업변화" class="post-tag">#직업변화</a>
+            <a href="../index.html?tag=조직설계" class="post-tag">#조직설계</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="개발자와 지식 노동자의 경계가 사라지고 있습니다" data-date="2026-06-02" data-category="survival" data-source="OpenAI (The Next Era of Knowledge Work)" data-tags="지식노동, AI에이전트, Codex, 직업변화, 조직설계" data-original-url="https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf" data-roasting-quote="그동안 당신 조직의 절반은 자료를 만드는 게 아니라 옮기고 맞추고 승인받는 데 시간을 썼습니다. 그 마찰이 사라지면, 그 마찰을 처리하던 자리도 함께 사라집니다."></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">OpenAI가 코드 에이전트 Codex의 사용 데이터를 공개했습니다. 주간 사용자는 500만 명, 데스크톱 앱 출시 후 4개월 만에 6배 늘었습니다.</p>
+            <p data-summary="">핵심은 사용자 구성입니다. 지식 노동자가 개발자보다 3배 빠르게 이 도구를 받아들이고 있습니다. 개발자와 지식 노동의 업무 경계가 흐려집니다.</p>
+            <p data-summary="">일이 필요한 사람이 직접 도구를 만들기 시작하면, 자료를 옮기고 승인하던 조직의 중간 층이 줄어듭니다. 작은 팀이 큰 조직의 일을 합니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">그동안 당신 조직의 절반은 자료를 만드는 게 아니라 옮기고 맞추고 승인받는 데 시간을 썼습니다.<br>그 마찰이 사라지면, 그 마찰을 처리하던 자리도 함께 사라집니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 훅 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>AI 코딩 도구는 개발자의 것이라고 생각하기 쉽습니다. Codex라는 이름부터 코드를 떠올리게 합니다. 그런데 이 도구를 가장 빠르게 받아들이는 집단은 개발자가 아닙니다.</p>
+            <p>OpenAI 자체 데이터에 따르면 지식 노동자의 도입 속도가 개발자의 3배입니다. 제품 기획자가 대시보드를 직접 만듭니다. 연구자가 데이터 정리 스크립트를 스스로 짭니다. "개발자에게 요청하던 일"을 본인이 처리합니다.</p>
+            <p>이 변화는 일자리 숫자가 아니라 일의 구조를 바꿉니다. 누가 무엇을 하느냐의 경계가 녹고 있습니다. 경영 리더가 봐야 할 신호는 기술이 아니라 이 경계의 이동입니다.</p>
+          </section>
+
+          <!-- 컨텍스트 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>지식 노동은 선진 경제의 절반을 차지합니다. 미국 노동자의 40% 이상, 약 7,200만 명이 정보를 다루는 일을 합니다. 그런데 이들은 시간의 상당 부분을 "진짜 일"이 아니라 자료를 찾고 맞추고 승인받는 데 씁니다. 맥킨지글로벌연구소에 따르면 지식 노동자는 업무 시간의 28%를 이메일에, 20%를 내부 정보 찾기에 씁니다. AI 에이전트가 이 마찰을 줄이면, 조직이 그 마찰을 처리하려고 만든 자리도 함께 흔들립니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p>먼저 데이터의 성격을 짚습니다. 이 통계는 OpenAI가 자사 제품 Codex를 홍보하며 공개한 사용 데이터입니다. 일반 노동자가 아니라 이미 AI에 적극적인 사용자 집단의 수치입니다. 그 한계를 감안하더라도, 지식 노동의 변화 방향을 읽는 신호로는 충분합니다.</p>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">500만</div>
+                <div class="stat-label">Codex 주간 활성 사용자 (2026년 6월 기준)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">6배</div>
+                <div class="stat-label">데스크톱 앱 출시(2월) 이후 주간 사용자 증가</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">3배</div>
+                <div class="stat-label">지식 노동자의 도입 속도 (개발자 대비)</div>
+              </div>
+            </div>
+
+            <p><strong>첫째, 가장 빠르게 늘어나는 사용자는 개발자가 아닙니다.</strong> 지식 노동자는 현재 Codex 사용자의 약 20%이며, 개발자보다 3배 빠르게 늘고 있습니다. 개인 사용자도 5%를 넘었고, 4배 빠르게 증가합니다. 제품 기획, 디자인, 리서치, 학계가 여기 들어갑니다. 아래 그래프를 보면 개발자 비중(검정선)은 88%에서 74%로 내려갑니다. 지식 노동자(주황선)는 꾸준히 올라옵니다.</p>
+
+            <figure style="margin: 2rem 0; text-align: center;">
+              <img src="./images/2026_06_02_next-era-knowledge-work/persona-share-over-time.png" alt="Codex 사용자 구성 변화 추이. 개발자 비중은 88%에서 74%로 하락하고 지식 노동자 비중은 8%에서 19%로 상승" style="max-width: 100%; height: auto; border-radius: 8px; display: inline-block;" loading="lazy">
+              <figcaption style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">Codex 사용자 구성 변화(2026년 2월~5월). 검정선 개발자, 주황선 지식 노동자, 노란선 개인. 개발자 비중이 약 88%에서 74%로 내려가는 동안 지식 노동자 비중은 8%에서 19%로 올라왔습니다.<br>출처: OpenAI (2026), The Next Era of Knowledge Work, "Codex Persona Share Over Time"</figcaption>
+            </figure>
+
+            <p><strong>둘째, 개발자 일과 지식 노동의 경계가 사라집니다.</strong> 지식 노동자 사용자의 주간 업무를 보면 경계가 흐려진 게 보입니다. 매주 72%가 문서·보고서 같은 산출물을 만듭니다. 그런데 엔지니어링 운영(47%), 코드 구현(46%), 리서치(41%)가 바로 뒤를 잇습니다. 개발자는 문서를 만들고, 지식 노동자는 코드를 짭니다. 제품 기획자가 다른 팀에 의뢰하지 않고 대시보드를 직접 만드는 식입니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr>
+                    <th>업무 유형 (지식 노동자)</th>
+                    <th>주간 사용 비율</th>
+                    <th>주간 성장률</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>지식 산출물 (문서·보고서·계약서)</td>
+                    <td class="cell-hl">72%</td>
+                    <td>+36%</td>
+                  </tr>
+                  <tr>
+                    <td>엔지니어링 운영</td>
+                    <td>47%</td>
+                    <td>+22%</td>
+                  </tr>
+                  <tr>
+                    <td>코드 구현</td>
+                    <td>46%</td>
+                    <td>+27%</td>
+                  </tr>
+                  <tr>
+                    <td>애플리케이션 관리</td>
+                    <td>42%</td>
+                    <td>+32%</td>
+                  </tr>
+                  <tr>
+                    <td>리서치</td>
+                    <td>41%</td>
+                    <td>+37%</td>
+                  </tr>
+                  <tr>
+                    <td>코드 이해</td>
+                    <td>35%</td>
+                    <td>+15%</td>
+                  </tr>
+                  <tr>
+                    <td>데이터 분석</td>
+                    <td>27%</td>
+                    <td class="cell-hl">+110%</td>
+                  </tr>
+                  <tr>
+                    <td>협업</td>
+                    <td>23%</td>
+                    <td>+27%</td>
+                  </tr>
+                  <tr>
+                    <td>코드 검증</td>
+                    <td>16%</td>
+                    <td>+23%</td>
+                  </tr>
+                  <tr>
+                    <td>사업 부서 업무</td>
+                    <td>15%</td>
+                    <td>+23%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-table-source">지식 노동자의 주간 업무 침투율과 주간 성장률(WoW). "주간 사용 비율"은 한 주에 해당 업무를 한 번이라도 수행한 사용자 비율입니다. 데이터 분석이 성장률 1위(+110%), 지식 산출물이 사용 비율 1위(72%)입니다. 출처: OpenAI (2026), Table: Knowledge Worker Weekly Task Penetration / Fastest-growing tasks.</p>
+            </div>
+
+            <p><strong>셋째, 가장 빠르게 크는 일은 데이터 분석과 리서치입니다.</strong> 성장률 1위는 데이터 분석으로 주간 110%씩 늘고 있습니다. 리서치(+37%)와 문서 작성(+36%)이 뒤를 잇습니다. 모두 과거에는 "분석가에게 맡기던" 일입니다. 이제 일에 가장 가까운 사람이 직접 처리합니다.</p>
+
+            <p><strong>넷째, 일하는 방식이 순차에서 병렬로 바뀝니다.</strong> 가장 의미 있는 변화입니다. 이제 사용자의 약 50%가 하루 중 한 번은 여러 작업을 동시에 돌립니다. 4월 중순의 3분의 1 미만에서 빠르게 올랐습니다. 한 사람이 데이터를 점검하면서, 동시에 스크립트를 짜고, 보고서를 조립하고, 앱을 확인합니다. 한 명의 지식 노동자가 작은 팀처럼 일합니다. 사람이 단일 작업을 실행하던 자리에서, 여러 작업 흐름을 지휘하는 자리로 옮겨갑니다.</p>
+
+            <p><strong>다섯째, 이것은 사무실의 "공장 재설계"입니다.</strong> 경제학자 로버트 솔로는 "컴퓨터 시대는 생산성 통계만 빼고 어디서나 보인다"고 했습니다. 이 수수께끼가 생산성 역설입니다. 에릭 브린욜프슨은 답을 정리했습니다. 정보 기술은 조직이 일하는 방식을 다시 설계할 때만 큰 성과를 냅니다. 공장은 증기기관 자리에 전기 모터를 끼워 넣기만 했을 때는 생산성이 오르지 않았습니다. 기계마다 모터를 붙이고 작업 동선을 다시 짠 뒤에야 올랐고, 거기엔 수십 년이 걸렸습니다.</p>
+
+            <p>대규모 조직은 자료를 만들고 옮기는 비용을 중심으로 설계됐습니다. 비서실, 부서 간 조율팀, 사무직 피라미드, 긴 결재 라인이 그 비용을 처리하려고 존재합니다. AI 에이전트는 그 병목을 산출물 생산 전·중·후에서 함께 녹입니다. 이것이 생존 관점의 핵심입니다. 자료를 옮기던 중간 층이 줄어듭니다.</p>
+
+            <p><strong>여섯째, 작은 팀이 큰 조직의 일을 합니다.</strong> 보고서가 든 사례가 이를 보여줍니다. 한 소규모 팀은 약 9만 개 정부 기관에 흩어진 공공 정보를 모아 검색 가능한 형태로 만듭니다. 과거 며칠씩 걸리던 일이 몇 분으로 줄었습니다. 5인 스타트업은 고객별 맞춤 제안과 시제품을 빠르게 만들어 자기 규모를 훨씬 넘는 경쟁을 합니다. 한 수학 교수는 강의 행정 업무를 자동화해 매주 4~5시간을 아낍니다. 패턴은 같습니다. 더 적은 사람이 더 넓은 일을 합니다.</p>
+
+            <p>이 사례들은 남의 회사 이야기가 아닙니다. 당신 조직에서 지금 "사람이 없어서 못 한다"고 미뤄둔 일을 떠올려 보십시오. 그 일이 데이터 정리, 자료 취합, 반복 보고라면 이미 한 사람과 에이전트로 시작할 수 있는 일일 가능성이 높습니다.</p>
+
+          </section>
+
+          <!-- 비즈니스 비용 -->
+          <section class="post-section" id="section-cost">
+            <div class="post-section-label">비즈니스 비용</div>
+            <p>마찰의 비용은 추상적이지 않습니다. 맥킨지글로벌연구소에 따르면 지식 노동자는 업무 시간의 28%를 이메일 관리에 씁니다. 내부 정보와 담당자를 찾는 데 약 20%를 더 씁니다. 둘을 합치면 근무 시간의 절반에 가깝습니다.</p>
+            <p>간단한 예시로 환산해 봅니다. 연봉 6,000만 원인 지식 노동자라면, 이 마찰에 묶인 인건비가 한 해 약 2,800만 원입니다. 맥킨지의 48%를 그대로 적용한 단순 추정값입니다. 10명 팀이면 한 해 약 2억 8,000만 원이 "진짜 일" 바깥에서 쓰입니다. AI 에이전트가 이 시간의 일부만 줄여도 효과는 인건비 단위로 잡힙니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>우리 팀의 "자료 마찰" 시간을 먼저 측정합니다.</strong><br>팀원에게 한 주 동안 정보를 찾고, 버전을 맞추고, 승인을 기다린 시간을 기록하게 합니다. 막연히 "비효율"이라고 말하는 대신 비율로 잡습니다. 어디서 시간이 새는지 보이면, 어떤 일에 에이전트를 붙일지 정할 수 있습니다. (소요 시간: 한 주 기록 + 집계 1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>비개발 직군 한 명에게 직접 도구를 만들게 해봅니다.</strong><br>기획자나 마케터에게 반복되는 업무 하나를 고르게 합니다. ChatGPT나 Claude에게 "이 엑셀 파일에서 매주 같은 표를 뽑는 스크립트를 만들어줘"처럼 평범한 말로 요청하게 합니다. 개발자에게 의뢰하던 일을 본인이 처리하는 경험을 한 번 시킵니다. (소요 시간: 업무 1건 실습 1~2시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>한 사람의 역할을 "실행자"에서 "지휘자"로 재설계합니다.</strong><br>핵심 인력 한 명의 업무를 단일 작업 처리에서 여러 작업 흐름을 동시에 관리하는 형태로 바꿔봅니다. 자료 수집, 초안 작성, 검토를 에이전트에 나눠 맡기고 사람은 판단과 조립에 집중하게 합니다. 작은 팀이 큰 일을 하는 구조를 한 자리에서 시험합니다. (소요 시간: 업무 재설계 반나절)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>이것은 벤더의 자사 데이터입니다.</strong> OpenAI가 Codex를 알리려고 낸 보고서입니다. 수치의 출처는 자사 사용 로그이고, 외부 검증을 거치지 않았습니다. 사용자도 이미 AI에 적극적인 집단이라 일반 노동자를 대표하지 않습니다. 방향성 신호로만 읽고, 절대 수치를 그대로 인용하지 마십시오.</p>
+            <p><strong>"경계가 사라진다"와 "일자리가 는다"는 다릅니다.</strong> 작은 팀이 큰 일을 한다는 말은, 같은 일에 사람이 덜 필요하다는 뜻이기도 합니다. 보고서는 낙관적 톤이지만, 생존 관점에서는 중간 층 축소가 함께 옵니다. 자료를 옮기던 자리가 줄면 그 자리에 있던 사람의 역할을 다시 정의해야 합니다.</p>
+            <p><strong>직접 만든 도구에는 검증이 필요합니다.</strong> 비개발자가 만든 스크립트를 검토 없이 쓰면 위험합니다. 잘못된 데이터 처리, 보안 구멍, 규정 위반이 숨을 수 있습니다. 승인과 검증이라는 마찰이 존재하는 데는 이유가 있습니다. 그 마찰을 없앨 게 아니라, 더 가볍고 빠른 형태로 다시 설계해야 합니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>다음 시대의 지식 노동은 "누가 코드를 쓰느냐"가 아니라 "누가 일에 가장 가까우냐"로 나뉩니다. 자료를 옮기던 중간 층은 줄고, 일에 가장 가까운 사람의 권한은 커집니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>"이 일은 개발팀이 해야 한다"는 전제를 다시 봅니다. 일에 가장 가까운 사람이 직접 도구를 만들 수 있다면, 조직도의 중간 층을 줄이고 권한을 현장으로 내릴 수 있습니다. 단, 검증 체계를 함께 설계해야 합니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>핵심 인력의 역할을 단일 작업 실행에서 여러 흐름을 지휘하는 형태로 바꿔봅니다. 한 명이 작은 팀처럼 일하게 되면, 사람 수가 아니라 일의 범위로 팀을 설계하게 됩니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">인사/조직 책임자</span>
+                <span>AI 활용 능력을 일부 직군의 선택이 아니라 기본 역량으로 다룹니다. 동시에 자료를 옮기던 자리에 있던 사람의 역할을 재정의할 계획을 미리 세웁니다. 경계가 녹는 속도가 채용·재배치 속도보다 빠를 수 있습니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <div class="methodology-box">
+              <p><strong>Codex</strong>: OpenAI가 만든 코드·업무 자동화 에이전트입니다. 평범한 말로 작업을 설명하면 스크립트나 도구를 만들고 실행합니다. 처음에는 개발용으로 나왔으나 지금은 지식 노동 전반으로 쓰임이 넓어졌습니다.</p>
+              <p><strong>AI 에이전트(agentic tool)</strong>: 한 번의 질문에 답만 주는 챗봇과 달리, 여러 단계의 일을 스스로 계획하고 실행하는 AI입니다. 자료를 찾고, 도구를 만들고, 결과를 점검하는 일을 연이어 처리합니다.</p>
+              <p><strong>지식 산출물(knowledge artifact)</strong>: 보고서, 메모, 계약서, 대시보드처럼 지식 노동의 결과로 나오는 문서나 자료입니다. 이 글에서 "산출물을 만든다"는 이런 결과물을 생산한다는 뜻입니다.</p>
+              <p><strong>생산성 역설(productivity paradox)</strong>: 컴퓨터에 많이 투자해도 생산성 통계가 좀처럼 오르지 않던 현상입니다. 기술만 들여오고 일하는 방식을 바꾸지 않으면 성과가 나지 않는다는 교훈을 담고 있습니다.</p>
+              <p><strong>병렬 작업(parallel tasks)</strong>: 여러 작업을 하나씩 순서대로 처리하지 않고 동시에 돌리는 방식입니다. 사람은 각 흐름을 지휘하고, 실제 처리는 에이전트가 나눠 맡습니다.</p>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>OpenAI. (2026, June). <em>The Next Era of Knowledge Work: How Codex is helping people navigate the complexity of modern work</em> [Report]. OpenAI. <a href="https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf" target="_blank" rel="noopener">https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf</a></li>
+              <li>McKinsey Global Institute. (2012, July). <em>The social economy: Unlocking value and productivity through social technologies</em> [Report]. McKinsey &amp; Company.</li>
+              <li>Brynjolfsson, E. (1993). The productivity paradox of information technology. <em>Communications of the ACM, 36</em>(12), 66–77.</li>
+              <li>Drucker, P. F. (1959). <em>Landmarks of Tomorrow</em>. Harper &amp; Brothers.</li>
+            </ul>
+          </section>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1 -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">결론 간단해요. 지식 노동자가 개발자보다 3배 빨리 받아들인다잖아요. 우리 회사 기획자한테도 당장 도구 만들게 시켜야죠. 개발팀에 줄 서서 기다리는 시대는 끝났어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">잠깐만요. 이거 OpenAI가 자기네 Codex 팔려고 낸 데이터예요. 사용자도 이미 AI에 푹 빠진 사람들이고요. 그걸로 "시대 끝났다"까지 가는 건 좀 빠르지 않아요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 저는 블랙 말에 한 표요. 작년에 마케터한테 그냥 ChatGPT로 엑셀 자동화 시켜봤거든요. 개발자 안 거치고 본인이 뚝딱 만들더라고요. 데이터 출처가 어디든 이 흐름은 진짜예요.</div>
+                </div>
+              </div>
+            </div><!-- /스레드 1 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2 -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저는 뭘 하면 되는 거예요? 한 명이 작은 팀처럼 일한다는 건, 결국 사람 줄이라는 말로 들리는데요. 지난번 재택 얘기랑 똑같은 거 아니에요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">줄이라는 게 아니라 역할이 바뀌는 거예요. 본문 보면 사용자 50%가 작업 여러 개를 동시에 돌려요. 한 사람이 실행자에서 지휘자로 가는 거죠. 사람 수가 아니라 일 범위로 팀을 짜는 거예요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">이론은 좋은데 네이비님, 비개발자가 만든 스크립트는 누가 검증해요? 저 한 번 잘못 만든 자동화로 고객 데이터 날릴 뻔했어요. 그 "마찰"이 괜히 있는 게 아니더라고요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그러니까 검증을 없애지 말고 가볍게 다시 짜야죠. 승인 라인이 있는 데는 이유가 있어요. 빠르게 가되, 검토는 남기고. 본문도 딱 그 말이에요.</div>
+                </div>
+              </div>
+            </div><!-- /스레드 2 -->
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3 -->
+            <div>
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">비서실, 결재 라인, 사무직 피라미드. 그게 다 "자료 옮기는 자리"였다는 말이 좀 서늘하네요. 그 자리에 앉아 있던 사람들은 이제 어디로 가는 걸까요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">어디로 가긴요. 역할을 다시 정의해줘야죠. 그게 리더가 할 일이에요. 본문에도 경계 녹는 속도가 채용 속도보다 빠를 수 있다잖아요. 미루면 사람만 다칩니다.</div>
+                </div>
+              </div>
+            </div><!-- /스레드 3 -->
+          </section>
+
+          <!-- 원문 보기 -->
+          <a href="https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf" target="_blank" rel="noopener" class="hero-cta" style="margin-top:16px; display:inline-block; font-size:13px;">원문 보기 →</a>
+
+        </div><!-- /.post-body -->
+
+        <!-- Desktop Side TOC -->
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-cost" class="toc-link">비즈니스 비용</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /.post-body-layout -->
+
+      <!-- 소셜 공유 (데스크톱) -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/organizational-design.html" class="concept-chip">조직설계</a>
+      <a href="../wiki/concepts/직업변화.html" class="concept-chip">직업변화</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+
+  <script>
+    const ROASTING_QUOTE = "그동안 당신 조직의 절반은 자료를 만드는 게 아니라 옮기고 맞추고 승인받는 데 시간을 썼습니다. 그 마찰이 사라지면, 그 마찰을 처리하던 자리도 함께 사라집니다.";
+    function copyPrompt(btn) {
+      const pre = btn.previousElementSibling;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => btn.textContent = '복사', 2000);
+      });
+    }
+  </script>
+
+
+
+</body></html>

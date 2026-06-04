@@ -1,68 +1,23 @@
 {
-  "buildAt": "2026-05-31T07:42:25.293Z",
-  "duration": 0.289,
+  "buildAt": "2026-06-04T01:58:35.969Z",
+  "duration": 0.615,
   "concepts": {
-    "total": 92,
-    "validDefinitions": 81,
-    "needsReview": 11
+    "total": 90,
+    "validDefinitions": 90,
+    "needsReview": 0
   },
   "relationships": {
-    "total": 302
+    "total": 237
   },
   "coverage": {
-    "postsWithConcepts": 170,
-    "totalPosts": 194
+    "postsWithConcepts": 169,
+    "totalPosts": 197
   },
   "inject": {
-    "updated": 0,
+    "updated": 72,
     "inserted": 0,
-    "unchanged": 168,
-    "skipped": 26
+    "unchanged": 95,
+    "skipped": 30
   },
-  "needsManualReview": [
-    {
-      "name": "AI활용",
-      "slug": "ai활용"
-    },
-    {
-      "name": "구글",
-      "slug": "구글"
-    },
-    {
-      "name": "GRPO",
-      "slug": "grpo"
-    },
-    {
-      "name": "ML",
-      "slug": "ml"
-    },
-    {
-      "name": "IEEE",
-      "slug": "ieee"
-    },
-    {
-      "name": "직업변화",
-      "slug": "직업변화"
-    },
-    {
-      "name": "SSRN",
-      "slug": "ssrn"
-    },
-    {
-      "name": "에이전트설계",
-      "slug": "에이전트설계"
-    },
-    {
-      "name": "핵심 수치",
-      "slug": "핵심-수치"
-    },
-    {
-      "name": "EPS",
-      "slug": "eps"
-    },
-    {
-      "name": "SEC",
-      "slug": "sec"
-    }
-  ]
+  "needsManualReview": []
 }

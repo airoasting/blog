@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="한국어 웹 탐색 능력을 재는 벤치마크 K-BrowseComp가 공개됐습니다. GPT-5.5 같은 최신 모델도 30~45%에 그쳤고, 국산 파운데이션 모델은 0~10%였습니다. 영어 점수가 한국어 성능을 보장하지 않는 이유를 분석합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다">
+  <meta property="og:description" content="최신 AI도 한국어 웹 탐색에서는 30~45%에 머물렀습니다. 같은 모델이 영어에서는 84%를 넘깁니다. 언어 맥락이 곧 성능 격차였습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-01">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="한국어AI">
+  <meta property="article:tag" content="벤치마크">
+  <meta property="article:tag" content="언어격차">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다">
+  <meta name="twitter:description" content="최신 AI도 한국어 웹 탐색에서는 30~45%에 머물렀습니다. 영어에서는 84%입니다.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다",
+    "datePublished": "2026-06-01",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "한국어 웹 탐색 능력을 재는 벤치마크 K-BrowseComp가 공개됐습니다. 최신 모델도 30~45%에 그쳤고 국산 파운데이션 모델은 0~10%였습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_06_01_k-browsecomp-korean-web-agent-benchmark/thumbnail.png" alt="GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-06-01</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv</span>
+            <span>Nahyun Lee 외 14인</span>
+            <span><a href="https://arxiv.org/abs/2606.02404" target="_blank" rel="noopener">K-BrowseComp ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=한국어AI" class="post-tag">#한국어AI</a>
+            <a href="../index.html?tag=벤치마크" class="post-tag">#벤치마크</a>
+            <a href="../index.html?tag=언어격차" class="post-tag">#언어격차</a>
+            <a href="../index.html?tag=국산LLM" class="post-tag">#국산LLM</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다" data-date="2026-06-01" data-category="research" data-source="arXiv (Nahyun Lee 외 14인)" data-tags="AI에이전트, 한국어AI, 벤치마크, 웹브라우징, 언어격차, 국산LLM" data-original-url="https://arxiv.org/abs/2606.02404" data-roasting-quote="영어 벤치마크 84점을 보고 한국어 업무에 AI를 맡기셨습니까? 같은 모델이 한국어 웹에서는 45점을 받습니다." data-next-post="2026-05-27-anthropic-coding-agents-social-sciences.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">연구진이 한국어 웹 탐색 능력을 재는 벤치마크 K-BrowseComp를 공개했습니다. 문제 400개 중 300개를 한국어 화자가 직접 검증했습니다.</p>
+            <p data-summary="">GPT-5.5 같은 최신 모델도 30~45%에 그쳤습니다. 같은 급 모델이 영어 벤치마크에서는 84%를 넘깁니다.</p>
+            <p data-summary="">한국 정부의 파운데이션 모델 사업으로 나온 국산 LLM은 0~10%였습니다. 언어와 문화 맥락이 곧 성능 격차였습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">영어 벤치마크 84점을 보고<br>한국어 업무에 AI를 맡기셨습니까?<br>같은 모델이 한국어 웹에서는 45점을 받습니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>글로벌 AI 에이전트의 벤치마크 점수를 보고 도입을 결정합니다. 영어 웹 탐색에서 84%를 받았다고 합니다. 그래서 한국어 고객 응대와 자료 조사에 그대로 투입합니다. 그런데 결과물이 자주 틀립니다.</p>
+            <p>연구진이 그 이유를 수치로 보여줬습니다. 한국어 웹 탐색만 시키면 같은 모델이 45%로 떨어집니다. 점수가 절반으로 무너진 것입니다.</p>
+            <p>이 글은 한국 시장에서 AI 에이전트를 쓰려는 리더를 위한 것입니다. 글로벌 점수를 한국어 업무 근거로 쓰면 왜 위험한지 다룹니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>많은 기업이 한국어 업무에 AI 에이전트를 붙이고 있습니다. 고객 문의 처리, 시장 조사, 사내 자료 검색이 대표적입니다. 도입 근거는 대부분 글로벌 벤치마크 점수입니다.</p>
+            <p>이 연구는 그 근거의 빈틈을 드러냅니다. 영어에서 84%를 받은 모델이 한국어에서는 45%입니다. 점수 하나로 한국어 성능을 가정하면 절반의 위험을 떠안습니다.</p>
+            <p>위험은 추상적이지 않습니다. 한국어 고객 응대를 검수 없이 자동 발행하면, 틀린 답 절반이 그대로 고객에게 나갑니다. 잘못된 안내 한 건이 환불과 신뢰 손실로 이어집니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, 언어만 바뀌어도 성능이 절반으로 떨어집니다.</strong> K-BrowseComp는 한국어 웹을 뒤져 답을 찾는 문제 400개로 구성됩니다. 최고 점수는 GPT-5.5의 45.67%였습니다. 같은 급 모델이 영어 BrowseComp에서는 84%를 넘깁니다. 모델 성능이 아니라 언어 환경이 격차를 만듭니다.</p>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">45.67%</div>
+                <div class="stat-label">최신 모델의 한국어 웹 탐색 최고 정확도 (GPT-5.5)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">84%</div>
+                <div class="stat-label">같은 급 모델의 영어 BrowseComp 정확도</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">0~10%</div>
+                <div class="stat-label">한국 파운데이션 모델 사업 국산 LLM의 정확도</div>
+              </div>
+            </div>
+
+            <p><strong>둘째, 국산 파운데이션 모델은 더 어려운 처지입니다.</strong> 한국 정부의 독자 AI 파운데이션 모델 사업으로 공개된 LLM들은 0~10.33%에 머물렀습니다. K-EXAONE이 10.33%로 가장 높았고, 일부 모델은 0%였습니다. 한국어 데이터로 학습했어도 웹 탐색이라는 복합 작업은 별개의 능력입니다. 리더는 "국산이라 한국어를 잘한다"는 가정을 점수로 검증해야 합니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr>
+                    <th>모델</th>
+                    <th>한국어 검증셋</th>
+                    <th>합성 스트레스셋</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GPT-5.5 (글로벌)</td>
+                    <td><strong style="color:#1A1A1A;">45.67%</strong></td>
+                    <td>26%</td>
+                  </tr>
+                  <tr>
+                    <td>GLM-5.1 (글로벌)</td>
+                    <td>30.67%</td>
+                    <td>19%</td>
+                  </tr>
+                  <tr>
+                    <td>DeepSeek-V4-Pro (글로벌)</td>
+                    <td>30.00%</td>
+                    <td>22%</td>
+                  </tr>
+                  <tr>
+                    <td>Gemini-3.1-Flash-Lite (글로벌)</td>
+                    <td>11.33%</td>
+                    <td>11%</td>
+                  </tr>
+                  <tr>
+                    <td>K-EXAONE-236B (국산)</td>
+                    <td>10.33%</td>
+                    <td>13%</td>
+                  </tr>
+                  <tr>
+                    <td>A.X-4.0 (국산)</td>
+                    <td>5.33%</td>
+                    <td>1%</td>
+                  </tr>
+                  <tr>
+                    <td>HyperCLOVAX-SEED-Think-32B (국산)</td>
+                    <td>2.33%</td>
+                    <td>2%</td>
+                  </tr>
+                  <tr>
+                    <td>Kanana-2-30B (국산)</td>
+                    <td><strong style="color:#1A1A1A;">0.00%</strong></td>
+                    <td>0%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Lee 외, K-BrowseComp (2026), Table 2. 검증셋 300문항, 합성셋 100문항 기준.</div>
+            </div>
+
+            <p><strong>셋째, 실패는 검색을 못 해서가 아닙니다.</strong> 연구진이 틀린 시도의 과정을 분석했습니다. 틀린 시도는 오히려 검색을 1~3회 더 많이 했습니다. 정보를 못 찾은 게 아니라 찾은 정보를 못 엮은 것입니다. 여러 출처를 연결하고 조건을 추적하는 단계에서 무너졌습니다.</p>
+            <p>이 점이 리더에게 중요합니다. 검색을 더 시키거나 자료를 더 주는 것으로는 풀리지 않습니다. 약점은 입력이 아니라 추론과 상태 관리에 있습니다.</p>
+
+            <p><strong>넷째, 어려운 문제일수록 격차가 벌어집니다.</strong> 연구진은 기계로 만든 까다로운 문제 100개를 추가했습니다. 가장 강한 모델도 26%에 그쳤습니다. 검증셋에서 45%를 받은 모델도 난도가 오르면 급락합니다. 쉬운 시연과 실제 업무의 거리가 그만큼 멉니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>글로벌 벤치마크 점수를 한국어 업무 근거로 쓰지 마십시오.</strong><br>실제 한국어 과제 20~30개를 만들어 직접 테스트합니다. 회사의 실무 질문과 정답을 함께 준비하면 됩니다. 점수가 영어 발표치의 절반 이하면 사람 검수를 기본값으로 두십시오. (30분)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">우리 팀이 AI 에이전트에 시킬 한국어 업무 질문 20개를 만들어 주세요.
+각 질문에 정답과 출처를 함께 적어 주세요.
+한국 웹에서 여러 페이지를 거쳐야 풀리는 난도로 구성해 주세요.
+업무 영역: [여기에 고객 응대 / 시장 조사 등 입력]</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div></div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>한국어 웹 탐색 결과에 사람 검수 게이트를 두십시오.</strong><br>절반이 틀릴 수 있으니 자동 발행은 위험합니다. 답과 함께 근거 출처를 반드시 표시하게 합니다. 검수자가 출처만 1분 확인하는 절차로도 오류를 크게 줄입니다. (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>국산 모델과 글로벌 모델을 같은 한국어 과제로 비교하십시오.</strong><br>국산이라는 이름만으로 한국어를 잘한다고 가정하지 않습니다. 1번에서 만든 과제로 두 모델을 나란히 돌립니다. 비용과 보안까지 함께 보고 결정하십시오. (1시간)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>프리프린트 논문입니다.</strong> 피어리뷰 전이라 수치와 해석이 바뀔 수 있습니다. 핵심 경향을 참고하되 단일 근거로 쓰지 마십시오.</p>
+            <p><strong>단일 탐색 환경입니다.</strong> 하나의 브라우징 도구와 검색 백엔드로만 측정했습니다. 다른 환경에서는 점수가 달라질 수 있습니다.</p>
+            <p><strong>도메인이 한쪽에 쏠려 있습니다.</strong> 엔터테인먼트와 미디어 문제가 36%로 가장 많습니다. 분야가 다르면 성능도 다를 수 있습니다.</p>
+            <p><strong>모델은 계속 바뀝니다.</strong> 점수는 측정 시점 기준입니다. 한국어 성능은 직접, 주기적으로 다시 재야 합니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI 에이전트의 영어 점수는 한국어 성능을 보장하지 않습니다. 한국어 업무는 한국어 과제로 직접 검증하고 사람 검수를 두십시오.</p>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <p><strong>웹 브라우징 에이전트(Web Browsing Agent)</strong>: 사람 대신 웹을 검색하고 여러 페이지를 오가며 답을 찾는 AI입니다. 단순 챗봇과 달리 직접 탐색을 수행합니다.</p>
+            <p><strong>벤치마크(Benchmark)</strong>: 여러 AI를 같은 문제로 비교 측정하는 표준 시험입니다. 점수로 모델 간 성능 차이를 봅니다.</p>
+            <p><strong>멀티홉 추론(Multi-hop Reasoning)</strong>: 한 번에 못 찾는 답을 여러 출처를 단계적으로 이어 찾는 방식입니다. 이 벤치마크 문제의 절반 이상이 여기에 해당합니다.</p>
+            <p><strong>합성 문제(Synthetic Problem)</strong>: 사람이 아니라 기계가 자동으로 만들어 낸 시험 문제입니다. 더 까다로운 상황을 의도적으로 설계합니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>한국어 AI 서비스 품질을 글로벌 점수가 아니라 한국어 실측으로 보증하십시오. 영어 발표치를 그대로 약속하면 안 됩니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>한국어 웹 탐색 업무에 사람 검수 단계를 KPI로 넣으십시오. 답과 함께 출처를 표시하게 하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>국산·글로벌 모델 도입 결정 전 한국어 과제 비교 평가를 요구하십시오. 이름이 아니라 점수로 고르십시오.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Lee, N., Yoon, D., Son, G., 외. (2026, June). <em>K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts</em> [Preprint]. arXiv. <a href="https://arxiv.org/abs/2606.02404" target="_blank" rel="noopener">https://arxiv.org/abs/2606.02404</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://arxiv.org/abs/2606.02404" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 패턴 A - 1:1 충돌형 (블랙 vs 골드) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">이 글 핵심 하나예요. 영어 84점이 한국어에선 45점. 글로벌 점수만 보고 한국어 챗봇 깔면, 절반은 틀린 답을 고객한테 내보내는 거예요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">에이 그래도 45%면 절반은 맞히잖아요. 저도 GPT 한국어로 잘만 쓰는데요. 검수만 붙이면 충분히 쓸 만하지 않아요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">절반만 맞으니까 더 무서운 거예요. 다 틀리면 아무도 안 써요. 절반은 맞으니까 믿고 쓰다가 큰 거 한 방에 터지는 거죠.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 패턴 B - 끼어들기형 (레드 질문, 네이비 동의심화, 퍼플 다른각도) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">잠깐, 이 45%라는 숫자 믿을 만해요? 문제 300개를 사람이 검증했다는데, 누가 무슨 기준으로 골랐는지가 진짜 중요하죠.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">검증셋 300개, 합성 100개예요. 합성에선 최고 모델도 26%로 떨어져요. 어렵게 낼수록 더 못 풀어요. 숫자는 일관돼요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 저는 국산 모델이 더 마음에 걸려요. 0~10%요. 한국어로 배웠다는데 정작 한국 웹은 못 뒤져요. 이름값이랑 실력이 따로 노는 느낌이에요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 패턴 C - 연쇄 반응형 (화이트 질문, 네이비 답, 블랙 태클, 화이트 마무리) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그래서 한국어로 AI 쓰는 우리 팀은 뭘 해야 돼요? 글로벌 점수 보고 도입했는데, 이제 와서 다 틀렸다는 거예요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">본문에 답 있어요. 우리 업무 질문 20개 만들어서 직접 돌려봐요. 영어 발표치 절반 이하 나오면 사람 검수 기본으로 깔고요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">거기서 한 발 더 가야죠. 답만 받지 말고 출처도 같이 받으세요. 검수자가 출처 1분만 봐도 틀린 답을 걸러내요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">아, 질문 20개 만들고 출처까지 받게 하라는 거군요. 그건 이번 주에 당장 해볼게요. 적어도 어디서 틀리는지는 봐야겠네요.</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="./2026-05-27-anthropic-coding-agents-social-sciences.html">
+              <div class="next-post-title">AI 에이전트로 논문은 75% 늘었지만 출판은 그대로였습니다 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/kpi.html" class="concept-chip">KPI</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-01-k-browsecomp-korean-web-agent-benchmark.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html';
+    const ROASTING_QUOTE = '영어 벤치마크 84점을 보고 한국어 업무에 AI를 맡기셨습니까? 같은 모델이 한국어 웹에서는 45점을 받습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+
+
+</body></html>
