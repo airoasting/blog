@@ -1,13 +1,13 @@
 {
-  "buildAt": "2026-06-04T11:48:08.581Z",
-  "duration": 0.245,
+  "buildAt": "2026-06-06T02:46:07.106Z",
+  "duration": 0.248,
   "concepts": {
     "total": 90,
     "validDefinitions": 90,
     "needsReview": 0
   },
   "relationships": {
-    "total": 237
+    "total": 240
   },
   "coverage": {
     "postsWithConcepts": 169,

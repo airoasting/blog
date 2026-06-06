@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-04T11:48:08.581Z",
+  "generatedAt": "2026-06-06T02:46:07.106Z",
   "version": 1,
   "stats": {
     "totalConcepts": 90,
-    "totalRelationships": 237,
+    "totalRelationships": 240,
     "totalPosts": 197,
-    "totalNewsletters": 50
+    "totalNewsletters": 51
   },
   "concepts": [
     {
@@ -80,7 +80,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 45,
+      "frequency": 46,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -129,7 +129,8 @@
         "nl-40",
         "nl-43",
         "nl-47",
-        "nl-50"
+        "nl-50",
+        "nl-51"
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2026-03-16",
@@ -371,7 +372,7 @@
       "name": "IPO",
       "aliases": [],
       "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 20,
+      "frequency": 21,
       "category": "newsletter",
       "posts": [
         "2026-04-06-sam-altman-can-he-be-trusted",
@@ -395,7 +396,8 @@
         "nl-46",
         "nl-48",
         "nl-49",
-        "nl-50"
+        "nl-50",
+        "nl-51"
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-04-06",
@@ -894,6 +896,29 @@
       "needs_manual_review": false
     },
     {
+      "id": "cpu",
+      "slug": "cpu",
+      "name": "CPU",
+      "aliases": [],
+      "definition": "중앙 처리 장치입니다. AI 학습보다 추론·범용 연산에서 여전히 핵심입니다.",
+      "frequency": 7,
+      "category": "newsletter",
+      "posts": [
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa"
+      ],
+      "newsletters": [
+        "nl-13",
+        "nl-15",
+        "nl-23",
+        "nl-36",
+        "nl-42",
+        "nl-51"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
@@ -975,28 +1000,6 @@
         "nl-24",
         "nl-25",
         "nl-26"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "cpu",
-      "slug": "cpu",
-      "name": "CPU",
-      "aliases": [],
-      "definition": "중앙 처리 장치입니다. AI 학습보다 추론·범용 연산에서 여전히 핵심입니다.",
-      "frequency": 6,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa"
-      ],
-      "newsletters": [
-        "nl-13",
-        "nl-15",
-        "nl-23",
-        "nl-36",
-        "nl-42"
       ],
       "firstSeen": null,
       "lastSeen": null,
@@ -1528,6 +1531,25 @@
         "nl-12",
         "nl-16",
         "nl-24"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "sec",
+      "slug": "sec",
+      "name": "SEC",
+      "aliases": [],
+      "definition": "SEC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-42",
+        "nl-49",
+        "nl-50",
+        "nl-51"
       ],
       "firstSeen": null,
       "lastSeen": null,
@@ -2096,24 +2118,6 @@
       "firstSeen": null,
       "lastSeen": null,
       "needs_manual_review": false
-    },
-    {
-      "id": "sec",
-      "slug": "sec",
-      "name": "SEC",
-      "aliases": [],
-      "definition": "SEC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-42",
-        "nl-49",
-        "nl-50"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
     }
   ],
   "relationships": [
@@ -2234,6 +2238,11 @@
     },
     {
       "source": "LLM",
+      "target": "CPU",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "HBM",
       "strength": 3
     },
@@ -2245,11 +2254,6 @@
     {
       "source": "LLM",
       "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "CPU",
       "strength": 2
     },
     {
@@ -2335,7 +2339,7 @@
     {
       "source": "GPU",
       "target": "IPO",
-      "strength": 8
+      "strength": 9
     },
     {
       "source": "GPU",
@@ -2399,6 +2403,11 @@
     },
     {
       "source": "GPU",
+      "target": "CPU",
+      "strength": 5
+    },
+    {
+      "source": "GPU",
       "target": "HBM",
       "strength": 4
     },
@@ -2410,11 +2419,6 @@
     {
       "source": "GPU",
       "target": "GPQA",
-      "strength": 4
-    },
-    {
-      "source": "GPU",
-      "target": "CPU",
       "strength": 4
     },
     {
@@ -2450,6 +2454,11 @@
     {
       "source": "GPU",
       "target": "DRAM",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
+      "target": "SEC",
       "strength": 2
     },
     {
@@ -2789,17 +2798,17 @@
     },
     {
       "source": "AGI",
+      "target": "CPU",
+      "strength": 2
+    },
+    {
+      "source": "AGI",
       "target": "HBM",
       "strength": 3
     },
     {
       "source": "AGI",
       "target": "GPQA",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "CPU",
       "strength": 2
     },
     {
@@ -2934,8 +2943,18 @@
     },
     {
       "source": "IPO",
+      "target": "CPU",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
       "target": "HBM",
       "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "SEC",
+      "strength": 4
     },
     {
       "source": "IPO",
@@ -2946,11 +2965,6 @@
       "source": "IPO",
       "target": "EPS",
       "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "SEC",
-      "strength": 3
     },
     {
       "source": "ROI",
@@ -3094,12 +3108,12 @@
     },
     {
       "source": "TPU",
-      "target": "EPS",
+      "target": "SEC",
       "strength": 2
     },
     {
       "source": "TPU",
-      "target": "SEC",
+      "target": "EPS",
       "strength": 2
     },
     {
@@ -3199,11 +3213,16 @@
     },
     {
       "source": "CFO",
-      "target": "EPS",
+      "target": "SEC",
       "strength": 2
     },
     {
       "source": "CFO",
+      "target": "EPS",
+      "strength": 2
+    },
+    {
+      "source": "CPU",
       "target": "SEC",
       "strength": 2
     },
