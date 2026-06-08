@@ -643,19 +643,28 @@
     }
 
     const pad = 36;
-    const ringR = Math.min(W, H) * 0.42;
+    const cx = W / 2, cy = H / 2;
+    // 캔버스에 들어가는 최대 원 반경 (원형 경계)
+    const boundR = Math.min(W, H) / 2 - pad;
+    // 노드를 동심원 형태로 배치: 허브는 안쪽, 고립 노드는 바깥 링
+    const ringR = boundR;
     d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(d => Math.min(0.5, d.weight * 0.08)))
       .force('charge', d3.forceManyBody().strength(-340).distanceMax(520))
-      .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('radial', d3.forceRadial(d => d.degree <= 1 ? ringR : ringR * 0.55, W / 2, H / 2).strength(d => d.degree <= 1 ? 0.22 : 0.07))
-      .force('x', d3.forceX(W / 2).strength(0.03))
-      .force('y', d3.forceY(H / 2).strength(0.03))
+      .force('center', d3.forceCenter(cx, cy))
+      .force('radial', d3.forceRadial(d => d.degree <= 1 ? ringR : ringR * 0.55, cx, cy).strength(d => d.degree <= 1 ? 0.35 : 0.12))
       .force('collide', d3.forceCollide(d => d.r + 7))
       .on('tick', () => {
         nodes.forEach(d => {
-          d.x = Math.max(pad + d.r, Math.min(W - pad - d.r, d.x));
-          d.y = Math.max(pad + d.r, Math.min(H - pad - d.r, d.y));
+          // 사각형이 아닌 원형 경계로 클램핑
+          const dx = d.x - cx, dy = d.y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const limit = boundR - d.r;
+          if (dist > limit && dist > 0) {
+            const k = limit / dist;
+            d.x = cx + dx * k;
+            d.y = cy + dy * k;
+          }
         });
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
         node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
