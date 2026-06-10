@@ -1,23 +1,28 @@
 {
-  "buildAt": "2026-06-06T02:46:07.106Z",
-  "duration": 0.248,
+  "buildAt": "2026-06-10T02:40:35.374Z",
+  "duration": 0.268,
   "concepts": {
-    "total": 90,
+    "total": 91,
     "validDefinitions": 90,
-    "needsReview": 0
+    "needsReview": 1
   },
   "relationships": {
-    "total": 240
+    "total": 242
   },
   "coverage": {
-    "postsWithConcepts": 169,
-    "totalPosts": 197
+    "postsWithConcepts": 176,
+    "totalPosts": 203
   },
   "inject": {
-    "updated": 0,
+    "updated": 12,
     "inserted": 0,
-    "unchanged": 167,
-    "skipped": 30
+    "unchanged": 162,
+    "skipped": 29
   },
-  "needsManualReview": []
+  "needsManualReview": [
+    {
+      "name": "AI리서치",
+      "slug": "ai리서치"
+    }
+  ]
 }

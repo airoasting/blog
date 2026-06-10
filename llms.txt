@@ -14,34 +14,39 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-06-08 [생존] 이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다 — /blog/survival/2026-06-08-ai-broken-hiring.html
+- 2026-06-07 [기업] AI가 아낀 시간이 성과로 바뀌지 않는 이유 — /blog/company/2026-06-07-bok-ai-productivity-disconnect.html
+- 2026-06-02 [기술] 복잡한 일은 AI 한 명에게 맡기지 마세요 — /blog/tech/2026-06-02-claude-code-dynamic-workflows.html
 - 2026-06-02 [생존] 개발자와 지식 노동자의 경계가 사라지고 있습니다 — /blog/survival/2026-06-02-next-era-knowledge-work.html
 - 2026-06-01 [리서치] GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 — /blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html
 - 2026-05-29 [기술] AI가 80년 수학 난제를 풀었습니다 — /blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html
 - 2026-05-28 [기술] 스스로 진화하는 AI, 코드를 스스로 고칩니다 — /blog/tech/2026-05-28-sia-self-improving-ai-harness-weights.html
+- 2026-05-27 [생존] 법학 교수들이 동료보다 AI 답을 더 선호했습니다 — /blog/survival/2026-05-27-law-professors-prefer-ai.html
 - 2026-05-27 [기술] 세무 AI가 사람의 수정을 학습해 스스로 진화합니다 — /blog/tech/2026-05-27-openai-self-improving-tax-agents-codex.html
 - 2026-05-27 [리서치] AI 에이전트로 논문은 75% 늘었지만 출판은 그대로였습니다 — /blog/research/2026-05-27-anthropic-coding-agents-social-sciences.html
 - 2026-05-27 [생존] 모두가 AI를 마스터하는데 나만 뒤처졌다는 착각 — /blog/survival/2026-05-27-ai-fomo-mastering-illusion.html
 - 2026-05-22 [리더] 순다르 피차이: AI가 불안한 건 당연합니다 — /blog/leader/2026-05-22-sundar-pichai-anxious-ai-future.html
-- 2026-05-20 [생존] AI가 만든 콘텐츠가 세상을 덮고 있습니다 — /blog/survival/2026-05-20-ai-slop-books-music-lawsuits-science.html
+- 2026-05-20 [리서치] AI 리서치를 2분에 끝낸 건 지식 그래프였습니다 — /blog/research/2026-05-20-sciatlas-scientific-knowledge-graph.html
 - 2026-05-20 [생존] 신입 채용을 줄인 건 AI가 아니라 재택근무였습니다 — /blog/survival/2026-05-20-broken-ladder-wfh-not-ai.html
+- 2026-05-20 [생존] AI가 만든 콘텐츠가 세상을 덮고 있습니다 — /blog/survival/2026-05-20-ai-slop-books-music-lawsuits-science.html
 - 2026-05-15 [리서치] AI 성과 평가, 더 그럴듯할수록 더 위험합니다 — /blog/research/2026-05-15-gen-ai-performance-reviews.html
 - 2026-05-10 [리더] 개리 탄: AI를 채팅창 대신 운영체제로 만드는 법 — /blog/leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html
-- 2026-04-14 [기업] 도시 모드: AI 시대 경영 리더를 위한 4원칙 — /blog/company/2026-04-14-dorsey-mode-ai-org-design.html
 - 2026-05-08 [기술] Claude에게 '왜'를 가르쳤더니 협박을 멈췄습니다 — /blog/tech/2026-05-08-teaching-claude-why.html
 - 2026-05-07 [기술] AI가 숨긴 속마음을 읽어냈습니다 — /blog/tech/2026-05-07-natural-language-autoencoders.html
+- 2026-05-06 [생존] AI 일자리 종말론은 과장입니다, 진짜 위험은 따로 있습니다 — /blog/survival/2026-05-06-ai-job-apocalypse-fantasy.html
 - 2026-04-30 [기술] AI가 문서를 읽고 도메인 전문가로 거듭납니다 — /blog/tech/2026-04-30-ctx2skill-context-learning.html
 - 2026-04-30 [기술] GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다 — /blog/tech/2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation.html
 - 2026-04-30 [생존] AI에게 인생 상담? 4건 중 1건은 동조였습니다 — /blog/survival/2026-04-30-claude-personal-guidance-sycophancy.html
-- 2026-03-01 [기술] AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법 — /blog/tech/2026-03-01-conductor-multi-agent-orchestration.html
 - 2026-04-24 [리서치] AI 에이전트가 실제로 거래했습니다: Anthropic의 거래 실험 — /blog/research/2026-04-24-anthropic-project-deal-agent-economy.html
-- 2026-04-13 [리더] 잭 도시: 회사는 위계가 아니라 지능입니다 — /blog/leader/2026-04-13-jack-dorsey-company-as-intelligence.html
-- 2026-04-14 [리더] 하버드 교수들이 말하는 '좋은 학습자'의 조건 — /blog/leader/2026-04-14-harvard-what-makes-a-good-learner.html
-- 2026-04-22 [생존] AI 도구에도 소득 격차가 있습니다 — /blog/survival/2026-04-22-ai-tool-income-gap.html
 - 2026-04-24 [기술] DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다 — /blog/tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html
 - 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
 - 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
+- 2026-04-22 [생존] AI 도구에도 소득 격차가 있습니다 — /blog/survival/2026-04-22-ai-tool-income-gap.html
 - 2026-04-16 [기술] 클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다 — /blog/tech/2026-04-16-claude-opus-4-7-launch.html
+- 2026-04-14 [기업] 도시 모드: AI 시대 경영 리더를 위한 4원칙 — /blog/company/2026-04-14-dorsey-mode-ai-org-design.html
+- 2026-04-14 [리더] 하버드 교수들이 말하는 '좋은 학습자'의 조건 — /blog/leader/2026-04-14-harvard-what-makes-a-good-learner.html
 - 2026-04-14 [리서치] AI가 AI 안전 연구를 합니다: 자동화 정렬 연구원의 등장 — /blog/research/2026-04-14-automated-alignment-researchers.html
+- 2026-04-13 [리더] 잭 도시: 회사는 위계가 아니라 지능입니다 — /blog/leader/2026-04-13-jack-dorsey-company-as-intelligence.html
 - 2026-04-13 [기술] 스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 — /blog/tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html
 - 2026-04-11 [기술] AI가 당신을 기억합니다. 그 기억은 누구 것입니까 — /blog/tech/2026-04-11-agent-harness-memory-lock-in.html
 - 2026-04-09 [리서치] 구글 클라우드 2026: AI 에이전트가 재설계하는 5가지 업무 현장 — /blog/research/2026-04-09-google-cloud-ai-agent-trends.html
@@ -94,6 +99,7 @@
 - 2026-03-05 [생존] AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 — /blog/survival/2026-03-05-ai-labor-market-exposure.html
 - 2026-03-05 [리서치] AI 도구 3개 넘으면 생산성이 떨어진다 — /blog/research/2026-03-05-brain-fry.html
 - 2026-03-02 [생존] AI 해고 함정: 기업이 자를수록 모두가 손해 보는 이유 — /blog/survival/2026-03-02-ai-layoff-trap.html
+- 2026-03-01 [기술] AI가 AI를 지휘합니다: 7B 모델이 GPT-5를 이긴 방법 — /blog/tech/2026-03-01-conductor-multi-agent-orchestration.html
 - 2026-02-23 [기술] AI는 왜 사람처럼 행동하는가 (멀티 페르소나) — /blog/tech/2026-02-23-persona-selection-model.html
 - 2026-02-12 [리더] 재미로 만들어 GitHub 18만 스타: OpenClaw 창시자의 에이전트 엔지니어링 선언 — /blog/leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html
 - 2026-02-11 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
@@ -211,3 +217,4 @@
 - 2024-08-10 [기술] AI 서비스의 5대 트렌드 — /blog/tech/2024-08-10-top-50-ai-services-five-trends.html
 - 2024-08-05 [기업] AI 시대, 미디어의 미래 — /blog/company/2024-08-05-ai-era-future-of-media.html
 - 2024-07-20 [기업] 카카오와 네이버의 10년 뒤 미래는 어떠할까? — /blog/company/2024-07-20-kakao-naver-future-in-ai-era.html
+

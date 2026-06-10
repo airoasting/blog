@@ -1,0 +1,592 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="클로드 코드가 작업마다 자기만의 멀티 에이전트 하네스를 직접 짭니다. 한 컨텍스트가 무너지는 세 가지 실패를 나눠 맡기고 서로 검증하게 만들어 막습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="복잡한 일은 AI 한 명에게 맡기지 마세요">
+  <meta property="og:description" content="클로드가 일에 맞는 AI 팀을 직접 꾸립니다. 게으름·자기편애·목표 표류를 나눠 맡기고 서로 검증하게 막습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-06-02-claude-code-dynamic-workflows.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_06_02_claude-code-dynamic-workflows/image9.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-02">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="다이내믹워크플로우">
+  <meta property="article:tag" content="클로드코드">
+  <meta property="article:tag" content="멀티에이전트">
+  <meta property="article:tag" content="서브에이전트">
+  <meta property="article:tag" content="AI오케스트레이션">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="복잡한 일은 AI 한 명에게 맡기지 마세요">
+  <meta name="twitter:description" content="클로드가 일에 맞는 AI 팀을 직접 꾸립니다. 게으름·자기편애·목표 표류를 나눠 맡기고 서로 검증하게 막습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_06_02_claude-code-dynamic-workflows/image9.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "복잡한 일은 AI 한 명에게 맡기지 마세요",
+    "datePublished": "2026-06-02",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "클로드 코드가 작업마다 자기만의 멀티 에이전트 하네스를 직접 짭니다. 한 컨텍스트가 무너지는 세 가지 실패를 나눠 맡기고 서로 검증하게 만들어 막습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-06-02-claude-code-dynamic-workflows.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_06_02_claude-code-dynamic-workflows/image9.png" alt="복잡한 일은 AI 한 명에게 맡기지 마세요">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 6월 2일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">복잡한 일은 AI 한 명에게 맡기지 마세요</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic</span>
+            <span>Thariq Shihipar, Sid Bidasaria</span>
+            <span><a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=다이내믹워크플로우" class="post-tag">#다이내믹워크플로우</a>
+            <a href="../index.html?tag=클로드코드" class="post-tag">#클로드코드</a>
+            <a href="../index.html?tag=멀티에이전트" class="post-tag">#멀티에이전트</a>
+            <a href="../index.html?tag=서브에이전트" class="post-tag">#서브에이전트</a>
+            <a href="../index.html?tag=AI오케스트레이션" class="post-tag">#AI오케스트레이션</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="복잡한 일은 AI 한 명에게 맡기지 마세요" data-date="2026-06-02" data-category="tech" data-source="Anthropic (Thariq Shihipar, Sid Bidasaria)" data-tags="다이내믹워크플로우, 클로드코드, 멀티에이전트, 서브에이전트, AI오케스트레이션" data-original-url="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" data-roasting-quote="당신의 AI는 50개 중 35개만 하고 다 끝났다고 말합니다. 일을 한 명에게 몰아줬기 때문입니다." data-next-post="2026-05-28-sia-self-improving-ai-harness-weights.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">클로드 코드가 작업마다 자기만의 멀티 에이전트 작업틀(하네스)을 직접 짭니다. 이것을 다이내믹 워크플로우라고 부릅니다.</p>
+        <p data-summary="">한 AI에게 복잡한 일을 통째로 맡기면 세 가지로 무너집니다. 중간에 멈추고, 자기 답을 편애하고, 원래 목표를 잊습니다.</p>
+        <p data-summary="">해법은 일을 잘게 나눠 각자 맡기고, 서로의 결과를 적대적으로 검증하게 만드는 것입니다. 코딩이 아닌 사업 업무에도 쓸 수 있습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신의 AI는 50개 중 35개만 하고 다 끝났다고 말합니다.<br>일을 한 명에게 몰아줬기 때문입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>유능한 직원에게 50개짜리 점검 목록을 던지면 무슨 일이 벌어집니까. 35개쯤에서 "큰 건 다 봤습니다"라며 멈춥니다. 자기가 쓴 보고서를 자기가 검토하면 흠을 잘 못 찾습니다. 일이 길어지면 처음 받은 지시의 디테일을 잊습니다.</p>
+        <p>AI도 똑같습니다. 한 창에서 복잡한 일을 오래 시키면 사람과 똑같은 방식으로 무너집니다. 앤트로픽이 클로드 코드에 넣은 다이내믹 워크플로우는 이 문제를 정면으로 겨냥합니다. 한 명에게 몰아주지 않고, AI가 일에 맞는 팀을 그 자리에서 직접 꾸리게 합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>지금까지 AI에게 일을 시키는 방식은 한 가지였습니다. 한 대화창에 지시를 넣고, 그 AI가 계획과 실행을 같은 자리에서 다 합니다. 오래 걸리고 갈래가 많고 검증이 중요한 일에서는 이 방식이 깨집니다.</p>
+        <p>다이내믹 워크플로우는 클로드가 작은 운영 대본을 써서 각자 다른 일을 맡은 여러 AI를 지휘하게 만듭니다. 사람은 대본을 짤 필요 없이 "워크플로우로 해줘"라고 말하면 됩니다. 결국 이것은 한 사람에게 몰아주던 일을 역할별로 쪼개 맡기는 조직 설계 문제입니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 한 명에게 다 맡기면 세 가지 방식으로 무너집니다.</strong> 앤트로픽은 한 컨텍스트에서 복잡한 일을 오래 시킬 때 나타나는 실패를 세 가지로 정리했습니다. 이건 모델이 멍청해서가 아니라 구조 때문입니다.</p>
+
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">실패 모드</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">무슨 일이 벌어지나</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">사람으로 치면</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">에이전트 게으름</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">일부만 끝내고 다 했다고 선언. 보안 점검 50개 중 35개에서 멈춤</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">큰 것만 보고 손 떼는 직원</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">자기 편애</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">자기가 낸 답을 스스로 검증하면 후하게 점수를 줌</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">자기 보고서 자기가 채점</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">목표 표류</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">대화가 길어지며 요약이 쌓이고, 'X는 하지 마라' 같은 제약을 잃음</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">초반 지시를 잊은 장기 프로젝트</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 한 컨텍스트 안에서 일이 길어질수록 세 실패가 함께 나타납니다.</p>
+        </div>
+
+        <p>다이내믹 워크플로우는 같은 일을 다르게 풉니다. 정적인 일반 도구를 미리 만들어 두는 대신, 클로드가 그 일에만 맞는 작업틀을 즉석에서 짭니다. 아래 그림이 둘의 차이입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image9.png" alt="정적 하네스와 다이내믹 워크플로우 비교: 같은 질문에 정적 방식은 일반 리포트를, 다이내믹 방식은 우리 코드를 읽고 악마의 변호인까지 붙여 구체적 권고를 낸다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            "결제 서비스를 새 업체로 옮길까요?"라는 같은 질문입니다. 왼쪽 정적 방식은 일반적인 리서치 보고서를 냅니다. 오른쪽 다이내믹 워크플로우는 우리 청구 코드를 직접 읽고, 거래량 기준으로 가격을 따지고, '이전에 반대하는 가장 강한 논리'까지 붙여 구체적 권고를 냅니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 해법은 나눠 맡기고 서로 검증하게 만드는 것입니다.</strong> 클로드는 일에 맞춰 몇 가지 패턴을 조합합니다. 핵심은 각 AI에게 자기만의 깨끗한 작업 공간과 좁고 분명한 목표를 주는 것입니다. 서로 간섭하지 않고, 자기 답을 자기가 검증하지 않습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image10.png" alt="여섯 가지 워크플로우 패턴: 분류 후 실행, 펼쳐서 종합, 적대적 검증, 생성 후 선별, 토너먼트, 끝날 때까지 반복" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            클로드가 조합하는 여섯 가지 핵심 패턴입니다. 일의 성격에 따라 이들을 섞어 작업틀을 만듭니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">패턴</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">하는 일</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">사업 장면</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">분류 후 실행</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">일의 종류를 먼저 가른 뒤 맞는 처리로 보냄</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">문의 자동 분류·라우팅</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">펼쳐서 종합</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">잘게 쪼개 각자 처리한 뒤 하나로 합침</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">대량 문서·자료 병렬 처리</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">적대적 검증</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">결과마다 별도 AI가 기준에 맞춰 반박</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">사실 확인·품질 게이트</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">생성 후 선별</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">여러 안을 만든 뒤 기준으로 걸러 최고만 남김</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">카피·네이밍 후보 압축</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">토너먼트</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">여러 안을 둘씩 맞붙여 승자를 가림</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">대량 항목 우선순위 정렬</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">끝날 때까지 반복</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">새 발견이 없을 때까지 계속 돌림</td>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">버그·이슈 끝까지 발굴</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 사업 장면은 본 매체가 덧붙인 해석입니다.</p>
+        </div>
+
+        <p><strong>셋째, 이건 코딩 얘기가 아닙니다.</strong> 저자들은 워크플로우가 비기술 업무에서 더 유용할 때가 많다고 적었습니다. 정답이 떨어지는 일이라면 거의 다 적용됩니다. 아래 네 장면이 그렇습니다.</p>
+
+        <p>먼저 사실 검증입니다. IR 자료, 제안서, 보도자료에 틀린 숫자 하나가 들어가면 신뢰가 무너집니다. 한 AI가 모든 주장을 뽑고, 주장마다 별도 AI를 붙여 출처에 하나씩 대조합니다. 출처의 품질까지 검사하는 AI를 더 붙일 수도 있습니다. 발행 전 마지막 게이트를 사람 한 명의 눈에서 검증 팀으로 바꾸는 셈입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image2.png" alt="사실 검증 워크플로우: 주장 추출기가 모든 주장을 뽑고, 주장마다 검사 AI가 출처에 대조하며, 출처 감사 AI가 출처 품질을 확인해 검증된 보고서를 만든다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            보고서 사실 검증 워크플로우입니다. 주장 추출기가 모든 사실 주장을 뽑고, 주장마다 검사 AI가 출처에 대조합니다. 선택적으로 출처 감사 AI가 그 출처가 믿을 만한지까지 봅니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>다음은 대량 정렬입니다. 1,000건이 넘는 항목을 한 번에 줄 세우라고 하면 품질이 무너지고 맥락에 다 담기지도 않습니다. 대신 둘씩 맞붙이는 토너먼트로 돌립니다. 절대 점수보다 'A가 B보다 낫다'는 비교 판단이 더 안정적입니다. 비교 한 건이 곧 AI 한 명이고, 대진표만 남깁니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image3.png" alt="정렬 워크플로우: 1000개 항목을 토너먼트 대진표로 둘씩 비교해 순위를 매긴다. 비교마다 새 AI가 붙는다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            1,000건을 심각도순으로 정렬하는 토너먼트입니다. 라운드마다 둘씩 비교하고, 각 비교는 깨끗한 맥락의 새 AI가 맡습니다. 지원서 80장 순위, 지원 티켓 심각도 정렬 같은 일에 그대로 옮겨집니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>규칙 준수도 같은 구조입니다. 클로드가 자꾸 놓치는 규칙이 있으면, 규칙 하나당 검사 AI를 하나씩 붙입니다. 가짜 경보를 줄이려고 '회의론자' AI가 각 지적을 다시 읽고, 진짜 위반인지 거른 것만 통과시킵니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image8.png" alt="규칙 준수 워크플로우: 규칙마다 검사 AI를 하나씩 붙이고, 회의론자 AI가 지적을 다시 읽어 진짜 위반만 통과시킨다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            규칙 준수 점검입니다. 규칙마다 검사 AI를 하나씩, 깨끗한 맥락으로 붙입니다. 회의론자 AI가 각 지적을 다시 읽어 진짜 위반과 가짜 경보를 가른 뒤, 확정된 것만 남깁니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>마지막은 대규모 트리아지입니다. 사람이 다 못 보는 지원 큐, 버그 리포트, 사용자 피드백이 대상입니다. 분류하고, 중복을 거르고, 조치까지 합니다. 여기엔 '격리'라는 안전 패턴이 들어갑니다. 외부의 믿을 수 없는 내용을 읽는 AI에게는 권한 있는 행동을 막고, 행동은 별도 AI가 맡습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image6.png" alt="트리아지 워크플로우: 격리 구역의 읽기 전용 AI가 신뢰할 수 없는 내용을 분류·중복 제거하고, 신뢰 구역의 행동 AI만 권한 있는 조치를 한다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            트리아지 워크플로우의 격리 패턴입니다. 격리 구역의 읽기 전용 AI가 신뢰할 수 없는 내용을 분류하고 중복을 거릅니다. 권한 있는 조치는 신뢰 구역의 행동 AI만 합니다. /loop와 묶으면 계속 돌릴 수 있습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>그 외에도 근본 원인 조사가 있습니다. 디버깅은 독립된 여러 가설을 세우고 각각 검증할 때 잘 됩니다. 한 창에서 하면 자기 가설을 편애합니다. 워크플로우는 로그·파일·데이터를 각각 보는 AI가 서로 다른 증거에서 가설을 세우게 만듭니다. 이건 코드만의 일이 아닙니다. "3월에 왜 매출이 떨어졌나" 같은 사후 분석에도 똑같이 씁니다.</p>
+
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>"워크플로우로 해줘"를 한 번 붙여보세요.</strong><br>복잡한 일을 클로드 코드에 시킬 때 평소 프롬프트 끝에 "워크플로우로"를 붙입니다. 트리거 단어 "ultracode"를 쓰면 워크플로우를 반드시 만들게 할 수 있습니다. 가벼운 일이면 "퀵 워크플로우로"라고 해도 됩니다. (오늘)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>정답이 떨어지는 업무 한 개를 골라 적용하세요.</strong><br>지원서 순위, 문의 분류, 보고서 사실 검증처럼 좋고 나쁨을 판정할 기준이 있는 일을 하나 고릅니다. "이 폴더의 지원서를 워크플로우로 순위 매기고 상위 10개를 다시 검증해줘"처럼 시킵니다. 직접 다루지 않는 리더라면 실무자에게 이 한 문장을 지시로 넘기면 됩니다. 검증 단계를 꼭 포함시킵니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>잘 된 워크플로우는 저장해 팀에 돌리세요.</strong><br>워크플로우 메뉴에서 "s"를 눌러 저장하면 다음에 다시 씁니다. 스킬 폴더에 워크플로우 파일을 넣으면 팀원이 같은 작업틀을 그대로 실행합니다. 트리아지나 검증처럼 반복되는 일은 /loop, /goal과 묶어 정기 실행으로 만듭니다. (이번 달)</div>
+          </div>
+        </div>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image7.png" alt="스킬 폴더 안에 워크플로우 파일을 넣고 SKILL.md에서 참조하면, 스킬을 설치한 누구나 같은 워크플로우를 실행한다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            워크플로우를 스킬로 공유하는 방법입니다. 워크플로우 파일을 스킬 폴더에 넣고 SKILL.md에서 참조하면, 그 스킬을 설치한 누구나 같은 작업틀을 실행합니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>토큰을 훨씬 많이 씁니다.</strong> 저자들이 직접 경고했습니다. 워크플로우는 여러 AI를 동시에 돌리므로 비용이 크게 늘 수 있습니다. 모든 일에 필요하지 않습니다. 일반적인 코딩 작업에 검토자 다섯 명짜리 패널은 과합니다. "이 일이 정말 더 많은 연산을 필요로 하는가"를 먼저 물어야 합니다. 토큰 예산도 "10k 토큰만 써"처럼 직접 걸 수 있습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_02_claude-code-dynamic-workflows/image4.png" alt="다이내믹 워크플로우 실행 메뉴: 작업별로 사용한 AI 수, 토큰량, 소요 시간을 보여준다. deep-research는 22개 AI에 110만 토큰을 썼다" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            워크플로우 실행 메뉴입니다. 작업마다 쓴 AI 수, 토큰량, 시간이 보입니다. 위 예시에서 deep-research는 22개 AI에 110만 토큰을 썼습니다. 비용이 어디로 가는지 눈으로 확인하고 통제해야 합니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>아직 초기 기능입니다.</strong> 지난주 공개됐고, 모범 사례가 형성되는 중입니다(Shihipar &amp; Bidasaria, 2026). 큰 성과가 나는 장면도 많지만, 무엇이 잘 되는지는 더 발견해야 하는 단계입니다. 처음부터 핵심 업무에 전면 적용하기보다 한 작업으로 검증하고 넓히는 편이 안전합니다.</p>
+
+        <p><strong>검증자 설계가 모든 것을 좌우합니다.</strong> 워크플로우의 힘은 적대적 검증에서 나옵니다. 그런데 무엇을 '좋은 답'으로 볼지 기준이 허술하면, 여러 AI가 그 빈틈을 함께 통과합니다. 격리 패턴처럼 외부 내용을 읽는 AI와 권한을 쓰는 AI를 분리하는 안전장치도 함께 설계해야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>복잡한 일에서 AI를 잘 쓰는 길은 더 똑똑한 한 명이 아닙니다. 잘게 나눠 맡기고 서로 검증하게 만드는 설계입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI를 '한 명에게 다 시키는' 도구로만 보지 마라. 사실 검증, 트리아지, 사후 분석 같은 정답 있는 업무부터 워크플로우 후보로 분류하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">실무 리더/팀장</span>
+            <span>AI 산출물을 사람 없이 판정할 기준이 있는 업무를 한 개 골라라. 그 기준이 곧 검증 AI의 채점표가 된다. 기준 없는 일에는 자동 검증이 불가능하다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">운영/재무</span>
+            <span>워크플로우는 토큰을 많이 쓴다. 작업별 AI 수·토큰·시간을 보고 'ROI가 나는 일'에만 붙여라. 일반 업무에 검토자 5명은 낭비다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>다이내믹 워크플로우 (Dynamic Workflow)</strong>: 클로드가 작업마다 즉석에서 짜는 자바스크립트 운영 대본입니다. 여러 서브 에이전트를 펼치고 조율하는 함수를 담아, 일에 맞는 작업틀을 직접 만듭니다.</p>
+          <p><strong>하네스 (Harness) / 작업틀</strong>: 모델 바깥의 모든 운영 구조입니다. 어떤 AI를 몇 명 띄울지, 무엇을 검증할지, 결과를 어떻게 합칠지가 여기 들어갑니다.</p>
+          <p><strong>서브 에이전트 (Subagent)</strong>: 워크플로우가 띄우는 개별 AI입니다. 각자 자기만의 깨끗한 맥락과 좁은 목표를 가집니다. 서로 간섭하지 않습니다.</p>
+          <p><strong>적대적 검증 (Adversarial Verification)</strong>: 한 AI의 결과를 별도 AI가 반박하게 만드는 방식입니다. 자기 답을 자기가 검증할 때 생기는 편애를 막습니다.</p>
+          <p><strong>격리 (Quarantine)</strong>: 외부 내용을 읽는 AI에게서 권한 있는 행동을 떼어내는 안전 패턴입니다. 읽는 AI와 행동하는 AI를 분리합니다.</p>
+          <p><strong>토큰 예산 (Token Budget)</strong>: 한 작업이 쓸 토큰 상한입니다. "10k 토큰만 써"처럼 프롬프트로 직접 걸 수 있습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Shihipar, T., &amp; Bidasaria, S. (2026, June). <em>A harness for every task: dynamic workflows in Claude Code</em> [Article]. Anthropic. <a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" target="_blank" rel="noopener">https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code</a></li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 나눠 맡기는 게 정말 답인가 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">한 창에서 시키면 50개 중 35개 하고 멈춰요. 나눠 맡기면 다 해요. 이건 모델이 멍청해서가 아니라 구조 문제예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">다 하는 대신 토큰을 몇 배로 쓰잖아요. 글에도 나오는 deep-research 예시는 AI 22명한테 110만 토큰을 썼어요. 그거 누가 결제해요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 토큰 예산을 걸어요. "10k 토큰만 써"라고 박으면 끝이에요. 비싼 일에만 붙이면 돼요. 매번 22명 부르라는 얘기가 아니에요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 비개발자가 이걸 쓸 수 있나 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">자바스크립트로 대본을 짠다는데, 저는 코드 한 줄도 못 써요. 그래서 저 같은 사람은 이걸 어떻게 시작해요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">대본은 클로드가 알아서 짜요. 그냥 "워크플로우로 해줘" 한마디면 돼요. 저도 지원서 80장 순위 매기는 거 시켜봤는데, 상위 10개 다시 검증까지 알아서 하더라고요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 사실 검증 그림이 제일 와닿았어요. 보도자료에 숫자 하나 틀리면 진짜 식은땀 나거든요. 주장마다 검사 AI를 한 명씩 붙인다는 게, 발행 전에 검증 팀을 빌리는 느낌이더라고요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 아무 일에나 쓰면 안 된다 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">아무 일에나 검토자 5명 붙이지 마세요. 돈만 태워요. 정답이 떨어지는 일에만 쓰는 거예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 "정답 있는 일"을 어떻게 골라요? 우리 팀 일은 대부분 애매한데요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">간단해요. 사람 없이 좋고 나쁨을 판정할 기준이 있냐만 보면 돼요. 그게 곧 검증 AI 채점표예요. 기준 못 만들면 그 일은 아직 워크플로우 감이 아닌 거고요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 기준 한 줄 못 쓰면 시작도 하지 마세요. 검증자 설계가 허술하면 AI 다섯이 같은 빈틈을 같이 통과해요. 그게 제일 위험해요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 4px;">
+        <a href="https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="2026-05-28-sia-self-improving-ai-harness-weights.html">
+          <div class="next-post-title">스스로 진화하는 AI, 코드를 스스로 고칩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/멀티에이전트.html" class="concept-chip">멀티에이전트</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-02-claude-code-dynamic-workflows.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-06-02-claude-code-dynamic-workflows.html';
+    const ROASTING_QUOTE = '당신의 AI는 50개 중 35개만 하고 다 끝났다고 말합니다. 일을 한 명에게 몰아줬기 때문입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+</body></html>

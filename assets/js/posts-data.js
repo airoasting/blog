@@ -1,6 +1,116 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다",
+      "date": "2026-06-08",
+      "category": "survival",
+      "source": "Harvard Business Review (Shraddha Sunil, Mudit Saraf)",
+      "tags": [
+        "채용",
+        "AI면접",
+        "인재밀도",
+        "판단력",
+        "구조화면접",
+        "직업변화"
+      ],
+      "slug": "2026-06-08-ai-broken-hiring",
+      "file": "survival/2026-06-08-ai-broken-hiring.html",
+      "summary": "AI가 이력서와 화상 면접의 신호 가치를 양쪽에서 무너뜨렸습니다. 인사 리더 120명 인터뷰와 면접 6,380건 분석에서 신입 SW 엔지니어 면접의 약 60%가 실시간 AI 의심 패턴을 보였습니다. 이제 가장 희소한 채용 신호는 판단력입니다.",
+      "roasting_quote": "당신이 채용한 그 '완벽한 지원자'는 일을 잘하는 사람입니까, 채용 과정을 잘 통과하는 사람입니까? AI는 그 둘을 구분할 수 없게 만들었습니다.",
+      "next_post": "tech/2026-06-02-claude-code-dynamic-workflows.html"
+    },
+    {
+      "title": "AI가 아낀 시간이 성과로 바뀌지 않는 이유",
+      "date": "2026-06-07",
+      "category": "company",
+      "source": "한국은행 (서동현·오삼일·윤종원)",
+      "tags": [
+        "AI생산성",
+        "한국은행",
+        "업무흐름재설계",
+        "생산성단절",
+        "조직설계"
+      ],
+      "slug": "2026-06-07-bok-ai-productivity-disconnect",
+      "file": "company/2026-06-07-bok-ai-productivity-disconnect.html",
+      "summary": "한국은행이 취업자 5,512명을 조사했습니다. 생성형 AI는 업무시간을 3.8% 줄였지만, 시간 절감과 생산 증가의 상관계수는 0이었습니다. 효율은 올랐지만 성과로 이어지지 않는 '생산성 단절'을 경영 리더가 메우는 법.",
+      "roasting_quote": "AI가 업무시간을 3.8% 줄였습니다. 그런데 그 시간은 성과가 됐습니까, 아니면 그냥 사라졌습니까?",
+      "next_post": "survival/2026-06-02-next-era-knowledge-work.html"
+    },
+    {
+      "title": "복잡한 일은 AI 한 명에게 맡기지 마세요",
+      "date": "2026-06-02",
+      "category": "tech",
+      "source": "Anthropic",
+      "tags": [
+        "다이내믹워크플로우",
+        "클로드코드",
+        "멀티에이전트",
+        "서브에이전트",
+        "AI오케스트레이션"
+      ],
+      "slug": "2026-06-02-claude-code-dynamic-workflows",
+      "file": "tech/2026-06-02-claude-code-dynamic-workflows.html",
+      "summary": "클로드 코드가 작업마다 멀티 에이전트 작업틀을 직접 짭니다. 한 AI에 복잡한 일을 몰아주면 게으름·자기편애·목표표류로 무너지므로, 잘게 나눠 맡기고 서로 검증하게 만듭니다.",
+      "roasting_quote": "당신의 AI는 50개 중 35개만 하고 다 끝났다고 말합니다. 일을 한 명에게 몰아줬기 때문입니다.",
+      "next_post": "survival/2026-06-08-ai-broken-hiring.html"
+    },
+    {
+      "title": "법학 교수들이 동료보다 AI 답을 더 선호했습니다",
+      "date": "2026-05-27",
+      "category": "survival",
+      "source": "Stanford Law School (Salinas 외)",
+      "tags": [
+        "법률AI",
+        "전문직",
+        "판단력",
+        "직업변화",
+        "AI평가"
+      ],
+      "slug": "2026-05-27-law-professors-prefer-ai",
+      "file": "survival/2026-05-27-law-professors-prefer-ai.html",
+      "summary": "스탠퍼드 로스쿨이 계약법 교수 16명에게 시킨 2,918번의 블라인드 비교에서, 교수들은 동료보다 AI 답을 평균 75.3% 더 선호했습니다. 정답이 하나가 아닌 판단의 영역에서 나온 결과입니다.",
+      "roasting_quote": "당신의 전문성은 '정답이 없어서' 안전하다고 믿습니까? 정답 없는 영역에서도 전문가들은 동료 대신 AI 답을 골랐습니다.",
+      "next_post": "tech/2026-06-02-claude-code-dynamic-workflows.html"
+    },
+    {
+      "title": "AI 리서치를 2분에 끝낸 건 지식 그래프였습니다",
+      "date": "2026-05-20",
+      "category": "research",
+      "source": "arXiv (Shuofei Qiao 외 10인)",
+      "tags": [
+        "지식그래프",
+        "RAG",
+        "AI리서치",
+        "벡터검색",
+        "신경기호",
+        "검색"
+      ],
+      "slug": "2026-05-20-sciatlas-scientific-knowledge-graph",
+      "file": "research/2026-05-20-sciatlas-scientific-knowledge-graph.html",
+      "summary": "연구진이 논문 4,300만 건을 점과 선으로 이은 지식 그래프 SciAtlas를 공개했습니다. 키워드·벡터·제목 검색에 그래프 탐색을 더해, LLM을 매번 부르지 않고 2분 안에 답을 찾습니다.",
+      "roasting_quote": "사내 문서를 벡터 DB에 쏟아부으면 AI가 알아서 찾을 거라 믿으셨습니까? 정작 빠진 건 문서를 잇는 지도였습니다.",
+      "next_post": "survival/2026-05-27-law-professors-prefer-ai.html"
+    },
+    {
+      "title": "AI 일자리 종말론은 과장입니다, 진짜 위험은 따로 있습니다",
+      "date": "2026-05-06",
+      "category": "survival",
+      "source": "a16z (David George)",
+      "tags": [
+        "일자리",
+        "AI고용",
+        "노동시장",
+        "직업변화",
+        "전환비용"
+      ],
+      "slug": "2026-05-06-ai-job-apocalypse-fantasy",
+      "file": "survival/2026-05-06-ai-job-apocalypse-fantasy.html",
+      "summary": "a16z가 AI 일자리 종말론을 '고정 노동량의 오류'라며 반박했습니다. 2026년 실증 연구도 안정세를 가리키지만, 진짜 위험은 새 일자리가 도착하기 전의 전환 시차입니다.",
+      "roasting_quote": "기술은 결국 더 많은 일자리를 만듭니다. 문제는 새 일자리가 도착하기 전에, 사라지는 자리에 앉은 사람이 먼저 무너진다는 것입니다.",
+      "next_post": "research/2026-05-20-sciatlas-scientific-knowledge-graph.html"
+    },
+    {
       "title": "세무 AI가 사람의 수정을 학습해 스스로 진화합니다",
       "date": "2026-05-27",
       "category": "tech",
