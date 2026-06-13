@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다",
+      "date": "2026-06-12",
+      "category": "company",
+      "source": "Anthropic (공식 성명)",
+      "tags": [
+        "수출통제",
+        "모델가용성",
+        "AI거버넌스",
+        "벤더리스크",
+        "프런티어모델"
+      ],
+      "slug": "2026-06-12-fable-mythos-export-control-suspension",
+      "file": "company/2026-06-12-fable-mythos-export-control-suspension.html",
+      "summary": "Anthropic이 미국 정부의 수출통제 지시로 최상위 모델 Fable 5와 Mythos 5의 접근을 전 세계에서 중단했습니다. 직원과 외국인을 포함한 모든 사용자가 대상입니다. 모델이 버그가 아니라 규제로 멈출 수 있다는 신호이며, 경영 리더에게 '가용성 리스크'라는 새 과제를 남깁니다.",
+      "roasting_quote": "당신의 업무 절반을 맡긴 AI 모델이 어느 날 아침 정부 명령 한 줄에 사라진다면, 당신에게는 그다음 계획이 있습니까?",
+      "next_post": "survival/2026-06-08-ai-broken-hiring.html"
+    },
+    {
       "title": "이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다",
       "date": "2026-06-08",
       "category": "survival",

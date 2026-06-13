@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-10T02:40:35.374Z",
+  "generatedAt": "2026-06-13T03:30:39.629Z",
   "version": 1,
   "stats": {
     "totalConcepts": 91,
     "totalRelationships": 242,
-    "totalPosts": 203,
+    "totalPosts": 204,
     "totalNewsletters": 51
   },
   "concepts": [
@@ -1450,6 +1450,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai거버넌스",
+      "slug": "ai거버넌스",
+      "name": "AI거버넌스",
+      "aliases": [],
+      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
+      "frequency": 4,
+      "category": "company",
+      "posts": [
+        "2026-04-01-nature-ai-editorial-policy",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-06-12-fable-mythos-export-control-suspension",
+        "2025-04-01-light-and-shadow-of-china-digital-id-system"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2025-04-01",
+      "needs_manual_review": false
+    },
+    {
       "id": "ciso",
       "slug": "ciso",
       "name": "CISO",
@@ -1783,24 +1802,6 @@
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
       "needs_manual_review": true
-    },
-    {
-      "id": "ai거버넌스",
-      "slug": "ai거버넌스",
-      "name": "AI거버넌스",
-      "aliases": [],
-      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
-      "frequency": 3,
-      "category": "research",
-      "posts": [
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2025-04-01",
-      "needs_manual_review": false
     },
     {
       "id": "ieee",
