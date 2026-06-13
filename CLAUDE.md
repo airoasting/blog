@@ -46,6 +46,15 @@
 > node -e "const fs=require('fs');const src=fs.readFileSync('assets/js/newsletter-data.js','utf8');const json=src.replace('window.NEWSLETTER_DATA = ','').replace(/;\\s*$/,'');const d=JSON.parse(json);fs.writeFileSync('newsletter-index.json',JSON.stringify({newsletters:d.map(({ep,title,date,url})=>({ep,title,date,url}))},null,2));"
 > ```
 
+> **뉴스레터 발행 체크리스트** (에피소드 추가 시 5개 모두 처리해야 본문이 사이트에서 보입니다):
+> 1. `assets/js/newsletter-data.js` 배열 맨 앞에 항목 추가 (`ep`, `title`, `date`, `img`, `url`)
+> 2. `newsletter/images/nl-{ep}.png` 썸네일 추가
+> 3. **`newsletter/content/nl-{ep}.md` 본문 파일 생성** (누락 시 카드는 떠도 클릭하면 "콘텐츠를 불러올 수 없습니다". 형식은 기존 `nl-51.md` 참조: 첫 줄 `[AI 로스팅 #{ep}] 제목`, 날짜 줄, 본문, `## 섹션`, `## 이번 주 AI 소식` 아래 `1/ … 10/`)
+> 4. `newsletter/index.html` 카드 그리드 맨 앞에 `#{ep}` 카드 추가 + `총 N화` 배지 갱신
+> 5. 위 `newsletter-index.json` 재생성 명령 실행
+>
+> 본문은 `window.NL_CONTENT`(1~47화 인라인) 또는 `newsletter/content/nl-{ep}.md`(fallback)에서 로드됩니다. 신규 화는 `.md` 방식으로 통일합니다. 리더는 index.html · newsletter/index.html · insights/insights.html 세 곳 모두 동일 fallback을 사용합니다.
+
 ## 가이드 참조
 
 | 목적 | 파일 | 내용 |

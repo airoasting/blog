@@ -1435,7 +1435,15 @@
         body.scrollTop=0;
       }
       if(window.NL_CONTENT&&window.NL_CONTENT[ep]) renderRaw(window.NL_CONTENT[ep]);
-      else body.innerHTML='<p style="padding:32px;color:#999;font-size:14px;">콘텐츠를 불러올 수 없습니다.</p>';
+      else {
+        var padded = ep<10 ? '0'+ep : String(ep);
+        fetch('../newsletter/content/nl-'+padded+'.md')
+          .then(function(r){ if(!r.ok) throw new Error('fail'); return r.text(); })
+          .then(renderRaw)
+          .catch(function(){
+            body.innerHTML='<p style="padding:32px;color:#999;font-size:14px;">콘텐츠를 불러올 수 없습니다.'+(nlItem&&nlItem.url?'<br><a href="'+escHtml(nlItem.url)+'" target="_blank" style="color:#7C3AED;">LinkedIn에서 직접 보기 →</a>':'')+'</p>';
+          });
+      }
     }
 
     /* ── 포스트 오픈 ── */
