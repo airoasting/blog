@@ -1,28 +1,32 @@
 {
-  "buildAt": "2026-06-13T03:30:39.629Z",
-  "duration": 0.25,
+  "buildAt": "2026-06-16T01:53:57.761Z",
+  "duration": 0.27,
   "concepts": {
-    "total": 91,
+    "total": 92,
     "validDefinitions": 90,
-    "needsReview": 1
+    "needsReview": 2
   },
   "relationships": {
-    "total": 242
+    "total": 245
   },
   "coverage": {
-    "postsWithConcepts": 177,
-    "totalPosts": 204
+    "postsWithConcepts": 178,
+    "totalPosts": 205
   },
   "inject": {
-    "updated": 0,
-    "inserted": 1,
-    "unchanged": 174,
+    "updated": 10,
+    "inserted": 0,
+    "unchanged": 166,
     "skipped": 29
   },
   "needsManualReview": [
     {
       "name": "AI리서치",
       "slug": "ai리서치"
+    },
+    {
+      "name": "NBER",
+      "slug": "nber"
     }
   ]
 }

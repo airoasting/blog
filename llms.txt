@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-06-15 [리더] 나델라: 모델을 고르지 말고 학습 루프를 소유하세요 — /blog/leader/2026-06-15-satya-nadella-learning-loop-token-capital.html
 - 2026-06-12 [기업] 쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다 — /blog/company/2026-06-12-fable-mythos-export-control-suspension.html
 - 2026-06-08 [생존] 이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다 — /blog/survival/2026-06-08-ai-broken-hiring.html
 - 2026-06-07 [기업] AI가 아낀 시간이 성과로 바뀌지 않는 이유 — /blog/company/2026-06-07-bok-ai-productivity-disconnect.html
