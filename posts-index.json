@@ -57,6 +57,24 @@
       "next_post": "leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"
     },
     {
+      "title": "AI가 이 글을 썼을까, 다섯 분야를 추적했습니다",
+      "date": "2026-06-16",
+      "category": "research",
+      "source": "The Economist (Graphic detail)",
+      "tags": [
+        "AI슬롭",
+        "콘텐츠생산",
+        "생산성",
+        "품질",
+        "창작"
+      ],
+      "slug": "2026-06-16-economist-ai-five-creative-fields",
+      "file": "research/2026-06-16-economist-ai-five-creative-fields.html",
+      "summary": "이코노미스트가 책·법률·논문·코드·음악 다섯 분야에서 AI 콘텐츠 확산을 추적했습니다. 생산량은 크게 늘었지만 양이 흔해지면 값이 떨어집니다. 병목은 생산에서 검증으로 옮겨가고, 남는 경쟁력은 신뢰와 출처입니다.",
+      "roasting_quote": "AI로 산출물을 10배 더 찍어내셨습니까? 바로 그래서 모든 산출물의 값이 함께 떨어집니다.",
+      "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
+    },
+    {
       "title": "AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다",
       "date": "2026-06-16",
       "category": "research",
@@ -111,6 +129,24 @@
       "summary": "사티아 나델라는 모든 기업이 휴먼 캐피털과 토큰 캐피털을 함께 키워야 한다고 말했습니다. 진짜 경쟁우위는 최고 모델을 고르는 데 있지 않고, 모델 위에 쌓는 학습 루프에 있습니다. 일이나 직무는 위임해도 학습은 위임할 수 없으며, 그 학습을 자산으로 만든 회사가 이깁니다.",
       "roasting_quote": "최고의 AI 모델을 고르는 데 시간을 쓰고 계십니까? 나델라는 모델이 아니라 그 위에 쌓은 학습 루프를 소유한 회사가 이긴다고 말합니다.",
       "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
+    },
+    {
+      "title": "초지능엔 끄는 스위치가 없습니다",
+      "date": "2026-06-15",
+      "category": "survival",
+      "source": "The Economist (Will Marshall)",
+      "tags": [
+        "AI안전",
+        "초지능",
+        "재귀적자기개선",
+        "AI거버넌스",
+        "실존위험"
+      ],
+      "slug": "2026-06-15-intelligence-explosion-not-ready",
+      "file": "survival/2026-06-15-intelligence-explosion-not-ready.html",
+      "summary": "플래닛랩스 CEO 윌 마셜은 AI 전문가들이 AI발 파국 위험을 10~50%로 본다고 지적합니다. 원전이 허용하는 파국 위험은 100만분의 1입니다. 가장 큰 위험은 AI가 사람 개입 없이 자기 코드를 고치는 재귀적 자기개선이며, 초지능이 한번 태어나면 끄는 스위치는 작동하지 않을 가능성이 큽니다. 마셜의 단계적 통제 원리는 거대 외교만이 아니라 조직의 AI 도입에도 그대로 적용됩니다.",
+      "roasting_quote": "AI를 만드는 사람들이 파국 확률을 최대 50%로 봅니다. 당신은 무엇을 믿고 그 시스템을 조직에 들입니까?",
+      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
       "title": "여러 AI를 합치니 가장 강한 모델을 넘었습니다",
@@ -221,6 +257,24 @@
       "summary": "Anthropic이 화학 특화 학습을 전혀 하지 않은 클로드로 NMR 스펙트럼 예측을 시험했습니다. Opus 4.7의 수소 예측 평균 오차는 0.079ppm으로 전용 소프트웨어 MestReNova(0.150ppm)를 앞섰고, 분할 패턴 정확도는 약 80%로 전용 도구(26~35%)를 크게 넘었습니다. 스펙트럼에서 분자 구조를 거꾸로 알아내는 역추정까지 해냈습니다.",
       "roasting_quote": "당신 업계의 '전용 소프트웨어'는 정말 안전합니까? 수십 년 쌓인 화학 전용 도구를, 화학을 따로 배운 적 없는 범용 AI가 따라잡았습니다.",
       "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
+    },
+    {
+      "title": "컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다",
+      "date": "2026-06-01",
+      "category": "survival",
+      "source": "The Economist",
+      "tags": [
+        "컴퓨터공학",
+        "AI일자리",
+        "학위인플레이션",
+        "온라인대학",
+        "신입개발자"
+      ],
+      "slug": "2026-06-01-cs-degree-glut-ai-erodes-value",
+      "file": "survival/2026-06-01-cs-degree-glut-ai-erodes-value.html",
+      "summary": "미국에서 컴퓨터공학은 4번째로 인기 있는 전공이 됐고, 지난 10년간 평균 학문보다 6.5배 빠르게 늘었습니다. 증가를 이끈 곳은 온라인 비중이 높고 선발이 느슨한 대학입니다. BYU-아이다호는 2년 만에 학위 수가 3배로 뛰어 MIT·스탠퍼드를 앞질렀습니다. 정작 AI는 신입 개발자 수요를 줄이고 있습니다. 학위 공급은 사상 최대인데, 그 학위가 노리는 일자리는 줄어듭니다.",
+      "roasting_quote": "컴퓨터공학 학위가 안전한 선택이라 들으셨습니까? 학위는 사상 최대로 쏟아지는데, 그 일자리는 AI가 줄이고 있습니다.",
+      "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
       "title": "복잡한 일은 AI 한 명에게 맡기지 마세요",

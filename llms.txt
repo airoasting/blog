@@ -17,9 +17,11 @@
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
 - 2026-06-18 [기술] 전문가가 포기한 희귀병, AI가 단서를 찾았습니다 — /blog/tech/2026-06-18-o3-rare-disease-reanalysis.html
 - 2026-06-18 [기술] 혼자 로봇을 조종한 AI, 사람 팀보다 19배 빨랐습니다 — /blog/tech/2026-06-18-project-fetch-phase-two.html
+- 2026-06-16 [리서치] AI가 이 글을 썼을까, 다섯 분야를 추적했습니다 — /blog/research/2026-06-16-economist-ai-five-creative-fields.html
 - 2026-06-16 [리서치] AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다 — /blog/research/2026-06-16-claude-code-expertise.html
 - 2026-06-16 [리서치] ChatGPT 점유율, 처음으로 50% 밑으로 내려갔습니다 — /blog/research/2026-06-16-chatgpt-market-share-below-50.html
 - 2026-06-15 [리더] 나델라: 모델을 고르지 말고 학습 루프를 소유하세요 — /blog/leader/2026-06-15-satya-nadella-learning-loop-token-capital.html
+- 2026-06-15 [생존] 초지능엔 끄는 스위치가 없습니다 — /blog/survival/2026-06-15-intelligence-explosion-not-ready.html
 - 2026-06-12 [리서치] 여러 AI를 합치니 가장 강한 모델을 넘었습니다 — /blog/research/2026-06-12-openrouter-fusion-model-diversity.html
 - 2026-06-12 [기업] 쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다 — /blog/company/2026-06-12-fable-mythos-export-control-suspension.html
 - 2026-06-08 [리서치] AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다 — /blog/research/2026-06-08-agents-in-biology.html
@@ -29,6 +31,7 @@
 - 2026-06-02 [기술] 복잡한 일은 AI 한 명에게 맡기지 마세요 — /blog/tech/2026-06-02-claude-code-dynamic-workflows.html
 - 2026-06-02 [생존] 개발자와 지식 노동자의 경계가 사라지고 있습니다 — /blog/survival/2026-06-02-next-era-knowledge-work.html
 - 2026-06-01 [리서치] GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 — /blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html
+- 2026-06-01 [생존] 컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다 — /blog/survival/2026-06-01-cs-degree-glut-ai-erodes-value.html
 - 2026-05-29 [기술] AI가 80년 수학 난제를 풀었습니다 — /blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html
 - 2026-05-28 [기술] 스스로 진화하는 AI, 코드를 스스로 고칩니다 — /blog/tech/2026-05-28-sia-self-improving-ai-harness-weights.html
 - 2026-05-27 [생존] 법학 교수들이 동료보다 AI 답을 더 선호했습니다 — /blog/survival/2026-05-27-law-professors-prefer-ai.html

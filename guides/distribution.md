@@ -58,13 +58,15 @@
 
 콘텐츠 초고 완성 시 아래 이미지를 자동 생성합니다.
 
+> 썸네일(`thumbnail.png`)은 자동 생성하지 않습니다. 히어로의 썸네일 이미지가 없으면 `onerror`로 숨겨지고 제목 오버레이만 표시됩니다. 필요하면 사용자가 직접 추가합니다.
+
 | 콘텐츠 유형 | 자동 생성 이미지 |
 |-------------|-----------------|
-| 트렌드 분석 | thumbnail + og + infographic |
-| 활용 가이드 | thumbnail + og + diagram |
-| 사례 소개 | thumbnail + og + chart |
-| 뉴스 해설 | thumbnail + og + quote |
-| 시리즈 | thumbnail(회차 표시) + og |
+| 트렌드 분석 | og + infographic |
+| 활용 가이드 | og + diagram |
+| 사례 소개 | og + chart |
+| 뉴스 해설 | og + quote |
+| 시리즈 | og |
 | SNS 배포 시 | 위 항목 + card_01~07 추가 |
 
 ### 디자인 기본값

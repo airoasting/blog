@@ -34,7 +34,6 @@
 
 | 이미지 유형 | 파일명 | 사이즈 |
 |-------------|--------|--------|
-| 블로그 썸네일 | `thumbnail.png` | 1200x630 |
 | OG 소셜 카드 | `og.png` | 1200x630 |
 | 인포그래픽 | `infographic.png` | 가변 |
 | 프로세스 다이어그램 | `diagram.png` | 가변 |
@@ -179,11 +178,13 @@ window.addEventListener('scroll', () => {
 
 ### 4-5. 썸네일 히어로
 
+> 썸네일 이미지는 자동 생성하지 않습니다. 아래 `<img>`는 그대로 두되 `onerror`로 파일이 없을 때 숨깁니다. 사용자가 `thumbnail.png`를 직접 넣으면 표시됩니다.
+
 ```html
 <div class="post-thumbnail-hero" data-category="{category}">
   <div class="post-color-bar"></div>
   <img src="./images/{YYYY_MM_DD_slug}/thumbnail.png"
-       alt="{제목} - 썸네일">
+       alt="{제목} - 썸네일" onerror="this.style.display='none'">
   <div class="post-hero-meta">
     <span class="post-category" data-category="{category}">{카테고리 한글명}</span>
     <span class="post-date">{YYYY-MM-DD}</span>

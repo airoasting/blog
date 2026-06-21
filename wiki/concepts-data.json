@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-21T01:26:46.831Z",
+  "generatedAt": "2026-06-21T02:10:10.968Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 96,
-    "totalRelationships": 257,
-    "totalPosts": 213,
+    "totalConcepts": 97,
+    "totalRelationships": 261,
+    "totalPosts": 216,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -306,7 +306,7 @@
       "name": "IT",
       "aliases": [],
       "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
-      "frequency": 24,
+      "frequency": 25,
       "category": "tech",
       "posts": [
         "2026-02-02-advisor-model-black-box-llm",
@@ -323,6 +323,7 @@
         "2026-05-07-natural-language-autoencoders",
         "2026-05-08-teaching-claude-why",
         "2026-05-20-ai-slop-books-music-lawsuits-science",
+        "2026-06-01-cs-degree-glut-ai-erodes-value",
         "2026-06-19-companies-rein-in-ai-costs",
         "2025-02-20-sovereign-ai",
         "2025-03-15-when-technology-becomes-borders",
@@ -337,7 +338,7 @@
         "nl-35"
       ],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-03-16",
+      "lastSeen": "2026-06-01",
       "needs_manual_review": false
     },
     {
@@ -788,6 +789,33 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai-safety",
+      "slug": "ai-safety",
+      "name": "AI 안전",
+      "aliases": [
+        "AI안전",
+        "AI safety"
+      ],
+      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "frequency": 9,
+      "category": "tech",
+      "posts": [
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-02-23-persona-selection-model",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-07-natural-language-autoencoders",
+        "2026-05-08-teaching-claude-why",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-06-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
@@ -813,29 +841,26 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai-safety",
-      "slug": "ai-safety",
-      "name": "AI 안전",
-      "aliases": [
-        "AI안전",
-        "AI safety"
-      ],
-      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "id": "생산성",
+      "slug": "생산성",
+      "name": "생산성",
+      "aliases": [],
+      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
       "frequency": 8,
-      "category": "tech",
+      "category": "research",
       "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-23-persona-selection-model",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2025-09-22-workslop",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-06-16-economist-ai-five-creative-fields",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
       ],
       "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-02-23",
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-01-16",
       "needs_manual_review": false
     },
     {
@@ -907,28 +932,6 @@
       ],
       "firstSeen": "2025-07-15",
       "lastSeen": "2025-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "생산성",
-      "slug": "생산성",
-      "name": "생산성",
-      "aliases": [],
-      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
-      "frequency": 7,
-      "category": "research",
-      "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2025-09-22-workslop",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2026-05-27-ai-fomo-mastering-illusion",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-01-16",
       "needs_manual_review": false
     },
     {
@@ -1291,6 +1294,26 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai거버넌스",
+      "slug": "ai거버넌스",
+      "name": "AI거버넌스",
+      "aliases": [],
+      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
+      "frequency": 5,
+      "category": "company",
+      "posts": [
+        "2026-04-01-nature-ai-editorial-policy",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-06-12-fable-mythos-export-control-suspension",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2025-04-01-light-and-shadow-of-china-digital-id-system"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2026-06-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai정책",
       "slug": "ai정책",
       "name": "AI정책",
@@ -1540,25 +1563,6 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai거버넌스",
-      "slug": "ai거버넌스",
-      "name": "AI거버넌스",
-      "aliases": [],
-      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
-      "frequency": 4,
-      "category": "company",
-      "posts": [
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-06-12-fable-mythos-export-control-suspension",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2025-04-01",
       "needs_manual_review": false
     },
     {
@@ -1932,6 +1936,24 @@
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
       "needs_manual_review": false
+    },
+    {
+      "id": "초지능",
+      "slug": "초지능",
+      "name": "초지능",
+      "aliases": [],
+      "definition": "초지능는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "leader",
+      "posts": [
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-06",
+      "lastSeen": "2026-06-15",
+      "needs_manual_review": true
     },
     {
       "id": "nber",
@@ -2368,13 +2390,18 @@
     },
     {
       "source": "LLM",
+      "target": "AI 안전",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "ASI",
       "strength": 3
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
-      "strength": 3
+      "target": "생산성",
+      "strength": 2
     },
     {
       "source": "LLM",
@@ -2390,11 +2417,6 @@
       "source": "LLM",
       "target": "HBM",
       "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "생산성",
-      "strength": 2
     },
     {
       "source": "LLM",
@@ -3163,6 +3185,11 @@
     },
     {
       "source": "IPO",
+      "target": "초지능",
+      "strength": 2
+    },
+    {
+      "source": "IPO",
       "target": "CUDA",
       "strength": 2
     },
@@ -3209,6 +3236,11 @@
     {
       "source": "ROI",
       "target": "AI도입",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "초지능",
       "strength": 2
     },
     {
@@ -3328,12 +3360,12 @@
     },
     {
       "source": "KPI",
-      "target": "AI전환",
+      "target": "생산성",
       "strength": 2
     },
     {
       "source": "KPI",
-      "target": "생산성",
+      "target": "AI전환",
       "strength": 2
     },
     {
@@ -3403,12 +3435,22 @@
     },
     {
       "source": "조직설계",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
       "target": "AI전환",
       "strength": 3
     },
     {
-      "source": "조직설계",
-      "target": "생산성",
+      "source": "AI 안전",
+      "target": "AI규제",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI거버넌스",
       "strength": 2
     },
     {
@@ -3422,13 +3464,8 @@
       "strength": 2
     },
     {
-      "source": "AI 안전",
-      "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "AI전환",
-      "target": "생산성",
+      "source": "생산성",
+      "target": "AI전환",
       "strength": 2
     },
     {
@@ -3439,6 +3476,11 @@
     {
       "source": "CFO",
       "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "초지능",
       "strength": 2
     },
     {

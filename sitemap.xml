@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -63,7 +63,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/survival/</loc>
-    <lastmod>2026-06-10</lastmod>
+    <lastmod>2026-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1224,6 +1224,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-06-15-intelligence-explosion-not-ready.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://airoasting.github.io/blog/survival/2026-05-20-ai-slop-books-music-lawsuits-science.html</loc>
     <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -1334,6 +1340,18 @@
   <url>
     <loc>https://airoasting.github.io/blog/tech/2026-06-18-o3-rare-disease-reanalysis.html</loc>
     <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/research/2026-06-16-economist-ai-five-creative-fields.html</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/survival/2026-06-01-cs-degree-glut-ai-erodes-value.html</loc>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
