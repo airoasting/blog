@@ -2459,6 +2459,20 @@ img {
   transform: translateY(-1px);
 }
 
+/* 좁은 화면(폰·세로 태블릿)에서는 카테고리를 한 줄씩 */
+@media (max-width: 900px) {
+  .about-category-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .about-category-item,
+  .about-category-item:nth-child(4),
+  .about-category-item:nth-child(5) {
+    grid-column: auto;
+    padding: 18px 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .about {
     padding: 40px 18px 64px;
@@ -2485,17 +2499,6 @@ img {
     font-size: 14.5px;
     line-height: 1.75;
     padding: 16px 18px;
-  }
-  /* 3열 → 1열, span 초기화 */
-  .about-category-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .about-category-item,
-  .about-category-item:nth-child(4),
-  .about-category-item:nth-child(5) {
-    grid-column: auto;
-    padding: 18px 20px;
   }
 }
 
