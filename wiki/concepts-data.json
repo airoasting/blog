@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-21T02:10:10.968Z",
+  "generatedAt": "2026-06-21T06:13:55.423Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 97,
-    "totalRelationships": 261,
-    "totalPosts": 216,
+    "totalConcepts": 100,
+    "totalRelationships": 269,
+    "totalPosts": 220,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -146,7 +146,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 44,
+      "frequency": 45,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -170,6 +170,7 @@
         "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
         "2026-06-08-agents-in-biology",
         "2026-06-18-project-fetch-phase-two",
+        "2026-06-19-implicit-organization-ai-agents",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-02-20-sovereign-ai",
         "2025-04-10-why-ai-first-declaration-matters",
@@ -211,7 +212,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 36,
+      "frequency": 39,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -242,9 +243,12 @@
         "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
         "2026-06-02-next-era-knowledge-work",
         "2026-06-08-agents-in-biology",
+        "2026-06-09-how-people-really-use-ai-2026",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
         "2026-06-16-claude-code-expertise",
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-companies-rein-in-ai-costs",
+        "2026-06-19-implicit-organization-ai-agents",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -254,7 +258,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-03-28",
+      "lastSeen": "2026-06-12",
       "needs_manual_review": false
     },
     {
@@ -347,7 +351,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 23,
+      "frequency": 24,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -366,6 +370,7 @@
         "2026-04-24-deepseek-v4-pro-coding-benchmark",
         "2026-05-28-sia-self-improving-ai-harness-weights",
         "2026-06-05-claude-chemist-nmr",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
         "2026-06-18-project-fetch-phase-two",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
@@ -377,7 +382,7 @@
         "nl-47"
       ],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2026-04-01",
+      "lastSeen": "2026-06-12",
       "needs_manual_review": false
     },
     {
@@ -734,6 +739,36 @@
       "needs_manual_review": false
     },
     {
+      "id": "organizational-design",
+      "slug": "organizational-design",
+      "name": "조직설계",
+      "aliases": [
+        "조직 설계",
+        "org design",
+        "organization design"
+      ],
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "frequency": 11,
+      "category": "company",
+      "posts": [
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-02-next-era-knowledge-work",
+        "2026-06-07-bok-ai-productivity-disconnect",
+        "2026-06-19-implicit-organization-ai-agents",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2025-04-20",
+      "needs_manual_review": false
+    },
+    {
       "id": "mcp",
       "slug": "mcp",
       "name": "MCP",
@@ -757,35 +792,6 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "organizational-design",
-      "slug": "organizational-design",
-      "name": "조직설계",
-      "aliases": [
-        "조직 설계",
-        "org design",
-        "organization design"
-      ],
-      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
-      "frequency": 10,
-      "category": "company",
-      "posts": [
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-05-15-gen-ai-performance-reviews",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-06-02-next-era-knowledge-work",
-        "2026-06-07-bok-ai-productivity-disconnect",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2025-04-20",
       "needs_manual_review": false
     },
     {
@@ -1025,6 +1031,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "gdp",
+      "slug": "gdp",
+      "name": "GDP",
+      "aliases": [],
+      "definition": "국내총생산입니다. AI 생산성 효과가 거시 경제에 어떻게 반영될지 논쟁이 있습니다.",
+      "frequency": 6,
+      "category": "survival",
+      "posts": [
+        "2025-11-10-peter-thiel-antichrist-lectures",
+        "2026-04-08-gallup-engagement-ai-paradox",
+        "2026-05-06-ai-job-apocalypse-fantasy",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
+        "2026-06-15-satya-nadella-learning-loop-token-capital",
+        "2025-03-25-koreas-end-or-transition"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-25",
+      "lastSeen": "2026-06-12",
+      "needs_manual_review": false
+    },
+    {
       "id": "강화학습",
       "slug": "강화학습",
       "name": "강화학습",
@@ -1067,6 +1094,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "멀티에이전트",
+      "slug": "멀티에이전트",
+      "name": "멀티에이전트",
+      "aliases": [],
+      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
+      "frequency": 6,
+      "category": "tech",
+      "posts": [
+        "2026-03-01-conductor-multi-agent-orchestration",
+        "2026-04-06-paperorchestra-multi-agent-writing",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-06-02-claude-code-dynamic-workflows",
+        "2026-06-12-openrouter-fusion-model-diversity",
+        "2026-06-19-implicit-organization-ai-agents"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
       "id": "gpqa",
       "slug": "gpqa",
       "name": "GPQA",
@@ -1086,6 +1134,27 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai거버넌스",
+      "slug": "ai거버넌스",
+      "name": "AI거버넌스",
+      "aliases": [],
+      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
+      "frequency": 6,
+      "category": "company",
+      "posts": [
+        "2026-04-01-nature-ai-editorial-policy",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-06-12-fable-mythos-export-control-suspension",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-06-16-ai-slop-knowledge-decay",
+        "2025-04-01-light-and-shadow-of-china-digital-id-system"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -1149,46 +1218,6 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2025-05-01",
-      "needs_manual_review": false
-    },
-    {
-      "id": "gdp",
-      "slug": "gdp",
-      "name": "GDP",
-      "aliases": [],
-      "definition": "국내총생산입니다. AI 생산성 효과가 거시 경제에 어떻게 반영될지 논쟁이 있습니다.",
-      "frequency": 5,
-      "category": "survival",
-      "posts": [
-        "2025-11-10-peter-thiel-antichrist-lectures",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-05-06-ai-job-apocalypse-fantasy",
-        "2026-06-15-satya-nadella-learning-loop-token-capital",
-        "2025-03-25-koreas-end-or-transition"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-25",
-      "lastSeen": "2025-11-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "멀티에이전트",
-      "slug": "멀티에이전트",
-      "name": "멀티에이전트",
-      "aliases": [],
-      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-06-02-claude-code-dynamic-workflows",
-        "2026-06-12-openrouter-fusion-model-diversity"
-      ],
-      "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -1273,6 +1302,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "crm",
+      "slug": "crm",
+      "name": "CRM",
+      "aliases": [],
+      "definition": "고객관계관리 시스템입니다. AI 에이전트가 영업과 지원 업무를 자동화하는 영역입니다.",
+      "frequency": 5,
+      "category": "company",
+      "posts": [
+        "2026-03-16-why-world-runs-on-sap",
+        "2026-03-23-two-paths-for-software",
+        "2026-06-19-implicit-organization-ai-agents",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [
+        "nl-34"
+      ],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-03-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "pm",
       "slug": "pm",
       "name": "PM",
@@ -1291,26 +1341,6 @@
       ],
       "firstSeen": "2025-05-20",
       "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai거버넌스",
-      "slug": "ai거버넌스",
-      "name": "AI거버넌스",
-      "aliases": [],
-      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
-      "frequency": 5,
-      "category": "company",
-      "posts": [
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-06-12-fable-mythos-export-control-suspension",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -1504,26 +1534,6 @@
       "newsletters": [],
       "firstSeen": "2025-08-23",
       "lastSeen": "2025-08-23",
-      "needs_manual_review": false
-    },
-    {
-      "id": "crm",
-      "slug": "crm",
-      "name": "CRM",
-      "aliases": [],
-      "definition": "고객관계관리 시스템입니다. AI 에이전트가 영업과 지원 업무를 자동화하는 영역입니다.",
-      "frequency": 4,
-      "category": "company",
-      "posts": [
-        "2026-03-16-why-world-runs-on-sap",
-        "2026-03-23-two-paths-for-software",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [
-        "nl-34"
-      ],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-03-16",
       "needs_manual_review": false
     },
     {
@@ -2030,6 +2040,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "gdpval",
+      "slug": "gdpval",
+      "name": "GDPval",
+      "aliases": [],
+      "definition": "GDPval는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-04-23-gpt-5-5-agentic-coding",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset"
+      ],
+      "newsletters": [
+        "nl-26"
+      ],
+      "firstSeen": "2026-06-12",
+      "lastSeen": "2026-06-12",
+      "needs_manual_review": true
+    },
+    {
       "id": "클로드",
       "slug": "클로드",
       "name": "클로드",
@@ -2041,6 +2070,42 @@
         "2026-04-24-anthropic-project-deal-agent-economy",
         "2026-06-05-claude-chemist-nmr",
         "2026-06-16-chatgpt-market-share-below-50"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
+    },
+    {
+      "id": "업무재설계",
+      "slug": "업무재설계",
+      "name": "업무재설계",
+      "aliases": [],
+      "definition": "업무재설계는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
+        "2026-06-16-claude-code-expertise",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-06-12",
+      "needs_manual_review": true
+    },
+    {
+      "id": "ax전략",
+      "slug": "ax전략",
+      "name": "AX전략",
+      "aliases": [],
+      "definition": "AX전략는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "company",
+      "posts": [
+        "2026-06-16-ai-slop-knowledge-decay",
+        "2026-06-18-project-fetch-phase-two",
+        "2026-06-19-companies-rein-in-ai-costs"
       ],
       "newsletters": [],
       "firstSeen": null,
@@ -2380,13 +2445,13 @@
     },
     {
       "source": "LLM",
-      "target": "MCP",
-      "strength": 6
+      "target": "조직설계",
+      "strength": 4
     },
     {
       "source": "LLM",
-      "target": "조직설계",
-      "strength": 4
+      "target": "MCP",
+      "strength": 6
     },
     {
       "source": "LLM",
@@ -2440,13 +2505,13 @@
     },
     {
       "source": "LLM",
-      "target": "GPQA",
-      "strength": 2
+      "target": "멀티에이전트",
+      "strength": 3
     },
     {
       "source": "LLM",
-      "target": "멀티에이전트",
-      "strength": 3
+      "target": "GPQA",
+      "strength": 2
     },
     {
       "source": "LLM",
@@ -2686,7 +2751,7 @@
     {
       "source": "API",
       "target": "AI 에이전트",
-      "strength": 14
+      "strength": 15
     },
     {
       "source": "API",
@@ -2765,6 +2830,11 @@
     },
     {
       "source": "API",
+      "target": "멀티에이전트",
+      "strength": 4
+    },
+    {
+      "source": "API",
       "target": "GPQA",
       "strength": 3
     },
@@ -2775,12 +2845,12 @@
     },
     {
       "source": "API",
-      "target": "멀티에이전트",
-      "strength": 3
+      "target": "자동화",
+      "strength": 2
     },
     {
       "source": "API",
-      "target": "자동화",
+      "target": "CRM",
       "strength": 2
     },
     {
@@ -2831,7 +2901,7 @@
     {
       "source": "AI 에이전트",
       "target": "CTO",
-      "strength": 12
+      "strength": 13
     },
     {
       "source": "AI 에이전트",
@@ -2875,17 +2945,22 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "조직설계",
+      "strength": 3
+    },
+    {
+      "source": "AI 에이전트",
       "target": "MCP",
       "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "조직설계",
-      "strength": 2
+      "target": "강화학습",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
-      "target": "강화학습",
+      "target": "멀티에이전트",
       "strength": 3
     },
     {
@@ -2895,13 +2970,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "멀티에이전트",
-      "strength": 2
+      "target": "자동화",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "자동화",
-      "strength": 4
+      "target": "CRM",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -2911,11 +2986,6 @@
     {
       "source": "AI 에이전트",
       "target": "GPTs",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "CRM",
       "strength": 2
     },
     {
@@ -2946,6 +3016,21 @@
     {
       "source": "AI 에이전트",
       "target": "코딩AI",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "GDPval",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "업무재설계",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "AX전략",
       "strength": 2
     },
     {
@@ -3105,6 +3190,11 @@
     },
     {
       "source": "CTO",
+      "target": "멀티에이전트",
+      "strength": 2
+    },
+    {
+      "source": "CTO",
       "target": "GPQA",
       "strength": 3
     },
@@ -3112,11 +3202,6 @@
       "source": "CTO",
       "target": "SWE",
       "strength": 3
-    },
-    {
-      "source": "CTO",
-      "target": "멀티에이전트",
-      "strength": 2
     },
     {
       "source": "CTO",
@@ -3147,6 +3232,11 @@
       "source": "CTO",
       "target": "코딩AI",
       "strength": 3
+    },
+    {
+      "source": "CTO",
+      "target": "GDPval",
+      "strength": 2
     },
     {
       "source": "IPO",
@@ -3409,6 +3499,21 @@
       "strength": 2
     },
     {
+      "source": "조직설계",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "AI전환",
+      "strength": 3
+    },
+    {
+      "source": "조직설계",
+      "target": "CRM",
+      "strength": 2
+    },
+    {
       "source": "MCP",
       "target": "HBM",
       "strength": 2
@@ -3434,14 +3539,9 @@
       "strength": 2
     },
     {
-      "source": "조직설계",
-      "target": "생산성",
+      "source": "MCP",
+      "target": "GDPval",
       "strength": 2
-    },
-    {
-      "source": "조직설계",
-      "target": "AI전환",
-      "strength": 3
     },
     {
       "source": "AI 안전",
@@ -3539,6 +3639,11 @@
       "strength": 2
     },
     {
+      "source": "SWE",
+      "target": "GDPval",
+      "strength": 2
+    },
+    {
       "source": "SEC",
       "target": "SPCX",
       "strength": 3
@@ -3564,6 +3669,11 @@
       "strength": 2
     },
     {
+      "source": "CRM",
+      "target": "ERP",
+      "strength": 2
+    },
+    {
       "source": "PM",
       "target": "CPO",
       "strength": 3
@@ -3571,11 +3681,6 @@
     {
       "source": "AI정책",
       "target": "한국AI",
-      "strength": 2
-    },
-    {
-      "source": "CRM",
-      "target": "ERP",
       "strength": 2
     },
     {

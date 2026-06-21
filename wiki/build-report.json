@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-06-21T02:10:10.968Z",
-  "duration": 0.241,
+  "buildAt": "2026-06-21T06:13:55.423Z",
+  "duration": 0.284,
   "concepts": {
-    "total": 97,
+    "total": 100,
     "validDefinitions": 90,
-    "needsReview": 7
+    "needsReview": 10
   },
   "relationships": {
-    "total": 261
+    "total": 269
   },
   "coverage": {
-    "postsWithConcepts": 188,
-    "totalPosts": 216
+    "postsWithConcepts": 192,
+    "totalPosts": 220
   },
   "inject": {
     "updated": 0,
     "inserted": 0,
-    "unchanged": 186,
+    "unchanged": 190,
     "skipped": 30
   },
   "needsManualReview": [
@@ -37,8 +37,20 @@
       "slug": "nber"
     },
     {
+      "name": "GDPval",
+      "slug": "gdpval"
+    },
+    {
       "name": "클로드",
       "slug": "클로드"
+    },
+    {
+      "name": "업무재설계",
+      "slug": "업무재설계"
+    },
+    {
+      "name": "AX전략",
+      "slug": "ax전략"
     },
     {
       "name": "AI코딩",

@@ -1,6 +1,24 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI 에이전트가 못 보는 회사의 숨은 규칙",
+      "date": "2026-06-19",
+      "category": "company",
+      "source": "Harvard Business Review (K. Sudhir)",
+      "tags": [
+        "AI에이전트",
+        "암묵지",
+        "조직설계",
+        "멀티에이전트",
+        "휴먼인더루프"
+      ],
+      "slug": "2026-06-19-implicit-organization-ai-agents",
+      "file": "company/2026-06-19-implicit-organization-ai-agents.html",
+      "summary": "회사에는 운영체계가 둘 있습니다. 매뉴얼에 적힌 조직과 직원이 말없이 메우는 암묵적 조직입니다. AI 에이전트는 앞의 것만 받습니다. 암묵적 조직은 흩어진 일을 연결하고, 사람을 움직이게 하고, 이상할 때 멈추게 합니다. 정답은 덜 쓰기가 아니라 보이지 않던 일을 먼저 지도로 그린 뒤 다시 설계하는 것입니다.",
+      "roasting_quote": "AI 에이전트에게 업무 매뉴얼을 통째로 넘기셨습니까? 정작 회사를 지탱해온 건, 매뉴얼 어디에도 없던 베테랑의 '왠지 이상한데'라는 망설임이었습니다.",
+      "next_post": "company/2026-06-19-companies-rein-in-ai-costs.html"
+    },
+    {
       "title": "AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다",
       "date": "2026-06-19",
       "category": "company",
@@ -55,6 +73,24 @@ window.POSTS_DATA = {
       "summary": "앤트로픽 프로젝트 페치 2단계에서 Claude Opus 4.7이 사람 도움 없이 로봇개를 조종했습니다. 1년 전 사람 팀이 모두 끝낸 4개 과제를 9분 35초 만에 풀어, 사람 팀(181분)보다 18.9배 빨랐고 코드는 10분의 1만 썼습니다. 다만 공을 정밀하게 미는 폐루프 제어에서는 사람이 더 나았습니다. 물리적 에이전트 AI의 초기 신호입니다.",
       "roasting_quote": "1년 전 AI는 당신 팀의 보조였습니다. 이제 그 AI가 사람 없이, 19배 빠르게 일을 끝냅니다.",
       "next_post": "leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"
+    },
+    {
+      "title": "AI가 만들고 AI가 검토하면, 지식이 썩습니다",
+      "date": "2026-06-16",
+      "category": "company",
+      "source": "Harvard Business Review (Matthias Holweg & Thomas H. Davenport)",
+      "tags": [
+        "워크슬롭",
+        "지식부패",
+        "AI거버넌스",
+        "업무프로세스",
+        "AX전략"
+      ],
+      "slug": "2026-06-16-ai-slop-knowledge-decay",
+      "file": "company/2026-06-16-ai-slop-knowledge-decay.html",
+      "summary": "개인이 AI로 만든 그럴듯한 저질 산출물을 워크슬롭이라 부릅니다. 이것이 업무 흐름을 타고 번지면 회사의 지식 자체가 부패합니다. HBR은 검증, 가치 입증, 엔트로피 세 도전을 짚고, 출처 추적, 사용 제한, 가치 명시, 프로세스 재설계 네 가지 대응을 제시합니다.",
+      "roasting_quote": "직원이 AI로 쓴 문서를, 받는 당신도 AI로 요약합니다. 그 왕복마다 회사의 지식은 아무도 모르게 부패합니다.",
+      "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
       "title": "AI가 이 글을 썼을까, 다섯 분야를 추적했습니다",
@@ -149,6 +185,24 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
+      "title": "AI가 못 하는 10%를 버리십시오",
+      "date": "2026-06-12",
+      "category": "survival",
+      "source": "Harvard Business Review (Marco Argenti)",
+      "tags": [
+        "AI마인드셋",
+        "업무재설계",
+        "GDPval",
+        "AI에이전트",
+        "감독자역할"
+      ],
+      "slug": "2026-06-12-thrive-with-ai-mindset-not-skillset",
+      "file": "survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html",
+      "summary": "골드만삭스 CTO 마르코 아르젠티에게 한 뱅커가 'AI가 절대 못 할 10%'를 물었습니다. 답은 그 10%를 버리라는 것이었습니다. GDPval 평가에서 에이전트는 1,320개 과제의 80%에서 사람과 같거나 나았고, 6개월 전엔 50%였습니다. 핵심은 지킬 10%가 아니라 바꿀 100%, 실무자에서 감독자로의 전환입니다. 그러려면 리더의 강한 요구, 명확한 평가 기준, 정돈된 데이터가 필요합니다.",
+      "roasting_quote": "AI가 못 하는 10%를 지키려 애쓰십니까? 골드만삭스 CTO는 그 10%를 버리고 100%를 새로 배우라고 말합니다.",
+      "next_post": "survival/2026-06-01-cs-degree-glut-ai-erodes-value.html"
+    },
+    {
       "title": "여러 AI를 합치니 가장 강한 모델을 넘었습니다",
       "date": "2026-06-12",
       "category": "research",
@@ -182,6 +236,24 @@ window.POSTS_DATA = {
       "file": "company/2026-06-12-fable-mythos-export-control-suspension.html",
       "summary": "Anthropic이 미국 정부의 수출통제 지시로 최상위 모델 Fable 5와 Mythos 5의 접근을 전 세계에서 중단했습니다. 직원과 외국인을 포함한 모든 사용자가 대상입니다. 모델이 버그가 아니라 규제로 멈출 수 있다는 신호이며, 경영 리더에게 '가용성 리스크'라는 새 과제를 남깁니다.",
       "roasting_quote": "당신의 업무 절반을 맡긴 AI 모델이 어느 날 아침 정부 명령 한 줄에 사라진다면, 당신에게는 그다음 계획이 있습니까?",
+      "next_post": "research/2026-06-09-how-people-really-use-ai-2026.html"
+    },
+    {
+      "title": "AI를 쓰는 100가지, 1위는 업무가 아닙니다",
+      "date": "2026-06-09",
+      "category": "research",
+      "source": "Harvard Business Review (Gretchen Gavett)",
+      "tags": [
+        "AI활용데이터",
+        "생성형AI",
+        "심리상담",
+        "씽크슬롭",
+        "에이전트"
+      ],
+      "slug": "2026-06-09-how-people-really-use-ai-2026",
+      "file": "research/2026-06-09-how-people-really-use-ai-2026.html",
+      "summary": "HBR이 5만 건의 사용 데이터로 2026년 생성형 AI 100대 용도를 공개했습니다. 1위는 '치료/말동무'로 2년 연속입니다. 업무 용도는 절반을 넘지만 대부분 '한계적 이득'에 머뭅니다. 100대 용도의 4분의 1은 생각 자체를 AI에 떠넘기는 '씽크슬롭'입니다. 자율 에이전트 등 새 용도 6개도 등장했지만 현장은 아직 초기입니다.",
+      "roasting_quote": "AI가 업무를 바꾼다고 들으셨습니까? 사람들이 AI에 가장 많이 맡기는 일은 업무가 아니라 마음을 털어놓는 일이었습니다.",
       "next_post": "research/2026-06-08-agents-in-biology.html"
     },
     {
