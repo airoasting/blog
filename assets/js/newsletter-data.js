@@ -4,7 +4,7 @@ window.NEWSLETTER_DATA = [
     "title": "카톡에서 텔레그램으로, 다시 시그널로",
     "date": "2026-06-20",
     "img": "nl-53.png",
-    "url": "https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/"
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-53-%EC%B9%B4%ED%86%A1%EC%97%90%EC%84%9C-%ED%85%94%EB%A0%88%EA%B7%B8%EB%9E%A8%EC%9C%BC%EB%A1%9C-%EB%8B%A4%EC%8B%9C-%EC%8B%9C%EA%B7%B8%EB%84%90%EB%A1%9C-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-a64xc/"
   },
   {
     "ep": 52,
