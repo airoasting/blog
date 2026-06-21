@@ -1,0 +1,597 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="구글 딥마인드가 인간 수준 AGI 이후, 초지능(ASI)으로 가는 네 갈래 길을 정리한 보고서를 냈습니다. 핵심 메시지는 'AI는 한 번의 충격이 아니라 연속된 변화'라는 것입니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도">
+  <meta property="og:description" content="딥마인드가 AGI 이후, 초지능으로 가는 네 갈래 경로와 여섯 병목을 지도로 그렸습니다. 변화는 단발이 아니라 연속입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-06-10-from-agi-to-asi.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_06_10_from-agi-to-asi/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-10">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AGI">
+  <meta property="article:tag" content="ASI">
+  <meta property="article:tag" content="딥마인드">
+  <meta property="article:tag" content="슈퍼인텔리전스">
+  <meta property="article:tag" content="멀티에이전트">
+  <meta property="article:tag" content="AI전략">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도">
+  <meta name="twitter:description" content="딥마인드가 AGI 이후, 초지능으로 가는 네 갈래 경로와 여섯 병목을 지도로 그렸습니다. 변화는 단발이 아니라 연속입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_06_10_from-agi-to-asi/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도",
+    "datePublished": "2026-06-10",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "구글 딥마인드가 인간 수준 AGI 이후, 초지능(ASI)으로 가는 네 갈래 경로와 여섯 병목을 정리한 보고서입니다. 셰인 레그·마커스 허터 등 공저.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-06-10-from-agi-to-asi.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_06_10_from-agi-to-asi/thumbnail.png" alt="AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 6월 10일</span>
+          <span class="post-read-time">12분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Google DeepMind</span>
+            <span>Shane Legg · Marcus Hutter 외 (arXiv)</span>
+            <span><a href="https://arxiv.org/abs/2606.12683" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AGI" class="post-tag">#AGI</a>
+            <a href="../index.html?tag=ASI" class="post-tag">#ASI</a>
+            <a href="../index.html?tag=딥마인드" class="post-tag">#딥마인드</a>
+            <a href="../index.html?tag=슈퍼인텔리전스" class="post-tag">#슈퍼인텔리전스</a>
+            <a href="../index.html?tag=멀티에이전트" class="post-tag">#멀티에이전트</a>
+            <a href="../index.html?tag=AI전략" class="post-tag">#AI전략</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도" data-date="2026-06-10" data-category="tech" data-source="Google DeepMind (Shane Legg · Marcus Hutter 외, arXiv)" data-tags="AGI, ASI, 딥마인드, 슈퍼인텔리전스, 멀티에이전트, AI전략" data-original-url="https://arxiv.org/abs/2606.12683" data-roasting-quote="단 한 번의 AI 충격을 기다리고 계십니까? 딥마인드는 그 그림이 틀렸다고 말합니다. 변화는 한 번이 아니라 연속으로 밀려옵니다." data-next-post="../research/2026-06-09-how-people-really-use-ai-2026.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">구글 딥마인드가 인간 수준 AGI 이후, 초지능(ASI)으로 가는 길을 지도로 정리한 보고서를 냈습니다.</p>
+        <p data-summary="">길은 네 갈래입니다. 규모 확장, 패러다임 전환, 재귀적 자기개선, 멀티에이전트 집단입니다. 네 길은 동시에 진행됩니다.</p>
+        <p data-summary="">핵심은 'AI는 한 번의 충격이 아니라 연속된 변화'라는 것입니다. 리더는 단발 대응이 아니라 지속 적응 체계를 갖춰야 합니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">단 한 번의 AI 충격을 기다리고 계십니까?<br>딥마인드는 그 그림이 틀렸다고 말합니다. 변화는 한 번이 아니라 연속으로 밀려옵니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AGI 논쟁은 대부분 '언제 오느냐'에 머물렀습니다. 이 보고서는 질문을 한 칸 옮깁니다. 'AGI 다음은 무엇인가'를 봅니다.</p>
+        <p>저자는 딥마인드의 AGI 안전팀입니다. 보편 지능 이론을 세운 셰인 레그와 마커스 허터가 이름을 올렸습니다. 단순 전망이 아닙니다. 무엇이 진보를 밀고, 무엇이 막는지 지도를 그렸습니다.</p>
+        <p>리더에게 의미는 분명합니다. AI 능력이 인간 수준에서 멈추지 않는다면, 우리 사업의 어디에 베팅하고 무엇을 미리 준비해야 하는지가 바뀝니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>보고서의 출발점은 한 숫자입니다. AI를 굴리는 '유효 연산'이 지난 10년간 매년 약 10배씩 늘었습니다.</p>
+        <p>이 10배는 세 요인의 곱입니다. 하드웨어 개선 연 1.5배, 투자 증가 연 2.5배, 알고리즘 효율 연 3배입니다. 합치면 연 10배, 10년이면 1만 배입니다.</p>
+        <p>그래서 흔한 그림 하나가 흔들립니다. 'AGI가 오면 한 번의 큰 단계 변화가 일어난다'는 그림입니다. 모델 성능이 멈춰도 같은 비용으로 인스턴스 수를 계속 늘릴 수 있기 때문입니다.</p>
+        <p>리더에게 이 그림의 차이는 큽니다. 단발 변화는 '한 번 대응하고 끝'이지만, 연속 변화는 '매년 다시 보는 운영 과제'입니다. 둘은 예산도, 조직도, 마음가짐도 다르게 짜야 합니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, ASI를 '천재 한 명'이 아니라 '집단을 능가하는 시스템'으로 정의했습니다.</strong> 보고서는 AGI를 중간값 인간 한 사람 수준으로 봅니다. ASI는 대규모 인간 전문가 집단을 거의 모든 영역에서 능가하는 시스템으로 정의합니다. 기준을 높게 잡은 이유가 있습니다. 오늘의 거대 언어모델이 이미 수백만 인스턴스로 병렬 작동하기 때문입니다. ASI는 '한 명의 초천재'가 아니라 '인간 조직 전체보다 똑똑한 디지털 조직'에 가깝습니다.</p>
+
+        <p><strong>둘째, ASI로 가는 길은 네 갈래이고, 동시에 진행됩니다.</strong> 보고서의 뼈대입니다. 네 경로는 서로 독립적이며, 한 길이 막히면 다른 길이 더 강하게 추진됩니다. 규모 확장이 천장에 닿으면 알고리즘 전환에 자원이 몰리는 식입니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>경로</th>
+                <th>핵심 내용</th>
+                <th>가장 큰 불확실성</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>규모 확장</strong></td>
+                <td>연산·데이터·모델 크기를 계속 키운다</td>
+                <td>규모가 능력으로 얼마나 이어지나. 한계 수익은?</td>
+              </tr>
+              <tr>
+                <td><strong>패러다임 전환</strong></td>
+                <td>지금의 트랜스포머와 다른 새 방식이 등장</td>
+                <td>예측 자체가 어렵다. 언제 무엇이 나올지 모른다</td>
+              </tr>
+              <tr>
+                <td><strong>재귀적 자기개선</strong></td>
+                <td>AI가 AI 연구를 가속해 스스로를 개선</td>
+                <td>능력이 폭발할 수도, 금세 꺾일 수도 있다</td>
+              </tr>
+              <tr>
+                <td><strong>멀티에이전트 집단</strong></td>
+                <td>수많은 AGI가 모여 집단 지능을 형성</td>
+                <td>집단의 창발 동역학이 거의 규명되지 않았다</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">네 경로는 대체로 독립적이며 병렬로 진행될 가능성이 높습니다. 단, 진행 속도는 다릅니다. 출처: Genewein et al. (2026), <em>From AGI to ASI</em>, Table 3.</p>
+        </div>
+
+        <p><strong>셋째, 디지털 지능은 인간이 못 가진 이점을 가지고, 연산이 늘수록 격차가 벌어집니다.</strong> 보고서는 이를 표 하나로 정리합니다. 이 이점들은 '연산을 더 부으면 더 커지는' 종류입니다. 사람은 빠른 컴퓨터의 덕을 보지만, AI는 그 덕을 훨씬 크게 봅니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>디지털 지능의 이점</th>
+                <th>의미</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>입출력 속도</td>
+                <td>정보를 받아 결과를 내는 대역폭이 갈수록 커진다</td>
+              </tr>
+              <tr>
+                <td>내부 처리 속도</td>
+                <td>'생각'을 깊게(순차) 또는 넓게(병렬) 가속할 수 있다</td>
+              </tr>
+              <tr>
+                <td>작업 기억·암기</td>
+                <td>인터넷의 상당 부분을 외울 만큼 기억이 크다</td>
+              </tr>
+              <tr>
+                <td>기반 독립성</td>
+                <td>더 강한 컴퓨터로 실행 중에도 옮겨탈 수 있다</td>
+              </tr>
+              <tr>
+                <td>무손실 복제</td>
+                <td>코드뿐 아니라 '경험'까지 완벽히 복사·백업한다</td>
+              </tr>
+              <tr>
+                <td>경험의 고대역 공유</td>
+                <td>학습 신호를 집단이 빠르게 나눠 가진다</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">여섯 이점은 모두 연산이 늘수록 강해집니다. 그래서 인간과 AI의 격차도 함께 벌어집니다. 출처: Genewein et al. (2026), <em>From AGI to ASI</em>, Table 1.</p>
+        </div>
+
+        <p><strong>넷째, 길마다 병목이 있고, 대부분 이미 상쇄되는 중입니다.</strong> 보고서가 솔직한 지점입니다. 진보를 막을 여섯 가지 마찰을 나열하고, 각각을 무엇이 상쇄하는지 함께 적습니다. 어느 병목이 진짜 벽이 될지는 '열린 연구 질문'으로 남겨둡니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>병목</th>
+                <th>무엇이 막나</th>
+                <th>무엇이 상쇄하나</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>데이터 벽</td>
+                <td>학습용 고품질 데이터가 동난다</td>
+                <td>합성 데이터, 시뮬레이션, 자가 대국, 강화학습</td>
+              </tr>
+              <tr>
+                <td>자원 수요 폭증</td>
+                <td>칩·에너지·투자가 감당 못 할 속도로 는다</td>
+                <td>AI가 만드는 경제 수익, 효율 개선, 인프라 증설</td>
+              </tr>
+              <tr>
+                <td>패러다임 한계</td>
+                <td>지금의 신경망으로는 부족할 수 있다</td>
+                <td>덜 똑똑한 AI도 다음 패러다임 연구를 돕는다</td>
+              </tr>
+              <tr>
+                <td>연구 난이도 상승</td>
+                <td>성과가 쌓일수록 새 발견이 어려워진다</td>
+                <td>AI 연구자가 실험·가설 탐색을 가속한다</td>
+              </tr>
+              <tr>
+                <td>추상화 장벽</td>
+                <td>AI가 인간 개념만 재조합할 뿐 새 개념을 못 만든다</td>
+                <td>규모 확장과 집단화가 장벽 너머로 밀 수 있다</td>
+              </tr>
+              <tr>
+                <td>의도적 감속</td>
+                <td>규제·사고·사회 반발이 진보를 늦춘다</td>
+                <td>경제·군사 경쟁이 감속 압력을 압도할 수 있다</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">각 병목이 실제로 벽이 될지는 상쇄 요인이 얼마나 효과적인지에 달려 있습니다. 보고서는 이를 단정하지 않고 열린 질문으로 둡니다. 출처: Genewein et al. (2026), <em>From AGI to ASI</em>, Table 4.</p>
+        </div>
+
+        <p><strong>다섯째, 가장 흥미로운 병목은 '추상화 장벽'입니다.</strong> 오늘의 AI는 인간이 만든 개념을 흡수해 재조합하는 데 뛰어납니다. 그러나 날것의 데이터에서 '힘'이나 '인과' 같은 새 개념을 스스로 길어 올리는 능력은 약합니다. 데미스 허사비스가 던진 'AI 진짜 시험'이 이 지점을 찌릅니다.</p>
+
+        <blockquote style="border-left:3px solid #145C35; margin:28px 0; padding:8px 0 8px 22px; font-size:16px; line-height:1.85; color:#333;">
+          "1900년대 초 아인슈타인의 시대로 돌아가, AI가 아인슈타인이 가졌던 같은 정보만으로 일반 상대성 이론을 실제로 만들어낼 수 있을까요? 오늘의 답은 분명히 '아니오'입니다. 여전히 무언가가 빠져 있습니다."
+          <span style="display:block; margin-top:8px; font-size:13px; color:#888;">데미스 허사비스, 구글 딥마인드 CEO (보고서 인용)</span>
+        </blockquote>
+
+        <p>이 장벽이 진짜 벽이라면, 개별 AI는 인간 수준 부근에서 멈출 수 있습니다. 다만 보고서는 여지를 둡니다. 개별 모델이 멈춰도, 집단으로 묶으면 능력이 그 너머로 갈 수 있다는 것입니다.</p>
+
+        <p><strong>여섯째, ASI도 전능하지 않습니다.</strong> 보고서가 분명히 못 박는 대목입니다. 초지능은 전지하지도 전능하지도 않습니다. 물리 법칙, 실시간으로 흐르는 현실, 계산 복잡도, 논리의 한계에 묶입니다. 노화를 '치료'하거나 기후를 되돌린다는 보장은 어디에도 없습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">연 10배</div>
+            <div class="stat-label">유효 연산 증가율 (지난 10년 추세)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">1만 배</div>
+            <div class="stat-label">이 추세가 이어질 때 10년 뒤 누적 연산</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">네 갈래</div>
+            <div class="stat-label">ASI로 가는 경로 (동시 진행 가능)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>분기 'AI 능력 재점검' 회의를 지금 캘린더에 넣으세요.</strong><br>변화가 연속이라면 점검도 연속이어야 합니다. 90일 뒤 한 시간짜리 회의를 지금 잡습니다. 안건은 셋입니다. '지난 분기에 새로 가능해진 일은 무엇인가, 작년에 접었던 일 중 다시 풀 만한 것은 무엇인가, 우리 워크플로우 중 바꿀 곳은 어디인가.' 한 번의 도입이 아니라 반복 루틴을 먼저 만듭니다. (오늘)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>반복 업무 하나를 골라 'AI 분업'으로 쪼개 보세요.</strong><br>멀티에이전트는 먼 미래가 아닙니다. 여러 단계로 이뤄진 반복 업무(예: 보고서 작성)를 하나 고릅니다. 지금은 사람이나 AI 하나가 통째로 한다면, '초안 AI → 검토 AI → 정리 AI'로 단계를 나눠 한 번 돌려봅니다. 능력이 수로 커진다는 보고서의 핵심을 작게 체험하는 것입니다. (1주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>여섯 병목 표를 우리 사업 버전으로 다시 쓰세요.</strong><br>표의 '병목'과 '상쇄' 두 칸을 우리 회사 사정으로 채웁니다. 데이터가 부족한가, 비용이 병목인가, 검증할 사람이 없는가. 그 옆에 '무엇으로 뚫을지'를 한 줄씩 적습니다. 막연한 불안이 분기 회의에 올릴 실행 목록으로 바뀝니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>이것은 예측이 아니라 가능성 지도입니다.</strong> 보고서는 ASI가 언제 온다고 단정하지 않습니다. 첫 문장이 '미래는 예측 불가능하다'입니다. 불확실성이 크고, 저자들도 그 점을 거듭 강조합니다. 숫자와 시점을 확정처럼 인용하면 안 됩니다.</p>
+
+        <p><strong>ASI가 곧 온다는 보장은 없습니다.</strong> 보고서의 결론은 양쪽을 다 엽니다. AI는 AGI에 닿기 전에 정체할 수도 있고, AGI에서 ASI로 비교적 매끄럽게 넘어갈 수도 있습니다. 다만 '정확히 인간 수준에서 멈춘다'는 시나리오는 가능성이 낮다고 봅니다.</p>
+
+        <p><strong>전능 환상을 경계해야 합니다.</strong> 초지능이라도 물리·실시간·복잡도의 벽에 묶입니다. AI 도입을 '모든 것을 푸는 만능 열쇠'로 포장하면 기대와 투자가 어긋납니다. 그리고 이 보고서는 'AI 안전·정렬은 충분히 풀린다'고 가정한 위에서 쓰였습니다. 현실에서 그 가정은 아직 미해결 난제입니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 한 번의 사건으로 보는 리더는 늦습니다. 연속된 변화로 보고, 지속 적응 체계를 먼저 갖추는 리더가 앞섭니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 전략을 '한 번의 전환'이 아니라 '연속 적응'으로 재설계하라. 매년 능력이 달라진다는 전제 위에서 로드맵을 분기 단위로 갱신하는 구조를 만들어라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">전략/기획</span>
+            <span>네 경로와 여섯 병목을 우리 산업 지도에 올려라. 어느 경로가 우리 사업에 먼저 닿고, 어느 병목이 우리 발목을 잡는지 분기마다 점검하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">리스크/투자</span>
+            <span>시점 단정과 전능 환상을 모두 경계하라. ASI를 만능 열쇠로 전제한 투자도, 인간 수준에서 멈춘다고 가정한 투자도 위험하다. 범위를 넓게 잡고 베팅을 분산하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>AGI (인공 일반지능)</strong>: 거의 모든 인지 과제에서 중간값 인간 한 사람 수준에 이른 시스템입니다. 보고서는 '한 명의 사람만큼 똑똑한 AI'로 씁니다.</p>
+          <p><strong>ASI (인공 초지능)</strong>: 거의 모든 영역에서 인간을 넘어선 일반지능입니다. 보고서는 기준을 높게 잡아 '대규모 인간 전문가 집단을 능가하는 시스템'으로 정의합니다.</p>
+          <p><strong>유효 연산 (Effective compute)</strong>: 하드웨어 개선, 투자 증가, 알고리즘 효율을 모두 곱한 실질 연산량입니다. 지난 10년간 연 약 10배씩 늘었습니다.</p>
+          <p><strong>재귀적 자기개선</strong>: AI가 AI 연구를 가속해 더 나은 AI를 만들고, 그 AI가 다시 연구를 가속하는 되먹임입니다. 빠를 경우 '지능 폭발'로 이어질 수 있습니다.</p>
+          <p><strong>멀티에이전트 집단</strong>: 여러 AI 에이전트가 분업·협력해 개별 능력의 합을 넘는 집단 지능을 형성하는 방식입니다.</p>
+          <p><strong>추상화 장벽 (Abstraction barrier)</strong>: AI가 인간이 만든 개념은 잘 재조합하지만, 날것의 데이터에서 새 개념을 스스로 만드는 능력은 약하다는 한계입니다.</p>
+          <p><strong>유니버설 AI / AIXI</strong>: 셰인 레그와 마커스 허터가 정립한, 기계 지능의 이론적 상한선입니다. 계산은 불가능하지만, 더 강한 AI로 아래에서 근사해 갈 수 있습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Genewein, T., Franklin, M., Lerchner, A., Orseau, L., Albanie, S., Bales, A., Wyeth, C., Chan, S., Gabriel, I., Leibo, J. Z., Dafoe, A., Hutter, M., Graepel, T., &amp; Legg, S. (2026, June 10). <em>From AGI to ASI</em> [Preprint]. arXiv. <a href="https://arxiv.org/abs/2606.12683" target="_blank" rel="noopener">https://arxiv.org/abs/2606.12683</a></li>
+          <li>Legg, S., &amp; Hutter, M. (2007). <em>Universal intelligence: A definition of machine intelligence</em> [Article]. Minds and Machines, 17(4), 391–444.</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 연 10배·1만 배 숫자를 믿어도 되나 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">연 10배씩 는다는 숫자, 어디서 나온 거예요? 10년이면 1만 배라는데 너무 SF 같은데요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">하드웨어 1.5배, 투자 2.5배, 알고리즘 3배. 곱하면 11배가 넘어요. 그걸 10배로 깎아서 쓴 거예요. 보고서가 보수적으로 잡은 거죠.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">숫자 싸움보다 무서운 게 따로 있어요. 모델이 멈춰도 인스턴스를 1000개에서 100만개로 늘린다잖아요. 능력이 수로 커지는 거예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">아, 성능이 안 올라도 수로 밀어붙인다는 거네요. 그건 확실히 다른 얘기네요. 인정해요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 그래서 우리 회사는 뭘 하나 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저는 내일 뭘 하면 되는 거예요? AGI니 ASI니, 우리 같은 중간관리자한텐 너무 먼 얘기잖아요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 처음엔 그랬는데요, 두 번째 액션이 의외로 현실적이더라고요. 반복 업무 하나를 '초안 AI → 검토 AI → 정리 AI'로 쪼개는 거요. 저흰 주간 보고서로 해봤는데 진짜 됐어요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 '분기마다 다시 본다'는 말이 제일 와닿았어요. 작년에 막혔던 게 올해 슬쩍 풀리는 느낌, 진짜 그렇더라고요. 한 번 사두면 끝인 가전제품이 아닌 거죠.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 초지능이면 다 되는 거 아니냐 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">초지능이라도 전능은 아니에요. 노화 치료, 기후 복원, 그런 거 보장 없어요. 보고서가 대놓고 못 박았어요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 허사비스가 '아인슈타인 시험' 얘기하면서 아직 뭔가 빠졌다고 했잖아요. 그 빠진 게 채워지면 얘기 달라지는 거 아니에요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">채워질지 안 채워질지가 바로 핵심이에요. 그게 '추상화 장벽'이에요. 새 개념을 스스로 못 만들면 인간 수준에서 멈춰요. 그래서 보고서 결론도 '단정하지 말자'예요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 40px;">
+        <a href="https://arxiv.org/abs/2606.12683" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-06-09-how-people-really-use-ai-2026.html">
+          <div class="next-post-title">AI를 쓰는 100가지, 1위는 업무가 아닙니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/agi.html" class="concept-chip">AGI</a>
+      <a href="../wiki/concepts/ai전략.html" class="concept-chip">AI전략</a>
+      <a href="../wiki/concepts/asi.html" class="concept-chip">ASI</a>
+      <a href="../wiki/concepts/멀티에이전트.html" class="concept-chip">멀티에이전트</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-10-from-agi-to-asi.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-06-10-from-agi-to-asi.html';
+    const ROASTING_QUOTE = '단 한 번의 AI 충격을 기다리고 계십니까? 딥마인드는 그 그림이 틀렸다고 말합니다. 변화는 한 번이 아니라 연속으로 밀려옵니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+
+</body></html>

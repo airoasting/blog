@@ -1,20 +1,20 @@
 {
-  "buildAt": "2026-06-21T06:13:55.423Z",
-  "duration": 0.284,
+  "buildAt": "2026-06-21T10:10:07.136Z",
+  "duration": 0.29,
   "concepts": {
     "total": 100,
     "validDefinitions": 90,
     "needsReview": 10
   },
   "relationships": {
-    "total": 269
+    "total": 270
   },
   "coverage": {
-    "postsWithConcepts": 192,
-    "totalPosts": 220
+    "postsWithConcepts": 193,
+    "totalPosts": 221
   },
   "inject": {
-    "updated": 0,
+    "updated": 1,
     "inserted": 0,
     "unchanged": 190,
     "skipped": 30

@@ -27,6 +27,7 @@
 - 2026-06-12 [생존] AI가 못 하는 10%를 버리십시오 — /blog/survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html
 - 2026-06-12 [리서치] 여러 AI를 합치니 가장 강한 모델을 넘었습니다 — /blog/research/2026-06-12-openrouter-fusion-model-diversity.html
 - 2026-06-12 [기업] 쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다 — /blog/company/2026-06-12-fable-mythos-export-control-suspension.html
+- 2026-06-10 [기술] AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도 — /blog/tech/2026-06-10-from-agi-to-asi.html
 - 2026-06-09 [리서치] AI를 쓰는 100가지, 1위는 업무가 아닙니다 — /blog/research/2026-06-09-how-people-really-use-ai-2026.html
 - 2026-06-08 [리서치] AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다 — /blog/research/2026-06-08-agents-in-biology.html
 - 2026-06-08 [생존] 이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다 — /blog/survival/2026-06-08-ai-broken-hiring.html

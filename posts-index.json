@@ -236,6 +236,25 @@
       "file": "company/2026-06-12-fable-mythos-export-control-suspension.html",
       "summary": "Anthropic이 미국 정부의 수출통제 지시로 최상위 모델 Fable 5와 Mythos 5의 접근을 전 세계에서 중단했습니다. 직원과 외국인을 포함한 모든 사용자가 대상입니다. 모델이 버그가 아니라 규제로 멈출 수 있다는 신호이며, 경영 리더에게 '가용성 리스크'라는 새 과제를 남깁니다.",
       "roasting_quote": "당신의 업무 절반을 맡긴 AI 모델이 어느 날 아침 정부 명령 한 줄에 사라진다면, 당신에게는 그다음 계획이 있습니까?",
+      "next_post": "tech/2026-06-10-from-agi-to-asi.html"
+    },
+    {
+      "title": "AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도",
+      "date": "2026-06-10",
+      "category": "tech",
+      "source": "Google DeepMind (Shane Legg · Marcus Hutter 외, arXiv)",
+      "tags": [
+        "AGI",
+        "ASI",
+        "딥마인드",
+        "슈퍼인텔리전스",
+        "멀티에이전트",
+        "AI전략"
+      ],
+      "slug": "2026-06-10-from-agi-to-asi",
+      "file": "tech/2026-06-10-from-agi-to-asi.html",
+      "summary": "구글 딥마인드가 인간 수준 AGI 이후, 초지능(ASI)으로 가는 길을 지도로 정리한 보고서를 냈습니다. 길은 네 갈래입니다. 규모 확장, 패러다임 전환, 재귀적 자기개선, 멀티에이전트 집단입니다. 네 길은 동시에 진행됩니다. 핵심은 'AI는 한 번의 충격이 아니라 연속된 변화'라는 것입니다. 리더는 단발 대응이 아니라 지속 적응 체계를 갖춰야 합니다.",
+      "roasting_quote": "단 한 번의 AI 충격을 기다리고 계십니까? 딥마인드는 그 그림이 틀렸다고 말합니다. 변화는 한 번이 아니라 연속으로 밀려옵니다.",
       "next_post": "research/2026-06-09-how-people-really-use-ai-2026.html"
     },
     {

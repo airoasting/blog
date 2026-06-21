@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-21T06:13:55.423Z",
+  "generatedAt": "2026-06-21T10:10:07.136Z",
   "version": 1,
   "stats": {
     "totalConcepts": 100,
-    "totalRelationships": 269,
-    "totalPosts": 220,
+    "totalRelationships": 270,
+    "totalPosts": 221,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -267,7 +267,7 @@
       "name": "AGI",
       "aliases": [],
       "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
-      "frequency": 27,
+      "frequency": 28,
       "category": "newsletter",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -276,6 +276,7 @@
         "2026-03-10-alphago-10-years",
         "2026-04-13-jack-dorsey-company-as-intelligence",
         "2026-05-22-sundar-pichai-anxious-ai-future",
+        "2026-06-10-from-agi-to-asi",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
         "2025-06-20-google-deepmind-ceo-vision",
         "2025-07-15-why-meta-declared-asi",
@@ -537,7 +538,7 @@
       "name": "AI전략",
       "aliases": [],
       "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
-      "frequency": 17,
+      "frequency": 18,
       "category": "leader",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -550,6 +551,7 @@
         "2026-03-20-karpathy-end-of-coding",
         "2026-04-03-karpathy-llm-knowledge-base",
         "2026-04-07-culture-that-ate-silicon-valley",
+        "2026-06-10-from-agi-to-asi",
         "2026-06-15-satya-nadella-learning-loop-token-capital",
         "2025-04-15-ai-from-learning-era-to-experience-era",
         "2025-07-15-why-meta-declared-asi",
@@ -795,6 +797,32 @@
       "needs_manual_review": false
     },
     {
+      "id": "asi",
+      "slug": "asi",
+      "name": "ASI",
+      "aliases": [],
+      "definition": "초지능입니다. 거의 모든 영역에서 인간을 능가하는 AI를 의미합니다.",
+      "frequency": 10,
+      "category": "tech",
+      "posts": [
+        "2026-03-31-asi-evolve-ai-accelerates-ai",
+        "2026-06-10-from-agi-to-asi",
+        "2025-05-15-thoughts-on-sam-altman-soft-singularity",
+        "2025-07-15-why-meta-declared-asi",
+        "2025-07-15-why-jensen-huang-is-going-to-china",
+        "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2025-05-25-gpt5-limitations-and-whats-next"
+      ],
+      "newsletters": [
+        "nl-5",
+        "nl-9",
+        "nl-17"
+      ],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2025-07-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai-safety",
       "slug": "ai-safety",
       "name": "AI 안전",
@@ -819,31 +847,6 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-06-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "asi",
-      "slug": "asi",
-      "name": "ASI",
-      "aliases": [],
-      "definition": "초지능입니다. 거의 모든 영역에서 인간을 능가하는 AI를 의미합니다.",
-      "frequency": 9,
-      "category": "tech",
-      "posts": [
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2025-05-15-thoughts-on-sam-altman-soft-singularity",
-        "2025-07-15-why-meta-declared-asi",
-        "2025-07-15-why-jensen-huang-is-going-to-china",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2025-05-25-gpt5-limitations-and-whats-next"
-      ],
-      "newsletters": [
-        "nl-5",
-        "nl-9",
-        "nl-17"
-      ],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2025-07-15",
       "needs_manual_review": false
     },
     {
@@ -960,6 +963,28 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-01-25",
+      "needs_manual_review": false
+    },
+    {
+      "id": "멀티에이전트",
+      "slug": "멀티에이전트",
+      "name": "멀티에이전트",
+      "aliases": [],
+      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
+      "frequency": 7,
+      "category": "tech",
+      "posts": [
+        "2026-03-01-conductor-multi-agent-orchestration",
+        "2026-04-06-paperorchestra-multi-agent-writing",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-06-02-claude-code-dynamic-workflows",
+        "2026-06-10-from-agi-to-asi",
+        "2026-06-12-openrouter-fusion-model-diversity",
+        "2026-06-19-implicit-organization-ai-agents"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -1091,27 +1116,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-25",
       "lastSeen": "2026-03-17",
-      "needs_manual_review": false
-    },
-    {
-      "id": "멀티에이전트",
-      "slug": "멀티에이전트",
-      "name": "멀티에이전트",
-      "aliases": [],
-      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-06-02-claude-code-dynamic-workflows",
-        "2026-06-12-openrouter-fusion-model-diversity",
-        "2026-06-19-implicit-organization-ai-agents"
-      ],
-      "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -2455,12 +2459,12 @@
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
+      "target": "ASI",
       "strength": 3
     },
     {
       "source": "LLM",
-      "target": "ASI",
+      "target": "AI 안전",
       "strength": 3
     },
     {
@@ -2490,6 +2494,11 @@
     },
     {
       "source": "LLM",
+      "target": "멀티에이전트",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "CPU",
       "strength": 2
     },
@@ -2501,11 +2510,6 @@
     {
       "source": "LLM",
       "target": "LLMs",
-      "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "멀티에이전트",
       "strength": 3
     },
     {
@@ -2820,6 +2824,11 @@
     },
     {
       "source": "API",
+      "target": "멀티에이전트",
+      "strength": 4
+    },
+    {
+      "source": "API",
       "target": "IP",
       "strength": 2
     },
@@ -2827,11 +2836,6 @@
       "source": "API",
       "target": "강화학습",
       "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "멀티에이전트",
-      "strength": 4
     },
     {
       "source": "API",
@@ -2955,12 +2959,12 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "강화학습",
+      "target": "멀티에이전트",
       "strength": 3
     },
     {
       "source": "AI 에이전트",
-      "target": "멀티에이전트",
+      "target": "강화학습",
       "strength": 3
     },
     {
@@ -3061,7 +3065,7 @@
     {
       "source": "AGI",
       "target": "AI전략",
-      "strength": 5
+      "strength": 6
     },
     {
       "source": "AGI",
@@ -3091,7 +3095,7 @@
     {
       "source": "AGI",
       "target": "ASI",
-      "strength": 8
+      "strength": 9
     },
     {
       "source": "AGI",
@@ -3185,12 +3189,12 @@
     },
     {
       "source": "CTO",
-      "target": "강화학습",
+      "target": "멀티에이전트",
       "strength": 2
     },
     {
       "source": "CTO",
-      "target": "멀티에이전트",
+      "target": "강화학습",
       "strength": 2
     },
     {
@@ -3415,6 +3419,11 @@
     },
     {
       "source": "AI전략",
+      "target": "ASI",
+      "strength": 2
+    },
+    {
+      "source": "AI전략",
       "target": "IP",
       "strength": 2
     },
@@ -3544,16 +3553,6 @@
       "strength": 2
     },
     {
-      "source": "AI 안전",
-      "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
       "source": "ASI",
       "target": "HBM",
       "strength": 2
@@ -3561,6 +3560,16 @@
     {
       "source": "ASI",
       "target": "MMLU",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI규제",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI거버넌스",
       "strength": 2
     },
     {
