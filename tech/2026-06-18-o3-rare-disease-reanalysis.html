@@ -1,0 +1,548 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="보스턴 아동병원·하버드·오픈AI가 o3 Deep Research로 풀리지 않던 희귀질환 376건을 재분석해 18건의 새 진단을 끌어냈습니다. AI는 단 한 명도 진단하지 않았습니다. 단서만 꺼냈고 판단은 사람이 했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="전문가가 포기한 희귀병, AI가 단서를 찾았습니다">
+  <meta property="og:description" content="o3 Deep Research가 희귀질환 376건을 재분석해 18건의 새 진단을 끌어냈습니다. 추가 진단율 4.8%. 진단은 사람이, 단서는 AI가 했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-06-18-o3-rare-disease-reanalysis.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/tech/images/2026_06_18_o3-rare-disease-reanalysis/workflow-diagram.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-18">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="AI진단">
+  <meta property="article:tag" content="희귀질환">
+  <meta property="article:tag" content="o3">
+  <meta property="article:tag" content="추론모델">
+  <meta property="article:tag" content="휴먼인더루프">
+  <meta property="article:tag" content="헬스케어">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="전문가가 포기한 희귀병, AI가 단서를 찾았습니다">
+  <meta name="twitter:description" content="o3 Deep Research가 희귀질환 376건을 재분석해 18건의 새 진단을 끌어냈습니다. 진단은 사람이, 단서는 AI가 했습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/tech/images/2026_06_18_o3-rare-disease-reanalysis/workflow-diagram.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "전문가가 포기한 희귀병, AI가 단서를 찾았습니다",
+    "datePublished": "2026-06-18",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "오픈AI o3 Deep Research가 풀리지 않던 희귀질환 376건을 재분석해 18건의 새 진단 단서를 끌어냈습니다. NEJM AI 게재 연구입니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-06-18-o3-rare-disease-reanalysis.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_06_18_o3-rare-disease-reanalysis/workflow-diagram.png" alt="전문가가 포기한 희귀병, AI가 단서를 찾았습니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 6월 18일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">전문가가 포기한 희귀병, AI가 단서를 찾았습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>OpenAI</span>
+            <span>보스턴 아동병원 · 하버드 공동연구 (NEJM AI)</span>
+            <span><a href="https://openai.com/index/diagnose-rare-childhood-diseases/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI진단" class="post-tag">#AI진단</a>
+            <a href="../index.html?tag=희귀질환" class="post-tag">#희귀질환</a>
+            <a href="../index.html?tag=o3" class="post-tag">#o3</a>
+            <a href="../index.html?tag=추론모델" class="post-tag">#추론모델</a>
+            <a href="../index.html?tag=휴먼인더루프" class="post-tag">#휴먼인더루프</a>
+            <a href="../index.html?tag=헬스케어" class="post-tag">#헬스케어</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="전문가가 포기한 희귀병, AI가 단서를 찾았습니다" data-date="2026-06-18" data-category="tech" data-source="OpenAI (보스턴 아동병원 · 하버드 공동연구, NEJM AI)" data-tags="AI진단, 희귀질환, o3, 추론모델, 휴먼인더루프, 헬스케어" data-original-url="https://openai.com/index/diagnose-rare-childhood-diseases/" data-roasting-quote="AI가 의사를 대체한다고 들으셨습니까? 이 연구에서 AI는 단 한 명도 진단하지 않았습니다. 사람이 검증할 단서만 꺼냈습니다." data-next-post="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">보스턴 아동병원과 오픈AI가 o3 Deep Research로 풀리지 않던 희귀질환 376건을 재분석했습니다.</p>
+        <p data-summary="">전문가 검토와 임상 확인을 거쳐 18건에서 새 진단이 확정됐습니다. 추가 진단율 4.8%입니다.</p>
+        <p data-summary="">AI는 단 한 명도 진단하지 않았습니다. 근거가 붙은 가설만 제시했고, 판단은 사람이 했습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 의사를 대체한다고 들으셨습니까?<br>이 연구에서 AI는 단 한 명도 진단하지 않았습니다. 사람이 검증할 단서만 꺼냈습니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>희귀질환 환자의 절반은 유전체 검사를 다 받고도 진단을 받지 못합니다. 데이터에 단서가 있어도 수백만 개의 변이와 흩어진 기록 속에서 찾기가 어렵습니다.</p>
+        <p>이 연구는 그 막힌 사건들을 다시 열었습니다. 그런데 AI를 진단자로 쓰지 않았습니다. 기존 분석 위에 얹는 '설명을 먼저 내놓는 추론 계층'으로 썼습니다. AI 도입을 고민하는 리더라면, 이 역할 분담이 핵심입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div style="position:relative; padding-top:56.25%; border-radius:8px; overflow:hidden; background:#000;">
+            <iframe src="https://player.vimeo.com/video/1202333711?h=96d53821dd&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Using AI to help physicians diagnose rare genetic diseases affecting children"></iframe>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            오픈AI가 공개한 연구 소개 영상입니다. 보스턴 아동병원 연구진이 막혔던 희귀질환 사건을 어떻게 다시 열었는지 설명합니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026, June). Vimeo.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>희귀질환 재분석은 과학 문제이자 유지보수 문제입니다. 환자의 유전체는 그대로지만, 주변 지식은 계속 바뀝니다.</p>
+        <p>새 유전자가 질병에 연결되고, 검사실은 옛 변이를 재분류합니다. 그래서 결론이 나지 않았던 옛 사건도 다시 볼 가치가 생깁니다.</p>
+        <p>많은 기관이 다시 봐야 할 유전체 적체를 떠안지만, 사람 손으로 전부 보기는 어렵습니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, AI는 결정하지 않았습니다. 사람의 탐색을 넓히고 좁혔습니다.</strong> 이것이 리더가 가장 먼저 가져갈 교훈입니다. 모델은 기존 유전체 파이프라인 위에 얹는 '설명 계층'이었습니다. 순위 하나를 돌려주는 대신, 임상 특징·유전 양상·변이 근거·문헌을 사람이 따져 물을 수 있는 정당화로 엮었습니다. 그 출력은 곧바로 진단이 되지 않았습니다.</p>
+        <p>연구진은 임상 검사실이 쓰는 ACMG/AMP 기준으로 모델의 후보를 검토했습니다. 후보마다 최소 두 명이 검토했고, 이견은 합의로 풀었습니다. 변이가 병원성으로 분류되고, CLIA 인증 검사실이 확인하고, 결과가 가족에게 전달된 뒤에야 진단으로 인정됐습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_06_18_o3-rare-disease-reanalysis/workflow-diagram.png" alt="사람이 주도하는 AI 보조 희귀질환 재분석 워크플로우. 비식별 데이터 패킷에서 시작해 두 번의 사람 결정과 o3 증거 종합을 거쳐 CLIA 확인과 가족 전달로 끝난다." loading="lazy" style="width:100%; border-radius:8px;">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            사람이 주도하는 AI 보조 재분석 워크플로우입니다. 모델(o3 Deep Research)은 가운데 '증거 종합' 한 칸만 담당합니다. 앞뒤로 두 번의 사람 결정, 그리고 CLIA 확인이 모델을 감쌉니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenAI (2026, June). NEJM AI 게재 연구 도식.</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 추가 진단율 4.8%는 작아 보이지만 의미가 큽니다.</strong> 376건은 새 사건이 아니었습니다. 이미 여러 상업·기관 파이프라인을 거치고 다학제 팀이 논의한, 가장 어려운 사건들이었습니다. 그 위에서 18건의 새 진단이 나왔습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">376건</div>
+            <div class="stat-label">이전에 풀리지 않은 희귀질환 사건 (4개 질환군)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">18건</div>
+            <div class="stat-label">전문가 검토·임상 확인 후 확정된 새 진단</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">4.8%</div>
+            <div class="stat-label">전문가가 이미 본 사건 위에서 나온 추가 진단율</div>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">질환군 (코호트)</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사건 수</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">진단 단서</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">진단율</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경발달 질환</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">100</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">10</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">10.0%</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경근육 질환</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">61</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">4</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">6.6%</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">소아 돌연사</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">200</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">1.0%</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">조기 정신증</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">15</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">13.3%</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">합계</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">376</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">18</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">4.8%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">조기 정신증 코호트는 표본이 작아 신뢰구간이 넓습니다. 진단율은 각 질환군이 단일 유전자 설명을 가질 가능성과도 관련됩니다. 18건 중 7건은 '재발견'이었습니다. 외부에서 진단됐으나 연구진이 본 기록에는 빠져 있던 사례입니다. 출처: OpenAI (2026, June), NEJM AI.</p>
+        </div>
+
+        <p><strong>셋째, 모델은 입력에 없던 변이까지 추론했습니다.</strong> 한 조기 정신증 사례에서 모델은 22번 염색체의 저품질 신호와 아이의 심장·면역·신경발달·정신과 증상을 연결했습니다. 그리고 디조지 증후군과 관련된 22q11.2 결실을 가설로 세웠습니다. 이 변이는 추가 유전체 검사로 확인됐습니다.</p>
+        <p>단일 유전자 원인을 물었는데도, 복합 증상을 더 잘 설명하는 두 유전자를 함께 제시한 경우도 있었습니다. <em>LAMA2</em>와 <em>FOXP1</em>이 근육·신경발달 증상을 함께 설명한 사례가 있었습니다. 또 다른 사례는 <em>TTN</em>과 <em>SRPK3</em>의 이중유전자 설명을 새로 찾았습니다. 백반증(vitiligo)에서는 <em>S1PR1</em>의 11개 아미노산 결실이라는, 검증이 필요한 새 기전 가설도 내놨습니다.</p>
+
+        <p><strong>넷째, 자기보고 신뢰도 점수가 사람의 주의를 배분하는 데 쓰였습니다.</strong> 이미 풀린 사건들에서 점수를 검증했습니다. 일관되게 맞힌 경우는 평균 최저 85.6점, 틀리거나 모른 경우는 42.1점이었습니다. 보정된 확률은 아니었습니다. 그래서 증거나 임상 판정의 대체물로는 쓰지 않았습니다. 다만 검토자가 어떤 후보부터 볼지 정하는 데 도움이 됐습니다.</p>
+
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">검증 세트 (이미 풀린 사건)</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">결과</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">다양한 희귀질환 세트</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">51건 중 48건에서 정확한 유전자·변이 복원</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경근육 질환 세트</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">57건 중 45건에서 정확한 진단 반환</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">롱리드 유전체 세트</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">15건 전부 정확한 유전자, 12건은 두 원인 대립유전자까지</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">본 분석 전, 이미 진단이 확정된 사건으로 워크플로우를 다듬은 결과입니다. 이 단계가 프롬프트 개발을 도왔고, 전문가 검토가 여전히 필요한 지점을 보여줬습니다. 출처: OpenAI (2026, June), NEJM AI.</p>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>우리 조직의 '풀리지 않은 사건' 목록을 적어보세요.</strong><br>접었던 분석, 미궁에 빠진 고객 이슈, 결론이 안 났던 데이터. 이 연구의 전제는 '데이터는 그대로지만 지식과 도구는 좋아진다'입니다. 옛 데이터 중 지금이면 다시 풀릴 후보를 한 줄씩 적습니다. 이것이 재분석 대상 목록입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>AI에게 '답'이 아니라 '근거'를 내놓게 하세요.</strong><br>이 워크플로우의 핵심은 순위 하나가 아니라 따져 물을 수 있는 정당화를 요구한 점입니다. 우리 팀의 AI 사용 프롬프트에 "결론과 함께 근거·반례·확신도를 같이 제시하라"를 한 줄 넣습니다. 사람이 검토할 수 있는 형태로 출력이 바뀝니다. (1주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>AI 출력과 사람 확정 사이에 검증 게이트를 명문화하세요.</strong><br>이 연구에서 AI 출력은 '최소 2인 검토 → 기준 분류 → 외부 확인 → 전달' 게이트를 통과해야만 진단이 됐습니다. 우리 업무에도 'AI가 만든 것이 외부로 나가기 전 누가, 무엇으로 확인하는가'를 한 장으로 정의합니다. 책임 소재가 분명해집니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>이 연구는 진단 도구 사용을 권하지 않습니다.</strong> 연구진은 환자·임상의·고객이 오픈AI 모델로 질병을 진단하거나 의료 결정을 내리라는 뜻이 아니라고 못 박았습니다. 모델은 단 한 명도 진단하지 않았습니다. 모든 진단은 자격 있는 임상 전문가가 했습니다.</p>
+
+        <p><strong>후향적 연구이고, 한계가 분명합니다.</strong> 코호트는 이질적이었고, 검토자는 모델 신뢰도를 모르는 상태가 아니었습니다(비맹검). 연구진은 절감된 시간, 비용, 임상의 노력, 오탐 부담, 진료 변화는 측정하지 않았습니다. 구조 변이·반복 확장 같은 다른 유전 변이도 체계적으로 평가하지 않았습니다.</p>
+
+        <p><strong>거대 언어모델은 그럴듯한 오답을 만듭니다.</strong> 맥락을 잘못 읽거나, 자세히 보면 무너지는 설명을 내놓을 수 있습니다. 그래서 모든 결과가 사람의 판정과 임상 확인을 거쳤습니다. 모델은 탐색을 넓혔을 뿐, 가족에게 무엇을 돌려줄지 결정하지 않았습니다. 임상 확대 적용에는 프라이버시·보안·감사 가능성·현지 규제가 똑같이 요구됩니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 잘 쓰는 조직은 AI에게 결정을 맡기지 않습니다. 사람이 검증할 단서를 넓히게 하고, 판단은 사람이 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 도입을 '대체'가 아니라 '탐색 확장 + 사람 검증'으로 재정의하라. 모델이 담당하는 칸과 사람이 담당하는 칸을 한 도식으로 그려, 책임이 누구에게 있는지 분명히 하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">실무 리드</span>
+            <span>접어둔 분석과 미해결 사건을 '재분석 백로그'로 관리하라. 지식과 도구가 좋아질 때마다 가장 가치 있는 옛 사건부터 다시 여는 루틴을 만들어라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">리스크/품질</span>
+            <span>AI 신뢰도 점수는 사람의 주의를 배분하는 용도로만 쓰고, 판정의 근거로 삼지 마라. 외부로 나가는 모든 산출물에 검증 게이트를 명문화하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>o3 Deep Research</strong>: 오픈AI의 추론 모델 계열로, 여러 단계의 추론과 자료 종합을 수행합니다. 이 연구에서는 임상 특징·변이·문헌을 엮어 근거가 붙은 가설을 내놓는 역할을 했습니다.</p>
+          <p><strong>유전체 재분석 (Reanalysis)</strong>: 과거에 결론이 나지 않은 유전체 데이터를, 새로 쌓인 지식으로 다시 해석하는 일입니다. 환자의 유전체는 그대로지만 주변 지식이 바뀌기 때문에 가능합니다.</p>
+          <p><strong>ACMG/AMP 기준</strong>: 임상 검사실이 유전 변이를 병원성·양성 등으로 분류할 때 쓰는 표준 평가 틀입니다. 모델의 후보도 이 기준으로 검토됐습니다.</p>
+          <p><strong>CLIA 인증 검사실</strong>: 미국에서 임상 검사 품질을 보장하는 인증을 받은 검사실입니다. 변이가 진단으로 인정되려면 이곳의 확인을 거쳐야 했습니다.</p>
+          <p><strong>22q11.2 결실 / 디조지 증후군</strong>: 22번 염색체 일부가 빠져 생기는 질환으로, 심장·면역·신경발달 증상을 동반합니다. 모델이 입력에 없던 이 구조 변이를 추론해 화제가 됐습니다.</p>
+          <p><strong>휴먼 인 더 루프 (Human-in-the-loop)</strong>: AI 출력을 사람이 검토·확정하는 과정을 작업 흐름 안에 넣는 방식입니다. 이 연구의 안전성은 여기에 묶여 있습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>OpenAI. (2026, June 18). <em>Using AI to help physicians diagnose rare genetic diseases affecting children</em> [Article]. OpenAI. <a href="https://openai.com/index/diagnose-rare-childhood-diseases/" target="_blank" rel="noopener">https://openai.com/index/diagnose-rare-childhood-diseases/</a></li>
+          <li>Brownstein, C. A., Beggs, A. H., et al. (2026, June 18). <em>Rare disease genomic reanalysis with an AI reasoning model</em> [Article]. NEJM AI. <a href="https://openai.com/index/diagnose-rare-childhood-diseases/" target="_blank" rel="noopener">https://openai.com/index/diagnose-rare-childhood-diseases/</a></li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 4.8%가 정말 의미 있는 숫자인가 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">376건에서 18건이면 4.8%예요. 헤드라인은 'AI가 희귀병 풀었다'인데, 95%는 그대로 미해결이에요. 숫자가 기대를 못 따라가는 거 아니에요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 376건이 전문가가 이미 다 보고 포기한 사건이에요. 천장이 0%에 가까운 데서 4.8%가 나온 거예요. 쉬운 사건 모아서 90% 푸는 거랑 차원이 달라요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">인정해요. 18가족한테는 4.8%가 100%죠. 그럼 헤드라인을 '대체'가 아니라 '한 번 더 본다'로 써야 하는 거네요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 우리 회사에 옮길 게 있나 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">병원 얘기를 우리 회사로 어떻게 옮겨요? 우린 유전체도 없고 CLIA 검사실도 없는데요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">옮길 건 도메인이 아니라 구조예요. 저흰 '해지한 고객 데이터'를 백로그로 묶어놨어요. 분석 도구 좋아질 때마다 다시 돌려요. 옛 데이터가 새 답을 줘요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 핵심은 '근거를 내놓게 한 것'이에요. 답만 받으면 검증을 못 해요. AI한테 근거랑 반례까지 받으면 그때부터 사람이 진짜 일을 해요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 신뢰도 점수를 믿어도 되나 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞힌 건 85.6점, 틀린 건 42.1점. 점수가 이렇게 갈리면 그냥 점수 높은 것만 보면 되는 거 아니에요? 편하잖아요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">연구진이 그걸 경계했어요. '보정된 확률이 아니다'라고 못 박았어요. 점수는 어디부터 볼지 정하는 용도지, 맞다 틀리다 판정하는 용도가 아니에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이게 리더가 놓치는 함정이에요. 점수 높다고 결재 통과시키면 오탐이 그대로 나가요. 점수는 '먼저 봐라'지 '믿어라'가 아니에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">알겠어요. 점수로 우선순위만 매기고, 통과는 사람 검토로. 편하려다 사고 칠 뻔했네요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 4px;">
+        <a href="https://openai.com/index/diagnose-rare-childhood-diseases/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html">
+          <div class="next-post-title">스스로 진화하는 AI, 코드를 스스로 고칩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+    <!-- WIKI_CONCEPTS_START -->
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-18-o3-rare-disease-reanalysis.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-06-18-o3-rare-disease-reanalysis.html';
+    const ROASTING_QUOTE = 'AI가 의사를 대체한다고 들으셨습니까? 이 연구에서 AI는 단 한 명도 진단하지 않았습니다. 사람이 검증할 단서만 꺼냈습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+
+</body></html>

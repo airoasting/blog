@@ -1,0 +1,481 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="Anthropic이 생물학 데이터에서 AI 에이전트를 시험했습니다. 도구 없이 맡기자 같은 질문에도 답이 매번 달라졌습니다. 결정적 도구 한 겹이 문제를 닫았습니다. 에이전트의 발목을 잡는 건 모델이 아니라 데이터 인프라입니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다">
+  <meta property="og:description" content="같은 질문 3번에 답이 3번 달랐습니다. 더 센 모델로 바꿔도 그대로였습니다. 결정적 도구 한 겹이 문제를 닫았습니다. 사내 데이터에 에이전트를 붙이는 리더를 위한 글입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-06-08-agents-in-biology.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-08">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="데이터인프라">
+  <meta property="article:tag" content="재현성">
+  <meta property="article:tag" content="Anthropic">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다">
+  <meta name="twitter:description" content="같은 질문 3번에 답이 3번 달랐습니다. 문제는 모델이 아니라 데이터였습니다.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다",
+    "datePublished": "2026-06-08",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Anthropic이 생물학 데이터에서 AI 에이전트를 시험했습니다. 도구 없이 맡기자 같은 질문에도 답이 매번 달라졌습니다. 결정적 도구 한 겹이 문제를 닫았습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-06-08-agents-in-biology.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_06_08_agents-in-biology/thumbnail.png" alt="AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-06-08</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic</span>
+            <span>Laura Luebbert</span>
+            <span><a href="https://www.anthropic.com/research/agents-in-biology" target="_blank" rel="noopener">Agents in Biology ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=데이터인프라" class="post-tag">#데이터인프라</a>
+            <a href="../index.html?tag=재현성" class="post-tag">#재현성</a>
+            <a href="../index.html?tag=Anthropic" class="post-tag">#Anthropic</a>
+            <a href="../index.html?tag=도구사용" class="post-tag">#도구사용</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다" data-date="2026-06-08" data-category="research" data-source="Anthropic (Laura Luebbert)" data-tags="AI에이전트, 데이터인프라, 재현성, Anthropic, 도구사용, 자동화" data-original-url="https://www.anthropic.com/research/agents-in-biology" data-roasting-quote="더 똑똑한 모델만 기다리고 계십니까? 에이전트가 헛도는 진짜 이유는 회사 안에 어질러진 데이터입니다." data-next-post="../survival/2026-06-08-ai-broken-hiring.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">Anthropic이 생물학 데이터에서 AI 에이전트를 시험했습니다. 바이러스 서열 회수 질문 120개, 병원체 40종이 대상입니다.</p>
+            <p data-summary="">도구 없이 맡기자 같은 질문에도 답이 매번 달랐습니다. 한 모델은 266건을 받아와야 할 자리에 106건, 15건, 5건을 들고 왔습니다.</p>
+            <p data-summary="">결정적 도구를 붙이자 전 모델이 90%를 넘겼습니다. 에이전트의 발목을 잡은 건 모델이 아니라 데이터 인프라였습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">더 똑똑한 모델만 기다리고 계십니까?<br>에이전트가 헛도는 진짜 이유는<br>회사 안에 어질러진 데이터입니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>AI 에이전트에게 일을 맡기기 시작했습니다. 자료 조사, 데이터 정리, 보고서 초안이 대표적입니다. 잘될 때는 사람보다 빠릅니다.</p>
+            <p>그런데 결과가 들쭉날쭉합니다. 어제 깔끔하던 작업이 오늘은 엉뚱하게 끝납니다. 더 센 모델로 바꿔도 그대로입니다.</p>
+            <p>이 연구는 그 원인을 생물학 현장에서 해부했습니다. 문제는 에이전트의 머리가 아니었습니다. 에이전트가 다뤄야 할 데이터가 어질러져 있다는 데 있었습니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>소프트웨어 개발은 에이전트가 잘 해냅니다. 안드레이 카르파시는 "코드 짜는 건 제일 쉬웠고, 일의 대부분은 브라우저에서 클릭하는 것이었다"고 말했습니다. 코드는 에이전트가 다루기 좋게 정돈돼 있다는 뜻입니다.</p>
+            <p>생물학은 정반대입니다. 데이터가 제각각인 형식, 흩어진 데이터베이스, 한 번 쓰고 버린 스크립트에 갇혀 있습니다. 사람은 클릭으로 헤쳐 나가지만 에이전트는 그 앞에서 막힙니다. 연구진은 이를 바이러스학의 "클릭 세금"이라 불렀습니다.</p>
+            <p>대가는 작지 않습니다. 2026년 5월 분디부교 에볼라 발병으로 1,000명 넘게 감염되고 200명 넘게 숨졌습니다. 바이러스 서열을 빠르고 정확히 회수하는 일이 곧 대응 속도입니다.</p>
+            <p>회사 데이터도 다르지 않습니다. 부서마다 다른 양식, 흩어진 파일, 한 번 쓰고 잊은 매크로가 쌓여 있습니다. 에이전트가 헤맬 환경이 이미 갖춰져 있습니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, 같은 질문에 매번 다른 답이 나왔습니다.</strong> 연구진은 VirBench라는 시험을 만들었습니다. 병원체 40종에 걸친 현실적인 서열 회수 질문 120개로, 클로드와 GPT 계열을 포함한 네 시스템을 평가했습니다. 도구 없이 맡기자 정확도는 16.9%에서 91.3%까지 흩어졌습니다. 더 큰 문제는 재현성이었습니다. 한 모델은 똑같은 질문을 세 번 던졌을 때 266건을 받아와야 할 자리에 각각 106건, 15건, 5건을 들고 왔습니다. 같은 입력, 다른 출력입니다. 가장 강한 모델조차 믿고 맡길 수 없었다는 뜻입니다.</p>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">266 → 5</div>
+                <div class="stat-label">한 질문 3회 실행, 기대 266건 중 최저 5건만 회수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">&gt;90%</div>
+                <div class="stat-label">결정적 도구를 붙인 뒤 전 모델 정확도</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">99.7%</div>
+                <div class="stat-label">도구 연결 후 최고 모델이 도달한 정확도</div>
+              </div>
+            </div>
+
+            <p><strong>둘째, 그 편차가 결론 자체를 뒤집었습니다.</strong> 회수한 데이터가 불완전하자 계통수 분석이 흔들렸습니다. 에볼라의 공통 조상 추정 시점이 2014년 1월에서 4월로, 심하면 1922년으로 튀었습니다. 발병 시계열에 대한 결론이 통째로 달라진 것입니다. 치료제 분석도 같았습니다. 항체 치료제가 노리는 결합 부위를 두고 실행마다 다른 세 가지 결론이 나왔습니다. 작은 회수 오차가 과학적 판단을 바꿨습니다. 회사도 다르지 않습니다. 에이전트가 데이터 일부를 빠뜨리면 매출 보고서의 결론도 같은 식으로 뒤집힐 수 있습니다.</p>
+
+            <p><strong>셋째, 결정적 도구 한 겹이 문제를 닫았습니다.</strong> 연구진은 gget virus라는 회수 계층을 만들었습니다. NCBI의 여러 API를 한데 묶어, 사람이 웹에서 클릭으로 하던 작업을 프로그램으로 똑같이 재현합니다. 큰 데이터셋은 나눠 받고, 보조 기록까지 끌어와 거르고, 감사 가능한 표준 형식으로 돌려줍니다. 이 도구를 붙이자 전 모델이 90%를 넘겼고 최고 모델은 99.7%에 닿았습니다. 실행마다 달라지던 편차가 사라졌고, 모델 사이 성능 격차도 크게 좁혀졌습니다.</p>
+
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <thead>
+                  <tr>
+                    <th>조건</th>
+                    <th>정확도</th>
+                    <th>재현성</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>도구 없이 에이전트에 위임</td>
+                    <td>16.9~91.3% (모델별 편차 큼)</td>
+                    <td>실패 (같은 질문도 매번 다른 결과)</td>
+                  </tr>
+                  <tr>
+                    <td>결정적 도구(gget virus) 연결</td>
+                    <td><strong style="color:#1A1A1A;">전 모델 &gt;90%, 최고 99.7%</strong></td>
+                    <td><strong style="color:#1A1A1A;">확보 (실행마다 동일)</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="post-table-source">출처: Anthropic, Paving the Way for Agents in Biology (2026), VirBench 결과.</div>
+            </div>
+
+            <p><strong>넷째, "할 수 있다"와 "매번 새로 해야 한다"는 다릅니다.</strong> 모델이 더 강해지면 이런 도구가 덜 필요해질 거란 반론이 있습니다. 연구진의 답은 분명했습니다. 에이전트가 할 수 있다고 해서, 매번 에이전트가 처음부터 다시 만들어 처리할 일은 아니라는 것입니다. 반복되는 작업은 한 번 결정적 도구로 고정하는 편이 빠르고, 무엇보다 결과를 추적하고 감사할 수 있습니다. 신뢰가 필요한 업무일수록 이 가치는 사라지지 않습니다.</p>
+            <p>이 점이 리더에게 핵심입니다. AI 도입이 자꾸 어긋난다면 더 센 모델을 기다릴 일이 아닙니다. 에이전트가 딛고 설 데이터와 도구부터 정돈해야 합니다. 모델은 발전하지만, 어질러진 데이터는 저절로 정리되지 않습니다.</p>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>같은 일을 세 번 시켜 재현성을 진단하십시오.</strong><br>에이전트에게 똑같은 작업을 세 번 맡겨 결과를 나란히 놓습니다. 매번 다르면 모델 탓이 아니라 데이터와 절차가 흔들리는 것입니다. 어디서 갈라지는지부터 찾습니다. (30분)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">아래 작업을 지금부터 세 번 똑같이 수행하겠습니다.
+매번 결과(건수·핵심 수치·결론)를 표로 적어 주세요.
+세 번의 결과가 어디서 달라지는지, 그 원인이
+데이터 접근인지 판단인지 구분해 짚어 주세요.
+작업 내용: [여기에 반복 작업 입력]</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div></div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>우리 회사의 "클릭 세금"을 찾으십시오.</strong><br>에이전트가 자주 막히는 지점을 적습니다. 사람이 매번 손으로 다운로드하고, 양식을 맞추고, 복사해 붙이는 곳입니다. 그곳이 자동화의 병목이자 오류의 진원지입니다. (1시간)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>반복되는 데이터 회수를 도구로 고정하십시오.</strong><br>매번 에이전트에게 새로 시키지 말고, 자주 쓰는 데이터 조회와 정리를 결정적 스크립트나 도구로 굳힙니다. 결과가 일정해지고 추적이 가능해집니다. (반나절)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>생물학 특화 사례입니다.</strong> 바이러스 서열 회수라는 좁은 영역의 결과입니다. 원리는 받아들이되 수치를 그대로 옮기지 마십시오.</p>
+            <p><strong>도구가 만능은 아닙니다.</strong> 결정적 도구는 결과를 일정하게 만들 뿐입니다. 도구 자체가 틀리면 일관되게 틀립니다. 도구의 정확성을 먼저 검증해야 합니다.</p>
+            <p><strong>도구에도 비용이 듭니다.</strong> 만들고 유지하는 손이 필요합니다. 모든 작업이 아니라 반복되고 신뢰가 중요한 작업부터 고정하십시오.</p>
+            <p><strong>모델 발전이 일부를 대체합니다.</strong> 시간이 지나면 일부 도구는 불필요해질 수 있습니다. 그래도 결과를 추적하고 감사하는 가치는 남습니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI 도입이 어긋나는 원인은 모델이 아니라 데이터 인프라인 경우가 많습니다. 더 센 모델을 기다리기 전에 에이전트가 딛고 설 데이터부터 정돈하십시오.</p>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <p><strong>AI 에이전트(AI Agent)</strong>: 사람의 지시를 받아 여러 단계를 스스로 수행하는 AI입니다. 검색, 도구 호출, 정리까지 이어서 처리합니다.</p>
+            <p><strong>결정적(Deterministic)</strong>: 같은 입력에 늘 같은 출력을 내는 성질입니다. 실행마다 결과가 흔들리지 않습니다.</p>
+            <p><strong>재현성(Reproducibility)</strong>: 같은 작업을 다시 했을 때 같은 결과가 나오는 정도입니다. 신뢰의 기본 조건입니다.</p>
+            <p><strong>API</strong>: 프로그램이 데이터나 기능을 주고받는 통로입니다. 사람이 클릭으로 하던 일을 코드로 대신하게 합니다.</p>
+            <p><strong>계통수(Phylogenetic Tree)</strong>: 바이러스 등의 유전 정보를 비교해 갈라진 내력을 나무 모양으로 그린 그림입니다. 데이터가 빠지면 추정이 크게 흔들립니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>AI 투자의 우선순위를 모델 교체가 아니라 데이터·도구 정비에 두십시오. 인프라가 곧 결과 품질입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>에이전트 결과가 들쭉날쭉하면 같은 일을 세 번 시켜 재현성부터 진단하십시오. 갈라지는 지점이 손볼 곳입니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>신뢰와 감사가 중요한 업무는 매번 에이전트에 맡기지 말고 결정적 도구로 고정하십시오. 추적 가능성이 자산입니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Luebbert, L. (2026, June). <em>Paving the Way for Agents in Biology</em> [Article]. Anthropic. <a href="https://www.anthropic.com/research/agents-in-biology" target="_blank" rel="noopener">https://www.anthropic.com/research/agents-in-biology</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://www.anthropic.com/research/agents-in-biology" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 패턴 A - 1:1 충돌형 (블랙 vs 레드) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">핵심은 하나예요. 같은 질문에 답이 266건, 106건, 5건으로 매번 다르면 그건 모델 문제가 아니에요. 데이터가 어질러진 거죠. 더 센 모델 기다릴 일이 아니에요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">잠깐요. 그거 바이러스 서열 얘기잖아요. 우리 회사 매출 데이터랑 무슨 상관이에요? 남의 동네 얘기 아니에요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">똑같아요. 에이전트가 데이터 몇 줄 빠뜨리면 매출 보고서 결론도 뒤집혀요. 형식 제각각에 파일 흩어진 거, 그게 딱 우리 회사 모습이에요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 패턴 B - 끼어들기형 (네이비 주장, 골드 동의심화, 화이트 다른각도) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">해법은 단순해요. 매번 에이전트한테 새로 시키지 말고, 자주 하는 데이터 조회를 결정적 도구로 한 번 고정해요. 그러면 결과가 안 흔들려요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 저도 에이전트한테 똑같은 리포트 세 번 시켰다가 숫자가 다 달라서 식겁했어요. 자주 쓰는 건 스크립트로 박아놨더니 그제야 믿고 쓰겠더라고요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 그 '도구로 고정'이라는 게 저 같은 비개발자한텐 막막해요. 그래서 저는 당장 뭐부터 하면 돼요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">고정은 나중 일이에요. 먼저 같은 일을 세 번 시켜서 결과가 갈리는지만 보세요. 갈리는 그 지점이 손볼 곳이에요. 그건 오늘 당장 돼요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 패턴 C - 연쇄 반응형 (퍼플 도발, 레드 태클, 퍼플 마무리) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">전 이 글 제목이 좋더라고요. AI가 멍청한 게 아니라 책상이 지저분한 거라고 팀원들한테 말하면 다들 끄덕여요. 설득이 훨씬 쉬워지는 느낌이에요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">비유는 좋은데 숫자는 챙겨야죠. 99.7%는 최고 모델 하나 얘기고, 도구 붙여도 만능 아니에요. 도구가 틀리면 이번엔 일관되게 틀린다잖아요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그쵸, 그 말도 본문에 있더라고요. 책상 치웠다고 끝이 아니라는 거. 깨끗한 책상은 출발선이지 보장은 아니다, 딱 그 느낌이에요.</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="../survival/2026-06-08-ai-broken-hiring.html">
+              <div class="next-post-title">이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../wiki/concepts/자동화.html" class="concept-chip">자동화</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-08-agents-in-biology.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-06-08-agents-in-biology.html';
+    const ROASTING_QUOTE = '더 똑똑한 모델만 기다리고 계십니까? 에이전트가 헛도는 진짜 이유는 회사 안에 어질러진 데이터입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+
+
+
+</body></html>

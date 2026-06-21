@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="Anthropic이 화학 특화 학습을 전혀 하지 않은 클로드로 NMR 스펙트럼 예측을 시험했습니다. Opus 4.7의 수소 예측 평균 오차는 0.079ppm으로 전용 소프트웨어 MestReNova(0.150ppm)를 앞섰고, 스펙트럼에서 분자 구조를 거꾸로 알아내는 역추정까지 해냈습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="범용 AI가 화학 전용 소프트웨어를 따라잡았습니다">
+  <meta property="og:description" content="화학 특화 학습 0건의 클로드가 NMR 예측에서 전용 도구 MestReNova·ChemDraw를 앞섰습니다. 전용 소프트웨어의 해자가 흔들립니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-06-05-claude-chemist-nmr.html">
+  <meta property="og:image" content="https://cdn.sanity.io/images/4zrzovbb/website/6a37f20bd02f14cc408383f98974cee81486fa2d-1920x865.jpg">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-05">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="클로드">
+  <meta property="article:tag" content="AI과학">
+  <meta property="article:tag" content="범용AI">
+  <meta property="article:tag" content="화학">
+  <meta property="article:tag" content="전용소프트웨어">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="범용 AI가 화학 전용 소프트웨어를 따라잡았습니다">
+  <meta name="twitter:description" content="화학 특화 학습 0건의 클로드가 NMR 예측에서 전용 도구 MestReNova·ChemDraw를 앞섰습니다.">
+  <meta name="twitter:image" content="https://cdn.sanity.io/images/4zrzovbb/website/6a37f20bd02f14cc408383f98974cee81486fa2d-1920x865.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "범용 AI가 화학 전용 소프트웨어를 따라잡았습니다",
+    "datePublished": "2026-06-05",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "화학 특화 학습을 하지 않은 클로드가 NMR 예측에서 전용 소프트웨어를 앞섰습니다. 스펙트럼에서 분자 구조를 역추정하는 작업도 해냈습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-06-05-claude-chemist-nmr.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="https://cdn.sanity.io/images/4zrzovbb/website/6a37f20bd02f14cc408383f98974cee81486fa2d-1920x865.jpg" alt="범용 AI가 화학 전용 소프트웨어를 따라잡았습니다">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 6월 5일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">범용 AI가 화학 전용 소프트웨어를 따라잡았습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Anthropic</span>
+            <span>David Kamber</span>
+            <span><a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=클로드" class="post-tag">#클로드</a>
+            <a href="../index.html?tag=AI과학" class="post-tag">#AI과학</a>
+            <a href="../index.html?tag=범용AI" class="post-tag">#범용AI</a>
+            <a href="../index.html?tag=화학" class="post-tag">#화학</a>
+            <a href="../index.html?tag=전용소프트웨어" class="post-tag">#전용소프트웨어</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="범용 AI가 화학 전용 소프트웨어를 따라잡았습니다" data-date="2026-06-05" data-category="tech" data-source="Anthropic (David Kamber)" data-tags="클로드, AI과학, 범용AI, 화학, 전용소프트웨어" data-original-url="https://www.anthropic.com/research/making-claude-a-chemist" data-roasting-quote="당신 업계의 '전용 소프트웨어'는 정말 안전합니까? 수십 년 쌓인 화학 전용 도구를, 화학을 따로 배운 적 없는 범용 AI가 따라잡았습니다." data-next-post="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">Anthropic이 화학 특화 학습을 전혀 하지 않은 클로드로 NMR 스펙트럼 예측을 시험했습니다.</p>
+        <p data-summary="">Opus 4.7의 수소 예측 평균 오차는 0.079ppm으로, 전용 소프트웨어 MestReNova(0.150ppm)를 앞섰습니다.</p>
+        <p data-summary="">스펙트럼에서 분자 구조를 거꾸로 알아내는 역추정까지 해냈습니다. 전용 도구도 어려운 작업입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신 업계의 '전용 소프트웨어'는 정말 안전합니까?<br>수십 년 쌓인 화학 전용 도구를, 화학을 따로 배운 적 없는 범용 AI가 따라잡았습니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>모든 산업에는 '전용 소프트웨어'가 있습니다. 그 분야만 수십 년 파온 도구입니다. 회계, 설계, 물류, 그리고 화학이 그렇습니다. 우리는 보통 이 도구들을 대체 불가능한 자산으로 여깁니다.</p>
+        <p>Anthropic의 이번 실험은 그 전제를 건드립니다. 화학을 따로 배운 적 없는 범용 모델 클로드가, 화학 전용 NMR 분석 소프트웨어를 따라잡거나 앞섰습니다. 전용 도구만 풀던 문제를 추가 학습 없이 풀어낸 것입니다. 지금 당신 조직이 매년 라이선스 비용을 내는 전용 도구를 떠올려 보세요. 화학에서 무너진 벽이라면, 그 목록의 어느 항목이 다음 차례인지 물어야 합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>NMR(핵자기공명분광법)은 화학자가 분자의 구조를 확인하는 핵심 도구입니다. 분자에 자기장을 걸면 원자가 신호를 내고, 그 신호의 위치로 구조를 읽습니다. 신약, 소재, 화학 공정 연구의 일상 업무입니다.</p>
+        <p>이 분석에는 두 방향이 있습니다. 정방향은 '구조를 알 때 스펙트럼을 예측'하는 일입니다. 역방향은 '스펙트럼만 보고 구조를 거꾸로 알아내는' 일입니다. 지금까지 정방향은 ChemDraw, MestReNova 같은 전용 소프트웨어가, 역방향은 더 비싼 특수 도구와 2D NMR 데이터가 맡았습니다.</p>
+        <p>Anthropic은 클로드 세 모델(Opus 4.7, Opus 4.6, Sonnet 4.6)을 이 전용 도구들과 같은 문제에서 겨루게 했습니다. 평가에는 모델 학습 마감 이후 ChemRxiv에 올라온 화합물 20개를 썼습니다. 외운 답이 아니라는 점을 보장하기 위해서입니다. 화합물은 네 가지 골격 계열로 나뉘고, 계열마다 5개씩입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://cdn.sanity.io/images/4zrzovbb/website/6a37f20bd02f14cc408383f98974cee81486fa2d-1920x865.jpg" alt="정방향 예측 평가에 사용한 네 가지 분자 골격 계열" style="width:100%; border-radius:8px;" loading="lazy">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            정방향 예측 평가에 쓰인 네 가지 골격 계열입니다. 각 계열은 서로 다른 NMR 난이도를 시험하며, 계열마다 화합물 5개씩 총 20개를 사용했습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026), Making Claude a Chemist</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 범용 모델이 전용 도구를 앞섰습니다.</strong> 정방향 예측에서 Opus 4.7의 수소 평균 오차는 0.079ppm입니다. 전용 소프트웨어 MestReNova(0.150ppm)와 ChemDraw(0.143ppm)의 절반 수준입니다. 탄소 예측에서도 Opus 4.7이 1.375ppm으로 가장 정확했습니다. 화학을 따로 학습하지 않은 모델의 결과입니다.</p>
+        <p>모델 사이에도 순서가 보입니다. Opus 4.7이 가장 정확하고, Opus 4.6, Sonnet 4.6 순입니다. 세대가 올라갈수록 화학 과제 성능이 함께 올랐습니다. 별도 화학 튜닝 없이 일반 능력이 좋아진 결과라는 점이 핵심입니다.</p>
+
+        <div style="overflow-x: auto; margin: 24px 0;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <thead>
+              <tr style="background: var(--bg-secondary, #f5f5f5);">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">도구</th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">수소 평균오차<br><span style="font-weight:400; font-size:12px; color:#888;">ppm · 낮을수록 좋음</span></th>
+                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">탄소 평균오차<br><span style="font-weight:400; font-size:12px; color:#888;">ppm · 낮을수록 좋음</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">Opus 4.7 (범용 AI)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.079</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">1.375</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Opus 4.6 (범용 AI)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.113</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">1.680</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee;">Sonnet 4.6 (범용 AI)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.145</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2.152</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#888;">MestReNova (전용 도구)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">0.150</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">1.484</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#888;">ChemDraw (전용 도구)</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">0.143</td>
+                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">2.107</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size: 13px; color: #666; margin-top: 8px;">20개 화합물 정방향 예측의 평균 절대 오차(MAE)입니다. 수소와 탄소 모두에서 Opus 4.7이 전용 소프트웨어를 앞섰습니다. 출처: Anthropic (2026), Making Claude a Chemist.</p>
+        </div>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://cdn.sanity.io/images/4zrzovbb/website/8269748a860db6f9b3fddd3e9e6116c193cbb399-1200x675.jpg" alt="20개 화합물에 대한 도구별 수소·탄소 예측 오차 비교" style="width:100%; border-radius:8px;" loading="lazy">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            도구별 수소(왼쪽)·탄소(오른쪽) 예측 오차입니다. 막대가 낮을수록 정확합니다. 범용 AI(주황·초록·빨강)가 전용 도구(회색)와 같은 줄에 서거나 앞섭니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026), Making Claude a Chemist</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 미세한 신호 패턴에서 격차가 더 컸습니다.</strong> 스펙트럼의 봉우리는 더 잘게 쪼개집니다. 이 분할 간격을 0.5Hz 안으로 맞히는 비율에서 클로드 세 모델은 약 80%였습니다. 전용 소프트웨어는 26~35%에 그쳤습니다.</p>
+        <p>봉우리가 쪼개지는 모양에는 원자 사이의 연결 정보가 담깁니다. 정확도가 두 배 이상 벌어졌다는 것은, 단순 평균 위치만이 아니라 구조의 결까지 읽는다는 뜻입니다. 전용 도구의 강점이라 여겨지던 영역입니다.</p>
+
+        <p><strong>셋째, 거꾸로 푸는 능력이 진짜 차이입니다.</strong> 정방향은 클로드가 전용 도구를 앞선 정도지만, 역방향은 전용 도구가 잘 못 하는 일입니다. 스펙트럼만 보고 분자 구조를 알아내는 작업입니다. Opus 4.7은 단순한 분자 8개를 매번 모두 맞혔습니다.</p>
+        <p>고리가 얽힌 복잡한 분자 7개에서는, 출발물질 구조를 힌트로 주자 4개를 3회 모두, 나머지 3개를 3회 중 2회 맞혔습니다. 전용 구조 분석 도구는 보통 2D NMR 데이터와 별도 훈련이 필요합니다. 범용 AI는 분자식과 1D 스펙트럼만으로 그 일을 했습니다.</p>
+        <p>여기서 경제적 의미가 나옵니다. 역방향 분석은 그동안 비싼 특수 장비와 추가 데이터라는 비용 장벽 뒤에 있었습니다. 범용 AI가 그 장벽을 낮추면, 전용 도구 예산이 없어 포기했던 문제가 다시 후보로 올라옵니다. 비용 때문에 못 풀던 일이 풀 수 있는 일로 바뀝니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://cdn.sanity.io/images/4zrzovbb/website/b28ecd4b626473984e42791c1615103d4203ba48-1709x2048.jpg" alt="스펙트럼만으로 역추정에 성공한 분자 구조들" style="width:100%; border-radius:8px;" loading="lazy">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            역방향 추정에 성공한 분자들입니다. 위쪽(초록)은 분자식과 스펙트럼만으로, 아래쪽(파랑)은 출발물질 정보를 추가로 받아 풀었습니다. 대부분 3회 모두 정답입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Anthropic (2026), Making Claude a Chemist</span>
+          </figcaption>
+        </figure>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">0.079 ppm</div>
+            <div class="stat-label">Opus 4.7 수소 예측 평균오차 (전용 MestReNova 0.150ppm의 절반)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">약 80%</div>
+            <div class="stat-label">분할 패턴 0.5Hz 내 정확도 (전용 도구 26~35%)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">8 / 8</div>
+            <div class="stat-label">단순 분자 역추정, Opus 4.7이 매 시도 전부 정답</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>우리 조직이 의존하는 '전용 소프트웨어' 목록을 적으세요.</strong><br>분야별 전용 도구, 라이선스 비용, 그 도구만 풀던 작업을 한 표에 정리합니다. 그중 정답을 검증할 수 있는 작업 하나를 골라 범용 AI에 같은 문제를 던져봅니다. 화학에서 무너진 가정이 우리 목록에도 있는지 확인하는 일입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>'정답이 있는 작업'부터 시험하세요.</strong><br>이번 실험이 설득력 있는 이유는 학습 마감 이후 화합물로 정답을 검증했기 때문입니다. 우리 업무에서도 답을 객관적으로 채점할 수 있는 작업이 출발점입니다. 정답이 명확한 과제 하나를 정해, 범용 AI 결과와 기존 도구 결과를 같은 기준으로 나란히 놓습니다. (1주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>'거꾸로 푸는 문제'를 찾으세요.</strong><br>가장 큰 가치는 정방향이 아니라 역방향에서 나왔습니다. 기존 도구가 한 방향만 풀던 업무를 떠올립니다. 결과에서 원인을, 데이터에서 설계를 역추정하는 질문을 범용 AI에 던져봅니다. 전용 도구가 비싸서 포기했던 문제가 후보입니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>평가 규모가 작습니다.</strong> 저자가 직접 인정합니다. 정방향은 화합물 20개, 골격 4계열에 그쳤습니다(Anthropic, 2026). 통계적으로 일반화하기엔 표본이 작습니다. "범용 AI가 전용 도구를 이겼다"를 모든 화학 과제로 확대하면 과장입니다. 한 가지 유망한 신호로 읽는 것이 정확합니다.</p>
+
+        <p><strong>범위가 좁습니다.</strong> 2D NMR, 입체화학, 복잡한 천연물은 설계상 제외했습니다. 시험하지 않은 골격과 용매도 남아 있습니다. 복잡한 구조는 출발물질 힌트가 있어야 풀렸습니다. 가장 어려운 실제 연구 현장을 그대로 대표하지는 않습니다.</p>
+
+        <p><strong>전문가 검증은 여전히 필요합니다.</strong> 모델이 결론을 내지 못하고 추론만 맴도는 경우가 있었습니다(Anthropic, 2026). 화학자를 대체하는 도구가 아니라, 화학자의 일상 분석을 돕는 보조 도구로 보는 편이 맞습니다. 답의 옳고 그름을 판정하는 사람은 여전히 전문가입니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>전용 소프트웨어의 해자는 생각보다 얕습니다. 범용 AI가 전문 영역의 문턱을 빠르게 넘고 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>자사가 의존하는 전용 SaaS와 라이선스 목록을 분기마다 재평가하라. 범용 AI로 대체 가능한 항목이 늘고 있는지가 핵심 질문이다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>정답을 자동으로 채점할 수 있는 작업부터 범용 AI를 시험하라. 검증 가능한 그라운드 트루스 확보가 도입의 첫 단추다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">사업/기획</span>
+            <span>기존 도구가 한 방향만 풀던 업무에서 '역방향' 질문을 설계하라. 결과에서 원인을 거꾸로 푸는 곳에 새 가치가 있다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>NMR (핵자기공명분광법)</strong>: 분자에 자기장을 걸어 원자가 내는 신호로 구조를 확인하는 분석법입니다. 신약, 소재, 화학 공정 연구의 기본 도구입니다.</p>
+          <p><strong>정방향 / 역방향 예측</strong>: 정방향은 구조를 알 때 스펙트럼을 예측하는 일, 역방향은 스펙트럼만 보고 구조를 거꾸로 알아내는 일입니다. 역방향이 더 어렵습니다.</p>
+          <p><strong>ppm (parts per million)</strong>: NMR 신호의 위치를 나타내는 단위입니다. 예측 위치와 실제 위치의 차이가 작을수록 정확합니다.</p>
+          <p><strong>SMILES</strong>: 분자 구조를 한 줄의 문자로 표현하는 표준 표기법입니다. 모델에 분자를 입력할 때 사용했습니다.</p>
+          <p><strong>MestReNova / ChemDraw</strong>: 화학자들이 NMR 예측에 쓰는 대표적인 전용 소프트웨어입니다. 이번 실험의 비교 대상입니다.</p>
+          <p><strong>골격 (Scaffold)</strong>: 분자의 핵심 뼈대 구조입니다. 골격이 다르면 NMR 신호의 패턴과 난이도가 달라집니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Kamber, D. (2026, June). <em>Making Claude a Chemist</em> [Article]. Anthropic. <a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank" rel="noopener">https://www.anthropic.com/research/making-claude-a-chemist</a></li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 전용 소프트웨어 해자가 정말 무너졌나 (Pattern A — 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 이제 '전용 소프트웨어는 안전하다'는 말 안 믿어요. 화학 따로 안 배운 모델이 ChemDraw, MestReNova를 따라잡았잖아요. 우리 회사 쓰는 전용 도구도 다시 봐야 해요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">화합물 20개 가지고 그런 결론을 내요? 골격도 4종류뿐이에요. 저자들도 표본 작다고 직접 인정했잖아요. 그걸 모든 산업으로 넓히면 그냥 광고예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">표본 작아도 오차가 전용 도구의 절반이에요. 0.079 대 0.150이요. 저는 '확정'이라 안 했어요. '재평가하라'고 했어요. 그 둘은 달라요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 그래서 우리 회사는 뭘 하나 (Pattern B — 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">숫자보다 중요한 건 검증 방식이에요. 학습 마감 이후에 올라온 화합물로 시험했어요. 외운 답이 아니라는 뜻이에요. 이게 없으면 어떤 점수도 못 믿어요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 저도 자사 데이터로 범용 모델 테스트해봤는데요, 결국 '정답을 자동으로 채점할 수 있냐'가 전부였어요. 채점 기준 없으면 시작도 못 해요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저 같은 비개발자는 뭐부터 해요? 본문 말대로 우리 회사 전용 도구랑 라이선스 비용부터 표로 적으면 되는 거예요? 거기서 출발하면 맞아요?</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 역방향 능력, 진짜 게임체인저인가 (Pattern C — 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 역방향이 제일 와닿았어요. 비싼 장비 없이 스펙트럼만으로 구조를 거꾸로 알아낸다니. '비용 때문에 못 풀던 일이 풀린다'는 말, 진짜 그림이 그려지더라고요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그림은 좋은데요, 단순한 분자 8개만 매번 맞혔어요. 복잡한 건 출발물질 힌트를 줘야 풀렸고요. '거꾸로 다 푼다'가 아니라 '쉬운 건 푼다'예요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그건 지금 얘기예요. 세대 올라갈 때마다 좋아졌잖아요. Sonnet보다 Opus 4.6, 그보다 4.7이요. 저는 지금 완성도보다 1년 뒤 기울기가 더 무서워요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">골드 말이 핵심이에요. 지금 완벽하냐가 아니라 방향이 어디냐예요. 전용 도구 계약 갱신 전에 범용 AI로 한 번씩 재보면 돼요. 그게 안전장치예요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 원문 보기 -->
+      <div style="margin-top: 4px;">
+        <a href="https://www.anthropic.com/research/making-claude-a-chemist" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+      </div>
+
+      <!-- 소셜 공유 -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html">
+          <div class="next-post-title">스스로 진화하는 AI, 코드를 스스로 고칩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/cto.html" class="concept-chip">CTO</a>
+      <a href="../wiki/concepts/클로드.html" class="concept-chip">클로드</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-05-claude-chemist-nmr.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/tech/2026-06-05-claude-chemist-nmr.html';
+    const ROASTING_QUOTE = '당신 업계의 \'전용 소프트웨어\'는 정말 안전합니까? 수십 년 쌓인 화학 전용 도구를, 화학을 따로 배운 적 없는 범용 AI가 따라잡았습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+
+</body></html>

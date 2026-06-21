@@ -1,25 +1,29 @@
 {
-  "buildAt": "2026-06-21T00:53:10.834Z",
-  "duration": 0.407,
+  "buildAt": "2026-06-21T01:26:46.831Z",
+  "duration": 0.404,
   "concepts": {
-    "total": 93,
+    "total": 96,
     "validDefinitions": 90,
-    "needsReview": 3
+    "needsReview": 6
   },
   "relationships": {
-    "total": 252
+    "total": 257
   },
   "coverage": {
-    "postsWithConcepts": 181,
-    "totalPosts": 208
+    "postsWithConcepts": 185,
+    "totalPosts": 213
   },
   "inject": {
     "updated": 0,
     "inserted": 0,
-    "unchanged": 179,
-    "skipped": 29
+    "unchanged": 183,
+    "skipped": 30
   },
   "needsManualReview": [
+    {
+      "name": "ERP",
+      "slug": "erp"
+    },
     {
       "name": "AI리서치",
       "slug": "ai리서치"
@@ -27,6 +31,14 @@
     {
       "name": "NBER",
       "slug": "nber"
+    },
+    {
+      "name": "클로드",
+      "slug": "클로드"
+    },
+    {
+      "name": "AI코딩",
+      "slug": "ai코딩"
     },
     {
       "name": "SPCX",

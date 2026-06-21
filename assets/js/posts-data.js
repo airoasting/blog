@@ -16,6 +16,62 @@ window.POSTS_DATA = {
       "file": "company/2026-06-19-companies-rein-in-ai-costs.html",
       "summary": "AI 도구를 앞다퉈 배포하던 아마존·월마트·우버·시스코·메타가 사용량을 다시 조이기 시작했습니다. 앤트로픽과 오픈AI가 정액제를 토큰 종량제로 바꾸자 숨어 있던 비용이 드러났습니다. 우버는 4월에 한 해 AI 예산을 다 썼고, 한 회사는 종량제 첫날 비용이 7배로 뛰었습니다. 정답은 덜 쓰기가 아니라 작업에 맞게 쓰기입니다.",
       "roasting_quote": "직원들에게 AI를 더 쓰라고 밀어붙이셨습니까? 정액제가 종량제로 바뀌는 순간, 그 독려는 비용 청구서가 되어 돌아옵니다.",
+      "next_post": "research/2026-06-16-claude-code-expertise.html"
+    },
+    {
+      "title": "전문가가 포기한 희귀병, AI가 단서를 찾았습니다",
+      "date": "2026-06-18",
+      "category": "tech",
+      "source": "OpenAI (보스턴 아동병원 · 하버드 공동연구, NEJM AI)",
+      "tags": [
+        "AI진단",
+        "희귀질환",
+        "o3",
+        "추론모델",
+        "휴먼인더루프",
+        "헬스케어"
+      ],
+      "slug": "2026-06-18-o3-rare-disease-reanalysis",
+      "file": "tech/2026-06-18-o3-rare-disease-reanalysis.html",
+      "summary": "보스턴 아동병원·하버드·오픈AI가 o3 Deep Research로 풀리지 않던 희귀질환 376건을 재분석했습니다. 전문가 검토와 임상 확인을 거쳐 18건에서 새 진단이 확정됐습니다. 추가 진단율 4.8%입니다. AI는 단 한 명도 진단하지 않았습니다. 근거가 붙은 가설만 제시했고, 판단은 사람이 했습니다.",
+      "roasting_quote": "AI가 의사를 대체한다고 들으셨습니까? 이 연구에서 AI는 단 한 명도 진단하지 않았습니다. 사람이 검증할 단서만 꺼냈습니다.",
+      "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
+    },
+    {
+      "title": "혼자 로봇을 조종한 AI, 사람 팀보다 19배 빨랐습니다",
+      "date": "2026-06-18",
+      "category": "tech",
+      "source": "Anthropic (Michael Ilie 외)",
+      "tags": [
+        "피지컬AI",
+        "로봇",
+        "에이전트",
+        "Opus4.7",
+        "자율제어",
+        "AX전략"
+      ],
+      "slug": "2026-06-18-project-fetch-phase-two",
+      "file": "tech/2026-06-18-project-fetch-phase-two.html",
+      "summary": "앤트로픽 프로젝트 페치 2단계에서 Claude Opus 4.7이 사람 도움 없이 로봇개를 조종했습니다. 1년 전 사람 팀이 모두 끝낸 4개 과제를 9분 35초 만에 풀어, 사람 팀(181분)보다 18.9배 빨랐고 코드는 10분의 1만 썼습니다. 다만 공을 정밀하게 미는 폐루프 제어에서는 사람이 더 나았습니다. 물리적 에이전트 AI의 초기 신호입니다.",
+      "roasting_quote": "1년 전 AI는 당신 팀의 보조였습니다. 이제 그 AI가 사람 없이, 19배 빠르게 일을 끝냅니다.",
+      "next_post": "leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"
+    },
+    {
+      "title": "AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다",
+      "date": "2026-06-16",
+      "category": "research",
+      "source": "Anthropic (Zoe Hitzig 외)",
+      "tags": [
+        "AI코딩",
+        "클로드코드",
+        "도메인전문성",
+        "에이전트",
+        "업무재설계"
+      ],
+      "slug": "2026-06-16-claude-code-expertise",
+      "file": "research/2026-06-16-claude-code-expertise.html",
+      "summary": "앤트로픽이 클로드 코드 세션 약 40만 건을 분석했습니다. 사람은 무엇을 만들지 70%를 정하고, 에이전트는 어떻게 만들지 80%를 정했습니다. 성공률은 코딩 실력이 아니라 도메인 전문성에 비례했습니다. 검증된 성공은 초보 15%, 전문가 33%였고, 직업과 무관하게 성공했으며 관리직이 소프트웨어 직군보다 검증 성공률이 높았습니다.",
+      "roasting_quote": "AI에게 어떻게 만들지를 맡기셨습니까? 그렇다면 무엇을 만들지는 당신 몫입니다. 성과는 바로 거기서 갈립니다.",
       "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
     },
     {
@@ -90,6 +146,25 @@ window.POSTS_DATA = {
       "file": "company/2026-06-12-fable-mythos-export-control-suspension.html",
       "summary": "Anthropic이 미국 정부의 수출통제 지시로 최상위 모델 Fable 5와 Mythos 5의 접근을 전 세계에서 중단했습니다. 직원과 외국인을 포함한 모든 사용자가 대상입니다. 모델이 버그가 아니라 규제로 멈출 수 있다는 신호이며, 경영 리더에게 '가용성 리스크'라는 새 과제를 남깁니다.",
       "roasting_quote": "당신의 업무 절반을 맡긴 AI 모델이 어느 날 아침 정부 명령 한 줄에 사라진다면, 당신에게는 그다음 계획이 있습니까?",
+      "next_post": "research/2026-06-08-agents-in-biology.html"
+    },
+    {
+      "title": "AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다",
+      "date": "2026-06-08",
+      "category": "research",
+      "source": "Anthropic (Laura Luebbert)",
+      "tags": [
+        "AI에이전트",
+        "데이터인프라",
+        "재현성",
+        "Anthropic",
+        "도구사용",
+        "자동화"
+      ],
+      "slug": "2026-06-08-agents-in-biology",
+      "file": "research/2026-06-08-agents-in-biology.html",
+      "summary": "Anthropic이 생물학 데이터에서 AI 에이전트를 시험했습니다. 바이러스 서열 회수 질문 120개, 병원체 40종이 대상입니다. 도구 없이 맡기자 같은 질문에도 답이 매번 달랐습니다. 한 모델은 266건을 받아와야 할 자리에 106건, 15건, 5건을 들고 왔습니다. 결정적 도구를 붙이자 전 모델이 90%를 넘겼습니다. 에이전트의 발목을 잡은 건 모델이 아니라 데이터 인프라였습니다.",
+      "roasting_quote": "더 똑똑한 모델만 기다리고 계십니까? 에이전트가 헛도는 진짜 이유는 회사 안에 어질러진 데이터입니다.",
       "next_post": "survival/2026-06-08-ai-broken-hiring.html"
     },
     {
@@ -128,6 +203,24 @@ window.POSTS_DATA = {
       "summary": "한국은행이 취업자 5,512명을 조사했습니다. 생성형 AI는 업무시간을 3.8% 줄였지만, 시간 절감과 생산 증가의 상관계수는 0이었습니다. 효율은 올랐지만 성과로 이어지지 않는 '생산성 단절'을 경영 리더가 메우는 법.",
       "roasting_quote": "AI가 업무시간을 3.8% 줄였습니다. 그런데 그 시간은 성과가 됐습니까, 아니면 그냥 사라졌습니까?",
       "next_post": "survival/2026-06-02-next-era-knowledge-work.html"
+    },
+    {
+      "title": "범용 AI가 화학 전용 소프트웨어를 따라잡았습니다",
+      "date": "2026-06-05",
+      "category": "tech",
+      "source": "Anthropic (David Kamber)",
+      "tags": [
+        "클로드",
+        "AI과학",
+        "범용AI",
+        "화학",
+        "전용소프트웨어"
+      ],
+      "slug": "2026-06-05-claude-chemist-nmr",
+      "file": "tech/2026-06-05-claude-chemist-nmr.html",
+      "summary": "Anthropic이 화학 특화 학습을 전혀 하지 않은 클로드로 NMR 스펙트럼 예측을 시험했습니다. Opus 4.7의 수소 예측 평균 오차는 0.079ppm으로 전용 소프트웨어 MestReNova(0.150ppm)를 앞섰고, 분할 패턴 정확도는 약 80%로 전용 도구(26~35%)를 크게 넘었습니다. 스펙트럼에서 분자 구조를 거꾸로 알아내는 역추정까지 해냈습니다.",
+      "roasting_quote": "당신 업계의 '전용 소프트웨어'는 정말 안전합니까? 수십 년 쌓인 화학 전용 도구를, 화학을 따로 배운 적 없는 범용 AI가 따라잡았습니다.",
+      "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
     },
     {
       "title": "복잡한 일은 AI 한 명에게 맡기지 마세요",

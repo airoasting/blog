@@ -15,12 +15,17 @@
 
 ## 최신 포스트
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
+- 2026-06-18 [기술] 전문가가 포기한 희귀병, AI가 단서를 찾았습니다 — /blog/tech/2026-06-18-o3-rare-disease-reanalysis.html
+- 2026-06-18 [기술] 혼자 로봇을 조종한 AI, 사람 팀보다 19배 빨랐습니다 — /blog/tech/2026-06-18-project-fetch-phase-two.html
+- 2026-06-16 [리서치] AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다 — /blog/research/2026-06-16-claude-code-expertise.html
 - 2026-06-16 [리서치] ChatGPT 점유율, 처음으로 50% 밑으로 내려갔습니다 — /blog/research/2026-06-16-chatgpt-market-share-below-50.html
 - 2026-06-15 [리더] 나델라: 모델을 고르지 말고 학습 루프를 소유하세요 — /blog/leader/2026-06-15-satya-nadella-learning-loop-token-capital.html
 - 2026-06-12 [리서치] 여러 AI를 합치니 가장 강한 모델을 넘었습니다 — /blog/research/2026-06-12-openrouter-fusion-model-diversity.html
 - 2026-06-12 [기업] 쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다 — /blog/company/2026-06-12-fable-mythos-export-control-suspension.html
+- 2026-06-08 [리서치] AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다 — /blog/research/2026-06-08-agents-in-biology.html
 - 2026-06-08 [생존] 이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다 — /blog/survival/2026-06-08-ai-broken-hiring.html
 - 2026-06-07 [기업] AI가 아낀 시간이 성과로 바뀌지 않는 이유 — /blog/company/2026-06-07-bok-ai-productivity-disconnect.html
+- 2026-06-05 [기술] 범용 AI가 화학 전용 소프트웨어를 따라잡았습니다 — /blog/tech/2026-06-05-claude-chemist-nmr.html
 - 2026-06-02 [기술] 복잡한 일은 AI 한 명에게 맡기지 마세요 — /blog/tech/2026-06-02-claude-code-dynamic-workflows.html
 - 2026-06-02 [생존] 개발자와 지식 노동자의 경계가 사라지고 있습니다 — /blog/survival/2026-06-02-next-era-knowledge-work.html
 - 2026-06-01 [리서치] GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 — /blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html
