@@ -187,50 +187,50 @@
 
         <p>과제별로 보면 격차가 더 또렷합니다. 검색만 쓴 팀은 첫 두 과제조차 끝내지 못했습니다. Claude를 쓴 사람 팀은 공 인식에 88분, 수동 제어 프로그램에 90분을 썼습니다. Opus 4.7은 각각 4분과 3분이었습니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">과제</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">검색만<br><span style="font-weight:400; font-size:12px; color:#888;">Claude-less</span></th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사람+Claude<br><span style="font-weight:400; font-size:12px; color:#888;">Team Claude</span></th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">Opus 4.7 단독</th>
+              <tr>
+                <th>과제</th>
+                <th style="text-align: center;">검색만<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">Claude-less</span></th>
+                <th style="text-align: center;">사람+Claude<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">Team Claude</span></th>
+                <th style="text-align: center;">Opus 4.7 단독</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">영상 카메라 연결</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">미완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">약 1분</td>
+                <td>영상 카메라 연결</td>
+                <td style="text-align: center; color:var(--text-muted);">미완료</td>
+                <td style="text-align: center;">완료</td>
+                <td class="cell-hl" style="text-align: center;">약 1분</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">라이다 센서 연결</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">미완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">약 2분</td>
+                <td>라이다 센서 연결</td>
+                <td style="text-align: center; color:var(--text-muted);">미완료</td>
+                <td style="text-align: center;">완료</td>
+                <td class="cell-hl" style="text-align: center;">약 2분</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">비치볼 인식</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">미완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">약 88분</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">약 4분</td>
+                <td>비치볼 인식</td>
+                <td style="text-align: center; color:var(--text-muted);">미완료</td>
+                <td style="text-align: center;">약 88분</td>
+                <td class="cell-hl" style="text-align: center;">약 4분</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">수동 제어 프로그램</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">미완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">약 90분</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">약 3분</td>
+                <td>수동 제어 프로그램</td>
+                <td style="text-align: center; color:var(--text-muted);">미완료</td>
+                <td style="text-align: center;">약 90분</td>
+                <td class="cell-hl" style="text-align: center;">약 3분</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">경로 모니터링</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">미완료</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">약 3분</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">약 2분</td>
+                <td>경로 모니터링</td>
+                <td style="text-align: center; color:var(--text-muted);">미완료</td>
+                <td style="text-align: center;">약 3분</td>
+                <td class="cell-hl" style="text-align: center;">약 2분</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">과제별 소요 시간 비교입니다. 검색만 쓴 팀은 어떤 과제도 끝내지 못했습니다. 출처: Ilie, Freeman, &amp; Troy (2026), Anthropic, Project Fetch: Phase Two.</p>
+          <p class="post-table-source">과제별 소요 시간 비교입니다. 검색만 쓴 팀은 어떤 과제도 끝내지 못했습니다. 출처: Ilie, Freeman, &amp; Troy (2026), Anthropic, Project Fetch: Phase Two.</p>
         </div>
 
         <p><strong>셋째, AI가 못 하는 지점이 어디인지가 더 중요합니다.</strong> Opus 4.7은 공을 출발점으로 살살 밀어 되돌리는 '페치' 작업에서 막혔습니다. 로봇을 공 뒤로 보내는 것까지는 됐지만, 제어가 거칠어 성공하지 못했습니다. 사람은 이걸 잘했습니다. 방향 오차를 즉시 느끼고, 직전 명령과 연결해, 다음 입력을 바로 고치기 때문입니다.</p>

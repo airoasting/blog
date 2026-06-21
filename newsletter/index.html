@@ -1123,13 +1123,20 @@
 
     /* ── Responsive ── */
     @media (max-width: 600px) {
-      .nlr-backdrop { padding: 0; align-items: flex-end; }
+      .nlr-backdrop { padding: 0; align-items: stretch; }
       .nlr-window {
-        border-radius: 24px 24px 0 0;
-        max-height: 92vh;
+        border-radius: 0;
+        height: 100vh;
+        height: 100dvh;
+        max-height: none;
         width: 100%;
       }
-      .nlr-header { padding: 14px 16px; gap: 8px; }
+      .nlr-header {
+        padding: 14px 16px;
+        gap: 8px;
+        padding-top: max(14px, env(safe-area-inset-top));
+      }
+      .nlr-close { width: 40px; height: 40px; background: rgba(124,58,237,0.08); }
       .nlr-header-title { font-size: 13px; }
       .nlr-body { padding: 24px 20px 40px; }
       .nlr-content-title { font-size: 18px; }

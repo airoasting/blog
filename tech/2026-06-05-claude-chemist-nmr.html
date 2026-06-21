@@ -156,44 +156,44 @@
         <p><strong>첫째, 범용 모델이 전용 도구를 앞섰습니다.</strong> 정방향 예측에서 Opus 4.7의 수소 평균 오차는 0.079ppm입니다. 전용 소프트웨어 MestReNova(0.150ppm)와 ChemDraw(0.143ppm)의 절반 수준입니다. 탄소 예측에서도 Opus 4.7이 1.375ppm으로 가장 정확했습니다. 화학을 따로 학습하지 않은 모델의 결과입니다.</p>
         <p>모델 사이에도 순서가 보입니다. Opus 4.7이 가장 정확하고, Opus 4.6, Sonnet 4.6 순입니다. 세대가 올라갈수록 화학 과제 성능이 함께 올랐습니다. 별도 화학 튜닝 없이 일반 능력이 좋아진 결과라는 점이 핵심입니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">도구</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">수소 평균오차<br><span style="font-weight:400; font-size:12px; color:#888;">ppm · 낮을수록 좋음</span></th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">탄소 평균오차<br><span style="font-weight:400; font-size:12px; color:#888;">ppm · 낮을수록 좋음</span></th>
+              <tr>
+                <th>도구</th>
+                <th style="text-align: center;">수소 평균오차<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">ppm · 낮을수록 좋음</span></th>
+                <th style="text-align: center;">탄소 평균오차<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">ppm · 낮을수록 좋음</span></th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">Opus 4.7 (범용 AI)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.079</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">1.375</td>
+                <td class="cell-hl">Opus 4.7 (범용 AI)</td>
+                <td style="text-align: center;" class="cell-hl">0.079</td>
+                <td style="text-align: center;" class="cell-hl">1.375</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Opus 4.6 (범용 AI)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.113</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">1.680</td>
+                <td>Opus 4.6 (범용 AI)</td>
+                <td style="text-align: center;">0.113</td>
+                <td style="text-align: center;">1.680</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">Sonnet 4.6 (범용 AI)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.145</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2.152</td>
+                <td>Sonnet 4.6 (범용 AI)</td>
+                <td style="text-align: center;">0.145</td>
+                <td style="text-align: center;">2.152</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#888;">MestReNova (전용 도구)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">0.150</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">1.484</td>
+                <td style="color:var(--text-muted);">MestReNova (전용 도구)</td>
+                <td style="text-align: center; color:var(--text-muted);">0.150</td>
+                <td style="text-align: center; color:var(--text-muted);">1.484</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#888;">ChemDraw (전용 도구)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">0.143</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">2.107</td>
+                <td style="color:var(--text-muted);">ChemDraw (전용 도구)</td>
+                <td style="text-align: center; color:var(--text-muted);">0.143</td>
+                <td style="text-align: center; color:var(--text-muted);">2.107</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">20개 화합물 정방향 예측의 평균 절대 오차(MAE)입니다. 수소와 탄소 모두에서 Opus 4.7이 전용 소프트웨어를 앞섰습니다. 출처: Anthropic (2026), Making Claude a Chemist.</p>
+          <p class="post-table-source">20개 화합물 정방향 예측의 평균 절대 오차(MAE)입니다. 수소와 탄소 모두에서 Opus 4.7이 전용 소프트웨어를 앞섰습니다. 출처: Anthropic (2026), Making Claude a Chemist.</p>
         </div>
 
         <figure class="post-figure" style="margin: 28px 0;">

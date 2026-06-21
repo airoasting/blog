@@ -157,42 +157,42 @@
         <p><strong>첫째, 두 레버는 보완재이지 대체재가 아닙니다.</strong> 스캐폴드 업데이트는 외재화된 변화를 만듭니다. 새 도구, 더 정밀한 파서, 검증 단계를 추가합니다. 가중치 업데이트는 내재화된 변화를 만듭니다. 모델이 도메인 패턴을 본능으로 익힙니다. 둘은 서로 다른 곳을 고칩니다.</p>
         <p>예를 들어 LawBench에서 SIA-H는 SVC 재순위 지정 레이어를 만들었습니다. 같은 작업에서 가중치 업데이트는 191개 위반 범주의 미묘한 차이를 모델 안에 새겼습니다. 도구 한 개를 더 만들거나 데이터를 더 학습시키는 것만으로는 53%대에서 멈춥니다. 둘 다 해야 70.1%에 도달합니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">작업 (평가 지표)</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">베이스라인</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">SIA-H<br><span style="font-weight:400; font-size:12px; color:#888;">스캐폴드만</span></th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">SIA-W+H<br><span style="font-weight:400; font-size:12px; color:#888;">스캐폴드+가중치</span></th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">기존 SOTA</th>
+              <tr>
+                <th>작업 (평가 지표)</th>
+                <th style="text-align: center;">베이스라인</th>
+                <th style="text-align: center;">SIA-H<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">스캐폴드만</span></th>
+                <th style="text-align: center;">SIA-W+H<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">스캐폴드+가중치</span></th>
+                <th style="text-align: center;">기존 SOTA</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">LawBench (정확도)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">13.5%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">50.0%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">70.1%</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">45.0%</td>
+                <td>LawBench (정확도)</td>
+                <td style="text-align: center;">13.5%</td>
+                <td style="text-align: center;">50.0%</td>
+                <td style="text-align: center;" class="cell-hl">70.1%</td>
+                <td style="text-align: center; color:var(--text-muted);">45.0%</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">TriMul (점수=1500/런타임)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.105</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.120</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">1.475</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">1.292</td>
+                <td>TriMul (점수=1500/런타임)</td>
+                <td style="text-align: center;">0.105</td>
+                <td style="text-align: center;">0.120</td>
+                <td style="text-align: center;" class="cell-hl">1.475</td>
+                <td style="text-align: center; color:var(--text-muted);">1.292</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">MAGIC (mse_norm, 낮을수록 좋음)</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.048</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">0.241</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">0.289</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; color:#888;">0.240</td>
+                <td>MAGIC (mse_norm, 낮을수록 좋음)</td>
+                <td style="text-align: center;">0.048</td>
+                <td style="text-align: center;">0.241</td>
+                <td style="text-align: center;" class="cell-hl">0.289</td>
+                <td style="text-align: center; color:var(--text-muted);">0.240</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">세 작업 모두에서 SIA-W+H(스캐폴드+가중치)가 단일 레버만 쓴 SIA-H와 베이스라인을 모두 추월합니다. 두 레버는 보완재입니다. 출처: Hebbar et al. (2026), arXiv:2605.27276v2, Table 3.</p>
+          <p class="post-table-source">세 작업 모두에서 SIA-W+H(스캐폴드+가중치)가 단일 레버만 쓴 SIA-H와 베이스라인을 모두 추월합니다. 두 레버는 보완재입니다. 출처: Hebbar et al. (2026), arXiv:2605.27276v2, Table 3.</p>
         </div>
 
         <div class="stat-row">

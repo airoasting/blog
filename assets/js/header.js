@@ -21,7 +21,9 @@
   }
 
   function mobileLink(cat, label) {
-    return '<a href="' + prefix + cat + '/index.html">' + label + '</a>';
+    return '<a href="' + prefix + cat + '/index.html" data-cat="' + cat + '" class="mobile-cat-link">' +
+      '<span>' + label + '</span>' +
+      '<span class="nav-count-pill" data-count-cat="' + cat + '"></span></a>';
   }
 
   var html =
@@ -91,6 +93,22 @@
     header.innerHTML = html;
   }
 
+  // Mobile nav: fill each category with its post count (pill).
+  // POSTS_DATA loads after header.js, so compute once it is available.
+  function fillCategoryCounts() {
+    var data = window.POSTS_DATA && window.POSTS_DATA.posts;
+    if (!data) return false;
+    var counts = {};
+    data.forEach(function (p) {
+      if (p && p.category) counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+    document.querySelectorAll('.nav-count-pill[data-count-cat]').forEach(function (el) {
+      var c = counts[el.getAttribute('data-count-cat')];
+      if (c != null) el.textContent = c;
+    });
+    return true;
+  }
+
   // Format post dates: "2026-03-17" → "2026년 3월 17일"
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.post-date').forEach(function (el) {
@@ -100,6 +118,13 @@
         el.textContent = parts[0] + '년 ' + parseInt(parts[1], 10) + '월 ' + parseInt(parts[2], 10) + '일';
       }
     });
+    // Retry briefly in case posts-data.js loads after DOMContentLoaded.
+    if (!fillCategoryCounts()) {
+      var tries = 0;
+      var iv = setInterval(function () {
+        if (fillCategoryCounts() || ++tries > 20) clearInterval(iv);
+      }, 100);
+    }
   });
 
   // Hamburger toggle

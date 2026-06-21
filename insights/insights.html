@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI ROASTING · Blog</title>
-  <meta name="description" content="AI 로스팅 뉴스레터 53화와 블로그 포스트 220개, 총 273화에서 추출한 인사이트. 2024년 4월부터 2026년 6월까지 9개 분기 핵심 인사이트를 분기별로 정리합니다.">
+  <meta name="description" content="AI 로스팅 뉴스레터 53화와 블로그 포스트 221개, 총 274화에서 추출한 인사이트. 2024년 4월부터 2026년 6월까지 9개 분기 핵심 인사이트를 분기별로 정리합니다.">
   <link rel="canonical" href="https://airoasting.github.io/blog/insights/insights.html">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
@@ -677,9 +677,10 @@
     .nlr-sub-heading { font-size: 15px; font-weight: 700; color: var(--text); margin: 24px 0 10px; }
     [data-theme="dark"] .nlr-sub-heading { color: var(--text); }
     @media (max-width: 600px) {
-      .nlr-backdrop { padding: 0; align-items: flex-end; }
-      .nlr-window { border-radius: 24px 24px 0 0; max-height: 92vh; width: 100%; }
-      .nlr-header { padding: 14px 16px; gap: 8px; }
+      .nlr-backdrop { padding: 0; align-items: stretch; }
+      .nlr-window { border-radius: 0; height: 100vh; height: 100dvh; max-height: none; width: 100%; }
+      .nlr-header { padding: 14px 16px; gap: 8px; padding-top: max(14px, env(safe-area-inset-top)); }
+      .nlr-close { width: 40px; height: 40px; background: var(--surface-container-high); }
       .nlr-header-title { font-size: 13px; }
       .nlr-body { padding: 24px 20px 40px; }
       .nlr-content-title { font-size: 18px; }
@@ -710,7 +711,7 @@
       <div class="ins-hero-content">
       <div class="ins-hero-inner">
         <div class="ins-eyebrow">Newsletter x Blog Insights</div>
-        <h1><span class="h1-line1">271화의 기록,</span><br><em class="h1-line2">9개 분기의 인사이트</em></h1>
+        <h1><span class="h1-line1">274화의 기록,</span><br><em class="h1-line2">9개 분기의 인사이트</em></h1>
         <div class="ins-hero-sub">
           <p class="ins-hero-desc">분기를 선택하면 해당 시기의 핵심 인사이트가 표시됩니다.</p>
           <div class="ins-stats">
@@ -719,7 +720,7 @@
               <div class="ins-stat-label">뉴스레터</div>
             </div>
             <div class="ins-stat">
-              <div class="ins-stat-num">220</div>
+              <div class="ins-stat-num">221</div>
               <div class="ins-stat-label">포스트</div>
             </div>
           </div>
@@ -761,7 +762,7 @@
         </button>
         <button class="q-tab active" data-phase="4" role="tab">
           <span class="q-tab-quarter">26 Q2</span>
-          <span class="q-tab-title">토큰 경제의 시대<span class="q-tab-count">75</span></span>
+          <span class="q-tab-title">토큰 경제의 시대<span class="q-tab-count">76</span></span>
         </button>
       </div>
 
@@ -1051,7 +1052,7 @@
     {
       id: 4, quarter: "26 Q2",
       period: "2026.4월",
-      epRange: "뉴스레터 #42~51 · 포스트 70개",
+      epRange: "뉴스레터 #42~51 · 포스트 71개",
       headline: "토큰 경제의 원년: AI 사용 비용 구조가 투명성 문제로 떠올랐습니다",
       summary: "Claude Code Max 구독자들이 1시간 만에 토큰 한도를 소진하는 사태가 발생했습니다. AI 서비스 경쟁의 다음 전선이 모델 성능에서 토큰 투명성으로 이동하고 있습니다.",
       insights: [
@@ -1141,7 +1142,8 @@
         { theme: "company", tag: "기업", body: "회사를 굴리는 건 매뉴얼이 아니라 직원이 메우는 암묵적 조직입니다. AI 에이전트는 그 층을 못 봅니다. <strong>멀티 에이전트 실패율은 40~80%</strong>입니다.", source: "AI 에이전트가 못 보는 회사의 숨은 규칙", url: "../company/2026-06-19-implicit-organization-ai-agents.html", date: "2026-06-19", roasting: "AI 에이전트에게 업무 매뉴얼을 통째로 넘기셨습니까?<br>정작 회사를 지탱해온 건, 매뉴얼 어디에도 없던 베테랑의 '왠지 이상한데'라는 망설임이었습니다.", summaries: ["회사에는 운영체계가 둘 있습니다. 매뉴얼에 적힌 조직과, 직원이 말없이 메우는 암묵적 조직입니다. AI 에이전트는 앞의 것만 받습니다.", "암묵적 조직은 세 가지를 합니다. 흩어진 일을 연결하고, 사람을 움직이게 하고, 이상할 때 멈추게 합니다. 에이전트에는 이 셋이 없습니다.", "에이전트를 넣으면 그 판단층이 조용히 사라집니다. 정답은 덜 쓰기가 아니라, 보이지 않던 일을 먼저 지도로 그린 뒤 다시 설계하는 것입니다."] },
         { theme: "company", tag: "기업", body: "개인의 AI 저질 산출물이 업무 흐름으로 번지면 회사 지식이 부패합니다. <strong>한 학술지 투고량은 42% 늘고 품질은 하락</strong>했습니다.", source: "AI가 만들고 AI가 검토하면, 지식이 썩습니다", url: "../company/2026-06-16-ai-slop-knowledge-decay.html", date: "2026-06-16", roasting: "직원이 AI로 쓴 문서를, 받는 당신도 AI로 요약합니다.<br>그 왕복마다 회사의 지식은 아무도 모르게 부패합니다.", summaries: ["개인이 AI로 만든 그럴듯한 저질 산출물을 워크슬롭이라 부릅니다. 이것이 업무 흐름을 타고 번지면 회사의 지식 자체가 부패합니다.", "HBR은 세 가지 도전을 짚습니다. 내용이 맞는지 검증하고, 사람이 더한 가치를 입증하고, 반복될수록 원본에서 멀어지는 엔트로피를 막아야 합니다.", "대응은 네 가지입니다. 원본 데이터의 출처를 추적하고, AI 사용을 가치 있는 곳에 한정하고, 더한 가치를 명시하고, 프로세스 전체를 다시 봅니다."] },
         { theme: "research", tag: "리서치", body: "5만 건 사용 데이터에서 1위 용도는 <strong>치료/말동무</strong>였습니다. 업무 용도는 절반을 넘지만 효과는 한계적이고, 4분의 1은 생각을 AI에 떠넘깁니다.", source: "AI를 쓰는 100가지, 1위는 업무가 아닙니다", url: "../research/2026-06-09-how-people-really-use-ai-2026.html", date: "2026-06-09", roasting: "AI가 업무를 바꾼다고 들으셨습니까?<br>사람들이 AI에 가장 많이 맡기는 일은 업무가 아니라 마음을 털어놓는 일이었습니다.", summaries: ["HBR이 5만 건의 사용 데이터로 2026년 생성형 AI 100대 용도를 공개했습니다. 1위는 '치료/말동무'입니다.", "업무 용도는 절반을 넘지만 대부분 '한계적 이득'에 머뭅니다. 일을 근본적으로 다시 짠 사례는 드뭅니다.", "100대 용도의 4분의 1은 생각 자체를 AI에 떠넘기는 일입니다. 저자는 이를 '씽크슬롭'이라 부릅니다."] },
-        { theme: "survival", tag: "생존", body: "골드만삭스 CTO는 'AI가 못 할 10%를 버리라'고 말합니다. GDPval에서 에이전트가 <strong>80%</strong> 과제에서 사람과 같거나 나았습니다.", source: "AI가 못 하는 10%를 버리십시오", url: "../survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html", date: "2026-06-12", roasting: "AI가 못 하는 10%를 지키려 애쓰십니까?<br>골드만삭스 CTO는 그 10%를 버리고 100%를 새로 배우라고 말합니다.", summaries: ["골드만삭스 CTO 마르코 아르젠티에게 한 뱅커가 'AI가 절대 못 할 10%'를 물었습니다. 답은 그 10%를 버리라는 것이었습니다.", "GDPval 평가에서 에이전트는 1,320개 과제의 80%에서 사람과 같거나 나았습니다. 6개월 전엔 50%였습니다.", "핵심은 지킬 10%가 아니라 바꿀 100%, 실무자에서 감독자로의 전환입니다. 그러려면 리더의 강한 요구, 명확한 평가 기준, 정돈된 데이터가 필요합니다."] }
+        { theme: "survival", tag: "생존", body: "골드만삭스 CTO는 'AI가 못 할 10%를 버리라'고 말합니다. GDPval에서 에이전트가 <strong>80%</strong> 과제에서 사람과 같거나 나았습니다.", source: "AI가 못 하는 10%를 버리십시오", url: "../survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html", date: "2026-06-12", roasting: "AI가 못 하는 10%를 지키려 애쓰십니까?<br>골드만삭스 CTO는 그 10%를 버리고 100%를 새로 배우라고 말합니다.", summaries: ["골드만삭스 CTO 마르코 아르젠티에게 한 뱅커가 'AI가 절대 못 할 10%'를 물었습니다. 답은 그 10%를 버리라는 것이었습니다.", "GDPval 평가에서 에이전트는 1,320개 과제의 80%에서 사람과 같거나 나았습니다. 6개월 전엔 50%였습니다.", "핵심은 지킬 10%가 아니라 바꿀 100%, 실무자에서 감독자로의 전환입니다. 그러려면 리더의 강한 요구, 명확한 평가 기준, 정돈된 데이터가 필요합니다."] },
+        { theme: "tech", tag: "기술", body: "딥마인드가 AGI 이후 ASI로 가는 <strong>네 갈래 경로</strong>를 지도로 그렸습니다. 핵심은 AI가 단발 충격이 아니라 연속된 변화라는 것입니다.", source: "AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도", url: "../tech/2026-06-10-from-agi-to-asi.html", date: "2026-06-10", roasting: "단 한 번의 AI 충격을 기다리고 계십니까?<br>딥마인드는 그 그림이 틀렸다고 말합니다. 변화는 한 번이 아니라 연속으로 밀려옵니다.", summaries: ["구글 딥마인드가 인간 수준 AGI 이후, 초지능(ASI)으로 가는 길을 지도로 정리한 보고서를 냈습니다.", "길은 네 갈래입니다. 규모 확장, 패러다임 전환, 재귀적 자기개선, 멀티에이전트 집단입니다. 네 길은 동시에 진행됩니다.", "핵심은 AI는 한 번의 충격이 아니라 연속된 변화라는 것입니다. 리더는 단발 대응이 아니라 지속 적응 체계를 갖춰야 합니다."] }
       ]
     }
   ];

@@ -185,50 +185,50 @@
           </div>
         </div>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">질환군 (코호트)</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">사건 수</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">진단 단서</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">진단율</th>
+              <tr>
+                <th>질환군 (코호트)</th>
+                <th style="text-align: center;">사건 수</th>
+                <th style="text-align: center;">진단 단서</th>
+                <th style="text-align: center;">진단율</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경발달 질환</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">100</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">10</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">10.0%</td>
+                <td>신경발달 질환</td>
+                <td style="text-align: center;">100</td>
+                <td style="text-align: center;">10</td>
+                <td style="text-align: center;">10.0%</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경근육 질환</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">61</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">4</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">6.6%</td>
+                <td>신경근육 질환</td>
+                <td style="text-align: center;">61</td>
+                <td style="text-align: center;">4</td>
+                <td style="text-align: center;">6.6%</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">소아 돌연사</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">200</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">1.0%</td>
+                <td>소아 돌연사</td>
+                <td style="text-align: center;">200</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">1.0%</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">조기 정신증</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">15</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">2</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">13.3%</td>
+                <td>조기 정신증</td>
+                <td style="text-align: center;">15</td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">13.3%</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight: bold;">합계</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold;">376</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">18</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee; font-weight: bold; color: #145C35;">4.8%</td>
+                <td><strong>합계</strong></td>
+                <td style="text-align: center;"><strong>376</strong></td>
+                <td class="cell-hl" style="text-align: center;">18</td>
+                <td class="cell-hl" style="text-align: center;">4.8%</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">조기 정신증 코호트는 표본이 작아 신뢰구간이 넓습니다. 진단율은 각 질환군이 단일 유전자 설명을 가질 가능성과도 관련됩니다. 18건 중 7건은 '재발견'이었습니다. 외부에서 진단됐으나 연구진이 본 기록에는 빠져 있던 사례입니다. 출처: OpenAI (2026, June), NEJM AI.</p>
+          <p class="post-table-source">조기 정신증 코호트는 표본이 작아 신뢰구간이 넓습니다. 진단율은 각 질환군이 단일 유전자 설명을 가질 가능성과도 관련됩니다. 18건 중 7건은 '재발견'이었습니다. 외부에서 진단됐으나 연구진이 본 기록에는 빠져 있던 사례입니다. 출처: OpenAI (2026, June), NEJM AI.</p>
         </div>
 
         <p><strong>셋째, 모델은 입력에 없던 변이까지 추론했습니다.</strong> 한 조기 정신증 사례에서 모델은 22번 염색체의 저품질 신호와 아이의 심장·면역·신경발달·정신과 증상을 연결했습니다. 그리고 디조지 증후군과 관련된 22q11.2 결실을 가설로 세웠습니다. 이 변이는 추가 유전체 검사로 확인됐습니다.</p>
@@ -236,30 +236,30 @@
 
         <p><strong>넷째, 자기보고 신뢰도 점수가 사람의 주의를 배분하는 데 쓰였습니다.</strong> 이미 풀린 사건들에서 점수를 검증했습니다. 일관되게 맞힌 경우는 평균 최저 85.6점, 틀리거나 모른 경우는 42.1점이었습니다. 보정된 확률은 아니었습니다. 그래서 증거나 임상 판정의 대체물로는 쓰지 않았습니다. 다만 검토자가 어떤 후보부터 볼지 정하는 데 도움이 됐습니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">검증 세트 (이미 풀린 사건)</th>
-                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #145C35;">결과</th>
+              <tr>
+                <th>검증 세트 (이미 풀린 사건)</th>
+                <th style="text-align: center;">결과</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">다양한 희귀질환 세트</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">51건 중 48건에서 정확한 유전자·변이 복원</td>
+                <td>다양한 희귀질환 세트</td>
+                <td style="text-align: center;">51건 중 48건에서 정확한 유전자·변이 복원</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">신경근육 질환 세트</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">57건 중 45건에서 정확한 진단 반환</td>
+                <td>신경근육 질환 세트</td>
+                <td style="text-align: center;">57건 중 45건에서 정확한 진단 반환</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">롱리드 유전체 세트</td>
-                <td style="padding: 10px; text-align: center; border-bottom: 1px solid #eee;">15건 전부 정확한 유전자, 12건은 두 원인 대립유전자까지</td>
+                <td>롱리드 유전체 세트</td>
+                <td style="text-align: center;">15건 전부 정확한 유전자, 12건은 두 원인 대립유전자까지</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">본 분석 전, 이미 진단이 확정된 사건으로 워크플로우를 다듬은 결과입니다. 이 단계가 프롬프트 개발을 도왔고, 전문가 검토가 여전히 필요한 지점을 보여줬습니다. 출처: OpenAI (2026, June), NEJM AI.</p>
+          <p class="post-table-source">본 분석 전, 이미 진단이 확정된 사건으로 워크플로우를 다듬은 결과입니다. 이 단계가 프롬프트 개발을 도왔고, 전문가 검토가 여전히 필요한 지점을 보여줬습니다. 출처: OpenAI (2026, June), NEJM AI.</p>
         </div>
       </section>
 

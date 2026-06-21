@@ -1520,6 +1520,16 @@ img {
 .chart-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
 .chart-note { font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
 
+/* Dark mode: diagram charts (SVG) often use dark text designed for a light
+   surface. Keep them on a light card in dark mode so labels stay readable.
+   Photo figures hold <img>, not <svg>, so they are unaffected. */
+[data-theme="dark"] .post figure:has(svg),
+[data-theme="dark"] .post .chart-wrap:has(svg) {
+  background: #f6f4ef;
+  border-radius: 10px;
+  padding: 16px;
+}
+
 /* --- Stat Row --- */
 .stat-row { display: flex; gap: 16px; margin: 24px 0; flex-wrap: wrap; }
 .stat-card { flex: 1; min-width: 120px; background: var(--bg-card, #fff); border: 1px solid var(--border-light, #E8E8E4); border-radius: 10px; padding: 16px 20px; text-align: center; }
@@ -2551,6 +2561,33 @@ img {
 }
 
 .mobile-nav a:hover { color: var(--text); background: var(--surface-container); }
+
+/* Category link with right-aligned count pill */
+.mobile-nav a.mobile-cat-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.nav-count-pill {
+  font-family: var(--font-meta);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: var(--surface-container-high);
+  border-radius: 100px;
+  padding: 1px 9px;
+  min-width: 20px;
+  text-align: center;
+}
+.nav-count-pill:empty { display: none; }
+.mobile-nav a[data-cat="research"] .nav-count-pill { color: var(--cat-research); }
+.mobile-nav a[data-cat="leader"]   .nav-count-pill { color: var(--cat-leader); }
+.mobile-nav a[data-cat="company"]  .nav-count-pill { color: var(--cat-company); }
+.mobile-nav a[data-cat="tech"]     .nav-count-pill { color: var(--cat-tech); }
+.mobile-nav a[data-cat="survival"] .nav-count-pill { color: var(--cat-survival); }
 
 .mobile-search {
   padding: 12px 0;

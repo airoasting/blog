@@ -201,27 +201,27 @@
 
         <!-- 과정별 vs 결과별 비교 테이블 -->
         <figure class="post-figure">
-          <table style="width:100%;border-collapse:collapse;font-size:14px;line-height:1.6;">
+          <table class="post-table">
             <thead>
-              <tr style="border-bottom:2px solid #1a1a1a;">
-                <th style="text-align:left;padding:8px 12px;font-weight:700;">에이전트 유형</th>
-                <th style="text-align:center;padding:8px 12px;font-weight:700;">최종 결과 보상</th>
-                <th style="text-align:center;padding:8px 12px;font-weight:700;color:#145C35;">과정별 보상</th>
-                <th style="text-align:center;padding:8px 12px;font-weight:700;color:#c43500;">향상폭</th>
+              <tr>
+                <th>에이전트 유형</th>
+                <th style="text-align:center;">최종 결과 보상</th>
+                <th style="text-align:center;">과정별 보상</th>
+                <th style="text-align:center;">향상폭</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:1px solid #eee;">
-                <td style="padding:8px 12px;">도구 호출(Tool-call)</td>
-                <td style="text-align:center;padding:8px 12px;">0.17</td>
-                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">0.30</td>
-                <td style="text-align:center;padding:8px 12px;color:#c43500;font-weight:700;">+76%</td>
+              <tr>
+                <td>도구 호출(Tool-call)</td>
+                <td style="text-align:center;">0.17</td>
+                <td style="text-align:center;" class="cell-hl">0.30</td>
+                <td style="text-align:center;" class="cell-hl">+76%</td>
               </tr>
               <tr>
-                <td style="padding:8px 12px;">GUI 조작</td>
-                <td style="text-align:center;padding:8px 12px;">0.31</td>
-                <td style="text-align:center;padding:8px 12px;color:#145C35;font-weight:600;">0.33</td>
-                <td style="text-align:center;padding:8px 12px;color:#c43500;">+6%</td>
+                <td>GUI 조작</td>
+                <td style="text-align:center;">0.31</td>
+                <td style="text-align:center;" class="cell-hl">0.33</td>
+                <td style="text-align:center;" class="cell-hl">+6%</td>
               </tr>
             </tbody>
           </table>

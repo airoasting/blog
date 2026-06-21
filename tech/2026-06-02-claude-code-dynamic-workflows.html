@@ -146,34 +146,34 @@
 
         <p><strong>첫째, 한 명에게 다 맡기면 세 가지 방식으로 무너집니다.</strong> 앤트로픽은 한 컨텍스트에서 복잡한 일을 오래 시킬 때 나타나는 실패를 세 가지로 정리했습니다. 이건 모델이 멍청해서가 아니라 구조 때문입니다.</p>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">실패 모드</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">무슨 일이 벌어지나</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">사람으로 치면</th>
+              <tr>
+                <th>실패 모드</th>
+                <th>무슨 일이 벌어지나</th>
+                <th>사람으로 치면</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">에이전트 게으름</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">일부만 끝내고 다 했다고 선언. 보안 점검 50개 중 35개에서 멈춤</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">큰 것만 보고 손 떼는 직원</td>
+                <td><strong>에이전트 게으름</strong></td>
+                <td>일부만 끝내고 다 했다고 선언. 보안 점검 50개 중 35개에서 멈춤</td>
+                <td style="color:var(--text-muted);">큰 것만 보고 손 떼는 직원</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">자기 편애</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">자기가 낸 답을 스스로 검증하면 후하게 점수를 줌</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">자기 보고서 자기가 채점</td>
+                <td><strong>자기 편애</strong></td>
+                <td>자기가 낸 답을 스스로 검증하면 후하게 점수를 줌</td>
+                <td style="color:var(--text-muted);">자기 보고서 자기가 채점</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">목표 표류</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">대화가 길어지며 요약이 쌓이고, 'X는 하지 마라' 같은 제약을 잃음</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">초반 지시를 잊은 장기 프로젝트</td>
+                <td><strong>목표 표류</strong></td>
+                <td>대화가 길어지며 요약이 쌓이고, 'X는 하지 마라' 같은 제약을 잃음</td>
+                <td style="color:var(--text-muted);">초반 지시를 잊은 장기 프로젝트</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 한 컨텍스트 안에서 일이 길어질수록 세 실패가 함께 나타납니다.</p>
+          <p class="post-table-source">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 한 컨텍스트 안에서 일이 길어질수록 세 실패가 함께 나타납니다.</p>
         </div>
 
         <p>다이내믹 워크플로우는 같은 일을 다르게 풉니다. 정적인 일반 도구를 미리 만들어 두는 대신, 클로드가 그 일에만 맞는 작업틀을 즉석에서 짭니다. 아래 그림이 둘의 차이입니다.</p>
@@ -196,49 +196,49 @@
           </figcaption>
         </figure>
 
-        <div style="overflow-x: auto; margin: 24px 0;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+        <div class="post-table-wrap">
+          <table class="post-table">
             <thead>
-              <tr style="background: var(--bg-secondary, #f5f5f5);">
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">패턴</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">하는 일</th>
-                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #145C35;">사업 장면</th>
+              <tr>
+                <th>패턴</th>
+                <th>하는 일</th>
+                <th>사업 장면</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">분류 후 실행</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">일의 종류를 먼저 가른 뒤 맞는 처리로 보냄</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">문의 자동 분류·라우팅</td>
+                <td><strong>분류 후 실행</strong></td>
+                <td>일의 종류를 먼저 가른 뒤 맞는 처리로 보냄</td>
+                <td style="color:var(--text-muted);">문의 자동 분류·라우팅</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">펼쳐서 종합</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">잘게 쪼개 각자 처리한 뒤 하나로 합침</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">대량 문서·자료 병렬 처리</td>
+                <td><strong>펼쳐서 종합</strong></td>
+                <td>잘게 쪼개 각자 처리한 뒤 하나로 합침</td>
+                <td style="color:var(--text-muted);">대량 문서·자료 병렬 처리</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">적대적 검증</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">결과마다 별도 AI가 기준에 맞춰 반박</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">사실 확인·품질 게이트</td>
+                <td><strong>적대적 검증</strong></td>
+                <td>결과마다 별도 AI가 기준에 맞춰 반박</td>
+                <td style="color:var(--text-muted);">사실 확인·품질 게이트</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">생성 후 선별</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">여러 안을 만든 뒤 기준으로 걸러 최고만 남김</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">카피·네이밍 후보 압축</td>
+                <td><strong>생성 후 선별</strong></td>
+                <td>여러 안을 만든 뒤 기준으로 걸러 최고만 남김</td>
+                <td style="color:var(--text-muted);">카피·네이밍 후보 압축</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">토너먼트</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">여러 안을 둘씩 맞붙여 승자를 가림</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">대량 항목 우선순위 정렬</td>
+                <td><strong>토너먼트</strong></td>
+                <td>여러 안을 둘씩 맞붙여 승자를 가림</td>
+                <td style="color:var(--text-muted);">대량 항목 우선순위 정렬</td>
               </tr>
               <tr>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; font-weight:bold;">끝날 때까지 반복</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee;">새 발견이 없을 때까지 계속 돌림</td>
-                <td style="padding: 10px; border-bottom: 1px solid #eee; color:#666;">버그·이슈 끝까지 발굴</td>
+                <td><strong>끝날 때까지 반복</strong></td>
+                <td>새 발견이 없을 때까지 계속 돌림</td>
+                <td style="color:var(--text-muted);">버그·이슈 끝까지 발굴</td>
               </tr>
             </tbody>
           </table>
-          <p style="font-size: 13px; color: #666; margin-top: 8px;">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 사업 장면은 본 매체가 덧붙인 해석입니다.</p>
+          <p class="post-table-source">출처: Shihipar &amp; Bidasaria (2026), Anthropic. 사업 장면은 본 매체가 덧붙인 해석입니다.</p>
         </div>
 
         <p><strong>셋째, 이건 코딩 얘기가 아닙니다.</strong> 저자들은 워크플로우가 비기술 업무에서 더 유용할 때가 많다고 적었습니다. 정답이 떨어지는 일이라면 거의 다 적용됩니다. 아래 네 장면이 그렇습니다.</p>
