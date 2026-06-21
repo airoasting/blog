@@ -5,6 +5,12 @@
     prefix = '../';
   }
 
+  function footerCatLink(cat, label) {
+    return '<li><a href="' + prefix + cat + '/index.html" data-cat="' + cat + '" class="footer-cat-link">' +
+      '<span>' + label + '</span>' +
+      '<span class="footer-count-pill" data-count-cat="' + cat + '"></span></a></li>';
+  }
+
   var html =
     '<div class="footer-inner">' +
       '<div class="footer-grid">' +
@@ -16,11 +22,11 @@
         '<div>' +
           '<div class="footer-heading">카테고리</div>' +
           '<ul class="footer-links">' +
-            '<li><a href="' + prefix + 'research/index.html">리서치</a></li>' +
-            '<li><a href="' + prefix + 'leader/index.html">리더</a></li>' +
-            '<li><a href="' + prefix + 'company/index.html">기업</a></li>' +
-            '<li><a href="' + prefix + 'tech/index.html">기술</a></li>' +
-            '<li><a href="' + prefix + 'survival/index.html">생존</a></li>' +
+            footerCatLink('research', '리서치') +
+            footerCatLink('leader', '리더') +
+            footerCatLink('company', '기업') +
+            footerCatLink('tech', '기술') +
+            footerCatLink('survival', '생존') +
           '</ul>' +
         '</div>' +
         '<div>' +
@@ -133,7 +139,20 @@
     buildArchive(combined);
   }
 
+  // Fill each footer category with its post count (pill).
+  function fillCategoryCounts(posts) {
+    var counts = {};
+    posts.forEach(function (p) {
+      if (p && p.category) counts[p.category] = (counts[p.category] || 0) + 1;
+    });
+    document.querySelectorAll('.footer-count-pill[data-count-cat]').forEach(function (el) {
+      var c = counts[el.getAttribute('data-count-cat')];
+      if (c != null) el.textContent = c;
+    });
+  }
+
   function loadAndBuild(posts) {
+    fillCategoryCounts(posts);
     // Try window.NEWSLETTER_DATA first (available on pages that loaded it)
     if (window.NEWSLETTER_DATA) {
       buildCombined(posts, window.NEWSLETTER_DATA);

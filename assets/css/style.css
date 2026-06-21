@@ -1766,6 +1766,28 @@ img {
   color: #FFFFFF;
 }
 
+.footer-links a.footer-cat-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-count-pill {
+  display: inline-block;
+  min-width: 20px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 0 6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-count-pill:empty { display: none; }
+
 .footer-social-heading {
   margin-top: 20px;
 }
@@ -2074,6 +2096,15 @@ img {
   width: 40px;
   height: 2px;
   background: var(--header);
+}
+
+.about-promise-lead {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: -8px 0 20px;
+  color: var(--text);
 }
 
 .about-promise ul {
@@ -2428,6 +2459,46 @@ img {
   transform: translateY(-1px);
 }
 
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 18px 64px;
+  }
+  .about-intro {
+    font-size: 16px;
+    line-height: 1.9;
+    padding: 26px 22px 26px 26px;
+    border-radius: 16px;
+  }
+  .about-intro::before {
+    font-size: 38px;
+    top: 12px;
+    left: 14px;
+  }
+  .about-promise,
+  .about-categories {
+    padding: 32px 0;
+  }
+  .about-promise-lead {
+    font-size: 15px;
+  }
+  .about-promise li {
+    font-size: 14.5px;
+    line-height: 1.75;
+    padding: 16px 18px;
+  }
+  /* 3열 → 1열, span 초기화 */
+  .about-category-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .about-category-item,
+  .about-category-item:nth-child(4),
+  .about-category-item:nth-child(5) {
+    grid-column: auto;
+    padding: 18px 20px;
+  }
+}
+
 @media (max-width: 600px) {
   .about-cta-bottom {
     padding: 24px 20px;
@@ -2436,6 +2507,27 @@ img {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+  .about-cta-btn-outline {
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 32px 16px 56px;
+  }
+  .about-intro {
+    font-size: 15px;
+    padding: 22px 18px 22px 22px;
+  }
+  .about-promise li::before {
+    content: "→ ";
+  }
+  .about-cta-bottom p {
+    font-size: 16px;
   }
 }
 
