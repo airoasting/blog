@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-16T01:53:57.761Z",
+  "generatedAt": "2026-06-21T00:53:10.834Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 92,
-    "totalRelationships": 245,
-    "totalPosts": 205,
-    "totalNewsletters": 52
+    "totalConcepts": 93,
+    "totalRelationships": 252,
+    "totalPosts": 208,
+    "totalNewsletters": 53
   },
   "concepts": [
     {
@@ -14,7 +14,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 52,
+      "frequency": 53,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -34,6 +34,7 @@
         "2026-05-20-sciatlas-scientific-knowledge-graph",
         "2026-05-27-law-professors-prefer-ai",
         "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
+        "2026-06-12-openrouter-fusion-model-diversity",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
@@ -207,7 +208,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 32,
+      "frequency": 33,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -237,6 +238,7 @@
         "2026-05-28-sia-self-improving-ai-harness-weights",
         "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
         "2026-06-02-next-era-knowledge-work",
+        "2026-06-19-companies-rein-in-ai-costs",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -298,7 +300,7 @@
       "name": "IT",
       "aliases": [],
       "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
-      "frequency": 23,
+      "frequency": 24,
       "category": "tech",
       "posts": [
         "2026-02-02-advisor-model-black-box-llm",
@@ -315,6 +317,7 @@
         "2026-05-07-natural-language-autoencoders",
         "2026-05-08-teaching-claude-why",
         "2026-05-20-ai-slop-books-music-lawsuits-science",
+        "2026-06-19-companies-rein-in-ai-costs",
         "2025-02-20-sovereign-ai",
         "2025-03-15-when-technology-becomes-borders",
         "2025-03-20-can-yangjae-become-an-ai-hub",
@@ -337,7 +340,7 @@
       "name": "IPO",
       "aliases": [],
       "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 22,
+      "frequency": 23,
       "category": "newsletter",
       "posts": [
         "2026-04-06-sam-altman-can-he-be-trusted",
@@ -363,7 +366,8 @@
         "nl-49",
         "nl-50",
         "nl-51",
-        "nl-52"
+        "nl-52",
+        "nl-53"
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-04-06",
@@ -476,6 +480,44 @@
       "needs_manual_review": false
     },
     {
+      "id": "소버린ai",
+      "slug": "소버린ai",
+      "name": "소버린AI",
+      "aliases": [
+        "소버린 AI",
+        "sovereign AI",
+        "소버린 인공지능"
+      ],
+      "definition": "자국에서 만들고 운영하는 자체 AI입니다. 데이터·안보·산업 정책이 결합된 개념입니다.",
+      "frequency": 18,
+      "category": "company",
+      "posts": [
+        "2025-05-05-furiosa-ai",
+        "2025-02-20-sovereign-ai",
+        "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
+        "2025-03-20-can-yangjae-become-an-ai-hub",
+        "2025-05-10-asean-market-test-of-tech-sovereignty",
+        "2025-05-25-can-ai-payments-be-taxed",
+        "2025-07-25-national-ai-foundation-model-project",
+        "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-03-15-30b-vs-671b-parameters",
+        "2025-03-15-kt-korean-ai-model-mideum-2",
+        "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-05-25-gpt5-limitations-and-whats-next",
+        "2025-08-05-chinas-open-source-ai",
+        "2025-03-10-ai-era-survival-strategy"
+      ],
+      "newsletters": [
+        "nl-7",
+        "nl-8",
+        "nl-32",
+        "nl-53"
+      ],
+      "firstSeen": "2025-02-15",
+      "lastSeen": "2025-08-05",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai전략",
       "slug": "ai전략",
       "name": "AI전략",
@@ -575,7 +617,7 @@
       "name": "KPI",
       "aliases": [],
       "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
-      "frequency": 15,
+      "frequency": 16,
       "category": "research",
       "posts": [
         "2026-03-09-ai-last-mile-transformation",
@@ -589,6 +631,7 @@
         "2026-05-27-anthropic-coding-agents-social-sciences",
         "2026-05-28-sia-self-improving-ai-harness-weights",
         "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
+        "2026-06-19-companies-rein-in-ai-costs",
         "2025-03-05-redesigning-work-structure-in-ai-era",
         "2025-04-05-shortsification-era-content-industry-crisis",
         "2025-04-10-why-ai-first-declaration-matters",
@@ -679,32 +722,6 @@
       ],
       "firstSeen": "2025-04-25",
       "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "소버린ai",
-      "slug": "소버린ai",
-      "name": "소버린AI",
-      "aliases": [],
-      "definition": "자국에서 만들고 운영하는 자체 AI입니다. 데이터·안보·산업 정책이 결합된 개념입니다.",
-      "frequency": 11,
-      "category": "tech",
-      "posts": [
-        "2025-02-20-sovereign-ai",
-        "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
-        "2025-03-20-can-yangjae-become-an-ai-hub",
-        "2025-05-10-asean-market-test-of-tech-sovereignty",
-        "2025-07-25-national-ai-foundation-model-project",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-03-15-30b-vs-671b-parameters",
-        "2025-03-15-kt-korean-ai-model-mideum-2",
-        "2025-04-10-naver-ai-introduces-lightweight-llm",
-        "2025-08-05-chinas-open-source-ai",
-        "2025-03-10-ai-era-survival-strategy"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2025-08-05",
       "needs_manual_review": false
     },
     {
@@ -837,6 +854,30 @@
       "needs_manual_review": false
     },
     {
+      "id": "cfo",
+      "slug": "cfo",
+      "name": "CFO",
+      "aliases": [],
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
+      "frequency": 8,
+      "category": "leader",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-06-19-companies-rein-in-ai-costs",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
+      ],
+      "newsletters": [
+        "nl-21",
+        "nl-49",
+        "nl-50"
+      ],
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-04-06",
+      "needs_manual_review": false
+    },
+    {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
@@ -902,29 +943,6 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-01-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cfo",
-      "slug": "cfo",
-      "name": "CFO",
-      "aliases": [],
-      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 7,
-      "category": "leader",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-21",
-        "nl-49",
-        "nl-50"
-      ],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -1082,6 +1100,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "sec",
+      "slug": "sec",
+      "name": "SEC",
+      "aliases": [],
+      "definition": "SEC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 6,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-42",
+        "nl-49",
+        "nl-50",
+        "nl-51",
+        "nl-52",
+        "nl-53"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
       "id": "vc",
       "slug": "vc",
       "name": "VC",
@@ -1119,6 +1158,26 @@
       "newsletters": [],
       "firstSeen": "2025-03-25",
       "lastSeen": "2025-11-10",
+      "needs_manual_review": false
+    },
+    {
+      "id": "멀티에이전트",
+      "slug": "멀티에이전트",
+      "name": "멀티에이전트",
+      "aliases": [],
+      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
+      "frequency": 5,
+      "category": "tech",
+      "posts": [
+        "2026-03-01-conductor-multi-agent-orchestration",
+        "2026-04-06-paperorchestra-multi-agent-writing",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-06-02-claude-code-dynamic-workflows",
+        "2026-06-12-openrouter-fusion-model-diversity"
+      ],
+      "newsletters": [],
+      "firstSeen": null,
+      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -1244,26 +1303,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "sec",
-      "slug": "sec",
-      "name": "SEC",
-      "aliases": [],
-      "definition": "SEC는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 5,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-42",
-        "nl-49",
-        "nl-50",
-        "nl-51",
-        "nl-52"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
       "id": "기술주권",
       "slug": "기술주권",
       "name": "기술주권",
@@ -1338,25 +1377,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-01-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "멀티에이전트",
-      "slug": "멀티에이전트",
-      "name": "멀티에이전트",
-      "aliases": [],
-      "definition": "여러 AI 에이전트가 협업하는 구조입니다. 복잡한 작업 분할과 검증에 강점이 있습니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-06-02-claude-code-dynamic-workflows"
-      ],
-      "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
       "needs_manual_review": false
     },
     {
@@ -1549,6 +1569,25 @@
       "newsletters": [],
       "firstSeen": "2026-03-28",
       "lastSeen": "2026-03-28",
+      "needs_manual_review": false
+    },
+    {
+      "id": "mau",
+      "slug": "mau",
+      "name": "MAU",
+      "aliases": [],
+      "definition": "월간 활성 사용자입니다. AI 서비스 채택 속도를 가늠하는 기준 지표입니다.",
+      "frequency": 4,
+      "category": "company",
+      "posts": [
+        "2026-06-16-chatgpt-market-share-below-50",
+        "2024-07-20-kakao-naver-future-in-ai-era",
+        "2025-04-05-shortsification-era-content-industry-crisis",
+        "2024-08-10-top-50-ai-services-five-trends"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-07-20",
+      "lastSeen": "2025-04-05",
       "needs_manual_review": false
     },
     {
@@ -1997,24 +2036,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "mau",
-      "slug": "mau",
-      "name": "MAU",
-      "aliases": [],
-      "definition": "월간 활성 사용자입니다. AI 서비스 채택 속도를 가늠하는 기준 지표입니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2024-07-20-kakao-naver-future-in-ai-era",
-        "2025-04-05-shortsification-era-content-industry-crisis",
-        "2024-08-10-top-50-ai-services-five-trends"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-07-20",
-      "lastSeen": "2025-04-05",
-      "needs_manual_review": false
-    },
-    {
       "id": "빅테크",
       "slug": "빅테크",
       "name": "빅테크",
@@ -2176,6 +2197,24 @@
       "firstSeen": null,
       "lastSeen": null,
       "needs_manual_review": false
+    },
+    {
+      "id": "spcx",
+      "slug": "spcx",
+      "name": "SPCX",
+      "aliases": [],
+      "definition": "SPCX는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-49",
+        "nl-51",
+        "nl-53"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": true
     }
   ],
   "relationships": [
@@ -2226,6 +2265,11 @@
     },
     {
       "source": "LLM",
+      "target": "소버린AI",
+      "strength": 9
+    },
+    {
+      "source": "LLM",
       "target": "AI전략",
       "strength": 3
     },
@@ -2248,11 +2292,6 @@
       "source": "LLM",
       "target": "UI",
       "strength": 3
-    },
-    {
-      "source": "LLM",
-      "target": "소버린AI",
-      "strength": 8
     },
     {
       "source": "LLM",
@@ -2281,6 +2320,11 @@
     },
     {
       "source": "LLM",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "HBM",
       "strength": 3
     },
@@ -2292,11 +2336,6 @@
     {
       "source": "LLM",
       "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "CFO",
       "strength": 2
     },
     {
@@ -2321,6 +2360,11 @@
     },
     {
       "source": "LLM",
+      "target": "멀티에이전트",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "RLHF",
       "strength": 2
     },
@@ -2337,11 +2381,6 @@
     {
       "source": "LLM",
       "target": "플랫폼전략",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "멀티에이전트",
       "strength": 2
     },
     {
@@ -2416,6 +2455,11 @@
     },
     {
       "source": "GPU",
+      "target": "소버린AI",
+      "strength": 9
+    },
+    {
+      "source": "GPU",
       "target": "AI전략",
       "strength": 4
     },
@@ -2446,11 +2490,6 @@
     },
     {
       "source": "GPU",
-      "target": "소버린AI",
-      "strength": 5
-    },
-    {
-      "source": "GPU",
       "target": "MCP",
       "strength": 3
     },
@@ -2461,13 +2500,13 @@
     },
     {
       "source": "GPU",
-      "target": "HBM",
-      "strength": 4
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "GPU",
-      "target": "CFO",
-      "strength": 2
+      "target": "HBM",
+      "strength": 4
     },
     {
       "source": "GPU",
@@ -2586,6 +2625,11 @@
     },
     {
       "source": "API",
+      "target": "소버린AI",
+      "strength": 5
+    },
+    {
+      "source": "API",
       "target": "AI전략",
       "strength": 5
     },
@@ -2608,11 +2652,6 @@
       "source": "API",
       "target": "UI",
       "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "소버린AI",
-      "strength": 4
     },
     {
       "source": "API",
@@ -2687,7 +2726,7 @@
     {
       "source": "AI 에이전트",
       "target": "IT",
-      "strength": 5
+      "strength": 6
     },
     {
       "source": "AI 에이전트",
@@ -2722,7 +2761,7 @@
     {
       "source": "AI 에이전트",
       "target": "KPI",
-      "strength": 6
+      "strength": 7
     },
     {
       "source": "AI 에이전트",
@@ -2756,12 +2795,12 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "AX",
+      "target": "멀티에이전트",
       "strength": 2
     },
     {
       "source": "AI 에이전트",
-      "target": "멀티에이전트",
+      "target": "AX",
       "strength": 2
     },
     {
@@ -2823,6 +2862,11 @@
       "source": "AGI",
       "target": "임원",
       "strength": 2
+    },
+    {
+      "source": "AGI",
+      "target": "소버린AI",
+      "strength": 4
     },
     {
       "source": "AGI",
@@ -2891,6 +2935,16 @@
     },
     {
       "source": "IT",
+      "target": "소버린AI",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "KPI",
+      "strength": 2
+    },
+    {
+      "source": "IT",
       "target": "TPU",
       "strength": 2
     },
@@ -2901,17 +2955,17 @@
     },
     {
       "source": "IT",
-      "target": "소버린AI",
-      "strength": 2
-    },
-    {
-      "source": "IT",
       "target": "조직설계",
       "strength": 2
     },
     {
       "source": "IT",
       "target": "AI 안전",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -2931,18 +2985,23 @@
     },
     {
       "source": "IPO",
+      "target": "소버린AI",
+      "strength": 3
+    },
+    {
+      "source": "IPO",
       "target": "TPU",
       "strength": 4
     },
     {
       "source": "IPO",
-      "target": "HBM",
-      "strength": 3
+      "target": "CFO",
+      "strength": 5
     },
     {
       "source": "IPO",
-      "target": "CFO",
-      "strength": 5
+      "target": "HBM",
+      "strength": 3
     },
     {
       "source": "IPO",
@@ -2952,7 +3011,7 @@
     {
       "source": "IPO",
       "target": "SEC",
-      "strength": 5
+      "strength": 6
     },
     {
       "source": "IPO",
@@ -2963,6 +3022,11 @@
       "source": "IPO",
       "target": "EPS",
       "strength": 2
+    },
+    {
+      "source": "IPO",
+      "target": "SPCX",
+      "strength": 3
     },
     {
       "source": "CTO",
@@ -3090,6 +3154,41 @@
       "strength": 2
     },
     {
+      "source": "소버린AI",
+      "target": "AI전략",
+      "strength": 3
+    },
+    {
+      "source": "소버린AI",
+      "target": "MCP",
+      "strength": 2
+    },
+    {
+      "source": "소버린AI",
+      "target": "AI정책",
+      "strength": 2
+    },
+    {
+      "source": "소버린AI",
+      "target": "AX",
+      "strength": 2
+    },
+    {
+      "source": "소버린AI",
+      "target": "기술주권",
+      "strength": 3
+    },
+    {
+      "source": "소버린AI",
+      "target": "한국AI",
+      "strength": 3
+    },
+    {
+      "source": "소버린AI",
+      "target": "중국AI",
+      "strength": 2
+    },
+    {
       "source": "AI전략",
       "target": "창업자",
       "strength": 4
@@ -3108,11 +3207,6 @@
       "source": "AI전략",
       "target": "UI",
       "strength": 3
-    },
-    {
-      "source": "AI전략",
-      "target": "소버린AI",
-      "strength": 2
     },
     {
       "source": "AI전략",
@@ -3171,12 +3265,12 @@
     },
     {
       "source": "TPU",
-      "target": "HBM",
+      "target": "CFO",
       "strength": 3
     },
     {
       "source": "TPU",
-      "target": "CFO",
+      "target": "HBM",
       "strength": 3
     },
     {
@@ -3197,31 +3291,6 @@
     {
       "source": "RAG",
       "target": "SSRN",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
-      "target": "MCP",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
-      "target": "AI정책",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
-      "target": "기술주권",
-      "strength": 2
-    },
-    {
-      "source": "소버린AI",
-      "target": "한국AI",
-      "strength": 3
-    },
-    {
-      "source": "소버린AI",
-      "target": "중국AI",
       "strength": 2
     },
     {
@@ -3285,16 +3354,6 @@
       "strength": 2
     },
     {
-      "source": "HBM",
-      "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "DRAM",
-      "strength": 2
-    },
-    {
       "source": "CFO",
       "target": "SEC",
       "strength": 2
@@ -3302,6 +3361,16 @@
     {
       "source": "CFO",
       "target": "EPS",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "DRAM",
       "strength": 2
     },
     {
@@ -3345,6 +3414,11 @@
       "strength": 2
     },
     {
+      "source": "SEC",
+      "target": "SPCX",
+      "strength": 3
+    },
+    {
       "source": "VC",
       "target": "미중갈등",
       "strength": 2
@@ -3385,6 +3459,11 @@
       "strength": 2
     },
     {
+      "source": "MAU",
+      "target": "생성AI",
+      "strength": 2
+    },
+    {
       "source": "저작권",
       "target": "콘텐츠산업",
       "strength": 2
@@ -3392,11 +3471,6 @@
     {
       "source": "반도체",
       "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "생성AI",
-      "target": "MAU",
       "strength": 2
     },
     {

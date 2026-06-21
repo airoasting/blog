@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-06-16T01:53:57.761Z",
-  "duration": 0.27,
+  "buildAt": "2026-06-21T00:53:10.834Z",
+  "duration": 0.407,
   "concepts": {
-    "total": 92,
+    "total": 93,
     "validDefinitions": 90,
-    "needsReview": 2
+    "needsReview": 3
   },
   "relationships": {
-    "total": 245
+    "total": 252
   },
   "coverage": {
-    "postsWithConcepts": 178,
-    "totalPosts": 205
+    "postsWithConcepts": 181,
+    "totalPosts": 208
   },
   "inject": {
-    "updated": 10,
+    "updated": 0,
     "inserted": 0,
-    "unchanged": 166,
+    "unchanged": 179,
     "skipped": 29
   },
   "needsManualReview": [
@@ -27,6 +27,10 @@
     {
       "name": "NBER",
       "slug": "nber"
+    },
+    {
+      "name": "SPCX",
+      "slug": "spcx"
     }
   ]
 }

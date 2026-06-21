@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="OpenRouter가 여러 AI 모델의 답을 종합하는 Fusion을 공개했습니다. 두 모델을 합친 결과가 가장 강한 단일 모델을 넘었고, 저가 모델 패널이 프런티어 모델을 이겼습니다. 모델 다양성이 성능을 만든다는 신호입니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="여러 AI를 합치니 가장 강한 모델을 넘었습니다">
+  <meta property="og:description" content="두 모델을 합친 결과가 단일 최강 모델을 넘었습니다. 저가 패널이 프런티어 모델을 이겼습니다. 핵심은 모델 다양성입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-06-12-openrouter-fusion-model-diversity.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-12">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="멀티에이전트">
+  <meta property="article:tag" content="모델다양성">
+  <meta property="article:tag" content="딥리서치">
+  <meta property="article:tag" content="LLM">
+  <meta property="article:tag" content="의사결정">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="여러 AI를 합치니 가장 강한 모델을 넘었습니다">
+  <meta name="twitter:description" content="두 모델을 합친 결과가 단일 최강 모델을 넘었습니다. 핵심은 모델 다양성입니다.">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "여러 AI를 합치니 가장 강한 모델을 넘었습니다",
+    "datePublished": "2026-06-12",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "OpenRouter가 여러 AI 모델의 답을 종합하는 Fusion을 공개했습니다. 두 모델을 합친 결과가 가장 강한 단일 모델을 넘었습니다. 모델 다양성이 성능을 만든다는 신호입니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-06-12-openrouter-fusion-model-diversity.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_06_12_openrouter-fusion-model-diversity/thumbnail.png" alt="여러 AI를 합치니 가장 강한 모델을 넘었습니다 - 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-06-12</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">여러 AI를 합치니 가장 강한 모델을 넘었습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>OpenRouter</span>
+            <span>Brian Thomas</span>
+            <span><a href="https://openrouter.ai/blog/announcements/fusion-beats-frontier/" target="_blank" rel="noopener">Surpassing Frontier Performance with Fusion ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=멀티에이전트" class="post-tag">#멀티에이전트</a>
+            <a href="../index.html?tag=모델다양성" class="post-tag">#모델다양성</a>
+            <a href="../index.html?tag=딥리서치" class="post-tag">#딥리서치</a>
+            <a href="../index.html?tag=LLM" class="post-tag">#LLM</a>
+            <a href="../index.html?tag=의사결정" class="post-tag">#의사결정</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="여러 AI를 합치니 가장 강한 모델을 넘었습니다" data-date="2026-06-12" data-category="research" data-source="OpenRouter (Brian Thomas)" data-tags="멀티에이전트, 모델다양성, 딥리서치, LLM, 의사결정" data-original-url="https://openrouter.ai/blog/announcements/fusion-beats-frontier/" data-roasting-quote="어떤 AI 모델이 가장 강한지 비교하느라 시간을 쓰고 계십니까? 정답은 '하나를 고르지 않는 것'일 수 있습니다." data-next-post="../leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">OpenRouter가 여러 AI 모델의 답을 종합하는 도구 Fusion을 공개했습니다. 패널 모델들이 답을 내면 심판 모델이 하나로 합칩니다.</p>
+            <p data-summary="">딥리서치 벤치마크에서 두 모델을 합친 결과가 가장 강한 단일 모델을 넘었습니다. 저가 모델 패널은 절반 비용으로 프런티어 모델을 이겼습니다.</p>
+            <p data-summary="">핵심은 모델 다양성입니다. 서로 다른 관점을 합치면 더 나은 답이 나옵니다. 사람의 팀이 일하는 원리와 같습니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">어떤 AI 모델이 가장 강한지 비교하느라 시간을 쓰고 계십니까?<br>정답은 '하나를 고르지 않는 것'일 수 있습니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 왜 읽어야 하나 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>대부분의 조직은 "어떤 AI를 표준으로 쓸까"를 고민합니다. 가장 똑똑한 모델 하나를 고르는 문제로 봅니다. 그런데 이번 실험은 반대를 가리킵니다.</p>
+            <p>OpenRouter가 여러 모델의 답을 합치는 Fusion을 공개했습니다. 딥리서치 100개 과제에서 Fable 5와 GPT-5.5를 합친 결과가 69.0%를 기록했습니다. 단독 최강 모델 Fable 5의 65.3%를 넘었습니다.</p>
+            <p>더 흥미로운 건 비용입니다. 저렴한 모델 3개를 묶은 패널이 프런티어 모델을 이기면서 비용은 절반이었습니다. "한 대신 여러 대"가 더 싸고 더 정확했습니다.</p>
+          </section>
+
+          <!-- 왜 지금 중요한가 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>AI 모델 경쟁이 1위 자리 다툼으로 굳어지고 있습니다. 기업은 매번 가장 좋은 모델로 갈아타며, 모델 하나에 업무를 몰아줍니다.</p>
+            <p>이번 결과는 그 전제를 흔듭니다. 성능이 모델 하나의 우수함이 아니라 여러 관점의 종합에서 나왔기 때문입니다. 같은 모델을 둘로 합쳐도 점수가 6.7%p 올랐고, 합치는 과정 자체가 성능을 만들었습니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <p><strong>첫째, 패널이 단일 모델을 일관되게 이겼습니다.</strong> OpenRouter는 Perplexity의 딥리서치 벤치마크 DRACO 100개 과제로 측정했습니다. Fable 5와 GPT-5.5를 합쳐 Opus 4.8이 종합한 결과가 69.0%로 1위였습니다. 어떤 단일 모델보다 높았습니다.</p>
+
+            <figure class="post-figure" style="margin: 28px auto; width: 96%;">
+              <img src="./images/2026_06_12_openrouter-fusion-model-diversity/fig1-draco-scores.png" alt="DRACO 딥리서치 벤치마크 점수 막대그래프. Fable 5와 GPT-5.5를 합친 Fusion이 69.0점으로 1위이고, 단독 최강 Fable 5의 65.3점을 여러 Fusion 구성이 넘어선다. 저가 패널도 64.7점으로 GPT-5.5와 Opus 4.8 단독을 앞선다." loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                DRACO 100개 과제 점수(정규화 0~100). 파란 막대가 여러 모델을 종합한 Fusion, 회색이 단일 모델입니다. 점선은 단독 최강 모델 Fable 5(65.3)입니다.
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenRouter (2026), DRACO 100개 과제. Fable 5는 콘텐츠 필터로 7개 과제가 막혀 93개 기준 점수입니다.</span>
+              </figcaption>
+            </figure>
+
+            <p><strong>둘째, 저가 모델을 묶으면 프런티어 모델을 넘습니다.</strong> 저렴한 모델 3개를 묶은 패널이 64.7%를 기록했습니다. GPT-5.5와 Opus 4.8을 모두 이겼습니다. Fable 5와는 1%포인트 차이였습니다. 그러면서 비용은 Fable 5의 절반이었습니다.</p>
+            <p>비용을 절감하면 품질이 떨어진다는 통념을 뒤집습니다. 묶는 방식에 따라 더 싸면서 더 정확한 구간이 존재합니다.</p>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">69.0%</div>
+                <div class="stat-label">두 모델을 합친 최고 점수 (단일 최강 모델 65.3% 초과)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">+6.7%p</div>
+                <div class="stat-label">같은 모델을 둘로 합쳤을 때 오른 점수</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">50%</div>
+                <div class="stat-label">저가 패널이 프런티어급에 근접하며 쓴 비용</div>
+              </div>
+            </div>
+
+            <p><strong>셋째, 종합하는 단계 자체가 성능을 만듭니다.</strong> Opus 4.8을 둘로 묶어 Opus 4.8이 종합한 결과가 65.5%였습니다. 단독 Opus 4.8의 58.8%보다 6.7%포인트 높았습니다. 같은 모델인데도 점수가 올랐습니다.</p>
+            <p>같은 질문을 두 번 던지면 다른 추론 경로, 다른 검색, 다른 출처가 나옵니다. 그 차이를 종합하는 과정에서 품질이 올라갑니다. 모델을 바꾸지 않아도 일하는 방식만으로 결과가 달라진다는 뜻입니다.</p>
+
+            <figure class="post-figure" style="margin: 28px auto; width: 72%;">
+              <img src="./images/2026_06_12_openrouter-fusion-model-diversity/fig2-self-fusion-lift.png" alt="Opus 4.8 단독 58.8점과 같은 모델 두 개를 자기 종합한 65.5점을 비교한 막대그래프. 모델을 바꾸지 않고 합치는 것만으로 6.7%포인트 올랐다." loading="lazy" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+              <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+                같은 Opus 4.8을 둘로 묶어 종합하자 58.8점에서 65.5점으로 6.7%포인트 올랐습니다. 성능은 모델 교체가 아니라 종합 단계에서 나옵니다.
+                <span style="display:block; margin-top:4px; font-size:12px;">출처: OpenRouter (2026), DRACO 100개 과제.</span>
+              </figcaption>
+            </figure>
+
+            <p><strong>넷째, 이것은 사람 팀의 원리와 같습니다.</strong> OpenRouter는 그 이유를 모델 다양성으로 설명합니다. 서로 다른 관점을 복잡한 문제에 가져오면 더 나은 결과가 나옵니다. 사람으로 구성된 팀의 성과와 같은 원리입니다.</p>
+            <p>한 사람의 천재보다 관점이 다른 팀이 낫다는 경험칙이 AI에도 적용됩니다. 작동 방식은 단순합니다. 패널 모델이 각자 답을 내면, 심판 모델이 합의점, 모순, 누락, 고유한 통찰을 정리합니다. 마지막에 그 분석을 근거로 최종 답을 씁니다.</p>
+
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>중요한 질문은 AI 한 곳이 아니라 세 곳에 던지십시오.</strong><br>전략, 채용, 투자 같은 고가치 질문은 ChatGPT, Claude, Gemini에 동일한 프롬프트를 넣습니다. 세 답을 나란히 비교하는 것만으로 사각지대가 줄어듭니다. (20분)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>종합 단계를 직접 추가하십시오.</strong><br>세 답을 모은 뒤 AI 한 곳에 심판 역할을 맡깁니다. Fusion의 작동 방식을 그대로 따라 하는 것입니다. (10분)
+                  <div class="prompt-block">
+                    <pre class="prompt-text">아래는 같은 질문에 대한 세 개의 AI 답변입니다.
+세 답변을 비교해서 다음을 정리해 주세요.
+1. 모두가 동의하는 합의점
+2. 서로 모순되는 지점
+3. 한 곳만 언급한 고유한 통찰
+4. 세 답변 모두 놓친 빈틈
+그다음 이 분석을 근거로 최종 결론을 작성해 주세요.
+
+답변 A: [붙여넣기]
+답변 B: [붙여넣기]
+답변 C: [붙여넣기]</pre>
+                    <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+                  </div></div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>패널을 쓸 질문과 단일 모델로 충분한 질문을 구분하십시오.</strong><br>여러 모델을 합치면 시간과 비용이 2~3배 듭니다. 모든 질문에 쓰면 낭비입니다. 한 번 틀리면 비용이 큰 결정에만 선택적으로 적용하십시오. 질문 유형을 두 줄짜리 기준으로 정해 팀에 공유하십시오. (30분)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+            <p><strong>느리고 비쌉니다.</strong> 여러 모델에 동시에 묻고 종합하는 과정은 단일 호출보다 2~3배 깁니다. 모든 질문에 적용하면 오히려 손해입니다. 답의 정확도가 비용을 정당화하는 질문에만 써야 합니다.</p>
+            <p><strong>벤치마크 하나의 결과입니다.</strong> DRACO는 영어, 텍스트 전용의 딥리서치 과제만 측정합니다. OpenRouter도 코딩이나 장기 과제에는 검증되지 않았다고 밝혔습니다. 모든 업무로 일반화하기엔 이릅니다.</p>
+            <p><strong>누가 종합하느냐가 점수를 좌우합니다.</strong> 심판 모델을 무엇으로 두느냐에 따라 점수가 10~25점까지 출렁입니다. 종합 역할의 모델 선택이 결과를 크게 바꿉니다.</p>
+            <p><strong>코딩 도구의 대체재는 아닙니다.</strong> OpenRouter는 Fusion이 코딩 모델을 대신하지 않는다고 명시했습니다. 일상 작업은 기본 모델이 처리하고, 깊은 답이 필요한 순간에만 선택적으로 부르는 도구입니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>가장 강한 AI 하나를 고르는 일에 매달리지 마십시오. 서로 다른 관점을 합치고 종합하는 방식이 더 싸고 더 정확할 수 있습니다.</p>
+          </section>
+
+          <!-- 용어 설명 -->
+          <section class="post-section" id="section-terms">
+            <div class="post-section-label">용어 설명</div>
+            <p><strong>Fusion</strong>: OpenRouter가 공개한 다중 모델 종합 도구입니다. 여러 모델에 같은 질문을 보내고, 심판 모델이 답들을 하나로 합칩니다. 한 번의 호출로 여러 모델의 장점을 모읍니다.</p>
+            <p><strong>패널과 심판 모델</strong>: 패널은 각자 답을 내는 참여 모델들입니다. 심판 모델은 그 답들을 읽고 합의점과 모순, 빈틈을 정리해 최종 답의 근거를 만듭니다.</p>
+            <p><strong>DRACO</strong>: Perplexity가 만든 딥리서치 벤치마크입니다. 학술, 금융, 법률, 의료 등 10개 분야의 100개 과제로 구성됩니다. 과제마다 약 39개의 채점 기준이 있고, 틀린 정보에는 감점을 줍니다.</p>
+            <p><strong>프런티어 모델</strong>: 당대 최고 성능으로 평가받는 최상위 AI 모델입니다. 보통 가장 비쌉니다. 이번 글에서는 Fable 5, Opus 4.8, GPT-5.5가 여기에 해당합니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">창업자/CEO</span>
+                <span>"AI 하나를 표준으로 정하자"는 압박을 내려놓으십시오. 중요한 결정에는 여러 모델을 비교하고 종합하는 절차를 만드십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">팀장</span>
+                <span>전략과 리서치 질문은 세 개 AI에 던지고 종합하는 습관을 팀 표준으로 만드십시오. 종합 프롬프트를 공용 템플릿으로 공유하십시오.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">임원</span>
+                <span>AI 비용을 일률적으로 줄이지 마십시오. 패널을 쓸 고가치 질문과 단일 모델로 충분한 질문을 구분해 예산을 배분하십시오.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Thomas, B. (2026, June). <em>Surpassing Frontier Performance with Fusion</em> [Article]. OpenRouter. <a href="https://openrouter.ai/blog/announcements/fusion-beats-frontier/" target="_blank" rel="noopener">https://openrouter.ai/blog/announcements/fusion-beats-frontier/</a></li>
+            </ul>
+          </section>
+
+          <!-- Original Link -->
+          <div style="margin-top: 4px;">
+            <a href="https://openrouter.ai/blog/announcements/fusion-beats-frontier/" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+          </div>
+
+          <!-- 라운드테이블 댓글 -->
+          <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+              <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+              <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+            </div>
+
+            <!-- 스레드 1: 패턴 A — 1:1 충돌형 (블랙 vs 레드) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">결론은 단순해요. 최고 모델 하나 찾느라 시간 쓰지 말고 두세 개 합쳐 쓰면 됩니다. 두 모델 합친 게 69점, 단독 최강이 65점이잖아요. 답 나왔어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그 69점, 딥리서치 벤치마크 딱 하나에서 나온 숫자예요. 본문에도 코딩이나 긴 작업은 검증 안 됐다고 적혀 있고요. 그거 하나 보고 "답 나왔다"는 건 너무 빠르지 않아요?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">전부 다 그렇게 쓰라는 게 아니에요. 전략이나 투자 같은 한 번 틀리면 비싼 결정에만 쓰자는 거죠. 거기서 3점 더 정확하면 그게 돈이에요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 2: 패턴 B — 끼어들기형 (골드 원댓글, 네이비 심화, 퍼플 다른 각도) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">저 원래 중요한 거 결정할 때 ChatGPT랑 Claude 둘 다 물어봐요. 근데 솔직히 답 두 개 띄워놓고 비교하는 게 시간이 꽤 들어요. 이게 그걸 자동으로 해준다는 거죠?</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">중요한 건 따로 있어요. 같은 모델 둘만 합쳐도 점수가 6.7점 올랐어요. 모델을 섞어서가 아니라 종합하는 단계 자체가 일을 한다는 뜻이에요. 모델 바꾸는 것보다 그 과정이 핵심이에요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">근데 저는 답 세 개 받으면 오히려 더 헷갈리더라고요. 어느 말이 맞나 한참 보게 되고요. 그래서 누가 "이게 공통이고 이건 모순이에요" 정리해주는 게 진짜 필요한 부분 같아요.</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+            <!-- 스레드 3: 패턴 C — 연쇄 반응형 (화이트 질문, 네이비 답, 레드 태클, 골드 마무리) -->
+            <div style="margin-bottom:32px;">
+              <div style="display:flex; gap:12px; align-items:flex-start;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저 같은 팀장은 뭘 하면 되는 거예요? 세 군데에 물어보고, 또 그걸 한 군데에 넣어서 정리시키고요? 듣기엔 좋은데 매번 이걸 하라는 건가 싶어요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">매번은 아니에요. 종합 프롬프트 하나 만들어서 팀에 공유해두면 끝이에요. 합의점, 모순, 빈틈 정리해달라는 거 본문에 그대로 있어요. 복붙해서 쓰면 돼요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">그 정리시키는 모델도 아무나 쓰면 안 돼요. 누구한테 종합 맡기냐에 따라 점수가 10점에서 25점까지 출렁인다잖아요. "AI 셋이 합치면 좋다"가 아니라 "누가 합치냐"가 진짜 변수예요.</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+                <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                  <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+                  <div style="font-size:13px; line-height:1.75; color:#222;">결국 매일 쓰는 질문 말고 진짜 중요한 거에만 쓰자는 거네요. 저는 그 선만 정하면 될 것 같아요. 전부 다 하려다간 시간이고 비용이고 다 터져요.</div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Social Share -->
+          <div class="share-bar desktop-only">
+            <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+            <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+            <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+          </div>
+
+          <!-- Next Post -->
+          <div class="next-post">
+            <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+            <a href="../leader/2026-06-15-satya-nadella-learning-loop-token-capital.html">
+              <div class="next-post-title">나델라: 모델을 고르지 말고 학습 루프를 소유하세요 →</div>
+            </a>
+          </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-terms" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+    
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <h3>이 글의 핵심 개념</h3>
+      <div class="concept-links">
+      <a href="../wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../wiki/concepts/멀티에이전트.html" class="concept-chip">멀티에이전트</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-12-openrouter-fusion-model-diversity.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    function copyPrompt(btn) {
+      const text = btn.previousElementSibling.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = '복사됨';
+        setTimeout(() => { btn.textContent = '복사'; }, 2000);
+      });
+    }
+
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-06-12-openrouter-fusion-model-diversity.html';
+    const ROASTING_QUOTE = "어떤 AI 모델이 가장 강한지 비교하느라 시간을 쓰고 계십니까? 정답은 '하나를 고르지 않는 것'일 수 있습니다.";
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/posts-data.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/ai-view.js"></script>
+
+
+</body></html>

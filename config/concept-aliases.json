@@ -25,6 +25,11 @@
     "AI 정렬": [
       "AI alignment",
       "정렬"
+    ],
+    "소버린AI": [
+      "소버린 AI",
+      "sovereign AI",
+      "소버린 인공지능"
     ]
   },
   "slugMap": {
@@ -192,6 +197,8 @@
     "AI정렬",
     "AGI",
     "ASI",
+    "소버린AI",
+    "소버린 AI",
     "MCP",
     "LLM",
     "RAG",
