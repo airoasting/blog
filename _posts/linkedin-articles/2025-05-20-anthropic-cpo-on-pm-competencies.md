@@ -1,5 +1,5 @@
 ---
-title: 앤스로픽 CPO가 말하는 PM의 역량
+title: 앤트로픽 CPO가 말하는 PM의 역량
 date: 2025-05-20
 brunch_url: https://brunch.co.kr/@jaydenkang/404
 source: airoastingiii

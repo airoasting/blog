@@ -2686,19 +2686,19 @@ window.POSTS_DATA = {
       "next_post": "leader/2025-05-20-anthropic-cpo-on-pm-competencies.html"
     },
     {
-      "title": "앤스로픽 CPO가 말하는 PM의 역량",
+      "title": "앤트로픽 CPO가 말하는 PM의 역량",
       "date": "2025-05-20",
       "category": "leader",
       "source": "LinkedIn 아티클",
       "tags": [
         "PM역량",
-        "앤스로픽",
+        "앤트로픽",
         "AI시대직무",
         "제품관리"
       ],
       "slug": "2025-05-20-anthropic-cpo-on-pm-competencies",
       "file": "leader/2025-05-20-anthropic-cpo-on-pm-competencies.html",
-      "summary": "앤스로픽 CPO 마이크 크리거는 코드의 90%를 AI가 씁니다. 남은 10%를 채우는 PM의 역량은 무엇인가. 맥락을 읽고 본질을 고르는 큐레이터가 돼야 합니다.",
+      "summary": "앤트로픽 CPO 마이크 크리거는 코드의 90%를 AI가 씁니다. 남은 10%를 채우는 PM의 역량은 무엇인가. 맥락을 읽고 본질을 고르는 큐레이터가 돼야 합니다.",
       "roasting_quote": "AI는 계산하지만 인간은 망설입니다. 그 망설임 속에서 진짜 판단이 생깁니다. PM은 그 망설임을 끝까지 붙들어야 합니다.",
       "next_post": "survival/2025-05-20-generative-ai-effect-on-youth-employment.html"
     },

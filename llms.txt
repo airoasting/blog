@@ -168,7 +168,7 @@
 - 2025-05-25 [생존] AI 시대 교사의 역할 — /blog/survival/2025-05-25-teachers-role-in-ai-era.html
 - 2025-05-25 [기업] 중국이 자국 EV 1위 기업에 경고하고 있는 이유 — /blog/company/2025-05-25-why-china-is-warning-its-top-ev-company.html
 - 2025-05-20 [기술] 인간이 되려는 AI vs. 인간을 위한 AI — /blog/tech/2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans.html
-- 2025-05-20 [리더] 앤스로픽 CPO가 말하는 PM의 역량 — /blog/leader/2025-05-20-anthropic-cpo-on-pm-competencies.html
+- 2025-05-20 [리더] 앤트로픽 CPO가 말하는 PM의 역량 — /blog/leader/2025-05-20-anthropic-cpo-on-pm-competencies.html
 - 2025-05-20 [생존] 생성형 AI가 청년층 고용에 미치는 효과 — /blog/survival/2025-05-20-generative-ai-effect-on-youth-employment.html
 - 2025-05-20 [기업] OpenAI의 윈드서프 인수 무산 — /blog/company/2025-05-20-openai-windsurf-acquisition-falls-through.html
 - 2025-05-20 [기업] 스테이블 코인, 달러 패권의 비밀 병기 — /blog/company/2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony.html

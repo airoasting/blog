@@ -2,6 +2,11 @@
   "_comment": "수동 편집 가능. canonical: 표준명 → alias 배열. slugMap: 한국어 → 영문 slug (결정론적 캐시). blacklist: 개념 제외. domainKeywords: 우선 매칭.",
   "version": 1,
   "canonical": {
+    "앤트로픽": [
+      "앤쓰로픽",
+      "앤스로픽",
+      "엔쓰로픽"
+    ],
     "AI 에이전트": [
       "AI에이전트",
       "AI agent",
