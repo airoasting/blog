@@ -14,7 +14,6 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
-- 2026-06-22 [생존] AI는 일자리를 없애지 않고, 둘로 가릅니다 — /blog/survival/2026-06-22-pwc-ai-jobs-barometer-2026.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
 - 2026-06-18 [기술] 전문가가 포기한 희귀병, AI가 단서를 찾았습니다 — /blog/tech/2026-06-18-o3-rare-disease-reanalysis.html
@@ -23,6 +22,7 @@
 - 2026-06-16 [리서치] AI가 이 글을 썼을까, 다섯 분야를 추적했습니다 — /blog/research/2026-06-16-economist-ai-five-creative-fields.html
 - 2026-06-16 [리서치] AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다 — /blog/research/2026-06-16-claude-code-expertise.html
 - 2026-06-16 [리서치] ChatGPT 점유율, 처음으로 50% 밑으로 내려갔습니다 — /blog/research/2026-06-16-chatgpt-market-share-below-50.html
+- 2026-06-15 [생존] AI는 일자리를 없애지 않고, 둘로 가릅니다 — /blog/survival/2026-06-15-pwc-ai-jobs-barometer-2026.html
 - 2026-06-15 [리더] 나델라: 모델을 고르지 말고 학습 루프를 소유하세요 — /blog/leader/2026-06-15-satya-nadella-learning-loop-token-capital.html
 - 2026-06-15 [생존] 초지능엔 끄는 스위치가 없습니다 — /blog/survival/2026-06-15-intelligence-explosion-not-ready.html
 - 2026-06-12 [생존] AI가 못 하는 10%를 버리십시오 — /blog/survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html

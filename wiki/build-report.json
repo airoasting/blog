@@ -1,6 +1,6 @@
 {
-  "buildAt": "2026-06-22T04:24:34.910Z",
-  "duration": 0.239,
+  "buildAt": "2026-06-22T04:44:29.268Z",
+  "duration": 0.225,
   "concepts": {
     "total": 102,
     "validDefinitions": 90,
@@ -14,9 +14,9 @@
     "totalPosts": 222
   },
   "inject": {
-    "updated": 4,
-    "inserted": 1,
-    "unchanged": 187,
+    "updated": 0,
+    "inserted": 0,
+    "unchanged": 192,
     "skipped": 30
   },
   "needsManualReview": [

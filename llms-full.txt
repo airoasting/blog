@@ -5,7 +5,7 @@
 
 ## AI는 일자리를 없애지 않고, 둘로 가릅니다
 
-날짜: 2026-06-22
+날짜: 2026-06-15
 카테고리: 생존
 소스: PwC (2026 Global AI Jobs Barometer)
 원문: https://www.pwc.com/gx/en/issues/artificial-intelligence/job-barometer/2026/2026-global-ai-jobs-barometer-global-findings.pdf
