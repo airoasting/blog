@@ -97,6 +97,6 @@ GPT-5.5는 에이전트 코딩에서 현재 최고 성능입니다. 단 API 가�
 
 ## 참고자료
 
-- OpenAI. (2026, 4월). *Introducing GPT-5.5* [Article]. OpenAI. https://openai.com/index/introducing-gpt-5-5/
-- the-decoder. (2026, 4월). *OpenAI unveils GPT-5.5, claims a "new class of intelligence" at double the API price* [Article]. the-decoder. https://the-decoder.com/openai-unveils-gpt-5-5-claims-a-new-class-of-intelligence-at-double-the-api-price/
-- kingy.ai. (2026, 4월). *GPT-5.5 Is Here — And It's Playing a Whole New Game* [Article]. Kingy AI. https://kingy.ai/news/gpt-5-5-openai-features-benchmarks-pricing/
+- OpenAI. (2026, April). *Introducing GPT-5.5* [Article]. OpenAI. ([원문 보기 ↗](https://openai.com/index/introducing-gpt-5-5/))
+- the-decoder. (2026, April). *OpenAI unveils GPT-5.5, claims a "new class of intelligence" at double the API price* [Article]. the-decoder. ([원문 보기 ↗](https://the-decoder.com/openai-unveils-gpt-5-5-claims-a-new-class-of-intelligence-at-double-the-api-price/))
+- kingy.ai. (2026, April). *GPT-5.5 Is Here — And It's Playing a Whole New Game* [Article]. Kingy AI. ([원문 보기 ↗](https://kingy.ai/news/gpt-5-5-openai-features-benchmarks-pricing/))

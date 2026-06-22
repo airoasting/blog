@@ -109,7 +109,7 @@ TELUS의 Gina Narvaez 디렉터는 "팀원의 96%가 AI 도구 사용에 대한 
 - **임원**: 채용 계획에 '에이전트 오케스트레이터' 또는 'AI 참모장' 역할을 신설하십시오. 외부에서 뽑을 수 없다면 내부 승진·전환 트랙을 먼저 만드십시오. 이 역할의 존재 여부가 2026년 AI 성과 격차의 핵심 변수입니다.
 
 ## 참고자료
-- Google Cloud. (2026, April). *AI agent trends 2026: Five shifts that will redefine roles, workflows, and business value in 2026* [Report]. Google Cloud. https://services.google.com/fh/files/misc/google_cloud_ai_agent_trends_2026_report.pdf
-- Google Cloud. (2025). *The ROI of AI 2025: Insights from 3,466 enterprise decision-makers* [Research]. Google Cloud. https://cloud.google.com/resources/roi-of-ai-report
-- Google. (2025). *Beyond AI Optimism: Five ways to move your business from saving time to sparking innovation* [Article]. Google. https://cloud.google.com/resources/beyond-ai-optimism
+- Google Cloud. (2026, April). *AI agent trends 2026: Five shifts that will redefine roles, workflows, and business value in 2026* [Report]. Google Cloud. ([원문 보기 ↗](https://services.google.com/fh/files/misc/google_cloud_ai_agent_trends_2026_report.pdf))
+- Google Cloud. (2025). *The ROI of AI 2025: Insights from 3,466 enterprise decision-makers* [Research]. Google Cloud. ([원문 보기 ↗](https://cloud.google.com/resources/roi-of-ai-report))
+- Google. (2025). *Beyond AI Optimism: Five ways to move your business from saving time to sparking innovation* [Article]. Google. ([원문 보기 ↗](https://cloud.google.com/resources/beyond-ai-optimism))
 - Google / Ipsos. (2024, September-November). *Cloud Learning Services Market Pulse* [Survey, n=902]. Google Cloud.

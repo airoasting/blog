@@ -61,4 +61,4 @@ AI 시대에 조직이 채용해야 하는 것은 '이미 아는 사람'이 아�
 
 ## 참고자료
 
-- Boles, S. (2026, April). *What makes a good student?* [Article]. Harvard Gazette. [https://news.harvard.edu/gazette/story/2026/04/what-makes-a-good-student/](https://news.harvard.edu/gazette/story/2026/04/what-makes-a-good-student/)
+- Boles, S. (2026, April). *What makes a good student?* [Article]. Harvard Gazette. ([원문 보기 ↗](https://news.harvard.edu/gazette/story/2026/04/what-makes-a-good-student/))

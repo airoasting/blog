@@ -76,4 +76,4 @@ AI 모델 경쟁이 1위 자리 다툼으로 굳어지고 있습니다. 기업�
 
 ## 참고자료
 
-- Thomas, B. (2026, June). *Surpassing Frontier Performance with Fusion* [Article]. OpenRouter. https://openrouter.ai/blog/announcements/fusion-beats-frontier/
+- Thomas, B. (2026, June). *Surpassing Frontier Performance with Fusion* [Article]. OpenRouter. ([원문 보기 ↗](https://openrouter.ai/blog/announcements/fusion-beats-frontier/))

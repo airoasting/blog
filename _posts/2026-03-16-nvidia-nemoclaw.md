@@ -75,5 +75,5 @@ AI 에이전트 전략에서 보안은 부록이 아니라 첫 장입니다. 지
 
 ## 참고자료
 
-- Nvidia. (2026, March 16). "Nvidia announces NemoClaw." Nvidia Newsroom. https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw
-- Szkutak, R. (2026, March 16). "Nvidia's version of OpenClaw could solve its biggest problem: security." TechCrunch. https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/
+- Nvidia. (2026, March 16). *Nvidia announces NemoClaw* [Press release]. Nvidia Newsroom. ([원문 보기 ↗](https://nvidianews.nvidia.com/news/nvidia-announces-nemoclaw))
+- Szkutak, R. (2026, March 16). *Nvidia's version of OpenClaw could solve its biggest problem: security* [Article]. TechCrunch. ([원문 보기 ↗](https://techcrunch.com/2026/03/16/nvidias-version-of-openclaw-could-solve-its-biggest-problem-security/))

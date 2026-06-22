@@ -85,5 +85,5 @@ AI는 10배 빠른 실행을 제공합니다. 올바른 방향을 설정하는 �
 
 ## 참고자료
 
-- Schwartz, M. (2026, 3월). *Vibe Physics: The AI Grad Student* [Article]. Anthropic Research. https://www.anthropic.com/research/vibe-physics
-- Schwartz, M., & Collaborators. (2026). *Resummation of the C-parameter Sudakov shoulder at next-to-next-to-leading-logarithm* [Preprint]. arXiv. https://arxiv.org/abs/2601.02484
+- Schwartz, M. (2026, March). *Vibe Physics: The AI Grad Student* [Article]. Anthropic Research. ([원문 보기 ↗](https://www.anthropic.com/research/vibe-physics))
+- Schwartz, M., & Collaborators. (2026). *Resummation of the C-parameter Sudakov shoulder at next-to-next-to-leading-logarithm* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2601.02484))

@@ -76,5 +76,5 @@ AI 불안을 없애려 하지 말고, 불안한 채로 준비하게 만드는 �
 
 ## 참고자료
 
-- Roose, K., Newton, C., & Jones, W. (2026, May 22). *Sundar Pichai Understands Why People Are Anxious About A.I.* [Podcast transcript]. The New York Times. https://www.nytimes.com/2026/05/22/podcasts/sundar-pichai-understands-why-people-are-anxious-about-ai.html
-- Roose, K., Newton, C., & Jones, W. (2026, May 22). *Sundar Pichai on the A.I. Race, Agentic Coding and Future of Search* [Video, 28:43]. The New York Times. https://www.nytimes.com/video/podcasts/100000010920153/sundar-pichai-on-the-ai-race-agentic-coding-and-future-of-search.html
+- Roose, K., Newton, C., & Jones, W. (2026, May 22). *Sundar Pichai Understands Why People Are Anxious About A.I.* [Podcast transcript]. The New York Times. ([원문 보기 ↗](https://www.nytimes.com/2026/05/22/podcasts/sundar-pichai-understands-why-people-are-anxious-about-ai.html))
+- Roose, K., Newton, C., & Jones, W. (2026, May 22). *Sundar Pichai on the A.I. Race, Agentic Coding and Future of Search* [Video, 28:43]. The New York Times. ([원문 보기 ↗](https://www.nytimes.com/video/podcasts/100000010920153/sundar-pichai-on-the-ai-race-agentic-coding-and-future-of-search.html))

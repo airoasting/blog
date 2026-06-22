@@ -60,4 +60,4 @@ AI를 만드는 기업의 신뢰성을 검증하는 것도 AI 도입 전략의 �
 **임원**: AI 도입 의사결정 프로세스에 공급사 리스크 평가 단계를 추가합니다. 이사회 보고 시 AI 거버넌스 현황을 포함합니다.
 
 ## 참고자료
-- Farrow, R., Marantz, A. (2026, April). *Sam Altman May Control Our Future—Can He Be Trusted?* [Article]. The New Yorker. [https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted](https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted)
+- Farrow, R., Marantz, A. (2026, April). *Sam Altman May Control Our Future—Can He Be Trusted?* [Article]. The New Yorker. ([원문 보기 ↗](https://www.newyorker.com/magazine/2026/04/13/sam-altman-may-control-our-future-can-he-be-trusted))

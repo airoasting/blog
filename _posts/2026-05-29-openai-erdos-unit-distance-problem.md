@@ -90,6 +90,6 @@ AI가 인간이 80년간 포기하지 못한 문제를 포기하지 않고 풀�
 
 ## 참고자료
 
-- Cohen, B. (2026, May 29). *A Famous Math Problem Stumped Humans for 80 Years. AI Just Cracked It.* The Wall Street Journal. https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84
-- OpenAI. (2026, May). *An OpenAI model has disproved a central conjecture in discrete geometry* [Article]. OpenAI. https://openai.com/index/model-disproves-discrete-geometry-conjecture/
-- Gowers, T. et al. (2026, May). *Remarks on the disproof of the unit distance conjecture* [PDF]. OpenAI CDN. https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-remarks.pdf
+- Cohen, B. (2026, May 29). *A Famous Math Problem Stumped Humans for 80 Years. AI Just Cracked It.* The Wall Street Journal. ([원문 보기 ↗](https://www.wsj.com/tech/ai/ai-math-solves-erdos-problem-openai-c4029e84))
+- OpenAI. (2026, May). *An OpenAI model has disproved a central conjecture in discrete geometry* [Article]. OpenAI. ([원문 보기 ↗](https://openai.com/index/model-disproves-discrete-geometry-conjecture/))
+- Gowers, T. et al. (2026, May). *Remarks on the disproof of the unit distance conjecture* [PDF]. OpenAI CDN. ([원문 보기 ↗](https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-remarks.pdf))

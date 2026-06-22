@@ -203,4 +203,4 @@ AI로 혜택을 경험한 사람일수록 관련 리스크도 더 크게 인식�
 
 ## 참고자료
 
-Anthropic. "What 81,000 People Want from AI." Anthropic Features. 2026년 3월. https://www.anthropic.com/features/81k-interviews
+Anthropic. (2026, March). *What 81,000 People Want from AI* [Article]. Anthropic Features. ([원문 보기 ↗](https://www.anthropic.com/features/81k-interviews))

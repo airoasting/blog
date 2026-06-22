@@ -86,7 +86,7 @@ AI는 만드는 일을 흔하게 만들었습니다. 그래서 경쟁력은 양�
 
 ## 참고자료
 
-- The Economist. (2026, June). *Did AI write this article?* [Article]. The Economist. https://www.economist.com/graphic-detail/2026/06/16/did-ai-write-this-article
+- The Economist. (2026, June). *Did AI write this article?* [Article]. The Economist. ([원문 보기 ↗](https://www.economist.com/graphic-detail/2026/06/16/did-ai-write-this-article))
 - Reimers, I., & Waldfogel, J. (2026). *AI and the supply of e-books on Amazon* [Working paper]. Cornell University & University of Minnesota. (The Economist 재인용)
 - Shah, A., & Levy, J. (2026). *Pro se litigation and AI-assisted filings* [Working paper]. MIT & USC. (The Economist 재인용)
 - Deezer. (2026). *AI-generated music on streaming platforms* [Estimate]. Deezer. (The Economist 재인용)

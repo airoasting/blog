@@ -71,4 +71,4 @@ AI 공급자도 버그를 냅니다. 성능 기준선을 갖고, 이상을 빠�
 
 ## 참고자료
 
-- Anthropic. (2026, 4월). *An update on recent Claude Code quality reports* [Article]. Anthropic Engineering Blog. [https://www.anthropic.com/engineering/april-23-postmortem](https://www.anthropic.com/engineering/april-23-postmortem)
+- Anthropic. (2026, April). *An update on recent Claude Code quality reports* [Article]. Anthropic Engineering Blog. ([원문 보기 ↗](https://www.anthropic.com/engineering/april-23-postmortem))

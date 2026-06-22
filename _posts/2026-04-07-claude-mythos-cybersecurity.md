@@ -62,4 +62,4 @@ Anthropic의 발표를 그대로 받아들이기 전에 세 가지를 고려해�
 
 ## 참고자료
 
-- Roose, K. (2026, April 7). *Anthropic Claims Its New A.I. Model, Mythos, Is a Cybersecurity 'Reckoning'* [Article]. The New York Times. [https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html](https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html)
+- Roose, K. (2026, April 7). *Anthropic Claims Its New A.I. Model, Mythos, Is a Cybersecurity 'Reckoning'* [Article]. The New York Times. ([원문 보기 ↗](https://www.nytimes.com/2026/04/07/technology/anthropic-ai-claude-mythos-cybersecurity.html))

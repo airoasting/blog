@@ -93,4 +93,4 @@ AI는 일의 시작을 가속합니다. 그러나 완성의 병목과 도입 격
 
 ## 참고자료
 
-Lyttelton, T., Massenkoff, M., & Wilmers, N. (2026, May). *Coding Agents in the Social Sciences* [Article]. Anthropic. https://www.anthropic.com/research/coding-agents-social-sciences
+Lyttelton, T., Massenkoff, M., & Wilmers, N. (2026, May). *Coding Agents in the Social Sciences* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/coding-agents-social-sciences))

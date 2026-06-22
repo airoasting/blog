@@ -76,7 +76,7 @@ AI가 만든 콘텐츠는 이미 시스템 안에 있습니다. 선별하는 비
 
 ## 참고자료
 
-- Schaul, K. (2026, May 20). *These 5 charts show how ChatGPT is flooding our lives* [Article]. The Washington Post. [https://www.washingtonpost.com/technology/2026/05/20/data-shows-that-ai-slop-is-taking-over-books-lawsuits-music-science/](https://www.washingtonpost.com/technology/2026/05/20/data-shows-that-ai-slop-is-taking-over-books-lawsuits-music-science/)
+- Schaul, K. (2026, May 20). *These 5 charts show how ChatGPT is flooding our lives* [Article]. The Washington Post. ([원문 보기 ↗](https://www.washingtonpost.com/technology/2026/05/20/data-shows-that-ai-slop-is-taking-over-books-lawsuits-music-science/))
 - Waldfogel, J. 외. (2025). *AI and the market for e-books* [Research]. National Bureau of Economic Research.
 - Shah, A., & Levy, J. (2025). *AI and self-represented litigants in U.S. federal courts* [Research]. Massachusetts Institute of Technology / University of Southern California.
 - 저자 미상. (2025). *The Impact of AI-Generated Text on the Internet* [Research]. Imperial College London, Internet Archive, Stanford University.

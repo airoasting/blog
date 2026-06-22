@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-06-22 [생존] AI는 일자리를 없애지 않고, 둘로 가릅니다 — /blog/survival/2026-06-22-pwc-ai-jobs-barometer-2026.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
 - 2026-06-18 [기술] 전문가가 포기한 희귀병, AI가 단서를 찾았습니다 — /blog/tech/2026-06-18-o3-rare-disease-reanalysis.html

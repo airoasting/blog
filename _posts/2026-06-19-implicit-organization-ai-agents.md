@@ -60,4 +60,4 @@ AI로 이기는 회사는 에이전트가 모든 걸 보는 회사가 아닙니�
 
 ## 참고자료
 
-- Sudhir, K. (2026, 6월). *How to Design Agentic Systems Around the Implicit Rules that Govern Your Company* [Article]. Harvard Business Review. https://hbr.org/2026/06/how-to-design-agentic-systems-around-the-implicit-rules-that-govern-your-company
+- Sudhir, K. (2026, June). *How to Design Agentic Systems Around the Implicit Rules that Govern Your Company* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/06/how-to-design-agentic-systems-around-the-implicit-rules-that-govern-your-company))

@@ -87,4 +87,4 @@ AI가 AI를 설계하고 개선하는 시대가 시작됐습니다. 향후 AI �
 
 ## 참고자료
 
-- Xu, W., Mi, T., Liu, Y., Nan, Y., Zhou, Z., Ye, L., Zhang, L., Qiao, Y., & Liu, P. (2026, 3월). *ASI-Evolve: AI Accelerates AI* [Article]. arXiv. https://arxiv.org/abs/2603.29640
+- Xu, W., Mi, T., Liu, Y., Nan, Y., Zhou, Z., Ye, L., Zhang, L., Qiao, Y., & Liu, P. (2026, March). *ASI-Evolve: AI Accelerates AI* [Article]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2603.29640))

@@ -80,4 +80,4 @@ AI 검색의 약점은 모델이 아니라 연결의 부재인 경우가 많습�
 
 ## 참고자료
 
-- Qiao, S., Wei, Y., Fan, J., Wu, B., Zhang, B., Wang, M., Zhu, Y., Zhang, N., Ding, K., Zhang, Q., & Chen, H. (2026, May). *SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research* [Preprint]. arXiv. https://arxiv.org/abs/2605.22878
+- Qiao, S., Wei, Y., Fan, J., Wu, B., Zhang, B., Wang, M., Zhu, Y., Zhang, N., Ding, K., Zhang, Q., & Chen, H. (2026, May). *SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2605.22878))

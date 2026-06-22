@@ -72,5 +72,5 @@ AI의 판단은 성능이 아니라 학습 데이터가 결정합니다. AI를 �
 
 ## 참고자료
 
-- Cao, S., Wang, C.C.Y. & Xiang, Y. (2026). "When LLMs Go Abroad: Foreign Bias in AI Financial Predictions", Harvard Business School Working Paper.
-- Rand, B. (2026). "Competing LLMs Were Asked to Pick Stocks. Their Choices Revealed AI's Limitations.", Harvard Business Review, March 2026.
+- Cao, S., Wang, C. C. Y., & Xiang, Y. (2026). *When LLMs Go Abroad: Foreign Bias in AI Financial Predictions* [Working paper]. Harvard Business School.
+- Rand, B. (2026, March). *Competing LLMs Were Asked to Pick Stocks. Their Choices Revealed AI's Limitations* [Article]. Harvard Business Review.

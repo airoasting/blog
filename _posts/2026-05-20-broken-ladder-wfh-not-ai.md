@@ -75,7 +75,7 @@
 
 ## 참고자료
 
-- Lambert, P. J., & Schindler, Y. (2026, May). *The Broken Ladder: AI, Remote Work, and Early-Career Hiring* [Working paper]. SSRN. https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6787638
+- Lambert, P. J., & Schindler, Y. (2026, May). *The Broken Ladder: AI, Remote Work, and Early-Career Hiring* [Working paper]. SSRN. ([원문 보기 ↗](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6787638))
 - Hansen, S., Lambert, P. J., Bloom, N., Davis, S. J., Sadun, R., & Taska, B. (2023, March). *Remote Work across Jobs, Companies, and Space* [Working paper No. w31007]. National Bureau of Economic Research.
 - Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2024, June). GPTs are GPTs: Labor market impact potential of LLMs. *Science, 384*(6702), 1306-1308.
 - Brynjolfsson, E., Chandar, B., & Chen, R. (2025, November). *Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence* [Working paper]. Stanford Digital Economy Lab.

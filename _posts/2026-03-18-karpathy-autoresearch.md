@@ -63,4 +63,4 @@ AI 에이전트가 밤새 100회 실험을 자율 수행하는 시대입니다. 
 임원: R&D 조직의 실험 속도를 KPI로 측정하고 있는지 점검하라. 하룻밤 100회 실험이 가능한 시대에 주간 실험 횟수가 한 자릿수라면 구조적 문제다
 
 ## 참고자료
-Karpathy, A. "AutoResearch", GitHub Repository. March 2026. https://github.com/karpathy/autoresearch
+Karpathy, A. (2026, March). *AutoResearch* [Code repository]. GitHub. ([원문 보기 ↗](https://github.com/karpathy/autoresearch))

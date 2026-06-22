@@ -74,4 +74,4 @@ Bolt의 CEO Eric Simmons는 이 설계를 이렇게 평가했습니다. "복잡�
 
 ## 참고자료
 
-- Anthropic. (2026, 4월). *The Advisor Strategy: Give Agents an Intelligence Boost* [Article]. Claude Blog. https://claude.com/blog/the-advisor-strategy
+- Anthropic. (2026, April). *The Advisor Strategy: Give Agents an Intelligence Boost* [Article]. Claude Blog. ([원문 보기 ↗](https://claude.com/blog/the-advisor-strategy))

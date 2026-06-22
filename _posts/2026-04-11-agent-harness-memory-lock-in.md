@@ -53,4 +53,4 @@ AI 에이전트를 운영하는 조직이라면 이 질문을 해야 합니다. 
 AI 에이전트가 쌓는 기억이 진짜 자산입니다. 클로즈드 하네스를 쓰면 그 자산이 공급자 것이 됩니다.
 
 ## 참고자료
-- Chase, H. (2026, 4월). *Your harness, your memory* [Article]. X. https://x.com/hwchase17/status/2042978500567609738
+- Chase, H. (2026, April). *Your harness, your memory* [Article]. X. ([원문 보기 ↗](https://x.com/hwchase17/status/2042978500567609738))

@@ -92,5 +92,5 @@ OpenClaw는 오픈소스입니다. 초기 설정에 개발자 기반 지식이 �
 
 ## 참고자료
 
-- Fridman, L. (2026, February 12). *OpenClaw: The Viral AI Agent that Broke the Internet – Peter Steinberger* [Video]. YouTube. https://www.youtube.com/watch?v=YFjfBk8HI5o
-- Fridman, L. (2026, February 12). *#491 – OpenClaw: The Viral AI Agent that Broke the Internet – Peter Steinberger* [Podcast]. Lex Fridman Podcast. https://lexfridman.com/peter-steinberger/
+- Fridman, L. (2026, February 12). *OpenClaw: The Viral AI Agent that Broke the Internet – Peter Steinberger* [Video]. YouTube. ([원문 보기 ↗](https://www.youtube.com/watch?v=YFjfBk8HI5o))
+- Fridman, L. (2026, February 12). *#491 – OpenClaw: The Viral AI Agent that Broke the Internet – Peter Steinberger* [Podcast]. Lex Fridman Podcast. ([원문 보기 ↗](https://lexfridman.com/peter-steinberger/))

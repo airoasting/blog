@@ -62,6 +62,6 @@ AI는 효율 단계에 들어섰지만 생산성 단계로는 아직 넘어가�
 
 ## 참고자료
 
-- 서동현, 오삼일, 윤종원. (2026, 6월). AI 도입은 생산성을 높이는가? 초기 3년의 효과 분석 [Issue Note]. 한국은행 BOK 이슈노트 제2026-12호.
-- Pereira, E., Graylin, A. W., & Brynjolfsson, E. (2026). The enterprise AI playbook: Lessons from 51 successful deployments. Stanford Digital Economy Lab.
-- Chen, Y. J., Gong, J., Li, J., & Zhao, Z. (2025). Better technology, worse motivation: GenAI's mediocrity trap [Working paper].
+- 서동현, 오삼일, 윤종원. (2026, June). *AI 도입은 생산성을 높이는가? 초기 3년의 효과 분석* [Issue Note]. 한국은행 BOK 이슈노트 제2026-12호.
+- Pereira, E., Graylin, A. W., & Brynjolfsson, E. (2026). *The enterprise AI playbook: Lessons from 51 successful deployments* [Report]. Stanford Digital Economy Lab.
+- Chen, Y. J., Gong, J., Li, J., & Zhao, Z. (2025). *Better technology, worse motivation: GenAI's mediocrity trap* [Working paper].

@@ -55,7 +55,8 @@
 - [ ] em dash(—) 사용이 없는가?
 - [ ] 컨텍스트 섹션이 5문장 이하인가?
 - [ ] 모든 문단이 3~5문장인가? (초과 시 분리)
-- [ ] 참고자료가 APA 형식인가? (연도+월, [Video/Article], URL 전문)
+- [ ] 참고자료가 APA 형식인가? (영어 날짜 `(2026, June)`, [Article], 노출 URL/도메인 없이 인용문 끝 `(원문 보기 ↗)` 링크)
+- [ ] 참고자료 아래 별도 `원문 보기 →` CTA 버튼이 없는가? (원문 링크는 참고자료 항목으로 일원화)
 - [ ] Roasting quote가 4곳 동기화되었는가? (blockquote, data 속성, JS 상수, posts-index.json)
 - [ ] 비즈니스 비용 섹션이 빈 "[해당 없음]"으로 존재하지 않는가? (없으면 생략)
 
@@ -117,7 +118,7 @@
 
 # Roasting 동기화 (blockquote, data-roasting-quote, ROASTING_QUOTE, posts-index.json 4곳 일치 확인)
 
-# 참고자료 형식 ("영상 보기" 같은 축약 링크 텍스트 검출, URL 전문으로 교체)
+# 참고자료 형식 (노출 URL/도메인 링크 텍스트·한국어 월 `N월` 검출 → 인용문 끝 `(원문 보기 ↗)` + 영어 날짜로 교체, 별도 `원문 보기 →` CTA 버튼 검출 시 제거)
 
 # 빈 비즈니스 비용 섹션 ([비즈니스 비용: 해당 없음] 텍스트 검출, 있으면 섹션 삭제)
 
@@ -194,7 +195,7 @@
 | `<div class="action-step">` | `1. **{action-num 텍스트}.** {action-body 텍스트}` |
 | `<div class="decision-point">` | `**{decision-role 텍스트}**: {설명}` |
 | `<table>` (인라인 스타일) | 마크다운 테이블 (모든 인라인 스타일 제거) |
-| `<ul class="references-list">` | `- 저자. (연도, 월). *제목*...` |
+| `<ul class="references-list">` | `- 저자. (2026, June). *제목* [Article]. 플랫폼. ([원문 보기 ↗](URL))` |
 | `<a href="..." target="_blank">` | `[텍스트](URL)` |
 | `<img src="..." alt="...">` | `![alt](src)` |
 | `<div class="prompt-block">` | 코드 블록 (``` 감싸기) |

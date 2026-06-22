@@ -79,5 +79,5 @@
 
 ## 참고자료
 
-- Ilie, M., Freeman, C. D., & Troy, K. K. (2026, June). *Project Fetch: Phase Two* [Article]. Anthropic. https://www.anthropic.com/research/project-fetch-phase-two
-- Anthropic. (2025, August). *Project Fetch* [Article]. Anthropic. https://www.anthropic.com/research/project-fetch
+- Ilie, M., Freeman, C. D., & Troy, K. K. (2026, June). *Project Fetch: Phase Two* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/project-fetch-phase-two))
+- Anthropic. (2025, August). *Project Fetch* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/project-fetch))

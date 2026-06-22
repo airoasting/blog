@@ -81,4 +81,4 @@ AI가 문서에서 스스로 전문 기술을 추출하는 접근법이 등장�
 
 ## 참고자료
 
-- Si, S., Zhao, H., Lei, Y., Wang, Q., 외 5인. (2026, 4월). *From Context to Skills: Can Language Models Learn from Context Skillfully?* [Preprint]. arXiv. [https://arxiv.org/abs/2604.27660](https://arxiv.org/abs/2604.27660)
+- Si, S., Zhao, H., Lei, Y., Wang, Q., 외 5인. (2026, April). *From Context to Skills: Can Language Models Learn from Context Skillfully?* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2604.27660))

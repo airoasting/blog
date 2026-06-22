@@ -53,5 +53,5 @@ UC버클리는 경량 어드바이저 하나로 이를 증명했습니다.
 AI를 바꾸지 않고 AI를 조종하는 중간 레이어가 등장했습니다.
 
 ## 참고자료
-- Asawa, P., Zhu, A., Zaharia, M., Dimakis, A. G., & Gonzalez, J. E. (2025, 10월). *How to Train Your Advisor: Steering Black-Box LLMs with Advisor Models* [Preprint]. arXiv. https://arxiv.org/abs/2510.02453
-- Asawa, P., Zhu, A., Zaharia, M., Dimakis, A. G., & Gonzalez, J. E. (2025, 10월). *Advisor Models Code Repository* [Software]. GitHub. https://github.com/az1326/advisor-models
+- Asawa, P., Zhu, A., Zaharia, M., Dimakis, A. G., & Gonzalez, J. E. (2025, October). *How to Train Your Advisor: Steering Black-Box LLMs with Advisor Models* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2510.02453))
+- Asawa, P., Zhu, A., Zaharia, M., Dimakis, A. G., & Gonzalez, J. E. (2025, October). *Advisor Models Code Repository* [Software]. GitHub. ([원문 보기 ↗](https://github.com/az1326/advisor-models))

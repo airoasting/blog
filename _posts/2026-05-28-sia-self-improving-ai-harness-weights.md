@@ -84,5 +84,5 @@ AI를 잘 쓰는 조직은 프롬프트 엔지니어링과 파인튜닝 중 하�
 
 ## 참고자료
 
-- Hebbar, P., Manawat, Y., Verboomen, S., Ivanova, A., Palanimalai, S., Bhatia, K., & Baskaran, V. (2026, May). *SIA: Self Improving AI with Harness & Weight Updates* [Preprint]. arXiv:2605.27276v2. https://arxiv.org/abs/2605.27276
-- Hebbar, P. et al. (2026, May). *SIA HTML version (v2)* [Web]. arXiv. https://arxiv.org/html/2605.27276v2
+- Hebbar, P., Manawat, Y., Verboomen, S., Ivanova, A., Palanimalai, S., Bhatia, K., & Baskaran, V. (2026, May). *SIA: Self Improving AI with Harness & Weight Updates* [Preprint]. arXiv:2605.27276v2. ([원문 보기 ↗](https://arxiv.org/abs/2605.27276))
+- Hebbar, P. et al. (2026, May). *SIA HTML version (v2)* [Web]. arXiv. ([원문 보기 ↗](https://arxiv.org/html/2605.27276v2))

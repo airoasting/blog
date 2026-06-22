@@ -67,4 +67,4 @@ AI 성과 도구를 더 빠른 서술 생성기로 쓰면, 기존 평가의 문�
 
 ## 참고자료
 
-- Dellarocas, C. (2026, May 15). *Gen AI could fix performance reviews, or make them even worse* [Article]. Harvard Business Review. [https://hbr.org/2026/05/gen-ai-could-fix-performance-reviews-or-make-them-even-worse](https://hbr.org/2026/05/gen-ai-could-fix-performance-reviews-or-make-them-even-worse)
+- Dellarocas, C. (2026, May 15). *Gen AI could fix performance reviews, or make them even worse* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/05/gen-ai-could-fix-performance-reviews-or-make-them-even-worse))

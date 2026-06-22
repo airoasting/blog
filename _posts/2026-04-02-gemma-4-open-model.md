@@ -85,4 +85,4 @@ Gemma 4는 오픈 모델의 성능 기준을 바꿨습니다. 자체 서버에�
 
 ## 참고자료
 
-- Farabet, C. & Lacombe, O. (2026, 4월). *Gemma 4: Byte for byte, the most capable open models* [Article]. Google Blog. [https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/)
+- Farabet, C. & Lacombe, O. (2026, April). *Gemma 4: Byte for byte, the most capable open models* [Article]. Google Blog. ([원문 보기 ↗](https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/))

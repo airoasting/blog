@@ -76,5 +76,5 @@ AI를 채팅창이 아닌 복리 시스템으로 구축하는 것이 다음 5년
 
 ## 참고자료
 
-- Tan, G. (2026, May). *Meta-Meta-Prompting: The Secret to Making AI Agents Work* [Article]. X. https://x.com/garrytan/status/2053127519872614419
-- gregorein. (2026, April). *I audited Garry's website after he bragged about 37K LOC/day* [Article]. X. https://x.com/Gregorein/status/2038953944475472316
+- Tan, G. (2026, May). *Meta-Meta-Prompting: The Secret to Making AI Agents Work* [Article]. X. ([원문 보기 ↗](https://x.com/garrytan/status/2053127519872614419))
+- gregorein. (2026, April). *I audited Garry's website after he bragged about 37K LOC/day* [Article]. X. ([원문 보기 ↗](https://x.com/Gregorein/status/2038953944475472316))

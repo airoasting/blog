@@ -95,4 +95,4 @@ AI 에이전트의 영어 점수는 한국어 성능을 보장하지 않습니�
 
 ## 참고자료
 
-- Lee, N., Yoon, D., Son, G., 외. (2026, June). *K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts* [Preprint]. arXiv. https://arxiv.org/abs/2606.02404
+- Lee, N., Yoon, D., Son, G., 외. (2026, June). *K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2606.02404))

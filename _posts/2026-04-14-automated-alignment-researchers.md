@@ -80,6 +80,6 @@ AI가 AI를 연구하는 시대가 열렸습니다. 병목은 아이디어가 �
 - **임원**: AI 자동화 성과를 "산출물 수"가 아니라 "검증된 개선 수"로 KPI를 설정하십시오.
 
 ## 참고자료
-- Wen, J., Qiu, L., Benton, J., Kirchner, J. H., & Leike, J. (2026, April). *Automated Alignment Researchers: Using large language models to scale scalable oversight* [Research Article]. Anthropic. https://www.anthropic.com/research/automated-alignment-researchers
-- Wen, J., Qiu, L., Benton, J., Kirchner, J. H., & Leike, J. (2026, April). *Automated weak-to-strong researcher* [Full Research Report]. Anthropic Alignment Science. https://alignment.anthropic.com/2026/automated-w2s-researcher/
-- safety-research. (2026). *automated-w2s-research* [Code Repository]. GitHub. https://github.com/safety-research/automated-w2s-research
+- Wen, J., Qiu, L., Benton, J., Kirchner, J. H., & Leike, J. (2026, April). *Automated Alignment Researchers: Using large language models to scale scalable oversight* [Research Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/automated-alignment-researchers))
+- Wen, J., Qiu, L., Benton, J., Kirchner, J. H., & Leike, J. (2026, April). *Automated weak-to-strong researcher* [Full Research Report]. Anthropic Alignment Science. ([원문 보기 ↗](https://alignment.anthropic.com/2026/automated-w2s-researcher/))
+- safety-research. (2026). *automated-w2s-research* [Code Repository]. GitHub. ([원문 보기 ↗](https://github.com/safety-research/automated-w2s-research))

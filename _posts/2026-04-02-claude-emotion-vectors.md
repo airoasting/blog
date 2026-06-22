@@ -117,5 +117,5 @@ AI의 내부 상태가 결정을 바꿉니다. 안전한 AI 운영은 출력 검
 
 ## 참고자료
 
-- Anthropic Interpretability Team. (2026, April). *Emotion concepts and their function in a large language model* [Research]. Transformer Circuits Thread. https://transformer-circuits.pub/2026/emotions/index.html
-- Anthropic. (2026, April). *Emotion concepts and their function in a large language model* [Article]. Anthropic Research. https://www.anthropic.com/research/emotion-concepts-function
+- Anthropic Interpretability Team. (2026, April). *Emotion concepts and their function in a large language model* [Research]. Transformer Circuits Thread. ([원문 보기 ↗](https://transformer-circuits.pub/2026/emotions/index.html))
+- Anthropic. (2026, April). *Emotion concepts and their function in a large language model* [Article]. Anthropic Research. ([원문 보기 ↗](https://www.anthropic.com/research/emotion-concepts-function))

@@ -89,6 +89,6 @@ AI를 끌어올린 것은 새 모델이 아니라, 사람의 수정을 자산으
 
 ## 참고자료
 
-- OpenAI. (2026, May). *Building self-improving tax agents with Codex* [Article]. OpenAI. https://openai.com/index/building-self-improving-tax-agents-with-codex/
-- StartupHub.ai. (2026, May). *OpenAI's Codex Powers Self-Improving Tax Software* [Article]. StartupHub.ai. https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-s-codex-powers-self-improving-tax-software
-- Crypto Briefing. (2026, May). *OpenAI and Thrive develop self-improving tax AI with 97% accuracy* [Article]. Crypto Briefing. https://cryptobriefing.com/openai-thrive-self-improving-tax-ai/
+- OpenAI. (2026, May). *Building self-improving tax agents with Codex* [Article]. OpenAI. ([원문 보기 ↗](https://openai.com/index/building-self-improving-tax-agents-with-codex/))
+- StartupHub.ai. (2026, May). *OpenAI's Codex Powers Self-Improving Tax Software* [Article]. StartupHub.ai. ([원문 보기 ↗](https://www.startuphub.ai/ai-news/artificial-intelligence/2026/openai-s-codex-powers-self-improving-tax-software))
+- Crypto Briefing. (2026, May). *OpenAI and Thrive develop self-improving tax AI with 97% accuracy* [Article]. Crypto Briefing. ([원문 보기 ↗](https://cryptobriefing.com/openai-thrive-self-improving-tax-ai/))

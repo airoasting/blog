@@ -72,4 +72,4 @@ Claude Code의 설계 의도를 알면 지시 방식이 바뀝니다. CLAUDE.md�
 
 ## 참고자료
 
-- MindStudio Team. (2026, 4월). *Claude Code Source Code Leak: 8 Hidden Features You Can Use Right Now* [Blog post]. MindStudio. https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features
+- MindStudio Team. (2026, April). *Claude Code Source Code Leak: 8 Hidden Features You Can Use Right Now* [Blog post]. MindStudio. ([원문 보기 ↗](https://www.mindstudio.ai/blog/claude-code-source-code-leak-8-hidden-features))

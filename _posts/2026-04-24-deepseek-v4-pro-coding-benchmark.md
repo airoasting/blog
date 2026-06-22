@@ -84,6 +84,6 @@ AI 비용을 줄이고 싶은 조직이라면 지금 바로 읽어야 합니다.
 
 ## 참고자료
 
-- DeepSeek. (2026, 4월). *DeepSeek-V4-Pro* [Article]. HuggingFace. https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
-- OfficeChai. (2026, 4월). *DeepSeek Releases DeepSeek V4-Pro & V4-Flash* [Article]. OfficeChai. https://officechai.com/ai/deepseek-v4-pro-deepseek-v4-flash-benchmarks-pricing/
-- buildfastwithai.com. (2026, 4월). *DeepSeek V4-Pro Review: Benchmarks, Pricing & Architecture* [Article]. buildfastwithai.com. https://www.buildfastwithai.com/blogs/deepseek-v4-pro-review-2026
+- DeepSeek. (2026, April). *DeepSeek-V4-Pro* [Article]. HuggingFace. ([원문 보기 ↗](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro))
+- OfficeChai. (2026, April). *DeepSeek Releases DeepSeek V4-Pro & V4-Flash* [Article]. OfficeChai. ([원문 보기 ↗](https://officechai.com/ai/deepseek-v4-pro-deepseek-v4-flash-benchmarks-pricing/))
+- buildfastwithai.com. (2026, April). *DeepSeek V4-Pro Review: Benchmarks, Pricing & Architecture* [Article]. buildfastwithai.com. ([원문 보기 ↗](https://www.buildfastwithai.com/blogs/deepseek-v4-pro-review-2026))

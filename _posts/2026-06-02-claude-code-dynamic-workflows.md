@@ -79,4 +79,4 @@ AI도 똑같습니다. 한 창에서 복잡한 일을 오래 시키면 사람과
 
 ## 참고자료
 
-- Shihipar, T., & Bidasaria, S. (2026, June). *A harness for every task: dynamic workflows in Claude Code* [Article]. Anthropic. https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code
+- Shihipar, T., & Bidasaria, S. (2026, June). *A harness for every task: dynamic workflows in Claude Code* [Article]. Anthropic. ([원문 보기 ↗](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code))

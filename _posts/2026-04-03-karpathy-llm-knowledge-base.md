@@ -86,4 +86,4 @@ raw 데이터를 수집하면 LLM이 .md 위키로 자동 컴파일하고, 질�
 
 ## 참고자료
 
-Karpathy, A. (2026, April). *LLM Knowledge Bases* [Post]. X (Twitter). https://x.com/karpathy/status/2039805659525644595
+Karpathy, A. (2026, April). *LLM Knowledge Bases* [Post]. X (Twitter). ([원문 보기 ↗](https://x.com/karpathy/status/2039805659525644595))

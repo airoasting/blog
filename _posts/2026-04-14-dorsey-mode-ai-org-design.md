@@ -72,4 +72,4 @@ AI는 조직 안에서 정보를 운반하는 역할을 맡기 시작했습니�
 
 ## 참고자료
 
-- Educated Guess. (2026, April). *Dorsey Mode: Why Tech's Most Misunderstood CEO is Right Again* [Article]. Educated Guesser (Substack). [https://educatedguesser.substack.com/p/dorsey-mode-why-techs-most-misunderstood](https://educatedguesser.substack.com/p/dorsey-mode-why-techs-most-misunderstood)
+- Educated Guess. (2026, April). *Dorsey Mode: Why Tech's Most Misunderstood CEO is Right Again* [Article]. Educated Guesser (Substack). ([원문 보기 ↗](https://educatedguesser.substack.com/p/dorsey-mode-why-techs-most-misunderstood))

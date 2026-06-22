@@ -79,4 +79,4 @@ AI 도입의 자랑거리는 '얼마나 많이 쓰는가'였습니다. 이제 �
 
 ## 참고자료
 
-- John, J., Rosner-Uddin, R., & McMorrow, R. (2026, 6월). *'We created a monster': companies rein in AI usage as costs strain budgets* [Article]. Financial Times. https://www.ft.com/content/1d37cc08-e0aa-45a4-a45d-4ad282529314
+- John, J., Rosner-Uddin, R., & McMorrow, R. (2026, June). *'We created a monster': companies rein in AI usage as costs strain budgets* [Article]. Financial Times. ([원문 보기 ↗](https://www.ft.com/content/1d37cc08-e0aa-45a4-a45d-4ad282529314))

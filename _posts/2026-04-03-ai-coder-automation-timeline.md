@@ -95,4 +95,4 @@ AI Futures Project 연구진이 2026년 4월, 예측 타임라인을 다시 수�
 
 ## 참고자료
 
-Kokotajlo, D., Lifland, E., & Halstead, B. (2026, April). *Q1 2026 Timelines Update* [Article]. AI Futures Project. https://blog.aifutures.org/p/q1-2026-timelines-update
+Kokotajlo, D., Lifland, E., & Halstead, B. (2026, April). *Q1 2026 Timelines Update* [Article]. AI Futures Project. ([원문 보기 ↗](https://blog.aifutures.org/p/q1-2026-timelines-update))

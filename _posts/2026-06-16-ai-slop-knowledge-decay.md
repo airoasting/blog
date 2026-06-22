@@ -60,4 +60,4 @@
 
 ## 참고자료
 
-- Holweg, M., & Davenport, T. H. (2026, 6월). *Don't Let AI Slop Muck Up Your Company's Processes* [Article]. Harvard Business Review. https://hbr.org/2026/06/dont-let-ai-slop-muck-up-your-companys-processes
+- Holweg, M., & Davenport, T. H. (2026, June). *Don't Let AI Slop Muck Up Your Company's Processes* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/06/dont-let-ai-slop-muck-up-your-companys-processes))

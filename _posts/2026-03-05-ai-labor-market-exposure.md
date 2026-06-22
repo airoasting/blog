@@ -67,6 +67,6 @@ AI는 아직 이론만큼 현실을 바꾸지 못하고 있습니다. 그러나 
 
 ## 참고자료
 
-- Massenkoff, M. & McCrory, P. (2026). "Labor market impacts of AI: A new measure and early evidence", Anthropic Research, March 2026.
-- Eloundou, T., Manning, S., Mishkin, P. & Rock, D. (2023). "GPTs are GPTs: An early look at the labor market impact potential of large language models", OpenAI Working Paper.
-- Brynjolfsson, E. et al. (2025). AI employment effects by age group, ADP payroll data analysis.
+- Massenkoff, M., & McCrory, P. (2026, March). *Labor market impacts of AI: A new measure and early evidence* [Research]. Anthropic Research.
+- Eloundou, T., Manning, S., Mishkin, P., & Rock, D. (2023). *GPTs are GPTs: An early look at the labor market impact potential of large language models* [Working paper]. OpenAI.
+- Brynjolfsson, E., et al. (2025). *AI employment effects by age group* [ADP payroll data analysis].

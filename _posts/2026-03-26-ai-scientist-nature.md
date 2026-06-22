@@ -68,5 +68,5 @@ AI가 ML 논문을 혼자 쓰고 피어리뷰를 통과했습니다. 연구 자�
 
 ## 참고자료
 
-- Lu, C., Lu, C., Lange, R. T., Foerster, J., Clune, J., & Ha, D. (2026, 3월). *The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery* [Article]. Nature. https://www.nature.com/articles/s41586-026-10265-5
-- Sakana AI. (2026, 3월). *The AI Scientist: Nature Publication* [Blog post]. Sakana AI. https://sakana.ai/ai-scientist-nature/
+- Lu, C., Lu, C., Lange, R. T., Foerster, J., Clune, J., & Ha, D. (2026, March). *The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery* [Article]. Nature. ([원문 보기 ↗](https://www.nature.com/articles/s41586-026-10265-5))
+- Sakana AI. (2026, March). *The AI Scientist: Nature Publication* [Blog post]. Sakana AI. ([원문 보기 ↗](https://sakana.ai/ai-scientist-nature/))

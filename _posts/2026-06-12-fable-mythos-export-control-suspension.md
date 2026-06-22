@@ -58,4 +58,4 @@
 
 ## 참고자료
 
-- Anthropic. (2026, 6월). *Statement on US Government Directive Regarding Fable 5 and Mythos 5* [Statement]. Anthropic. https://www.anthropic.com/news/fable-mythos-access
+- Anthropic. (2026, June). *Statement on US Government Directive Regarding Fable 5 and Mythos 5* [Statement]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/news/fable-mythos-access))

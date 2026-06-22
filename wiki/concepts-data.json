@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-21T10:10:07.136Z",
+  "generatedAt": "2026-06-22T04:24:34.910Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 100,
-    "totalRelationships": 270,
-    "totalPosts": 221,
+    "totalConcepts": 102,
+    "totalRelationships": 271,
+    "totalPosts": 222,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -823,6 +823,30 @@
       "needs_manual_review": false
     },
     {
+      "id": "생산성",
+      "slug": "생산성",
+      "name": "생산성",
+      "aliases": [],
+      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
+      "frequency": 9,
+      "category": "research",
+      "posts": [
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2025-09-22-workslop",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-06-16-economist-ai-five-creative-fields",
+        "2026-06-22-pwc-ai-jobs-barometer-2026",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-01-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai-safety",
       "slug": "ai-safety",
       "name": "AI 안전",
@@ -847,29 +871,6 @@
       "newsletters": [],
       "firstSeen": "2024-11-01",
       "lastSeen": "2026-06-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "생산성",
-      "slug": "생산성",
-      "name": "생산성",
-      "aliases": [],
-      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
-      "frequency": 8,
-      "category": "research",
-      "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2025-09-22-workslop",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2026-05-27-ai-fomo-mastering-illusion",
-        "2026-06-16-economist-ai-five-creative-fields",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-01-16",
       "needs_manual_review": false
     },
     {
@@ -2081,6 +2082,42 @@
       "needs_manual_review": true
     },
     {
+      "id": "신입채용",
+      "slug": "신입채용",
+      "name": "신입채용",
+      "aliases": [],
+      "definition": "신입채용는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "survival",
+      "posts": [
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-22-pwc-ai-jobs-barometer-2026",
+        "2025-05-20-generative-ai-effect-on-youth-employment"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2025-05-20",
+      "needs_manual_review": true
+    },
+    {
+      "id": "ai일자리",
+      "slug": "ai일자리",
+      "name": "AI일자리",
+      "aliases": [],
+      "definition": "AI일자리는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "survival",
+      "posts": [
+        "2026-06-01-cs-degree-glut-ai-erodes-value",
+        "2026-06-22-pwc-ai-jobs-barometer-2026",
+        "2025-05-10-will-ai-really-replace-our-work"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2026-06-01",
+      "needs_manual_review": true
+    },
+    {
       "id": "업무재설계",
       "slug": "업무재설계",
       "name": "업무재설계",
@@ -2464,13 +2501,13 @@
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
-      "strength": 3
+      "target": "생산성",
+      "strength": 2
     },
     {
       "source": "LLM",
-      "target": "생산성",
-      "strength": 2
+      "target": "AI 안전",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -3454,12 +3491,12 @@
     },
     {
       "source": "KPI",
-      "target": "AI 안전",
+      "target": "생산성",
       "strength": 2
     },
     {
       "source": "KPI",
-      "target": "생산성",
+      "target": "AI 안전",
       "strength": 2
     },
     {
@@ -3563,6 +3600,11 @@
       "strength": 2
     },
     {
+      "source": "생산성",
+      "target": "AI전환",
+      "strength": 2
+    },
+    {
       "source": "AI 안전",
       "target": "AI규제",
       "strength": 2
@@ -3570,11 +3612,6 @@
     {
       "source": "AI 안전",
       "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
-      "source": "생산성",
-      "target": "AI전환",
       "strength": 2
     },
     {
@@ -3665,6 +3702,11 @@
     {
       "source": "노동시장",
       "target": "GPTs",
+      "strength": 2
+    },
+    {
+      "source": "노동시장",
+      "target": "신입채용",
       "strength": 2
     },
     {

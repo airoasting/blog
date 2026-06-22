@@ -80,4 +80,4 @@
 
 ## 참고자료
 
-- Zhao, M., Yang, Y., Peng, C., Gonsalves, R., Li, W., Yang, R., Liu, Z., & Wang, M. (2026, 4월). *Do Emotions in Prompts Matter? Effects of Emotional Framing on Large Language Models* [Article]. arXiv. https://arxiv.org/abs/2604.02236
+- Zhao, M., Yang, Y., Peng, C., Gonsalves, R., Li, W., Yang, R., Liu, Z., & Wang, M. (2026, April). *Do Emotions in Prompts Matter? Effects of Emotional Framing on Large Language Models* [Article]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2604.02236))

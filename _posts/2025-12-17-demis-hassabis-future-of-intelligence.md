@@ -65,4 +65,4 @@ AGI까지의 거리는 스케일링만으로 좁혀지지 않습니다. 월드 �
 - **임원**: AI 투자에서 스케일링과 혁신의 비율을 명시적으로 설정하라. 100% 벤더 의존은 전략이 아니라 관성이다
 
 ## 참고자료
-- Hassabis, D. & Fry, H. (2025, December 17). "The future of intelligence." Google DeepMind: The Podcast. https://www.youtube.com/watch?v=PqVbypvxDto
+- Hassabis, D., & Fry, H. (2025, December 17). *The future of intelligence* [Podcast]. Google DeepMind: The Podcast. ([원문 보기 ↗](https://www.youtube.com/watch?v=PqVbypvxDto))

@@ -84,5 +84,5 @@ AI 경쟁의 지형이 바뀌고 있습니다. 미국과 중국의 최정상 모
 - **TSMC**: 대만 반도체 제조 기업(Taiwan Semiconductor Manufacturing Company)입니다. 현재 대부분의 주요 AI 칩을 이 단일 파운드리에서 생산합니다.
 
 ## 참고자료
-- Stanford HAI. (2026, 4월 13일). *Inside the AI Index: 12 Takeaways from the 2026 Report* [Article]. Stanford HAI. https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report
-- Stanford HAI. (2026). *The 2026 AI Index Report* [Report]. Stanford University Human-Centered Artificial Intelligence. https://hai.stanford.edu/ai-index/2026-ai-index-report
+- Stanford HAI. (2026, April 13). *Inside the AI Index: 12 Takeaways from the 2026 Report* [Article]. Stanford HAI. ([원문 보기 ↗](https://hai.stanford.edu/news/inside-the-ai-index-12-takeaways-from-the-2026-report))
+- Stanford HAI. (2026). *The 2026 AI Index Report* [Report]. Stanford University Human-Centered Artificial Intelligence. ([원문 보기 ↗](https://hai.stanford.edu/ai-index/2026-ai-index-report))

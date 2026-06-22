@@ -65,4 +65,4 @@ AI를 못 따라잡는 게 문제가 아닙니다. 따라잡으려다 본업을 
 
 ## 참고자료
 
-- Chen, Z.-R. (2026, May). *AI FOMO: everyone is mastering AI except me — or are they?* [Career Column]. Nature. https://www.nature.com/articles/d41586-026-01214-3
+- Chen, Z.-R. (2026, May). *AI FOMO: everyone is mastering AI except me — or are they?* [Career Column]. Nature. ([원문 보기 ↗](https://www.nature.com/articles/d41586-026-01214-3))

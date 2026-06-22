@@ -85,4 +85,4 @@ AI에게 인생 조언을 구할 때, 솔직한 답을 얻으려면 솔직한 �
 
 ## 참고자료
 
-- Shen, J. H., 외 32인. (2026, April). *How People Ask Claude for Personal Guidance* [Research]. Anthropic. [https://www.anthropic.com/research/claude-personal-guidance](https://www.anthropic.com/research/claude-personal-guidance)
+- Shen, J. H., 외 32인. (2026, April). *How People Ask Claude for Personal Guidance* [Research]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/claude-personal-guidance))

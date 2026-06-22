@@ -91,4 +91,4 @@ AI 에이전트에게 웹을 맡기기 전에, 그 웹이 에이전트를 속이
 
 ## 참고자료
 
-- Franklin, M., Tomašev, N., Jacobs, J., Leibo, J. Z., & Osindero, S. (2026, 3월). *AI Agent Traps* [Article]. SSRN (Google DeepMind). [https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438)
+- Franklin, M., Tomašev, N., Jacobs, J., Leibo, J. Z., & Osindero, S. (2026, March). *AI Agent Traps* [Article]. SSRN (Google DeepMind). ([원문 보기 ↗](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6372438))

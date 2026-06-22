@@ -69,4 +69,4 @@ AI의 사이버 공격 역량이 전문가 수준에 근접했습니다. 방어 
 
 ## 참고자료
 
-- AISI. (2026, 4월). *Our evaluation of OpenAI's GPT-5.5 cyber capabilities* [Article]. UK AI Security Institute. [https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities](https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities)
+- AISI. (2026, April). *Our evaluation of OpenAI's GPT-5.5 cyber capabilities* [Article]. UK AI Security Institute. ([원문 보기 ↗](https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities))

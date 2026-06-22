@@ -1,6 +1,24 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI는 일자리를 없애지 않고, 둘로 가릅니다",
+      "date": "2026-06-22",
+      "category": "survival",
+      "source": "PwC (2026 Global AI Jobs Barometer)",
+      "tags": [
+        "AI일자리",
+        "이중노동시장",
+        "생산성",
+        "스킬전환",
+        "신입채용"
+      ],
+      "slug": "2026-06-22-pwc-ai-jobs-barometer-2026",
+      "file": "survival/2026-06-22-pwc-ai-jobs-barometer-2026.html",
+      "summary": "PwC가 채용 공고 10억 건 넘게 분석했습니다. AI는 일자리를 없애기보다 둘로 가릅니다. 사람에게 단순 일만 남기는 민주화 직업(52%)은 뒤처지고, 사람이 전문 업무에 집중하는 전문화 직업(22%)은 일자리도 임금도 2배 빠르게 자랍니다. 정답은 AI 도입 여부가 아니라 어느 트랙으로 설계하느냐입니다.",
+      "roasting_quote": "AI가 일자리를 없앤다고 들으셨습니까? 데이터의 경고는 정반대입니다. 일자리는 사라지지 않고, 사람에게 허드렛일만 남기는 쪽과 전문성을 키우는 쪽으로 갈라지고 있습니다.",
+      "next_post": "company/2026-06-19-implicit-organization-ai-agents.html"
+    },
+    {
       "title": "AI 에이전트가 못 보는 회사의 숨은 규칙",
       "date": "2026-06-19",
       "category": "company",

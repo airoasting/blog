@@ -72,4 +72,4 @@ AI 전환의 병목은 기술이 아니라 운영 모델, 거버넌스, 인간�
 
 ## 참고자료
 
-- Lakhani, K. R., Spataro, J., & Stave, J. (2026). "The 'Last Mile' Problem Slowing AI Transformation", Harvard Business Review, March 2026.
+- Lakhani, K. R., Spataro, J., & Stave, J. (2026, March). *The 'Last Mile' Problem Slowing AI Transformation* [Article]. Harvard Business Review.

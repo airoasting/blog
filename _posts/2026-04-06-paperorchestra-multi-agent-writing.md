@@ -75,5 +75,5 @@ AI 문서 자동화는 글쓰기 보조를 넘어 "자동 연구원" 단계에 �
 
 ## 참고자료
 
-- Song, Y., Song, Y., Pfister, T., & Yoon, J. (2026, 4월). *PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing* [Preprint]. arXiv. https://arxiv.org/abs/2604.05018
-- Song, Y., Song, Y., Pfister, T., & Yoon, J. (2026, 4월). *PaperOrchestra Project Page* [Web]. Google Research. https://yiwen-song.github.io/paper_orchestra/
+- Song, Y., Song, Y., Pfister, T., & Yoon, J. (2026, April). *PaperOrchestra: A Multi-Agent Framework for Automated AI Research Paper Writing* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2604.05018))
+- Song, Y., Song, Y., Pfister, T., & Yoon, J. (2026, April). *PaperOrchestra Project Page* [Web]. Google Research. ([원문 보기 ↗](https://yiwen-song.github.io/paper_orchestra/))

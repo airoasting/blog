@@ -75,4 +75,4 @@ AI 에이전트는 지금까지 정보 검색과 자동화의 도구였습니다
 
 ## 참고자료
 
-- Anthropic. (2026, April). *Project Deal: An experiment in agentic commerce* [Article]. Anthropic. [https://www.anthropic.com/features/project-deal](https://www.anthropic.com/features/project-deal)
+- Anthropic. (2026, April). *Project Deal: An experiment in agentic commerce* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/features/project-deal))

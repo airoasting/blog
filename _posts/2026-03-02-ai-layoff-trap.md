@@ -90,4 +90,4 @@ UBI는 왜 효과가 없습니까? 해고된 노동자에게 소득을 이전하
 - **임원**: 자동화 투자 ROI 계산에 수요 손실 시나리오를 추가합니다. 자동화세 도입 가능성을 3년 재무 계획에 반영합니다.
 
 ## 참고자료
-- Falk, B. H., & Tsoukalas, G. (2026, March). *The AI Layoff Trap* [Preprint]. arXiv. https://arxiv.org/abs/2603.20617
+- Falk, B. H., & Tsoukalas, G. (2026, March). *The AI Layoff Trap* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2603.20617))

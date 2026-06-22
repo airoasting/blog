@@ -75,5 +75,5 @@ AI 어시스턴트 시장은 단일 지배에서 다극 경쟁으로 넘어갑�
 
 ## 참고자료
 
-- Mehta, I. (2026, June). *ChatGPT's market share slips below 50% for first time* [Article]. TechCrunch. https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/
+- Mehta, I. (2026, June). *ChatGPT's market share slips below 50% for first time* [Article]. TechCrunch. ([원문 보기 ↗](https://techcrunch.com/2026/06/16/chatgpts-market-share-slips-below-50-for-first-time/))
 - Sensor Tower. (2026). *State of AI Report 2026* [Report]. Sensor Tower.

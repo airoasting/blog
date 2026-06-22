@@ -92,4 +92,4 @@
 
 ## 참고자료
 
-- Nielsen, S., Cetin, E., Schwendeman, P., Sun, Q., Xu, J., & Tang, Y. (2026, 3월). *Learning to Orchestrate Agents in Natural Language with the Conductor* [Preprint]. arXiv. [https://arxiv.org/abs/2512.04388](https://arxiv.org/abs/2512.04388)
+- Nielsen, S., Cetin, E., Schwendeman, P., Sun, Q., Xu, J., & Tang, Y. (2026, March). *Learning to Orchestrate Agents in Natural Language with the Conductor* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2512.04388))

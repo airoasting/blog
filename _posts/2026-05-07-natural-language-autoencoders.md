@@ -57,5 +57,5 @@ AI 내부 생각을 자연어로 읽는 기술이 연구 단계를 넘어 실제
 **IT/AI 담당**: NLA 논문과 공개 코드를 검토하라. 오정렬 탐지 기술이 실제 운영에 적용 가능한 시점을 추정해 경영진에 보고하라.
 
 ## 참고자료
-- Anthropic. (2026, 5월). *Natural Language Autoencoders: Turning Claude's thoughts into text* [Article]. Anthropic Research. https://www.anthropic.com/research/natural-language-autoencoders
-- Anthropic. (2026). *Natural Language Autoencoders* [Paper]. Transformer Circuits. https://transformer-circuits.pub/2026/nla/index.html
+- Anthropic. (2026, May). *Natural Language Autoencoders: Turning Claude's thoughts into text* [Article]. Anthropic Research. ([원문 보기 ↗](https://www.anthropic.com/research/natural-language-autoencoders))
+- Anthropic. (2026). *Natural Language Autoencoders* [Paper]. Transformer Circuits. ([원문 보기 ↗](https://transformer-circuits.pub/2026/nla/index.html))

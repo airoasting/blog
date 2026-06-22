@@ -82,4 +82,4 @@ AI 에이전트를 확장하려면 추론과 실행을 분리합니다. 안정�
 
 ## 참고자료
 
-- Martin, L., Cemaj, G., & Cohen, M. (2026, 4월). *Scaling Managed Agents: Decoupling the brain from the hands* [Article]. Anthropic Engineering. https://www.anthropic.com/engineering/managed-agents
+- Martin, L., Cemaj, G., & Cohen, M. (2026, April). *Scaling Managed Agents: Decoupling the brain from the hands* [Article]. Anthropic Engineering. ([원문 보기 ↗](https://www.anthropic.com/engineering/managed-agents))

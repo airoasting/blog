@@ -92,4 +92,4 @@ Anthropic은 클로드 세 모델(Opus 4.7, Opus 4.6, Sonnet 4.6)을 이 전용 
 
 ## 참고자료
 
-- Kamber, D. (2026, June). *Making Claude a Chemist* [Article]. Anthropic. https://www.anthropic.com/research/making-claude-a-chemist
+- Kamber, D. (2026, June). *Making Claude a Chemist* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/making-claude-a-chemist))

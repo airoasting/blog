@@ -90,6 +90,6 @@ METR 연구에 따르면 Opus 4.6은 인간이 약 12시간 걸리는 작업을 
 
 ## 참고자료
 
-Wu, C. (2026, 3월). *Product management on the AI exponential* [Article]. Anthropic. https://claude.com/blog/product-management-on-the-ai-exponential
+Wu, C. (2026, March). *Product management on the AI exponential* [Article]. Anthropic. ([원문 보기 ↗](https://claude.com/blog/product-management-on-the-ai-exponential))
 
-METR. (2026). *Measuring AI agents' ability to complete long tasks* [Research]. METR. https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+METR. (2026). *Measuring AI agents' ability to complete long tasks* [Research]. METR. ([원문 보기 ↗](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/))

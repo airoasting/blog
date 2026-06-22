@@ -78,4 +78,4 @@ AI에게 올바른 행동을 외우게 하는 것과 올바른 이유를 이해�
 
 ## 참고자료
 
-- Anthropic. (2026, 5월). *Teaching Claude why* [Article]. Anthropic Research. [https://www.anthropic.com/research/teaching-claude-why](https://www.anthropic.com/research/teaching-claude-why)
+- Anthropic. (2026, May). *Teaching Claude why* [Article]. Anthropic Research. ([원문 보기 ↗](https://www.anthropic.com/research/teaching-claude-why))

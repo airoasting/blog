@@ -68,6 +68,6 @@ AI를 여러 개 돌려도 다양한 생각은 나오지 않습니다. 진짜 �
 
 ## 참고자료
 
-- Jiang, L. et al. (2025). "Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)", NeurIPS 2025. arXiv:2510.22954.
-- Doshi, A. R. & Hauser, O. P. (2024). "Generative AI enhances individual creativity but reduces the collective diversity of novel content", Science Advances.
-- Anderson, B. R. et al. (2024). "Homogenization effects of large language models on human creative ideation", Creativity & Cognition.
+- Jiang, L., et al. (2025). *Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)* [Conference paper]. NeurIPS 2025. arXiv:2510.22954.
+- Doshi, A. R., & Hauser, O. P. (2024). *Generative AI enhances individual creativity but reduces the collective diversity of novel content* [Article]. Science Advances.
+- Anderson, B. R., et al. (2024). *Homogenization effects of large language models on human creative ideation* [Conference paper]. Creativity & Cognition.

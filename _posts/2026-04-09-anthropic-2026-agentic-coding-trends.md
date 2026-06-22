@@ -116,4 +116,4 @@ AI 에이전트는 혼자 일하지 않습니다. 사람의 감독과 도메인 
 
 ## 참고자료
 
-- Anthropic. (2026, April). *2026 Agentic Coding Trends Report: How coding agents are reshaping software development*. https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf
+- Anthropic. (2026, April). *2026 Agentic Coding Trends Report: How coding agents are reshaping software development*. ([원문 보기 ↗](https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf))

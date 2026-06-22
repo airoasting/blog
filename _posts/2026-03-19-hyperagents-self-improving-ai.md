@@ -73,5 +73,5 @@ AI가 스스로 진화하는 시대가 열렸습니다. 하이퍼에이전트는
 
 ## 참고자료
 
-- Zhang, J., Zhao, B., Yang, W., Foerster, J., Clune, J., Jiang, M., Devlin, S., & Shavrina, T. (2026, 3월). *HyperAgents* [Article]. arXiv. https://arxiv.org/abs/2603.19461
-- Facebook Research. (2026). *HyperAgents: Self-referential self-improving agents* [Code Repository]. GitHub. https://github.com/facebookresearch/Hyperagents
+- Zhang, J., Zhao, B., Yang, W., Foerster, J., Clune, J., Jiang, M., Devlin, S., & Shavrina, T. (2026, March). *HyperAgents* [Article]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2603.19461))
+- Facebook Research. (2026). *HyperAgents: Self-referential self-improving agents* [Code Repository]. GitHub. ([원문 보기 ↗](https://github.com/facebookresearch/Hyperagents))

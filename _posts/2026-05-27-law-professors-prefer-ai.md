@@ -69,4 +69,4 @@ AI가 단순 암기와 계산을 대체한다는 말은 익숙합니다. 그래�
 
 ## 참고자료
 
-- Salinas, A., Frieders, C., Guha, N., Ma, S., Anzivino, R., Ayres, I., Bar-Gill, O., Ben-Shahar, O., Friedman, S., Geis, G., Guan, S., Henkel, C., Hoffer, S., Klass, G., Moody-Villarose, L., Sanga, S., Sharfman, K., Simard, J., Stone, R., Wishnick, D., & Nyarko, J. (2026, May). *Law Professors Prefer AI Over Peer Answers* [Working paper]. Stanford Law School. https://law.stanford.edu/wp-content/uploads/2026/06/salinas_et_al.pdf
+- Salinas, A., Frieders, C., Guha, N., Ma, S., Anzivino, R., Ayres, I., Bar-Gill, O., Ben-Shahar, O., Friedman, S., Geis, G., Guan, S., Henkel, C., Hoffer, S., Klass, G., Moody-Villarose, L., Sanga, S., Sharfman, K., Simard, J., Stone, R., Wishnick, D., & Nyarko, J. (2026, May). *Law Professors Prefer AI Over Peer Answers* [Working paper]. Stanford Law School. ([원문 보기 ↗](https://law.stanford.edu/wp-content/uploads/2026/06/salinas_et_al.pdf))

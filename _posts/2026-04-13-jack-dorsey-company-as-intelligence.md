@@ -73,6 +73,6 @@
 
 ## 참고자료
 
-- Halligan, B., Dorsey, J., & Botha, R. (2026, April). *AI-native 조직 (잭 도시 인터뷰)* [Video]. Long Strange Trip Podcast. https://www.youtube.com/watch?v=TlpFc7x8SHo
-- Dorsey, J., & Botha, R. (2026, March). *From Hierarchy to Intelligence* [Article]. Sequoia Capital. https://sequoiacap.com/article/from-hierarchy-to-intelligence/
-- Block. (2026, March). *From Hierarchy to Intelligence* [Article]. Block Inside. https://block.xyz/inside/from-hierarchy-to-intelligence
+- Halligan, B., Dorsey, J., & Botha, R. (2026, April). *AI-native 조직 (잭 도시 인터뷰)* [Video]. Long Strange Trip Podcast. ([원문 보기 ↗](https://www.youtube.com/watch?v=TlpFc7x8SHo))
+- Dorsey, J., & Botha, R. (2026, March). *From Hierarchy to Intelligence* [Article]. Sequoia Capital. ([원문 보기 ↗](https://sequoiacap.com/article/from-hierarchy-to-intelligence/))
+- Block. (2026, March). *From Hierarchy to Intelligence* [Article]. Block Inside. ([원문 보기 ↗](https://block.xyz/inside/from-hierarchy-to-intelligence))

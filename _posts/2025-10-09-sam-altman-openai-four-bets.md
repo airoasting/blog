@@ -86,4 +86,4 @@ AI 전략의 전제 조건이 바뀌고 있습니다. 수직 통합, AI 과학�
 
 ## 참고자료
 
-- Altman, S. "Sam Altman on Sora, Energy, and Building the Most Valuable Startup in the World." a16z Podcast, October 9, 2025. [원문](https://www.a16z.news/p/sam-altman-on-sora-energy-and-building)
+- Altman, S. (2025, October 9). *Sam Altman on Sora, Energy, and Building the Most Valuable Startup in the World* [Podcast]. a16z. ([원문 보기 ↗](https://www.a16z.news/p/sam-altman-on-sora-energy-and-building))

@@ -78,4 +78,4 @@ AI가 만든 것에도 사람의 이름과 책임이 필요합니다. Nature가 
 **임원**: 기밀 정보의 외부 AI 입력 현황을 점검하십시오. 미공개 데이터가 상용 AI에 입력되고 있다면 즉시 가이드라인을 배포하십시오.
 
 ## 참고자료
-- Springer Nature. (2026). *Artificial Intelligence (AI) - Editorial Policies* [Policy]. Nature Portfolio. [https://www.nature.com/nature-portfolio/editorial-policies/ai](https://www.nature.com/nature-portfolio/editorial-policies/ai)
+- Springer Nature. (2026). *Artificial Intelligence (AI) - Editorial Policies* [Policy]. Nature Portfolio. ([원문 보기 ↗](https://www.nature.com/nature-portfolio/editorial-policies/ai))

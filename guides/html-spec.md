@@ -252,12 +252,15 @@ window.addEventListener('scroll', () => {
 **참고자료 APA 패턴:**
 ```html
 <ul class="references-list">
-  <li>저자/매체. (연도, 월). <em>제목</em> [Video]. 플랫폼.
-    <a href="{URL}" target="_blank" rel="noopener">{URL 전문}</a></li>
+  <li>저자/매체. (연도, 월). <em>제목</em> [Article]. 플랫폼. (<a href="{URL}" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
 </ul>
 ```
 
-> 링크 텍스트를 "영상 보기 ↗" 같이 축약하지 않습니다. URL 전문을 그대로 표시합니다.
+> **날짜는 영어 표기**입니다. `(2026, June)` 또는 `(2026, June 18)`처럼 영어 월명을 씁니다. `(2026, 6월)` 같은 한국어 월 금지.
+>
+> **링크 표기**: 노출 URL(`https://...`)이나 도메인(`hbr.org`)을 링크 텍스트로 쓰지 않습니다. 소스 인용문 끝에 괄호로 `(<a ...>원문 보기 ↗</a>)`를 붙입니다. 화살표는 우상향 `↗`입니다.
+>
+> 소스가 여러 개이면 각각 별도 `<li>`로 표기하고, 각 항목 끝에 `(원문 보기 ↗)` 링크를 붙입니다. 영상·팟캐스트도 동일하게 `원문 보기 ↗`로 통일합니다.
 
 **리더의 결정 포인트 섹션 패턴:**
 ```html
@@ -304,10 +307,9 @@ function copyPrompt(btn) {
 
 ### 4-9. 하단 요소
 
-```html
-<!-- 원문 보기 링크 -->
-<a href="{원문 URL}" target="_blank" rel="noopener" class="hero-cta">원문 보기 →</a>
+> 참고자료 아래에 별도 `원문 보기 →` CTA 버튼(`<div style="margin-top:4px;">...class="hero-cta">원문 보기 →`)을 두지 않습니다. 원문 링크는 참고자료 각 항목의 `(원문 보기 ↗)`로 일원화합니다.
 
+```html
 <!-- 소셜 공유 (데스크톱) -->
 <div class="share-bar desktop-only">
   <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>

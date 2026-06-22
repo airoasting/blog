@@ -76,4 +76,4 @@ LLM과 LBM(대규모 행동 모델)이 결합되면서 로봇이 물리 환경�
 
 ## 참고자료
 
-- Wirtz, J. (2026, May-June). *How Gen AI Robots Are Reshaping Services* [Article]. Harvard Business Review. https://hbr.org/2026/05/how-gen-ai-robots-are-reshaping-services
+- Wirtz, J. (2026, May-June). *How Gen AI Robots Are Reshaping Services* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/05/how-gen-ai-robots-are-reshaping-services))

@@ -43,5 +43,5 @@ System M은 관찰할 것인가, 행동할 것인가를 결정하는 상위 통�
 
 ## 참고자료
 
-- Dupoux, E., LeCun, Y., & Malik, J. (2026). "Why AI systems don't learn and what to do about it." arXiv:2603.15381. https://arxiv.org/abs/2603.15381
-- McKinsey & Company. (2025). "The state of AI in early 2025." McKinsey Global Survey.
+- Dupoux, E., LeCun, Y., & Malik, J. (2026). *Why AI systems don't learn and what to do about it* [Preprint]. arXiv:2603.15381. ([원문 보기 ↗](https://arxiv.org/abs/2603.15381))
+- McKinsey & Company. (2025). *The state of AI in early 2025* [Survey]. McKinsey Global Survey.

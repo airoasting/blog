@@ -70,4 +70,4 @@ AI 도입이 어긋나는 원인은 모델이 아니라 데이터 인프라인 �
 
 ## 참고자료
 
-Luebbert, L. (2026, June). *Paving the Way for Agents in Biology* [Article]. Anthropic. https://www.anthropic.com/research/agents-in-biology
+Luebbert, L. (2026, June). *Paving the Way for Agents in Biology* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/research/agents-in-biology))

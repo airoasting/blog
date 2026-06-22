@@ -66,6 +66,6 @@ Workslop은 AI의 문제가 아니라 조직 설계의 문제입니다. 신뢰�
 임원: AI 생산성 지표에 "산출물 폐기율"과 "팀 신뢰 지수"를 추가하십시오. 숫자만 보면 Workslop이 보이지 않습니다
 
 ## 참고자료
-- Niederhoffer, K., Robichaux, A., & Hancock, J. T. "Why People Create AI 'Workslop'—and How to Stop It." Harvard Business Review, January 16, 2026. https://hbr.org/2026/01/why-people-create-ai-workslop-and-how-to-stop-it
-- BetterUp & Stanford Social Media Lab. Online survey of 1,150 full-time U.S. desk workers, August–September 2025.
-- Edelman. "2025 Edelman Trust Barometer." 2025.
+- Niederhoffer, K., Robichaux, A., & Hancock, J. T. (2026, January 16). *Why People Create AI 'Workslop'—and How to Stop It* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/01/why-people-create-ai-workslop-and-how-to-stop-it))
+- BetterUp, & Stanford Social Media Lab. (2025). *Online survey of 1,150 full-time U.S. desk workers* [Survey].
+- Edelman. (2025). *2025 Edelman Trust Barometer* [Report].

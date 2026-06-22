@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-06-21T10:10:07.136Z",
-  "duration": 0.29,
+  "buildAt": "2026-06-22T04:24:34.910Z",
+  "duration": 0.239,
   "concepts": {
-    "total": 100,
+    "total": 102,
     "validDefinitions": 90,
-    "needsReview": 10
+    "needsReview": 12
   },
   "relationships": {
-    "total": 270
+    "total": 271
   },
   "coverage": {
-    "postsWithConcepts": 193,
-    "totalPosts": 221
+    "postsWithConcepts": 194,
+    "totalPosts": 222
   },
   "inject": {
-    "updated": 1,
-    "inserted": 0,
-    "unchanged": 190,
+    "updated": 4,
+    "inserted": 1,
+    "unchanged": 187,
     "skipped": 30
   },
   "needsManualReview": [
@@ -43,6 +43,14 @@
     {
       "name": "클로드",
       "slug": "클로드"
+    },
+    {
+      "name": "신입채용",
+      "slug": "신입채용"
+    },
+    {
+      "name": "AI일자리",
+      "slug": "ai일자리"
     },
     {
       "name": "업무재설계",

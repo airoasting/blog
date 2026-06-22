@@ -107,4 +107,4 @@ Gawdat가 6주 만에 구축한 스타트업은 기존 방식으로는 4년이 �
 
 ## 참고자료
 
-- Silicon Valley Girl. (2026, March). *Mo Gawdat: The 12-15 Years of Hell Before Utopia, Face RIP Framework & 4 Skills to Survive AI* [Video]. YouTube. https://www.youtube.com/watch?v=E0Q96IKXx6Q
+- Silicon Valley Girl. (2026, March). *Mo Gawdat: The 12-15 Years of Hell Before Utopia, Face RIP Framework & 4 Skills to Survive AI* [Video]. YouTube. ([원문 보기 ↗](https://www.youtube.com/watch?v=E0Q96IKXx6Q))

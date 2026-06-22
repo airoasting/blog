@@ -55,4 +55,4 @@ Opus 4.7로 전환하지 않으면 두 가지 손해가 발생합니다. 첫째,
 가격은 그대로, 코딩 성능은 13% 오른 Opus 4.7이 나왔습니다. 모델 ID 하나 바꾸는 것이 이번 달 가장 빠른 AI 업그레이드입니다.
 
 ## 참고자료
-Anthropic. (2026, 4월). *Claude Opus 4.7* [Article]. Anthropic. https://www.anthropic.com/news/claude-opus-4-7
+Anthropic. (2026, April). *Claude Opus 4.7* [Article]. Anthropic. ([원문 보기 ↗](https://www.anthropic.com/news/claude-opus-4-7))

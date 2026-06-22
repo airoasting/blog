@@ -77,5 +77,5 @@ AI의 기회를 잡으려면, 위험의 구체적 형태를 먼저 알아야 합
 
 ## 참고자료
 
-- Amodei, D. (2026). "The Adolescence of Technology." https://www.darioamodei.com/essay/the-adolescence-of-technology
-- IBM Security. (2025). "Cost of a Data Breach Report 2025."
+- Amodei, D. (2026). *The Adolescence of Technology* [Essay]. ([원문 보기 ↗](https://www.darioamodei.com/essay/the-adolescence-of-technology))
+- IBM Security. (2025). *Cost of a Data Breach Report 2025* [Report].

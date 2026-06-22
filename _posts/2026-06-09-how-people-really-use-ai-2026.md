@@ -74,6 +74,6 @@ HBR이 5만 건의 사용 기록을 분석했습니다. 2026년 1위 용도는 �
 
 ## 참고자료
 
-- Gavett, G. (2026, June). *New data on how we're really using AI* [Newsletter]. Harvard Business Review. https://hbr.org/2026/06/new-data-on-how-were-really-using-ai
-- Zao-Sanders, M. (2026, June). *How people are really using AI in 2026* [Article]. Harvard Business Review. https://hbr.org/2026/06/how-people-are-really-using-ai-in-2026
+- Gavett, G. (2026, June). *New data on how we're really using AI* [Newsletter]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/06/new-data-on-how-were-really-using-ai))
+- Zao-Sanders, M. (2026, June). *How people are really using AI in 2026* [Article]. Harvard Business Review. ([원문 보기 ↗](https://hbr.org/2026/06/how-people-are-really-using-ai-in-2026))
 - Zao-Sanders, M. (2026). *How People Are Using Gen AI (2026): Top 100 use cases* [Dataset]. the ai wild. (Harvard Business Review 재인용)

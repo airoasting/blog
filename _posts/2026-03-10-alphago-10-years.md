@@ -63,4 +63,4 @@ AlphaGo의 신경망+탐색+강화학습 조합은 단백질 구조 예측(Alpha
 임원: AI R&D 전략에 '범용화 로드맵'이 있는지 확인하라. 하나의 문제를 푸는 AI에서, 문제를 발견하는 AI로의 전환이 경쟁 우위를 결정한다
 
 ## 참고자료
-Hassabis, D. "10 Years of AlphaGo", Google DeepMind Blog. March 10, 2026. https://deepmind.google/blog/10-years-of-alphago/
+Hassabis, D. (2026, March 10). *10 Years of AlphaGo* [Blog post]. Google DeepMind Blog. ([원문 보기 ↗](https://deepmind.google/blog/10-years-of-alphago/))

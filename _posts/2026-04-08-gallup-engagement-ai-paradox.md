@@ -98,6 +98,6 @@ AI 시대의 경쟁력은 기술이 아니라 관리자에게 달려 ��습�
 **적극 이탈(Actively Disengaged)**: 불만족을 넘어 조직에 부정적 영향을 미치는 상태입니다. 동료의 사기를 떨어뜨리고 성과를 방해합니다.
 
 ## 참고자료
-- Gallup. (2026). *State of the Global Workplace 2026: The Human Side of the AI Revolution* [Report]. Gallup. [https://www.gallup.com/file/workplace/707798/state-of-the-global-workplace-2026-download.pdf](https://www.gallup.com/file/workplace/707798/state-of-the-global-workplace-2026-download.pdf)
+- Gallup. (2026). *State of the Global Workplace 2026: The Human Side of the AI Revolution* [Report]. Gallup. ([원문 보기 ↗](https://www.gallup.com/file/workplace/707798/state-of-the-global-workplace-2026-download.pdf))
 - Challapally, A., Pease, C., Raskar, R., & Chari, P. (2025, July). *The GenAI divide: State of AI in business 2025* [Report]. MIT Project NANDA.
-- Yotzov, I., Barrero, J. M., Bloom, N., Bunn, P., Davis, S. J., Foster, K. M., Jalca, A., Meyer, B. H., Mizen, P., Navarrete, M. A., Smietanka, P., Thwaites, G., & Wang, B. Z. (2026). *Firm data on AI* (NBER Working Paper No. 34836). National Bureau of Economic Research. [https://doi.org/10.3386/w34836](https://doi.org/10.3386/w34836)
+- Yotzov, I., Barrero, J. M., Bloom, N., Bunn, P., Davis, S. J., Foster, K. M., Jalca, A., Meyer, B. H., Mizen, P., Navarrete, M. A., Smietanka, P., Thwaites, G., & Wang, B. Z. (2026). *Firm data on AI* (NBER Working Paper No. 34836). National Bureau of Economic Research. ([원문 보기 ↗](https://doi.org/10.3386/w34836))

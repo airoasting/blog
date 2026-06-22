@@ -60,4 +60,4 @@ AI의 말이 아니라 행동을 봐야 합니다. 벤치마크 점수가 아닌
 
 ## 참고자료
 
-- Taubenfeld, A., Gekhman, Z., Nezry, L., Feldman, O., Harris, N., Reddy, S., Stella, R., Goldstein, A., Croak, M., Matias, Y., & Feder, A. (2026, February). *Evaluating Alignment of Behavioral Dispositions in LLMs* [Preprint]. arXiv. https://arxiv.org/abs/2602.11328
+- Taubenfeld, A., Gekhman, Z., Nezry, L., Feldman, O., Harris, N., Reddy, S., Stella, R., Goldstein, A., Croak, M., Matias, Y., & Feder, A. (2026, February). *Evaluating Alignment of Behavioral Dispositions in LLMs* [Preprint]. arXiv. ([원문 보기 ↗](https://arxiv.org/abs/2602.11328))

@@ -44,5 +44,5 @@ AI가 정답이 없는 문제를 풀기 시작했습니다. 아직 첫 걸음이
 
 ## 참고자료
 
-- Epoch AI. (2026, 3월). *FrontierMath: Open Problems - A Ramsey-style Problem on Hypergraphs* [Article]. Epoch AI. https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs
-- Epoch AI. (2026, 3월). *FrontierMath: Open Problems* [Article]. Epoch AI. https://epoch.ai/frontiermath/open-problems
+- Epoch AI. (2026, March). *FrontierMath: Open Problems - A Ramsey-style Problem on Hypergraphs* [Article]. Epoch AI. ([원문 보기 ↗](https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs))
+- Epoch AI. (2026, March). *FrontierMath: Open Problems* [Article]. Epoch AI. ([원문 보기 ↗](https://epoch.ai/frontiermath/open-problems))

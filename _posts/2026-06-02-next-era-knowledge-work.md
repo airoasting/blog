@@ -94,7 +94,7 @@ OpenAI 자체 데이터에 따르면 지식 노동자의 도입 속도가 개발
 
 ## 참고자료
 
-- OpenAI. (2026, June). *The Next Era of Knowledge Work: How Codex is helping people navigate the complexity of modern work* [Report]. OpenAI. https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf
+- OpenAI. (2026, June). *The Next Era of Knowledge Work: How Codex is helping people navigate the complexity of modern work* [Report]. OpenAI. ([원문 보기 ↗](https://cdn.openai.com/pdf/the-next-era-of-knowledge-work.pdf))
 - McKinsey Global Institute. (2012, July). *The social economy: Unlocking value and productivity through social technologies* [Report]. McKinsey & Company.
 - Brynjolfsson, E. (1993). The productivity paradox of information technology. *Communications of the ACM, 36*(12), 66–77.
 - Drucker, P. F. (1959). *Landmarks of Tomorrow*. Harper & Brothers.

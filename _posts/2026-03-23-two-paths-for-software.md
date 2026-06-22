@@ -58,4 +58,4 @@ Broadcom이 이 경로의 실증 사례입니다. VMware를 단순화된 구독 
 
 ## 참고자료
 
-George, D. (2026, 3월). *There are only two paths left for software* [Article]. a16z. https://www.a16z.news/p/there-are-only-two-paths-left-for
+George, D. (2026, March). *There are only two paths left for software* [Article]. a16z. ([원문 보기 ↗](https://www.a16z.news/p/there-are-only-two-paths-left-for))

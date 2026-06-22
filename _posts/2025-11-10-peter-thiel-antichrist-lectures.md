@@ -62,8 +62,8 @@ next_post:
 임원: 글로벌 AI 거버넌스 논의(EU AI Act, 미국 행정명령)가 사업에 미치는 영향을 분기별로 점검하십시오
 
 ## 참고자료
-Bhuiyan, J., Kerr, D., & Robins-Early, N. "Inside tech billionaire Peter Thiel's off-the-record lectures about the antichrist", The Guardian. October 10, 2025. https://www.theguardian.com/us-news/2025/oct/10/peter-thiel-lectures-antichrist
+Bhuiyan, J., Kerr, D., & Robins-Early, N. (2025, October 10). *Inside tech billionaire Peter Thiel's off-the-record lectures about the antichrist* [Article]. The Guardian. ([원문 보기 ↗](https://www.theguardian.com/us-news/2025/oct/10/peter-thiel-lectures-antichrist))
 
-"Peter Thiel brings his lectures on the Antichrist to the Vatican's doorstep", PBS News. March 2026. https://www.pbs.org/newshour/nation/peter-thiel-brings-his-lectures-on-the-antichrist-to-the-vaticans-doorstep
+PBS News. (2026, March). *Peter Thiel brings his lectures on the Antichrist to the Vatican's doorstep* [Article]. PBS News. ([원문 보기 ↗](https://www.pbs.org/newshour/nation/peter-thiel-brings-his-lectures-on-the-antichrist-to-the-vaticans-doorstep))
 
-"Peter Thiel is delivering 4 private sold-out lectures at a club in San Francisco — about the Antichrist", Fortune. September 2, 2025. https://fortune.com/2025/09/02/peter-thiel-antichrist-lectures-commonwealth-club-san-francisco-acts-17-collective-rene-girard/
+Fortune. (2025, September 2). *Peter Thiel is delivering 4 private sold-out lectures at a club in San Francisco — about the Antichrist* [Article]. Fortune. ([원문 보기 ↗](https://fortune.com/2025/09/02/peter-thiel-antichrist-lectures-commonwealth-club-san-francisco-acts-17-collective-rene-girard/))

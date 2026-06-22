@@ -72,4 +72,4 @@ Sarkar는 이 원리를 이렇게 표현합니다. "Conviction compounds faster 
 
 ## 참고자료
 
-- Sarkar, R. (2026, April). *The Culture That Ate Silicon Valley* [Article]. Substack. [https://rajsarkar.substack.com/p/the-culture-that-ate-silicon-valley](https://rajsarkar.substack.com/p/the-culture-that-ate-silicon-valley)
+- Sarkar, R. (2026, April). *The Culture That Ate Silicon Valley* [Article]. Substack. ([원문 보기 ↗](https://rajsarkar.substack.com/p/the-culture-that-ate-silicon-valley))
