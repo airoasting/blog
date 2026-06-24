@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌다",
+      "date": "2026-06-23",
+      "category": "company",
+      "source": "Inc.com (Jessica Stillman)",
+      "tags": [
+        "조직설계",
+        "팀규모",
+        "관리자",
+        "메타",
+        "AI조직"
+      ],
+      "slug": "2026-06-23-meta-ai-reorg-team-size",
+      "file": "company/2026-06-23-meta-ai-reorg-team-size.html",
+      "summary": "메타가 새 AI 조직을 급하게 꾸렸습니다. 개편을 이끈 CTO가 직접 사기가 역대 최악이라 인정했습니다. 원인은 관리자 한 명에게 20명 넘게 몰아준 거대 팀이었습니다. 팀이 10명을 넘으면 협업 문제가 늘고, 5천만 건 분석은 5명 미만 팀이 파괴적 아이디어를 가장 잘 낸다고 가리킵니다. 관리자를 줄이려는 모든 회사를 위한 경고입니다.",
+      "roasting_quote": "관리자를 줄이면 조직이 가벼워진다고 믿으셨습니까? 메타는 그 믿음의 청구서를 '사기 역대 최악'이라는 이름으로 받았습니다.",
+      "next_post": "company/2026-06-19-implicit-organization-ai-agents.html"
+    },
+    {
       "title": "AI 에이전트가 못 보는 회사의 숨은 규칙",
       "date": "2026-06-19",
       "category": "company",

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-22T04:44:29.268Z",
+  "generatedAt": "2026-06-24T13:50:59.120Z",
   "version": 1,
   "stats": {
     "totalConcepts": 102,
-    "totalRelationships": 271,
-    "totalPosts": 222,
+    "totalRelationships": 278,
+    "totalPosts": 223,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -14,7 +14,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 54,
+      "frequency": 68,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -37,29 +37,43 @@
         "2026-06-12-openrouter-fusion-model-diversity",
         "2026-06-18-project-fetch-phase-two",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
+        "2024-10-15-ai-bubble-three-collapse-scenarios",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2025-05-10-conversations-children-have-with-ai-chatbots",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
+        "2025-07-10-ban-left-biased-ai",
         "2026-02-11-llm-behavioral-alignment-gap",
         "2024-11-01-geoffrey-hinton-on-ai-danger",
         "2026-04-06-sam-altman-superintelligence-new-deal",
+        "2024-08-05-ai-era-future-of-media",
         "2025-02-20-sovereign-ai",
         "2025-03-05-redesigning-work-structure-in-ai-era",
         "2025-03-05-speculating-why-naver-lee-haejin-returned",
         "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2025-04-15-questions-china-ai-bigtech-bam-poses-to-korea",
+        "2025-04-25-2025-shanghai-motor-show-shock",
+        "2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony",
+        "2025-06-15-why-perplexity-wants-to-acquire-chrome",
         "2025-07-25-national-ai-foundation-model-project",
         "2024-08-10-top-50-ai-services-five-trends",
         "2024-08-25-ai-bubble-three-codes-data-chip-biz",
         "2025-02-15-llms-will-get-smaller-and-smarter",
         "2025-03-10-ai-intentional-lies-reward-hacking",
         "2025-03-15-30b-vs-671b-parameters",
+        "2025-03-15-is-this-voice-real",
         "2025-03-15-kt-korean-ai-model-mideum-2",
         "2025-03-15-optimization-ai-new-era",
+        "2025-04-01-most-used-ai-services-by-koreans",
         "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-04-20-which-ai-model-should-you-use",
+        "2025-04-21-china-robots-run-half-marathon",
         "2025-05-10-the-rocky-road-to-chatgpt5",
         "2025-05-25-gpt5-limitations-and-whats-next",
-        "2025-03-10-ai-era-survival-strategy"
+        "2025-03-10-ai-era-survival-strategy",
+        "2025-05-15-microsoft-large-scale-layoffs"
       ],
       "newsletters": [
         "nl-1",
@@ -74,7 +88,7 @@
         "nl-41",
         "nl-49"
       ],
-      "firstSeen": "2024-08-10",
+      "firstSeen": "2024-08-05",
       "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
@@ -84,7 +98,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 46,
+      "frequency": 54,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -99,7 +113,13 @@
         "2026-04-02-gemma-4-open-model",
         "2026-04-24-deepseek-v4-pro-coding-benchmark",
         "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2024-10-15-ai-bubble-three-collapse-scenarios",
+        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
+        "2025-05-15-thoughts-on-sam-altman-soft-singularity",
+        "2025-06-20-google-deepmind-ceo-vision",
         "2025-07-15-why-meta-declared-asi",
+        "2024-08-05-ai-era-future-of-media",
+        "2024-08-20-acqui-hire-new-way-to-buy-ai-startups",
         "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
         "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
         "2025-03-15-when-technology-becomes-borders",
@@ -110,6 +130,8 @@
         "2025-02-15-llms-will-get-smaller-and-smarter",
         "2025-03-15-kt-korean-ai-model-mideum-2",
         "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-05-10-why-people-miss-chatgpt-4o",
+        "2025-05-15-preserve-even-deleted-conversations",
         "2025-06-27-interpreting-human-genetics-with-ai",
         "2025-07-20-china-ai-models-surpassing-gpu-limits"
       ],
@@ -136,7 +158,7 @@
         "nl-50",
         "nl-51"
       ],
-      "firstSeen": "2024-08-25",
+      "firstSeen": "2024-08-05",
       "lastSeen": "2026-03-16",
       "needs_manual_review": false
     },
@@ -146,7 +168,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 45,
+      "frequency": 52,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -172,12 +194,19 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-implicit-organization-ai-agents",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
+        "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-02-20-sovereign-ai",
         "2025-04-10-why-ai-first-declaration-matters",
+        "2025-04-25-2025-shanghai-motor-show-shock",
         "2025-05-25-can-ai-payments-be-taxed",
         "2025-07-01-google-apple-map-data-export-request",
         "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-03-15-is-this-voice-real",
+        "2025-03-15-optimization-ai-new-era",
+        "2025-04-01-most-used-ai-services-by-koreans",
         "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-04-20-which-ai-model-should-you-use",
+        "2025-04-21-china-robots-run-half-marathon",
         "2025-05-15-preserve-even-deleted-conversations",
         "2025-06-27-interpreting-human-genetics-with-ai",
         "2026-04-01-claude-code-hidden-features",
@@ -267,7 +296,7 @@
       "name": "AGI",
       "aliases": [],
       "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
-      "frequency": 28,
+      "frequency": 29,
       "category": "newsletter",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -277,6 +306,7 @@
         "2026-04-13-jack-dorsey-company-as-intelligence",
         "2026-05-22-sundar-pichai-anxious-ai-future",
         "2026-06-10-from-agi-to-asi",
+        "2025-04-15-ai-from-learning-era-to-experience-era",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
         "2025-06-20-google-deepmind-ceo-vision",
         "2025-07-15-why-meta-declared-asi",
@@ -352,7 +382,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 24,
+      "frequency": 25,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -373,6 +403,7 @@
         "2026-06-05-claude-chemist-nmr",
         "2026-06-12-thrive-with-ai-mindset-not-skillset",
         "2026-06-18-project-fetch-phase-two",
+        "2026-06-23-meta-ai-reorg-team-size",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
         "2026-04-01-claude-code-hidden-features"
@@ -384,6 +415,46 @@
       ],
       "firstSeen": "2025-05-05",
       "lastSeen": "2026-06-12",
+      "needs_manual_review": false
+    },
+    {
+      "id": "roi",
+      "slug": "roi",
+      "name": "ROI",
+      "aliases": [],
+      "definition": "투자수익률입니다. AI 도입의 비용 대비 효과를 판단하는 핵심 지표입니다.",
+      "frequency": 24,
+      "category": "research",
+      "posts": [
+        "2025-05-05-furiosa-ai",
+        "2025-08-20-the-real-meaning-of-mit-report",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-03-02-ai-layoff-trap",
+        "2026-03-05-brain-fry",
+        "2026-03-16-why-world-runs-on-sap",
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-04-09-google-cloud-ai-agent-trends",
+        "2024-10-15-ai-bubble-three-collapse-scenarios",
+        "2025-03-20-ai-trends-2025-agents-verticals-biz",
+        "2025-04-10-three-ways-universities-adopt-ai",
+        "2025-04-15-agatha-christie-writing-lessons",
+        "2025-04-16-good-questions-matter-more",
+        "2025-04-25-using-ai-well-different-from-search",
+        "2025-06-13-copyright-dilemma-in-ai-era",
+        "2026-04-06-sam-altman-superintelligence-new-deal",
+        "2024-08-05-ai-era-future-of-media",
+        "2025-03-15-when-technology-becomes-borders",
+        "2024-08-25-ai-bubble-three-codes-data-chip-biz",
+        "2025-03-15-optimization-ai-new-era",
+        "2025-06-27-interpreting-human-genetics-with-ai"
+      ],
+      "newsletters": [
+        "nl-11"
+      ],
+      "firstSeen": "2024-08-05",
+      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -426,38 +497,81 @@
       "needs_manual_review": false
     },
     {
-      "id": "roi",
-      "slug": "roi",
-      "name": "ROI",
-      "aliases": [],
-      "definition": "투자수익률입니다. AI 도입의 비용 대비 효과를 판단하는 핵심 지표입니다.",
-      "frequency": 19,
-      "category": "research",
+      "id": "소버린ai",
+      "slug": "소버린ai",
+      "name": "소버린AI",
+      "aliases": [
+        "소버린 AI",
+        "sovereign AI",
+        "소버린 인공지능"
+      ],
+      "definition": "자국에서 만들고 운영하는 자체 AI입니다. 데이터·안보·산업 정책이 결합된 개념입니다.",
+      "frequency": 22,
+      "category": "company",
       "posts": [
         "2025-05-05-furiosa-ai",
-        "2025-08-20-the-real-meaning-of-mit-report",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-03-02-ai-layoff-trap",
-        "2026-03-05-brain-fry",
-        "2026-03-16-why-world-runs-on-sap",
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-04-09-google-cloud-ai-agent-trends",
-        "2024-10-15-ai-bubble-three-collapse-scenarios",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2026-04-06-sam-altman-superintelligence-new-deal",
-        "2024-08-05-ai-era-future-of-media",
-        "2025-03-15-when-technology-becomes-borders",
-        "2024-08-25-ai-bubble-three-codes-data-chip-biz",
-        "2025-03-15-optimization-ai-new-era",
-        "2025-06-27-interpreting-human-genetics-with-ai"
+        "2024-09-27-lionsgate-runway-ai-partnership",
+        "2025-02-20-sovereign-ai",
+        "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
+        "2025-03-20-can-yangjae-become-an-ai-hub",
+        "2025-05-10-asean-market-test-of-tech-sovereignty",
+        "2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony",
+        "2025-05-25-can-ai-payments-be-taxed",
+        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
+        "2025-06-25-us-stablecoin-bill-hopes-and-concerns",
+        "2025-07-25-national-ai-foundation-model-project",
+        "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-03-15-30b-vs-671b-parameters",
+        "2025-03-15-kt-korean-ai-model-mideum-2",
+        "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-05-25-gpt5-limitations-and-whats-next",
+        "2025-08-05-chinas-open-source-ai",
+        "2025-03-10-ai-era-survival-strategy"
       ],
       "newsletters": [
-        "nl-11"
+        "nl-7",
+        "nl-8",
+        "nl-32",
+        "nl-53"
       ],
-      "firstSeen": "2024-08-05",
-      "lastSeen": "2026-04-06",
+      "firstSeen": "2024-09-27",
+      "lastSeen": "2025-08-05",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai전략",
+      "slug": "ai전략",
+      "name": "AI전략",
+      "aliases": [],
+      "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
+      "frequency": 21,
+      "category": "leader",
+      "posts": [
+        "2025-10-09-sam-altman-openai-four-bets",
+        "2025-12-17-demis-hassabis-future-of-intelligence",
+        "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
+        "2026-03-10-alphago-10-years",
+        "2026-03-16-why-ai-cant-learn",
+        "2026-03-18-karpathy-autoresearch",
+        "2026-03-19-anthropic-81k-interviews",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-04-03-karpathy-llm-knowledge-base",
+        "2026-04-07-culture-that-ate-silicon-valley",
+        "2026-06-10-from-agi-to-asi",
+        "2026-06-15-satya-nadella-learning-loop-token-capital",
+        "2025-04-15-ai-from-learning-era-to-experience-era",
+        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
+        "2025-05-20-anthropic-cpo-on-pm-competencies",
+        "2025-07-15-why-meta-declared-asi",
+        "2026-01-10-elon-musk-vision-of-ai-future",
+        "2025-02-20-sovereign-ai",
+        "2025-05-25-can-ai-payments-be-taxed",
+        "2025-06-14-no-innovation-at-apple-wwdc-2025",
+        "2025-03-10-ai-era-survival-strategy"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-02-20",
+      "lastSeen": "2026-03-19",
       "needs_manual_review": false
     },
     {
@@ -491,77 +605,6 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-09-10",
-      "lastSeen": "2026-03-19",
-      "needs_manual_review": false
-    },
-    {
-      "id": "소버린ai",
-      "slug": "소버린ai",
-      "name": "소버린AI",
-      "aliases": [
-        "소버린 AI",
-        "sovereign AI",
-        "소버린 인공지능"
-      ],
-      "definition": "자국에서 만들고 운영하는 자체 AI입니다. 데이터·안보·산업 정책이 결합된 개념입니다.",
-      "frequency": 18,
-      "category": "company",
-      "posts": [
-        "2025-05-05-furiosa-ai",
-        "2025-02-20-sovereign-ai",
-        "2025-03-10-five-conditions-for-korea-to-become-ai-g3",
-        "2025-03-20-can-yangjae-become-an-ai-hub",
-        "2025-05-10-asean-market-test-of-tech-sovereignty",
-        "2025-05-25-can-ai-payments-be-taxed",
-        "2025-07-25-national-ai-foundation-model-project",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-03-15-30b-vs-671b-parameters",
-        "2025-03-15-kt-korean-ai-model-mideum-2",
-        "2025-04-10-naver-ai-introduces-lightweight-llm",
-        "2025-05-25-gpt5-limitations-and-whats-next",
-        "2025-08-05-chinas-open-source-ai",
-        "2025-03-10-ai-era-survival-strategy"
-      ],
-      "newsletters": [
-        "nl-7",
-        "nl-8",
-        "nl-32",
-        "nl-53"
-      ],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2025-08-05",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai전략",
-      "slug": "ai전략",
-      "name": "AI전략",
-      "aliases": [],
-      "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
-      "frequency": 18,
-      "category": "leader",
-      "posts": [
-        "2025-10-09-sam-altman-openai-four-bets",
-        "2025-12-17-demis-hassabis-future-of-intelligence",
-        "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
-        "2026-03-10-alphago-10-years",
-        "2026-03-16-why-ai-cant-learn",
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-19-anthropic-81k-interviews",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-07-culture-that-ate-silicon-valley",
-        "2026-06-10-from-agi-to-asi",
-        "2026-06-15-satya-nadella-learning-loop-token-capital",
-        "2025-04-15-ai-from-learning-era-to-experience-era",
-        "2025-07-15-why-meta-declared-asi",
-        "2025-02-20-sovereign-ai",
-        "2025-05-25-can-ai-payments-be-taxed",
-        "2025-06-14-no-innovation-at-apple-wwdc-2025",
-        "2025-03-10-ai-era-survival-strategy"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-20",
       "lastSeen": "2026-03-19",
       "needs_manual_review": false
     },
@@ -659,6 +702,68 @@
       "needs_manual_review": false
     },
     {
+      "id": "organizational-design",
+      "slug": "organizational-design",
+      "name": "조직설계",
+      "aliases": [
+        "조직 설계",
+        "org design",
+        "organization design"
+      ],
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "frequency": 14,
+      "category": "company",
+      "posts": [
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-02-next-era-knowledge-work",
+        "2026-06-07-bok-ai-productivity-disconnect",
+        "2026-06-19-implicit-organization-ai-agents",
+        "2026-06-23-meta-ai-reorg-team-size",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-03-05-redesigning-work-structure-in-ai-era",
+        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
+        "2025-06-25-us-stablecoin-bill-hopes-and-concerns"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2025-06-25",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ui",
+      "slug": "ui",
+      "name": "UI",
+      "aliases": [],
+      "definition": "사용자 인터페이스입니다. 채팅 UI가 AI 시대의 기본 상호작용으로 자리잡았습니다.",
+      "frequency": 13,
+      "category": "company",
+      "posts": [
+        "2026-03-16-why-world-runs-on-sap",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-03-karpathy-llm-knowledge-base",
+        "2026-04-23-claude-code-quality-incident-postmortem",
+        "2025-04-25-2025-shanghai-motor-show-shock",
+        "2025-06-15-why-perplexity-wants-to-acquire-chrome",
+        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
+        "2025-06-25-us-stablecoin-bill-hopes-and-concerns",
+        "2025-06-14-no-innovation-at-apple-wwdc-2025"
+      ],
+      "newsletters": [
+        "nl-1",
+        "nl-16",
+        "nl-52"
+      ],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-03-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "tpu",
       "slug": "tpu",
       "name": "TPU",
@@ -684,6 +789,34 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2025-12-17",
+      "needs_manual_review": false
+    },
+    {
+      "id": "asi",
+      "slug": "asi",
+      "name": "ASI",
+      "aliases": [],
+      "definition": "초지능입니다. 거의 모든 영역에서 인간을 능가하는 AI를 의미합니다.",
+      "frequency": 12,
+      "category": "tech",
+      "posts": [
+        "2026-03-31-asi-evolve-ai-accelerates-ai",
+        "2026-06-10-from-agi-to-asi",
+        "2025-05-15-thoughts-on-sam-altman-soft-singularity",
+        "2025-06-20-google-deepmind-ceo-vision",
+        "2025-07-15-why-meta-declared-asi",
+        "2025-07-15-why-jensen-huang-is-going-to-china",
+        "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2025-05-10-why-people-miss-chatgpt-4o",
+        "2025-05-25-gpt5-limitations-and-whats-next"
+      ],
+      "newsletters": [
+        "nl-5",
+        "nl-9",
+        "nl-17"
+      ],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2025-07-15",
       "needs_manual_review": false
     },
     {
@@ -714,63 +847,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ui",
-      "slug": "ui",
-      "name": "UI",
-      "aliases": [],
-      "definition": "사용자 인터페이스입니다. 채팅 UI가 AI 시대의 기본 상호작용으로 자리잡았습니다.",
-      "frequency": 11,
-      "category": "company",
-      "posts": [
-        "2026-03-16-why-world-runs-on-sap",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2025-04-25-2025-shanghai-motor-show-shock",
-        "2025-06-15-why-perplexity-wants-to-acquire-chrome",
-        "2025-06-14-no-innovation-at-apple-wwdc-2025"
-      ],
-      "newsletters": [
-        "nl-1",
-        "nl-16",
-        "nl-52"
-      ],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-03-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "organizational-design",
-      "slug": "organizational-design",
-      "name": "조직설계",
-      "aliases": [
-        "조직 설계",
-        "org design",
-        "organization design"
-      ],
-      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
-      "frequency": 11,
-      "category": "company",
-      "posts": [
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-05-15-gen-ai-performance-reviews",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-06-02-next-era-knowledge-work",
-        "2026-06-07-bok-ai-productivity-disconnect",
-        "2026-06-19-implicit-organization-ai-agents",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2025-04-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "mcp",
       "slug": "mcp",
       "name": "MCP",
@@ -797,29 +873,54 @@
       "needs_manual_review": false
     },
     {
-      "id": "asi",
-      "slug": "asi",
-      "name": "ASI",
+      "id": "gdp",
+      "slug": "gdp",
+      "name": "GDP",
       "aliases": [],
-      "definition": "초지능입니다. 거의 모든 영역에서 인간을 능가하는 AI를 의미합니다.",
+      "definition": "국내총생산입니다. AI 생산성 효과가 거시 경제에 어떻게 반영될지 논쟁이 있습니다.",
       "frequency": 10,
-      "category": "tech",
+      "category": "survival",
       "posts": [
-        "2026-03-31-asi-evolve-ai-accelerates-ai",
-        "2026-06-10-from-agi-to-asi",
-        "2025-05-15-thoughts-on-sam-altman-soft-singularity",
-        "2025-07-15-why-meta-declared-asi",
-        "2025-07-15-why-jensen-huang-is-going-to-china",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2025-05-25-gpt5-limitations-and-whats-next"
+        "2025-11-10-peter-thiel-antichrist-lectures",
+        "2026-04-08-gallup-engagement-ai-paradox",
+        "2026-05-06-ai-job-apocalypse-fantasy",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
+        "2026-06-15-satya-nadella-learning-loop-token-capital",
+        "2025-03-25-koreas-end-or-transition",
+        "2025-04-01-ai-is-stealing-our-stories",
+        "2025-04-10-ai-era-response-overload-society",
+        "2025-07-05-why-can-adults-do-it-but-not-us",
+        "2026-04-22-ai-tool-income-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-25",
+      "lastSeen": "2026-06-12",
+      "needs_manual_review": false
+    },
+    {
+      "id": "cfo",
+      "slug": "cfo",
+      "name": "CFO",
+      "aliases": [],
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
+      "frequency": 10,
+      "category": "leader",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2026-04-07-sam-altman-superintelligence-new-deal",
+        "2026-06-19-companies-rein-in-ai-costs",
+        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
+        "2026-01-10-elon-musk-vision-of-ai-future",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
       ],
       "newsletters": [
-        "nl-5",
-        "nl-9",
-        "nl-17"
+        "nl-21",
+        "nl-49",
+        "nl-50"
       ],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2025-07-15",
+      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -894,30 +995,6 @@
       "newsletters": [],
       "firstSeen": "2024-07-20",
       "lastSeen": "2026-03-09",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cfo",
-      "slug": "cfo",
-      "name": "CFO",
-      "aliases": [],
-      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 8,
-      "category": "leader",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-06-19-companies-rein-in-ai-costs",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-21",
-        "nl-49",
-        "nl-50"
-      ],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -1057,27 +1134,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "gdp",
-      "slug": "gdp",
-      "name": "GDP",
-      "aliases": [],
-      "definition": "국내총생산입니다. AI 생산성 효과가 거시 경제에 어떻게 반영될지 논쟁이 있습니다.",
-      "frequency": 6,
-      "category": "survival",
-      "posts": [
-        "2025-11-10-peter-thiel-antichrist-lectures",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-05-06-ai-job-apocalypse-fantasy",
-        "2026-06-12-thrive-with-ai-mindset-not-skillset",
-        "2026-06-15-satya-nadella-learning-loop-token-capital",
-        "2025-03-25-koreas-end-or-transition"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-25",
-      "lastSeen": "2026-06-12",
-      "needs_manual_review": false
-    },
-    {
       "id": "강화학습",
       "slug": "강화학습",
       "name": "강화학습",
@@ -1139,6 +1195,27 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "rlhf",
+      "slug": "rlhf",
+      "name": "RLHF",
+      "aliases": [],
+      "definition": "인간 피드백 기반 강화학습입니다. 사람의 선호를 반영해 모델을 정렬하는 핵심 기법입니다.",
+      "frequency": 6,
+      "category": "research",
+      "posts": [
+        "2026-03-10-openclaw-rl",
+        "2026-04-07-llm-behavioral-alignment-gap",
+        "2026-05-08-teaching-claude-why",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2025-07-10-ban-left-biased-ai",
+        "2026-02-11-llm-behavioral-alignment-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-02-11",
       "needs_manual_review": false
     },
     {
@@ -1284,26 +1361,6 @@
       ],
       "firstSeen": "2026-03-10",
       "lastSeen": "2026-03-10",
-      "needs_manual_review": false
-    },
-    {
-      "id": "rlhf",
-      "slug": "rlhf",
-      "name": "RLHF",
-      "aliases": [],
-      "definition": "인간 피드백 기반 강화학습입니다. 사람의 선호를 반영해 모델을 정렬하는 핵심 기법입니다.",
-      "frequency": 5,
-      "category": "research",
-      "posts": [
-        "2026-03-10-openclaw-rl",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2026-05-08-teaching-claude-why",
-        "2025-07-10-ban-left-biased-ai",
-        "2026-02-11-llm-behavioral-alignment-gap"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-07-10",
-      "lastSeen": "2026-02-11",
       "needs_manual_review": false
     },
     {
@@ -2412,12 +2469,12 @@
     {
       "source": "LLM",
       "target": "GPU",
-      "strength": 9
+      "strength": 12
     },
     {
       "source": "LLM",
       "target": "API",
-      "strength": 10
+      "strength": 17
     },
     {
       "source": "LLM",
@@ -2441,23 +2498,18 @@
     },
     {
       "source": "LLM",
+      "target": "ROI",
+      "strength": 6
+    },
+    {
+      "source": "LLM",
       "target": "IPO",
       "strength": 4
     },
     {
       "source": "LLM",
-      "target": "ROI",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "임원",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
       "target": "소버린AI",
-      "strength": 9
+      "strength": 10
     },
     {
       "source": "LLM",
@@ -2466,8 +2518,23 @@
     },
     {
       "source": "LLM",
+      "target": "임원",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "KPI",
       "strength": 4
+    },
+    {
+      "source": "LLM",
+      "target": "조직설계",
+      "strength": 5
+    },
+    {
+      "source": "LLM",
+      "target": "UI",
+      "strength": 5
     },
     {
       "source": "LLM",
@@ -2476,18 +2543,13 @@
     },
     {
       "source": "LLM",
-      "target": "RAG",
-      "strength": 6
-    },
-    {
-      "source": "LLM",
-      "target": "UI",
+      "target": "ASI",
       "strength": 3
     },
     {
       "source": "LLM",
-      "target": "조직설계",
-      "strength": 4
+      "target": "RAG",
+      "strength": 6
     },
     {
       "source": "LLM",
@@ -2496,8 +2558,8 @@
     },
     {
       "source": "LLM",
-      "target": "ASI",
-      "strength": 3
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "LLM",
@@ -2512,12 +2574,7 @@
     {
       "source": "LLM",
       "target": "AI전환",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "CFO",
-      "strength": 2
+      "strength": 5
     },
     {
       "source": "LLM",
@@ -2527,7 +2584,7 @@
     {
       "source": "LLM",
       "target": "AI규제",
-      "strength": 2
+      "strength": 4
     },
     {
       "source": "LLM",
@@ -2542,12 +2599,12 @@
     {
       "source": "LLM",
       "target": "IP",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "LLM",
       "target": "LLMs",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "LLM",
@@ -2557,7 +2614,7 @@
     {
       "source": "LLM",
       "target": "RLHF",
-      "strength": 2
+      "strength": 4
     },
     {
       "source": "LLM",
@@ -2572,7 +2629,7 @@
     {
       "source": "LLM",
       "target": "플랫폼전략",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2597,6 +2654,11 @@
     {
       "source": "LLM",
       "target": "AI리서치",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
+      "target": "IEEE",
       "strength": 2
     },
     {
@@ -2607,12 +2669,12 @@
     {
       "source": "LLM",
       "target": "AI서비스",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "GPU",
       "target": "API",
-      "strength": 12
+      "strength": 14
     },
     {
       "source": "GPU",
@@ -2622,7 +2684,7 @@
     {
       "source": "GPU",
       "target": "AGI",
-      "strength": 9
+      "strength": 12
     },
     {
       "source": "GPU",
@@ -2636,18 +2698,13 @@
     },
     {
       "source": "GPU",
-      "target": "IPO",
-      "strength": 9
-    },
-    {
-      "source": "GPU",
       "target": "ROI",
-      "strength": 6
+      "strength": 8
     },
     {
       "source": "GPU",
-      "target": "임원",
-      "strength": 2
+      "target": "IPO",
+      "strength": 10
     },
     {
       "source": "GPU",
@@ -2658,6 +2715,11 @@
       "source": "GPU",
       "target": "AI전략",
       "strength": 4
+    },
+    {
+      "source": "GPU",
+      "target": "임원",
+      "strength": 2
     },
     {
       "source": "GPU",
@@ -2681,6 +2743,11 @@
     },
     {
       "source": "GPU",
+      "target": "ASI",
+      "strength": 5
+    },
+    {
+      "source": "GPU",
       "target": "RAG",
       "strength": 3
     },
@@ -2688,11 +2755,6 @@
       "source": "GPU",
       "target": "MCP",
       "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "ASI",
-      "strength": 2
     },
     {
       "source": "GPU",
@@ -2776,6 +2838,11 @@
     },
     {
       "source": "GPU",
+      "target": "빅테크",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
       "target": "기술패권",
       "strength": 2
     },
@@ -2811,13 +2878,13 @@
     },
     {
       "source": "API",
-      "target": "IPO",
-      "strength": 3
+      "target": "ROI",
+      "strength": 5
     },
     {
       "source": "API",
-      "target": "ROI",
-      "strength": 4
+      "target": "IPO",
+      "strength": 3
     },
     {
       "source": "API",
@@ -2836,6 +2903,11 @@
     },
     {
       "source": "API",
+      "target": "UI",
+      "strength": 4
+    },
+    {
+      "source": "API",
       "target": "TPU",
       "strength": 2
     },
@@ -2843,11 +2915,6 @@
       "source": "API",
       "target": "RAG",
       "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "UI",
-      "strength": 3
     },
     {
       "source": "API",
@@ -2867,7 +2934,7 @@
     {
       "source": "API",
       "target": "IP",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "API",
@@ -2902,6 +2969,11 @@
     {
       "source": "API",
       "target": "ERP",
+      "strength": 2
+    },
+    {
+      "source": "API",
+      "target": "IEEE",
       "strength": 2
     },
     {
@@ -2951,13 +3023,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "임원",
-      "strength": 3
+      "target": "AI전략",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "AI전략",
-      "strength": 4
+      "target": "임원",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -2976,8 +3048,8 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "RAG",
-      "strength": 4
+      "target": "조직설계",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -2986,8 +3058,8 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "조직설계",
-      "strength": 3
+      "target": "RAG",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
@@ -3091,18 +3163,18 @@
     },
     {
       "source": "AGI",
-      "target": "임원",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
       "target": "소버린AI",
       "strength": 4
     },
     {
       "source": "AGI",
       "target": "AI전략",
-      "strength": 6
+      "strength": 7
+    },
+    {
+      "source": "AGI",
+      "target": "임원",
+      "strength": 2
     },
     {
       "source": "AGI",
@@ -3121,6 +3193,11 @@
     },
     {
       "source": "AGI",
+      "target": "ASI",
+      "strength": 11
+    },
+    {
+      "source": "AGI",
       "target": "RAG",
       "strength": 2
     },
@@ -3128,11 +3205,6 @@
       "source": "AGI",
       "target": "MCP",
       "strength": 3
-    },
-    {
-      "source": "AGI",
-      "target": "ASI",
-      "strength": 9
     },
     {
       "source": "AGI",
@@ -3176,6 +3248,11 @@
     },
     {
       "source": "IT",
+      "target": "조직설계",
+      "strength": 2
+    },
+    {
+      "source": "IT",
       "target": "TPU",
       "strength": 2
     },
@@ -3186,17 +3263,12 @@
     },
     {
       "source": "IT",
-      "target": "조직설계",
+      "target": "CFO",
       "strength": 2
     },
     {
       "source": "IT",
       "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "CFO",
       "strength": 2
     },
     {
@@ -3216,13 +3288,13 @@
     },
     {
       "source": "CTO",
-      "target": "RAG",
-      "strength": 3
+      "target": "UI",
+      "strength": 2
     },
     {
       "source": "CTO",
-      "target": "UI",
-      "strength": 2
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "CTO",
@@ -3280,8 +3352,48 @@
       "strength": 2
     },
     {
-      "source": "IPO",
-      "target": "ROI",
+      "source": "ROI",
+      "target": "IPO",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "임원",
+      "strength": 4
+    },
+    {
+      "source": "ROI",
+      "target": "창업자",
+      "strength": 3
+    },
+    {
+      "source": "ROI",
+      "target": "팀장",
+      "strength": 3
+    },
+    {
+      "source": "ROI",
+      "target": "UI",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "MCP",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "CFO",
+      "strength": 3
+    },
+    {
+      "source": "ROI",
+      "target": "AI도입",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "초지능",
       "strength": 2
     },
     {
@@ -3335,74 +3447,19 @@
       "strength": 3
     },
     {
-      "source": "ROI",
-      "target": "임원",
-      "strength": 4
-    },
-    {
-      "source": "ROI",
-      "target": "창업자",
-      "strength": 3
-    },
-    {
-      "source": "ROI",
-      "target": "팀장",
-      "strength": 3
-    },
-    {
-      "source": "ROI",
-      "target": "UI",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "MCP",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "CFO",
-      "strength": 3
-    },
-    {
-      "source": "ROI",
-      "target": "AI도입",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "초지능",
-      "strength": 2
-    },
-    {
-      "source": "임원",
+      "source": "소버린AI",
       "target": "AI전략",
-      "strength": 4
-    },
-    {
-      "source": "임원",
-      "target": "창업자",
-      "strength": 16
-    },
-    {
-      "source": "임원",
-      "target": "팀장",
-      "strength": 16
-    },
-    {
-      "source": "임원",
-      "target": "KPI",
       "strength": 3
     },
     {
-      "source": "임원",
-      "target": "생산성",
+      "source": "소버린AI",
+      "target": "조직설계",
       "strength": 2
     },
     {
       "source": "소버린AI",
-      "target": "AI전략",
-      "strength": 3
+      "target": "UI",
+      "strength": 2
     },
     {
       "source": "소버린AI",
@@ -3436,6 +3493,11 @@
     },
     {
       "source": "AI전략",
+      "target": "임원",
+      "strength": 4
+    },
+    {
+      "source": "AI전략",
       "target": "창업자",
       "strength": 4
     },
@@ -3461,12 +3523,37 @@
     },
     {
       "source": "AI전략",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "AI전략",
       "target": "IP",
       "strength": 2
     },
     {
       "source": "AI전략",
       "target": "ML",
+      "strength": 2
+    },
+    {
+      "source": "임원",
+      "target": "창업자",
+      "strength": 16
+    },
+    {
+      "source": "임원",
+      "target": "팀장",
+      "strength": 16
+    },
+    {
+      "source": "임원",
+      "target": "KPI",
+      "strength": 3
+    },
+    {
+      "source": "임원",
+      "target": "생산성",
       "strength": 2
     },
     {
@@ -3515,6 +3602,26 @@
       "strength": 2
     },
     {
+      "source": "조직설계",
+      "target": "UI",
+      "strength": 3
+    },
+    {
+      "source": "조직설계",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "AI전환",
+      "strength": 3
+    },
+    {
+      "source": "조직설계",
+      "target": "CRM",
+      "strength": 2
+    },
+    {
       "source": "TPU",
       "target": "CFO",
       "strength": 3
@@ -3535,6 +3642,16 @@
       "strength": 2
     },
     {
+      "source": "ASI",
+      "target": "HBM",
+      "strength": 2
+    },
+    {
+      "source": "ASI",
+      "target": "MMLU",
+      "strength": 2
+    },
+    {
       "source": "RAG",
       "target": "CISO",
       "strength": 2
@@ -3542,21 +3659,6 @@
     {
       "source": "RAG",
       "target": "SSRN",
-      "strength": 2
-    },
-    {
-      "source": "조직설계",
-      "target": "생산성",
-      "strength": 2
-    },
-    {
-      "source": "조직설계",
-      "target": "AI전환",
-      "strength": 3
-    },
-    {
-      "source": "조직설계",
-      "target": "CRM",
       "strength": 2
     },
     {
@@ -3590,13 +3692,18 @@
       "strength": 2
     },
     {
-      "source": "ASI",
-      "target": "HBM",
+      "source": "CFO",
+      "target": "SEC",
       "strength": 2
     },
     {
-      "source": "ASI",
-      "target": "MMLU",
+      "source": "CFO",
+      "target": "초지능",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "EPS",
       "strength": 2
     },
     {
@@ -3617,21 +3724,6 @@
     {
       "source": "AI전환",
       "target": "CRM",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "초지능",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "EPS",
       "strength": 2
     },
     {
@@ -3662,7 +3754,7 @@
     {
       "source": "LLMs",
       "target": "RLHF",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "GPQA",
@@ -3677,6 +3769,11 @@
     {
       "source": "GPQA",
       "target": "오픈소스AI",
+      "strength": 2
+    },
+    {
+      "source": "RLHF",
+      "target": "RL",
       "strength": 2
     },
     {
@@ -3712,11 +3809,6 @@
     {
       "source": "노동시장",
       "target": "AI대체",
-      "strength": 2
-    },
-    {
-      "source": "RLHF",
-      "target": "RL",
       "strength": 2
     },
     {

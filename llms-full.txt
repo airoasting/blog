@@ -3,6 +3,21 @@
 > 운영자: AI ROASTING · 전략 컨설턴트 출신 AI 전문 강사 · 25년
 > URL: https://airoasting.github.io/blog
 
+## 관리자를 줄였더니, 메타 AI 조직이 무너졌다
+
+날짜: 2026-06-23
+카테고리: 기업
+소스: Inc.com (Jessica Stillman)
+원문: https://www.inc.com/jessica-stillman/the-worst-its-ever-been-why-metas-massive-ai-reorg-backfired-spectacularly/91363370
+태그: 조직설계, 팀규모, 관리자, 메타, AI조직
+
+3줄 요약:
+- 메타가 새 AI 조직을 급하게 꾸렸습니다. 개편을 이끈 CTO가 직접 사기가 역대 최악이라 인정했습니다.
+- 원인은 관리자 한 명에게 20명 넘게 몰아준 거대 팀이었습니다. 직원은 챙겨주는 사람 없이 방향을 잃었습니다.
+- 메타는 관리자당 직속 부하를 20명으로 묶기로 했습니다. 관리자를 줄이려는 모든 회사를 위한 경고입니다.
+
+Roasting: 관리자를 줄이면 조직이 가벼워진다고 믿으셨습니까? 메타는 그 믿음의 청구서를 '사기 역대 최악'이라는 이름으로 받았습니다.
+
 ## AI는 일자리를 없애지 않고, 둘로 가릅니다
 
 날짜: 2026-06-15
