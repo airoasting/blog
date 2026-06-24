@@ -205,7 +205,7 @@ async function main() {
   let injectStats = { updated: 0, inserted: 0, unchanged: 0, skipped: 0 };
   if (!f.noInject) {
     const conceptsBySlug = new Map(concepts.map(c => [c.slug, c]));
-    injectStats = injectAll(ROOT, conceptsBySlug, posts);
+    injectStats = injectAll(ROOT, conceptsBySlug, posts, relationships);
     console.log(`✓ post links: ${JSON.stringify(injectStats)}`);
   }
 

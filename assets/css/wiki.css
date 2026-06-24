@@ -33,8 +33,25 @@
 .wiki-concept-tile .name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
 .wiki-concept-tile .freq { font-size: 11px; color: #888; }
 
-.related-concepts { margin: 40px 0 0; padding: 24px 0 0; border-top: 1px solid #e8e6e0; }
-.related-concepts h3 { font-size: 12px; color: #666; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+.related-concepts { margin: 40px 0 0; padding: 24px 0 0; border-top: 1px solid var(--border, #e8e6e0); }
+.related-concepts h3 { font-size: 12px; color: var(--text-muted, #666); margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
 .related-concepts .concept-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.related-concepts .concept-chip { font-size: 13px; padding: 6px 12px; border-radius: 100px; background: #f2f0eb; color: #444; text-decoration: none; transition: background 0.15s; }
-.related-concepts .concept-chip:hover { background: #e8e6e0; }
+/* 필버튼: 위키 개념 페이지로 이동. 라이트/다크 모두 CSS 변수로 가독 보장 */
+.related-concepts .concept-chip {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: var(--surface-container-high, #f2f0eb);
+  color: var(--text, #444);
+  border: 1px solid var(--border, #e0ddd5);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+}
+.related-concepts .concept-chip:hover {
+  background: var(--primary, #1B2A4A);
+  color: var(--on-primary, #fff);
+  border-color: var(--primary, #1B2A4A);
+  transform: translateY(-1px);
+}
