@@ -1515,6 +1515,33 @@ img {
 .post-table-source,
 .post-section .post-table-source { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
 
+/* --- Dark-mode safety net for tables --- */
+/* New tables must use the .post-table class (theme-aware via vars above).
+   This net catches legacy or stray raw <table>s in post content that hardcode
+   light backgrounds / no text color, which otherwise vanish in dark mode
+   (light text on a light header). It does NOT touch .post-table, whose
+   .cell-hl highlights already resolve to readable dark-mode category colors. */
+[data-theme="dark"] .post table:not(.post-table) thead tr,
+[data-theme="dark"] .post table:not(.post-table) th {
+  background: var(--surface-container-high) !important;
+  color: var(--text) !important;
+}
+[data-theme="dark"] .post table:not(.post-table) td {
+  color: var(--text) !important;
+  background: transparent !important;
+}
+[data-theme="dark"] .post table:not(.post-table) th,
+[data-theme="dark"] .post table:not(.post-table) td {
+  border-color: var(--border) !important;
+}
+/* Legacy .post-table cells that hardcode a highlight hex inline (instead of
+   using .cell-hl) drop to ~1.9:1 contrast on the dark surface. Remap the known
+   hardcoded hexes to readable dark-mode equivalents. var()-based cells already
+   adapt and are untouched. New posts must use .cell-hl (no hardcoded color). */
+[data-theme="dark"] .post-table td[style*="#145C35"] { color: var(--cat-tech) !important; }
+[data-theme="dark"] .post-table td[style*="#c00"]    { color: #FF8A8A !important; }
+[data-theme="dark"] .post-table td[style*="#888"]    { color: var(--text-muted) !important; }
+
 /* --- Chart --- */
 .chart-wrap { margin: 24px 0; }
 .chart-title { font-size: 13px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }

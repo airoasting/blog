@@ -405,8 +405,12 @@ function copyPrompt(btn) {
 
 - `.post-table-wrap`: overflow-x 스크롤 래퍼
 - `.post-table`: 기본 테이블 (border, padding, color 모두 CSS 변수)
-- `.cell-hl`: 굵게 + 해당 카테고리 색상 강조
+- `.cell-hl`: 굵게 + 해당 카테고리 색상 강조. 강조 셀은 색상을 직접 쓰지 말고 이 클래스만 붙인다 (다크 모드에서도 카테고리 색상이 가독되게 자동 처리)
 - `.post-table-source`: 출처 표기 (소형, muted) — `.post-section p`보다 specificity가 낮으므로 반드시 `<p class="post-table-source">` 형태로 사용. 인라인 스타일 금지
+
+> **허용 inline style는 `text-align` 뿐**입니다. `<th>`에 `color`를 지정하면 안 됩니다(미지정 시 `var(--text)`가 자동 적용). 헤더 배경에 `#f5f5f5` 같은 밝은 색을 하드코딩하면 다크 모드에서 글자만 밝게 뒤집혀 "밝은 배경 + 밝은 글자 = 안 보임"이 됩니다. 이것이 가장 흔한 다크 모드 표 깨짐 원인입니다.
+
+> **안전망**: `style.css`에 `[data-theme="dark"] .post table:not(.post-table)` 규칙이 있어, 실수로 raw `<table>`을 넣어도 다크 모드에서 강제로 가독 처리됩니다. 단, 이는 최후 방어선일 뿐 `.cell-hl` 강조색을 살리지 못하므로 **반드시 `.post-table` 클래스를 직접 써야** 합니다.
 - th 하단 보더는 포스트의 `data-category` 값에 따라 자동으로 카테고리 색상 적용됨
 
 ### 4-12. CSS 기본 규칙

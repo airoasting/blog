@@ -19,6 +19,7 @@
 - **출처 없는 수치 사용 금지**
 - **능동태** 사용, 이중 부정 금지
 - **고유명사 표기 통일**: 앤트로픽 (Anthropic). '앤쓰로픽·앤스로픽·엔쓰로픽' 금지
+- **표는 `.post-table` 클래스 필수**: 본문 표는 `.post-table-wrap > table.post-table` 패턴만 사용. `<th>`/`<td>`에 `color`·`background` inline 금지(허용 inline은 `text-align`뿐), 강조는 `class="cell-hl"`. 배경에 밝은색 하드코딩 시 다크 모드에서 안 보임. 상세는 `guides/html-spec.md` 4-11
 
 ## 카테고리
 

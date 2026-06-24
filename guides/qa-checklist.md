@@ -69,12 +69,15 @@
 
 **자동화 가능:**
 - [ ] 테이블 존재 시: 전문 용어 헤더가 비개발자용 한국어로 변환되었는가?
-- [ ] 핵심 수치에 `font-weight: bold; color: {카테고리 컬러}` 강조가 적용되었는가?
-- [ ] 표 아래 출처 표기: `출처: 저자 (연도), Table N.` 형식인가?
-- [ ] `overflow-x: auto` 래퍼가 존재하는가? (모바일 반응형)
+- [ ] **`.post-table` 클래스를 쓰는가?** raw `<table style>` 또는 `<table>`(클래스 없음)은 금지
+- [ ] **`<th>`/`<td>`에 `color`·`background` inline style이 없는가?** (허용 inline은 `text-align` 뿐. 헤더 배경 `#f5f5f5`, `#eee` 테두리 등 밝은색 하드코딩 금지 → 다크 모드 깨짐)
+- [ ] 핵심 수치 강조는 색상 하드코딩이 아니라 `class="cell-hl"`로 했는가?
+- [ ] 표 아래 출처 표기: `<p class="post-table-source">출처: 저자 (연도), Table N.</p>` 형식인가?
+- [ ] `.post-table-wrap` 래퍼가 존재하는가? (모바일 반응형 overflow-x)
 - [ ] 열/행이 10개 이상일 때 핵심 4~6개로 선별되었는가?
 
 **수동 판단:**
+- [ ] **다크 모드로 전환했을 때 표 헤더·셀 텍스트가 모두 보이는가?** (테마 토글 후 육안 확인)
 - [ ] 테이블이 해당 인사이트 문단 바로 아래에 배치되었는가?
 - [ ] 비개발자가 표만 보고 시사점을 파악할 수 있는가?
 
@@ -132,6 +135,12 @@
 # - 표 아래 출처 표기 존재 여부 (post-table-source 클래스 사용)
 # - post-table-wrap / post-table 클래스 사용 여부 (inline style #eee 금지)
 # - 열/행 10개 이상 시 4~6개 선별 여부
+
+# 다크 모드 표 깨짐 검출 (발견 시 .post-table 패턴으로 교체)
+#   raw 인라인 표:        grep -n '<table style' {파일}
+#   클래스 없는 table:    grep -n '<table' {파일} | grep -v 'class="post-table"' | grep -v 'class="timeline-table"'
+#   th/td 색·배경 하드코딩: grep -nE '<(th|td)[^>]*style="[^"]*(color|background)' {파일}
+#   → 위 3개 중 하나라도 잡히면 다크 모드에서 안 보일 위험. 허용 inline은 text-align 뿐
 ```
 
 ---
