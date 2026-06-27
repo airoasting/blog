@@ -3,6 +3,13 @@
 > 운영자: AI ROASTING · 전략 컨설턴트 출신 AI 전문 강사 · 25년
 > URL: https://airoasting.github.io/blog
 
+## 인터랙티브 페이지
+- /blog/timeline/model-timeline.html : AI 모델 타임라인 (OpenAI·Anthropic·Google 등 주요 AI 모델 연표, 2017~현재)
+- /blog/timeline/robot-timeline.html : 로봇 타임라인 (휴머노이드·4족 로봇 공개·데모·양산 연표, 공식 유튜브 영상 링크)
+- /blog/insights/wiki/ : 위키브레인 (포스트·뉴스레터에서 추출한 개념 네트워크)
+- /blog/insights/graph.html : 지식 그래프 (개념 연결 시각화)
+- /blog/newsletter/ : 뉴스레터 아카이브
+
 ## 당신이 쓰는 AI는 세속적이고 진보적입니다
 
 날짜: 2026-06-25
