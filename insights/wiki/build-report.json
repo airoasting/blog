@@ -1,0 +1,23 @@
+{
+  "buildAt": "2026-06-27T04:05:26.718Z",
+  "duration": 0.238,
+  "concepts": {
+    "total": 106,
+    "validDefinitions": 106,
+    "needsReview": 0
+  },
+  "relationships": {
+    "total": 286
+  },
+  "coverage": {
+    "postsWithConcepts": 208,
+    "totalPosts": 225
+  },
+  "inject": {
+    "updated": 0,
+    "inserted": 0,
+    "unchanged": 225,
+    "skipped": 0
+  },
+  "needsManualReview": []
+}

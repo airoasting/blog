@@ -9,7 +9,8 @@
   <meta property="og:description" content="xAI가 애플과 OpenAI를 반독점법 위반으로 텍사스 연방법원에 제소했습니다.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://airoasting.github.io/blog/company/2025-08-28-why-elon-musk-sued-apple-and-openai.html">
-  <meta property="og:image" content="https://airoasting.github.io/blog/company/images/2025_08_28_why_elon_musk_sued_apple_and_openai/thumbnail.png">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
   <meta property="og:locale" content="ko_KR">
   <meta property="article:published_time" content="2025-08-28">
   <meta property="article:section" content="기업">
@@ -174,11 +175,6 @@
           </div>
         </div>
       </section>
-      <div class="share-bar desktop-only">
-        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
-        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
-        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
-      </div>
       <div class="next-post">
         <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
         <a href="../leader/2026-01-10-elon-musk-vision-of-ai-future.html">
@@ -194,22 +190,30 @@
         </nav>
       </div><!-- /post-body-layout -->
     
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
     <!-- WIKI_CONCEPTS_START -->
     <section class="related-concepts">
       <div class="concept-links">
-      <a href="../wiki/concepts/소버린ai.html" class="concept-chip">소버린AI</a>
-      <a href="../wiki/concepts/organizational-design.html" class="concept-chip">조직설계</a>
-      <a href="../wiki/concepts/ui.html" class="concept-chip">UI</a>
+      <a href="../insights/wiki/concepts/소버린ai.html" class="concept-chip">소버린AI</a>
+      <a href="../insights/wiki/concepts/organizational-design.html" class="concept-chip">조직설계</a>
+      <a href="../insights/wiki/concepts/ui.html" class="concept-chip">UI</a>
       </div>
     </section>
     <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
   </article>
   </main>
   <div class="mobile-share-bar">
     <div class="share-bar">
-      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
-      <button class="share-btn" onclick="shareThreads()">Threads</button>
-      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
     </div>
   </div>
   <div class="ai-md-overlay" id="aiMdOverlay">
@@ -222,11 +226,11 @@
   <footer id="site-footer"></footer>
   <script src="../assets/js/footer.js"><\/script>
   <script>
-    const PAGE_URL = 'https://airoasting.github.io/blog/company/2025-08-28-why-elon-musk-sued-apple-and-openai.html';
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/company/2025-08-28-why-elon-musk-sued-apple-and-openai.html';
     const ROASTING_QUOTE = '선택할 수 없는 AI는 독점입니다. 질문할 권리가 AI 경쟁의 새 전선입니다.';
     function shareLinkedIn() { window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank'); }
     function shareThreads() { window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank'); }
-    function copyLink() { navigator.clipboard.writeText(PAGE_URL).then(() => { document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => { btn.textContent = '복사됨 ✓'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000); }); }); }
+    function copyLink() { navigator.clipboard.writeText(PAGE_URL).then(() => { document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => { btn.classList.add('copied'); setTimeout(() => { btn.classList.remove('copied'); }, 2000); }); }); }
   <\/script>
   <script src="../assets/js/ai-view.js"><\/script>
   <script src="../assets/js/post-features.js"><\/script>

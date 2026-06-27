@@ -114,13 +114,23 @@
   if (sections.length > 0 && tocLinks.length > 0) updateActive();
 })();
 
-/* Prompt Copy */
+/* 공유 (아이콘 버튼: 텍스트 대신 .copied 클래스 토글로 피드백) */
+function getShareUrl() {
+  if (typeof PAGE_URL !== 'undefined') return PAGE_URL;
+  return 'https://airoasting-blog.vercel.app' + window.location.pathname;
+}
+function shareLinkedIn() {
+  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(getShareUrl()), '_blank');
+}
+function shareThreads() {
+  var q = (typeof ROASTING_QUOTE !== 'undefined') ? ROASTING_QUOTE + ' ' : '';
+  window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(q + getShareUrl()), '_blank');
+}
 function copyLink() {
-  var url = (typeof PAGE_URL !== 'undefined') ? PAGE_URL : window.location.href;
-  navigator.clipboard.writeText(url).then(function() {
-    document.querySelectorAll('.share-btn[onclick="copyLink()"]').forEach(function(btn) {
-      btn.textContent = '링크 복사됨 ✓';
-      setTimeout(function() { btn.textContent = '링크 복사'; }, 2000);
+  navigator.clipboard.writeText(getShareUrl()).then(function() {
+    document.querySelectorAll('#copyBtn, #copyBtnMobile, .share-btn[onclick="copyLink()"]').forEach(function(btn) {
+      btn.classList.add('copied');
+      setTimeout(function() { btn.classList.remove('copied'); }, 2000);
     });
   });
 }

@@ -1,7 +1,7 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/(research|leader|company|tech|survival|about|newsletter|insights)\//.test(loc)) {
+  if (/\/(research|leader|company|tech|survival|about|newsletter|insights|timeline)\//.test(loc)) {
     prefix = '../';
   }
 

@@ -6,9 +6,11 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/wiki\/concepts(\/|$)/.test(loc)) {
+  if (/\/insights\/wiki\/concepts(\/|$)/.test(loc)) {
+    prefix = '../../../';
+  } else if (/\/insights\/wiki(\/|$)/.test(loc)) {
     prefix = '../../';
-  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|wiki)(\/|$)/.test(loc)) {
+  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
     prefix = '../';
   }
 
@@ -62,14 +64,15 @@
     '<div class="nav-bar">' +
       '<div class="container">' +
         '<nav class="main-nav">' +
+          '<a href="' + prefix + 'newsletter/index.html" class="nav-newsletter' + (activeCat === 'newsletter' ? ' active' : '') + '">뉴스레터</a>' +
           navLink('research', '리서치') +
           navLink('leader', '리더') +
           navLink('company', '기업') +
           navLink('tech', '기술') +
           navLink('survival', '생존') +
-          '<a href="' + prefix + 'newsletter/index.html" class="nav-newsletter' + (activeCat === 'newsletter' ? ' active' : '') + '">뉴스레터</a>' +
           '<a href="' + prefix + 'insights/graph.html" class="nav-graph' + (activeCat === 'graph' ? ' active' : '') + '">지식 그래프</a>' +
-          '<a href="' + prefix + 'wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키브레인</a>' +
+          '<a href="' + prefix + 'insights/wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키브레인</a>' +
+          '<a href="' + prefix + 'timeline/model-timeline.html" class="nav-timeline' + (activeCat === 'timeline' ? ' active' : '') + '">모델 타임라인</a>' +
         '</nav>' +
       '</div>' +
     '</div>' +
@@ -77,14 +80,15 @@
       '<div class="mobile-search">' +
         '<input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">' +
       '</div>' +
+      '<a href="' + prefix + 'newsletter/index.html">뉴스레터</a>' +
       mobileLink('research', '리서치') +
       mobileLink('leader', '리더') +
       mobileLink('company', '기업') +
       mobileLink('tech', '기술') +
       mobileLink('survival', '생존') +
-      '<a href="' + prefix + 'newsletter/index.html">뉴스레터</a>' +
       '<a href="' + prefix + 'insights/graph.html">지식 그래프</a>' +
-      '<a href="' + prefix + 'wiki/index.html">위키브레인</a>' +
+      '<a href="' + prefix + 'insights/wiki/index.html">위키브레인</a>' +
+      '<a href="' + prefix + 'timeline/model-timeline.html">모델 타임라인</a>' +
     '</div>';
 
   var header = document.getElementById('site-header');

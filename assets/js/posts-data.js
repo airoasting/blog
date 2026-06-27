@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "당신이 쓰는 AI는 세속적이고 진보적입니다",
+      "title": "당신이 쓰는 AI는 종교색이 옅고 진보적입니다",
       "date": "2026-06-25",
       "category": "research",
       "source": "The Economist (Briefing, Computational bias)",
@@ -14,12 +14,12 @@ window.POSTS_DATA = {
       ],
       "slug": "2026-06-25-ai-models-values-different-from-people",
       "file": "research/2026-06-25-ai-models-values-different-from-people.html",
-      "summary": "이코노미스트가 최신 AI 25개에 세계가치관조사를 물었습니다. AI의 가치관은 대부분의 사람보다 더 세속적이고 더 진보적이었습니다. 미국 기준으로는 민주당에 가까웠고, 중국산 모델만 예외였습니다. 이 편향은 훈련 데이터와 정렬 과정에서 생기며, 약 10억 명이 이미 매일 이 가치관과 대화합니다.",
-      "roasting_quote": "당신은 중립적인 도구를 쓰고 있다고 믿으십니까? 당신이 매일 묻는 AI는 지구상 어떤 나라보다 세속적이고, 미국 기준으로는 민주당입니다.",
+      "summary": "이코노미스트가 최신 AI 25개에 세계가치관조사를 물었습니다. AI의 가치관은 대부분의 사람보다 종교색이 옅고 더 진보적이었습니다. 미국 기준으로는 민주당에 가까웠고, 중국산 모델만 예외였습니다. 이 편향은 AI를 학습시키고 다듬는 과정에서 생기며, 약 10억 명이 이미 매일 이 가치관과 대화합니다.",
+      "roasting_quote": "당신은 중립적인 도구를 쓰고 있다고 믿으십니까? 당신이 매일 묻는 AI는 지구상 어떤 나라보다 종교색이 옅고, 미국 기준으로는 민주당입니다.",
       "next_post": "research/2025-07-10-ban-left-biased-ai.html"
     },
     {
-      "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌다",
+      "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌습니다",
       "date": "2026-06-23",
       "category": "company",
       "source": "Inc.com (Jessica Stillman)",

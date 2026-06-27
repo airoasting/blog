@@ -19,7 +19,8 @@
 - **출처 없는 수치 사용 금지**
 - **능동태** 사용, 이중 부정 금지
 - **고유명사 표기 통일**: 앤트로픽 (Anthropic). '앤쓰로픽·앤스로픽·엔쓰로픽' 금지
-- **표는 `.post-table` 클래스 필수**: 본문 표는 `.post-table-wrap > table.post-table` 패턴만 사용. `<th>`/`<td>`에 `color`·`background` inline 금지(허용 inline은 `text-align`뿐), 강조는 `class="cell-hl"`. 배경에 밝은색 하드코딩 시 다크 모드에서 안 보임. 상세는 `guides/html-spec.md` 4-11
+- **표는 `.post-table` 클래스 필수**: 본문 표는 `.post-table-wrap > table.post-table` 패턴만 사용. `<th>`/`<td>`에 `color`·`background` inline 금지(허용 inline은 `text-align`뿐), 강조는 `class="cell-hl"`. 배경에 밝은색 하드코딩 시 다크 모드에서 안 보임. 상세는 `_internal/guides/html-spec.md` 4-11
+- **왼쪽 띠지(좌측 액센트 바) 금지**: 카드·칩·헤더 등 어떤 요소에도 왼쪽 색상 띠지(`border-left` 강조선, `box-shadow: inset Npx 0 ...` 좌측 바)를 쓰지 않는다. 강조는 텍스트 색·배경·라벨로 처리한다.
 
 ## 카테고리
 
@@ -61,10 +62,10 @@
 
 | 목적 | 파일 | 내용 |
 |------|------|------|
-| 글쓰기 규칙 | `guides/editorial-rules.md` | 소스 소화, 문체 3원칙, 톤 매트릭스, 아티클 11섹션 구조, 출처 등급 |
-| HTML 구현 | `guides/html-spec.md` | 카테고리 정의, 파일/이미지 저장 규칙, HTML 템플릿 변수 매핑, 전체 마크업 스펙 |
-| SNS·이미지 | `guides/distribution.md` | 채널별 변환 규칙, LinkedIn 템플릿, 시리즈 연재, 이미지 디자인 기본값 |
-| 검수 | `guides/qa-checklist.md` | 5관점 검수(전략/논리/실용/문체/UI), 자동·수동 구분, 발행 전 최종 체크리스트 |
+| 글쓰기 규칙 | `_internal/guides/editorial-rules.md` | 소스 소화, 문체 3원칙, 톤 매트릭스, 아티클 11섹션 구조, 출처 등급 |
+| HTML 구현 | `_internal/guides/html-spec.md` | 카테고리 정의, 파일/이미지 저장 규칙, HTML 템플릿 변수 매핑, 전체 마크업 스펙 |
+| SNS·이미지 | `_internal/guides/distribution.md` | 채널별 변환 규칙, LinkedIn 템플릿, 시리즈 연재, 이미지 디자인 기본값 |
+| 검수 | `_internal/guides/qa-checklist.md` | 5관점 검수(전략/논리/실용/문체/UI), 자동·수동 구분, 발행 전 최종 체크리스트 |
 
 ## 워크플로우
 
@@ -82,20 +83,20 @@
 
 ## Wiki Brain 시스템
 
-블로그의 모든 포스트와 뉴스레터에서 개념을 자동 추출해 `wiki/`에 위키 페이지와 개념 네트워크 그래프를 생성합니다.
+블로그의 모든 포스트와 뉴스레터에서 개념을 자동 추출해 `insights/wiki/`에 위키 페이지와 개념 네트워크 그래프를 생성합니다.
 
 ```
 빌드 명령:   npm run wiki              (전체 빌드)
             npm run wiki -- --dry-run (검증만)
             npm run wiki:test         (단위 테스트)
 
-산출물:     wiki/concepts-data.json   (단일 진실 소스)
-            wiki/concepts/[slug].html (개념별 위키 페이지)
-            wiki/index.html           (전체 카탈로그 + 검색)
-            wiki/graph.html           (D3.js 네트워크 시각화)
-            wiki/build-report.json    (KPI · 검수 대상 목록)
+산출물:     insights/wiki/concepts-data.json   (단일 진실 소스)
+            insights/wiki/concepts/[slug].html (개념별 위키 페이지)
+            insights/wiki/index.html           (전체 카탈로그 + 검색)
+            insights/wiki/graph.html           (D3.js 네트워크 시각화)
+            insights/wiki/build-report.json    (KPI · 검수 대상 목록)
 
-수동 편집:  config/concept-aliases.json
+수동 편집:  _internal/config/concept-aliases.json
             - canonical: alias → 표준명 매핑
             - slugMap: 한국어 개념 → 영문 slug 캐시 (자동 누적)
             - blacklist: 개념 제외 단어

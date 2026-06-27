@@ -18,6 +18,8 @@
 - **금지 표현**: 혁명적, 획기적, 폭발적 성장, 누구나 쉽게, 패러다임 시프트, 게임 체인저
 - **출처 없는 수치 사용 금지**
 - **능동태** 사용, 이중 부정 금지
+- **고유명사 표기 통일**: 앤트로픽 (Anthropic). '앤쓰로픽·앤스로픽·엔쓰로픽' 금지
+- **표는 `.post-table` 클래스 필수**: 본문 표는 `.post-table-wrap > table.post-table` 패턴만 사용. `<th>`/`<td>`에 `color`·`background` inline 금지(허용 inline은 `text-align`뿐), 강조는 `class="cell-hl"`. 배경에 밝은색 하드코딩 시 다크 모드에서 안 보임. 상세는 `_internal/guides/html-spec.md` 4-11
 
 ## 카테고리
 
@@ -46,26 +48,61 @@
 > node -e "const fs=require('fs');const src=fs.readFileSync('assets/js/newsletter-data.js','utf8');const json=src.replace('window.NEWSLETTER_DATA = ','').replace(/;\\s*$/,'');const d=JSON.parse(json);fs.writeFileSync('newsletter-index.json',JSON.stringify({newsletters:d.map(({ep,title,date,url})=>({ep,title,date,url}))},null,2));"
 > ```
 
+> **뉴스레터 발행 체크리스트** (에피소드 추가 시 5개 모두 처리해야 본문이 사이트에서 보입니다):
+> 1. `assets/js/newsletter-data.js` 배열 맨 앞에 항목 추가 (`ep`, `title`, `date`, `img`, `url`)
+> 2. `newsletter/images/nl-{ep}.png` 썸네일 추가
+> 3. **`newsletter/content/nl-{ep}.md` 본문 파일 생성** (누락 시 카드는 떠도 클릭하면 "콘텐츠를 불러올 수 없습니다". 형식은 기존 `nl-51.md` 참조: 첫 줄 `[AI 로스팅 #{ep}] 제목`, 날짜 줄, 본문, `## 섹션`, `## 이번 주 AI 소식` 아래 `1/ … 10/`)
+> 4. `newsletter/index.html` 카드 그리드 맨 앞에 `#{ep}` 카드 추가 + `총 N화` 배지 갱신
+> 5. 위 `newsletter-index.json` 재생성 명령 실행
+>
+> 본문은 `window.NL_CONTENT`(1~47화 인라인) 또는 `newsletter/content/nl-{ep}.md`(fallback)에서 로드됩니다. 신규 화는 `.md` 방식으로 통일합니다. 리더는 index.html · newsletter/index.html · insights/insights.html 세 곳 모두 동일 fallback을 사용합니다.
+
 ## 가이드 참조
 
 | 목적 | 파일 | 내용 |
 |------|------|------|
-| 글쓰기 규칙 | `guides/editorial-rules.md` | 소스 소화, 문체 3원칙, 톤 매트릭스, 아티클 11섹션 구조, 출처 등급 |
-| HTML 구현 | `guides/html-spec.md` | 카테고리 정의, 파일/이미지 저장 규칙, HTML 템플릿 변수 매핑, 전체 마크업 스펙 |
-| SNS·이미지 | `guides/distribution.md` | 채널별 변환 규칙, LinkedIn 템플릿, 시리즈 연재, 이미지 디자인 기본값 |
-| 검수 | `guides/qa-checklist.md` | 5관점 검수(전략/논리/실용/문체/UI), 자동·수동 구분, 발행 전 최종 체크리스트 |
+| 글쓰기 규칙 | `_internal/guides/editorial-rules.md` | 소스 소화, 문체 3원칙, 톤 매트릭스, 아티클 11섹션 구조, 출처 등급 |
+| HTML 구현 | `_internal/guides/html-spec.md` | 카테고리 정의, 파일/이미지 저장 규칙, HTML 템플릿 변수 매핑, 전체 마크업 스펙 |
+| SNS·이미지 | `_internal/guides/distribution.md` | 채널별 변환 규칙, LinkedIn 템플릿, 시리즈 연재, 이미지 디자인 기본값 |
+| 검수 | `_internal/guides/qa-checklist.md` | 5관점 검수(전략/논리/실용/문체/UI), 자동·수동 구분, 발행 전 최종 체크리스트 |
 
 ## 워크플로우
 
 ```
-소스 URL → /create-post → (자동) /edit-post → (자동) /publish-post → /update-insights
+소스 URL → /create-post → (자동) /publish-post → /update-insights → /persona-comment → /update-wiki
 ```
 
-- `/create-post`가 초고 생성 후 edit-post → publish-post를 **자동 순차 실행** (중간 승인 없음)
-- edit-post: 퇴고 검수, 검출 문제 자동 수정
+- `/create-post`가 초고 + Navy 평가(3라운드) 완료 후 publish-post를 **자동 순차 실행** (중간 승인 없음)
 - publish-post: 최종 게이트 검수 + 자동 수정 + 인덱스 등록 + `node sync-posts.js` + 발행
 - update-insights: publish-post 완료 후 **자동 실행** (중간 승인 없음)
-- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`
+- persona-comment: update-insights 완료 후 **자동 실행** (중간 승인 없음)
+- update-wiki: persona-comment 완료 후 **자동 실행**. 개념 추출 · 위키 페이지 · 그래프 · 포스트 링크를 재생성
+- edit-post는 파이프라인에서 제외됨. 기존 포스트 수동 퇴고 시에만 사용
+- 개별 실행도 가능: `/edit-post <파일>`, `/publish-post <파일>`, `/update-insights <파일>`, `/persona-comment <파일>`, `/update-wiki`
+
+## Wiki Brain 시스템
+
+블로그의 모든 포스트와 뉴스레터에서 개념을 자동 추출해 `insights/wiki/`에 위키 페이지와 개념 네트워크 그래프를 생성합니다.
+
+```
+빌드 명령:   npm run wiki              (전체 빌드)
+            npm run wiki -- --dry-run (검증만)
+            npm run wiki:test         (단위 테스트)
+
+산출물:     insights/wiki/concepts-data.json   (단일 진실 소스)
+            insights/wiki/concepts/[slug].html (개념별 위키 페이지)
+            insights/wiki/index.html           (전체 카탈로그 + 검색)
+            insights/wiki/graph.html           (D3.js 네트워크 시각화)
+            insights/wiki/build-report.json    (KPI · 검수 대상 목록)
+
+수동 편집:  _internal/config/concept-aliases.json
+            - canonical: alias → 표준명 매핑
+            - slugMap: 한국어 개념 → 영문 slug 캐시 (자동 누적)
+            - blacklist: 개념 제외 단어
+            - domainKeywords: 우선 매칭 키워드
+```
+
+ANTHROPIC_API_KEY가 환경변수로 설정되어 있으면 Claude API로 정의를 생성합니다. 없으면 fallback 정의가 들어가고 모든 개념이 `needs_manual_review` 플래그를 받습니다.
 
 ## 스킬
 
@@ -75,3 +112,5 @@
 | `/edit-post <파일>` | 기존 포스트 퇴고, 문체 검수 |
 | `/publish-post <파일>` | 5관점 검수 + 인덱스 업데이트 + 발행 |
 | `/update-insights <파일>` | insights.html 해당 분기에 인사이트 카드 추가 |
+| `/persona-comment <파일>` | 포스트 하단에 6인 페르소나 라운드테이블 댓글 삽입 |
+| `/update-wiki` | wiki-brain 재빌드 (개념 추출 + 위키 + 그래프) |

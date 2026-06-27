@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모델 타임라인 | AI ROASTING</title>
+  <meta name="description" content="OpenAI, Google, Anthropic 등 주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다. 셀에 마우스를 올리면 정확한 날짜와 요약을 봅니다.">
+  <meta name="keywords" content="AI 모델 타임라인, GPT, Gemini, Claude, Llama, Grok, 모델 업데이트, AI 연표">
+  <link rel="canonical" href="https://airoasting.github.io/blog/timeline/model-timeline.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="모델 타임라인 | AI ROASTING">
+  <meta property="og:description" content="주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://airoasting.github.io/blog/timeline/model-timeline.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:site_name" content="AI ROASTING">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "모델 타임라인 | AI ROASTING",
+    "description": "주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다.",
+    "url": "https://airoasting.github.io/blog/timeline/model-timeline.html",
+    "inLanguage": "ko",
+    "isPartOf": {"@type": "WebSite", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "AI ROASTING", "item": "https://airoasting.github.io/blog/"},
+      {"@type": "ListItem", "position": 2, "name": "모델 타임라인"}
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="./data/model-timeline.js"></script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+  <style>
+    /* ── 모델 타임라인 (스코프: .mtl-root) ───────────────
+       사이트 헤더·푸터와 충돌하지 않도록 변수와 스타일을
+       .mtl-root 하위로만 한정한다. */
+    .mtl-root {
+      --bg: #ece7df;
+      --surface: #f3efe8;
+      --surface-2: #ebe5dc;
+      --text: #20242f;
+      --muted: #6a6670;
+      --accent: #c43500;
+      --line: rgba(40, 44, 52, 0.08);
+      --raised: 8px 8px 20px rgba(206, 198, 187, 0.8), -8px -8px 20px rgba(255, 252, 246, 0.92);
+      --raised-sm: 4px 4px 10px rgba(206, 198, 187, 0.72), -4px -4px 10px rgba(255, 252, 246, 0.9);
+      --inset: inset 4px 4px 10px rgba(206, 198, 187, 0.75), inset -4px -4px 10px rgba(255, 252, 246, 0.92);
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 14px;
+      --row-label-w: 144px;
+      --cell-w: 197px;
+      color: var(--text);
+      font-family: "Pretendard", var(--font-body), sans-serif;
+    }
+
+    [data-theme="dark"] .mtl-root {
+      --bg: #171a20;
+      --surface: #1c2028;
+      --surface-2: #171b22;
+      --text: #f3f5f8;
+      --muted: #9ca3af;
+      --accent: #ff7a4d;
+      --line: rgba(255,255,255,0.06);
+      --raised: 8px 8px 20px rgba(10, 11, 14, 0.72), -8px -8px 20px rgba(35, 39, 48, 0.88);
+      --raised-sm: 4px 4px 10px rgba(10, 11, 14, 0.68), -4px -4px 10px rgba(35, 39, 48, 0.84);
+      --inset: inset 4px 4px 10px rgba(10, 11, 14, 0.7), inset -4px -4px 10px rgba(35, 39, 48, 0.86);
+    }
+
+    .mtl-root, .mtl-root * { box-sizing: border-box; }
+
+    .mtl-root .page {
+      padding: 28px 0 56px;
+    }
+
+    .mtl-root .hero,
+    .mtl-root .shell {
+      background: transparent;
+    }
+
+    .mtl-root .hero {
+      padding: 0 0 24px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mtl-root .eyebrow {
+      margin-bottom: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .mtl-root .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .mtl-root .hero-title {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 4.6vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.035em;
+      font-weight: 900;
+    }
+
+    .mtl-root .hero-copy {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* 이벤트 타입 색상 토큰 · 카드 배경 · 구분선 */
+    .mtl-root {
+      --type-release: #c43500;
+      --type-update: #1A4A7A;
+      --type-paper: #145C35;
+      --type-api_launch: #6D28D9;
+      --type-shutdown: #71717A;
+      --card-bg: #ffffff;
+      --divider: rgba(40, 44, 52, 0.12);
+    }
+    [data-theme="dark"] .mtl-root {
+      --type-release: #ff8a5b;
+      --type-update: #7FB0E0;
+      --type-paper: #5FBF88;
+      --type-api_launch: #C4B5FD;
+      --type-shutdown: #A1A1AA;
+      --card-bg: #2b313d;
+      --divider: rgba(255, 255, 255, 0.14);
+    }
+    .mtl-root .event-chip[data-type="shutdown"] { --chip-accent: var(--type-shutdown); }
+
+    .mtl-root .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 16px;
+      margin-top: 14px;
+    }
+
+    .mtl-root .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+    }
+
+    .mtl-root .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .mtl-root .legend-item[data-type="release"] .legend-dot { background: var(--type-release); }
+    .mtl-root .legend-item[data-type="update"] .legend-dot { background: var(--type-update); }
+    .mtl-root .legend-item[data-type="paper"] .legend-dot { background: var(--type-paper); }
+    .mtl-root .legend-item[data-type="api_launch"] .legend-dot { background: var(--type-api_launch); }
+    .mtl-root .legend-item[data-type="shutdown"] .legend-dot { background: var(--type-shutdown); }
+
+    .mtl-root .hero-stats {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .mtl-root .hero-stat {
+      min-width: 118px;
+      padding: 12px 16px;
+      border-radius: var(--radius-lg);
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+    }
+
+    .mtl-root .hero-stat strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 22px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .mtl-root .hero-stat span {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .mtl-root .shell {
+      padding: 0;
+    }
+
+    .mtl-root .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding: 0 4px;
+    }
+
+    .mtl-root .toolbar-meta {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .mtl-root .table-wrap {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-height: none;
+      border-radius: var(--radius-lg);
+      padding: 0 4px 4px 0;
+      background: transparent;
+      scrollbar-width: none;
+    }
+
+    .mtl-root .table-wrap::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 분기/연도 헤더 행: 세로 스크롤 시 상단 고정 */
+    .mtl-root .timeline-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .mtl-root .timeline-table .corner {
+      z-index: 40;
+    }
+    /* 점선이 카드 위·아래로 삐져나오지 않도록 가장자리 패딩만 제거 */
+    .mtl-root .timeline-table thead th { padding-top: 0; }
+    .mtl-root .timeline-table tbody tr:last-child td,
+    .mtl-root .timeline-table tbody tr:last-child th { padding-bottom: 0; }
+
+    .mtl-root .timeline-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      table-layout: fixed;
+      width: max-content;
+    }
+
+    .mtl-root .timeline-table th,
+    .mtl-root .timeline-table td {
+      padding: 5px;
+      vertical-align: top;
+    }
+
+    /* 첫 컬럼(제공사/기간·회사명)은 왼쪽에 완전히 붙인다 */
+    .mtl-root .timeline-table .corner,
+    .mtl-root .timeline-table .rowhead {
+      padding-left: 0;
+    }
+
+    /* 세로 점선: 모든 데이터 컬럼(연도·분기) 왼쪽 경계 */
+    .mtl-root .timeline-table thead th:not(.corner),
+    .mtl-root .timeline-table tbody td {
+      border-left: 1px dashed var(--divider);
+    }
+    /* 가로 점선: 회사(행) 사이 경계 */
+    .mtl-root .timeline-table tbody tr:not(:last-child) td,
+    .mtl-root .timeline-table tbody tr:not(:last-child) th {
+      border-bottom: 1px dashed var(--divider);
+    }
+
+    .mtl-root .timeline-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      background: var(--surface);
+    }
+
+    .mtl-root .timeline-table .corner {
+      position: sticky;
+      left: 0;
+      z-index: 35;
+      width: var(--row-label-w);
+      min-width: var(--row-label-w);
+      background: var(--surface);
+    }
+
+    .mtl-root .timeline-table .rowhead {
+      position: sticky;
+      left: 0;
+      z-index: 25;
+      width: var(--row-label-w);
+      min-width: var(--row-label-w);
+      background: var(--surface);
+    }
+
+    .mtl-root .head-card,
+    .mtl-root .row-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .mtl-root .head-card {
+      height: 74px;
+      padding: 12px 12px 10px;
+    }
+
+    .mtl-root .corner .head-card {
+      display: flex;
+      align-items: center;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .mtl-root .quarter-year {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .mtl-root .quarter-name {
+      display: block;
+      font-size: 19px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .mtl-root .row-card {
+      min-height: 80px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mtl-root .provider-name {
+      margin-bottom: 4px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .mtl-root .provider-models {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.45;
+    }
+
+    .mtl-root .cell-card {
+      width: var(--cell-w);
+      min-width: var(--cell-w);
+      min-height: 80px;
+      padding: 7px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 7px;
+      background: transparent;
+      border-radius: var(--radius-md);
+    }
+
+    .mtl-root .cell-card.is-empty {
+      background: transparent;
+    }
+
+    .mtl-root .event-chip {
+      width: calc(50% - 3.5px);
+      flex: 0 0 calc(50% - 3.5px);
+      min-width: 0;
+      border: 0;
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: var(--card-bg);
+      box-shadow: var(--raised-sm);
+      text-align: left;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .mtl-root .event-chip:hover {
+      transform: translateY(-1px);
+    }
+
+    .mtl-root .event-chip:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .mtl-root .event-chip[data-type="release"] { --chip-accent: var(--type-release); }
+    .mtl-root .event-chip[data-type="update"] { --chip-accent: var(--type-update); }
+    .mtl-root .event-chip[data-type="paper"] { --chip-accent: var(--type-paper); }
+    .mtl-root .event-chip[data-type="api_launch"] { --chip-accent: var(--type-api_launch); }
+
+    .mtl-root .chip-model {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--text);
+    }
+
+    .mtl-root .chip-type {
+      display: block;
+      margin-top: 3px;
+      color: var(--chip-accent, var(--muted));
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .mtl-tooltip {
+      position: fixed;
+      z-index: 70;
+      width: min(320px, calc(100vw - 24px));
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: var(--raised);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.14s ease, transform 0.14s ease;
+    }
+
+    .mtl-tooltip.is-open {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mtl-tooltip.is-pinned {
+      pointer-events: auto;
+    }
+
+    .mtl-tooltip-title {
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .mtl-tooltip-meta {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .mtl-tooltip-body {
+      color: var(--text);
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .mtl-tooltip-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .mtl-root .page {
+        padding: 18px 0 40px;
+      }
+
+      .mtl-root .hero {
+        padding: 0 0 20px;
+      }
+
+      .mtl-root .shell {
+        padding: 0;
+      }
+
+      .mtl-root .table-wrap {
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'timeline' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" class="search-input" id="searchInput" placeholder="포스트 검색..." autocomplete="off">
+        <button class="search-close" id="searchClose">ESC</button>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <main>
+    <div class="mtl-root">
+      <div class="container">
+        <div class="page">
+        <section class="hero">
+          <div class="hero-top">
+            <div>
+              <h1 class="hero-title">AI 모델 타임라인</h1>
+              <div class="legend" aria-hidden="true">
+                <span class="legend-item" data-type="release"><span class="legend-dot"></span>출시</span>
+                <span class="legend-item" data-type="update"><span class="legend-dot"></span>업데이트</span>
+                <span class="legend-item" data-type="paper"><span class="legend-dot"></span>논문</span>
+                <span class="legend-item" data-type="api_launch"><span class="legend-dot"></span>API</span>
+                <span class="legend-item" data-type="shutdown"><span class="legend-dot"></span>종료</span>
+              </div>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><strong id="statProviders">0</strong><span>제공사</span></div>
+              <div class="hero-stat"><strong id="statEvents">0</strong><span>업데이트</span></div>
+              <div class="hero-stat"><strong id="statQuarters">0</strong><span>구간</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="shell">
+          <div class="toolbar">
+            <div class="toolbar-meta" id="resultsMeta">타임라인을 불러오는 중입니다.</div>
+          </div>
+          <div class="table-wrap">
+            <table class="timeline-table" id="timelineTable"></table>
+          </div>
+        </section>
+        </div>
+      </div>
+
+      <div class="mtl-tooltip" id="tooltip" aria-hidden="true">
+        <div class="mtl-tooltip-title" id="tooltipTitle"></div>
+        <div class="mtl-tooltip-meta" id="tooltipMeta"></div>
+        <div class="mtl-tooltip-body" id="tooltipBody"></div>
+        <a class="mtl-tooltip-link" id="tooltipLink" href="#" target="_blank" rel="noopener">원문 보기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js"></script>
+  <script src="../assets/js/search.js"></script>
+  <script src="../assets/js/posts-data.js"></script>
+
+  <script>
+    const providerOrder = [
+      // 미국
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Meta",
+      "xAI",
+      // 중국
+      "DeepSeek",
+      "Z.ai",
+      "Alibaba",
+      "ByteDance",
+      // 기타
+      "Mistral",
+      "LG"
+    ];
+
+    const providerLeadModel = {
+      "OpenAI": "GPT, ChatGPT, Codex",
+      "Anthropic": "Claude",
+      "Google": "Gemini, Transformer, BERT",
+      "Meta": "Llama",
+      "xAI": "Grok",
+      "DeepSeek": "DeepSeek V3, R1",
+      "Z.ai": "GLM",
+      "Alibaba": "Qwen",
+      "ByteDance": "Seed, Seedance",
+      "Mistral": "Mistral, Mixtral",
+      "LG": "EXAONE"
+    };
+
+    const refs = {
+      statProviders: document.getElementById("statProviders"),
+      statEvents: document.getElementById("statEvents"),
+      statQuarters: document.getElementById("statQuarters"),
+      resultsMeta: document.getElementById("resultsMeta"),
+      timelineTable: document.getElementById("timelineTable"),
+      tooltip: document.getElementById("tooltip"),
+      tooltipTitle: document.getElementById("tooltipTitle"),
+      tooltipMeta: document.getElementById("tooltipMeta"),
+      tooltipBody: document.getElementById("tooltipBody"),
+      tooltipLink: document.getElementById("tooltipLink")
+    };
+
+    const TYPE_LABEL = {
+      release: "출시",
+      update: "업데이트",
+      paper: "논문",
+      api_launch: "API",
+      shutdown: "종료"
+    };
+
+    function typeLabel(t) {
+      return TYPE_LABEL[t] || String(t || "").replace(/_/g, " ");
+    }
+
+    // 2024년까지는 연도 단위, 2025년부터 분기 단위 컬럼
+    const QUARTER_FROM = 2025;
+
+    function columnForDate(date) {
+      const d = new Date(date);
+      const y = d.getFullYear();
+      if (y < QUARTER_FROM) return { type: "year", year: y, key: String(y) };
+      const q = Math.floor(d.getMonth() / 3) + 1;
+      return { type: "quarter", year: y, quarter: q, key: y + " Q" + q };
+    }
+
+    function sortedProviders(events) {
+      const providers = [...new Set(events.map((event) => event.provider))];
+      return providers.sort((a, b) => {
+        const aIdx = providerOrder.indexOf(a);
+        const bIdx = providerOrder.indexOf(b);
+        if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+        if (aIdx === -1) return 1;
+        if (bIdx === -1) return -1;
+        return aIdx - bIdx;
+      });
+    }
+
+    function buildColumnSequence(events) {
+      const years = events.map((e) => new Date(e.date).getFullYear());
+      const minY = Math.min(...years);
+      const maxY = Math.max(...years);
+      const maxDate = events.reduce((a, b) => (new Date(a.date) > new Date(b.date) ? a : b)).date;
+      const cols = [];
+      for (let y = minY; y <= Math.min(QUARTER_FROM - 1, maxY); y += 1) {
+        cols.push({ type: "year", year: y, key: String(y) });
+      }
+      if (maxY >= QUARTER_FROM) {
+        const lastCol = columnForDate(maxDate);
+        for (let y = QUARTER_FROM; y <= maxY; y += 1) {
+          const qEnd = y === maxY && lastCol.type === "quarter" ? lastCol.quarter : 4;
+          for (let q = 1; q <= qEnd; q += 1) {
+            cols.push({ type: "quarter", year: y, quarter: q, key: y + " Q" + q, isQStart: y === QUARTER_FROM && q === 1 });
+          }
+        }
+      }
+      return cols;
+    }
+
+    let activeChip = null;
+    let pinned = false;
+
+    function showTooltip(eventData, target, pin) {
+      activeChip = target;
+      pinned = !!pin;
+      refs.tooltip.classList.toggle("is-pinned", pinned);
+      refs.tooltipTitle.textContent = eventData.model;
+      refs.tooltipMeta.textContent = eventData.provider + " · " + eventData.date + " · " + typeLabel(eventData.event_type);
+      refs.tooltipBody.textContent = eventData.summary_ko || eventData.summary_en || "";
+      refs.tooltipLink.href = eventData.source_url;
+
+      const rect = target.getBoundingClientRect();
+      const tooltipWidth = Math.min(320, window.innerWidth - 24);
+      let left = rect.left + (rect.width / 2) - (tooltipWidth / 2);
+      if (left < 12) left = 12;
+      if (left + tooltipWidth > window.innerWidth - 12) left = window.innerWidth - tooltipWidth - 12;
+      let top = rect.bottom + 10;
+      if (top + 180 > window.innerHeight) top = rect.top - 180;
+
+      refs.tooltip.style.width = tooltipWidth + "px";
+      refs.tooltip.style.left = left + "px";
+      refs.tooltip.style.top = top + "px";
+      refs.tooltip.classList.add("is-open");
+      refs.tooltip.setAttribute("aria-hidden", "false");
+    }
+
+    function hideTooltip() {
+      activeChip = null;
+      pinned = false;
+      refs.tooltip.classList.remove("is-open", "is-pinned");
+      refs.tooltip.setAttribute("aria-hidden", "true");
+    }
+
+    function renderTable(events) {
+      const columns = buildColumnSequence(events);
+      const providers = sortedProviders(events);
+      refs.timelineTable.innerHTML = "";
+
+      const firstLabel = columns[0].type === "year" ? columns[0].year + "년" : columns[0].key;
+      const lastLabel = columns[columns.length - 1].key;
+      refs.statProviders.textContent = String(providers.length);
+      refs.statEvents.textContent = String(events.length);
+      refs.statQuarters.textContent = String(columns.length);
+      refs.resultsMeta.textContent = firstLabel + "부터 " + lastLabel + "까지, 제공사 " + providers.length + "곳의 업데이트 " + events.length + "건을 보고 있습니다.";
+
+      const thead = document.createElement("thead");
+      const headRow = document.createElement("tr");
+
+      const corner = document.createElement("th");
+      corner.className = "corner";
+      corner.innerHTML = '<div class="head-card">제공사 / 기간</div>';
+      headRow.appendChild(corner);
+
+      columns.forEach((col) => {
+        const th = document.createElement("th");
+        if (col.type === "quarter") th.className = "col-q";
+        if (col.type === "year") {
+          th.innerHTML = '<div class="head-card"><span class="quarter-year">연간</span><span class="quarter-name">' + col.year + '</span></div>';
+        } else {
+          th.innerHTML = '<div class="head-card"><span class="quarter-year">' + col.year + '</span><span class="quarter-name">Q' + col.quarter + '</span></div>';
+        }
+        headRow.appendChild(th);
+      });
+
+      thead.appendChild(headRow);
+      refs.timelineTable.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+
+      providers.forEach((provider) => {
+        const row = document.createElement("tr");
+
+        const label = document.createElement("th");
+        label.scope = "row";
+        label.className = "rowhead";
+        label.innerHTML = '<div class="row-card"><div class="provider-name">' + provider + '</div><div class="provider-models">' + (providerLeadModel[provider] || "Key models") + '</div></div>';
+        row.appendChild(label);
+
+        columns.forEach((col) => {
+          const cell = document.createElement("td");
+          if (col.type === "quarter") cell.className = "col-q";
+          const wrap = document.createElement("div");
+          wrap.className = "cell-card";
+
+          const items = events
+            .filter((event) => event.provider === provider && columnForDate(event.date).key === col.key)
+            .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+          if (!items.length) {
+            wrap.classList.add("is-empty");
+          } else {
+            items.forEach((eventData) => {
+              const chip = document.createElement("button");
+              chip.type = "button";
+              chip.className = "event-chip";
+              chip.setAttribute("data-type", eventData.event_type);
+              chip.setAttribute("aria-label", eventData.model + ", " + eventData.provider + ", " + eventData.date + ", " + typeLabel(eventData.event_type));
+              chip.innerHTML = '<span class="chip-model">' + eventData.model + '</span><span class="chip-type">' + typeLabel(eventData.event_type) + '</span>';
+              chip.addEventListener("mouseenter", () => { if (!pinned) showTooltip(eventData, chip, false); });
+              chip.addEventListener("mouseleave", () => { if (!pinned) hideTooltip(); });
+              chip.addEventListener("focus", () => showTooltip(eventData, chip, true));
+              chip.addEventListener("blur", (e) => {
+                if (refs.tooltip.contains(e.relatedTarget)) return;
+                hideTooltip();
+              });
+              chip.addEventListener("click", (e) => {
+                e.stopPropagation();
+                if (pinned && activeChip === chip) {
+                  hideTooltip();
+                } else {
+                  showTooltip(eventData, chip, true);
+                }
+              });
+              wrap.appendChild(chip);
+            });
+          }
+
+          cell.appendChild(wrap);
+          row.appendChild(cell);
+        });
+
+        tbody.appendChild(row);
+      });
+
+      refs.timelineTable.appendChild(tbody);
+      syncRowHeights();
+    }
+
+    function syncRowHeights() {
+      const rows = refs.timelineTable.querySelectorAll("tbody tr");
+      rows.forEach((row) => {
+        // 회사명 카드와 셀(칩 묶음)을 같은 높이로 맞춰, 회사명 카드가
+        // 오른쪽 칩들의 시작점~끝점에 맞게 세로로 늘어나도록 한다.
+        const cards = row.querySelectorAll(".row-card, .cell-card");
+        let maxHeight = 80;
+        cards.forEach((card) => {
+          card.style.height = "auto";
+        });
+        cards.forEach((card) => {
+          maxHeight = Math.max(maxHeight, card.scrollHeight);
+        });
+        cards.forEach((card) => {
+          card.style.height = maxHeight + "px";
+        });
+      });
+    }
+
+    function parseTimelineMarkdown(markdown) {
+      const match = markdown.match(/```json\n([\s\S]*?)\n```/);
+      if (!match) throw new Error("JSON code block not found in model-timeline.md");
+      return JSON.parse(match[1]);
+    }
+
+    async function loadTimelineData() {
+      try {
+        const response = await fetch("./data/model-timeline.md");
+        if (!response.ok) throw new Error("Failed to load model-timeline.md");
+        const markdown = await response.text();
+        return parseTimelineMarkdown(markdown);
+      } catch (error) {
+        if (window.MODEL_TIMELINE_DATA) return window.MODEL_TIMELINE_DATA;
+        throw error;
+      }
+    }
+
+    async function boot() {
+      const data = await loadTimelineData();
+      const events = data.events.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
+      renderTable(events);
+
+      // 초기 로딩 시 가로 스크롤을 오른쪽 끝(최신 분기)으로 이동.
+      // 폰트·레이아웃이 늦게 안정되며 scrollWidth가 커지므로 여러 시점에 재적용한다.
+      const tableWrap = document.querySelector(".table-wrap");
+      function scrollToLatest() { if (tableWrap) tableWrap.scrollLeft = tableWrap.scrollWidth; }
+      scrollToLatest();
+      requestAnimationFrame(scrollToLatest);
+      [60, 250, 600, 1200].forEach((t) => setTimeout(scrollToLatest, t));
+      window.addEventListener("load", scrollToLatest);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(scrollToLatest);
+
+      window.addEventListener("scroll", hideTooltip, { passive: true });
+      window.addEventListener("resize", () => {
+        hideTooltip();
+        syncRowHeights();
+      });
+
+      // 핀 상태에서 바깥 탭/클릭, Esc 로 닫기
+      document.addEventListener("click", (e) => {
+        if (!pinned) return;
+        if (e.target.closest(".event-chip") || refs.tooltip.contains(e.target)) return;
+        hideTooltip();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && refs.tooltip.classList.contains("is-open")) {
+          var chip = activeChip;
+          hideTooltip();
+          if (chip && typeof chip.focus === "function") chip.focus();
+        }
+      });
+    }
+
+    boot().catch((error) => {
+      refs.resultsMeta.textContent = "데이터를 불러오지 못했습니다.";
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
