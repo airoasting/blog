@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T00:38:12.486Z",
+  "generatedAt": "2026-06-27T00:45:12.564Z",
   "version": 1,
   "stats": {
     "totalConcepts": 103,
@@ -30,6 +30,7 @@
         "2026-04-07-llm-behavioral-alignment-gap",
         "2026-04-09-gen-ai-robots-reshaping-services",
         "2026-04-11-agent-harness-memory-lock-in",
+        "2026-05-13-state-media-control-influences-llm",
         "2026-05-15-gen-ai-performance-reviews",
         "2026-05-20-sciatlas-scientific-knowledge-graph",
         "2026-05-27-law-professors-prefer-ai",
@@ -49,7 +50,6 @@
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-07-10-ban-left-biased-ai",
         "2026-02-11-llm-behavioral-alignment-gap",
-        "2026-05-13-state-media-control-influences-llm",
         "2024-11-01-geoffrey-hinton-on-ai-danger",
         "2026-04-06-sam-altman-superintelligence-new-deal",
         "2024-08-05-ai-era-future-of-media",
@@ -97,7 +97,7 @@
         "nl-49"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-05-13",
+      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -106,7 +106,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 58,
+      "frequency": 59,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -142,6 +142,7 @@
         "2025-02-15-llms-will-get-smaller-and-smarter",
         "2025-03-15-kt-korean-ai-model-mideum-2",
         "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-04-20-which-ai-model-should-you-use",
         "2025-05-10-why-people-miss-chatgpt-4o",
         "2025-05-15-preserve-even-deleted-conversations",
         "2025-06-27-interpreting-human-genetics-with-ai",
@@ -1613,6 +1614,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai편향",
+      "slug": "ai편향",
+      "name": "AI편향",
+      "aliases": [],
+      "definition": "AI편향는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "research",
+      "posts": [
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-05-13-state-media-control-influences-llm",
+        "2026-06-25-ai-models-values-different-from-people",
+        "2025-07-10-ban-left-biased-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-07-10",
+      "lastSeen": "2026-03-17",
+      "needs_manual_review": true
+    },
+    {
       "id": "ml",
       "slug": "ml",
       "name": "ML",
@@ -1912,24 +1932,6 @@
       "firstSeen": "2025-03-25",
       "lastSeen": "2026-03-16",
       "needs_manual_review": false
-    },
-    {
-      "id": "ai편향",
-      "slug": "ai편향",
-      "name": "AI편향",
-      "aliases": [],
-      "definition": "AI편향는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "research",
-      "posts": [
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-06-25-ai-models-values-different-from-people",
-        "2025-07-10-ban-left-biased-ai"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-07-10",
-      "lastSeen": "2026-03-17",
-      "needs_manual_review": true
     },
     {
       "id": "자기개선ai",
@@ -2501,7 +2503,7 @@
     {
       "source": "LLM",
       "target": "GPU",
-      "strength": 16
+      "strength": 17
     },
     {
       "source": "LLM",
@@ -2670,6 +2672,11 @@
     },
     {
       "source": "LLM",
+      "target": "AI편향",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "저작권",
       "strength": 2
     },
@@ -2691,11 +2698,6 @@
     {
       "source": "LLM",
       "target": "ERP",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "AI편향",
       "strength": 2
     },
     {
@@ -2726,7 +2728,7 @@
     {
       "source": "GPU",
       "target": "API",
-      "strength": 14
+      "strength": 15
     },
     {
       "source": "GPU",
