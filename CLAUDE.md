@@ -40,6 +40,7 @@
 마크다운: _posts/YYYY-MM-DD-slug.md
 데이터:  posts-index.json (단일 소스) → node sync-posts.js → assets/js/posts-data.js
 뉴스레터: assets/js/newsletter-data.js (단일 소스) → newsletter-index.json (footer 아카이브용)
+타임라인: timeline/{model,robot}-timeline.html (데이터: timeline/data/{model,robot}-timeline.{md,js,json}, md가 단일 소스)
 ```
 
 > **posts-index.json이 단일 소스**입니다. posts-data.js를 직접 수정한 경우 반드시 posts-index.json에도 동일 내용을 반영하세요.
@@ -105,6 +106,29 @@
 
 ANTHROPIC_API_KEY가 환경변수로 설정되어 있으면 Claude API로 정의를 생성합니다. 없으면 fallback 정의가 들어가고 모든 개념이 `needs_manual_review` 플래그를 받습니다.
 
+## 타임라인 페이지
+
+AI 모델·로봇의 연표를 가로 표로 보여주는 두 페이지가 있습니다. 구조·CSS·인터랙션은 공유하고 데이터만 다릅니다.
+
+- `timeline/model-timeline.html` — AI 모델 타임라인. 2017~현재, 2024까지 연간·2025부터 분기 컬럼. 타입: 출시/업데이트/논문/API/종료.
+- `timeline/robot-timeline.html` — 로봇 타임라인. 휴머노이드·4족, 전부 연도별 컬럼. 타입: 공개/데모/양산. 칩 링크는 공식 유튜브 영상.
+- 두 페이지 상단 토글(`AI 모델` / `로봇`)로 상호 이동. 헤더 nav 대신 토글로 전환합니다.
+- 표 구성: 회사=행(왼쪽 고정), 모델/로봇=칩(셀 안 가로 2열 배열). 칩 클릭·포커스 시 툴팁에서 원문/영상으로 이동.
+- 두 페이지 모두 sitemap.xml에 등록되어 있습니다.
+
+데이터 파일(회사별 이벤트):
+
+```
+timeline/data/model-timeline.{md,js,json}
+timeline/data/robot-timeline.{md,js,json}
+```
+
+> **`.md`가 단일 소스**입니다(` ```json ` 코드블록). 페이지는 `.md`를 먼저 fetch하고, 실패 시 `.js`의 `window.MODEL_TIMELINE_DATA` / `window.ROBOT_TIMELINE_DATA`를 fallback으로 씁니다. **데이터를 바꾸면 `.md`·`.js`·`.json` 세 파일을 같은 내용으로 유지**하세요.
+
+이벤트 객체: `{date, provider, model, event_type, summary_ko, summary_en, source_url, source_type, significance, category}`. `source_url`은 모델은 공식 발표 링크, 로봇은 공식 유튜브 영상 watch URL. `provider`는 페이지 JS의 `providerOrder`(행 순서)·`providerLeadModel`(행 부제)과 정확히 일치해야 표시됩니다.
+
+> `/update-model-timeline` 스킬로 AI 모델 데이터를 리서치·검증해 재생성할 수 있습니다(페이지 디자인은 건드리지 않도록 주의).
+
 ## 스킬
 
 | 명령어 | 용도 |
@@ -115,3 +139,4 @@ ANTHROPIC_API_KEY가 환경변수로 설정되어 있으면 Claude API로 정의
 | `/update-insights <파일>` | insights.html 해당 분기에 인사이트 카드 추가 |
 | `/persona-comment <파일>` | 포스트 하단에 6인 페르소나 라운드테이블 댓글 삽입 |
 | `/update-wiki` | wiki-brain 재빌드 (개념 추출 + 위키 + 그래프) |
+| `/update-model-timeline` | AI 모델 업데이트 리서치·팩트검증 후 모델 타임라인 데이터 재생성 |
