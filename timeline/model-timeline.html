@@ -384,6 +384,24 @@
       justify-content: center;
     }
 
+    .mtl-root .provider-country {
+      margin-bottom: 5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      align-self: center;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
     .mtl-root .provider-name {
       margin-bottom: 4px;
       font-size: 14px;
@@ -648,6 +666,21 @@
       "LG": "EXAONE"
     };
 
+    // 회사 국적 (왼쪽 행 라벨에 표기)
+    const providerCountry = {
+      "OpenAI": { flag: "🇺🇸", name: "미국" },
+      "Anthropic": { flag: "🇺🇸", name: "미국" },
+      "Google": { flag: "🇺🇸", name: "미국" },
+      "Meta": { flag: "🇺🇸", name: "미국" },
+      "xAI": { flag: "🇺🇸", name: "미국" },
+      "DeepSeek": { flag: "🇨🇳", name: "중국" },
+      "Z.ai": { flag: "🇨🇳", name: "중국" },
+      "Alibaba": { flag: "🇨🇳", name: "중국" },
+      "ByteDance": { flag: "🇨🇳", name: "중국" },
+      "Mistral": { flag: "🇫🇷", name: "프랑스" },
+      "LG": { flag: "🇰🇷", name: "한국" }
+    };
+
     const refs = {
       statProviders: document.getElementById("statProviders"),
       statEvents: document.getElementById("statEvents"),
@@ -793,7 +826,9 @@
         const label = document.createElement("th");
         label.scope = "row";
         label.className = "rowhead";
-        label.innerHTML = '<div class="row-card"><div class="provider-name">' + provider + '</div><div class="provider-models">' + (providerLeadModel[provider] || "Key models") + '</div></div>';
+        const country = providerCountry[provider];
+        const countryHtml = country ? '<div class="provider-country">' + country.flag + ' ' + country.name + '</div>' : '';
+        label.innerHTML = '<div class="row-card">' + countryHtml + '<div class="provider-name">' + provider + '</div><div class="provider-models">' + (providerLeadModel[provider] || "Key models") + '</div></div>';
         row.appendChild(label);
 
         columns.forEach((col) => {

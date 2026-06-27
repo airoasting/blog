@@ -91,6 +91,30 @@ window.ROBOT_TIMELINE_DATA = {
       "category": "robot"
     },
     {
+      "date": "2026-03-04",
+      "provider": "Xiaomi",
+      "model": "CyberOne (공장 투입)",
+      "event_type": "demo",
+      "summary_ko": "EV 공장 조립라인 인턴 투입, 3시간 작업 90%",
+      "summary_en": "CyberOne interns on Xiaomi EV assembly line",
+      "source_url": "https://www.youtube.com/watch?v=J9WMBtpdPtg",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
+      "date": "2026-04-29",
+      "provider": "Xiaomi",
+      "model": "CyberOne V2",
+      "event_type": "reveal",
+      "summary_ko": "CyberOne V2 공개, 손 60% 축소·인공 땀샘 냉각",
+      "summary_en": "CyberOne V2 reveal with bionic sweat-gland cooling",
+      "source_url": "https://www.youtube.com/watch?v=RgS9bYihlkA",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
       "date": "2022-09-30",
       "provider": "Tesla",
       "model": "Optimus 프로토타입",
@@ -926,6 +950,18 @@ window.ROBOT_TIMELINE_DATA = {
       "summary_ko": "R1 출시, 4,900달러부터 재고 보유",
       "summary_en": "",
       "source_url": "https://www.youtube.com/watch?v=mTMYfVD4zCw",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
+      "date": "2025-10-29",
+      "provider": "Holiday Robotics",
+      "model": "FRIDAY",
+      "event_type": "reveal",
+      "summary_ko": "휴머노이드 FRIDAY 공개, 63 자유도 손 기술",
+      "summary_en": "Holiday Robotics unveils FRIDAY humanoid",
+      "source_url": "https://www.youtube.com/watch?v=iUNat-40BeM",
       "source_type": "video",
       "significance": "major",
       "category": "robot"
