@@ -61,6 +61,7 @@ function renderConcept(concept, ctx) {
 <main class="wiki-page">
   <nav class="wiki-breadcrumb"><a href="../index.html">Wiki</a> · ${esc(concept.name)}</nav>
   <section class="wiki-hero">
+    <a class="wiki-graph-btn" href="../graph.html">지식 그래프 보기 →</a>
     <div class="badges">
       <span class="badge">${esc(CAT_LABEL[concept.category] || concept.category)}</span>
       <span class="badge">${esc(concept.frequency)}개 콘텐츠</span>
@@ -78,12 +79,9 @@ function renderConcept(concept, ctx) {
     <h2>관련 개념 (${related.length})</h2>
     ${renderRelated(related)}
   </section>
-  <div class="wiki-footer-nav">
-    <a href="../index.html">← Wiki 메인</a>
-    <a href="../graph.html">개념 그래프 보기 →</a>
-  </div>
 </main>
 <footer id="site-footer"></footer>
+<script>window.HEADER_CONFIG = { activeCat: 'wiki' };</script>
 <script src="../../../assets/js/header.js"></script>
 <script src="../../../assets/js/footer.js"></script>
 </body>

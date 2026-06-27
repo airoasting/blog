@@ -89,10 +89,11 @@ function mergeWithIndex(root, posts) {
   const bySlug = new Map(idx.map(p => [p.slug, p]));
   return posts.map(p => {
     const meta = bySlug.get(p.slug);
-    if (!meta) return p;
+    if (!meta) return { ...p, date: p.date || p.slug.slice(0, 10) };
     return {
       ...p,
       title: p.title || meta.title,
+      date: p.date || meta.date || p.slug.slice(0, 10),
       tags: p.tags.length ? p.tags : (meta.tags || []),
       file: p.file || meta.file,
       summary: p.summary || meta.summary || meta.roasting_quote || '',

@@ -618,7 +618,6 @@
             <div class="hero-stats">
               <div class="hero-stat"><strong id="statProviders">0</strong><span>제조사</span></div>
               <div class="hero-stat"><strong id="statEvents">0</strong><span>로봇</span></div>
-              <div class="hero-stat"><strong id="statQuarters">0</strong><span>구간</span></div>
             </div>
           </div>
         </section>
@@ -709,7 +708,6 @@
     const refs = {
       statProviders: document.getElementById("statProviders"),
       statEvents: document.getElementById("statEvents"),
-      statQuarters: document.getElementById("statQuarters"),
       resultsMeta: document.getElementById("resultsMeta"),
       timelineTable: document.getElementById("timelineTable"),
       tooltip: document.getElementById("tooltip"),
@@ -816,7 +814,6 @@
       const lastLabel = columns[columns.length - 1].key;
       refs.statProviders.textContent = String(providers.length);
       refs.statEvents.textContent = String(events.length);
-      refs.statQuarters.textContent = String(columns.length);
       refs.resultsMeta.textContent = firstLabel + "부터 " + lastLabel + "까지, 제조사 " + providers.length + "곳의 로봇 이벤트 " + events.length + "건을 보고 있습니다.";
 
       const thead = document.createElement("thead");

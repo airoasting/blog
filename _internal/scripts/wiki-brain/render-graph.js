@@ -88,8 +88,10 @@ function renderGraph(rootDir, outPath) {
     })).filter(l => l.source && l.target);
 
     const wrap = document.querySelector('.graph-canvas-wrap');
-    wrap.innerHTML = '<svg id="graphSvg"></svg>';
+    const loadingEl = document.getElementById('graphLoading');
+    if (loadingEl) loadingEl.remove();
     const svg = d3.select('#graphSvg');
+    svg.selectAll('g').remove();
     const W = wrap.clientWidth, H = wrap.clientHeight;
 
     const rMin = isMobile ? 9 : 7;
@@ -105,6 +107,11 @@ function renderGraph(rootDir, outPath) {
 
     const stats = document.getElementById('graphStats');
     if (stats) stats.innerHTML = '<strong>' + nodes.length + '</strong>개 개념 · <strong>' + links.length + '</strong>개 관계';
+
+    // ── 원형 경계 안에서 force 시뮬레이션으로 자연 배치 ──
+    const cx = W / 2, cy = H / 2;
+    const margin = isMobile ? 30 : 44;
+    const boundR = Math.max(80, Math.min(W, H) / 2 - margin);
 
     const g = svg.append('g');
     const zoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => g.attr('transform', e.transform));
@@ -150,26 +157,26 @@ function renderGraph(rootDir, outPath) {
       link.classed('faded', false).classed('highlighted', false);
     }
 
-    const pad = 36;
-    const ringR = Math.min(W, H) * 0.42;
+    // 원 안을 자연스럽게 채우는 힘 배치 + 경계 클램프
     d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(links).id(d => d.id).distance(95).strength(d => Math.min(0.5, d.weight * 0.08)))
-      .force('charge', d3.forceManyBody().strength(-340).distanceMax(520))
-      .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('radial', d3.forceRadial(d => d.degree <= 1 ? ringR : ringR * 0.55, W / 2, H / 2).strength(d => d.degree <= 1 ? 0.22 : 0.07))
-      .force('x', d3.forceX(W / 2).strength(0.03))
-      .force('y', d3.forceY(H / 2).strength(0.03))
-      .force('collide', d3.forceCollide(d => d.r + 7))
+      .force('link', d3.forceLink(links).id(d => d.id).distance(70).strength(d => Math.min(0.6, d.weight * 0.1)))
+      .force('charge', d3.forceManyBody().strength(-190).distanceMax(420))
+      .force('center', d3.forceCenter(cx, cy))
+      .force('x', d3.forceX(cx).strength(0.045))
+      .force('y', d3.forceY(cy).strength(0.045))
+      .force('collide', d3.forceCollide(d => d.r + 6))
       .on('tick', () => {
         nodes.forEach(d => {
-          d.x = Math.max(pad + d.r, Math.min(W - pad - d.r, d.x));
-          d.y = Math.max(pad + d.r, Math.min(H - pad - d.r, d.y));
+          const dx = d.x - cx, dy = d.y - cy;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const maxD = boundR - d.r - 2;
+          if (dist > maxD) { d.x = cx + dx / dist * maxD; d.y = cy + dy / dist * maxD; }
         });
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
         node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
       });
 
-    const resetBtn = document.getElementById('zoomReset');
+    const resetBtn = document.getElementById('zoomResetBtn');
     if (resetBtn) resetBtn.onclick = () => svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
   }
 })();

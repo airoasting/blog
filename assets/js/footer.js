@@ -1,7 +1,11 @@
 (function () {
   var loc = window.location.pathname;
   var prefix = './';
-  if (/\/(research|leader|company|tech|survival|about|newsletter|insights|timeline)\//.test(loc)) {
+  if (/\/insights\/wiki\/concepts(\/|$)/.test(loc)) {
+    prefix = '../../../';
+  } else if (/\/insights\/wiki(\/|$)/.test(loc)) {
+    prefix = '../../';
+  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
     prefix = '../';
   }
 
@@ -22,6 +26,9 @@
         '<div>' +
           '<div class="footer-heading">카테고리</div>' +
           '<ul class="footer-links">' +
+            '<li><a href="' + prefix + 'newsletter/index.html" data-cat="newsletter" class="footer-cat-link">' +
+              '<span>뉴스레터</span>' +
+              '<span class="footer-count-pill" data-count-nl="1"></span></a></li>' +
             footerCatLink('research', '리서치') +
             footerCatLink('leader', '리더') +
             footerCatLink('company', '기업') +
@@ -35,6 +42,7 @@
             '<li><a href="' + prefix + 'about/index.html">프로젝트 소개</a></li>' +
             '<li><a href="' + prefix + 'insights/insights.html">분기별 인사이트</a></li>' +
             '<li><a href="' + prefix + 'insights/graph.html">지식 그래프</a></li>' +
+            '<li><a href="' + prefix + 'timeline/model-timeline.html">모델·로봇 타임라인</a></li>' +
           '</ul>' +
           '<div class="footer-heading footer-social-heading">소셜</div>' +
           '<div class="footer-social">' +
@@ -151,15 +159,27 @@
     });
   }
 
+  // Fill the newsletter category with its episode count (pill).
+  function fillNewsletterCount(newsletters) {
+    var n = (newsletters || []).length;
+    document.querySelectorAll('.footer-count-pill[data-count-nl]').forEach(function (el) {
+      if (n) el.textContent = n;
+    });
+  }
+
   function loadAndBuild(posts) {
     fillCategoryCounts(posts);
     // Try window.NEWSLETTER_DATA first (available on pages that loaded it)
     if (window.NEWSLETTER_DATA) {
+      fillNewsletterCount(window.NEWSLETTER_DATA);
       buildCombined(posts, window.NEWSLETTER_DATA);
     } else {
       fetch(prefix + 'newsletter-index.json')
         .then(function (r) { return r.json(); })
-        .then(function (d) { buildCombined(posts, d.newsletters || []); })
+        .then(function (d) {
+          fillNewsletterCount(d.newsletters || []);
+          buildCombined(posts, d.newsletters || []);
+        })
         .catch(function () { buildArchive(posts); });
     }
   }

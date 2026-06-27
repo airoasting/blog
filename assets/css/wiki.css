@@ -1,7 +1,10 @@
 .wiki-page { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; font-family: 'Pretendard', sans-serif; }
 .wiki-breadcrumb { font-size: 13px; color: #888; margin-bottom: 24px; }
 .wiki-breadcrumb a { color: #444; text-decoration: none; }
-.wiki-hero { padding: 32px 28px; border-radius: 16px; background: #fafaf7; border: 1px solid #e8e6e0; margin-bottom: 36px; }
+.wiki-hero { position: relative; padding: 32px 28px; border-radius: 16px; background: #fafaf7; border: 1px solid #e8e6e0; margin-bottom: 36px; }
+.wiki-graph-btn { position: absolute; top: 20px; right: 20px; display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; padding: 8px 14px; border-radius: 100px; background: #1a1a1a; color: #fff; text-decoration: none; letter-spacing: 0.01em; transition: background 0.18s, transform 0.18s; }
+.wiki-graph-btn:hover { background: #000; transform: translateY(-1px); }
+@media (max-width: 600px) { .wiki-graph-btn { position: static; margin-bottom: 16px; } }
 .wiki-hero h1 { font-size: 32px; margin: 0 0 16px; font-weight: 800; }
 .wiki-hero .badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .wiki-hero .badge { font-size: 11px; padding: 3px 10px; border-radius: 100px; background: #fff; border: 1px solid #ddd; color: #555; }
@@ -26,7 +29,7 @@
    Wiki Index — Concept Network
    라이트/다크 공용. 모든 색은 디자인 토큰만 사용
    ═══════════════════════════════════════════ */
-.wiki-index { max-width: 1120px; margin: 0 auto; padding: 56px 24px 96px; font-family: 'Pretendard', sans-serif; }
+.wiki-index { max-width: 1080px; margin: 0 auto; padding: 56px 24px 96px; font-family: 'Pretendard', sans-serif; }
 
 /* --- Hero --- */
 .wiki-hero-index { margin-bottom: 36px; }
@@ -39,7 +42,7 @@
   font-size: clamp(34px, 5vw, 46px); font-weight: 800;
   letter-spacing: -0.022em; line-height: 1.08; margin: 0 0 14px; color: var(--text);
 }
-.wiki-index-intro { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin: 0 0 28px; max-width: none; }
+.wiki-index-intro { font-size: 16px; line-height: 1.7; color: var(--text-muted); margin: 0 0 28px; max-width: none; }
 .wiki-index-intro a { color: var(--text); font-weight: 700; text-decoration: none; border-bottom: 1.5px solid var(--border); transition: border-color 0.15s; }
 .wiki-index-intro a:hover { border-bottom-color: var(--text); }
 

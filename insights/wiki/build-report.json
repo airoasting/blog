@@ -1,6 +1,6 @@
 {
-  "buildAt": "2026-06-27T04:05:26.718Z",
-  "duration": 0.238,
+  "buildAt": "2026-06-27T08:29:29.707Z",
+  "duration": 0.207,
   "concepts": {
     "total": 106,
     "validDefinitions": 106,
@@ -16,7 +16,7 @@
   "inject": {
     "updated": 0,
     "inserted": 0,
-    "unchanged": 225,
+    "unchanged": 0,
     "skipped": 0
   },
   "needsManualReview": []
