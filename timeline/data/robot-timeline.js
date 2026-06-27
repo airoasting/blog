@@ -965,6 +965,18 @@ window.ROBOT_TIMELINE_DATA = {
       "source_type": "video",
       "significance": "major",
       "category": "robot"
+    },
+    {
+      "date": "2026-02-01",
+      "provider": "Holiday Robotics",
+      "model": "FRIDAY (데모)",
+      "event_type": "demo",
+      "summary_ko": "FRIDAY 토트 이송 데모, 원샷 영상 학습 sim-to-real",
+      "summary_en": "FRIDAY Demo #1: Tote Transfer, one-shot sim-to-real",
+      "source_url": "https://www.youtube.com/watch?v=8tQ2YIdTYO8",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
     }
   ]
 };

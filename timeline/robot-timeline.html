@@ -263,6 +263,31 @@
       display: none;
     }
 
+    .mtl-root .scroll-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .mtl-root .scroll-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card-bg);
+      color: var(--text);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, transform 0.1s ease, opacity 0.15s ease;
+    }
+    .mtl-root .scroll-btn:hover { background: var(--surface-2); }
+    .mtl-root .scroll-btn:active { transform: scale(0.93); }
+    .mtl-root .scroll-btn:disabled { opacity: 0.32; cursor: default; }
+
     /* 분기/연도 헤더 행: 세로 스크롤 시 상단 고정 */
     .mtl-root .timeline-table thead th {
       position: sticky;
@@ -605,6 +630,10 @@
           <div class="table-wrap">
             <table class="timeline-table" id="timelineTable"></table>
           </div>
+          <div class="scroll-nav">
+            <button type="button" class="scroll-btn" id="scrollPrev" aria-label="왼쪽으로 이동">‹</button>
+            <button type="button" class="scroll-btn" id="scrollNext" aria-label="오른쪽으로 이동">›</button>
+          </div>
         </section>
         </div>
       </div>
@@ -926,6 +955,24 @@
       [60, 250, 600, 1200].forEach((t) => setTimeout(scrollToLatest, t));
       window.addEventListener("load", scrollToLatest);
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(scrollToLatest);
+
+      // 가로 스크롤 좌우 이동 버튼
+      const scrollPrev = document.getElementById("scrollPrev");
+      const scrollNext = document.getElementById("scrollNext");
+      function scrollStep() { return Math.max(220, tableWrap.clientWidth * 0.7); }
+      function updateScrollBtns() {
+        if (!scrollPrev || !scrollNext) return;
+        const max = tableWrap.scrollWidth - tableWrap.clientWidth - 1;
+        scrollPrev.disabled = tableWrap.scrollLeft <= 0;
+        scrollNext.disabled = tableWrap.scrollLeft >= max;
+      }
+      if (scrollPrev && scrollNext) {
+        scrollPrev.addEventListener("click", () => tableWrap.scrollBy({ left: -scrollStep(), behavior: "smooth" }));
+        scrollNext.addEventListener("click", () => tableWrap.scrollBy({ left: scrollStep(), behavior: "smooth" }));
+        tableWrap.addEventListener("scroll", updateScrollBtns, { passive: true });
+        window.addEventListener("resize", updateScrollBtns);
+        [0, 70, 260, 700, 1300].forEach((t) => setTimeout(updateScrollBtns, t));
+      }
 
       window.addEventListener("scroll", hideTooltip, { passive: true });
       window.addEventListener("resize", () => {
