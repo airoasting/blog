@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>모델 타임라인 | AI ROASTING</title>
-  <meta name="description" content="OpenAI, Google, Anthropic 등 주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다. 셀에 마우스를 올리면 정확한 날짜와 요약을 봅니다.">
-  <meta name="keywords" content="AI 모델 타임라인, GPT, Gemini, Claude, Llama, Grok, 모델 업데이트, AI 연표">
-  <link rel="canonical" href="https://airoasting.github.io/blog/timeline/model-timeline.html">
+  <title>로봇 타임라인 | AI ROASTING</title>
+  <meta name="description" content="Tesla 옵티머스, Figure, 보스턴 다이내믹스, 유니트리 등 주요 휴머노이드·4족 로봇의 공개·시연·양산을 연도별 표로 정리한 타임라인입니다. 칩을 누르면 공개 영상으로 이동합니다.">
+  <meta name="keywords" content="로봇 타임라인, 휴머노이드, 옵티머스, Figure, 아틀라스, 유니트리, 로봇 연표">
+  <link rel="canonical" href="https://airoasting.github.io/blog/timeline/robot-timeline.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="모델 타임라인 | AI ROASTING">
-  <meta property="og:description" content="주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다.">
+  <meta property="og:title" content="로봇 타임라인 | AI ROASTING">
+  <meta property="og:description" content="주요 휴머노이드·4족 로봇의 공개·시연·양산을 연도별 표로 정리한 타임라인입니다.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://airoasting.github.io/blog/timeline/model-timeline.html">
+  <meta property="og:url" content="https://airoasting.github.io/blog/timeline/robot-timeline.html">
   <meta property="og:locale" content="ko_KR">
   <meta property="og:site_name" content="AI ROASTING">
 
@@ -21,9 +21,9 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "모델 타임라인 | AI ROASTING",
-    "description": "주요 AI 모델 업데이트를 분기별 표로 정리한 타임라인입니다.",
-    "url": "https://airoasting.github.io/blog/timeline/model-timeline.html",
+    "name": "로봇 타임라인 | AI ROASTING",
+    "description": "주요 휴머노이드·4족 로봇의 공개·시연·양산을 연도별 표로 정리한 타임라인입니다.",
+    "url": "https://airoasting.github.io/blog/timeline/robot-timeline.html",
     "inLanguage": "ko",
     "isPartOf": {"@type": "WebSite", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/"}
   }
@@ -34,13 +34,13 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "AI ROASTING", "item": "https://airoasting.github.io/blog/"},
-      {"@type": "ListItem", "position": 2, "name": "모델 타임라인"}
+      {"@type": "ListItem", "position": 2, "name": "로봇 타임라인"}
     ]
   }
   </script>
 
   <link rel="stylesheet" href="../assets/css/style.css">
-  <script src="./data/model-timeline.js"></script>
+  <script src="./data/robot-timeline.js"></script>
   <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
   <style>
     /* ── 모델 타임라인 (스코프: .mtl-root) ───────────────
@@ -130,24 +130,22 @@
 
     /* 이벤트 타입 색상 토큰 · 카드 배경 · 구분선 */
     .mtl-root {
-      --type-release: #c43500;
-      --type-update: #1A4A7A;
-      --type-paper: #145C35;
-      --type-api_launch: #6D28D9;
-      --type-shutdown: #71717A;
+      --type-reveal: #c43500;
+      --type-demo: #1A4A7A;
+      --type-production: #145C35;
       --card-bg: #ffffff;
       --divider: rgba(40, 44, 52, 0.12);
     }
     [data-theme="dark"] .mtl-root {
-      --type-release: #ff8a5b;
-      --type-update: #7FB0E0;
-      --type-paper: #5FBF88;
-      --type-api_launch: #C4B5FD;
-      --type-shutdown: #A1A1AA;
+      --type-reveal: #ff8a5b;
+      --type-demo: #7FB0E0;
+      --type-production: #5FBF88;
       --card-bg: #2b313d;
       --divider: rgba(255, 255, 255, 0.14);
     }
-    .mtl-root .event-chip[data-type="shutdown"] { --chip-accent: var(--type-shutdown); }
+    .mtl-root .event-chip[data-type="reveal"] { --chip-accent: var(--type-reveal); }
+    .mtl-root .event-chip[data-type="demo"] { --chip-accent: var(--type-demo); }
+    .mtl-root .event-chip[data-type="production"] { --chip-accent: var(--type-production); }
 
     /* AI 모델 / 로봇 토글 */
     .mtl-root .tl-toggle {
@@ -202,11 +200,9 @@
       background: var(--muted);
     }
 
-    .mtl-root .legend-item[data-type="release"] .legend-dot { background: var(--type-release); }
-    .mtl-root .legend-item[data-type="update"] .legend-dot { background: var(--type-update); }
-    .mtl-root .legend-item[data-type="paper"] .legend-dot { background: var(--type-paper); }
-    .mtl-root .legend-item[data-type="api_launch"] .legend-dot { background: var(--type-api_launch); }
-    .mtl-root .legend-item[data-type="shutdown"] .legend-dot { background: var(--type-shutdown); }
+    .mtl-root .legend-item[data-type="reveal"] .legend-dot { background: var(--type-reveal); }
+    .mtl-root .legend-item[data-type="demo"] .legend-dot { background: var(--type-demo); }
+    .mtl-root .legend-item[data-type="production"] .legend-dot { background: var(--type-production); }
 
     .mtl-root .hero-stats {
       display: flex;
@@ -441,10 +437,6 @@
       outline-offset: 2px;
     }
 
-    .mtl-root .event-chip[data-type="release"] { --chip-accent: var(--type-release); }
-    .mtl-root .event-chip[data-type="update"] { --chip-accent: var(--type-update); }
-    .mtl-root .event-chip[data-type="paper"] { --chip-accent: var(--type-paper); }
-    .mtl-root .event-chip[data-type="api_launch"] { --chip-accent: var(--type-api_launch); }
 
     .mtl-root .chip-model {
       display: block;
@@ -568,23 +560,21 @@
         <div class="page">
         <section class="hero">
           <div class="tl-toggle">
-            <a href="model-timeline.html" class="tl-toggle-btn active" aria-current="page">AI 모델</a>
-            <a href="robot-timeline.html" class="tl-toggle-btn">로봇</a>
+            <a href="model-timeline.html" class="tl-toggle-btn">AI 모델</a>
+            <a href="robot-timeline.html" class="tl-toggle-btn active" aria-current="page">로봇</a>
           </div>
           <div class="hero-top">
             <div>
-              <h1 class="hero-title">AI 모델 타임라인</h1>
+              <h1 class="hero-title">로봇 타임라인</h1>
               <div class="legend" aria-hidden="true">
-                <span class="legend-item" data-type="release"><span class="legend-dot"></span>출시</span>
-                <span class="legend-item" data-type="update"><span class="legend-dot"></span>업데이트</span>
-                <span class="legend-item" data-type="paper"><span class="legend-dot"></span>논문</span>
-                <span class="legend-item" data-type="api_launch"><span class="legend-dot"></span>API</span>
-                <span class="legend-item" data-type="shutdown"><span class="legend-dot"></span>종료</span>
+                <span class="legend-item" data-type="reveal"><span class="legend-dot"></span>공개</span>
+                <span class="legend-item" data-type="demo"><span class="legend-dot"></span>데모</span>
+                <span class="legend-item" data-type="production"><span class="legend-dot"></span>양산</span>
               </div>
             </div>
             <div class="hero-stats">
-              <div class="hero-stat"><strong id="statProviders">0</strong><span>제공사</span></div>
-              <div class="hero-stat"><strong id="statEvents">0</strong><span>업데이트</span></div>
+              <div class="hero-stat"><strong id="statProviders">0</strong><span>제조사</span></div>
+              <div class="hero-stat"><strong id="statEvents">0</strong><span>로봇</span></div>
               <div class="hero-stat"><strong id="statQuarters">0</strong><span>구간</span></div>
             </div>
           </div>
@@ -605,7 +595,7 @@
         <div class="mtl-tooltip-title" id="tooltipTitle"></div>
         <div class="mtl-tooltip-meta" id="tooltipMeta"></div>
         <div class="mtl-tooltip-body" id="tooltipBody"></div>
-        <a class="mtl-tooltip-link" id="tooltipLink" href="#" target="_blank" rel="noopener">원문 보기</a>
+        <a class="mtl-tooltip-link" id="tooltipLink" href="#" target="_blank" rel="noopener">영상 보기 ↗</a>
       </div>
     </div>
   </main>
@@ -618,34 +608,35 @@
 
   <script>
     const providerOrder = [
-      // 미국
-      "OpenAI",
-      "Anthropic",
-      "Google",
-      "Meta",
-      "xAI",
+      // 미국·서구
+      "Tesla",
+      "Figure",
+      "Boston Dynamics",
+      "Agility",
+      "Apptronik",
+      "1X",
+      "Sanctuary",
       // 중국
-      "DeepSeek",
-      "Z.ai",
-      "Alibaba",
-      "ByteDance",
-      // 기타
-      "Mistral",
-      "LG"
+      "Unitree",
+      "Fourier",
+      "UBTech",
+      "AgiBot",
+      "Xiaomi"
     ];
 
     const providerLeadModel = {
-      "OpenAI": "GPT, ChatGPT, Codex",
-      "Anthropic": "Claude",
-      "Google": "Gemini, Transformer, BERT",
-      "Meta": "Llama",
-      "xAI": "Grok",
-      "DeepSeek": "DeepSeek V3, R1",
-      "Z.ai": "GLM",
-      "Alibaba": "Qwen",
-      "ByteDance": "Seed, Seedance",
-      "Mistral": "Mistral, Mixtral",
-      "LG": "EXAONE"
+      "Tesla": "Optimus",
+      "Figure": "Figure, Helix",
+      "Boston Dynamics": "Atlas, Spot",
+      "Agility": "Digit",
+      "Apptronik": "Apollo",
+      "1X": "Neo, Eve",
+      "Sanctuary": "Phoenix",
+      "Unitree": "H1, G1, Go2",
+      "Fourier": "GR 시리즈",
+      "UBTech": "Walker",
+      "AgiBot": "Lingxi, 위안정",
+      "Xiaomi": "CyberOne"
     };
 
     const refs = {
@@ -662,19 +653,17 @@
     };
 
     const TYPE_LABEL = {
-      release: "출시",
-      update: "업데이트",
-      paper: "논문",
-      api_launch: "API",
-      shutdown: "종료"
+      reveal: "공개",
+      demo: "데모",
+      production: "양산"
     };
 
     function typeLabel(t) {
       return TYPE_LABEL[t] || String(t || "").replace(/_/g, " ");
     }
 
-    // 2024년까지는 연도 단위, 2025년부터 분기 단위 컬럼
-    const QUARTER_FROM = 2025;
+    // 로봇 타임라인은 전부 연도 단위 컬럼 (분기 분할 끔)
+    const QUARTER_FROM = 9999;
 
     function columnForDate(date) {
       const d = new Date(date);
@@ -761,14 +750,14 @@
       refs.statProviders.textContent = String(providers.length);
       refs.statEvents.textContent = String(events.length);
       refs.statQuarters.textContent = String(columns.length);
-      refs.resultsMeta.textContent = firstLabel + "부터 " + lastLabel + "까지, 제공사 " + providers.length + "곳의 업데이트 " + events.length + "건을 보고 있습니다.";
+      refs.resultsMeta.textContent = firstLabel + "부터 " + lastLabel + "까지, 제조사 " + providers.length + "곳의 로봇 이벤트 " + events.length + "건을 보고 있습니다.";
 
       const thead = document.createElement("thead");
       const headRow = document.createElement("tr");
 
       const corner = document.createElement("th");
       corner.className = "corner";
-      corner.innerHTML = '<div class="head-card">제공사 / 기간</div>';
+      corner.innerHTML = '<div class="head-card">제조사 / 연도</div>';
       headRow.appendChild(corner);
 
       columns.forEach((col) => {
@@ -867,18 +856,18 @@
 
     function parseTimelineMarkdown(markdown) {
       const match = markdown.match(/```json\n([\s\S]*?)\n```/);
-      if (!match) throw new Error("JSON code block not found in model-timeline.md");
+      if (!match) throw new Error("JSON code block not found in robot-timeline.md");
       return JSON.parse(match[1]);
     }
 
     async function loadTimelineData() {
       try {
-        const response = await fetch("./data/model-timeline.md");
-        if (!response.ok) throw new Error("Failed to load model-timeline.md");
+        const response = await fetch("./data/robot-timeline.md");
+        if (!response.ok) throw new Error("Failed to load robot-timeline.md");
         const markdown = await response.text();
         return parseTimelineMarkdown(markdown);
       } catch (error) {
-        if (window.MODEL_TIMELINE_DATA) return window.MODEL_TIMELINE_DATA;
+        if (window.ROBOT_TIMELINE_DATA) return window.ROBOT_TIMELINE_DATA;
         throw error;
       }
     }

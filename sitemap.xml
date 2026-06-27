@@ -84,6 +84,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Robot Timeline -->
+  <url>
+    <loc>https://airoasting.github.io/blog/timeline/robot-timeline.html</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Posts (newest first) -->
   <url>
     <loc>https://airoasting.github.io/blog/tech/2026-04-02-ai-emotion-prompts.html</loc>
