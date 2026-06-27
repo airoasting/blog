@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "당신이 쓰는 AI는 세속적이고 진보적이다",
+      "date": "2026-06-25",
+      "category": "research",
+      "source": "The Economist (Briefing, Computational bias)",
+      "tags": [
+        "AI편향",
+        "가치관",
+        "세계가치관조사",
+        "정렬",
+        "AI정치성향"
+      ],
+      "slug": "2026-06-25-ai-models-values-different-from-people",
+      "file": "research/2026-06-25-ai-models-values-different-from-people.html",
+      "summary": "이코노미스트가 최신 AI 25개에 세계가치관조사를 물었습니다. AI의 가치관은 대부분의 사람보다 더 세속적이고 더 진보적이었습니다. 미국 기준으로는 민주당에 가까웠고, 중국산 모델만 예외였습니다. 이 편향은 훈련 데이터와 정렬 과정에서 생기며, 약 10억 명이 이미 매일 이 가치관과 대화합니다.",
+      "roasting_quote": "당신은 중립적인 도구를 쓰고 있다고 믿으십니까? 당신이 매일 묻는 AI는 지구상 어떤 나라보다 세속적이고, 미국 기준으로는 민주당입니다.",
+      "next_post": "research/2025-07-10-ban-left-biased-ai.html"
+    },
+    {
       "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌다",
       "date": "2026-06-23",
       "category": "company",
@@ -16,7 +34,7 @@
       "file": "company/2026-06-23-meta-ai-reorg-team-size.html",
       "summary": "메타가 새 AI 조직을 급하게 꾸렸습니다. 개편을 이끈 CTO가 직접 사기가 역대 최악이라 인정했습니다. 원인은 관리자 한 명에게 20명 넘게 몰아준 거대 팀이었습니다. 팀이 10명을 넘으면 협업 문제가 늘고, 5천만 건 분석은 5명 미만 팀이 파괴적 아이디어를 가장 잘 낸다고 가리킵니다. 관리자를 줄이려는 모든 회사를 위한 경고입니다.",
       "roasting_quote": "관리자를 줄이면 조직이 가벼워진다고 믿으셨습니까? 메타는 그 믿음의 청구서를 '사기 역대 최악'이라는 이름으로 받았습니다.",
-      "next_post": "company/2026-06-19-implicit-organization-ai-agents.html"
+      "next_post": "research/2026-06-25-ai-models-values-different-from-people.html"
     },
     {
       "title": "AI 에이전트가 못 보는 회사의 숨은 규칙",
@@ -678,6 +696,24 @@
       "summary": "씨티, JP모건, BCG 등 대기업들이 AI로 성과 평가 초안을 만들고 있습니다. 문제는 AI가 내용이 아닌 표현을 개선한다는 점입니다. AI를 서술 작성이 아닌 행동 증거 발굴에 써야 합니다.",
       "roasting_quote": "모든 성과 평가가 설득력 있게 들립니다. AI 덕분입니다. 이제 나쁜 평가를 알아채기가 더 어려워졌습니다.",
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
+    },
+    {
+      "title": "당신의 AI는 정부 선전을 세탁합니다",
+      "date": "2026-05-13",
+      "category": "research",
+      "source": "Nature (Waight, Yang, Yuan et al.)",
+      "tags": [
+        "AI편향",
+        "훈련데이터",
+        "언론자유",
+        "오픈웨이트",
+        "AI리스크"
+      ],
+      "slug": "2026-05-13-state-media-control-influences-llm",
+      "file": "research/2026-05-13-state-media-control-influences-llm.html",
+      "summary": "Nature 논문 6개 연구가 정부 통제 언론이 AI 훈련 데이터를 거쳐 답변까지 바꾼다는 걸 입증했습니다. 언론 자유가 낮은 나라의 언어로 물으면 AI는 그 나라 정부를 더 옹호했고, 37개국에서 같은 패턴이 나왔습니다. AI는 검열된 선전의 출처를 지운 채 중립적 사실처럼 내놓습니다. 다국어로 AI를 쓰는 기업이 그대로 노출됩니다.",
+      "roasting_quote": "당신의 AI가 검열된 정부 선전을 중립적 사실로 둔갑시킨다면, 무엇으로 알아채시겠습니까? 답변의 언어만 바꿔도 정치색이 달라집니다.",
+      "next_post": "research/2026-06-25-ai-models-values-different-from-people.html"
     },
     {
       "title": "개리 탄: AI를 채팅창 대신 운영체제로 만드는 법",

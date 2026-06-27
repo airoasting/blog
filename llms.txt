@@ -14,6 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-06-25 [리서치] 당신이 쓰는 AI는 세속적이고 진보적이다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
 - 2026-06-23 [기업] 관리자를 줄였더니, 메타 AI 조직이 무너졌다 — /blog/company/2026-06-23-meta-ai-reorg-team-size.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
@@ -50,6 +51,7 @@
 - 2026-05-20 [생존] 신입 채용을 줄인 건 AI가 아니라 재택근무였습니다 — /blog/survival/2026-05-20-broken-ladder-wfh-not-ai.html
 - 2026-05-20 [생존] AI가 만든 콘텐츠가 세상을 덮고 있습니다 — /blog/survival/2026-05-20-ai-slop-books-music-lawsuits-science.html
 - 2026-05-15 [리서치] AI 성과 평가, 더 그럴듯할수록 더 위험합니다 — /blog/research/2026-05-15-gen-ai-performance-reviews.html
+- 2026-05-13 [리서치] 당신의 AI는 정부 선전을 세탁합니다 — /blog/research/2026-05-13-state-media-control-influences-llm.html
 - 2026-05-10 [리더] 개리 탄: AI를 채팅창 대신 운영체제로 만드는 법 — /blog/leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html
 - 2026-05-08 [기술] Claude에게 '왜'를 가르쳤더니 협박을 멈췄습니다 — /blog/tech/2026-05-08-teaching-claude-why.html
 - 2026-05-07 [기술] AI가 숨긴 속마음을 읽어냈습니다 — /blog/tech/2026-05-07-natural-language-autoencoders.html

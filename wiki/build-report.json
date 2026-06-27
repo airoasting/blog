@@ -1,28 +1,32 @@
 {
-  "buildAt": "2026-06-24T13:50:59.120Z",
-  "duration": 0.413,
+  "buildAt": "2026-06-27T00:38:12.486Z",
+  "duration": 0.249,
   "concepts": {
-    "total": 102,
+    "total": 103,
     "validDefinitions": 90,
-    "needsReview": 12
+    "needsReview": 13
   },
   "relationships": {
-    "total": 278
+    "total": 283
   },
   "coverage": {
-    "postsWithConcepts": 206,
-    "totalPosts": 223
+    "postsWithConcepts": 208,
+    "totalPosts": 225
   },
   "inject": {
-    "updated": 64,
-    "inserted": 0,
-    "unchanged": 159,
+    "updated": 23,
+    "inserted": 2,
+    "unchanged": 200,
     "skipped": 0
   },
   "needsManualReview": [
     {
       "name": "ERP",
       "slug": "erp"
+    },
+    {
+      "name": "AI편향",
+      "slug": "ai편향"
     },
     {
       "name": "AI리서치",

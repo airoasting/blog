@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-24T13:50:59.120Z",
+  "generatedAt": "2026-06-27T00:38:12.486Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 102,
-    "totalRelationships": 278,
-    "totalPosts": 223,
+    "totalConcepts": 103,
+    "totalRelationships": 283,
+    "totalPosts": 225,
     "totalNewsletters": 53
   },
   "concepts": [
@@ -14,8 +14,8 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 68,
-      "category": "tech",
+      "frequency": 76,
+      "category": "research",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -38,16 +38,22 @@
         "2026-06-18-project-fetch-phase-two",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
         "2024-10-15-ai-bubble-three-collapse-scenarios",
+        "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
+        "2025-04-10-three-ways-universities-adopt-ai",
+        "2025-04-16-good-questions-matter-more",
         "2025-04-20-paradox-of-ai-driven-productivity-gains",
         "2025-04-25-does-ai-make-us-smarter",
+        "2025-04-25-using-ai-well-different-from-search",
         "2025-05-10-conversations-children-have-with-ai-chatbots",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-07-10-ban-left-biased-ai",
         "2026-02-11-llm-behavioral-alignment-gap",
+        "2026-05-13-state-media-control-influences-llm",
         "2024-11-01-geoffrey-hinton-on-ai-danger",
         "2026-04-06-sam-altman-superintelligence-new-deal",
         "2024-08-05-ai-era-future-of-media",
+        "2024-09-27-lionsgate-runway-ai-partnership",
         "2025-02-20-sovereign-ai",
         "2025-03-05-redesigning-work-structure-in-ai-era",
         "2025-03-05-speculating-why-naver-lee-haejin-returned",
@@ -57,6 +63,7 @@
         "2025-04-25-2025-shanghai-motor-show-shock",
         "2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony",
         "2025-06-15-why-perplexity-wants-to-acquire-chrome",
+        "2025-07-01-google-apple-map-data-export-request",
         "2025-07-25-national-ai-foundation-model-project",
         "2024-08-10-top-50-ai-services-five-trends",
         "2024-08-25-ai-bubble-three-codes-data-chip-biz",
@@ -71,6 +78,7 @@
         "2025-04-20-which-ai-model-should-you-use",
         "2025-04-21-china-robots-run-half-marathon",
         "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2025-05-15-preserve-even-deleted-conversations",
         "2025-05-25-gpt5-limitations-and-whats-next",
         "2025-03-10-ai-era-survival-strategy",
         "2025-05-15-microsoft-large-scale-layoffs"
@@ -89,7 +97,7 @@
         "nl-49"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-04-06",
+      "lastSeen": "2026-05-13",
       "needs_manual_review": false
     },
     {
@@ -98,7 +106,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 54,
+      "frequency": 58,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -114,6 +122,10 @@
         "2026-04-24-deepseek-v4-pro-coding-benchmark",
         "2026-05-28-sia-self-improving-ai-harness-weights",
         "2024-10-15-ai-bubble-three-collapse-scenarios",
+        "2025-04-10-three-ways-universities-adopt-ai",
+        "2025-04-15-agatha-christie-writing-lessons",
+        "2025-04-16-good-questions-matter-more",
+        "2025-04-25-using-ai-well-different-from-search",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
         "2025-06-20-google-deepmind-ceo-vision",
@@ -296,7 +308,7 @@
       "name": "AGI",
       "aliases": [],
       "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
-      "frequency": 29,
+      "frequency": 31,
       "category": "newsletter",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -307,9 +319,11 @@
         "2026-05-22-sundar-pichai-anxious-ai-future",
         "2026-06-10-from-agi-to-asi",
         "2025-04-15-ai-from-learning-era-to-experience-era",
+        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
         "2025-06-20-google-deepmind-ceo-vision",
         "2025-07-15-why-meta-declared-asi",
+        "2026-01-10-elon-musk-vision-of-ai-future",
         "2025-07-15-why-jensen-huang-is-going-to-china",
         "2025-05-10-the-rocky-road-to-chatgpt5",
         "2025-05-10-why-people-miss-chatgpt-4o",
@@ -1900,6 +1914,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai편향",
+      "slug": "ai편향",
+      "name": "AI편향",
+      "aliases": [],
+      "definition": "AI편향는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-06-25-ai-models-values-different-from-people",
+        "2025-07-10-ban-left-biased-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-07-10",
+      "lastSeen": "2026-03-17",
+      "needs_manual_review": true
+    },
+    {
       "id": "자기개선ai",
       "slug": "자기개선ai",
       "name": "자기개선AI",
@@ -2469,12 +2501,12 @@
     {
       "source": "LLM",
       "target": "GPU",
-      "strength": 12
+      "strength": 16
     },
     {
       "source": "LLM",
       "target": "API",
-      "strength": 17
+      "strength": 20
     },
     {
       "source": "LLM",
@@ -2499,7 +2531,7 @@
     {
       "source": "LLM",
       "target": "ROI",
-      "strength": 6
+      "strength": 9
     },
     {
       "source": "LLM",
@@ -2509,7 +2541,7 @@
     {
       "source": "LLM",
       "target": "소버린AI",
-      "strength": 10
+      "strength": 11
     },
     {
       "source": "LLM",
@@ -2638,6 +2670,11 @@
     },
     {
       "source": "LLM",
+      "target": "저작권",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "한국AI",
       "strength": 3
     },
@@ -2648,7 +2685,17 @@
     },
     {
       "source": "LLM",
+      "target": "AI활용",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "ERP",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
+      "target": "AI편향",
       "strength": 2
     },
     {
@@ -2664,6 +2711,11 @@
     {
       "source": "LLM",
       "target": "생성AI",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
+      "target": "데이터주권",
       "strength": 2
     },
     {
@@ -2699,7 +2751,7 @@
     {
       "source": "GPU",
       "target": "ROI",
-      "strength": 8
+      "strength": 12
     },
     {
       "source": "GPU",
@@ -3169,7 +3221,7 @@
     {
       "source": "AGI",
       "target": "AI전략",
-      "strength": 7
+      "strength": 9
     },
     {
       "source": "AGI",
@@ -3205,6 +3257,11 @@
       "source": "AGI",
       "target": "MCP",
       "strength": 3
+    },
+    {
+      "source": "AGI",
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "AGI",

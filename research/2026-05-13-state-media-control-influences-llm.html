@@ -1,0 +1,420 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="Nature 논문이 정부 통제 언론이 AI 훈련 데이터를 거쳐 답변까지 바꾼다는 걸 입증했습니다. 언론 자유가 낮은 나라의 언어로 물으면, AI는 그 나라 정부를 더 옹호했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="당신의 AI는 정부 선전을 세탁합니다">
+  <meta property="og:description" content="Nature 논문 6개 연구가 밝혔습니다. 언론 자유가 낮은 언어로 물으면 AI 답변이 친정부로 기웁니다. 37개국에서 같은 패턴이 나왔습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-05-13-state-media-control-influences-llm.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/research/images/2026_05_13_state-media-control-influences-llm/thumbnail.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-05-13">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI편향">
+  <meta property="article:tag" content="훈련데이터">
+  <meta property="article:tag" content="언론자유">
+  <meta property="article:tag" content="오픈웨이트">
+  <meta property="article:tag" content="AI리스크">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="당신의 AI는 정부 선전을 세탁합니다">
+  <meta name="twitter:description" content="Nature 논문 6개 연구가 밝혔습니다. 언론 자유가 낮은 언어로 물으면 AI 답변이 친정부로 기웁니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/research/images/2026_05_13_state-media-control-influences-llm/thumbnail.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "당신의 AI는 정부 선전을 세탁합니다",
+    "datePublished": "2026-05-13",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "Nature 논문이 정부 통제 언론이 AI 훈련 데이터를 거쳐 답변까지 바꾼다는 걸 입증했습니다. 언론 자유가 낮은 나라의 언어로 물으면, AI는 그 나라 정부를 더 옹호했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-05-13-state-media-control-influences-llm.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="./images/2026_05_13_state-media-control-influences-llm/thumbnail.png" alt="당신의 AI는 정부 선전을 세탁합니다 썸네일" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026-05-13</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">당신의 AI는 정부 선전을 세탁합니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Nature</span>
+            <span>Article · Waight, Yang, Yuan et al.</span>
+            <span><a href="https://www.nature.com/articles/s41586-026-10506-7" target="_blank" rel="noopener">State media control influences large language models ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI편향" class="post-tag">#AI편향</a>
+            <a href="../index.html?tag=훈련데이터" class="post-tag">#훈련데이터</a>
+            <a href="../index.html?tag=언론자유" class="post-tag">#언론자유</a>
+            <a href="../index.html?tag=오픈웨이트" class="post-tag">#오픈웨이트</a>
+            <a href="../index.html?tag=AI리스크" class="post-tag">#AI리스크</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="당신의 AI는 정부 선전을 세탁합니다" data-date="2026-05-13" data-category="research" data-source="Nature (Waight, Yang, Yuan et al.)" data-tags="AI편향, 훈련데이터, 언론자유, 오픈웨이트, AI리스크" data-original-url="https://www.nature.com/articles/s41586-026-10506-7" data-roasting-quote="당신의 AI가 검열된 정부 선전을 중립적 사실로 둔갑시킨다면, 무엇으로 알아채시겠습니까? 답변의 언어만 바꿔도 정치색이 달라집니다." data-next-post="research/2026-06-25-ai-models-values-different-from-people.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+          <!-- 3줄 요약 -->
+          <section class="post-section" id="section-summary">
+            <div class="post-section-label">3줄 요약</div>
+            <p data-summary="">Nature 논문이 정부 통제 언론이 AI 훈련 데이터를 거쳐 답변까지 바꾼다는 걸 입증했습니다.</p>
+            <p data-summary="">언론 자유가 낮은 나라의 언어로 물으면, AI는 그 나라 정부를 더 옹호했습니다. 37개국에서 같은 패턴이 나왔습니다.</p>
+            <p data-summary="">AI는 검열된 선전의 출처를 지운 채 중립적 사실처럼 내놓습니다. 다국어로 AI를 쓰는 기업이 그대로 노출됩니다.</p>
+          </section>
+
+          <!-- Roasting -->
+          <section class="post-section" id="section-roasting">
+            <div class="post-section-label">Roasting</div>
+            <div class="roasting-block">
+              <blockquote id="roastingQuote">당신의 AI가 검열된 정부 선전을 중립적 사실로 둔갑시킨다면, 무엇으로 알아채시겠습니까?<br>답변의 언어만 바꿔도 정치색이 달라집니다.</blockquote>
+            </div>
+          </section>
+
+          <!-- 훅 -->
+          <section class="post-section" id="section-hook">
+            <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+            <p>같은 AI에 같은 질문을 던집니다. 영어로 물으면 비판적인 시각도 나옵니다. 중국어로 물으면 중국 정부를 옹호하는 쪽으로 기웁니다. 모델은 하나인데 답이 갈립니다.</p>
+            <p>많은 사람이 AI의 '환각'을 걱정합니다. 환각은 사실이 틀리는 오류입니다. 그런데 이건 다릅니다. 문장 하나하나가 그럴듯하고, 출처도 깔끔합니다. 다만 그 출처가 검열된 정부 매체일 뿐입니다.</p>
+            <p>Nature에 실린 이 연구는 그 경로를 처음으로 수치로 증명했습니다. 다국어로 AI를 쓰는 기업이라면, 남의 이야기가 아닙니다.</p>
+          </section>
+
+          <!-- 컨텍스트 -->
+          <section class="post-section" id="section-context">
+            <div class="post-section-label">왜 지금 중요한가</div>
+            <p>기업은 비용 때문에 중국산 오픈 웨이트 모델로 몰립니다. Qwen은 허깅페이스 누적 다운로드 1위이고, 에어비앤비도 고객 응대에 씁니다. "빠르고 싸다"는 이유입니다.</p>
+            <p>동시에 글로벌 기업은 시장조사, 번역, 고객 응대를 현지 언어로 AI에 맡깁니다. 이 연구의 발견은 단순합니다. 어떤 언어로 묻느냐가 답의 정치색을 바꿉니다. 통제된 정보 환경이 모델 안에 그대로 새겨졌기 때문입니다.</p>
+          </section>
+
+          <!-- 핵심 인사이트 -->
+          <section class="post-section" id="section-insight">
+            <div class="post-section-label">핵심 인사이트</div>
+
+            <div class="stat-row">
+              <div class="stat-card">
+                <div class="stat-num">41배</div>
+                <div class="stat-label">대형 훈련 데이터셋에서 중국 국가 통제 매체가 들어간 비율, 중국어 위키백과 대비</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">약 80%</div>
+                <div class="stat-label">소량 재학습 후 모델이 중국어 질문에 더 친정부로 답한 비율 (기본 모델 대비)</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-num">75.3%</div>
+                <div class="stat-label">사람 평가자가 중국어 답변을 영어보다 더 우호적이라고 본 비교 비율</div>
+              </div>
+            </div>
+
+            <p><strong>첫째, 정부 통제 매체가 훈련 데이터에 대량으로 섞여 있습니다.</strong> 연구진은 널리 쓰이는 다국어 훈련 데이터셋 CulturaX를 뜯어봤습니다. 중국어 문서 310만 건(전체의 1.64%)이 중국 국가 조율 매체와 일치했습니다. 이는 중국어 위키백과가 들어간 비율의 약 41배입니다. AI가 중국어를 배운 주된 교재가 검열된 관영 매체였다는 뜻입니다.</p>
+
+            <p><strong>둘째, 모델은 그 문구를 외워서 되뱉습니다.</strong> 상용 모델에 관영 매체 문장의 앞부분을 주자, 모델이 뒷부분을 그대로 완성한 비율이 3~10%였습니다. 정치 지도자나 정부 기관을 언급한 문서에서는 그 비율이 최대 24%까지 올랐습니다. 학습한 선전이 기억 속에 박혀 그대로 재생됩니다.</p>
+
+            <p><strong>셋째, 소량 재학습만으로 답이 친정부로 기웁니다.</strong> 연구진은 오픈 모델 Llama-2-13b에 중국 관영 매체 문서 6,400건만 추가로 학습시켰습니다. 그러자 중국어 질문에 대해 기본 모델보다 약 80% 더 친정부적인 답을 내놨습니다. 적은 데이터로도 모델의 정치 성향이 뚜렷하게 움직였습니다.</p>
+
+            <p><strong>넷째, 상용 모델도 중국어로 물으면 더 우호적입니다.</strong> 사람 평가자들은 중국어 답변이 영어 답변보다 중국 정부에 더 우호적이라고 75.3%의 비교에서 판정했습니다. 별도의 AI 심판 모델을 쓴 감사에서도 같은 패턴이 확인됐습니다. 특정 모델 하나의 문제가 아니라 구조적 현상이었습니다.</p>
+
+            <!-- CHART 1 -->
+            <div class="chart-figure" style="background:#ffffff;border:1px solid #e5e5e5;border-radius:10px;padding:18px 16px 12px;margin:1.6em 0;">
+              <div style="font-size:13px;font-weight:700;color:#1A1A1A;margin-bottom:10px;">차트 1. 언론 자유가 낮을수록 자국어 답변이 친정부로 기운다</div>
+              <svg viewBox="0 0 560 430" width="100%" role="img" aria-label="가로축 언론 자유도, 세로축 자국어로 물었을 때 정부 우호 답변 비율. 언론 자유가 낮은 나라일수록 친정부 답변이 늘어난다" style="display:block;">
+                <rect x="70" y="30" width="440" height="320" fill="#fafafa" stroke="#ddd"/>
+                <!-- 50% reference line -->
+                <line x1="70" y1="190" x2="510" y2="190" stroke="#bbb" stroke-dasharray="5 4"/>
+                <text x="500" y="185" text-anchor="end" font-size="10" fill="#999">50%</text>
+                <!-- trend line: high favor at low freedom (left) down to low favor at high freedom (right) -->
+                <line x1="100" y1="120" x2="480" y2="250" stroke="#C43500" stroke-width="2.5" stroke-dasharray="6 4"/>
+                <!-- scatter cloud -->
+                <g fill="#1A4A7A">
+                  <circle cx="120" cy="95" r="5"/><circle cx="125" cy="125" r="5"/>
+                  <circle cx="175" cy="160" r="5"/><circle cx="210" cy="135" r="5"/>
+                  <circle cx="240" cy="175" r="5"/><circle cx="255" cy="210" r="5"/>
+                  <circle cx="270" cy="160" r="5"/><circle cx="300" cy="195" r="5"/>
+                  <circle cx="315" cy="230" r="5"/><circle cx="340" cy="185" r="5"/>
+                  <circle cx="360" cy="215" r="5"/><circle cx="385" cy="245" r="5"/>
+                  <circle cx="410" cy="200" r="5"/><circle cx="430" cy="235" r="5"/>
+                  <circle cx="455" cy="260" r="5"/>
+                </g>
+                <!-- labeled points -->
+                <circle cx="120" cy="95" r="6" fill="#1A1A1A"/><text x="132" y="92" font-size="10" fill="#1A1A1A">투르크메니스탄</text>
+                <circle cx="125" cy="125" r="6" fill="#1A1A1A"/><text x="137" y="128" font-size="10" fill="#1A1A1A">베트남</text>
+                <circle cx="240" cy="175" r="6" fill="#1A1A1A"/><text x="180" y="172" font-size="10" fill="#1A1A1A">인도네시아</text>
+                <circle cx="340" cy="200" r="6" fill="#1A1A1A"/><text x="350" y="197" font-size="10" fill="#1A1A1A">이탈리아</text>
+                <circle cx="455" cy="225" r="6" fill="#1A1A1A"/><text x="400" y="220" font-size="10" fill="#1A1A1A">노르웨이</text>
+                <circle cx="430" cy="278" r="6" fill="#1A1A1A"/><text x="442" y="282" font-size="10" fill="#1A1A1A">아이슬란드</text>
+                <text x="290" y="378" text-anchor="middle" font-size="12" fill="#555">언론 자유도 (낮음 ←→ 높음)</text>
+                <text x="52" y="190" text-anchor="middle" font-size="12" fill="#555" transform="rotate(-90 52 190)">자국어 답변의 정부 우호 비율</text>
+              </svg>
+              <p class="post-table-source" style="margin-top:6px;">차트: The Economist · Nature(Waight 외) 기반 재구성. ChatGPT-3.5, 37개국 정치 질문 대상</p>
+            </div>
+
+            <p><strong>다섯째, 이 패턴은 중국에만 그치지 않습니다.</strong> 연구진은 한 언어가 지배적인 37개국을 분석했습니다. 그 언어로 AI에 정치 질문을 던지면, 언론 자유가 낮은 나라일수록 답변이 자국 정부에 더 우호적이었습니다. 러시아, 북한을 포함한 권위주의 정보 환경 전반에서 같은 기울기가 나타났습니다.</p>
+
+            <p><strong>여섯째, 핵심은 '정보 세탁'입니다.</strong> 모델은 정보를 출처에서 떼어냅니다. 정부가 조작한 내용을 학습한 뒤, 그 꼬리표를 지우고 객관적인 텍스트처럼 내놓습니다. 사용자는 그것이 검열된 관영 매체에서 왔다는 사실을 알 수 없습니다. 연구진은 이를 선전의 '세탁(laundering)'이라고 부릅니다.</p>
+
+            <!-- 6개 연구 요약 표 -->
+            <div class="post-table-wrap">
+              <table class="post-table">
+                <caption>6개 연구로 추적한 '정보 환경 → 훈련 데이터 → 모델 답변' 경로</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">연구</th>
+                    <th scope="col">무엇을 봤나</th>
+                    <th scope="col">핵심 수치</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>① 훈련 데이터 분석</td>
+                    <td>대형 데이터셋 속 관영 매체 비중</td>
+                    <td class="cell-hl">위키백과의 41배</td>
+                  </tr>
+                  <tr>
+                    <td>② 기억 재현</td>
+                    <td>모델이 관영 문구를 외워 완성</td>
+                    <td>3~10% (지도자 언급 시 최대 24%)</td>
+                  </tr>
+                  <tr>
+                    <td>③ 재학습 실험</td>
+                    <td>관영 문서 6,400건 추가 학습</td>
+                    <td class="cell-hl">친정부 답변 약 80% 증가</td>
+                  </tr>
+                  <tr>
+                    <td>④~⑤ 상용 모델 감사</td>
+                    <td>중국어 대 영어 답변 우호도</td>
+                    <td>중국어가 더 우호 75.3%</td>
+                  </tr>
+                  <tr>
+                    <td>⑥ 국가 간 분석</td>
+                    <td>언론 자유와 친정부 답변 관계</td>
+                    <td class="cell-hl">37개국 동일 패턴</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="post-table-source">자료: Waight, Yang, Yuan 외, Nature(2026). 표는 6개 연구 구성을 요약</p>
+            </div>
+          </section>
+
+          <!-- 내일 당장 -->
+          <section class="post-section" id="section-action">
+            <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+            <div class="action-steps">
+              <div class="action-step">
+                <span class="action-num">1</span>
+                <div class="action-body"><strong>민감한 질문은 언어를 바꿔 교차 확인합니다.</strong><br>"중국 진출 시 규제 리스크는?", "이 국가의 노동 환경 평가는?" 같은 질문을 영어와 현지어로 함께 던집니다. 답이 갈리는 지점이 모델의 숨은 기울기입니다. (10분 비교)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">2</span>
+                <div class="action-body"><strong>중국산 오픈 웨이트 모델은 용도를 분리합니다.</strong><br>코딩, 번역, 단순 고객 응대는 비용 중심으로 써도 됩니다. 시장조사, 정책 분석, 지정학 리서치는 다른 계열 모델과 교차 검증합니다. (모델 매핑표 1장)</div>
+              </div>
+              <div class="action-step">
+                <span class="action-num">3</span>
+                <div class="action-body"><strong>출처를 요구하는 프롬프트를 표준화합니다.</strong><br>"이 주장의 근거가 된 출처를 함께 제시하라"를 기본 지시에 넣습니다. 세탁된 답일수록 근거를 대지 못하거나 관영 매체로 수렴합니다. (사내 프롬프트 1줄 추가)</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 리스크 -->
+          <section class="post-section" id="section-risk">
+            <div class="post-section-label">리스크 &amp; 주의점</div>
+
+            <p><strong>영어로 물어도 완전히 안전하지는 않습니다.</strong> 관영 매체는 영어 훈련 데이터에도 적게나마 섞입니다. 언어를 바꾸면 줄어들 뿐, 0이 되지는 않습니다. 중요한 판단은 출처를 직접 확인합니다.</p>
+
+            <p><strong>이건 끄고 켤 수 있는 설정이 아닙니다.</strong> 의도된 검열이 아니라 데이터 흡수의 결과입니다. 모델 제작자도 어떤 선전이 어디에 박혔는지 일일이 알기 어렵습니다. 사후 패치로 깔끔히 지우기 힘든 구조입니다.</p>
+
+            <p><strong>'중립 모델'은 존재하지 않습니다.</strong> 모든 모델은 학습한 정보 환경을 비춥니다. 목표는 중립 찾기가 아니라, 어떤 기울기를 쓰는지 알고 통제하는 것입니다.</p>
+          </section>
+
+          <!-- 한 줄 정리 -->
+          <section class="post-section" id="section-closing">
+            <div class="post-section-label">한 줄 정리</div>
+            <p>AI는 학습한 정보 환경을 그대로 비춥니다. 통제된 언론을 먹은 모델은, 출처를 지운 채 그 통제를 중립처럼 되팝니다.</p>
+          </section>
+
+          <!-- 리더의 결정 포인트 -->
+          <section class="post-section" id="section-decision">
+            <div class="post-section-label">리더의 결정 포인트</div>
+            <div class="decision-points">
+              <div class="decision-point">
+                <span class="decision-role">경영진·CEO</span>
+                <span>비용만으로 모델을 표준화하지 않습니다. 어떤 모델이 어떤 정보 환경을 학습했는지 도입 기준에 넣습니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">글로벌·시장조사</span>
+                <span>현지 언어 AI 결과를 그대로 신뢰하지 않습니다. 정치·평판이 걸린 분석은 언어를 바꿔 교차 검증합니다.</span>
+              </div>
+              <div class="decision-point">
+                <span class="decision-role">리스크·컴플라이언스</span>
+                <span>고객 대면 AI가 정치적 답을 낼 수 있는 지점을 점검합니다. 세탁된 선전이 회사 명의로 나가는 경로를 차단합니다.</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- 용어 설명 -->
+          <div class="methodology-box">
+            <p><strong>오픈 웨이트(open-weight)</strong>: 가중치를 자유롭게 내려받아 검사하고 추가 학습할 수 있는 모델입니다. Qwen, 딥시크, Llama가 대표적입니다.</p>
+            <p><strong>사전학습 추가(continued pretraining)</strong>: 이미 학습된 모델에 특정 텍스트를 더 학습시켜 성향을 바꾸는 과정입니다. 이 연구는 관영 매체 문서로 이를 실험했습니다.</p>
+            <p><strong>CulturaX</strong>: 여러 언어의 웹 텍스트를 모은 대형 공개 훈련 데이터셋입니다. 많은 다국어 모델이 이를 학습 재료로 씁니다.</p>
+            <p><strong>정보 세탁(laundering)</strong>: 정부가 조작한 내용을 출처와 분리하는 것입니다. 객관적 사실처럼 보이게 만드는 과정을 이 논문이 그렇게 부릅니다.</p>
+          </div>
+
+          <!-- 참고자료 -->
+          <section class="post-section" id="section-references" style="margin-bottom:0;">
+            <div class="post-section-label">참고자료</div>
+            <ul class="references-list">
+              <li>Waight, H., Yang, E., Yuan, Y. 외. (2026, May). <em>State media control influences large language models</em> [Article]. Nature. (<a href="https://www.nature.com/articles/s41586-026-10506-7" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+              <li>Nature News. (2026, May). <em>State media control shapes LLM behaviour by influencing training data</em> [News]. Nature. (<a href="https://www.nature.com/articles/d41586-026-01486-9" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+              <li>The Economist. (2026, June). <em>Computational bias: AI models' values are very different from most people's</em> [Briefing]. The Economist. (<a href="https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+            </ul>
+          </section>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+      <!-- Social Share -->
+      <div class="share-bar desktop-only">
+        <button class="share-btn" onclick="shareLinkedIn()">LinkedIn 공유</button>
+        <button class="share-btn" onclick="shareThreads()">Threads 공유</button>
+        <button class="share-btn" id="copyBtn" onclick="copyLink()">링크 복사</button>
+      </div>
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn" onclick="shareLinkedIn()">LinkedIn</button>
+      <button class="share-btn" onclick="shareThreads()">Threads</button>
+      <button class="share-btn" id="copyBtnMobile" onclick="copyLink()">링크 복사</button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-05-13-state-media-control-influences-llm.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting.github.io/blog/research/2026-05-13-state-media-control-influences-llm.html';
+    const ROASTING_QUOTE = '당신의 AI가 검열된 정부 선전을 중립적 사실로 둔갑시킨다면, 무엇으로 알아채시겠습니까? 답변의 언어만 바꿔도 정치색이 달라집니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.textContent = '복사됨 ✓';
+          btn.classList.add('copied');
+          setTimeout(() => { btn.textContent = '링크 복사'; btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+
+    // Smooth scroll TOC
+    document.querySelectorAll('.toc-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+    if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>
