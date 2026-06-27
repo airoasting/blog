@@ -71,8 +71,8 @@
           navLink('tech', '기술') +
           navLink('survival', '생존') +
           '<a href="' + prefix + 'insights/graph.html" class="nav-graph' + (activeCat === 'graph' ? ' active' : '') + '">지식 그래프</a>' +
-          '<a href="' + prefix + 'insights/wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키브레인</a>' +
-          '<a href="' + prefix + 'timeline/model-timeline.html" class="nav-timeline' + (activeCat === 'timeline' ? ' active' : '') + '">모델 타임라인</a>' +
+          '<a href="' + prefix + 'insights/wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키 브레인</a>' +
+          '<a href="' + prefix + 'timeline/model-timeline.html" class="nav-timeline' + (activeCat === 'timeline' ? ' active' : '') + '">모델·로봇 타임라인</a>' +
         '</nav>' +
       '</div>' +
     '</div>' +
@@ -80,15 +80,18 @@
       '<div class="mobile-search">' +
         '<input type="text" class="mobile-search-input" id="mobileSearchInput" placeholder="검색어를 입력하세요" autocomplete="off">' +
       '</div>' +
-      '<a href="' + prefix + 'newsletter/index.html">뉴스레터</a>' +
+      '<a href="' + prefix + 'newsletter/index.html" class="mobile-cat-link">' +
+        '<span>뉴스레터</span>' +
+        '<span class="nav-count-pill" data-count-nl></span></a>' +
       mobileLink('research', '리서치') +
       mobileLink('leader', '리더') +
       mobileLink('company', '기업') +
       mobileLink('tech', '기술') +
       mobileLink('survival', '생존') +
+      '<a href="' + prefix + 'about/index.html" class="mobile-nav-group-start">프로젝트 소개</a>' +
       '<a href="' + prefix + 'insights/graph.html">지식 그래프</a>' +
-      '<a href="' + prefix + 'insights/wiki/index.html">위키브레인</a>' +
-      '<a href="' + prefix + 'timeline/model-timeline.html">모델 타임라인</a>' +
+      '<a href="' + prefix + 'insights/wiki/index.html">위키 브레인</a>' +
+      '<a href="' + prefix + 'timeline/model-timeline.html">모델·로봇 타임라인</a>' +
     '</div>';
 
   var header = document.getElementById('site-header');
@@ -113,6 +116,25 @@
     return true;
   }
 
+  // Mobile nav: fill the newsletter pill with its episode count.
+  // Source priority: window.NEWSLETTER_DATA → newsletter-index.json (mirrors footer.js).
+  function fillNewsletterCount() {
+    function paint(n) {
+      if (!n) return;
+      document.querySelectorAll('.nav-count-pill[data-count-nl]').forEach(function (el) {
+        el.textContent = n;
+      });
+    }
+    if (window.NEWSLETTER_DATA) {
+      paint(window.NEWSLETTER_DATA.length);
+    } else {
+      fetch(prefix + 'newsletter-index.json')
+        .then(function (r) { return r.json(); })
+        .then(function (d) { paint((d.newsletters || []).length); })
+        .catch(function () {});
+    }
+  }
+
   // Format post dates: "2026-03-17" → "2026년 3월 17일"
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.post-date').forEach(function (el) {
@@ -129,6 +151,7 @@
         if (fillCategoryCounts() || ++tries > 20) clearInterval(iv);
       }, 100);
     }
+    fillNewsletterCount();
   });
 
   // Hamburger toggle

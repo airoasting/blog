@@ -304,7 +304,7 @@ img {
   color: #6EE7B7;
 }
 
-/* ── 위키브레인 nav link ── */
+/* ── 위키 브레인 nav link ── */
 .main-nav .nav-wiki {
   color: #DB2777;
   font-weight: 700;
@@ -2243,6 +2243,17 @@ img {
   background: var(--header);
 }
 
+/* 선언형 헤드라인 (라벨 대신 문장형 제목) */
+.about-promise h2.about-promise-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(19px, 2.6vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  line-height: 1.4;
+  color: var(--text);
+}
+
 .about-promise-lead {
   font-family: var(--font-heading);
   font-size: 16px;
@@ -2284,6 +2295,18 @@ img {
   content: "→ ";
   color: var(--header);
   font-weight: 700;
+}
+
+/* 대표 이야기 항목 링크 (클릭 시 해당 아티클로 이동) */
+.about-promise li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-promise li a:hover {
+  color: var(--header);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Toggle explainer */
@@ -2600,6 +2623,24 @@ img {
   transform: translateY(-1px);
 }
 
+.about-cta-secondary {
+  margin: 18px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
+.about-cta-secondary a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.about-cta-secondary a:hover {
+  opacity: 0.8;
+}
+
 /* 좁은 화면(폰·세로 태블릿)에서는 카테고리를 한 줄씩 */
 @media (max-width: 900px) {
   .about-category-list {
@@ -2620,9 +2661,19 @@ img {
   }
   .about-intro {
     font-size: 16px;
-    line-height: 1.9;
+    line-height: 1.7;
     padding: 26px 22px 26px 26px;
     border-radius: 16px;
+  }
+  .about-promise-headline {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+  .about-credential {
+    padding: 18px 0 28px;
+  }
+  .about-cta-secondary {
+    display: none;
   }
   .about-intro::before {
     font-size: 38px;
@@ -2797,6 +2848,13 @@ img {
 }
 
 .mobile-nav a:hover { color: var(--text); background: var(--surface-container); }
+
+/* 카테고리 그룹과 다음 그룹(프로젝트 소개·도구) 사이 여백 구분 */
+.mobile-nav a.mobile-nav-group-start {
+  margin-top: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
 
 /* Category link with right-aligned count pill */
 .mobile-nav a.mobile-cat-link {
