@@ -14,7 +14,7 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
-- 2026-06-25 [리서치] 당신이 쓰는 AI는 세속적이고 진보적이다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
+- 2026-06-25 [리서치] 당신이 쓰는 AI는 세속적이고 진보적입니다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
 - 2026-06-23 [기업] 관리자를 줄였더니, 메타 AI 조직이 무너졌다 — /blog/company/2026-06-23-meta-ai-reorg-team-size.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
@@ -79,7 +79,7 @@
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
 - 2026-04-08 [기술] Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다 — /blog/tech/2026-04-08-claude-code-hidden-features.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
-- 2026-04-07 [기업] Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다 — /blog/company/2026-04-07-culture-that-ate-silicon-valley.html
+- 2026-04-07 [기업] Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략입니다 — /blog/company/2026-04-07-culture-that-ate-silicon-valley.html
 - 2026-04-07 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html
 - 2026-04-07 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-04-07-llm-behavioral-alignment-gap.html
 - 2026-04-07 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-04-07-ai-agent-traps.html
@@ -98,7 +98,7 @@
 - 2026-03-28 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-03-28-ai-agent-traps.html
 - 2026-03-26 [기술] AI가 ML 논문을 혼자 썼습니다, Nature도 실었습니다 — /blog/tech/2026-03-26-ai-scientist-nature.html
 - 2026-03-24 [기술] AI, 수학자도 못 푼 난제를 풀다 — /blog/tech/2026-03-24-frontiermath-ai-solves-open-math.html
-- 2026-03-23 [기업] 소프트웨어에 남은 길은 두 가지뿐이다 — /blog/company/2026-03-23-two-paths-for-software.html
+- 2026-03-23 [기업] 소프트웨어에 남은 길은 두 가지뿐입니다 — /blog/company/2026-03-23-two-paths-for-software.html
 - 2026-03-23 [기술] 교수가 AI로 1년 연구를 2주에 끝냈다 — /blog/tech/2026-03-23-vibe-physics-ai-grad-student.html
 - 2026-03-21 [기업] DeNA AI 올인 1년, 생산성 20배의 역설 — /blog/company/2026-03-21-dena-ai-20x-paradox.html
 - 2026-03-20 [리더] 카파시: 코딩의 종말, 에이전트 위임의 시작 — /blog/leader/2026-03-20-karpathy-end-of-coding.html

@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "당신이 쓰는 AI는 세속적이고 진보적이다",
+      "title": "당신이 쓰는 AI는 세속적이고 진보적입니다",
       "date": "2026-06-25",
       "category": "research",
       "source": "The Economist (Briefing, Computational bias)",
@@ -1202,7 +1202,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-04-07-culture-that-ate-silicon-valley.html"
     },
     {
-      "title": "Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략이다",
+      "title": "Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략입니다",
       "date": "2026-04-07",
       "category": "company",
       "source": "Substack (Raj Sarkar)",
@@ -1524,7 +1524,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-04-02-claude-emotion-vectors.html"
     },
     {
-      "title": "소프트웨어에 남은 길은 두 가지뿐이다",
+      "title": "소프트웨어에 남은 길은 두 가지뿐입니다",
       "date": "2026-03-23",
       "category": "company",
       "source": "a16z (David George)",
