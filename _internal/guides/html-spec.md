@@ -93,6 +93,12 @@
 <meta name="twitter:title" content="{제목}">
 <meta name="twitter:description" content="{OG 요약}">
 
+<!-- Favicon -->
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+
 <!-- Stylesheet -->
 <link rel="stylesheet" href="../assets/css/style.css">
 

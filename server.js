@@ -11,6 +11,8 @@ const MIME = {
   '.js': 'application/javascript',
   '.json': 'application/json',
   '.png': 'image/png',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
   '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml',
   '.txt': 'text/plain',
