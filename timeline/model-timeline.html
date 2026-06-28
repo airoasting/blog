@@ -501,13 +501,29 @@
       color: var(--text);
     }
 
-    .mtl-root .chip-type {
-      display: block;
+    .mtl-root .chip-typerow {
+      display: flex;
+      align-items: center;
+      gap: 5px;
       margin-top: 3px;
+    }
+
+    .mtl-root .chip-type {
       color: var(--chip-accent, var(--muted));
       font-size: 9px;
       font-weight: 800;
       letter-spacing: 0.06em;
+    }
+
+    .mtl-root .chip-badge {
+      flex-shrink: 0;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: var(--muted);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
     }
 
     .mtl-tooltip {
@@ -533,8 +549,14 @@
       pointer-events: auto;
     }
 
-    .mtl-tooltip-title {
+    .mtl-tooltip-titlerow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 6px;
+    }
+
+    .mtl-tooltip-title {
       font-size: 14px;
       font-weight: 900;
       letter-spacing: -0.03em;
@@ -563,6 +585,21 @@
       font-weight: 800;
       text-decoration: underline;
       text-underline-offset: 3px;
+    }
+
+    .mtl-tooltip-badge {
+      flex-shrink: 0;
+      padding: 2px 9px;
+      border-radius: 999px;
+      background: var(--muted);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .mtl-tooltip-badge[hidden] {
+      display: none;
     }
 
     @media (max-width: 768px) {
@@ -648,7 +685,10 @@
       </div>
 
       <div class="mtl-tooltip" id="tooltip" aria-hidden="true">
-        <div class="mtl-tooltip-title" id="tooltipTitle"></div>
+        <div class="mtl-tooltip-titlerow">
+          <span class="mtl-tooltip-title" id="tooltipTitle"></span>
+          <span class="mtl-tooltip-badge" id="tooltipBadge" hidden>비공개</span>
+        </div>
         <div class="mtl-tooltip-meta" id="tooltipMeta"></div>
         <div class="mtl-tooltip-body" id="tooltipBody"></div>
         <a class="mtl-tooltip-link" id="tooltipLink" href="#" target="_blank" rel="noopener">원문 보기</a>
@@ -718,8 +758,11 @@
       tooltipTitle: document.getElementById("tooltipTitle"),
       tooltipMeta: document.getElementById("tooltipMeta"),
       tooltipBody: document.getElementById("tooltipBody"),
-      tooltipLink: document.getElementById("tooltipLink")
+      tooltipLink: document.getElementById("tooltipLink"),
+      tooltipBadge: document.getElementById("tooltipBadge")
     };
+
+    const PRIVATE_MODELS = new Set(["Claude Fable 5", "Claude Mythos 5"]);
 
     const TYPE_LABEL = {
       release: "출시",
@@ -785,6 +828,7 @@
       pinned = !!pin;
       refs.tooltip.classList.toggle("is-pinned", pinned);
       refs.tooltipTitle.textContent = eventData.model;
+      refs.tooltipBadge.hidden = !PRIVATE_MODELS.has(eventData.model);
       refs.tooltipMeta.textContent = eventData.provider + " · " + eventData.date + " · " + typeLabel(eventData.event_type);
       refs.tooltipBody.textContent = eventData.summary_ko || eventData.summary_en || "";
       refs.tooltipLink.href = eventData.source_url;
@@ -876,7 +920,8 @@
               chip.className = "event-chip";
               chip.setAttribute("data-type", eventData.event_type);
               chip.setAttribute("aria-label", eventData.model + ", " + eventData.provider + ", " + eventData.date + ", " + typeLabel(eventData.event_type));
-              chip.innerHTML = '<span class="chip-model">' + eventData.model + '</span><span class="chip-type">' + typeLabel(eventData.event_type) + '</span>';
+              const chipBadge = PRIVATE_MODELS.has(eventData.model) ? '<span class="chip-badge">비공개</span>' : '';
+              chip.innerHTML = '<span class="chip-model">' + eventData.model + '</span><span class="chip-typerow"><span class="chip-type">' + typeLabel(eventData.event_type) + '</span>' + chipBadge + '</span>';
               chip.addEventListener("mouseenter", () => { if (!pinned) showTooltip(eventData, chip, false); });
               chip.addEventListener("mouseleave", () => { if (!pinned) hideTooltip(); });
               chip.addEventListener("focus", () => showTooltip(eventData, chip, true));
