@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-27T08:29:29.707Z",
+  "generatedAt": "2026-07-04T14:26:21.953Z",
   "version": 1,
   "stats": {
     "totalConcepts": 106,
     "totalRelationships": 286,
     "totalPosts": 225,
-    "totalNewsletters": 54
+    "totalNewsletters": 55
   },
   "concepts": [
     {
@@ -97,7 +97,7 @@
         "nl-49"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-04-06",
+      "lastSeen": "2026-06-18",
       "needs_manual_review": false
     },
     {
@@ -173,7 +173,7 @@
         "nl-54"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-03-16",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -241,7 +241,7 @@
         "nl-50"
       ],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2026-04-01",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -301,7 +301,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-06-12",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -348,7 +348,7 @@
         "nl-46"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-03-10",
+      "lastSeen": "2026-06-10",
       "needs_manual_review": false
     },
     {
@@ -389,7 +389,7 @@
         "nl-35"
       ],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-06-01",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -430,7 +430,7 @@
         "nl-47"
       ],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2026-06-12",
+      "lastSeen": "2026-06-23",
       "needs_manual_review": false
     },
     {
@@ -470,7 +470,7 @@
         "nl-11"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-04-06",
+      "lastSeen": "2026-04-09",
       "needs_manual_review": false
     },
     {
@@ -509,7 +509,7 @@
         "nl-53"
       ],
       "firstSeen": "2024-08-20",
-      "lastSeen": "2026-04-06",
+      "lastSeen": "2026-04-07",
       "needs_manual_review": false
     },
     {
@@ -587,7 +587,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-03-19",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -714,7 +714,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-03-19",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -747,7 +747,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2025-06-25",
+      "lastSeen": "2026-06-23",
       "needs_manual_review": false
     },
     {
@@ -776,7 +776,7 @@
         "nl-52"
       ],
       "firstSeen": "2025-04-25",
-      "lastSeen": "2026-03-16",
+      "lastSeen": "2026-04-23",
       "needs_manual_review": false
     },
     {
@@ -804,7 +804,7 @@
         "nl-50"
       ],
       "firstSeen": "2024-08-25",
-      "lastSeen": "2025-12-17",
+      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -832,7 +832,7 @@
         "nl-17"
       ],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2025-07-15",
+      "lastSeen": "2026-06-10",
       "needs_manual_review": false
     },
     {
@@ -859,7 +859,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2026-03-28",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -885,7 +885,7 @@
         "nl-26"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2025-05-01",
+      "lastSeen": "2026-04-23",
       "needs_manual_review": false
     },
     {
@@ -910,7 +910,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-25",
-      "lastSeen": "2026-06-12",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -936,7 +936,7 @@
         "nl-50"
       ],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2026-04-06",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -960,7 +960,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-01-16",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {
@@ -1035,7 +1035,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2024-07-20",
-      "lastSeen": "2026-03-09",
+      "lastSeen": "2026-04-14",
       "needs_manual_review": false
     },
     {
@@ -1078,8 +1078,8 @@
         "2026-06-19-implicit-organization-ai-agents"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-01",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -1101,8 +1101,8 @@
         "nl-42",
         "nl-51"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -1125,7 +1125,7 @@
         "nl-41"
       ],
       "firstSeen": "2025-03-15",
-      "lastSeen": "2025-05-20",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -1147,7 +1147,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2025-05-10",
+      "lastSeen": "2026-06-08",
       "needs_manual_review": false
     },
     {
@@ -1168,7 +1168,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-04-15",
-      "lastSeen": "2025-04-15",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -1189,7 +1189,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-04-25",
-      "lastSeen": "2026-03-17",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -1210,8 +1210,8 @@
         "nl-25",
         "nl-26"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-01",
+      "lastSeen": "2026-04-24",
       "needs_manual_review": false
     },
     {
@@ -1232,7 +1232,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-04-25",
-      "lastSeen": "2026-02-11",
+      "lastSeen": "2026-05-08",
       "needs_manual_review": false
     },
     {
@@ -1253,7 +1253,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-04-01",
-      "lastSeen": "2026-06-15",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {
@@ -1274,8 +1274,8 @@
         "nl-24",
         "nl-26"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-09",
+      "lastSeen": "2026-05-07",
       "needs_manual_review": false
     },
     {
@@ -1316,7 +1316,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2025-05-01",
+      "lastSeen": "2026-03-23",
       "needs_manual_review": false
     },
     {
@@ -1335,8 +1335,8 @@
         "2026-06-08-agents-in-biology"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-02",
+      "lastSeen": "2026-06-08",
       "needs_manual_review": false
     },
     {
@@ -1356,7 +1356,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2026-03-05",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -1377,7 +1377,7 @@
         "nl-9"
       ],
       "firstSeen": "2026-03-10",
-      "lastSeen": "2026-03-10",
+      "lastSeen": "2026-03-24",
       "needs_manual_review": false
     },
     {
@@ -1398,7 +1398,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-03-16",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -1419,7 +1419,7 @@
         "nl-1"
       ],
       "firstSeen": "2025-05-20",
-      "lastSeen": "2025-05-20",
+      "lastSeen": "2026-04-13",
       "needs_manual_review": false
     },
     {
@@ -1459,7 +1459,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-15",
-      "lastSeen": "2025-05-25",
+      "lastSeen": "2026-04-09",
       "needs_manual_review": false
     },
     {
@@ -1536,7 +1536,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-04-20",
-      "lastSeen": "2026-01-16",
+      "lastSeen": "2026-04-08",
       "needs_manual_review": false
     },
     {
@@ -1574,7 +1574,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-03-05",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -1593,7 +1593,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2025-02-15",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -1612,7 +1612,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-08-23",
-      "lastSeen": "2025-08-23",
+      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -1631,7 +1631,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-07-10",
-      "lastSeen": "2026-03-17",
+      "lastSeen": "2026-06-25",
       "needs_manual_review": false
     },
     {
@@ -1650,7 +1650,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2026-03-06",
-      "lastSeen": "2026-03-06",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -1669,8 +1669,8 @@
       "newsletters": [
         "nl-5"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-31",
+      "lastSeen": "2026-04-24",
       "needs_manual_review": false
     },
     {
@@ -1689,7 +1689,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2026-03-28",
-      "lastSeen": "2026-03-28",
+      "lastSeen": "2026-04-30",
       "needs_manual_review": false
     },
     {
@@ -1708,7 +1708,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2024-07-20",
-      "lastSeen": "2025-04-05",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {
@@ -1841,7 +1841,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-01",
-      "lastSeen": "2025-05-01",
+      "lastSeen": "2026-05-15",
       "needs_manual_review": false
     },
     {
@@ -1859,7 +1859,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2025-05-20",
+      "lastSeen": "2026-05-22",
       "needs_manual_review": false
     },
     {
@@ -1914,8 +1914,8 @@
         "2026-05-28-sia-self-improving-ai-harness-weights"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-02-02",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -1933,7 +1933,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-03-16",
+      "lastSeen": "2026-06-18",
       "needs_manual_review": false
     },
     {
@@ -1968,8 +1968,8 @@
         "2026-05-28-sia-self-improving-ai-harness-weights"
       ],
       "newsletters": [],
-      "firstSeen": "2026-05-27",
-      "lastSeen": "2026-05-27",
+      "firstSeen": "2026-03-19",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -1987,8 +1987,8 @@
       "newsletters": [
         "nl-44"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-03-19",
+      "lastSeen": "2026-04-03",
       "needs_manual_review": false
     },
     {
@@ -2006,7 +2006,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-20",
-      "lastSeen": "2025-05-20",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -2025,7 +2025,7 @@
         "nl-50"
       ],
       "firstSeen": "2025-04-21",
-      "lastSeen": "2025-04-21",
+      "lastSeen": "2026-04-01",
       "needs_manual_review": false
     },
     {
@@ -2043,7 +2043,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-07-20",
-      "lastSeen": "2025-07-20",
+      "lastSeen": "2026-04-24",
       "needs_manual_review": false
     },
     {
@@ -2061,7 +2061,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2026-03-28",
-      "lastSeen": "2026-03-28",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -2097,8 +2097,8 @@
       "newsletters": [
         "nl-52"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-08",
+      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -2115,8 +2115,8 @@
         "2026-05-28-sia-self-improving-ai-harness-weights"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-08",
+      "lastSeen": "2026-05-28",
       "needs_manual_review": false
     },
     {
@@ -2134,8 +2134,8 @@
         "nl-16",
         "nl-17"
       ],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-11",
+      "lastSeen": "2026-04-11",
       "needs_manual_review": false
     },
     {
@@ -2152,8 +2152,8 @@
         "2026-04-24-deepseek-v4-pro-coding-benchmark"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-16",
+      "lastSeen": "2026-04-24",
       "needs_manual_review": false
     },
     {
@@ -2171,7 +2171,7 @@
       "newsletters": [
         "nl-26"
       ],
-      "firstSeen": "2026-06-12",
+      "firstSeen": "2026-04-23",
       "lastSeen": "2026-06-12",
       "needs_manual_review": false
     },
@@ -2189,8 +2189,8 @@
         "2026-06-16-chatgpt-market-share-below-50"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {
@@ -2208,7 +2208,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-20",
-      "lastSeen": "2025-05-20",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -2226,7 +2226,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2026-06-01",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -2244,7 +2244,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-06-12",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {
@@ -2261,8 +2261,8 @@
         "2026-06-19-companies-rein-in-ai-costs"
       ],
       "newsletters": [],
-      "firstSeen": null,
-      "lastSeen": null,
+      "firstSeen": "2026-06-16",
+      "lastSeen": "2026-06-19",
       "needs_manual_review": false
     },
     {
@@ -2280,7 +2280,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-05-20",
-      "lastSeen": "2026-04-01",
+      "lastSeen": "2026-06-16",
       "needs_manual_review": false
     },
     {

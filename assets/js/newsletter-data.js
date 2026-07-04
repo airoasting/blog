@@ -4,7 +4,7 @@ window.NEWSLETTER_DATA = [
     "title": "AI가 이제 암묵지를 노립니다",
     "date": "2026-07-04",
     "img": "nl-55.png",
-    "url": "https://airoasting.github.io/blog/newsletter/"
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-55-ai%EA%B0%80-%EC%9D%B4%EC%A0%9C-%EC%95%94%EB%AC%B5%EC%A7%80%EB%A5%BC-%EB%85%B8%EB%A6%BD%EB%8B%88%EB%8B%A4-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-3bpxc/"
   },
   {
     "ep": 54,
