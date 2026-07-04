@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 55,
+    "title": "AI가 이제 암묵지를 노립니다",
+    "date": "2026-07-04",
+    "img": "nl-55.png",
+    "url": "https://airoasting.github.io/blog/newsletter/"
+  },
+  {
     "ep": 54,
     "title": "앤트로픽의 자리를 넘보는 Z.ai",
     "date": "2026-06-27",
