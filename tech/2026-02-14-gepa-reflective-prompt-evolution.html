@@ -1,0 +1,488 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="강화학습(GRPO)은 AI를 새 업무에 적응시킬 때 수만 번의 시도가 필요합니다. GEPA는 점수 대신 자연어 반성으로 프롬프트를 진화시켜, 최대 35배 적은 시도로 강화학습을 앞섰습니다. 여섯 과제 평균 6퍼센트, 개별 과제는 최대 20퍼센트까지 앞질렀습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="강화학습 없이, 프롬프트가 스스로 진화합니다">
+  <meta property="og:description" content="점수 대신 자연어 반성으로 프롬프트를 진화시킨 GEPA가, 35배 적은 시도로 강화학습을 앞섰습니다. AI 적응 비용의 공식이 바뀝니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-02-14-gepa-reflective-prompt-evolution.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-02-14">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="프롬프트최적화">
+  <meta property="article:tag" content="강화학습">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="GEPA">
+  <meta property="article:tag" content="샘플효율">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="강화학습 없이, 프롬프트가 스스로 진화합니다">
+  <meta name="twitter:description" content="자연어 반성으로 프롬프트를 진화시킨 GEPA가 35배 적은 시도로 강화학습을 앞섰습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "강화학습 없이, 프롬프트가 스스로 진화합니다",
+    "datePublished": "2026-02-14",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "점수 대신 자연어 반성으로 프롬프트를 진화시킨 GEPA가, 강화학습보다 최대 35배 적은 시도로 더 좋은 결과를 냈습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-02-14-gepa-reflective-prompt-evolution.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2025_07_25_gepa-reflective-prompt-evolution/thumbnail.png" alt="강화학습 없이, 프롬프트가 스스로 진화합니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 2월 14일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">강화학습 없이, 프롬프트가 스스로 진화합니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv</span>
+            <span>Agrawal 외</span>
+            <span><a href="https://arxiv.org/abs/2507.19457" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=프롬프트최적화" class="post-tag">#프롬프트최적화</a>
+            <a href="../index.html?tag=강화학습" class="post-tag">#강화학습</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=GEPA" class="post-tag">#GEPA</a>
+            <a href="../index.html?tag=샘플효율" class="post-tag">#샘플효율</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="강화학습 없이, 프롬프트가 스스로 진화합니다" data-date="2026-02-14" data-category="tech" data-source="arXiv (Agrawal 외)" data-tags="프롬프트최적화, 강화학습, AI에이전트, GEPA, 샘플효율" data-original-url="https://arxiv.org/abs/2507.19457" data-roasting-quote="당신은 아직도 AI에 데이터와 GPU를 더 붓고 있습니까? 이 연구는 스스로 반성하는 문장 몇 줄이 수만 번의 강화학습을 이겼다고 말합니다." data-next-post="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">강화학습(GRPO)은 AI를 새 업무에 맞출 때 수천에서 수만 번의 시도가 필요합니다.</p>
+        <p data-summary="">GEPA는 점수 대신 자연어 반성으로 프롬프트를 진화시켜, 최대 35배 적은 시도로 강화학습을 앞섰습니다.</p>
+        <p data-summary="">여섯 과제 평균 6퍼센트, 개별 과제는 최대 20퍼센트까지 강화학습을 앞질렀습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신은 아직도 AI에 데이터와 GPU를 더 붓고 있습니까?<br>이 연구는 스스로 반성하는 문장 몇 줄이 수만 번의 강화학습을 이겼다고 말합니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI를 우리 업무에 맞추는 길은 크게 둘입니다. 하나는 모델 가중치를 다시 학습시키는 강화학습입니다. 다른 하나는 지시문, 곧 프롬프트를 다듬는 방법입니다. 업계는 오래도록 앞의 길을 정공법으로 여겼습니다. 비싸고 느려도 성능이 오른다고 믿었습니다.</p>
+        <p>이 논문은 그 믿음을 흔듭니다. 프롬프트를 스스로 반성하며 고치는 방법이, 수만 번을 굴리는 강화학습보다 더 좋은 결과를 더 싸게 냈습니다. GPU 예산이 없는 조직에도 문이 열립니다. 지금 AI 도입 비용에 발목이 잡혀 있다면, 이 방향을 먼저 봐야 합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>GRPO는 앤트로픽, 오픈AI가 쓰는 대표적 강화학습 기법입니다. 모델에 점수 하나, 즉 맞음이나 틀림을 주고 그 신호로 가중치를 조금씩 밉니다. 문제는 신호가 너무 얕다는 점입니다. 한 번의 시도에서 오간 추론, 도구 호출, 오류 메시지는 전부 버리고 숫자 하나만 남깁니다. 그래서 새 업무 하나를 배우는 데 시도가 수만 번씩 듭니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 반성이 점수를 이겼습니다.</strong> GEPA의 방식은 단순합니다. 시도가 끝나면 그 과정을 자연어로 되짚습니다. 어디서 틀렸는지, 왜 그랬는지를 모델이 스스로 글로 진단합니다. 그 진단을 반영해 프롬프트를 고칩니다. 숫자 하나가 아니라 문장으로 배우니, 시도 한 번에서 얻는 학습량이 훨씬 큽니다.</p>
+        <p>저자들은 이를 언어가 점수보다 풍부한 학습 재료라고 표현합니다. 실제로 다중 홉 검색 시스템의 지시문은, 반성을 거치며 한 줄짜리 명령에서 검색 전략을 담은 상세한 지침으로 진화했습니다. 사람이 손으로 튜닝한 프롬프트에 가까운 결과입니다.</p>
+        <p>진화에는 안전장치가 하나 더 있습니다. GEPA는 가장 점수 높은 프롬프트 하나만 붙잡고 파지 않습니다. 과제별로 각각 앞선 프롬프트를 모두 남겨 두고, 그 후보들 사이에서 다음 개선안을 고릅니다. 한 방향만 파다 막다른 길에 갇히는 국소 최적을 피하는 설계입니다. 반성이 학습의 깊이라면, 이 파레토 방식은 탐색의 넓이입니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>방식</th>
+                <th style="text-align: center;">종합 점수<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">여섯 과제 평균 · 높을수록 좋음</span></th>
+                <th style="text-align: center;">필요 시도<br><span style="font-weight:400; font-size:12px; color:var(--text-muted);">rollout · 적을수록 좋음</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>베이스라인 (튜닝 전)</td>
+                <td style="text-align: center;">45.23</td>
+                <td style="text-align: center;">없음</td>
+              </tr>
+              <tr>
+                <td>GRPO (강화학습)</td>
+                <td style="text-align: center;">48.91</td>
+                <td style="text-align: center;">24,000</td>
+              </tr>
+              <tr>
+                <td>MIPROv2 (기존 프롬프트 최적화)</td>
+                <td style="text-align: center;">47.84</td>
+                <td style="text-align: center;">미보고</td>
+              </tr>
+              <tr>
+                <td class="cell-hl">GEPA (반성 진화)</td>
+                <td style="text-align: center;" class="cell-hl">54.85</td>
+                <td style="text-align: center;" class="cell-hl">3,936</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">Qwen3 8B 기준 여섯 개 과제의 종합 성능입니다. GEPA는 강화학습보다 높은 점수를, 약 6분의 1의 시도로 냈습니다. 대상 과제는 검색, 수학, 지시 이행을 포함합니다. 출처: Agrawal 외 (2026), GEPA.</p>
+        </div>
+
+        <p><strong>둘째, 시도 횟수가 35배 줄었습니다.</strong> Qwen3 8B 기준으로 GRPO는 과제마다 24,000번을 굴렸습니다. GEPA는 평균 3,936번으로 끝냈습니다. IFBench에서는 678번 만에 최적 프롬프트를 찾아, GRPO의 24,000번 결과를 앞섰습니다. 저자들은 사례에 따라 효율이 최대 78배까지 높았다고 밝힙니다.</p>
+        <p>시도 한 번은 곧 API 호출이고 비용입니다. 횟수가 줄면 그대로 돈이 됩니다. 많은 실무 상황에서 최상위 모델의 가중치는 아예 손댈 수 없습니다. 이때 프롬프트만 고쳐 성능을 올리는 길은 유일한 선택지가 됩니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">35×</div>
+            <div class="stat-label">강화학습(GRPO) 대비 줄어든 시도 횟수 (Qwen3 8B 평균)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">678회</div>
+            <div class="stat-label">GEPA가 IFBench 최적 프롬프트를 찾은 시도 (GRPO는 24,000회)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">+9%p</div>
+            <div class="stat-label">싼 모델서 만든 프롬프트를 큰 모델에 옮겼을 때 종합 상승폭</div>
+          </div>
+        </div>
+
+        <p><strong>셋째, 만든 프롬프트가 다른 모델에서도 통했습니다.</strong> 작은 모델 Qwen3 8B로 다듬은 프롬프트를, 더 큰 GPT-4.1 Mini에 그대로 옮겨봤습니다. 별도 수정 없이 종합 9퍼센트가 올랐습니다. HotpotQA에서는 최대 27퍼센트까지 뛰었습니다. 값싼 모델에서 프롬프트를 최적화하고, 비싼 모델에 옮겨 쓰는 길이 열립니다.</p>
+        <p>비용을 낮추는 요소는 하나 더 있습니다. GEPA가 만든 프롬프트는 경쟁 기법인 MIPROv2보다 최대 9.2배 짧습니다. 예시를 잔뜩 붙이는 대신 명확한 지침을 씁니다. 프롬프트가 짧으면 쓸 때마다 드는 토큰 비용도 함께 줄어듭니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>가중치 학습부터 꺼내지 말고, 프롬프트 반성 루프부터 돌리세요.</strong><br>정답을 채점할 수 있는 업무 하나를 고릅니다. 실패한 사례를 모델에 자연어로 되짚게 하고, 그 진단으로 지시문을 고치는 순환을 만듭니다. 비개발자라면 개발팀에 가중치 재학습 대신 반성 기반 프롬프트 최적화를 먼저 시험해 달라고 요청하면 됩니다. 강화학습보다 훨씬 싸게 성능을 시험할 수 있습니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>'시도 횟수'를 비용 지표로 관리하세요.</strong><br>AI 실험 비용을 GPU 시간이 아니라 API 호출 횟수로 환산해 기록합니다. 어떤 방법이 같은 성능을 몇 배 적은 호출로 내는지 비교표를 만듭니다. 이 표가 도입 방식을 고르는 근거가 됩니다. (1주일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>싼 모델에서 만든 프롬프트를 비싼 모델로 옮겨 재보세요.</strong><br>작은 모델로 프롬프트를 다듬고, 그 프롬프트를 상위 모델에 그대로 넣어 성능이 유지되는지 확인합니다. 최적화 비용을 낮추면서 상위 모델의 성능을 취하는 실전 전략입니다. (1개월)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>평가 범위가 정해져 있습니다.</strong> 여섯 개 벤치마크와 두 모델(Qwen3 8B, GPT-4.1 Mini)에서 나온 결과입니다(Agrawal 외, 2026). 검색, 수학, 지시 이행 같은 과제에 집중돼 있습니다. 모든 업무 유형으로 넓히려면 자기 데이터로 다시 검증해야 합니다.</p>
+
+        <p><strong>반성에도 좋은 모델이 필요합니다.</strong> 프롬프트를 되짚는 일 자체를 LLM이 맡습니다. 반성을 담당하는 모델이 약하면 진단도 얕아집니다. 반성에 상위 모델을 쓰면 그 호출 비용이 절감분을 일부 갉아먹습니다. 순비용을 따질 때 이 항목을 함께 넣어야 합니다.</p>
+
+        <p><strong>강화학습을 완전히 대체하진 않습니다.</strong> GEPA는 프롬프트만 바꾸고 가중치는 건드리지 않습니다(Agrawal 외, 2026). 모델의 근본 능력 자체를 끌어올려야 하는 문제는 여전히 학습의 몫입니다. 정답을 채점할 함수가 없는 업무에도 적용이 어렵습니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 가르치는 가장 싼 방법은 더 많은 연산이 아니라, 더 나은 반성일 수 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 실험 예산을 GPU가 아니라 '시도 횟수'로 다시 보라. 같은 성능을 더 적은 호출로 내는 팀이 비용 경쟁에서 이긴다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>가중치 재학습에 손대기 전에, 자연어 반성 기반 프롬프트 최적화를 먼저 시도하라. 비용 대비 효과가 크고 상위 모델에도 옮겨진다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">사업/기획</span>
+            <span>정답을 채점할 수 있는 업무를 먼저 골라라. 이 방식은 채점 함수가 있어야 작동한다. 채점 기준 설계가 도입의 첫 단추다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>컴파운드 AI 시스템</strong>: 여러 번의 LLM 호출과 도구 사용을 엮어 하나의 작업을 처리하는 시스템입니다. 검색, 추론, 코드 실행을 조합한 에이전트가 대표 예입니다.</p>
+          <p><strong>롤아웃 (rollout)</strong>: AI 시스템을 한 번 실행해 결과를 평가하는 한 회차입니다. 강화학습은 학습에 이 롤아웃이 수만 번 필요합니다.</p>
+          <p><strong>GRPO</strong>: 그룹 상대 정책 최적화. 결과에 점수를 매겨 모델 가중치를 조정하는 강화학습 기법입니다. 앤트로픽, 오픈AI 등이 씁니다.</p>
+          <p><strong>GEPA</strong>: Genetic-Pareto. 자연어 반성과 진화 알고리즘을 결합해 프롬프트를 최적화하는 방법입니다.</p>
+          <p><strong>파레토 프런티어</strong>: 한 기준이 아니라 여러 과제에서 각각 앞선 후보를 모두 남기는 선택 방식입니다. 한 우물만 파다 갇히는 국소 최적을 피합니다.</p>
+          <p><strong>MIPROv2</strong>: 프롬프트와 예시를 함께 최적화하는 기존 대표 기법입니다. 이번 연구의 비교 기준선입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Agrawal, L. A., et al. (2026, February). <em>GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning</em> [Preprint]. arXiv. (<a href="https://arxiv.org/abs/2507.19457" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1: 강화학습을 정말 접어도 되나 (Pattern A - 1:1 충돌형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 이제 무조건 GPU부터 붓는 거 반대예요. 프롬프트 몇 줄 반성시켰더니 강화학습을 35배 적은 시도로 이겼잖아요. 비싼 것부터 지르는 습관, 버려야 해요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">35배요? 근데 벤치마크 6개랑 모델 2개가 전부잖아요. 그걸로 강화학습 접으라는 건 너무 나간 거 아니에요? 우리 업무에서도 늘 통한다고 누가 검증했어요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">누가 접으래요. 값싼 것부터 재보라는 거예요. 678번으로 24,000번 결과를 이겼는데, 그걸 안 재보는 게 더 이상하죠.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2: 그래서 비개발자는 뭘 하나 (Pattern B - 끼어들기형) -->
+        <div style="margin-bottom:32px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">숫자만 봐요. 24,000번 대 678번. IFBench에서 그걸로 더 좋은 점수 냈어요. 시도 한 번이 API 호출 한 번이고 곧 돈이에요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 저도 작은 모델로 프롬프트 다듬어서 큰 모델에 그대로 넣어봤는데요, 진짜 성능이 유지되더라고요. 종합 9% 오르는 거 보고 좀 놀랐어요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 개발 모르는 저는 뭘 하면 돼요? 본문 말대로 개발팀한테 가중치 말고 반성부터 시켜보라고 하면 되는 거예요? 그 한마디면 시작이에요?</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3: 반성도 공짜는 아니다 (Pattern C - 연쇄 반응형) -->
+        <div style="margin-bottom:8px;">
+
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 반성이 깊이라면 파레토는 넓이라는 말이 딱 와닿았어요. 한 우물만 파다 막히는 게 아니라, 여러 길을 열어두고 고른다는 게 꼭 사람 공부법 같더라고요.</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">감성적인 건 좋은데요, 그 반성도 결국 좋은 모델이 해야 되잖아요. 그 모델 호출 비용은 공짜예요? 아낀 만큼 다시 나가는 거 아니에요?</div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그건 본문도 인정해요. 순비용 따질 때 반성 비용 넣으라고요. 그래도 24,000번을 4,000번 밑으로 줄이면, 반성 몇 번 값은 남고도 남아요.</div>
+            </div>
+          </div>
+
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-05-28-sia-self-improving-ai-harness-weights.html">
+          <div class="next-post-title">스스로 진화하는 AI, 코드를 스스로 고칩니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../insights/wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/강화학습.html" class="concept-chip">강화학습</a>
+      <a href="../insights/wiki/concepts/grpo.html" class="concept-chip">GRPO</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-02-14-gepa-reflective-prompt-evolution.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-02-14-gepa-reflective-prompt-evolution.html';
+    const ROASTING_QUOTE = '당신은 아직도 AI에 데이터와 GPU를 더 붓고 있습니까? 이 연구는 스스로 반성하는 문장 몇 줄이 수만 번의 강화학습을 이겼다고 말합니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>
