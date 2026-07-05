@@ -1,5 +1,5 @@
 window.MODEL_TIMELINE_DATA = {
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-07-05",
   "period_start": "2017-06-12",
   "period_end": "2026-06-30",
   "notes": [
@@ -248,24 +248,24 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2023-03-14",
-      "provider": "OpenAI",
-      "model": "GPT-4",
-      "event_type": "release",
-      "summary_ko": "GPT-4 출시",
-      "summary_en": "GPT-4 released",
-      "source_url": "https://en.wikipedia.org/wiki/GPT-4",
-      "source_type": "web",
-      "significance": "major",
-      "category": "llm"
-    },
-    {
-      "date": "2023-03-14",
       "provider": "Anthropic",
       "model": "Claude 1",
       "event_type": "release",
       "summary_ko": "Claude 1 첫 공개",
       "summary_en": "Claude introduced",
       "source_url": "https://www.anthropic.com/news/introducing-claude",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2023-03-14",
+      "provider": "OpenAI",
+      "model": "GPT-4",
+      "event_type": "release",
+      "summary_ko": "GPT-4 출시",
+      "summary_en": "GPT-4 released",
+      "source_url": "https://en.wikipedia.org/wiki/GPT-4",
       "source_type": "web",
       "significance": "major",
       "category": "llm"
@@ -476,24 +476,24 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2024-02-15",
-      "provider": "OpenAI",
-      "model": "Sora",
-      "event_type": "release",
-      "summary_ko": "소라 최초 공개(프리뷰)",
-      "summary_en": "Sora first previewed",
-      "source_url": "https://en.wikipedia.org/wiki/Sora_(text-to-video_model)",
-      "source_type": "web",
-      "significance": "major",
-      "category": "llm"
-    },
-    {
-      "date": "2024-02-15",
       "provider": "Google",
       "model": "Gemini 1.5 Pro",
       "event_type": "release",
       "summary_ko": "Gemini 1.5 Pro 공개(100만 토큰)",
       "summary_en": "Gemini 1.5 Pro, 1M context",
       "source_url": "https://blog.google/technology/ai/google-gemini-next-generation-model-february-2024/",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2024-02-15",
+      "provider": "OpenAI",
+      "model": "Sora",
+      "event_type": "release",
+      "summary_ko": "소라 최초 공개(프리뷰)",
+      "summary_en": "Sora first previewed",
+      "source_url": "https://en.wikipedia.org/wiki/Sora_(text-to-video_model)",
       "source_type": "web",
       "significance": "major",
       "category": "llm"
@@ -956,24 +956,24 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2024-12-09",
-      "provider": "OpenAI",
-      "model": "Sora",
-      "event_type": "release",
-      "summary_ko": "소라 일반 공개",
-      "summary_en": "Sora publicly released",
-      "source_url": "https://openai.com/index/sora-is-here/",
-      "source_type": "web",
-      "significance": "major",
-      "category": "llm"
-    },
-    {
-      "date": "2024-12-09",
       "provider": "LG",
       "model": "EXAONE 3.5",
       "event_type": "release",
       "summary_ko": "EXAONE 3.5 3종 오픈소스",
       "summary_en": "EXAONE 3.5 three sizes",
       "source_url": "https://www.prnewswire.com/news-releases/lg-released-new-version-of-generative-ai-exaone-3-5--302325665.html",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2024-12-09",
+      "provider": "OpenAI",
+      "model": "Sora",
+      "event_type": "release",
+      "summary_ko": "소라 일반 공개",
+      "summary_en": "Sora publicly released",
+      "source_url": "https://openai.com/index/sora-is-here/",
       "source_type": "web",
       "significance": "major",
       "category": "llm"
@@ -1196,24 +1196,24 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2025-03-25",
-      "provider": "OpenAI",
-      "model": "GPT Image",
-      "event_type": "release",
-      "summary_ko": "GPT 이미지 생성 공개",
-      "summary_en": "GPT Image in ChatGPT",
-      "source_url": "https://en.wikipedia.org/wiki/GPT_Image",
-      "source_type": "web",
-      "significance": "major",
-      "category": "llm"
-    },
-    {
-      "date": "2025-03-25",
       "provider": "Google",
       "model": "Gemini 2.5 Pro",
       "event_type": "release",
       "summary_ko": "Gemini 2.5 Pro 출시(사고형)",
       "summary_en": "Gemini 2.5 Pro thinking",
       "source_url": "https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2025-03-25",
+      "provider": "OpenAI",
+      "model": "GPT Image",
+      "event_type": "release",
+      "summary_ko": "GPT 이미지 생성 공개",
+      "summary_en": "GPT Image in ChatGPT",
+      "source_url": "https://en.wikipedia.org/wiki/GPT_Image",
       "source_type": "web",
       "significance": "major",
       "category": "llm"
@@ -1352,18 +1352,6 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2025-06-10",
-      "provider": "OpenAI",
-      "model": "o3-pro",
-      "event_type": "release",
-      "summary_ko": "o3-프로 출시",
-      "summary_en": "o3-pro released",
-      "source_url": "https://help.openai.com/en/articles/9624314-model-release-notes",
-      "source_type": "web",
-      "significance": "minor",
-      "category": "llm"
-    },
-    {
-      "date": "2025-06-10",
       "provider": "Mistral",
       "model": "Magistral",
       "event_type": "release",
@@ -1372,6 +1360,18 @@ window.MODEL_TIMELINE_DATA = {
       "source_url": "https://aireleasetracker.com/company/mistral",
       "source_type": "web",
       "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2025-06-10",
+      "provider": "OpenAI",
+      "model": "o3-pro",
+      "event_type": "release",
+      "summary_ko": "o3-프로 출시",
+      "summary_en": "o3-pro released",
+      "source_url": "https://help.openai.com/en/articles/9624314-model-release-notes",
+      "source_type": "web",
+      "significance": "minor",
       "category": "llm"
     },
     {
@@ -1460,18 +1460,6 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2025-08-05",
-      "provider": "OpenAI",
-      "model": "gpt-oss",
-      "event_type": "release",
-      "summary_ko": "gpt-oss 오픈웨이트 공개",
-      "summary_en": "gpt-oss open-weight models",
-      "source_url": "https://openai.com/index/introducing-gpt-oss/",
-      "source_type": "web",
-      "significance": "major",
-      "category": "llm"
-    },
-    {
-      "date": "2025-08-05",
       "provider": "Anthropic",
       "model": "Claude Opus 4.1",
       "event_type": "update",
@@ -1480,6 +1468,18 @@ window.MODEL_TIMELINE_DATA = {
       "source_url": "https://www.anthropic.com/news/claude-opus-4-1",
       "source_type": "web",
       "significance": "minor",
+      "category": "llm"
+    },
+    {
+      "date": "2025-08-05",
+      "provider": "OpenAI",
+      "model": "gpt-oss",
+      "event_type": "release",
+      "summary_ko": "gpt-oss 오픈웨이트 공개",
+      "summary_en": "gpt-oss open-weight models",
+      "source_url": "https://openai.com/index/introducing-gpt-oss/",
+      "source_type": "web",
+      "significance": "major",
       "category": "llm"
     },
     {
@@ -1532,18 +1532,6 @@ window.MODEL_TIMELINE_DATA = {
     },
     {
       "date": "2025-08-28",
-      "provider": "xAI",
-      "model": "Grok Code Fast 1",
-      "event_type": "release",
-      "summary_ko": "Grok Code Fast 1 공개",
-      "summary_en": "Agentic coding model",
-      "source_url": "https://mungomash.com/ai/grok/versions/",
-      "source_type": "web",
-      "significance": "minor",
-      "category": "llm"
-    },
-    {
-      "date": "2025-08-28",
       "provider": "ByteDance",
       "model": "Seedream 4.0",
       "event_type": "release",
@@ -1552,6 +1540,18 @@ window.MODEL_TIMELINE_DATA = {
       "source_url": "https://seed.bytedance.com/en/seedream4_0",
       "source_type": "web",
       "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2025-08-28",
+      "provider": "xAI",
+      "model": "Grok Code Fast 1",
+      "event_type": "release",
+      "summary_ko": "Grok Code Fast 1 공개",
+      "summary_en": "Agentic coding model",
+      "source_url": "https://mungomash.com/ai/grok/versions/",
+      "source_type": "web",
+      "significance": "minor",
       "category": "llm"
     },
     {
@@ -2164,6 +2164,42 @@ window.MODEL_TIMELINE_DATA = {
       "source_url": "https://the-decoder.com/bytedances-seedance-2-5-breaks-the-30-second-barrier-for-ai-video-generation/",
       "source_type": "web",
       "significance": "minor",
+      "category": "llm"
+    },
+    {
+      "date": "2026-06-23",
+      "provider": "Mistral",
+      "model": "Mistral OCR 4",
+      "event_type": "release",
+      "summary_ko": "문서 지능 Mistral OCR 4 공개",
+      "summary_en": "Mistral OCR 4 document intelligence",
+      "source_url": "https://mistral.ai/news/ocr-4/",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-06-26",
+      "provider": "OpenAI",
+      "model": "GPT-5.6 Sol/Terra/Luna",
+      "event_type": "release",
+      "summary_ko": "GPT-5.6 Sol·Terra·Luna 제한 공개",
+      "summary_en": "GPT-5.6 Sol/Terra/Luna limited release",
+      "source_url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-06-30",
+      "provider": "Anthropic",
+      "model": "Claude Sonnet 5",
+      "event_type": "release",
+      "summary_ko": "Claude Sonnet 5 출시, 프리·프로 기본 모델",
+      "summary_en": "Claude Sonnet 5, new default for Free/Pro",
+      "source_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "source_type": "web",
+      "significance": "major",
       "category": "llm"
     }
   ]

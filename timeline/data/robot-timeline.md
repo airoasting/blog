@@ -1,15 +1,15 @@
 # Robot Timeline Data
 
 - Source of truth: this file
-- Last updated: 2026-06-27
+- Last updated: 2026-07-05
 - Period start: 2013-10-04
-- Period end: 2026-06-24
+- Period end: 2026-06-30
 
 ```json
 {
-  "last_updated": "2026-06-27",
+  "last_updated": "2026-07-05",
   "period_start": "2013-10-04",
-  "period_end": "2026-06-24",
+  "period_end": "2026-06-30",
   "notes": [
     "휴머노이드·4족 로봇의 공개·시연·양산을 회사별 웹서치로 정리했습니다. 링크는 공식 유튜브 영상입니다."
   ],
@@ -94,30 +94,6 @@
       "summary_ko": "샤오미 첫 휴머노이드 CyberOne 공개",
       "summary_en": "Xiaomi CyberOne reveal",
       "source_url": "https://www.youtube.com/watch?v=iRKiXCASoDs",
-      "source_type": "video",
-      "significance": "major",
-      "category": "robot"
-    },
-    {
-      "date": "2026-03-04",
-      "provider": "Xiaomi",
-      "model": "CyberOne (공장 투입)",
-      "event_type": "demo",
-      "summary_ko": "EV 공장 조립라인 인턴 투입, 3시간 작업 90%",
-      "summary_en": "CyberOne interns on Xiaomi EV assembly line",
-      "source_url": "https://www.youtube.com/watch?v=J9WMBtpdPtg",
-      "source_type": "video",
-      "significance": "major",
-      "category": "robot"
-    },
-    {
-      "date": "2026-04-29",
-      "provider": "Xiaomi",
-      "model": "CyberOne V2",
-      "event_type": "reveal",
-      "summary_ko": "CyberOne V2 공개, 손 60% 축소·인공 땀샘 냉각",
-      "summary_en": "CyberOne V2 reveal with bionic sweat-gland cooling",
-      "source_url": "https://www.youtube.com/watch?v=RgS9bYihlkA",
       "source_type": "video",
       "significance": "major",
       "category": "robot"
@@ -627,6 +603,18 @@
       "category": "robot"
     },
     {
+      "date": "2025-10-29",
+      "provider": "Holiday Robotics",
+      "model": "FRIDAY",
+      "event_type": "reveal",
+      "summary_ko": "휴머노이드 FRIDAY 공개, 63 자유도 손 기술",
+      "summary_en": "Holiday Robotics unveils FRIDAY humanoid",
+      "source_url": "https://www.youtube.com/watch?v=iUNat-40BeM",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
       "date": "2025-11-21",
       "provider": "UBTech",
       "model": "Walker S2",
@@ -699,6 +687,18 @@
       "category": "robot"
     },
     {
+      "date": "2026-02-01",
+      "provider": "Holiday Robotics",
+      "model": "FRIDAY (데모)",
+      "event_type": "demo",
+      "summary_ko": "FRIDAY 토트 이송 데모, 원샷 영상 학습 sim-to-real",
+      "summary_en": "FRIDAY Demo #1: Tote Transfer, one-shot sim-to-real",
+      "source_url": "https://www.youtube.com/watch?v=8tQ2YIdTYO8",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
       "date": "2026-02-02",
       "provider": "Unitree",
       "model": "휴머노이드 (극한 보행)",
@@ -759,6 +759,18 @@
       "category": "robot"
     },
     {
+      "date": "2026-03-04",
+      "provider": "Xiaomi",
+      "model": "CyberOne (공장 투입)",
+      "event_type": "demo",
+      "summary_ko": "EV 공장 조립라인 인턴 투입, 3시간 작업 90%",
+      "summary_en": "CyberOne interns on Xiaomi EV assembly line",
+      "source_url": "https://www.youtube.com/watch?v=J9WMBtpdPtg",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
       "date": "2026-03-09",
       "provider": "Figure",
       "model": "Helix 02 (거실 정리)",
@@ -807,6 +819,18 @@
       "category": "robot"
     },
     {
+      "date": "2026-04-29",
+      "provider": "Xiaomi",
+      "model": "CyberOne V2",
+      "event_type": "reveal",
+      "summary_ko": "CyberOne V2 공개, 손 60% 축소·인공 땀샘 냉각",
+      "summary_en": "CyberOne V2 reveal with bionic sweat-gland cooling",
+      "source_url": "https://www.youtube.com/watch?v=RgS9bYihlkA",
+      "source_type": "video",
+      "significance": "major",
+      "category": "robot"
+    },
+    {
       "date": "2026-04-30",
       "provider": "1X",
       "model": "NEO (공장)",
@@ -832,18 +856,6 @@
     },
     {
       "date": "2026-05-11",
-      "provider": "Unitree",
-      "model": "GD01 Mecha",
-      "event_type": "reveal",
-      "summary_ko": "탑승형 변형 메카 GD01 공개",
-      "summary_en": "",
-      "source_url": "https://www.youtube.com/watch?v=oWOyUMJWptc",
-      "source_type": "video",
-      "significance": "major",
-      "category": "robot"
-    },
-    {
-      "date": "2026-05-11",
       "provider": "Agility",
       "model": "Digit (달리기)",
       "event_type": "demo",
@@ -852,6 +864,18 @@
       "source_url": "https://www.youtube.com/watch?v=K0nY5v-lyEs",
       "source_type": "video",
       "significance": "minor",
+      "category": "robot"
+    },
+    {
+      "date": "2026-05-11",
+      "provider": "Unitree",
+      "model": "GD01 Mecha",
+      "event_type": "reveal",
+      "summary_ko": "탑승형 변형 메카 GD01 공개",
+      "summary_en": "",
+      "source_url": "https://www.youtube.com/watch?v=oWOyUMJWptc",
+      "source_type": "video",
+      "significance": "major",
       "category": "robot"
     },
     {
@@ -892,18 +916,6 @@
     },
     {
       "date": "2026-05-27",
-      "provider": "Boston Dynamics",
-      "model": "Atlas (축구 학습)",
-      "event_type": "demo",
-      "summary_ko": "축구로 동작 학습, 현대 협업 시리즈",
-      "summary_en": "",
-      "source_url": "https://www.youtube.com/watch?v=qaqzZK7ZrZk",
-      "source_type": "video",
-      "significance": "minor",
-      "category": "robot"
-    },
-    {
-      "date": "2026-05-27",
       "provider": "Agility",
       "model": "Digit (5지 핸드)",
       "event_type": "demo",
@@ -924,6 +936,18 @@
       "source_url": "https://www.youtube.com/watch?v=lbF0CdEGaJ4",
       "source_type": "video",
       "significance": "major",
+      "category": "robot"
+    },
+    {
+      "date": "2026-05-27",
+      "provider": "Boston Dynamics",
+      "model": "Atlas (축구 학습)",
+      "event_type": "demo",
+      "summary_ko": "축구로 동작 학습, 현대 협업 시리즈",
+      "summary_en": "",
+      "source_url": "https://www.youtube.com/watch?v=qaqzZK7ZrZk",
+      "source_type": "video",
+      "significance": "minor",
       "category": "robot"
     },
     {
@@ -963,25 +987,13 @@
       "category": "robot"
     },
     {
-      "date": "2025-10-29",
-      "provider": "Holiday Robotics",
-      "model": "FRIDAY",
-      "event_type": "reveal",
-      "summary_ko": "휴머노이드 FRIDAY 공개, 63 자유도 손 기술",
-      "summary_en": "Holiday Robotics unveils FRIDAY humanoid",
-      "source_url": "https://www.youtube.com/watch?v=iUNat-40BeM",
-      "source_type": "video",
-      "significance": "major",
-      "category": "robot"
-    },
-    {
-      "date": "2026-02-01",
-      "provider": "Holiday Robotics",
-      "model": "FRIDAY (데모)",
-      "event_type": "demo",
-      "summary_ko": "FRIDAY 토트 이송 데모, 원샷 영상 학습 sim-to-real",
-      "summary_en": "FRIDAY Demo #1: Tote Transfer, one-shot sim-to-real",
-      "source_url": "https://www.youtube.com/watch?v=8tQ2YIdTYO8",
+      "date": "2026-06-30",
+      "provider": "UBTech",
+      "model": "UWORLD U1 (양산)",
+      "event_type": "production",
+      "summary_ko": "세계 첫 양산형 휴머노이드 U1, 11.98만 위안부터",
+      "summary_en": "UWORLD U1, world's first mass-produced humanoid",
+      "source_url": "https://www.youtube.com/watch?v=jXRbNaFqByo",
       "source_type": "video",
       "significance": "major",
       "category": "robot"
