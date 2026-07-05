@@ -21,8 +21,11 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
-- 2026-06-25 [리서치] 당신이 쓰는 AI는 세속적이고 진보적입니다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
-- 2026-06-23 [기업] 관리자를 줄였더니, 메타 AI 조직이 무너졌다 — /blog/company/2026-06-23-meta-ai-reorg-team-size.html
+- 2026-06-30 [생존] AI를 많이 쓴 회사가 더 많이 뽑았습니다 — /blog/survival/2026-06-30-ramp-ai-jobs-hiring-boom.html
+- 2026-06-25 [리서치] 당신이 쓰는 AI는 종교색이 옅고 진보적입니다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
+- 2026-06-25 [리서치] AI가 답할수록, 웹이 말라갑니다 — /blog/research/2026-06-25-ai-collapse-of-the-www.html
+- 2026-06-23 [기업] 관리자를 줄였더니, 메타 AI 조직이 무너졌습니다 — /blog/company/2026-06-23-meta-ai-reorg-team-size.html
+- 2026-06-23 [기업] AI를 도구로 쓰는 회사, 운영체계로 쓰는 회사 — /blog/company/2026-06-23-wef-ai-first-operating-system.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html
 - 2026-06-19 [기업] AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다 — /blog/company/2026-06-19-companies-rein-in-ai-costs.html
 - 2026-06-18 [기술] 전문가가 포기한 희귀병, AI가 단서를 찾았습니다 — /blog/tech/2026-06-18-o3-rare-disease-reanalysis.html
@@ -45,8 +48,8 @@
 - 2026-06-05 [기술] 범용 AI가 화학 전용 소프트웨어를 따라잡았습니다 — /blog/tech/2026-06-05-claude-chemist-nmr.html
 - 2026-06-02 [기술] 복잡한 일은 AI 한 명에게 맡기지 마세요 — /blog/tech/2026-06-02-claude-code-dynamic-workflows.html
 - 2026-06-02 [생존] 개발자와 지식 노동자의 경계가 사라지고 있습니다 — /blog/survival/2026-06-02-next-era-knowledge-work.html
-- 2026-06-01 [리서치] GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 — /blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html
 - 2026-06-01 [생존] 컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다 — /blog/survival/2026-06-01-cs-degree-glut-ai-erodes-value.html
+- 2026-06-01 [리서치] GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다 — /blog/research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html
 - 2026-05-29 [기술] AI가 80년 수학 난제를 풀었습니다 — /blog/tech/2026-05-29-openai-erdos-unit-distance-problem.html
 - 2026-05-28 [기술] 스스로 진화하는 AI, 코드를 스스로 고칩니다 — /blog/tech/2026-05-28-sia-self-improving-ai-harness-weights.html
 - 2026-05-27 [생존] 법학 교수들이 동료보다 AI 답을 더 선호했습니다 — /blog/survival/2026-05-27-law-professors-prefer-ai.html
@@ -247,4 +250,3 @@
 - 2024-08-10 [기술] AI 서비스의 5대 트렌드 — /blog/tech/2024-08-10-top-50-ai-services-five-trends.html
 - 2024-08-05 [기업] AI 시대, 미디어의 미래 — /blog/company/2024-08-05-ai-era-future-of-media.html
 - 2024-07-20 [기업] 카카오와 네이버의 10년 뒤 미래는 어떠할까? — /blog/company/2024-07-20-kakao-naver-future-in-ai-era.html
-
