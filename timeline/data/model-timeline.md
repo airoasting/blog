@@ -3,13 +3,13 @@
 - Source of truth: this file
 - Last updated: 2026-07-05
 - Period start: 2017-06-12
-- Period end: 2026-06-30
+- Period end: 2026-07-01
 
 ```json
 {
   "last_updated": "2026-07-05",
   "period_start": "2017-06-12",
-  "period_end": "2026-06-30",
+  "period_end": "2026-07-01",
   "notes": [
     "회사별 웹서치(공식 출처 우선)로 주요 모델 업데이트를 전수 정리했습니다."
   ],
@@ -2127,6 +2127,30 @@
       "category": "llm"
     },
     {
+      "date": "2026-06-12",
+      "provider": "Anthropic",
+      "model": "Claude Fable 5",
+      "event_type": "update",
+      "summary_ko": "미국 정부 명령으로 접근 중단, 탈옥 취약점 발단",
+      "summary_en": "US directive suspends Fable 5 access over jailbreak",
+      "source_url": "https://www.anthropic.com/news/fable-mythos-access",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-06-12",
+      "provider": "Anthropic",
+      "model": "Claude Mythos 5",
+      "event_type": "update",
+      "summary_ko": "미국 정부 명령으로 외국인 접근 전면 중단",
+      "summary_en": "US directive suspends Mythos 5 access for foreigners",
+      "source_url": "https://www.anthropic.com/news/fable-mythos-access",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
       "date": "2026-06-13",
       "provider": "Z.ai",
       "model": "GLM-5.2",
@@ -2206,6 +2230,30 @@
       "summary_ko": "Claude Sonnet 5 출시, 프리·프로 기본 모델",
       "summary_en": "Claude Sonnet 5, new default for Free/Pro",
       "source_url": "https://www.anthropic.com/news/claude-sonnet-5",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-01",
+      "provider": "Anthropic",
+      "model": "Claude Fable 5",
+      "event_type": "update",
+      "summary_ko": "수출 통제 해제, 전 세계 재공개",
+      "summary_en": "Export controls lifted, Fable 5 reopens worldwide",
+      "source_url": "https://www.anthropic.com/news/redeploying-fable-5",
+      "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-01",
+      "provider": "Anthropic",
+      "model": "Claude Mythos 5",
+      "event_type": "update",
+      "summary_ko": "수출 통제 해제, 일부 미국 기관 복원",
+      "summary_en": "Controls lifted, Mythos 5 restored to some US orgs",
+      "source_url": "https://www.anthropic.com/news/redeploying-fable-5",
       "source_type": "web",
       "significance": "major",
       "category": "llm"
