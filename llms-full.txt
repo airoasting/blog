@@ -46,7 +46,7 @@ Roasting: 당신 회사는 AI를 쓰고 있습니까, 아니면 AI 위에서 돌
 
 ## AI가 답할수록, 웹이 말라갑니다
 
-날짜: 2026-06-01
+날짜: 2026-06-25
 카테고리: 리서치
 소스: NBER (Alex Chan)
 원문: https://www.nber.org/papers/w35344

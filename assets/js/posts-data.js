@@ -37,6 +37,24 @@ window.POSTS_DATA = {
       "next_post": "research/2025-07-10-ban-left-biased-ai.html"
     },
     {
+      "title": "AI가 답할수록, 웹이 말라갑니다",
+      "date": "2026-06-25",
+      "category": "research",
+      "source": "NBER (Alex Chan)",
+      "tags": [
+        "AI검색",
+        "콘텐츠경제",
+        "열린웹",
+        "시장설계",
+        "GEO"
+      ],
+      "slug": "2026-06-25-ai-collapse-of-the-www",
+      "file": "research/2026-06-25-ai-collapse-of-the-www.html",
+      "summary": "하버드 경영대학원의 알렉스 챈이 AI 답변 시스템이 열린 웹 경제를 어떻게 무너뜨리는지 시장설계 이론으로 분석했습니다. AI가 대신 답하면 원본 사이트 방문이 줄고, 콘텐츠를 만들 돈과 품질 신호가 함께 사라집니다. 콘텐츠가 정확하고 사용자가 합리적이어도 이 붕괴는 스스로 강화됩니다. 방문자 보상 로열티 등 네 가지 처방을 제시합니다.",
+      "roasting_quote": "AI가 대신 답을 주니 편하십니까? 그 답을 만든 웹사이트는 방문자를 잃고, 언젠가 사라질 수 있습니다.",
+      "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
+    },
+    {
       "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌습니다",
       "date": "2026-06-23",
       "category": "company",
@@ -474,24 +492,6 @@ window.POSTS_DATA = {
       "summary": "클로드 코드가 작업마다 멀티 에이전트 작업틀을 직접 짭니다. 한 AI에 복잡한 일을 몰아주면 게으름·자기편애·목표표류로 무너지므로, 잘게 나눠 맡기고 서로 검증하게 만듭니다.",
       "roasting_quote": "당신의 AI는 50개 중 35개만 하고 다 끝났다고 말합니다. 일을 한 명에게 몰아줬기 때문입니다.",
       "next_post": "survival/2026-06-08-ai-broken-hiring.html"
-    },
-    {
-      "title": "AI가 답할수록, 웹이 말라갑니다",
-      "date": "2026-06-01",
-      "category": "research",
-      "source": "NBER (Alex Chan)",
-      "tags": [
-        "AI검색",
-        "콘텐츠경제",
-        "열린웹",
-        "시장설계",
-        "GEO"
-      ],
-      "slug": "2026-06-01-ai-collapse-of-the-www",
-      "file": "research/2026-06-01-ai-collapse-of-the-www.html",
-      "summary": "하버드 경영대학원의 알렉스 챈이 AI 답변 시스템이 열린 웹 경제를 어떻게 무너뜨리는지 시장설계 이론으로 분석했습니다. AI가 대신 답하면 원본 사이트 방문이 줄고, 콘텐츠를 만들 돈과 품질 신호가 함께 사라집니다. 콘텐츠가 정확하고 사용자가 합리적이어도 이 붕괴는 스스로 강화됩니다. 방문자 보상 로열티 등 네 가지 처방을 제시합니다.",
-      "roasting_quote": "AI가 대신 답을 주니 편하십니까? 그 답을 만든 웹사이트는 방문자를 잃고, 언젠가 사라질 수 있습니다.",
-      "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
       "title": "법학 교수들이 동료보다 AI 답을 더 선호했습니다",
