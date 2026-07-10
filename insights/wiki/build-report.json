@@ -1,23 +1,48 @@
 {
-  "buildAt": "2026-07-05T00:37:00.045Z",
-  "duration": 0.203,
+  "buildAt": "2026-07-05T15:45:38.793Z",
+  "duration": 0.312,
   "concepts": {
-    "total": 106,
+    "total": 112,
     "validDefinitions": 106,
-    "needsReview": 0
+    "needsReview": 6
   },
   "relationships": {
-    "total": 291
+    "total": 299
   },
   "coverage": {
-    "postsWithConcepts": 212,
-    "totalPosts": 229
+    "postsWithConcepts": 220,
+    "totalPosts": 237
   },
   "inject": {
-    "updated": 0,
+    "updated": 4,
     "inserted": 0,
-    "unchanged": 229,
+    "unchanged": 233,
     "skipped": 0
   },
-  "needsManualReview": []
+  "needsManualReview": [
+    {
+      "name": "AI위험",
+      "slug": "ai위험"
+    },
+    {
+      "name": "코딩에이전트",
+      "slug": "코딩에이전트"
+    },
+    {
+      "name": "의사결정",
+      "slug": "의사결정"
+    },
+    {
+      "name": "AI정렬",
+      "slug": "ai정렬"
+    },
+    {
+      "name": "인재전략",
+      "slug": "인재전략"
+    },
+    {
+      "name": "AI협업",
+      "slug": "ai협업"
+    }
+  ]
 }

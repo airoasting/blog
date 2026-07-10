@@ -21,9 +21,17 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-07-04 [기업] 받아쓰기라던 AI, 규제를 빠져나갔습니다 — /blog/company/2026-07-04-ai-scribes-regulatory-gap.html
+- 2026-07-04 [기술] AI가 강해질수록, 병목은 당신의 이해입니다 — /blog/tech/2026-07-04-field-guide-to-fable.html
+- 2026-07-03 [기업] 알리바바가 클로드 코드를 사내 금지했습니다 — /blog/company/2026-07-03-alibaba-bans-claude-code.html
+- 2026-07-03 [생존] AI 시대의 커리어, 채점되지 않는 일에 있습니다 — /blog/survival/2026-07-03-career-advice-age-of-ai.html
+- 2026-07-02 [리서치] 이코노미스트가 AI로 자기 예측을 채점했습니다 — /blog/research/2026-07-02-economist-forecast-accuracy-ai.html
+- 2026-07-01 [리서치] UN 첫 AI 과학패널: 능력은 뛰고 증거는 걷습니다 — /blog/research/2026-07-01-un-ai-scientific-panel.html
+- 2026-06-30 [기술] 전문가 판단을 배운 작은 모델이 GPT를 이겼습니다 — /blog/tech/2026-06-30-thinking-machines-expert-judgment.html
 - 2026-06-30 [생존] AI를 많이 쓴 회사가 더 많이 뽑았습니다 — /blog/survival/2026-06-30-ramp-ai-jobs-hiring-boom.html
 - 2026-06-25 [리서치] 당신이 쓰는 AI는 종교색이 옅고 진보적입니다 — /blog/research/2026-06-25-ai-models-values-different-from-people.html
 - 2026-06-25 [리서치] AI가 답할수록, 웹이 말라갑니다 — /blog/research/2026-06-25-ai-collapse-of-the-www.html
+- 2026-06-24 [리서치] 코딩 배우라던 시대, 이제 철학을 배웁니다 — /blog/research/2026-06-24-why-ai-labs-hire-philosophers.html
 - 2026-06-23 [기업] 관리자를 줄였더니, 메타 AI 조직이 무너졌습니다 — /blog/company/2026-06-23-meta-ai-reorg-team-size.html
 - 2026-06-23 [기업] AI를 도구로 쓰는 회사, 운영체계로 쓰는 회사 — /blog/company/2026-06-23-wef-ai-first-operating-system.html
 - 2026-06-19 [기업] AI 에이전트가 못 보는 회사의 숨은 규칙 — /blog/company/2026-06-19-implicit-organization-ai-agents.html

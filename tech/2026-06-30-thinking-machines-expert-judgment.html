@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="브리지워터와 싱킹머신랩이 전문가 투자자가 라벨한 데이터로 오픈 모델을 미세조정했습니다. 그 결과 금융 판단 6개 과제에서 평균 84.7%로 최고 프런티어 모델(GPT-5.5, 78.2%)을 이겼고, 추론 비용은 13.8배 낮았습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="전문가 판단을 배운 작은 모델이 GPT를 이겼습니다">
+  <meta property="og:description" content="전문가가 라벨한 데이터로 미세조정한 오픈 모델이 금융 판단에서 프런티어 모델을 이겼습니다. 비용은 13.8배 낮았습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-06-30-thinking-machines-expert-judgment.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-06-30">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="미세조정">
+  <meta property="article:tag" content="금융AI">
+  <meta property="article:tag" content="전문가데이터">
+  <meta property="article:tag" content="오픈모델">
+  <meta property="article:tag" content="차별적지능">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="전문가 판단을 배운 작은 모델이 GPT를 이겼습니다">
+  <meta name="twitter:description" content="전문가가 라벨한 데이터로 미세조정한 오픈 모델이 금융 판단에서 프런티어를 이겼습니다. 비용은 13.8배 낮았습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "전문가 판단을 배운 작은 모델이 GPT를 이겼습니다",
+    "datePublished": "2026-06-30",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "브리지워터와 싱킹머신랩이 전문가가 라벨한 데이터로 오픈 모델을 미세조정해 금융 판단에서 프런티어 모델을 이겼습니다. 비용은 13.8배 낮았습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-06-30-thinking-machines-expert-judgment.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_06_30_thinking-machines-expert-judgment/thumbnail.png" alt="전문가 판단을 배운 작은 모델이 GPT를 이겼습니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 6월 30일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">전문가 판단을 배운 작은 모델이 GPT를 이겼습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Thinking Machines Lab (Bridgewater AIA Labs 협업)</span>
+            <span><a href="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=미세조정" class="post-tag">#미세조정</a>
+            <a href="../index.html?tag=금융AI" class="post-tag">#금융AI</a>
+            <a href="../index.html?tag=전문가데이터" class="post-tag">#전문가데이터</a>
+            <a href="../index.html?tag=오픈모델" class="post-tag">#오픈모델</a>
+            <a href="../index.html?tag=차별적지능" class="post-tag">#차별적지능</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="전문가 판단을 배운 작은 모델이 GPT를 이겼습니다" data-date="2026-06-30" data-category="tech" data-source="Thinking Machines Lab (Bridgewater AIA Labs 협업)" data-tags="미세조정, 금융AI, 전문가데이터, 오픈모델, 차별적지능" data-original-url="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/" data-roasting-quote="더 똑똑한 프런티어 모델을 계속 기다리십니까? 당신의 전문가 데이터가 더 나은 모델을 만듭니다." data-next-post="../tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">브리지워터와 싱킹머신랩이 전문가 투자자가 라벨한 데이터로 오픈 모델을 미세조정했습니다.</p>
+        <p data-summary="">그 결과 금융 판단 6개 과제에서 평균 84.7%로, 최고 프런티어 모델 GPT-5.5(78.2%)를 이겼습니다.</p>
+        <p data-summary="">비용은 오히려 낮았습니다. 추론 비용이 프런티어 대비 13.8배 저렴했습니다. 전문가 데이터가 해자였습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">더 똑똑한 프런티어 모델을 계속 기다리십니까?<br>당신의 전문가 데이터가 더 나은 모델을 만듭니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>많은 회사가 같은 믿음으로 움직입니다. 더 똑똑한 프런티어 모델이 나오면 우리 문제도 풀린다는 믿음입니다. 그래서 최신 모델 API를 기다리고, 그 위에 프롬프트를 얹습니다. 그런데 세계 최대 헤지펀드 브리지워터의 실험은 다른 길을 보여줍니다.</p>
+        <p>브리지워터는 전문가 투자자가 직접 라벨한 데이터로 오픈 모델 하나를 미세조정했습니다. 그 모델이 금융 판단 과제에서 최고 프런티어 모델을 이겼습니다. 그것도 훨씬 싼 비용으로요. 이 글은 '최신 모델 대기' 대신 '우리 데이터로 전용 모델'이라는 선택지를 다룹니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>겉보기에 쉬운 일이 AI에게는 어렵습니다. '이 문서가 우리 투자 판단에 중요한가'를 가리는 일이 그렇습니다. 사람 전문가에게는 단순해 보이지만, 최신 모델도 기본 프롬프트로는 정확도가 절반 수준에 그쳤습니다. 전문가가 프롬프트를 다듬어도 78~80%에서 멈췄습니다. 매일 믿고 쓰기엔 부족한 선입니다. 게다가 새 모델이 나와도 이 과제에서는, 특히 쓴 돈 대비 성능이 빠르게 좋아지지 않았습니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 프런티어 모델도 이 판단은 못 했습니다.</strong> 연구진이 고른 여섯 과제는 문서 관련성 판별, 중앙은행 문서에서 금리 신호 포착, 보일러플레이트와 실제 분석 구분 같은 실무 판단입니다. 제미나이, 클로드, GPT 계열 모두 기본 프롬프트로는 약 50%, 전문가 프롬프트로도 78~80%에서 멈췄습니다. 최신 모델이라고 이 벽을 빠르게 넘지 못했습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div style="background:#ffffff; border-radius:8px; padding:8px;">
+          <svg viewBox="0 0 620 400" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;" role="img" aria-label="정확도와 비용 산점도">
+            <rect x="0" y="0" width="620" height="400" fill="#ffffff"/>
+            <line x1="90" y1="40" x2="90" y2="330" stroke="#333" stroke-width="1.5"/>
+            <line x1="90" y1="330" x2="580" y2="330" stroke="#333" stroke-width="1.5"/>
+            <text x="82" y="70" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">86%</text>
+            <text x="82" y="200" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">79%</text>
+            <text x="82" y="326" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">72%</text>
+            <text x="34" y="185" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555" transform="rotate(-90 34 185)">평균 정확도</text>
+            <text x="90" y="352" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">저렴</text>
+            <text x="580" y="352" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">비쌈</text>
+            <text x="335" y="376" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">과제당 추론 비용 →</text>
+            <!-- trained model: high acc, low cost -->
+            <circle cx="150" cy="75" r="8" fill="#145C35"/>
+            <text x="164" y="72" font-family="sans-serif" font-size="12" font-weight="700" fill="#145C35">미세조정 모델 84.7%</text>
+            <text x="164" y="88" font-family="sans-serif" font-size="11" fill="#777">오픈 모델 · 비용 13.8배 낮음</text>
+            <!-- GPT-5.5: 78.2, high cost -->
+            <circle cx="500" cy="205" r="7" fill="#C43500"/>
+            <text x="490" y="201" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1A1A1A">GPT-5.5 78.2%</text>
+            <!-- other frontier -->
+            <circle cx="430" cy="250" r="6" fill="#888"/>
+            <text x="420" y="246" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">Gemini 3.1 Pro</text>
+            <circle cx="360" cy="285" r="6" fill="#888"/>
+            <text x="350" y="281" text-anchor="end" font-family="sans-serif" font-size="11" fill="#555">Opus 4.6</text>
+          </svg>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            정확도(세로)와 과제당 비용(가로)입니다. 미세조정한 오픈 모델은 왼쪽 위, 곧 더 정확하면서 더 쌉니다. 프런티어 모델은 오른쪽 아래에 몰려 있습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Thinking Machines Lab (2026) 수치를 바탕으로 재구성</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 열쇠는 전문가가 라벨한 데이터였습니다.</strong> 처음엔 비전문가가 붙인 라벨로 학습했더니 성능이 나빴습니다. 연구진은 영리한 검증 장치를 만들었습니다. 학습된 모델이 라벨과 어긋나는 사례를 골라냈습니다. 그런 사례는 진짜 어려운 문제거나 잘못 붙은 라벨입니다. 이것만 전문가에게 보내 다시 판정하니, 적은 비용으로 데이터를 깨끗하게 다듬을 수 있었습니다.</p>
+
+        <p><strong>셋째, 세 가지 훈련 기법을 더했습니다.</strong> 연구진은 세 가지를 조합했습니다. 여섯 과제를 번갈아 학습시키는 방식이 순차 학습보다 정확도를 12.1%p 올렸습니다. 손실 함수를 바꾼 것이 10.1%p, 강한 교사 모델로 지식을 옮기는 증류가 3.1%p를 더했습니다. 아래 표는 각 기법을 뺐을 때 성능이 얼마나 떨어지는지 보여줍니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr><th>구성</th><th style="text-align:center;">정확도</th><th style="text-align:center;">양성 F1</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="cell-hl">전체 기법 적용</span></td><td style="text-align:center;"><span class="cell-hl">84.7%</span></td><td style="text-align:center;">93.0%</td></tr>
+              <tr><td>번갈아 학습 제거</td><td style="text-align:center;">72.2%</td><td style="text-align:center;">미보고</td></tr>
+              <tr><td>손실 함수 개선 제거</td><td style="text-align:center;">74.6%</td><td style="text-align:center;">미보고</td></tr>
+              <tr><td>증류 제거</td><td style="text-align:center;">72.4%</td><td style="text-align:center;">미보고</td></tr>
+              <tr><td>고정 교사로 대체</td><td style="text-align:center;">81.6%</td><td style="text-align:center;">미보고</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>넷째, 작은 오픈 모델이 프런티어를 이겼습니다.</strong> 최종 모델은 오픈 모델을 미세조정한 것입니다. 여섯 과제 평균 84.7%로 최고 프런티어 모델 GPT-5.5(78.2%)를 앞섰습니다. 실수는 29.8% 줄었고, 추론 비용은 13.8배 낮았습니다. 연구진의 결론은 분명합니다. 전문가가 라벨한 고품질 자체 데이터로 미세조정하면, 범용 모델을 넘어서는 '차별적 지능'을 만들 수 있습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">84.7% vs 78.2%</div>
+            <div class="stat-label">미세조정 모델 대 GPT-5.5 평균 정확도</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">29.8%</div>
+            <div class="stat-label">최고 프런티어 모델 대비 줄어든 실수</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">13.8배</div>
+            <div class="stat-label">낮아진 과제당 추론 비용</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>프런티어 모델이 못 푸는 우리만의 판단 업무를 찾으세요.</strong><br>문서 관련성 분류, 문의 분류, 이상 신호 포착처럼 최신 모델을 써도 정확도가 벽에 부딪히는 반복 판단이 있는지 보세요. 그 벽이 곧 전용 모델의 기회입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>전문가 판단을 데이터로 남기세요.</strong><br>숙련자가 매일 내리는 판단을 라벨로 축적하세요. 처음부터 완벽할 필요는 없습니다. 모델과 어긋나는 사례만 전문가에게 다시 물으면, 적은 비용으로 데이터가 깨끗해집니다. (1개월)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>미세조정과 API의 비용을 비교하세요.</strong><br>대량 반복 판단이라면, 오픈 모델 미세조정이 프런티어 API보다 정확하고 쌀 수 있습니다. 월 호출량 기준으로 두 경로의 총비용을 계산해 보세요. 규모가 클수록 전용 모델이 유리해집니다. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>금융 특화 과제입니다.</strong> 실험은 금융 문서 판단 여섯 과제에 한정됩니다(싱킹머신랩, 2026). 이 결과가 모든 판단 업무로 일반화된다는 보장은 없습니다. 우리 과제에 맞는지는 작은 시험으로 먼저 확인해야 합니다.</p>
+
+        <p><strong>초기 비용이 큽니다.</strong> 추론 비용은 낮지만, 전문가 라벨링과 미세조정에는 상당한 인력과 데이터 정비가 듭니다. 판단량이 충분히 많아야 이 초기 투자가 회수됩니다. 소량 업무라면 API가 여전히 합리적입니다.</p>
+
+        <p><strong>자체 발표입니다.</strong> 브리지워터와 싱킹머신랩이 자사 방법을 공개한 글입니다. 유리한 조건에서 낸 수치일 수 있으니, 우리 데이터로 재현되는지 직접 검증하는 것이 안전합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>최신 모델을 기다리는 대신, 전문가 판단을 데이터로 남기세요. 우리만의 데이터가 범용 모델을 이기는 해자입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>최신 모델 대기 전략을 재검토하라. 반복되는 전문 판단에서는 우리 데이터로 만든 전용 모델이 더 낫고 더 싸다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>전문가 라벨 파이프라인을 구축하라. 모델과 어긋나는 사례만 전문가에 보내면 데이터 정비 비용이 급감한다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CFO/운영</span>
+            <span>대량 반복 판단은 미세조정과 API의 총비용을 비교하라. 규모가 커질수록 전용 모델의 단가 우위가 커진다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>미세조정(fine-tuning)</strong>: 이미 학습된 모델을 특정 과제 데이터로 추가 학습시켜 그 일에 특화시키는 방법입니다.</p>
+          <p><strong>오픈 모델</strong>: 가중치가 공개돼 자체 인프라에서 돌리고 미세조정할 수 있는 모델입니다. 이 실험은 Qwen3-235B를 썼습니다.</p>
+          <p><strong>온폴리시 증류(OPD)</strong>: 강한 교사 모델의 판단을 학생 모델에 옮기는 학습법입니다. 검증 성능이 오를 때만 교사를 교체해 후퇴를 막습니다.</p>
+          <p><strong>차별적 지능(differentiated intelligence)</strong>: 조직 고유의 데이터로 만들어, 범용 모델이 따라오지 못하는 전용 역량을 뜻합니다.</p>
+          <p><strong>양성 F1</strong>: 중요하다고 골라낸 사례를 얼마나 정확하고 빠짐없이 잡았는지 함께 재는 지표입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Su, S., Zhu, K., Xiao, E., Alur, R., &amp; Kang, D. (2026, June). <em>Learning to replicate expert judgment in financial tasks</em> [Research article]. Thinking Machines Lab &amp; Bridgewater AIA Labs. (<a href="https://thinkingmachines.ai/news/learning-to-replicate-expert-judgment-in-financial-tasks/" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern A) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">우리 회사 회의 절반이 '다음 GPT 나오면 하자'예요. 근데 브리지워터는 그냥 자기 데이터로 만들어서 이겼잖아요. 기다리는 게 전략이 아니었던 거죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그거 자기들이 자기 방법 자랑한 글이에요. 84.7% 대 78.2%, 딱 이기는 조건에서 낸 숫자일 수도 있고요. 우리 데이터로 재현될지는 완전 별개예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그건 맞아요. 그래서 통째로 믿진 않아요. 다만 '기다리기'가 유일한 선택지가 아니란 걸 알려준 것만으로도 값어치는 해요. 작게 시험은 해봐야죠.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">미세조정이 좋다는 건 알겠는데, 우리 규모에서 전문가 붙여 라벨링하고 모델 돌릴 여력이 있을까요? 그냥 API 쓰는 게 마음 편할 것 같기도 하고요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">기준은 딱 하나, 호출량이에요. 소량이면 API가 맞아요. 근데 같은 판단을 하루 수만 번 돌린다면, 13.8배 단가 차이가 초기 라벨링 비용을 금방 덮어요. 계산부터 해보세요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">모델이 라벨과 어긋나는 것만 전문가한테 보낸다는 아이디어, 그게 진짜 꿀팁이에요. 전부 사람이 라벨하는 게 아니라서요. 저희도 그 방식으로 비용 확 줄였어요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern C) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">'전문가 데이터가 해자'라는 말이 좋아요. 우리 숙련자 머릿속 판단이 곧 경쟁력이란 거잖아요. 그동안 그걸 그냥 흘려보내고 있었다는 게 아깝네요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 오늘부터 남기라는 거예요. 숙련자가 매일 내리는 판단을 라벨로 쌓기 시작하면, 그게 1년 뒤 남들이 못 사는 우리 자산이 돼요. 늦출 이유가 없어요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html">
+          <div class="next-post-title">스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../insights/wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-06-30-thinking-machines-expert-judgment.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-06-30-thinking-machines-expert-judgment.html';
+    const ROASTING_QUOTE = '더 똑똑한 프런티어 모델을 계속 기다리십니까? 당신의 전문가 데이터가 더 나은 모델을 만듭니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

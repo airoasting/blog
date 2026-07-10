@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1384,4 +1384,12 @@
   <url><loc>https://airoasting.github.io/blog/survival/2026-06-30-ramp-ai-jobs-hiring-boom.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/company/2026-06-23-wef-ai-first-operating-system.html</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/research/2026-06-25-ai-collapse-of-the-www.html</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/company/2026-07-04-ai-scribes-regulatory-gap.html</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/tech/2026-07-04-field-guide-to-fable.html</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/survival/2026-07-03-career-advice-age-of-ai.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/research/2026-07-02-economist-forecast-accuracy-ai.html</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/research/2026-07-01-un-ai-scientific-panel.html</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/tech/2026-06-30-thinking-machines-expert-judgment.html</loc><lastmod>2026-06-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/research/2026-06-24-why-ai-labs-hire-philosophers.html</loc><lastmod>2026-06-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/company/2026-07-03-alibaba-bans-claude-code.html</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

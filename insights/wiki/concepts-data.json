@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-05T00:37:00.045Z",
+  "generatedAt": "2026-07-05T15:45:38.793Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 106,
-    "totalRelationships": 291,
-    "totalPosts": 229,
+    "totalConcepts": 112,
+    "totalRelationships": 299,
+    "totalPosts": 237,
     "totalNewsletters": 55
   },
   "concepts": [
@@ -184,7 +184,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 53,
+      "frequency": 54,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -210,6 +210,7 @@
         "2026-06-08-agents-in-biology",
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-implicit-organization-ai-agents",
+        "2026-06-30-thinking-machines-expert-judgment",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-02-20-sovereign-ai",
@@ -244,7 +245,7 @@
         "nl-50"
       ],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2026-06-19",
+      "lastSeen": "2026-06-30",
       "needs_manual_review": false
     },
     {
@@ -258,7 +259,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 40,
+      "frequency": 42,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -296,6 +297,8 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-companies-rein-in-ai-costs",
         "2026-06-19-implicit-organization-ai-agents",
+        "2026-07-01-un-ai-scientific-panel",
+        "2026-07-04-field-guide-to-fable",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -305,7 +308,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-06-19",
+      "lastSeen": "2026-07-04",
       "needs_manual_review": false
     },
     {
@@ -356,6 +359,48 @@
       "needs_manual_review": false
     },
     {
+      "id": "cto",
+      "slug": "cto",
+      "name": "CTO",
+      "aliases": [],
+      "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
+      "frequency": 26,
+      "category": "tech",
+      "posts": [
+        "2026-03-01-conductor-multi-agent-orchestration",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-04-02-gemma-4-open-model",
+        "2026-04-06-paperorchestra-multi-agent-writing",
+        "2026-04-07-ai-agent-traps",
+        "2026-04-07-claude-mythos-cybersecurity",
+        "2026-04-08-managed-agents-decoupling",
+        "2026-04-09-advisor-strategy-claude-opus",
+        "2026-04-11-agent-harness-memory-lock-in",
+        "2026-04-13-stanford-ai-index-2026-12-takeaways",
+        "2026-04-16-claude-opus-4-7-launch",
+        "2026-04-23-claude-code-quality-incident-postmortem",
+        "2026-04-23-gpt-5-5-agentic-coding",
+        "2026-04-24-deepseek-v4-pro-coding-benchmark",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2026-06-05-claude-chemist-nmr",
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
+        "2026-06-18-project-fetch-phase-two",
+        "2026-06-23-meta-ai-reorg-team-size",
+        "2026-07-04-ai-scribes-regulatory-gap",
+        "2025-05-05-what-korea-needs-to-become-ai-g3",
+        "2026-03-28-ai-agent-traps",
+        "2026-04-01-claude-code-hidden-features"
+      ],
+      "newsletters": [
+        "nl-5",
+        "nl-43",
+        "nl-47"
+      ],
+      "firstSeen": "2025-05-05",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": false
+    },
+    {
       "id": "it",
       "slug": "it",
       "name": "IT",
@@ -394,47 +439,6 @@
       ],
       "firstSeen": "2025-02-20",
       "lastSeen": "2026-06-19",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cto",
-      "slug": "cto",
-      "name": "CTO",
-      "aliases": [],
-      "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 25,
-      "category": "tech",
-      "posts": [
-        "2026-03-01-conductor-multi-agent-orchestration",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-02-gemma-4-open-model",
-        "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-08-managed-agents-decoupling",
-        "2026-04-09-advisor-strategy-claude-opus",
-        "2026-04-11-agent-harness-memory-lock-in",
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2026-04-16-claude-opus-4-7-launch",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2026-05-28-sia-self-improving-ai-harness-weights",
-        "2026-06-05-claude-chemist-nmr",
-        "2026-06-12-thrive-with-ai-mindset-not-skillset",
-        "2026-06-18-project-fetch-phase-two",
-        "2026-06-23-meta-ai-reorg-team-size",
-        "2025-05-05-what-korea-needs-to-become-ai-g3",
-        "2026-03-28-ai-agent-traps",
-        "2026-04-01-claude-code-hidden-features"
-      ],
-      "newsletters": [
-        "nl-5",
-        "nl-43",
-        "nl-47"
-      ],
-      "firstSeen": "2025-05-05",
-      "lastSeen": "2026-06-23",
       "needs_manual_review": false
     },
     {
@@ -868,6 +872,31 @@
       "needs_manual_review": false
     },
     {
+      "id": "생산성",
+      "slug": "생산성",
+      "name": "생산성",
+      "aliases": [],
+      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
+      "frequency": 10,
+      "category": "research",
+      "posts": [
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2025-09-22-workslop",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-06-15-pwc-ai-jobs-barometer-2026",
+        "2026-06-16-economist-ai-five-creative-fields",
+        "2026-07-04-field-guide-to-fable",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": false
+    },
+    {
       "id": "mcp",
       "slug": "mcp",
       "name": "MCP",
@@ -945,30 +974,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "생산성",
-      "slug": "생산성",
-      "name": "생산성",
-      "aliases": [],
-      "definition": "투입 대비 산출의 효율입니다. AI 활용 능력이 개인과 조직의 격차를 만들고 있습니다.",
-      "frequency": 9,
-      "category": "research",
-      "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2025-09-22-workslop",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-05-10-garry-tan-meta-meta-prompting-personal-ai",
-        "2026-05-27-ai-fomo-mastering-illusion",
-        "2026-06-15-pwc-ai-jobs-barometer-2026",
-        "2026-06-16-economist-ai-five-creative-fields",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-06-16",
-      "needs_manual_review": false
-    },
-    {
       "id": "ai-safety",
       "slug": "ai-safety",
       "name": "AI 안전",
@@ -1021,6 +1026,29 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai규제",
+      "slug": "ai규제",
+      "name": "AI규제",
+      "aliases": [],
+      "definition": "AI 개발과 사용에 대한 법·제도적 통제입니다. EU AI Act가 글로벌 기준의 출발점입니다.",
+      "frequency": 8,
+      "category": "company",
+      "posts": [
+        "2025-11-10-peter-thiel-antichrist-lectures",
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-07-04-ai-scribes-regulatory-gap",
+        "2025-05-10-conversations-children-have-with-ai-chatbots",
+        "2025-07-10-ban-left-biased-ai",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-05-05-what-korea-needs-to-become-ai-g3",
+        "2025-05-12-why-trump-fired-the-copyright-office-director"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai전환",
       "slug": "ai전환",
       "name": "AI전환",
@@ -1044,25 +1072,26 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai규제",
-      "slug": "ai규제",
-      "name": "AI규제",
+      "id": "ai거버넌스",
+      "slug": "ai거버넌스",
+      "name": "AI거버넌스",
       "aliases": [],
-      "definition": "AI 개발과 사용에 대한 법·제도적 통제입니다. EU AI Act가 글로벌 기준의 출발점입니다.",
-      "frequency": 7,
-      "category": "leader",
+      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
+      "frequency": 8,
+      "category": "company",
       "posts": [
-        "2025-11-10-peter-thiel-antichrist-lectures",
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-07-10-ban-left-biased-ai",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-05-05-what-korea-needs-to-become-ai-g3",
-        "2025-05-12-why-trump-fired-the-copyright-office-director"
+        "2026-04-01-nature-ai-editorial-policy",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-06-12-fable-mythos-export-control-suspension",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-06-16-ai-slop-knowledge-decay",
+        "2026-07-01-un-ai-scientific-panel",
+        "2026-07-03-alibaba-bans-claude-code",
+        "2025-04-01-light-and-shadow-of-china-digital-id-system"
       ],
       "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-01-25",
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2026-07-03",
       "needs_manual_review": false
     },
     {
@@ -1178,6 +1207,28 @@
       "needs_manual_review": false
     },
     {
+      "id": "ax",
+      "slug": "ax",
+      "name": "AX",
+      "aliases": [],
+      "definition": "AI Transformation의 약칭입니다. 디지털 전환에 이은 AI 기반 사업 변혁을 가리킵니다.",
+      "frequency": 7,
+      "category": "company",
+      "posts": [
+        "2026-04-09-anthropic-2026-agentic-coding-trends",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-09-google-cloud-ai-agent-trends",
+        "2026-06-23-wef-ai-first-operating-system",
+        "2026-07-04-ai-scribes-regulatory-gap",
+        "2025-03-15-kt-korean-ai-model-mideum-2",
+        "2025-05-25-gpt5-limitations-and-whats-next"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-15",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": false
+    },
+    {
       "id": "llms",
       "slug": "llms",
       "name": "LLMs",
@@ -1263,27 +1314,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai거버넌스",
-      "slug": "ai거버넌스",
-      "name": "AI거버넌스",
-      "aliases": [],
-      "definition": "조직과 사회가 AI를 어떻게 관리할지 결정하는 체계입니다. 위험 평가와 책임 분배가 중심입니다.",
-      "frequency": 6,
-      "category": "company",
-      "posts": [
-        "2026-04-01-nature-ai-editorial-policy",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-06-12-fable-mythos-export-control-suspension",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2026-06-16-ai-slop-knowledge-decay",
-        "2025-04-01-light-and-shadow-of-china-digital-id-system"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2026-06-16",
-      "needs_manual_review": false
-    },
-    {
       "id": "swe",
       "slug": "swe",
       "name": "SWE",
@@ -1303,27 +1333,6 @@
       ],
       "firstSeen": "2026-04-09",
       "lastSeen": "2026-05-07",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ax",
-      "slug": "ax",
-      "name": "AX",
-      "aliases": [],
-      "definition": "AI Transformation의 약칭입니다. 디지털 전환에 이은 AI 기반 사업 변혁을 가리킵니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-09-google-cloud-ai-agent-trends",
-        "2026-06-23-wef-ai-first-operating-system",
-        "2025-03-15-kt-korean-ai-model-mideum-2",
-        "2025-05-25-gpt5-limitations-and-whats-next"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-15",
-      "lastSeen": "2026-06-23",
       "needs_manual_review": false
     },
     {
@@ -1488,6 +1497,26 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-04-06",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai윤리",
+      "slug": "ai윤리",
+      "name": "AI윤리",
+      "aliases": [],
+      "definition": "AI 개발과 사용에서 지켜야 할 도덕적 원칙입니다. 안전·공정·투명성·책임이 핵심입니다.",
+      "frequency": 5,
+      "category": "research",
+      "posts": [
+        "2026-06-24-why-ai-labs-hire-philosophers",
+        "2025-04-15-agatha-christie-writing-lessons",
+        "2025-05-10-conversations-children-have-with-ai-chatbots",
+        "2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans",
+        "2025-04-01-ai-is-stealing-our-stories"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2026-06-24",
       "needs_manual_review": false
     },
     {
@@ -1741,6 +1770,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "클로드",
+      "slug": "클로드",
+      "name": "클로드",
+      "aliases": [],
+      "definition": "클로드는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "tech",
+      "posts": [
+        "2026-04-24-anthropic-project-deal-agent-economy",
+        "2026-06-05-claude-chemist-nmr",
+        "2026-06-16-chatgpt-market-share-below-50",
+        "2026-07-04-field-guide-to-fable"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-24",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": false
+    },
+    {
       "id": "신입채용",
       "slug": "신입채용",
       "name": "신입채용",
@@ -1779,6 +1827,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "미중갈등",
+      "slug": "미중갈등",
+      "name": "미중갈등",
+      "aliases": [],
+      "definition": "AI·반도체를 둘러싼 미국과 중국의 패권 경쟁입니다. 수출통제와 표준 분리가 진행됩니다.",
+      "frequency": 4,
+      "category": "company",
+      "posts": [
+        "2026-07-03-alibaba-bans-claude-code",
+        "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
+        "2025-03-15-when-technology-becomes-borders",
+        "2025-04-10-why-manus-ai-moved-to-singapore"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-10",
+      "lastSeen": "2026-07-03",
+      "needs_manual_review": false
+    },
+    {
       "id": "저작권",
       "slug": "저작권",
       "name": "저작권",
@@ -1795,25 +1862,6 @@
       "newsletters": [],
       "firstSeen": "2024-09-10",
       "lastSeen": "2025-06-13",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai윤리",
-      "slug": "ai윤리",
-      "name": "AI윤리",
-      "aliases": [],
-      "definition": "AI 개발과 사용에서 지켜야 할 도덕적 원칙입니다. 안전·공정·투명성·책임이 핵심입니다.",
-      "frequency": 4,
-      "category": "research",
-      "posts": [
-        "2025-04-15-agatha-christie-writing-lessons",
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans",
-        "2025-04-01-ai-is-stealing-our-stories"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2025-05-20",
       "needs_manual_review": false
     },
     {
@@ -1968,6 +2016,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai위험",
+      "slug": "ai위험",
+      "name": "AI위험",
+      "aliases": [],
+      "definition": "AI위험는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
+        "2026-07-01-un-ai-scientific-panel"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-01-25",
+      "lastSeen": "2026-07-01",
+      "needs_manual_review": true
+    },
+    {
       "id": "erp",
       "slug": "erp",
       "name": "ERP",
@@ -2039,6 +2105,24 @@
       "firstSeen": "2026-03-19",
       "lastSeen": "2026-04-03",
       "needs_manual_review": false
+    },
+    {
+      "id": "코딩에이전트",
+      "slug": "코딩에이전트",
+      "name": "코딩에이전트",
+      "aliases": [],
+      "definition": "코딩에이전트는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-05-27-anthropic-coding-agents-social-sciences",
+        "2026-07-03-alibaba-bans-claude-code"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-20",
+      "lastSeen": "2026-07-03",
+      "needs_manual_review": true
     },
     {
       "id": "ai리서치",
@@ -2206,22 +2290,40 @@
       "needs_manual_review": false
     },
     {
-      "id": "클로드",
-      "slug": "클로드",
-      "name": "클로드",
+      "id": "의사결정",
+      "slug": "의사결정",
+      "name": "의사결정",
       "aliases": [],
-      "definition": "클로드는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "definition": "의사결정는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
       "frequency": 3,
       "category": "research",
       "posts": [
-        "2026-04-24-anthropic-project-deal-agent-economy",
-        "2026-06-05-claude-chemist-nmr",
-        "2026-06-16-chatgpt-market-share-below-50"
+        "2026-04-30-claude-personal-guidance-sycophancy",
+        "2026-06-12-openrouter-fusion-model-diversity",
+        "2026-07-02-economist-forecast-accuracy-ai"
       ],
       "newsletters": [],
-      "firstSeen": "2026-04-24",
-      "lastSeen": "2026-06-16",
-      "needs_manual_review": false
+      "firstSeen": "2026-04-30",
+      "lastSeen": "2026-07-02",
+      "needs_manual_review": true
+    },
+    {
+      "id": "ai정렬",
+      "slug": "ai정렬",
+      "name": "AI정렬",
+      "aliases": [],
+      "definition": "AI정렬는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-05-08-teaching-claude-why",
+        "2026-06-24-why-ai-labs-hire-philosophers",
+        "2026-02-11-llm-behavioral-alignment-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-02-11",
+      "lastSeen": "2026-06-24",
+      "needs_manual_review": true
     },
     {
       "id": "ai일자리",
@@ -2294,6 +2396,42 @@
       "firstSeen": "2025-05-20",
       "lastSeen": "2026-06-16",
       "needs_manual_review": false
+    },
+    {
+      "id": "인재전략",
+      "slug": "인재전략",
+      "name": "인재전략",
+      "aliases": [],
+      "definition": "인재전략는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-06-24-why-ai-labs-hire-philosophers",
+        "2026-07-03-career-advice-age-of-ai",
+        "2025-04-10-three-ways-universities-adopt-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-10",
+      "lastSeen": "2026-07-03",
+      "needs_manual_review": true
+    },
+    {
+      "id": "ai협업",
+      "slug": "ai협업",
+      "name": "AI협업",
+      "aliases": [],
+      "definition": "AI협업는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-07-04-field-guide-to-fable",
+        "2025-04-16-good-questions-matter-more",
+        "2025-04-25-using-ai-well-different-from-search"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-16",
+      "lastSeen": "2026-07-04",
+      "needs_manual_review": true
     },
     {
       "id": "생성ai",
@@ -2402,24 +2540,6 @@
       "newsletters": [],
       "firstSeen": "2025-02-20",
       "lastSeen": "2025-03-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "미중갈등",
-      "slug": "미중갈등",
-      "name": "미중갈등",
-      "aliases": [],
-      "definition": "AI·반도체를 둘러싼 미국과 중국의 패권 경쟁입니다. 수출통제와 표준 분리가 진행됩니다.",
-      "frequency": 3,
-      "category": "company",
-      "posts": [
-        "2025-03-10-where-do-we-stand-when-tech-becomes-borders",
-        "2025-03-15-when-technology-becomes-borders",
-        "2025-04-10-why-manus-ai-moved-to-singapore"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-10",
-      "lastSeen": "2025-04-10",
       "needs_manual_review": false
     },
     {
@@ -2592,13 +2712,13 @@
     },
     {
       "source": "LLM",
-      "target": "IT",
-      "strength": 3
+      "target": "CTO",
+      "strength": 4
     },
     {
       "source": "LLM",
-      "target": "CTO",
-      "strength": 4
+      "target": "IT",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2657,17 +2777,17 @@
     },
     {
       "source": "LLM",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "MCP",
       "strength": 6
     },
     {
       "source": "LLM",
       "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "생산성",
       "strength": 2
     },
     {
@@ -2682,13 +2802,13 @@
     },
     {
       "source": "LLM",
-      "target": "AI전환",
-      "strength": 5
+      "target": "AI규제",
+      "strength": 4
     },
     {
       "source": "LLM",
-      "target": "AI규제",
-      "strength": 4
+      "target": "AI전환",
+      "strength": 5
     },
     {
       "source": "LLM",
@@ -2712,6 +2832,11 @@
     },
     {
       "source": "LLM",
+      "target": "AX",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "LLMs",
       "strength": 4
     },
@@ -2724,11 +2849,6 @@
       "source": "LLM",
       "target": "RLHF",
       "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "AX",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -2787,6 +2907,11 @@
     },
     {
       "source": "LLM",
+      "target": "AI협업",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
       "target": "생성AI",
       "strength": 2
     },
@@ -2817,13 +2942,13 @@
     },
     {
       "source": "GPU",
-      "target": "IT",
-      "strength": 5
+      "target": "CTO",
+      "strength": 7
     },
     {
       "source": "GPU",
-      "target": "CTO",
-      "strength": 7
+      "target": "IT",
+      "strength": 5
     },
     {
       "source": "GPU",
@@ -2952,6 +3077,11 @@
     },
     {
       "source": "GPU",
+      "target": "미중갈등",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
       "target": "한국AI",
       "strength": 2
     },
@@ -2977,17 +3107,17 @@
     },
     {
       "source": "GPU",
+      "target": "AI협업",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
       "target": "빅테크",
       "strength": 2
     },
     {
       "source": "GPU",
       "target": "기술패권",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "미중갈등",
       "strength": 2
     },
     {
@@ -3012,13 +3142,13 @@
     },
     {
       "source": "API",
-      "target": "IT",
-      "strength": 8
+      "target": "CTO",
+      "strength": 12
     },
     {
       "source": "API",
-      "target": "CTO",
-      "strength": 12
+      "target": "IT",
+      "strength": 8
     },
     {
       "source": "API",
@@ -3157,13 +3287,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "IT",
-      "strength": 6
+      "target": "CTO",
+      "strength": 13
     },
     {
       "source": "AI 에이전트",
-      "target": "CTO",
-      "strength": 13
+      "target": "IT",
+      "strength": 6
     },
     {
       "source": "AI 에이전트",
@@ -3212,6 +3342,11 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
       "target": "MCP",
       "strength": 4
     },
@@ -3227,12 +3362,12 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "GPQA",
+      "target": "AX",
       "strength": 2
     },
     {
       "source": "AI 에이전트",
-      "target": "AX",
+      "target": "GPQA",
       "strength": 2
     },
     {
@@ -3263,6 +3398,11 @@
     {
       "source": "AI 에이전트",
       "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "클로드",
       "strength": 2
     },
     {
@@ -3302,12 +3442,12 @@
     },
     {
       "source": "AGI",
-      "target": "IT",
+      "target": "CTO",
       "strength": 2
     },
     {
       "source": "AGI",
-      "target": "CTO",
+      "target": "IT",
       "strength": 2
     },
     {
@@ -3391,54 +3531,9 @@
       "strength": 2
     },
     {
-      "source": "IT",
-      "target": "CTO",
+      "source": "CTO",
+      "target": "IT",
       "strength": 3
-    },
-    {
-      "source": "IT",
-      "target": "소버린AI",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "KPI",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "조직설계",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "TPU",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "RAG",
-      "strength": 3
-    },
-    {
-      "source": "IT",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "IT",
-      "target": "기술패권",
-      "strength": 2
     },
     {
       "source": "CTO",
@@ -3454,6 +3549,11 @@
       "source": "CTO",
       "target": "RAG",
       "strength": 3
+    },
+    {
+      "source": "CTO",
+      "target": "AI규제",
+      "strength": 2
     },
     {
       "source": "CTO",
@@ -3511,6 +3611,51 @@
       "strength": 2
     },
     {
+      "source": "IT",
+      "target": "소버린AI",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "KPI",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "조직설계",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "TPU",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "RAG",
+      "strength": 3
+    },
+    {
+      "source": "IT",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "AI 안전",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "기술패권",
+      "strength": 2
+    },
+    {
       "source": "ROI",
       "target": "IPO",
       "strength": 2
@@ -3553,6 +3698,11 @@
     {
       "source": "ROI",
       "target": "초지능",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "AI협업",
       "strength": 2
     },
     {
@@ -3761,6 +3911,11 @@
       "strength": 2
     },
     {
+      "source": "KPI",
+      "target": "코딩에이전트",
+      "strength": 2
+    },
+    {
       "source": "조직설계",
       "target": "UI",
       "strength": 3
@@ -3826,6 +3981,11 @@
       "strength": 2
     },
     {
+      "source": "생산성",
+      "target": "AI전환",
+      "strength": 2
+    },
+    {
       "source": "MCP",
       "target": "HBM",
       "strength": 2
@@ -3868,11 +4028,6 @@
     {
       "source": "CFO",
       "target": "EPS",
-      "strength": 2
-    },
-    {
-      "source": "생산성",
-      "target": "AI전환",
       "strength": 2
     },
     {
@@ -3961,6 +4116,11 @@
       "strength": 2
     },
     {
+      "source": "RLHF",
+      "target": "AI정렬",
+      "strength": 2
+    },
+    {
       "source": "SWE",
       "target": "코딩AI",
       "strength": 2
@@ -4011,6 +4171,11 @@
       "strength": 2
     },
     {
+      "source": "미중갈등",
+      "target": "기술패권",
+      "strength": 2
+    },
+    {
       "source": "저작권",
       "target": "콘텐츠산업",
       "strength": 2
@@ -4018,11 +4183,6 @@
     {
       "source": "반도체",
       "target": "CUDA",
-      "strength": 2
-    },
-    {
-      "source": "기술패권",
-      "target": "미중갈등",
       "strength": 2
     }
   ]

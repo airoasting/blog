@@ -1,0 +1,455 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="이코노미스트가 2000년 이후 사설 7,000편을 GPT-5.5에 넣어, 미래를 단언한 예측 1,400건을 뽑았습니다. 각 예측의 대담함과 정확도를 채점한 결과, 상식과 대담함 사이 중간 지대의 예측이 가장 잘 맞았습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="이코노미스트가 AI로 자기 예측을 채점했습니다">
+  <meta property="og:description" content="사설 7,000편을 GPT-5.5에 넣어 예측 정확도를 측정했습니다. 상식도 대담함도 아닌 중간이 가장 잘 맞았습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-07-02-economist-forecast-accuracy-ai.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-02">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI평가">
+  <meta property="article:tag" content="예측">
+  <meta property="article:tag" content="미디어">
+  <meta property="article:tag" content="의사결정">
+  <meta property="article:tag" content="GPT">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="이코노미스트가 AI로 자기 예측을 채점했습니다">
+  <meta name="twitter:description" content="사설 7,000편을 AI에 넣어 예측 정확도를 측정한 결과, 중간 지대가 가장 잘 맞았습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "이코노미스트가 AI로 자기 예측을 채점했습니다",
+    "datePublished": "2026-07-02",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "이코노미스트가 사설 7,000편을 GPT-5.5에 넣어 예측 1,400건의 대담함과 정확도를 채점했습니다. 상식과 대담함 사이 중간 지대가 가장 잘 맞았습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-07-02-economist-forecast-accuracy-ai.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_02_economist-forecast-accuracy-ai/thumbnail.png" alt="이코노미스트가 AI로 자기 예측을 채점했습니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026년 7월 2일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">이코노미스트가 AI로 자기 예측을 채점했습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>The Economist</span>
+            <span><a href="https://www.economist.com/interactive/finance-and-economics/2026/07/02/is-the-economist-always-wrong" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI평가" class="post-tag">#AI평가</a>
+            <a href="../index.html?tag=예측" class="post-tag">#예측</a>
+            <a href="../index.html?tag=미디어" class="post-tag">#미디어</a>
+            <a href="../index.html?tag=의사결정" class="post-tag">#의사결정</a>
+            <a href="../index.html?tag=GPT" class="post-tag">#GPT</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="이코노미스트가 AI로 자기 예측을 채점했습니다" data-date="2026-07-02" data-category="research" data-source="The Economist" data-tags="AI평가, 예측, 미디어, 의사결정, GPT" data-original-url="https://www.economist.com/interactive/finance-and-economics/2026/07/02/is-the-economist-always-wrong" data-roasting-quote="당신의 확신에 찬 예측, AI로 다시 채점하면 몇 점을 받겠습니까?" data-next-post="../research/2026-06-25-ai-models-values-different-from-people.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">이코노미스트가 2000년 이후 사설 약 7,000편을 GPT-5.5에 넣어, 미래를 단언한 예측 1,400여 건을 뽑았습니다.</p>
+        <p data-summary="">각 예측을 대담함과 정확도로 채점했습니다. 상식에 가까운 예측은 잘 맞았고, 너무 대담한 예측은 잘 틀렸습니다.</p>
+        <p data-summary="">가장 잘 맞은 구간은 중간이었습니다. 안전하지도 무모하지도 않을 때, 확률이 절반을 꾸준히 넘겼습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신의 확신에 찬 예측,<br>AI로 다시 채점하면 몇 점을 받겠습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>이코노미스트는 사설에서 세상을 단언합니다. 그 어조를 두고 '신의 목소리'라는 비아냥까지 붙었습니다. 그렇다면 그 예언은 실제로 얼마나 맞았을까요. 이번에 이코노미스트는 그 질문을 스스로에게 돌렸습니다.</p>
+        <p>방법이 흥미롭습니다. 지난 26년치 사설 약 7,000편을 GPT-5.5에 통째로 넣고, 미래를 단언한 예측만 골라 정확도를 채점하게 했습니다. 자기 조직의 판단 이력을 AI로 감사한 셈입니다. 이 글은 그 결과보다, 리더가 자기 예측을 이렇게 되돌아볼 수 있다는 방법과 거기서 나온 교훈을 다룹니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>예측은 모든 경영 판단의 밑돌입니다. 다만 우리는 자기 예측이 맞았는지 좀처럼 되돌아보지 않습니다. 틀린 예측은 조용히 잊히고, 맞은 예측만 기억에 남습니다. 이코노미스트의 실험이 눈에 띄는 이유가 여기 있습니다. AI가 값싸고 일관되게 수천 건의 과거 판단을 한 자리에서 채점할 수 있게 됐기 때문입니다. 예측을 남기고 나중에 채점하는 일이, 이제 대기업만의 사치가 아닙니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, AI를 자기 판단의 채점관으로 세웠습니다.</strong> 이코노미스트는 사설 7,000편을 GPT-5.5에 넣고, 각 글이 미래에 관한 검증 가능한 주장을 담았는지 물었습니다. 약 1,400건이 걸렸습니다. 그다음 두 가지를 10점 만점으로 매기게 했습니다. 당시 얼마나 상식에서 벗어난 주장이었는지, 그리고 실제로 얼마나 맞았는지입니다. 같은 질문을 여러 번 돌려 평균을 냈습니다. 사람의 기억이 아니라 기록으로 판단을 되짚은 것입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div style="background:#ffffff; border-radius:8px; padding:8px;">
+          <svg viewBox="0 0 620 430" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;" role="img" aria-label="정확도와 대담함 관계 산점도">
+            <rect x="0" y="0" width="620" height="430" fill="#ffffff"/>
+            <!-- axes -->
+            <line x1="80" y1="40" x2="80" y2="360" stroke="#333" stroke-width="1.5"/>
+            <line x1="80" y1="360" x2="580" y2="360" stroke="#333" stroke-width="1.5"/>
+            <!-- y labels -->
+            <text x="72" y="48" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">10 정확</text>
+            <text x="72" y="364" text-anchor="end" font-family="sans-serif" font-size="12" fill="#333">0 빗나감</text>
+            <text x="26" y="205" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555" transform="rotate(-90 26 205)">정확도 점수</text>
+            <!-- x labels -->
+            <text x="80" y="382" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">0 상식적</text>
+            <text x="580" y="382" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#333">10 파격적</text>
+            <text x="330" y="406" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">대담함(상식 이탈) 점수</text>
+            <!-- faint cloud -->
+            <g fill="#C43500" opacity="0.16">
+              <circle cx="150" cy="130" r="5"/><circle cx="180" cy="160" r="5"/><circle cx="210" cy="120" r="5"/>
+              <circle cx="240" cy="150" r="5"/><circle cx="270" cy="110" r="5"/><circle cx="300" cy="140" r="5"/>
+              <circle cx="330" cy="120" r="5"/><circle cx="360" cy="160" r="5"/><circle cx="390" cy="180" r="5"/>
+              <circle cx="420" cy="200" r="5"/><circle cx="450" cy="230" r="5"/><circle cx="480" cy="260" r="5"/>
+              <circle cx="510" cy="290" r="5"/><circle cx="540" cy="300" r="5"/><circle cx="200" cy="200" r="5"/>
+              <circle cx="260" cy="185" r="5"/><circle cx="320" cy="205" r="5"/><circle cx="380" cy="230" r="5"/>
+              <circle cx="130" cy="170" r="5"/><circle cx="430" cy="150" r="5"/>
+            </g>
+            <!-- labeled points -->
+            <g font-family="sans-serif" font-size="11" fill="#1A1A1A">
+              <circle cx="170" cy="112" r="6" fill="#1A4A7A"/>
+              <text x="182" y="108">푸틴 집권 지속 (2007) · 맞음, 상식적</text>
+              <circle cx="450" cy="115" r="6" fill="#1A4A7A"/>
+              <text x="462" y="111" text-anchor="end" dx="-14">차 산업 붕괴 (2003)</text>
+              <circle cx="360" cy="90" r="6" fill="#145C35"/>
+              <text x="372" y="86">비트코인 존속 (2013) · 파격, 적중</text>
+              <circle cx="520" cy="320" r="6" fill="#C43500"/>
+              <text x="508" y="324" text-anchor="end">유가 급등 (2026) · 파격, 빗나감</text>
+            </g>
+          </svg>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            예측의 대담함(가로)과 정확도(세로) 관계입니다. 상식에 가까울수록 잘 맞았고, 파격적일수록 편차가 컸습니다. 가장 안정적으로 적중한 구간은 중간이었습니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: The Economist (2026, July) 데이터를 바탕으로 재구성. 표시 점은 원문이 든 대표 사례입니다.</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 상식은 잘 맞았지만 값이 쌌습니다.</strong> 채점 결과, 통념에 가까운 예측일수록 잘 맞았습니다. 2007년 '푸틴이 러시아를 계속 지배할 것'이라는 예측은 적중했지만, 당시 누구나 하던 말이었습니다. 맞히기는 쉬워도, 그 예측이 새로 알려준 것은 거의 없습니다. 안전한 예측의 함정입니다. 정확도는 높지만 의사결정을 바꾸지 못합니다.</p>
+
+        <p><strong>셋째, 파격적일수록 크게 틀렸습니다.</strong> 반대로 통념과 정면으로 어긋난 소수의 예측은 정확도가 낮았습니다. 2026년 4월, 유가가 더 오를 것이라 단언했지만 이후 3분의 1 가까이 떨어졌습니다. 다만 예외가 값집니다. 2013년 '비트코인은 살아남는다'는 다소 파격적인 주장은 이후 6만 퍼센트 넘게 올랐습니다. 파격은 크게 틀리거나, 드물게 크게 맞습니다.</p>
+
+        <p><strong>넷째, 가장 잘 맞은 곳은 중간이었습니다.</strong> 안전하지도 무모하지도 않은 구간에서 이코노미스트의 적중 확률은 절반을 꾸준히 넘겼습니다. 통념을 살짝 벗어나되 근거로 뒷받침되는 예측입니다. 코로나를 2020년 1월 말에 세계적 확산으로, 2월 말에 대유행으로 앞서 경고한 것이 그 예입니다. 남들보다 반걸음 앞서되, 발은 땅에 붙어 있는 자리입니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>지난 예측을 꺼내 AI에게 채점시키세요.</strong><br>작년 사업계획, 시장 전망, 회의록에 적은 단언을 모아 AI에 넣고, 검증 가능한 예측만 뽑아 맞았는지 채점하게 하세요. 사람의 기억은 맞은 것만 남깁니다. 기록으로 되짚어야 진짜 적중률이 보입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>예측마다 '대담함'을 함께 적으세요.</strong><br>앞으로 내리는 전망 옆에, 이게 통념인지 통념을 벗어난 주장인지 한 줄로 표시하세요. 통념이면 맞아도 값이 낮고, 파격이면 크게 걸리는 베팅입니다. 이 라벨 하나가 나중 채점의 해상도를 바꿉니다. (1개월)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>중간 지대의 베팅을 늘리세요.</strong><br>안전한 예측만 쌓으면 틀리진 않아도 남는 게 없습니다. 통념을 살짝 벗어나되 근거가 받쳐주는 판단, 그 중간 지대에 자원을 배분하세요. 파격은 소수의 실험으로만 남기세요. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>채점관도 AI입니다.</strong> 정확도를 매긴 것은 GPT-5.5입니다(이코노미스트, 2026). 무엇이 '검증 가능한 예측'인지 고르는 일부터 채점까지 모델의 판단이 개입합니다. 여러 번 돌려 평균을 냈지만, 모델 특유의 편향이 결과에 스며들 수 있습니다.</p>
+
+        <p><strong>자기 채점입니다.</strong> 이코노미스트가 자기 예측을 스스로 평가한 실험입니다. 결론이 대체로 자사에 유리하게 나온 점은 감안해야 합니다. 방법론은 참고하되, 결과를 그대로 자기 홍보로 받아들일 필요는 없습니다.</p>
+
+        <p><strong>정확도는 사후 판단입니다.</strong> 지나고 나서 맞았는지 보는 것은 쉽습니다. 예측하던 그 순간의 불확실성은 점수에 담기지 않습니다. 낮은 점수가 반드시 나쁜 판단이었다는 뜻은 아닙니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>안전한 예측은 맞아도 값이 없고, 무모한 예측은 크게 틀립니다. 근거로 받친 반걸음 앞선 판단이 가장 오래 살아남습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>지난 전망을 AI로 채점해 실제 적중률을 확인하라. 기억이 아니라 기록이 자기 판단의 품질을 말해준다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">전략/기획</span>
+            <span>예측마다 대담함을 라벨링하라. 통념이면 값이 낮고, 파격이면 크게 걸리는 베팅임을 구분해 자원을 배분하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">리스크/투자</span>
+            <span>중간 지대에 무게를 싣고 파격은 소수 실험으로 제한하라. 안전한 합의는 손실은 없어도 초과수익도 없다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>사설(leader)</strong>: 이코노미스트가 편집부의 견해를 담아 쓰는 논설입니다. 매체의 공식 입장이자 예측이 자주 담깁니다.</p>
+          <p><strong>검증 가능한 예측</strong>: 시간이 지나면 맞았는지 틀렸는지 판정할 수 있는 미래 주장입니다. 감상이나 평가와 구분됩니다.</p>
+          <p><strong>대담함(상식 이탈) 점수</strong>: 예측이 당시 통념에서 얼마나 벗어났는지 나타내는 값입니다. 높을수록 소수 의견입니다.</p>
+          <p><strong>역발상 지표</strong>: 특정 매체나 사람이 우려하면 오히려 반대로 가는 신호로 삼는 투자 속설입니다. 이코노미스트를 그 대상으로 삼는 농담이 있습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>The Economist. (2026, July). <em>Is The Economist always wrong?</em> [Interactive article]. The Economist. (<a href="https://www.economist.com/interactive/finance-and-economics/2026/07/02/is-the-economist-always-wrong" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern A) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">자기가 자기 예측을 채점하고, 채점관도 자기가 고른 AI예요. 결론이 자기한테 유리하게 나온 게 놀랍지도 않아요. 이거 연구라기보단 잘 만든 홍보 아닌가요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">홍보여도 방법은 훔칠 만해요. 지난 예측을 한자리에 모아 채점한다는 발상 자체가 저희 회사엔 없었거든요. 결론 말고 방법을 보면 돼요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">방법은 인정해요. 근데 뭐가 '검증 가능한 예측'인지도 AI가 골랐잖아요. 유리한 것만 걸러 담았을 수도 있어요. 방법을 쓰되 그 필터는 사람이 봐야죠.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희도 작년 사업계획서 꺼내서 채점 돌려보고 싶은데, 솔직히 좀 무섭네요. 맞은 것만 기억하고 살았는데 실제 점수 보면 민망할 것 같아요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">민망한 게 핵심이에요. 검증 가능한 문장만 뽑고, 맞았는지 여러 번 돌려 평균 내면 끝이에요. 반나절이면 해요. 무서워서 안 재는 게 진짜 손해예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저 이거 실제로 해봤어요. 투자자한테 큰소리친 전망들 채점하니까 안전빵 예측만 맞았더라고요. 뜨끔했지만, 그 뒤로 회의 톤이 바뀌었어요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern C) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">중간이 제일 잘 맞았다는 대목이 오래 남아요. 너무 안전하면 재미없고, 너무 튀면 헛발질이고. 좋은 카피랑 똑같더라고요. 반걸음만 앞서가는 거요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요. 근데 회사에선 반대예요. 안전한 예측만 칭찬받고, 반걸음 앞선 사람은 튄다고 찍혀요. 중간에 베팅하려면 그걸 봐주는 문화부터 있어야 해요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-06-25-ai-models-values-different-from-people.html">
+          <div class="next-post-title">당신이 쓰는 AI는 종교색이 옅고 진보적입니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/의사결정.html" class="concept-chip">의사결정</a>
+      <a href="../insights/wiki/concepts/roi.html" class="concept-chip">ROI</a>
+      <a href="../insights/wiki/concepts/임원.html" class="concept-chip">임원</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-02-economist-forecast-accuracy-ai.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/research/2026-07-02-economist-forecast-accuracy-ai.html';
+    const ROASTING_QUOTE = '당신의 확신에 찬 예측, AI로 다시 채점하면 몇 점을 받겠습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

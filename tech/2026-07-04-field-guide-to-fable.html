@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="앤트로픽에서 데모를 만드는 타리크가 최신 모델 클로드 페이블 5를 다루며 얻은 교훈을 정리했습니다. 지도는 영토가 아닙니다. 내가 주는 프롬프트와 스킬과 맥락은 일 자체가 아니라 일의 표현일 뿐입니다. 모델이 강할수록 병목은 사람의 이해로 옮겨갑니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 강해질수록, 병목은 당신의 이해입니다">
+  <meta property="og:description" content="앤트로픽 타리크가 클로드 페이블 5를 다루며 얻은 교훈. 지도는 영토가 아니고, 병목은 모델이 아니라 사람의 이해로 옮겨갑니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-07-04-field-guide-to-fable.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-04">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="프롬프트">
+  <meta property="article:tag" content="에이전트">
+  <meta property="article:tag" content="AI협업">
+  <meta property="article:tag" content="클로드">
+  <meta property="article:tag" content="생산성">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 강해질수록, 병목은 당신의 이해입니다">
+  <meta name="twitter:description" content="지도는 영토가 아닙니다. 모델이 강할수록 병목은 모델이 아니라 사람의 이해로 옮겨갑니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 강해질수록, 병목은 당신의 이해입니다",
+    "datePublished": "2026-07-04",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽 타리크가 클로드 페이블 5를 다루며 얻은 교훈. 지도는 영토가 아니며, 병목은 모델이 아니라 사람의 이해로 옮겨갑니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-07-04-field-guide-to-fable.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_04_field-guide-to-fable/thumbnail.png" alt="AI가 강해질수록, 병목은 당신의 이해입니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 7월 4일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 강해질수록, 병목은 당신의 이해입니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Thariq (@trq212, X)</span>
+            <span><a href="https://x.com/trq212/status/2073100352921215386" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=프롬프트" class="post-tag">#프롬프트</a>
+            <a href="../index.html?tag=에이전트" class="post-tag">#에이전트</a>
+            <a href="../index.html?tag=AI협업" class="post-tag">#AI협업</a>
+            <a href="../index.html?tag=클로드" class="post-tag">#클로드</a>
+            <a href="../index.html?tag=생산성" class="post-tag">#생산성</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI가 강해질수록, 병목은 당신의 이해입니다" data-date="2026-07-04" data-category="tech" data-source="Thariq (@trq212, X)" data-tags="프롬프트, 에이전트, AI협업, 클로드, 생산성" data-original-url="https://x.com/trq212/status/2073100352921215386" data-roasting-quote="모델이 더 똑똑해지길 기다리십니까? 막힌 것은 모델이 아니라 당신이 건넨 지도입니다." data-next-post="../tech/2026-06-30-thinking-machines-expert-judgment.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">앤트로픽에서 데모를 만드는 타리크가 최신 모델 클로드 페이블 5를 다루며 얻은 교훈을 정리했습니다.</p>
+        <p data-summary="">지도는 영토가 아닙니다. 내가 주는 프롬프트와 스킬과 맥락은 일 자체가 아니라 일의 표현일 뿐입니다.</p>
+        <p data-summary="">모델이 강할수록 병목은 사람의 이해로 옮겨갑니다. 진짜 일은 내가 무엇을 모르는지 찾아내는 것입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">모델이 더 똑똑해지길 기다리십니까?<br>막힌 것은 모델이 아니라 당신이 건넨 지도입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI가 기대에 못 미치면 우리는 보통 모델을 탓합니다. 더 똑똑한 버전이 나오면 해결될 거라 생각합니다. 앤트로픽에서 데모를 만드는 타리크는 최신 모델 클로드 페이블 5를 매일 다루며 정반대 결론에 이르렀습니다.</p>
+        <p>그의 문장은 오래된 격언에서 시작합니다. 지도는 영토가 아니라는 것입니다. 내가 모델에 건네는 프롬프트와 스킬과 맥락은 지도입니다. 해야 할 일 자체가 아니라, 그 일을 그린 표현일 뿐입니다. 모델이 강해질수록 이 둘 사이의 간격이 더 또렷하게 드러납니다. 이 글은 그 통찰을 조직의 AI 활용에 옮기는 법을 다룹니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>모델은 계속 강해집니다. 그런데 강해질수록 성패를 가르는 변수가 바뀝니다. 예전에는 모델의 능력이 한계였습니다. 이제는 그 능력을 어디에, 무엇을 위해 쓰라고 일러주는 사람의 이해가 한계입니다. 타리크는 앤트로픽에 합류하며, 우리를 막는 것은 모델의 능력이 아니라 창의성과 이해라고 밝힌 바 있습니다. 같은 모델을 쥐고도 결과가 갈리는 이유가 여기 있습니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 지도는 영토가 아닙니다.</strong> 내가 모델에 주는 프롬프트, 스킬, 맥락은 실제 일을 그린 지도입니다. 아무리 잘 그려도 지도는 영토와 완전히 같아질 수 없습니다. 늘 빠진 길과 잘못 그린 지형이 남습니다. 모델이 그 지도를 충실히 따를수록, 지도의 빈틈이 결과의 빈틈으로 그대로 드러납니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div style="background:#ffffff; border-radius:8px; padding:14px;">
+          <svg viewBox="0 0 620 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;" role="img" aria-label="지도와 영토, 그리고 그 사이의 모르는 것">
+            <rect x="0" y="0" width="620" height="220" fill="#ffffff"/>
+            <rect x="30" y="50" width="200" height="120" rx="10" fill="#EAF1EE" stroke="#145C35" stroke-opacity="0.4"/>
+            <text x="130" y="40" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="800" fill="#145C35">지도 (내가 주는 것)</text>
+            <g font-family="sans-serif" font-size="13" fill="#33473F">
+              <text x="130" y="90" text-anchor="middle">프롬프트</text>
+              <text x="130" y="118" text-anchor="middle">스킬</text>
+              <text x="130" y="146" text-anchor="middle">맥락</text>
+            </g>
+            <rect x="390" y="50" width="200" height="120" rx="10" fill="#F3F0EE" stroke="#7A1F1F" stroke-opacity="0.3"/>
+            <text x="490" y="40" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="800" fill="#7A1F1F">영토 (실제 일)</text>
+            <text x="490" y="116" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#3A2020">해야 할 일의 진짜 모습</text>
+            <!-- gap arrow -->
+            <line x1="240" y1="110" x2="380" y2="110" stroke="#C43500" stroke-width="2" stroke-dasharray="6 5"/>
+            <polygon points="380,110 368,104 368,116" fill="#C43500"/>
+            <text x="310" y="98" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#C43500">모르는 것</text>
+            <text x="310" y="132" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#999">지도와 영토의 간격</text>
+          </svg>
+          </div>
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            내가 주는 지도와 실제 일 사이에는 늘 간격이 있습니다. 그 간격, 곧 아직 모르는 것을 찾아내는 일이 유능한 AI를 다루는 핵심입니다.
+            <span style="display:block; margin-top:4px; font-size:12px;">정리: AI ROASTING (Thariq, 2026 기반)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 병목이 모델에서 사람으로 옮겨갑니다.</strong> 모델이 약할 때는 능력이 한계였습니다. 이제는 그 능력을 정확히 겨누는 사람의 이해가 한계입니다. 같은 페이블 5를 써도, 문제를 또렷이 그린 사람과 흐릿하게 그린 사람의 결과가 크게 갈립니다. 모델을 바꾸기 전에 물어야 할 것은 내 지도가 충분했는가입니다.</p>
+
+        <p><strong>셋째, 진짜 일은 '모르는 것'을 찾는 것입니다.</strong> 원문의 제목이 그대로 요지입니다. 미지의 것을 찾아내라는 것입니다. 내가 미리 일러주지 못한 조건, 내가 몰랐던 함정이 결과를 망칩니다. 그래서 유능한 모델을 잘 다루는 사람은, 실행을 시키기 전에 모델과 함께 자기 지도의 빈틈을 먼저 드러냅니다. 무엇을 놓쳤는지 묻는 것이 첫 단계입니다.</p>
+
+        <p><strong>넷째, 명료함이 곧 생산성입니다.</strong> 그렇다면 지렛대는 더 좋은 모델이 아니라 더 좋은 지도입니다. 문제를 또렷이 정의하고, 맥락을 촘촘히 채우고, 반복되는 지시를 스킬로 남기는 일입니다. 모델은 누구나 같은 것을 씁니다. 차이는 그 모델에 건네는 지도의 해상도에서 납니다. 명료함이 그대로 성과가 됩니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>막히면 모델보다 지도를 먼저 점검하세요.</strong><br>AI 결과가 나쁠 때, 모델을 바꾸기 전에 내가 준 프롬프트와 맥락에 빠진 것이 없는지 보세요. 대개 문제는 모델이 아니라 흐릿한 지도에 있습니다. 지도를 고치는 것이 모델을 바꾸는 것보다 빠릅니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>실행 전에 '모르는 것'을 먼저 물으세요.</strong><br>바로 시키지 말고, 이 일에서 내가 빠뜨린 조건이나 위험이 뭔지 먼저 AI에게 되묻게 하세요. 가정과 빈틈을 드러낸 뒤 실행하면, 뒤에서 터질 실수를 앞에서 잡습니다. (1개월)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>맥락과 프롬프트를 조직의 자산으로 남기세요.</strong><br>잘 그린 지도를 개인 채팅창에만 두지 마세요. 반복되는 지시와 맥락을 스킬과 문서로 정리해 팀이 공유하면, 명료함이 조직 전체의 생산성으로 복리처럼 쌓입니다. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>실무자의 에세이입니다.</strong> 이 글은 벤치마크가 아니라 한 개발자의 경험과 통찰입니다(타리크, 2026). 방향을 주는 글이지, 측정된 결론이 아닙니다. 우리 업무에 맞는지는 직접 써보며 확인해야 합니다.</p>
+
+        <p><strong>만든 쪽의 시각입니다.</strong> 타리크는 앤트로픽 소속이고, 페이블 5는 앤트로픽의 모델입니다. 자사 모델을 다룬 글인 만큼, 도구에 대한 평가는 유리한 쪽으로 기울 수 있습니다. 통찰은 취하되 홍보는 걸러야 합니다.</p>
+
+        <p><strong>오래된 격언입니다.</strong> '지도는 영토가 아니다'는 새 발견이 아닙니다. 값어치는 이 오래된 통찰을 AI 협업에 적용하는 데 있습니다. 문구에 감탄하기보다, 우리 지도의 빈틈을 실제로 메우는 습관으로 옮겨야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>모델은 누구나 같은 것을 씁니다. 차이는 내가 건네는 지도의 해상도, 곧 내 이해의 깊이에서 납니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 성과가 안 나면 모델 탓을 멈추고, 문제 정의와 맥락의 품질부터 보라. 같은 모델에서 결과를 가르는 건 사람의 이해다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>실행 전 '모르는 것'을 드러내는 단계를 워크플로에 넣어라. 가정과 빈틈을 앞에서 잡는 것이 사후 수정보다 싸다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장/운영</span>
+            <span>잘 만든 프롬프트와 맥락을 스킬로 자산화하라. 개인의 명료함을 조직의 공유 자산으로 바꿔야 복리가 붙는다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>클로드 페이블 5(Claude Fable 5)</strong>: 앤트로픽의 최신 클로드 모델 계열 중 하나입니다. 글쓴이가 이 모델을 다루며 통찰을 정리했습니다.</p>
+          <p><strong>지도는 영토가 아니다</strong>: 어떤 표현도 실제 대상과 완전히 같을 수 없다는 오래된 격언입니다. 여기서는 프롬프트가 일 자체가 아니라는 뜻으로 쓰입니다.</p>
+          <p><strong>스킬(skill)</strong>: 반복되는 지시와 절차를 모아 재사용 가능하게 만든 묶음입니다. 매번 새로 설명하지 않아도 되게 합니다.</p>
+          <p><strong>맥락(context)</strong>: 모델이 일을 제대로 하도록 함께 주는 배경 정보와 자료입니다. 지도의 해상도를 좌우합니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Thariq [@trq212]. (2026, July). <em>A field guide to Fable: finding your unknowns</em> [Post]. X. (<a href="https://x.com/trq212/status/2073100352921215386" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern A) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">'막히면 모델 말고 지도부터 봐라', 이거 현장에서 백 번 맞아요. 결과 나쁘다고 모델 바꾸는 사람들, 열에 아홉은 프롬프트에 맥락을 안 넣은 거예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 내 지도에 뭐가 빠졌는지를 내가 어떻게 알아요? 모르니까 안 넣은 거잖아요. 빠진 걸 스스로 찾으라는 게 제일 어려운 숙제 같은데요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그걸 AI한테 시키면 돼요. '이 일에서 내가 빠뜨린 조건이 뭐냐'고 먼저 물으세요. 시키기 전에 되묻게 하는 거죠. 그게 '모르는 것 찾기'의 실전판이에요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저 요즘 실행 전에 무조건 '뭘 놓쳤냐'부터 물어요. 그거 하나 넣었더니 뒤에서 터지던 실수가 확 줄었어요. 앞에서 5분 쓰고 뒤에서 이틀 아끼는 셈이죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">문제는 그 잘 만든 지도가 개인 채팅창에서만 산다는 거예요. 한 명이 노하우 쌓아도 팀엔 안 남아요. 그걸 스킬이랑 문서로 빼야 조직 자산이 돼요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">'명료함이 곧 생산성'이라는 말이 위로가 돼요. 결국 모델은 다 같은 거 쓰니까, 내가 얼마나 또렷하게 생각하느냐가 무기라는 거잖아요. 그건 노력으로 되는 거고요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern D) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">'지도는 영토가 아니다', 이거 백 년 된 말이에요. 게다가 글쓴이는 앤트로픽 사람이고 페이블도 자기 회사 모델이잖아요. 통찰인지 홍보인지 걸러 봐야죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">오래된 말인 건 맞아요. 근데 그걸 AI 협업에 딱 붙여준 게 쓸모예요. 홍보든 아니든, 오늘 내 프롬프트 빈틈부터 메우면 그만이죠. 문구에 감탄만 안 하면 돼요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-06-30-thinking-machines-expert-judgment.html">
+          <div class="next-post-title">전문가 판단을 배운 작은 모델이 GPT를 이겼습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/생산성.html" class="concept-chip">생산성</a>
+      <a href="../insights/wiki/concepts/클로드.html" class="concept-chip">클로드</a>
+      <a href="../insights/wiki/concepts/ai협업.html" class="concept-chip">AI협업</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-04-field-guide-to-fable.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-07-04-field-guide-to-fable.html';
+    const ROASTING_QUOTE = '모델이 더 똑똑해지길 기다리십니까? 막힌 것은 모델이 아니라 당신이 건넨 지도입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>
