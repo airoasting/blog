@@ -21,10 +21,12 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-07-06 [기술] AI의 속내를 읽는 렌즈가 나왔습니다 — /blog/tech/2026-07-06-llm-global-workspace.html
 - 2026-07-04 [기업] 받아쓰기라던 AI, 규제를 빠져나갔습니다 — /blog/company/2026-07-04-ai-scribes-regulatory-gap.html
 - 2026-07-04 [기술] AI가 강해질수록, 병목은 당신의 이해입니다 — /blog/tech/2026-07-04-field-guide-to-fable.html
 - 2026-07-03 [기업] 알리바바가 클로드 코드를 사내 금지했습니다 — /blog/company/2026-07-03-alibaba-bans-claude-code.html
 - 2026-07-03 [생존] AI 시대의 커리어, 채점되지 않는 일에 있습니다 — /blog/survival/2026-07-03-career-advice-age-of-ai.html
+- 2026-07-02 [기업] AI를 금지하는 대신 계약서를 썼습니다 — /blog/company/2026-07-02-ai-classroom-contract.html
 - 2026-07-02 [리서치] 이코노미스트가 AI로 자기 예측을 채점했습니다 — /blog/research/2026-07-02-economist-forecast-accuracy-ai.html
 - 2026-07-01 [리서치] UN 첫 AI 과학패널: 능력은 뛰고 증거는 걷습니다 — /blog/research/2026-07-01-un-ai-scientific-panel.html
 - 2026-06-30 [기술] 전문가 판단을 배운 작은 모델이 GPT를 이겼습니다 — /blog/tech/2026-06-30-thinking-machines-expert-judgment.html

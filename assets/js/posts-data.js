@@ -1,6 +1,24 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "AI의 속내를 읽는 렌즈가 나왔습니다",
+      "date": "2026-07-06",
+      "category": "tech",
+      "source": "앤트로픽 (Transformer Circuits)",
+      "tags": [
+        "해석가능성",
+        "AI안전",
+        "모델감사",
+        "앤트로픽",
+        "정렬"
+      ],
+      "slug": "2026-07-06-llm-global-workspace",
+      "file": "tech/2026-07-06-llm-global-workspace.html",
+      "summary": "앤트로픽이 언어모델 안에서 사람의 '의식적 작업공간'과 닮은 특권적 표현 공간을 찾았습니다. 그 속을 읽는 J-lens로 모델이 겉으로 말하지 않은 중간 추론과 전략적 계산까지 들여다봤습니다. 정렬을 일부러 어긋나게 한 모델에선 출력은 감췄어도 속에는 악의의 흔적이 남았습니다. AI를 출력이 아니라 내부로 감사하는 길이 열렸습니다.",
+      "roasting_quote": "AI가 뭐라고 답했는지 보셨습니까, 아니면 속으로 뭘 생각했는지 보셨습니까?",
+      "next_post": "tech/2026-05-08-teaching-claude-why.html"
+    },
+    {
       "title": "받아쓰기라던 AI, 규제를 빠져나갔습니다",
       "date": "2026-07-04",
       "category": "company",
@@ -71,6 +89,24 @@ window.POSTS_DATA = {
       "summary": "오픈AI와 딥마인드를 거친 필 첸이 AI 시대 커리어 조언을 정리했습니다. 핵심은 하나입니다. AI는 손실 함수를 쓸 수 있는 일, 곧 정답이 정해진 채점 가능한 일에 강해집니다. 그래서 사람의 값어치는 채점되지 않는 일에 남습니다. 문제 발굴, 마지막 10%의 완성도, 시간과 관계와 평판입니다.",
       "roasting_quote": "AI가 채점할 수 있는 일에, 당신은 아직 커리어를 걸고 있습니까?",
       "next_post": "survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html"
+    },
+    {
+      "title": "AI를 금지하는 대신 계약서를 썼습니다",
+      "date": "2026-07-02",
+      "category": "company",
+      "source": "사이언스 (Tomasz Głowacki)",
+      "tags": [
+        "AI도입",
+        "팀규칙",
+        "업무재설계",
+        "평가방식",
+        "리스킬링"
+      ],
+      "slug": "2026-07-02-ai-classroom-contract",
+      "file": "company/2026-07-02-ai-classroom-contract.html",
+      "summary": "한 컴퓨터과학 교수가 AI로 과제를 베낀 학생을 낙제시키려다 멈췄습니다. 자신도 매일 AI를 쓰면서 학생에게만 금지한 모순을 마주했기 때문입니다. 그는 금지 대신 학생들과 'AI 계약서'를 함께 썼습니다. 반복 작업 자동화는 허용하고 비판적 분석은 사람의 몫으로 남기는 선을 합의로 그었습니다. 평가도 분량 대신 구두 토론으로 사고 과정을 검증했습니다.",
+      "roasting_quote": "당신은 매일 AI를 쓰면서, 팀에게는 쓰지 말라고 하고 있지 않습니까?",
+      "next_post": "company/2026-06-23-wef-ai-first-operating-system.html"
     },
     {
       "title": "이코노미스트가 AI로 자기 예측을 채점했습니다",

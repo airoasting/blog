@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-05T15:45:38.793Z",
+  "generatedAt": "2026-07-11T06:25:54.678Z",
   "version": 1,
   "stats": {
     "totalConcepts": 112,
     "totalRelationships": 299,
-    "totalPosts": 237,
-    "totalNewsletters": 55
+    "totalPosts": 239,
+    "totalNewsletters": 56
   },
   "concepts": [
     {
@@ -184,7 +184,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 54,
+      "frequency": 55,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -242,7 +242,8 @@
         "nl-37",
         "nl-41",
         "nl-45",
-        "nl-50"
+        "nl-50",
+        "nl-56"
       ],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-06-30",
@@ -364,7 +365,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 26,
+      "frequency": 27,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -387,6 +388,7 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-06-23-meta-ai-reorg-team-size",
         "2026-07-04-ai-scribes-regulatory-gap",
+        "2026-07-06-llm-global-workspace",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
         "2026-04-01-claude-code-hidden-features"
@@ -397,7 +399,7 @@
         "nl-47"
       ],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2026-07-04",
+      "lastSeen": "2026-07-06",
       "needs_manual_review": false
     },
     {
@@ -948,6 +950,34 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai-safety",
+      "slug": "ai-safety",
+      "name": "AI 안전",
+      "aliases": [
+        "AI안전",
+        "AI safety"
+      ],
+      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "frequency": 10,
+      "category": "tech",
+      "posts": [
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-02-23-persona-selection-model",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-07-natural-language-autoencoders",
+        "2026-05-08-teaching-claude-why",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-07-06-llm-global-workspace",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-07-06",
+      "needs_manual_review": false
+    },
+    {
       "id": "cfo",
       "slug": "cfo",
       "name": "CFO",
@@ -974,39 +1004,12 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai-safety",
-      "slug": "ai-safety",
-      "name": "AI 안전",
-      "aliases": [
-        "AI안전",
-        "AI safety"
-      ],
-      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
-      "frequency": 9,
-      "category": "tech",
-      "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-23-persona-selection-model",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-06-15",
-      "needs_manual_review": false
-    },
-    {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
       "aliases": [],
       "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
-      "frequency": 9,
+      "frequency": 10,
       "category": "newsletter",
       "posts": [
         "2025-07-15-why-jensen-huang-is-going-to-china"
@@ -1019,7 +1022,8 @@
         "nl-35",
         "nl-50",
         "nl-52",
-        "nl-54"
+        "nl-54",
+        "nl-56"
       ],
       "firstSeen": "2025-07-15",
       "lastSeen": "2025-07-15",
@@ -1229,6 +1233,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai도입",
+      "slug": "ai도입",
+      "name": "AI도입",
+      "aliases": [],
+      "definition": "기업이 AI를 업무에 실제로 적용하는 과정입니다. 도구 선택보다 워크플로 재설계가 핵심입니다.",
+      "frequency": 6,
+      "category": "research",
+      "posts": [
+        "2025-08-20-the-real-meaning-of-mit-report",
+        "2026-01-16-workslop-pressure-cooker",
+        "2026-04-08-gallup-engagement-ai-paradox",
+        "2026-06-30-ramp-ai-jobs-hiring-boom",
+        "2026-07-02-ai-classroom-contract",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-20",
+      "lastSeen": "2026-07-02",
+      "needs_manual_review": false
+    },
+    {
       "id": "llms",
       "slug": "llms",
       "name": "LLMs",
@@ -1377,26 +1402,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai도입",
-      "slug": "ai도입",
-      "name": "AI도입",
-      "aliases": [],
-      "definition": "기업이 AI를 업무에 실제로 적용하는 과정입니다. 도구 선택보다 워크플로 재설계가 핵심입니다.",
-      "frequency": 5,
-      "category": "research",
-      "posts": [
-        "2025-08-20-the-real-meaning-of-mit-report",
-        "2026-01-16-workslop-pressure-cooker",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-06-30-ramp-ai-jobs-hiring-boom",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-20",
-      "lastSeen": "2026-06-30",
-      "needs_manual_review": false
-    },
-    {
       "id": "자동화",
       "slug": "자동화",
       "name": "자동화",
@@ -1497,6 +1502,26 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-04-06",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ciso",
+      "slug": "ciso",
+      "name": "CISO",
+      "aliases": [],
+      "definition": "최고정보보안책임자입니다. AI 시대 데이터·모델 보안을 책임집니다.",
+      "frequency": 5,
+      "category": "tech",
+      "posts": [
+        "2026-04-07-ai-agent-traps",
+        "2026-04-07-claude-mythos-cybersecurity",
+        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
+        "2026-07-06-llm-global-workspace",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-28",
+      "lastSeen": "2026-07-06",
       "needs_manual_review": false
     },
     {
@@ -1731,25 +1756,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "ciso",
-      "slug": "ciso",
-      "name": "CISO",
-      "aliases": [],
-      "definition": "최고정보보안책임자입니다. AI 시대 데이터·모델 보안을 책임집니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2026-04-07-ai-agent-traps",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-28",
-      "lastSeen": "2026-04-30",
-      "needs_manual_review": false
-    },
-    {
       "id": "nber",
       "slug": "nber",
       "name": "NBER",
@@ -1805,6 +1811,25 @@
       "newsletters": [],
       "firstSeen": "2025-05-20",
       "lastSeen": "2026-06-30",
+      "needs_manual_review": false
+    },
+    {
+      "id": "업무재설계",
+      "slug": "업무재설계",
+      "name": "업무재설계",
+      "aliases": [],
+      "definition": "업무재설계는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "company",
+      "posts": [
+        "2026-06-12-thrive-with-ai-mindset-not-skillset",
+        "2026-06-16-claude-code-expertise",
+        "2026-07-02-ai-classroom-contract",
+        "2025-03-05-redesigning-work-structure-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-07-02",
       "needs_manual_review": false
     },
     {
@@ -1936,6 +1961,25 @@
         "nl-12",
         "nl-16",
         "nl-24"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "adr",
+      "slug": "adr",
+      "name": "ADR",
+      "aliases": [],
+      "definition": "ADR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-15",
+        "nl-52",
+        "nl-54",
+        "nl-56"
       ],
       "firstSeen": null,
       "lastSeen": null,
@@ -2344,24 +2388,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "업무재설계",
-      "slug": "업무재설계",
-      "name": "업무재설계",
-      "aliases": [],
-      "definition": "업무재설계는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "research",
-      "posts": [
-        "2026-06-12-thrive-with-ai-mindset-not-skillset",
-        "2026-06-16-claude-code-expertise",
-        "2025-03-05-redesigning-work-structure-in-ai-era"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-06-16",
-      "needs_manual_review": false
-    },
-    {
       "id": "ax전략",
       "slug": "ax전략",
       "name": "AX전략",
@@ -2635,24 +2661,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "adr",
-      "slug": "adr",
-      "name": "ADR",
-      "aliases": [],
-      "definition": "ADR는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [],
-      "newsletters": [
-        "nl-15",
-        "nl-52",
-        "nl-54"
-      ],
-      "firstSeen": null,
-      "lastSeen": null,
-      "needs_manual_review": false
-    },
-    {
       "id": "eps",
       "slug": "eps",
       "name": "EPS",
@@ -2787,13 +2795,13 @@
     },
     {
       "source": "LLM",
-      "target": "CFO",
-      "strength": 2
+      "target": "AI 안전",
+      "strength": 3
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
-      "strength": 3
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "LLM",
@@ -3097,6 +3105,11 @@
     },
     {
       "source": "GPU",
+      "target": "ADR",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
       "target": "JD",
       "strength": 2
     },
@@ -3123,11 +3136,6 @@
     {
       "source": "GPU",
       "target": "중국AI",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "ADR",
       "strength": 2
     },
     {
@@ -3198,7 +3206,7 @@
     {
       "source": "API",
       "target": "HBM",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "API",
@@ -3382,6 +3390,11 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
       "target": "GRPO",
       "strength": 2
     },
@@ -3397,12 +3410,12 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "CISO",
+      "target": "클로드",
       "strength": 2
     },
     {
       "source": "AI 에이전트",
-      "target": "클로드",
+      "target": "업무재설계",
       "strength": 2
     },
     {
@@ -3428,11 +3441,6 @@
     {
       "source": "AI 에이전트",
       "target": "GDPval",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "업무재설계",
       "strength": 2
     },
     {
@@ -3577,12 +3585,12 @@
     },
     {
       "source": "CTO",
-      "target": "MMLU",
-      "strength": 3
+      "target": "CISO",
+      "strength": 4
     },
     {
       "source": "CTO",
-      "target": "CISO",
+      "target": "MMLU",
       "strength": 3
     },
     {
@@ -3637,12 +3645,12 @@
     },
     {
       "source": "IT",
-      "target": "CFO",
+      "target": "AI 안전",
       "strength": 2
     },
     {
       "source": "IT",
-      "target": "AI 안전",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -4016,6 +4024,16 @@
       "strength": 2
     },
     {
+      "source": "AI 안전",
+      "target": "AI규제",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI거버넌스",
+      "strength": 2
+    },
+    {
       "source": "CFO",
       "target": "SEC",
       "strength": 2
@@ -4031,16 +4049,6 @@
       "strength": 2
     },
     {
-      "source": "AI 안전",
-      "target": "AI규제",
-      "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
       "source": "HBM",
       "target": "SEC",
       "strength": 2
@@ -4053,7 +4061,7 @@
     {
       "source": "HBM",
       "target": "ADR",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "AI전환",
@@ -4156,13 +4164,13 @@
       "strength": 2
     },
     {
-      "source": "MMLU",
-      "target": "오픈소스AI",
+      "source": "CISO",
+      "target": "SSRN",
       "strength": 2
     },
     {
-      "source": "CISO",
-      "target": "SSRN",
+      "source": "MMLU",
+      "target": "오픈소스AI",
       "strength": 2
     },
     {
