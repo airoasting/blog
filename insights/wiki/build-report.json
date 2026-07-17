@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-07-11T06:25:54.678Z",
-  "duration": 0.488,
+  "buildAt": "2026-07-17T13:26:07.067Z",
+  "duration": 0.694,
   "concepts": {
-    "total": 112,
+    "total": 115,
     "validDefinitions": 106,
-    "needsReview": 6
+    "needsReview": 9
   },
   "relationships": {
-    "total": 299
+    "total": 302
   },
   "coverage": {
-    "postsWithConcepts": 222,
-    "totalPosts": 239
+    "postsWithConcepts": 230,
+    "totalPosts": 247
   },
   "inject": {
-    "updated": 5,
+    "updated": 3,
     "inserted": 0,
-    "unchanged": 234,
+    "unchanged": 244,
     "skipped": 0
   },
   "needsManualReview": [
@@ -37,8 +37,20 @@
       "slug": "ai정렬"
     },
     {
+      "name": "생성형AI",
+      "slug": "생성형ai"
+    },
+    {
+      "name": "클로드코드",
+      "slug": "클로드코드"
+    },
+    {
       "name": "인재전략",
       "slug": "인재전략"
+    },
+    {
+      "name": "AI 정렬",
+      "slug": "ai-alignment"
     },
     {
       "name": "AI협업",

@@ -1,0 +1,443 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="'루프'는 자율 에이전트를 돌리는 기법입니다. 1년 만에 농담에서 업계 표준이 됐습니다. 반전은 이것입니다. 루프는 지능을 더하지 않는데도, 더 똑똑한 단일 세션이 못 푸는 일을 끝냅니다. 비결은 모델 밖, 디스크에 쌓이는 파일과 기록에 있습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="더 똑똑한 AI가 아니라, 더 나은 루프입니다">
+  <meta property="og:description" content="루프는 지능이 아니라 반복을 더합니다. 진짜 성과는 모델이 아니라 디스크에 쌓인 파일에 남습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-07-16-year-of-the-loop.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-16">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="에이전트">
+  <meta property="article:tag" content="루프엔지니어링">
+  <meta property="article:tag" content="자동화">
+  <meta property="article:tag" content="하네스">
+  <meta property="article:tag" content="클로드코드">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="더 똑똑한 AI가 아니라, 더 나은 루프입니다">
+  <meta name="twitter:description" content="병목은 대개 모델이 아닙니다. AI를 키우는 건 그 모델을 감싼 루프와 디스크에 쌓인 파일입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "더 똑똑한 AI가 아니라, 더 나은 루프입니다",
+    "datePublished": "2026-07-16",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "루프는 지능이 아니라 반복을 더합니다. 진짜 성과는 모델이 아니라 디스크에 쌓인 파일에 남습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-07-16-year-of-the-loop.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_16_year-of-the-loop/thumbnail.png" alt="더 똑똑한 AI가 아니라, 더 나은 루프입니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 7월 16일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">더 똑똑한 AI가 아니라, 더 나은 루프입니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Medium (Jihoon Jeong)</span>
+            <span><a href="https://medium.com/@hiconcep/the-year-of-the-loop-cd7ae6b6dfec" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=에이전트" class="post-tag">#에이전트</a>
+            <a href="../index.html?tag=루프엔지니어링" class="post-tag">#루프엔지니어링</a>
+            <a href="../index.html?tag=자동화" class="post-tag">#자동화</a>
+            <a href="../index.html?tag=하네스" class="post-tag">#하네스</a>
+            <a href="../index.html?tag=클로드코드" class="post-tag">#클로드코드</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="더 똑똑한 AI가 아니라, 더 나은 루프입니다" data-date="2026-07-16" data-category="tech" data-source="Medium (Jihoon Jeong)" data-tags="에이전트, 루프엔지니어링, 자동화, 하네스, 클로드코드" data-original-url="https://medium.com/@hiconcep/the-year-of-the-loop-cd7ae6b6dfec" data-roasting-quote="당신은 더 똑똑한 모델을 기다리고 있습니까, 아니면 그 모델을 감쌀 루프를 짓고 있습니까?" data-next-post="../tech/2026-07-04-field-guide-to-fable.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">'루프'는 자율 에이전트를 돌리는 기법입니다. 1년 만에 농담에서 업계 표준이 됐습니다.</p>
+        <p data-summary="">반전은 이것입니다. 루프는 지능을 더하지 않는데도, 더 똑똑한 단일 세션이 못 푸는 일을 끝냅니다.</p>
+        <p data-summary="">비결은 모델 밖에 있습니다. 진짜 성과는 매번 디스크에 쌓이는 파일과 기록에 남습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신은 더 똑똑한 모델을 기다리고 있습니까,<br>아니면 그 모델을 감쌀 루프를 짓고 있습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>1년 전 '루프'는 농담에 가까웠습니다. 에이전트를 죽였다가 백지 상태로 되살리기를 반복하는 이 기법은, 아무것도 못 배우는 만화 캐릭터 이름을 땄습니다. 그런데 1년 만에 업계 표준이 됐습니다. 프롬프트 엔지니어링이 자리 잡는 데 2년쯤 걸렸다면, 루프 엔지니어링은 약 5주 만에 상용 설명글까지 나왔습니다.</p>
+        <p>저자의 질문은 날카롭습니다. 루프는 모델에 지능을 전혀 더하지 않습니다. 그런데도 더 똑똑한 단일 세션이 못 끝내는 일을 끝냅니다. 무엇이 좋아진 걸까요. 이 글은 그 답이 왜 경영 리더에게 중요한지, AI를 고를 때 무엇을 봐야 하는지 짚습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>많은 리더가 AI 성과를 모델 이름으로 판단합니다. 더 좋은 모델을 기다리고, 성과가 안 나면 모델을 바꿉니다. 루프의 부상은 이 통념을 흔듭니다. 같은 모델도 감싸는 방식에 따라 결과가 크게 달라지기 때문입니다. 무엇에 투자하고 무엇을 경쟁 우위로 삼을지가 여기서 갈립니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 루프는 지능이 아니라 반복을 더합니다.</strong> 회의론자의 지적은 대체로 맞습니다. 루프는 시도 횟수를 늘릴 뿐, 정답의 밀도를 높이지 못합니다. 매 회 지능이 좋아지는 것도 아닙니다. 그런데도 시스템은 더 똑똑한 단일 세션이 못 끝내는 일을 끝냅니다. 저자의 논리는 단순합니다. 시스템이 좋아졌는데 지능이 그대로라면, 좋아진 것은 지능이 아니라는 뜻입니다.</p>
+
+        <p><strong>둘째, 매번 백지에서 시작하고, 성과는 디스크에 남깁니다.</strong> 뜻밖에도, 세션을 길게 끌면 성능이 떨어집니다. 맥락이 막다른 길로 가득 차며 굳어버리기 때문입니다. 최선은 최대한의 단절입니다. 매 회 디스크 상태만 빼고 전부 버립니다. 진짜 산출물은 대화가 아니라 남긴 상태입니다. 모델 가중치가 아니라 저장소가, 이 시스템에서 유일하게 과거를 가진 존재가 됩니다.</p>
+
+        <p><strong>셋째, 모델보다 감싸는 방식이 성과를 가릅니다.</strong> 증거가 쌓였습니다. 랭체인은 모델을 그대로 두고 껍데기만 바꿔 리더보드를 30계단 끌어올렸습니다. 한 개발자는 하네스만 바꿔 하루 만에 모델 15개의 코딩 성능을 끌어올렸습니다. METR은 코딩 에이전트가 기본 뼈대보다 크게 낫지 않다고 봤고, 스케일 AI의 실험은 하네스 선택이 모델 선택보다 중요했다고 보고했습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>사례</th>
+                <th>바꾼 것</th>
+                <th>결과</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>랭체인</td>
+                <td>모델 고정, 껍데기만 교체</td>
+                <td class="cell-hl">리더보드 30계단 상승</td>
+              </tr>
+              <tr>
+                <td>한 개발자 실험</td>
+                <td>모델 15개에 하네스만 교체</td>
+                <td class="cell-hl">하루 만에 코딩 성능 향상</td>
+              </tr>
+              <tr>
+                <td>METR · 스케일 AI</td>
+                <td>하네스와 모델 영향 비교</td>
+                <td>하네스 선택이 모델보다 중요</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Jeong (2026), Medium 인용 사례 재구성.</p>
+        </div>
+
+        <p><strong>넷째, 루프는 그 멈춤 기준만큼만 좋습니다.</strong> 루프의 성능은 검증 기준과 정확히 같습니다. 무엇이 '완료'인지 판별하는 규칙이 약하면, 반복은 성과가 아니라 오답을 쌓습니다. 지능에는 천장도 있습니다. 검증을 개선하지 않고 반복만 늘리면, 비싼 무작위 걷기가 됩니다. 루프는 매 회 같은 비싼 재능을 빌려 쓰고 버리며, 디스크에 남은 찌꺼기만 챙깁니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>'어떤 모델'보다 '어떤 루프'를 먼저 물으세요.</strong><br>성과가 안 나면 모델을 바꾸기 전에, 감싸는 방식과 검증을 점검하세요. 대개 병목은 모델이 아니라 그 껍데기에 있습니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>멈춤 기준부터 세우세요.</strong><br>루프는 그 검증만큼만 좋습니다. 무엇이 완료인지 기계가 판별할 규칙이 없으면, 반복은 오답을 빨리 쌓을 뿐입니다. 속도보다 멈춤 기준이 먼저입니다. (2주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>성과를 파일로 남기게 설계하세요.</strong><br>대화가 아니라 디스크에 결과가 축적되게 하세요. 진짜 자산은 모델이 아니라 우리가 남긴 기록입니다. 남이 못 베끼는 것도 거기 있습니다. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>개발 맥락의 이야기입니다.</strong> 사례 다수가 코딩 에이전트입니다(Jeong, 2026). 구조적 통찰은 넓게 통하지만, 비개발 업무에 옮기기 전에 검증 방식을 다시 설계해야 합니다. 코딩은 테스트로 완료를 판별하기 쉽지만, 다른 일은 그렇지 않습니다.</p>
+
+        <p><strong>루프는 만능이 아닙니다.</strong> 지능에는 천장이 있습니다. 검증을 개선하지 않고 반복만 늘리면, 비싼 무작위 걷기가 됩니다. 반복 횟수가 아니라 멈춤 기준이 성패를 가릅니다.</p>
+
+        <p><strong>인용은 저자의 재구성입니다.</strong> METR, 스케일 AI, 랭체인 사례는 저자가 근거로 든 것입니다. 각 원 출처의 맥락과 함께 봐야 정확합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI를 키운 건 더 똑똑한 모델이 아니라, 그 모델을 감싼 루프와 디스크에 쌓인 파일이었습니다. 병목은 대개 모델이 아닙니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>경쟁 우위를 모델이 아니라 루프와 축적된 데이터에서 찾아라. 남이 못 베끼는 건 모델이 아니라 우리가 쌓은 상태다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>성과가 안 나면 모델 교체 전에 하네스와 검증을 손봐라. 대개 답은 껍데기에 있다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">실무 리더</span>
+            <span>'완료'의 정의를 기계가 판별하게 만들라. 검증 없는 반복은 오답을 더 빨리 퍼뜨린다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>루프(Loop)</strong>: 자율 에이전트가 목표를 이룰 때까지 실행, 검증, 기록을 반복하는 작업 구조입니다. 매 회 새 에이전트로 다시 시작합니다.</p>
+          <p><strong>하네스(Harness)</strong>: 모델을 감싸 실제로 일하게 만드는 외피입니다. 도구 연결, 반복, 검증, 파일 관리를 포함합니다.</p>
+          <p><strong>지속 상태(Durable State)</strong>: 대화가 끝나도 디스크에 남는 파일, 커밋, 계획입니다. 루프에서 진짜 성과가 쌓이는 곳입니다.</p>
+          <p><strong>검증기(Verifier)</strong>: 루프의 결과가 맞는지 판별하는 멈춤 기준입니다. 이게 약하면 반복은 오답을 더 빨리 쌓습니다.</p>
+          <p><strong>스캐폴드(Scaffold)</strong>: 모델이 일하도록 짜준 최소한의 뼈대 구조입니다. METR은 에이전트가 이 기본 뼈대보다 크게 낫지 않다고 봤습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Jeong, J. (2026, July). <em>The year of the loop</em> [Blog post]. Medium. (<a href="https://medium.com/@hiconcep/the-year-of-the-loop-cd7ae6b6dfec" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이 글 핵심 하나예요. 루프가 지능을 안 더하는데 일은 끝낸다. 좋아진 게 지능이 아니면, 지능 아닌 뭔가가 좋아진 거죠. 그게 디스크에 쌓인 상태예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그럼 결국 될 때까지 계속 돌린다는 거잖아요. 그거 세련된 노가다 아니에요? 지능이 아니라 횟수로 밀어붙이는 거.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">노가다 맞는데, 되는 노가다예요. 저희도 한 번에 완벽한 답 기대 안 하고, 검증 걸어놓고 돌려요. 사람보다 지치지도 않고. 문제는 언제 멈추냐죠.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern A) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저 비개발자인데, 그래서 이게 저한테 뭔 의미예요? 모델이니 하네스니 하나도 모르겠어요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">간단해요. 좋은 AI 도구는 곧 좋은 모델, 이렇게 생각하지 말라는 거예요. 같은 모델도 어떻게 감싸고 검증하냐로 결과가 딴판이 돼요. 도구 고를 때 그걸 보라는 거죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">아, 그럼 벤더가 최신 모델 쓴다고 자랑할 때, 그거 말고 검증이랑 결과 관리를 물어보면 되는 거네요. 그건 저도 하겠어요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern D) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저장소가 이 시스템에서 유일하게 과거를 가진 존재다, 이 문장이 계속 남아요. 모델은 매번 까먹는데 파일만 기억한다는 게 좀 쓸쓸하면서도 멋있어요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">쓸쓸할 거 없어요. 그게 자산이에요. 모델은 남의 거고 언제든 바뀌지만, 우리가 쌓은 파일이랑 검증은 우리 거예요. 진짜 해자는 거기 있어요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-07-04-field-guide-to-fable.html">
+          <div class="next-post-title">AI가 강해질수록, 병목은 당신의 이해입니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/자동화.html" class="concept-chip">자동화</a>
+      <a href="../insights/wiki/concepts/metr.html" class="concept-chip">METR</a>
+      <a href="../insights/wiki/concepts/클로드코드.html" class="concept-chip">클로드코드</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-16-year-of-the-loop.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-07-16-year-of-the-loop.html';
+    const ROASTING_QUOTE = '당신은 더 똑똑한 모델을 기다리고 있습니까, 아니면 그 모델을 감쌀 루프를 짓고 있습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>
