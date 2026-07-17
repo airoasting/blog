@@ -65,8 +65,8 @@ Roasting: 당신 회사의 핵심 AI를 다른 나라 정부가 끌 수 있다�
 
 날짜: 2026-07-14
 카테고리: 리더
-소스: 이코노미스트 (The Economist)
-원문: https://www.economist.com/business/2026/07/14/demis-hassabis-has-a-plan-to-harness-ai-safely
+소스: Substack (Demis Hassabis)
+원문: https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age
 태그: AI규제, AI안전, 하사비스, 거버넌스, 프런티어모델
 
 3줄 요약:
