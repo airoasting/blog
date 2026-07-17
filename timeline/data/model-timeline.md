@@ -545,7 +545,7 @@
     {
       "date": "2024-03-13",
       "provider": "Anthropic",
-      "model": "Claude 3 Haiku",
+      "model": "3 Haiku",
       "event_type": "release",
       "summary_ko": "Claude 3 Haiku 출시",
       "summary_en": "Claude 3 Haiku available",
@@ -701,7 +701,7 @@
     {
       "date": "2024-06-20",
       "provider": "Anthropic",
-      "model": "Claude 3.5 Sonnet",
+      "model": "3.5 Sonnet",
       "event_type": "release",
       "summary_ko": "Claude 3.5 Sonnet 출시",
       "summary_en": "Claude 3.5 Sonnet launches",
@@ -893,7 +893,7 @@
     {
       "date": "2024-10-22",
       "provider": "Anthropic",
-      "model": "Claude 3.5 Sonnet (new)",
+      "model": "3.5 Sonnet (new)",
       "event_type": "update",
       "summary_ko": "3.5 Sonnet 업그레이드+컴퓨터 사용",
       "summary_en": "Upgraded 3.5 Sonnet, computer use",
@@ -917,7 +917,7 @@
     {
       "date": "2024-11-04",
       "provider": "Anthropic",
-      "model": "Claude 3.5 Haiku",
+      "model": "3.5 Haiku",
       "event_type": "release",
       "summary_ko": "Claude 3.5 Haiku API 출시",
       "summary_en": "Claude 3.5 Haiku in API",
@@ -1109,7 +1109,7 @@
     {
       "date": "2025-02-24",
       "provider": "Anthropic",
-      "model": "Claude 3.7 Sonnet",
+      "model": "3.7 Sonnet",
       "event_type": "release",
       "summary_ko": "Claude 3.7 Sonnet 출시",
       "summary_en": "Claude 3.7 Sonnet, hybrid reasoning",
@@ -1469,7 +1469,7 @@
     {
       "date": "2025-08-05",
       "provider": "Anthropic",
-      "model": "Claude Opus 4.1",
+      "model": "Opus 4.1",
       "event_type": "update",
       "summary_ko": "Claude Opus 4.1 출시",
       "summary_en": "Claude Opus 4.1",
@@ -1601,7 +1601,7 @@
     {
       "date": "2025-09-29",
       "provider": "Anthropic",
-      "model": "Claude Sonnet 4.5",
+      "model": "Sonnet 4.5",
       "event_type": "release",
       "summary_ko": "Claude Sonnet 4.5 출시",
       "summary_en": "Claude Sonnet 4.5",
@@ -1649,7 +1649,7 @@
     {
       "date": "2025-10-15",
       "provider": "Anthropic",
-      "model": "Claude Haiku 4.5",
+      "model": "Haiku 4.5",
       "event_type": "release",
       "summary_ko": "Claude Haiku 4.5 출시",
       "summary_en": "Claude Haiku 4.5",
@@ -1709,7 +1709,7 @@
     {
       "date": "2025-11-24",
       "provider": "Anthropic",
-      "model": "Claude Opus 4.5",
+      "model": "Opus 4.5",
       "event_type": "release",
       "summary_ko": "Claude Opus 4.5 출시",
       "summary_en": "Claude Opus 4.5",
@@ -1793,7 +1793,7 @@
     {
       "date": "2026-02-05",
       "provider": "Anthropic",
-      "model": "Claude Opus 4.6",
+      "model": "Opus 4.6",
       "event_type": "release",
       "summary_ko": "Claude Opus 4.6 출시",
       "summary_en": "Claude Opus 4.6, 1M context beta",
@@ -1961,7 +1961,7 @@
     {
       "date": "2026-04-16",
       "provider": "Anthropic",
-      "model": "Claude Opus 4.7",
+      "model": "Opus 4.7",
       "event_type": "update",
       "summary_ko": "Claude Opus 4.7 출시",
       "summary_en": "Claude Opus 4.7",
@@ -2081,7 +2081,7 @@
     {
       "date": "2026-05-28",
       "provider": "Anthropic",
-      "model": "Claude Opus 4.8",
+      "model": "Opus 4.8",
       "event_type": "update",
       "summary_ko": "Claude Opus 4.8 출시",
       "summary_en": "Claude Opus 4.8",
@@ -2105,7 +2105,7 @@
     {
       "date": "2026-06-09",
       "provider": "Anthropic",
-      "model": "Claude Fable 5",
+      "model": "Fable 5",
       "event_type": "release",
       "summary_ko": "Claude Fable 5 출시",
       "summary_en": "Claude Fable 5",
@@ -2117,7 +2117,7 @@
     {
       "date": "2026-06-09",
       "provider": "Anthropic",
-      "model": "Claude Mythos 5",
+      "model": "Mythos 5",
       "event_type": "release",
       "summary_ko": "Claude Mythos 5 공개",
       "summary_en": "Claude Mythos 5",
@@ -2129,7 +2129,7 @@
     {
       "date": "2026-06-12",
       "provider": "Anthropic",
-      "model": "Claude Fable 5",
+      "model": "Fable 5",
       "event_type": "update",
       "summary_ko": "미국 정부 명령으로 접근 중단, 탈옥 취약점 발단",
       "summary_en": "US directive suspends Fable 5 access over jailbreak",
@@ -2141,7 +2141,7 @@
     {
       "date": "2026-06-12",
       "provider": "Anthropic",
-      "model": "Claude Mythos 5",
+      "model": "Mythos 5",
       "event_type": "update",
       "summary_ko": "미국 정부 명령으로 외국인 접근 전면 중단",
       "summary_en": "US directive suspends Mythos 5 access for foreigners",
@@ -2225,7 +2225,7 @@
     {
       "date": "2026-06-30",
       "provider": "Anthropic",
-      "model": "Claude Sonnet 5",
+      "model": "Sonnet 5",
       "event_type": "release",
       "summary_ko": "Claude Sonnet 5 출시, 프리·프로 기본 모델",
       "summary_en": "Claude Sonnet 5, new default for Free/Pro",
@@ -2237,7 +2237,7 @@
     {
       "date": "2026-07-01",
       "provider": "Anthropic",
-      "model": "Claude Fable 5",
+      "model": "Fable 5",
       "event_type": "update",
       "summary_ko": "수출 통제 해제, 전 세계 재공개",
       "summary_en": "Export controls lifted, Fable 5 reopens worldwide",
@@ -2249,7 +2249,7 @@
     {
       "date": "2026-07-01",
       "provider": "Anthropic",
-      "model": "Claude Mythos 5",
+      "model": "Mythos 5",
       "event_type": "update",
       "summary_ko": "수출 통제 해제, 일부 미국 기관 복원",
       "summary_en": "Controls lifted, Mythos 5 restored to some US orgs",
