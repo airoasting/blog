@@ -1,7 +1,7 @@
 window.ROBOT_TIMELINE_DATA = {
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-07-17",
   "period_start": "2013-10-04",
-  "period_end": "2026-06-30",
+  "period_end": "2026-07-03",
   "notes": [
     "휴머노이드·4족 로봇의 공개·시연·양산을 회사별 웹서치로 정리했습니다. 링크는 공식 유튜브 영상입니다."
   ],
@@ -988,6 +988,18 @@ window.ROBOT_TIMELINE_DATA = {
       "source_url": "https://www.youtube.com/watch?v=jXRbNaFqByo",
       "source_type": "video",
       "significance": "major",
+      "category": "robot"
+    },
+    {
+      "date": "2026-07-03",
+      "provider": "UBTech",
+      "model": "UWORLD U1 Pro (컴패니언)",
+      "event_type": "reveal",
+      "summary_ko": "U1 Pro 컴패니언, 글로벌 런칭서 클로즈업 공개",
+      "summary_en": "UWORLD U1 Pro companion shown up close at launch",
+      "source_url": "https://www.youtube.com/watch?v=wdf3BORclRA",
+      "source_type": "video",
+      "significance": "minor",
       "category": "robot"
     }
   ]

@@ -1,7 +1,7 @@
 window.MODEL_TIMELINE_DATA = {
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-07-17",
   "period_start": "2017-06-12",
-  "period_end": "2026-07-01",
+  "period_end": "2026-07-16",
   "notes": [
     "회사별 웹서치(공식 출처 우선)로 주요 모델 업데이트를 전수 정리했습니다."
   ],
@@ -2247,6 +2247,78 @@ window.MODEL_TIMELINE_DATA = {
       "summary_en": "Controls lifted, Mythos 5 restored to some US orgs",
       "source_url": "https://www.anthropic.com/news/redeploying-fable-5",
       "source_type": "web",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-01",
+      "provider": "Google",
+      "model": "Gemini Omni Flash",
+      "event_type": "release",
+      "summary_ko": "제미나이 옴니 플래시 프리뷰, 영상 생성",
+      "summary_en": "Gemini Omni Flash preview, native video generation",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/",
+      "source_type": "official_blog",
+      "significance": "major",
+      "category": "video"
+    },
+    {
+      "date": "2026-07-01",
+      "provider": "Google",
+      "model": "Nano Banana 2 Lite",
+      "event_type": "release",
+      "summary_ko": "나노바나나 2 라이트 이미지 모델 GA",
+      "summary_en": "Nano Banana 2 Lite image model reaches GA",
+      "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-lite-and-gemini-omni-flash-available",
+      "source_type": "official_blog",
+      "significance": "minor",
+      "category": "image"
+    },
+    {
+      "date": "2026-07-08",
+      "provider": "xAI",
+      "model": "Grok 4.5",
+      "event_type": "release",
+      "summary_ko": "Grok 4.5 공개, 커서 학습 코딩 모델",
+      "summary_en": "Grok 4.5 released, Cursor-trained coding model",
+      "source_url": "https://x.ai/news/grok-4-5",
+      "source_type": "official_blog",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-09",
+      "provider": "OpenAI",
+      "model": "GPT-5.6 Sol/Terra/Luna",
+      "event_type": "release",
+      "summary_ko": "GPT-5.6 Sol·Terra·Luna 정식 출시(GA)",
+      "summary_en": "GPT-5.6 Sol, Terra, Luna reach general availability",
+      "source_url": "https://openai.com/index/previewing-gpt-5-6-sol/",
+      "source_type": "official_blog",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-09",
+      "provider": "Meta",
+      "model": "Muse Spark 1.1",
+      "event_type": "release",
+      "summary_ko": "뮤즈 스파크 1.1, 메타 첫 유료 API",
+      "summary_en": "Muse Spark 1.1, Meta's first paid agentic model API",
+      "source_url": "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+      "source_type": "official_blog",
+      "significance": "major",
+      "category": "multimodal"
+    },
+    {
+      "date": "2026-07-16",
+      "provider": "Moonshot AI",
+      "model": "Kimi K3",
+      "event_type": "release",
+      "summary_ko": "키미 K3 공개, 2.8조 오픈웨이트 MoE",
+      "summary_en": "Kimi K3, 2.8T open-weight MoE, 1M context",
+      "source_url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/",
+      "source_type": "news",
       "significance": "major",
       "category": "llm"
     }
