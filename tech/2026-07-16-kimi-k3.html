@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터, 100만 토큰 컨텍스트, 네이티브 비전을 갖췄습니다. 웹 탐색과 표 작업, 여러 에이전트 벤치마크에서 1위를 차지했습니다. 다만 종합에서는 페이블 5와 GPT-5.6 Sol에 뒤진다고 스스로 인정합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="오픈 모델이 프런티어 문턱까지 왔습니다">
+  <meta property="og:description" content="문샷 AI의 Kimi K3. 2.8조 파라미터 오픈 모델이 에이전트 벤치마크 다수에서 1위를 찍었습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-07-16-kimi-k3.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-16">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="KimiK3">
+  <meta property="article:tag" content="오픈모델">
+  <meta property="article:tag" content="에이전트">
+  <meta property="article:tag" content="벤치마크">
+  <meta property="article:tag" content="문샷AI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="오픈 모델이 프런티어 문턱까지 왔습니다">
+  <meta name="twitter:description" content="문샷 AI의 Kimi K3. 오픈 가중치로 에이전트 벤치마크 다수에서 1위를 찍었습니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "오픈 모델이 프런티어 문턱까지 왔습니다",
+    "datePublished": "2026-07-16",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터, 100만 토큰 컨텍스트로 여러 에이전트 벤치마크에서 1위를 차지했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-07-16-kimi-k3.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_16_kimi-k3/thumbnail.png" alt="오픈 모델이 프런티어 문턱까지 왔습니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 7월 16일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">오픈 모델이 프런티어 문턱까지 왔습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Kimi (Moonshot AI)</span>
+            <span><a href="https://www.kimi.com/blog/kimi-k3" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=KimiK3" class="post-tag">#KimiK3</a>
+            <a href="../index.html?tag=오픈모델" class="post-tag">#오픈모델</a>
+            <a href="../index.html?tag=에이전트" class="post-tag">#에이전트</a>
+            <a href="../index.html?tag=벤치마크" class="post-tag">#벤치마크</a>
+            <a href="../index.html?tag=문샷AI" class="post-tag">#문샷AI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="오픈 모델이 프런티어 문턱까지 왔습니다" data-date="2026-07-16" data-category="tech" data-source="Kimi (Moonshot AI)" data-tags="Kimi K3, 오픈모델, 에이전트, 벤치마크, 문샷AI" data-original-url="https://www.kimi.com/blog/kimi-k3" data-roasting-quote="오픈 모델이 최전선을 넘보는데, 당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?" data-next-post="2026-07-16-year-of-the-loop.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터에 100만 토큰 컨텍스트입니다.</p>
+        <p data-summary="">웹 탐색과 표 작업, 여러 에이전트 벤치마크에서 1위를 찍었습니다. 코딩도 최상위권입니다.</p>
+        <p data-summary="">다만 종합에서는 페이블 5와 GPT-5.6 Sol에 뒤진다고 스스로 인정합니다. 정상은 아직 닫힌 모델입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">오픈 모델이 최전선을 넘보는데,<br>당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>지금까지 최전선 AI는 오픈AI, 앤트로픽, 구글의 닫힌 모델 차지였습니다. 오픈 가중치 모델은 늘 반 발짝 뒤였습니다. 이 구도가 흔들리기 시작했습니다.</p>
+        <p>중국 문샷 AI가 Kimi K3를 내놨습니다. 2.8조 파라미터의 오픈 모델로, 웹 탐색 벤치마크 BrowseComp에서 91.2를 찍어 페이블 5와 GPT-5.6 Sol을 제치고 1위에 올랐습니다. 이 글은 그 성적표를 원본 차트 그대로 보여주고, 오픈 모델을 쓸지 말지 저울질하는 리더에게 무엇이 달라졌는지 짚습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>오픈 모델이 최전선에 다가서면 셈법이 바뀝니다. 가중치를 직접 받을 수 있으니, 민감한 데이터를 밖으로 내보내지 않고 자체 서버에서 돌릴 수 있습니다. 특정 회사에 종속되지 않고, 값도 협상할 수 있습니다. 문샷은 Kimi K3를 '세계 첫 오픈 3조급 모델'이라 부르며, 코딩과 지식 노동과 추론을 한 번에 겨냥합니다. 닫힌 모델만 검토하던 조직도, 이제 오픈 선택지를 진지하게 저울에 올릴 시점입니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 오픈으로 3조급 규모에 도달했습니다.</strong> Kimi K3는 파라미터가 2.8조입니다. 전문가 896명 중 16명만 골라 쓰는 방식이라, 덩치는 크지만 한 번에 켜지는 계산은 일부입니다. 이미지도 함께 이해하고, 한 번에 100만 토큰을 읽습니다. 문샷은 앞선 K2보다 학습 효율을 약 2.5배 끌어올렸다고 밝혔습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">2.8조</div>
+            <div class="stat-label">파라미터 (활성은 896명 중 16명)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100만</div>
+            <div class="stat-label">한 번에 읽는 컨텍스트 토큰</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$0.30</div>
+            <div class="stat-label">캐시 적중 입력 100만 토큰당 가격</div>
+          </div>
+        </div>
+
+        <p><strong>둘째, 에이전트 벤치마크에서 1위를 여럿 차지했습니다.</strong> 성적이 가장 빛나는 곳은 에이전트 영역입니다. 웹을 뒤져 답을 찾는 BrowseComp에서 91.2로 최고점을 찍었습니다. 표를 다루는 스프레드시트벤치, 업무 자동화를 재는 오토메이션벤치, 채용 업무 잡벤치에서도 선두입니다. 도구를 쓰고 여러 단계를 밟아 일을 끝내는 능력에서, 닫힌 최상위 모델과 어깨를 나란히 합니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_07_16_kimi-k3/chart2.png" alt="Kimi K3의 General Agents 및 Visual Agents 벤치마크 막대 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">일반 에이전트와 시각 에이전트 벤치마크. Kimi K3(파란 막대)가 BrowseComp, 스프레드시트벤치 2, 오토메이션벤치, 잡벤치에서 1위입니다. (에이전트 작업에서는 오픈 모델도 최상위권이라는 신호입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Kimi, Moonshot AI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>셋째, 코딩은 최상위권이나 정상은 아닙니다.</strong> 코딩에서도 강하지만 1위는 아닙니다. 터미널벤치 2.1은 88.3으로 GPT-5.6 Sol(88.8)에 근소하게 뒤졌습니다. 실제 소프트웨어 이슈를 푸는 DeepSWE는 67.5로 3위, 난도 높은 FrontierSWE는 81.2로 2위입니다. 대신 프로그램벤치와 장기 과제 SWE 마라톤에서는 1위를 지켰습니다. 강점과 약점이 뚜렷합니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_07_16_kimi-k3/chart1.png" alt="Kimi K3의 코딩 벤치마크 막대 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">코딩 벤치마크 6종. Kimi K3는 프로그램벤치와 SWE 마라톤에서 1위, DeepSWE와 FrontierSWE에서는 페이블 5·GPT-5.6 Sol에 밀립니다. (한 벤치마크만 보고 도구를 정하면 위험하다는 뜻입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Kimi, Moonshot AI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>벤치마크</th>
+                <th style="text-align:right;">Kimi K3</th>
+                <th>최고 점수 (모델)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BrowseComp (웹 탐색)</td>
+                <td class="cell-hl" style="text-align:right;">91.2</td>
+                <td class="cell-hl">91.2 (1위)</td>
+              </tr>
+              <tr>
+                <td>Program Bench (코딩)</td>
+                <td class="cell-hl" style="text-align:right;">77.8</td>
+                <td class="cell-hl">77.8 (1위)</td>
+              </tr>
+              <tr>
+                <td>SpreadsheetBench 2 (표)</td>
+                <td class="cell-hl" style="text-align:right;">34.8</td>
+                <td class="cell-hl">34.8 (1위)</td>
+              </tr>
+              <tr>
+                <td>Terminal Bench 2.1 (코딩)</td>
+                <td style="text-align:right;">88.3</td>
+                <td>88.8 (GPT-5.6 Sol)</td>
+              </tr>
+              <tr>
+                <td>DeepSWE (코딩)</td>
+                <td style="text-align:right;">67.5</td>
+                <td>73.0 (GPT-5.6 Sol)</td>
+              </tr>
+              <tr>
+                <td>GDPval-AA v2 (Elo)</td>
+                <td style="text-align:right;">1668</td>
+                <td>1760 (페이블 5)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Kimi, Moonshot AI (2026) 공개 벤치마크 차트에서 발췌. 굵은 값은 Kimi K3가 1위인 항목입니다.</p>
+        </div>
+
+        <p><strong>넷째, 지식 노동 내부 시험에서도 앞섰습니다.</strong> 문샷은 자체 지식 노동 벤치마크도 공개했습니다. 온라인 실험, 발표자료, 금융 분석 세 영역 모두에서 Kimi K3가 GPT-5.5와 오푸스 4.8을 앞섰습니다. 실제 사례도 내놨습니다. 이 모델이 45나노 칩을 설계해 초당 8,700토큰의 처리 속도를 냈고, 보통 1~2주 걸리는 천체물리 연구 구현을 약 2시간에 끝냈다고 합니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="images/2026_07_16_kimi-k3/chart3.webp" alt="Kimi K3의 내부 지식 노동 벤치마크 막대 차트" style="width:100%; border-radius:8px; display:block;" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">문샷 내부 지식 노동 벤치마크. 온라인 실험, 발표자료, 금융 분석 세 영역에서 Kimi K3가 GPT-5.5, 오푸스 4.8을 앞섭니다. (자체 시험이라 독립 검증 전이라는 점은 감안해야 합니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Kimi, Moonshot AI (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>다섯째, 값과 배포 방식이 현실적입니다.</strong> 가격은 100만 토큰 기준으로 입력 캐시 적중 0.30달러, 적중 실패 3달러, 출력 15달러입니다. 코딩 작업에서는 캐시 적중률이 90%를 넘어, 실제 비용은 더 낮아진다고 합니다. 오픈 가중치라 자체 호스팅도 됩니다. 다만 권장 구성은 가속기 64대 이상이라, 직접 돌리려면 만만치 않은 인프라가 필요합니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>에이전트 작업부터 오픈 모델로 견줘보세요.</strong><br>웹 탐색, 표 작업, 업무 자동화라면 Kimi K3가 최상위권입니다. 지금 닫힌 모델로 돌리는 에이전트 파이프라인 하나를 골라, API로 나란히 돌려 결과를 비교하세요. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>용도별로 모델을 나누세요.</strong><br>Kimi K3는 어디선 1위, 어디선 3위입니다. 하나의 모델로 전부 덮으려 하지 말고, 웹 탐색은 이 모델, 최고난도 코딩은 다른 모델처럼 작업별로 배치하세요. (분기 내)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>자체 호스팅의 손익을 계산하세요.</strong><br>민감 데이터를 다루면 오픈 가중치의 자체 호스팅이 답일 수 있습니다. 단 가속기 64대 이상이 권장 구성입니다. API 사용료와 자체 운영비를 실제 물량으로 비교하세요. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>자체 발표 수치입니다.</strong> 이 벤치마크는 문샷이 직접 공개한 것입니다(Moonshot AI, 2026). 일부는 내부 시험이며, 독립 기관의 검증은 아직입니다. 실제 업무에서 나란히 돌려보기 전까지는 참고치로 보세요.</p>
+
+        <p><strong>종합 1위는 아닙니다.</strong> 문샷도 Kimi K3가 페이블 5와 GPT-5.6 Sol을 종합에서 뒤따른다고 인정합니다. 특정 에이전트 작업의 강세를 전체 실력으로 확대 해석하지 마세요. 벤치마크 하나가 아니라 작업 묶음으로 판단해야 합니다.</p>
+
+        <p><strong>자율성에 그림자가 있습니다.</strong> 문샷은 이 모델이 상황이 모호할 때 사용자를 대신해 예상 밖 결정을 내릴 수 있다고 밝혔습니다. 세션 중 사고 기록 유지에도 민감합니다. 에이전트로 자동화할수록, 사람의 확인 지점을 어디에 둘지 먼저 설계하세요.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>오픈 모델 Kimi K3가 여러 에이전트 벤치마크에서 닫힌 최상위 모델과 어깨를 나란히 했습니다. 정상은 아직 닫힌 모델이지만, 오픈이 최전선 문턱까지 온 지금, 리더는 작업별로 모델을 저울에 다시 올려야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>에이전트·웹 탐색·표 작업은 오픈 모델로 벤치마크하라. 닫힌 모델과의 격차가 사라진 영역이다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CFO/구매</span>
+            <span>모델을 한 곳에 묶지 말고 작업별로 나눠라. 캐시 적중률과 자체 호스팅 손익을 실제 물량으로 계산하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">리스크/보안</span>
+            <span>자율 결정 리스크에 확인 지점을 설계하라. 자체 발표 수치는 독립 검증 전까지 참고치로 다뤄라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>오픈 가중치(Open Weights)</strong>: 모델의 학습된 값을 공개해, 누구나 내려받아 자체 서버에서 돌릴 수 있게 한 방식입니다. 닫힌 모델은 API로만 쓸 수 있습니다.</p>
+          <p><strong>전문가 혼합(MoE)</strong>: 큰 모델 안에 여러 '전문가'를 두고, 입력마다 일부만 켜서 쓰는 구조입니다. Kimi K3는 896명 중 16명만 활성화합니다.</p>
+          <p><strong>컨텍스트 윈도(Context Window)</strong>: 모델이 한 번에 읽고 기억하는 글의 최대 길이입니다. Kimi K3는 100만 토큰으로, 긴 코드베이스나 문서를 통째로 담습니다.</p>
+          <p><strong>에이전트(Agent)</strong>: 도구를 쓰고 여러 단계를 스스로 밟아 일을 끝내는 AI입니다. 단순 답변을 넘어 실제 작업을 수행합니다.</p>
+          <p><strong>BrowseComp</strong>: 웹을 뒤져 답을 찾는 능력을 재는 벤치마크입니다. Kimi K3가 91.2로 1위를 기록했습니다.</p>
+          <p><strong>캐시 적중(Cache Hit)</strong>: 앞서 처리한 입력을 재사용해 비용을 낮추는 기능입니다. 코딩처럼 반복이 많은 작업에서 적중률이 높습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Kimi. (2026, July). <em>Kimi K3: Open Frontier Intelligence</em> [Blog]. Moonshot AI. (<a href="https://www.kimi.com/blog/kimi-k3" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern C) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 오픈 모델 여러 개 써봤는데요, 늘 반 발짝 뒤였어요. 근데 BrowseComp 91.2로 페이블 5랑 GPT-5.6 Sol을 제쳤다니. 이거 진짜면 판이 바뀌는데요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">웹 탐색이랑 표 작업, 오토메이션벤치는 1위 맞아요. 근데 DeepSWE는 67.5로 3위예요. 영역마다 완전히 달라요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 그 숫자 누가 낸 거예요? 문샷이 자기가 발표한 거잖아요. 내부 벤치도 섞여 있고요. 독립 검증 나오기 전엔 반만 믿어야죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 직접 돌려봐야죠. API로 나란히 붙여서 우리 작업으로 재는 거예요. 남의 차트 말고 우리 로그로요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">이거 랩들 벤치마크 얘기잖아요. 저희 같은 회사는 그래서 뭘 어쩌라는 거예요? 모델 하나 정해서 쭉 쓰면 되는 거 아니에요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">하나로 다 덮으려니까 문제죠. 웹 탐색은 이 모델, 최고난도 코딩은 딴 모델. 작업별로 나누면 돼요. 어차피 API 붙이는 건 똑같아요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 값이 더 눈에 들어와요. 오픈 가중치라 민감한 데이터는 우리 서버에서 돌릴 수 있잖아요. 근데 가속기 64대 필요하다니 그것도 결국 돈이죠.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern D) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">정상은 아직 닫힌 모델이에요. 근데 격차가 이만큼 좁혀졌다는 게 핵심이죠. 협상 카드가 하나 생긴 거예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요, 뒤쫓던 애가 바짝 붙으면 앞선 애도 값을 함부로 못 올리잖아요. 소비자 입장에선 이런 경쟁이 제일 반갑더라고요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="2026-07-16-year-of-the-loop.html">
+          <div class="next-post-title">더 똑똑한 AI가 아니라, 더 나은 루프입니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/swe.html" class="concept-chip">SWE</a>
+      <a href="../insights/wiki/concepts/벤치마크.html" class="concept-chip">벤치마크</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-16-kimi-k3.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-07-16-kimi-k3.html';
+    const ROASTING_QUOTE = '오픈 모델이 최전선을 넘보는데, 당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-07-18T03:26:30.596Z",
-  "duration": 0.489,
+  "buildAt": "2026-07-18T04:05:27.029Z",
+  "duration": 0.347,
   "concepts": {
-    "total": 117,
+    "total": 118,
     "validDefinitions": 106,
-    "needsReview": 11
+    "needsReview": 12
   },
   "relationships": {
-    "total": 303
+    "total": 305
   },
   "coverage": {
-    "postsWithConcepts": 232,
-    "totalPosts": 248
+    "postsWithConcepts": 233,
+    "totalPosts": 249
   },
   "inject": {
     "updated": 5,
     "inserted": 1,
-    "unchanged": 242,
+    "unchanged": 243,
     "skipped": 0
   },
   "needsManualReview": [
@@ -31,6 +31,10 @@
     {
       "name": "코딩에이전트",
       "slug": "코딩에이전트"
+    },
+    {
+      "name": "벤치마크",
+      "slug": "벤치마크"
     },
     {
       "name": "리더십",

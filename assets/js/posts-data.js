@@ -1,6 +1,24 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "오픈 모델이 프런티어 문턱까지 왔습니다",
+      "date": "2026-07-16",
+      "category": "tech",
+      "source": "Kimi (Moonshot AI)",
+      "tags": [
+        "Kimi K3",
+        "오픈모델",
+        "에이전트",
+        "벤치마크",
+        "문샷AI"
+      ],
+      "slug": "2026-07-16-kimi-k3",
+      "file": "tech/2026-07-16-kimi-k3.html",
+      "summary": "문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터에 100만 토큰 컨텍스트로, 웹 탐색과 표 작업 등 여러 에이전트 벤치마크에서 1위를 찍었습니다. 다만 종합에서는 페이블 5와 GPT-5.6 Sol에 뒤진다고 스스로 인정합니다.",
+      "roasting_quote": "오픈 모델이 최전선을 넘보는데, 당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?",
+      "next_post": "tech/2026-07-16-year-of-the-loop.html"
+    },
+    {
       "title": "압력이 이기고, 윤리가 졌습니다",
       "date": "2026-07-15",
       "category": "leader",
@@ -16,7 +34,7 @@ window.POSTS_DATA = {
       "file": "leader/2026-07-15-why-i-left-google-deepmind.html",
       "summary": "딥마인드 연구원 앨릭스 터너가 구글의 군사 AI 계약에 반대하며 회사를 떠났습니다. 그는 사내 청원과 25쪽 감독 틀까지 만들었지만, 유명 인사들의 윤리 약속은 압력 앞에서 흔들렸습니다. 그의 결론은 하나입니다. 구속력 없는 원칙은 이해관계 앞에서 무너집니다.",
       "roasting_quote": "종이에 적은 원칙은 압력 앞에서 며칠이나 버팁니까? 당신의 조직은 그 약속에 강제력을 붙여 두었습니까?",
-      "next_post": "leader/2026-07-14-demis-hassabis-ai-safety-plan.html"
+      "next_post": "tech/2026-07-16-kimi-k3.html"
     },
     {
       "title": "같은 클로드도, 언어마다 다른 가치를 말합니다",

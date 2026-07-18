@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-18T03:26:30.596Z",
+  "generatedAt": "2026-07-18T04:05:27.029Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 117,
-    "totalRelationships": 303,
-    "totalPosts": 248,
+    "totalConcepts": 118,
+    "totalRelationships": 305,
+    "totalPosts": 249,
     "totalNewsletters": 56
   },
   "concepts": [
@@ -184,7 +184,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 55,
+      "frequency": 56,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -211,6 +211,7 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-implicit-organization-ai-agents",
         "2026-06-30-thinking-machines-expert-judgment",
+        "2026-07-16-kimi-k3",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-02-20-sovereign-ai",
@@ -246,7 +247,7 @@
         "nl-56"
       ],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2026-06-30",
+      "lastSeen": "2026-07-16",
       "needs_manual_review": false
     },
     {
@@ -260,7 +261,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 43,
+      "frequency": 44,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -300,6 +301,7 @@
         "2026-06-19-implicit-organization-ai-agents",
         "2026-07-01-un-ai-scientific-panel",
         "2026-07-04-field-guide-to-fable",
+        "2026-07-16-kimi-k3",
         "2026-07-16-year-of-the-loop",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
@@ -1265,6 +1267,29 @@
       "needs_manual_review": false
     },
     {
+      "id": "swe",
+      "slug": "swe",
+      "name": "SWE",
+      "aliases": [],
+      "definition": "SWE-bench를 가리킵니다. 실제 GitHub 이슈를 푸는 코딩 능력 평가입니다.",
+      "frequency": 7,
+      "category": "tech",
+      "posts": [
+        "2026-04-09-advisor-strategy-claude-opus",
+        "2026-04-23-gpt-5-5-agentic-coding",
+        "2026-04-24-deepseek-v4-pro-coding-benchmark",
+        "2026-05-07-natural-language-autoencoders",
+        "2026-07-16-kimi-k3"
+      ],
+      "newsletters": [
+        "nl-24",
+        "nl-26"
+      ],
+      "firstSeen": "2026-04-09",
+      "lastSeen": "2026-07-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "vc",
       "slug": "vc",
       "name": "VC",
@@ -1411,28 +1436,6 @@
       ],
       "firstSeen": "2025-03-05",
       "lastSeen": "2026-07-08",
-      "needs_manual_review": false
-    },
-    {
-      "id": "swe",
-      "slug": "swe",
-      "name": "SWE",
-      "aliases": [],
-      "definition": "SWE-bench를 가리킵니다. 실제 GitHub 이슈를 푸는 코딩 능력 평가입니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-04-09-advisor-strategy-claude-opus",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-04-24-deepseek-v4-pro-coding-benchmark",
-        "2026-05-07-natural-language-autoencoders"
-      ],
-      "newsletters": [
-        "nl-24",
-        "nl-26"
-      ],
-      "firstSeen": "2026-04-09",
-      "lastSeen": "2026-05-07",
       "needs_manual_review": false
     },
     {
@@ -2203,6 +2206,24 @@
       "newsletters": [],
       "firstSeen": "2026-03-20",
       "lastSeen": "2026-07-03",
+      "needs_manual_review": true
+    },
+    {
+      "id": "벤치마크",
+      "slug": "벤치마크",
+      "name": "벤치마크",
+      "aliases": [],
+      "definition": "벤치마크는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "tech",
+      "posts": [
+        "2026-03-24-frontiermath-ai-solves-open-math",
+        "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
+        "2026-07-16-kimi-k3"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-24",
+      "lastSeen": "2026-07-16",
       "needs_manual_review": true
     },
     {
@@ -3152,13 +3173,13 @@
     },
     {
       "source": "GPU",
-      "target": "GPQA",
-      "strength": 4
+      "target": "SWE",
+      "strength": 2
     },
     {
       "source": "GPU",
-      "target": "SWE",
-      "strength": 2
+      "target": "GPQA",
+      "strength": 4
     },
     {
       "source": "GPU",
@@ -3253,7 +3274,7 @@
     {
       "source": "API",
       "target": "AI 에이전트",
-      "strength": 16
+      "strength": 17
     },
     {
       "source": "API",
@@ -3337,6 +3358,11 @@
     },
     {
       "source": "API",
+      "target": "SWE",
+      "strength": 4
+    },
+    {
+      "source": "API",
       "target": "GPQA",
       "strength": 3
     },
@@ -3349,11 +3375,6 @@
       "source": "API",
       "target": "CRM",
       "strength": 2
-    },
-    {
-      "source": "API",
-      "target": "SWE",
-      "strength": 3
     },
     {
       "source": "API",
@@ -3487,6 +3508,11 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "SWE",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
       "target": "GPQA",
       "strength": 2
     },
@@ -3538,6 +3564,11 @@
     {
       "source": "AI 에이전트",
       "target": "자기개선AI",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "벤치마크",
       "strength": 2
     },
     {
@@ -3692,12 +3723,12 @@
     },
     {
       "source": "CTO",
-      "target": "GPQA",
+      "target": "SWE",
       "strength": 3
     },
     {
       "source": "CTO",
-      "target": "SWE",
+      "target": "GPQA",
       "strength": 3
     },
     {
@@ -4137,13 +4168,13 @@
     },
     {
       "source": "MCP",
-      "target": "GPQA",
-      "strength": 2
+      "target": "SWE",
+      "strength": 3
     },
     {
       "source": "MCP",
-      "target": "SWE",
-      "strength": 3
+      "target": "GPQA",
+      "strength": 2
     },
     {
       "source": "MCP",
@@ -4226,6 +4257,21 @@
       "strength": 2
     },
     {
+      "source": "SWE",
+      "target": "GPQA",
+      "strength": 3
+    },
+    {
+      "source": "SWE",
+      "target": "코딩AI",
+      "strength": 2
+    },
+    {
+      "source": "SWE",
+      "target": "GDPval",
+      "strength": 2
+    },
+    {
       "source": "VC",
       "target": "미중갈등",
       "strength": 2
@@ -4233,11 +4279,6 @@
     {
       "source": "LLMs",
       "target": "RLHF",
-      "strength": 3
-    },
-    {
-      "source": "GPQA",
-      "target": "SWE",
       "strength": 3
     },
     {
@@ -4263,16 +4304,6 @@
     {
       "source": "CRM",
       "target": "ERP",
-      "strength": 2
-    },
-    {
-      "source": "SWE",
-      "target": "코딩AI",
-      "strength": 2
-    },
-    {
-      "source": "SWE",
-      "target": "GDPval",
       "strength": 2
     },
     {
