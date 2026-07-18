@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 57,
+    "title": "중국 공짜 모델에 흔들리는 미국 AI",
+    "date": "2026-07-18",
+    "img": "nl-57.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-57-%EC%A4%91%EA%B5%AD-%EA%B3%B5%EC%A7%9C-%EB%AA%A8%EB%8D%B8%EC%97%90-%ED%9D%94%EB%93%A4%EB%A6%AC%EB%8A%94-%EB%AF%B8%EA%B5%AD-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-bln0c/"
+  },
+  {
     "ep": 56,
     "title": "고래 싸움에 새우등 터지고 있는 네덜란드",
     "date": "2026-07-11",
