@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-17T13:26:07.067Z",
+  "generatedAt": "2026-07-18T03:26:30.596Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 115,
-    "totalRelationships": 302,
-    "totalPosts": 247,
+    "totalConcepts": 117,
+    "totalRelationships": 303,
+    "totalPosts": 248,
     "totalNewsletters": 56
   },
   "concepts": [
@@ -319,7 +319,7 @@
       "name": "AGI",
       "aliases": [],
       "definition": "범용 인공지능입니다. 인간 수준의 광범위한 인지 능력을 갖춘 AI를 가리킵니다.",
-      "frequency": 31,
+      "frequency": 32,
       "category": "newsletter",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -329,6 +329,7 @@
         "2026-04-13-jack-dorsey-company-as-intelligence",
         "2026-05-22-sundar-pichai-anxious-ai-future",
         "2026-06-10-from-agi-to-asi",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
         "2025-04-15-ai-from-learning-era-to-experience-era",
         "2025-05-10-jang-kangmyoung-the-future-that-came-first",
         "2025-05-15-thoughts-on-sam-altman-soft-singularity",
@@ -357,7 +358,7 @@
         "nl-46"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-06-10",
+      "lastSeen": "2026-07-14",
       "needs_manual_review": false
     },
     {
@@ -763,6 +764,37 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai-safety",
+      "slug": "ai-safety",
+      "name": "AI 안전",
+      "aliases": [
+        "AI안전",
+        "AI safety"
+      ],
+      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "frequency": 13,
+      "category": "tech",
+      "posts": [
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-02-23-persona-selection-model",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-07-natural-language-autoencoders",
+        "2026-05-08-teaching-claude-why",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-07-06-llm-global-workspace",
+        "2026-07-13-claude-values-models-languages",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
+        "2026-07-15-why-i-left-google-deepmind",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-07-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "ui",
       "slug": "ui",
       "name": "UI",
@@ -817,36 +849,6 @@
       ],
       "firstSeen": "2024-08-25",
       "lastSeen": "2026-03-17",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai-safety",
-      "slug": "ai-safety",
-      "name": "AI 안전",
-      "aliases": [
-        "AI안전",
-        "AI safety"
-      ],
-      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
-      "frequency": 12,
-      "category": "tech",
-      "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-23-persona-selection-model",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2026-07-06-llm-global-workspace",
-        "2026-07-13-claude-values-models-languages",
-        "2026-07-14-demis-hassabis-ai-safety-plan",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-07-14",
       "needs_manual_review": false
     },
     {
@@ -1434,6 +1436,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai윤리",
+      "slug": "ai윤리",
+      "name": "AI윤리",
+      "aliases": [],
+      "definition": "AI 개발과 사용에서 지켜야 할 도덕적 원칙입니다. 안전·공정·투명성·책임이 핵심입니다.",
+      "frequency": 6,
+      "category": "research",
+      "posts": [
+        "2026-06-24-why-ai-labs-hire-philosophers",
+        "2026-07-15-why-i-left-google-deepmind",
+        "2025-04-15-agatha-christie-writing-lessons",
+        "2025-05-10-conversations-children-have-with-ai-chatbots",
+        "2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans",
+        "2025-04-01-ai-is-stealing-our-stories"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-01",
+      "lastSeen": "2026-07-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "sec",
       "slug": "sec",
       "name": "SEC",
@@ -1574,26 +1597,6 @@
       "newsletters": [],
       "firstSeen": "2026-04-24",
       "lastSeen": "2026-07-13",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai윤리",
-      "slug": "ai윤리",
-      "name": "AI윤리",
-      "aliases": [],
-      "definition": "AI 개발과 사용에서 지켜야 할 도덕적 원칙입니다. 안전·공정·투명성·책임이 핵심입니다.",
-      "frequency": 5,
-      "category": "research",
-      "posts": [
-        "2026-06-24-why-ai-labs-hire-philosophers",
-        "2025-04-15-agatha-christie-writing-lessons",
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-05-20-ai-that-wants-to-be-human-vs-ai-for-humans",
-        "2025-04-01-ai-is-stealing-our-stories"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-01",
-      "lastSeen": "2026-06-24",
       "needs_manual_review": false
     },
     {
@@ -2039,6 +2042,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "거버넌스",
+      "slug": "거버넌스",
+      "name": "거버넌스",
+      "aliases": [],
+      "definition": "거버넌스는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "leader",
+      "posts": [
+        "2025-05-01-indonesia-startup-scandal",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
+        "2026-07-15-why-i-left-google-deepmind"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-01",
+      "lastSeen": "2026-07-15",
+      "needs_manual_review": true
+    },
+    {
       "id": "구글",
       "slug": "구글",
       "name": "구글",
@@ -2311,6 +2332,24 @@
       "firstSeen": "2026-04-11",
       "lastSeen": "2026-04-11",
       "needs_manual_review": false
+    },
+    {
+      "id": "리더십",
+      "slug": "리더십",
+      "name": "리더십",
+      "aliases": [],
+      "definition": "리더십는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "leader",
+      "posts": [
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-04-14-harvard-what-makes-a-good-learner",
+        "2026-07-15-why-i-left-google-deepmind"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-07-15",
+      "needs_manual_review": true
     },
     {
       "id": "코딩ai",
@@ -2838,6 +2877,11 @@
     },
     {
       "source": "LLM",
+      "target": "AI 안전",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "UI",
       "strength": 5
     },
@@ -2845,11 +2889,6 @@
       "source": "LLM",
       "target": "TPU",
       "strength": 4
-    },
-    {
-      "source": "LLM",
-      "target": "AI 안전",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -3713,12 +3752,12 @@
     },
     {
       "source": "IT",
-      "target": "TPU",
+      "target": "AI 안전",
       "strength": 2
     },
     {
       "source": "IT",
-      "target": "AI 안전",
+      "target": "TPU",
       "strength": 2
     },
     {
@@ -4027,6 +4066,26 @@
       "strength": 2
     },
     {
+      "source": "AI 안전",
+      "target": "AI규제",
+      "strength": 3
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI 정렬",
+      "strength": 2
+    },
+    {
       "source": "TPU",
       "target": "CFO",
       "strength": 3
@@ -4044,21 +4103,6 @@
     {
       "source": "TPU",
       "target": "EPS",
-      "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI규제",
-      "strength": 3
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI거버넌스",
-      "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI 정렬",
       "strength": 2
     },
     {

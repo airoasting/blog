@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/leader/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1402,4 +1402,5 @@
   <url><loc>https://airoasting.github.io/blog/tech/2026-07-16-year-of-the-loop.html</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/research/2026-07-09-ai-writing-westminster.html</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/tech/2026-07-13-claude-values-models-languages.html</loc><lastmod>2026-07-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/leader/2026-07-15-why-i-left-google-deepmind.html</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

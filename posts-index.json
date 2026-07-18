@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "압력이 이기고, 윤리가 졌습니다",
+      "date": "2026-07-15",
+      "category": "leader",
+      "source": "turntrout.com (Alex Turner)",
+      "tags": [
+        "AI윤리",
+        "거버넌스",
+        "딥마인드",
+        "AI안전",
+        "리더십"
+      ],
+      "slug": "2026-07-15-why-i-left-google-deepmind",
+      "file": "leader/2026-07-15-why-i-left-google-deepmind.html",
+      "summary": "딥마인드 연구원 앨릭스 터너가 구글의 군사 AI 계약에 반대하며 회사를 떠났습니다. 그는 사내 청원과 25쪽 감독 틀까지 만들었지만, 유명 인사들의 윤리 약속은 압력 앞에서 흔들렸습니다. 그의 결론은 하나입니다. 구속력 없는 원칙은 이해관계 앞에서 무너집니다.",
+      "roasting_quote": "종이에 적은 원칙은 압력 앞에서 며칠이나 버팁니까? 당신의 조직은 그 약속에 강제력을 붙여 두었습니까?",
+      "next_post": "leader/2026-07-14-demis-hassabis-ai-safety-plan.html"
+    },
+    {
       "title": "같은 클로드도, 언어마다 다른 가치를 말합니다",
       "date": "2026-07-13",
       "category": "tech",
@@ -16,7 +34,7 @@
       "file": "tech/2026-07-13-claude-values-models-languages.html",
       "summary": "앤트로픽이 클로드 대화 30만 건을 분석해, 클로드가 드러내는 가치를 네 개의 축으로 정리했습니다. 모델마다 성격이 다릅니다. 소네트는 따뜻하고, 오푸스 4.7은 신중하고 깐깐합니다. 언어가 바뀌면 가치도 바뀝니다. 같은 과제라도 영어로 물을 때와 아랍어로 물을 때 다른 가치를 말합니다.",
       "roasting_quote": "당신의 팀이 쓰는 AI, 영어로 쓸 때와 한국어로 쓸 때 같은 판단을 한다고 확신하십니까?",
-      "next_post": "tech/2026-07-06-llm-global-workspace.html"
+      "next_post": "leader/2026-07-15-why-i-left-google-deepmind.html"
     },
     {
       "title": "AI가 쓴 글에는 냄새가 남습니다",

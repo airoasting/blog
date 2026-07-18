@@ -1,25 +1,29 @@
 {
-  "buildAt": "2026-07-17T13:26:07.067Z",
-  "duration": 0.694,
+  "buildAt": "2026-07-18T03:26:30.596Z",
+  "duration": 0.489,
   "concepts": {
-    "total": 115,
+    "total": 117,
     "validDefinitions": 106,
-    "needsReview": 9
+    "needsReview": 11
   },
   "relationships": {
-    "total": 302
+    "total": 303
   },
   "coverage": {
-    "postsWithConcepts": 230,
-    "totalPosts": 247
+    "postsWithConcepts": 232,
+    "totalPosts": 248
   },
   "inject": {
-    "updated": 3,
-    "inserted": 0,
-    "unchanged": 244,
+    "updated": 5,
+    "inserted": 1,
+    "unchanged": 242,
     "skipped": 0
   },
   "needsManualReview": [
+    {
+      "name": "거버넌스",
+      "slug": "거버넌스"
+    },
     {
       "name": "AI위험",
       "slug": "ai위험"
@@ -27,6 +31,10 @@
     {
       "name": "코딩에이전트",
       "slug": "코딩에이전트"
+    },
+    {
+      "name": "리더십",
+      "slug": "리더십"
     },
     {
       "name": "의사결정",
