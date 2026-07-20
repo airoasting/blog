@@ -19,6 +19,24 @@
       "next_post": "tech/2026-07-16-year-of-the-loop.html"
     },
     {
+      "title": "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다",
+      "date": "2026-07-15",
+      "category": "tech",
+      "source": "Cerebras Blog (Cerebras Systems)",
+      "tags": [
+        "지식베이스",
+        "사내검색",
+        "RAG",
+        "세레브라스",
+        "MCP"
+      ],
+      "slug": "2026-07-15-cerebras-knowledge-base",
+      "file": "tech/2026-07-15-cerebras-knowledge-base.html",
+      "summary": "세레브라스의 사내 지식베이스가 하루 1만 5천 건의 질문을 받습니다. 자료를 한곳에 모으는 대신 슬랙, 코드 저장소, 문서에서 있는 그대로 끌어옵니다. 검색은 네 가지 방식을 동시에 돌리고 순위는 합의로 정합니다.",
+      "roasting_quote": "사내 정보를 한곳에 모으자는 프로젝트, 이번이 몇 번째입니까?",
+      "next_post": "tech/2026-07-16-kimi-k3.html"
+    },
+    {
       "title": "압력이 이기고, 윤리가 졌습니다",
       "date": "2026-07-15",
       "category": "leader",

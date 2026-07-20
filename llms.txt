@@ -21,15 +21,16 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
-- 2026-07-16 [기업] 당신이 쓰는 AI, 중국이 통제할 수도 있습니다 — /blog/company/2026-07-16-sovereign-ai-pipe-dream.html
 - 2026-07-16 [기술] 중국 오픈 모델이 미국 모델 성능의 문턱까지 다다랐습니다 — /blog/tech/2026-07-16-kimi-k3.html
 - 2026-07-16 [기술] 더 똑똑한 AI가 아니라, 더 나은 루프입니다 — /blog/tech/2026-07-16-year-of-the-loop.html
+- 2026-07-16 [기업] 당신이 쓰는 AI, 중국이 통제할 수도 있습니다 — /blog/company/2026-07-16-sovereign-ai-pipe-dream.html
+- 2026-07-15 [기술] 하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다 — /blog/tech/2026-07-15-cerebras-knowledge-base.html
 - 2026-07-15 [리더] 압력이 이기고, 윤리가 졌습니다 — /blog/leader/2026-07-15-why-i-left-google-deepmind.html
 - 2026-07-14 [리더] 하사비스가 AI 규제의 밑그림을 그렸습니다 — /blog/leader/2026-07-14-demis-hassabis-ai-safety-plan.html
-- 2026-07-13 [리서치] AI 회의론자마저 지금 행동하라 했습니다 — /blog/research/2026-07-13-we-must-act-now-economists-statement.html
 - 2026-07-13 [기술] 같은 클로드도, 언어마다 다른 가치를 말합니다 — /blog/tech/2026-07-13-claude-values-models-languages.html
-- 2026-07-09 [생존] AI 실업 종말론은 오독입니다 — /blog/survival/2026-07-09-ai-job-apocalypse-misread.html
+- 2026-07-13 [리서치] AI 회의론자마저 지금 행동하라 했습니다 — /blog/research/2026-07-13-we-must-act-now-economists-statement.html
 - 2026-07-09 [리서치] AI가 쓴 글에는 냄새가 남습니다 — /blog/research/2026-07-09-ai-writing-westminster.html
+- 2026-07-09 [생존] AI 실업 종말론은 오독입니다 — /blog/survival/2026-07-09-ai-job-apocalypse-misread.html
 - 2026-07-08 [기업] AI에게 같은 걸 두 번 고쳤다면, 스킬입니다 — /blog/company/2026-07-08-anthropic-marketing-ops-cowork-skills.html
 - 2026-07-06 [기술] AI의 속내를 읽는 렌즈가 나왔습니다 — /blog/tech/2026-07-06-llm-global-workspace.html
 - 2026-07-04 [기업] 받아쓰기라던 AI, 규제를 빠져나갔습니다 — /blog/company/2026-07-04-ai-scribes-regulatory-gap.html

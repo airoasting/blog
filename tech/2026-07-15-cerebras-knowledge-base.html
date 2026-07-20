@@ -1,0 +1,3943 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="세레브라스가 사내 지식베이스를 만들어 하루 1만 5천 건의 질문을 받고 있습니다. 데이터를 한곳에 모으는 대신 슬랙, 깃허브, 문서에서 그대로 끌어왔습니다. 검색은 네 가지 방식을 섞고 순위는 합의로 정합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다">
+  <meta property="og:description" content="세레브라스의 사내 지식베이스. 데이터를 한곳에 모으지 않고, 있는 자리에서 끌어오는 설계입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-07-15-cerebras-knowledge-base.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-15">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="지식베이스">
+  <meta property="article:tag" content="사내검색">
+  <meta property="article:tag" content="RAG">
+  <meta property="article:tag" content="세레브라스">
+  <meta property="article:tag" content="MCP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다">
+  <meta name="twitter:description" content="데이터를 한곳에 모으지 않고, 있는 자리에서 끌어오는 사내 지식베이스 설계입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다",
+    "datePublished": "2026-07-15",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "세레브라스가 사내 지식베이스를 만들어 하루 1만 5천 건의 질문을 받고 있습니다. 데이터를 한곳에 모으는 대신 있는 자리에서 끌어오는 설계입니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-07-15-cerebras-knowledge-base.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_15_cerebras-knowledge-base/thumbnail.png" alt="하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 7월 15일</span>
+          <span class="post-read-time">14분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Cerebras Blog (Cerebras Systems)</span>
+            <span><a href="https://www.cerebras.ai/blog/how-we-built-our-knowledge-base" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=지식베이스" class="post-tag">#지식베이스</a>
+            <a href="../index.html?tag=사내검색" class="post-tag">#사내검색</a>
+            <a href="../index.html?tag=RAG" class="post-tag">#RAG</a>
+            <a href="../index.html?tag=세레브라스" class="post-tag">#세레브라스</a>
+            <a href="../index.html?tag=MCP" class="post-tag">#MCP</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다" data-date="2026-07-15" data-category="tech" data-source="Cerebras Blog (Cerebras Systems)" data-tags="지식베이스, 사내검색, RAG, 세레브라스, MCP" data-original-url="https://www.cerebras.ai/blog/how-we-built-our-knowledge-base" data-roasting-quote="사내 정보를 한곳에 모으자는 프로젝트, 이번이 몇 번째입니까?" data-next-post="2026-07-16-kimi-k3.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <style>
+        .cb-fig { background-color: #fbfbfb !important; color: #171717 !important; border: 1px solid rgba(0,0,0,0.10); border-radius: 10px; max-width: 100% !important; }
+        .cb-fig svg { max-width: 100%; height: auto; }
+        @media (max-width: 640px) { .cb-fig { padding: 20px 14px !important; } }
+        .post-figure .cb-fig { margin: 0 auto !important; }
+      </style>
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">세레브라스의 사내 지식베이스가 하루 1만 5천 건의 질문을 받습니다. 출시 3개월 만의 기록입니다.</p>
+        <p data-summary="">비결은 자료를 한곳에 모으지 않은 것입니다. 슬랙, 코드 저장소, 문서에서 있는 그대로 끌어옵니다.</p>
+        <p data-summary="">검색은 네 가지 방식을 동시에 돌리고, 순위는 합의로 정합니다. 하나만 믿지 않는 설계입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">사내 정보를 한곳에 모으자는 프로젝트,<br>이번이 몇 번째입니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>어느 회사에나 분기마다 같은 제안이 올라옵니다. 모든 정보를 한 플랫폼에 기록하자는 제안입니다. 단일 진실 원천이라는 이름이 붙습니다. 그리고 대개 실패합니다.</p>
+        <p>세레브라스는 반대로 갔습니다. 자료를 옮기지 않고, 각 도구에 남아 있는 그대로 끌어왔습니다. 결과는 하루 1만 5천 건의 질문입니다. 이 글은 그 설계도를 원문 도해 그대로 펼쳐 보입니다. 사내 AI 검색을 검토하는 리더가 무엇을 먼저 정해야 하는지도 짚습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>사내 AI 도구 도입에서 가장 흔한 실패는 모델 선택이 아닙니다. 자료를 어디서 어떻게 가져올지 정하지 못해 멈춥니다. 세레브라스는 데이터센터 운영, 칩 설계, 하드웨어, 학습, 추론, 클라우드로 팀이 갈라져 있습니다. 매년 수백 명이 새로 들어옵니다. 같은 질문이 채널마다 반복되는 회사라면, 남의 정답보다 남의 설계도가 더 쓸모 있습니다.</p>
+        <p>리더의 셈법도 바뀝니다. 사내 검색은 모델 계약이 아니라 데이터 연결 프로젝트입니다. 예산의 무게는 모델 사용료가 아니라, 소스를 붙이고 유지하는 사람에게 실립니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 자료를 옮기지 않고 있는 자리에서 끌어옵니다.</strong> 정보는 편한 곳에서 생깁니다. 문서의 수정 제안, 슬랙의 스레드, 깃허브의 코드 참조, 지라의 상태값입니다. 각 도구는 그 일에 맞게 수년간 다듬어졌습니다. 풀 리퀘스트를 구글 문서에서 논의하는 건 끔찍한 경험이라고 원문은 적습니다. 그래서 기존 행동을 거의 바꾸지 않는 쪽으로 설계했습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">15,000</div>
+            <div class="stat-label">하루 질문 수</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3개월</div>
+            <div class="stat-label">출시 후 경과 기간</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">40GB+</div>
+            <div class="stat-label">일부 내부 저장소 크기</div>
+          </div>
+        </div>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-001">
+  <style>  .cb-fig.cb-fig-001 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 0;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-001,
+  .cb-fig.cb-fig-001 *,
+  .cb-fig.cb-fig-001 *::before,
+  .cb-fig.cb-fig-001 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-001 button,
+  .cb-fig.cb-fig-001 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-001 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-001 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-001 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-001 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-001 {
+      width: 100%;
+      margin: 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-001 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-001 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-001 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-001 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-001 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-001 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-001 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-001 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-001 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-001 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-001 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-001 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-001 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-fig.cb-fig-001 *,
+    .cb-fig.cb-fig-001 *::before,
+    .cb-fig.cb-fig-001 *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 1ms !important;
+    }
+  }</style>
+  <svg viewBox="0 0 900 760" role="img" aria-labelledby="fig-001-title fig-001-desc" data-hero-stack>
+    <title id="fig-001-title">Exploded vertical stack of the internal knowledge base</title>
+    <desc id="fig-001-desc">Sources feed distillation, embeddings, retrieval, fusion, and synthesis layers.</desc>
+    <defs>
+      <marker id="arrow-001" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke-muted dash">
+      <path d="M235 104V656"/>
+      <path d="M665 104V656"/>
+      <path d="M450 152V608"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-50 stroke" points="235,656 450,608 665,656 450,704"/>
+      <polygon class="fill-100 stroke-muted" points="235,656 450,704 450,724 235,676"/>
+      <polygon class="fill-100 stroke-muted" points="450,704 665,656 665,676 450,724"/>
+      <path class="fill-white stroke" d="M414 634H458L476 648V676H414Z"/>
+      <path class="stroke" d="M458 634V648H476"/>
+      <path class="stroke-muted" d="M424 656H466M424 663H466M424 670H450"/>
+      <rect class="fill-white stroke-muted" x="486" y="652" width="24" height="13"/>
+      <rect class="fill-white stroke-muted" x="514" y="652" width="24" height="13"/>
+      <text class="svg-label-muted" font-size="8" x="495" y="662">1</text>
+      <text class="svg-label-muted" font-size="8" x="523" y="662">2</text>
+      <text class="svg-label" x="712" y="646">SYNTHESIS</text>
+      <text class="svg-label-muted" x="712" y="670">ANSWER + CITATIONS</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M712 656H674"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-100 stroke" points="235,550 450,502 665,550 450,598"/>
+      <polygon class="fill-50 stroke-muted" points="235,550 450,598 450,610 235,562"/>
+      <polygon class="fill-50 stroke-muted" points="450,598 665,550 665,562 450,610"/>
+      <text class="svg-label" x="36" y="540">FUSION + RERANK</text>
+      <text class="svg-label-muted" x="36" y="564">RRF (K=60) -&gt; LLM RERANK</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M196 550H226"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-50 stroke" points="235,442 450,394 665,442 450,490"/>
+      <polygon class="fill-100 stroke-muted" points="235,442 450,490 450,510 235,462"/>
+      <polygon class="fill-100 stroke-muted" points="450,490 665,442 665,462 450,510"/>
+      <polygon class="fill-white stroke" points="291.4,441.2 446.2,406.6 458.1,409.2 303.3,443.8"/>
+      <polygon class="fill-50 stroke" points="321.5,447.9 476.3,413.3 488.2,416 333.4,450.5"/>
+      <polygon class="fill-white stroke" points="351.6,454.6 506.4,420 518.3,422.7 363.5,457.2"/>
+      <polygon class="fill-50 stroke" points="381.7,461.3 536.5,426.8 548.4,429.4 393.6,464"/>
+      <polygon class="fill-white stroke" points="411.8,468 566.6,433.5 578.5,436.1 423.7,470.7"/>
+      <polygon class="fill-50 stroke" points="441.9,474.8 596.7,440.2 608.6,442.8 453.8,477.4"/>
+      <text class="svg-label" x="712" y="432">RETRIEVAL</text>
+      <text class="svg-label-muted" x="712" y="456">SIX LISTS IN PARALLEL</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M712 442H674"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-100 stroke" points="235,322 450,274 665,322 450,370"/>
+      <polygon class="fill-100 stroke-muted" points="235,322 450,370 450,390 235,342"/>
+      <polygon class="fill-100 stroke-muted" points="450,370 665,322 665,342 450,390"/>
+      <ellipse class="fill-300 stroke" opacity="0.55" cx="450" cy="322" rx="150" ry="34"/>
+      <ellipse class="stroke-muted" cx="450" cy="322" rx="95" ry="21"/>
+      <ellipse class="fill-white stroke" cx="450" cy="322" rx="20" ry="4.5"/>
+      <path class="stroke-muted" d="M469 320.5 591 310"/>
+      <text class="svg-label" x="36" y="312">EMBEDDINGS</text>
+      <text class="svg-label-muted" x="36" y="336">PGVECTOR - 3072-DIM - HNSW</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M196 322H226"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-50 stroke" points="235,202 450,154 665,202 450,250"/>
+      <polygon class="fill-100 stroke-muted" points="235,202 450,250 450,270 235,222"/>
+      <polygon class="fill-100 stroke-muted" points="450,250 665,202 665,222 450,270"/>
+      <ellipse class="fill-50 stroke" cx="450" cy="190" rx="40" ry="10"/>
+      <path class="stroke" d="M410 190 444 216V232M490 190 456 216V232"/>
+      <path class="stroke-muted" d="M450 238V244"/>
+      <text class="svg-label" x="712" y="192">DISTILLATION</text>
+      <text class="svg-label-muted" x="712" y="216">LLM EXTRACTORS</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M712 202H674"/>
+    </g>
+    <g class="hero-layer">
+      <polygon class="fill-50 stroke" points="235,84 450,36 665,84 450,132"/>
+      <polygon class="fill-100 stroke-muted" points="235,84 450,132 450,152 235,104"/>
+      <polygon class="fill-100 stroke-muted" points="450,132 665,84 665,104 450,152"/>
+      <polygon class="fill-white stroke" points="408,62.4 450,52.4 492,62.4 450,72.4"/>
+      <polygon class="fill-100 stroke-muted" points="408,62.4 450,72.4 450,78.4 408,68.4"/>
+      <polygon class="fill-100 stroke-muted" points="450,72.4 492,62.4 492,68.4 450,78.4"/>
+      <polygon class="fill-white stroke" points="504.8,84 546.8,74 588.8,84 546.8,94"/>
+      <polygon class="fill-100 stroke-muted" points="504.8,84 546.8,94 546.8,100 504.8,90"/>
+      <polygon class="fill-100 stroke-muted" points="546.8,94 588.8,84 588.8,90 546.8,100"/>
+      <polygon class="fill-white stroke" points="408,105.6 450,95.6 492,105.6 450,115.6"/>
+      <polygon class="fill-100 stroke-muted" points="408,105.6 450,115.6 450,121.6 408,111.6"/>
+      <polygon class="fill-100 stroke-muted" points="450,115.6 492,105.6 492,111.6 450,121.6"/>
+      <polygon class="fill-white stroke" points="311.2,84 353.2,74 395.2,84 353.2,94"/>
+      <polygon class="fill-100 stroke-muted" points="311.2,84 353.2,94 353.2,100 311.2,90"/>
+      <polygon class="fill-100 stroke-muted" points="353.2,94 395.2,84 395.2,90 353.2,100"/>
+      <text class="svg-label" x="36" y="74">SOURCES</text>
+      <text class="svg-label-muted" x="36" y="98">SLACK - WIKI - CODE - INCIDENTS</text>
+      <path class="stroke" marker-end="url(#arrow-001)" d="M196 84H226"/>
+    </g>
+  </svg>
+  <script>    (function () {
+      var scope = document.currentScript.closest('.cb-fig');
+      var hero = scope && scope.querySelector('[data-hero-stack]');
+      if (!hero || hero.dataset.initialized === 'true') return;
+      hero.dataset.initialized = 'true';
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var layers = Array.prototype.slice.call(hero.querySelectorAll('.hero-layer'));
+      function update() {
+        if (window.innerWidth < 900) {
+          layers.forEach(function (layer) { layer.style.transform = ''; });
+          return;
+        }
+        var rect = hero.getBoundingClientRect();
+        var total = window.innerHeight + rect.height;
+        var p = clamp((window.innerHeight - rect.top) / total, 0, 1);
+        var mid = (layers.length - 1) / 2;
+        layers.forEach(function (layer, i) {
+          var y = (p - 0.5) * (i - mid) * 14;
+          layer.style.transform = 'translateY(' + y + 'px)';
+        });
+      }
+      window.addEventListener('scroll', rafThrottle(update), { passive: true });
+      window.addEventListener('resize', rafThrottle(update));
+      update();
+      function rafThrottle(fn) {
+        var queued = false;
+        return function () {
+          if (queued) return;
+          queued = true;
+          window.requestAnimationFrame(function () {
+            queued = false;
+            fn();
+          });
+        };
+      }
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+    })();
+  </script>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">지식베이스의 전체 층 구조. 여러 소스가 아래로 내려오며 요약, 임베딩, 검색, 융합, 종합을 거칩니다. (한 층만 잘 만들어서는 답이 좋아지지 않는다는 뜻입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>핵심은 포스트그레스 테이블 하나입니다. 임베딩, 요약본, 메타데이터가 여기 모입니다. 슬랙 스레드든 넷리스트든 같은 표에 같은 형식으로 앉습니다. 소스마다 정의하는 건 세 가지뿐입니다. 무슨 데이터인지, 어떻게 접속하는지, 얼마나 자주 가져올지입니다. 인터페이스가 단순하니 다른 팀도 직접 커넥터를 붙일 수 있습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-002">
+  <style>  .cb-fig.cb-fig-002 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-002,
+  .cb-fig.cb-fig-002 *,
+  .cb-fig.cb-fig-002 *::before,
+  .cb-fig.cb-fig-002 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-002 button,
+  .cb-fig.cb-fig-002 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-002 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-002 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-002 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-002 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-002 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-002 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-002 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-002 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-002 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-002 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-002 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-002 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-002 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-002 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-002 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-002 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-002 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-002 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }</style>
+  <svg viewBox="0 0 900 500" role="img" aria-labelledby="fig-002-title">
+    <title id="fig-002-title">Many data sources feeding one queryable embeddings table</title>
+    <defs>
+      <marker id="arrow-002" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-white" x="48" y="60" width="200" height="44"/>
+      <rect class="fill-white" x="48" y="126" width="200" height="44"/>
+      <rect class="fill-white" x="48" y="192" width="200" height="44"/>
+      <rect class="fill-white" x="48" y="258" width="200" height="44"/>
+      <rect class="fill-white" x="48" y="324" width="200" height="44"/>
+      <rect class="fill-white" x="48" y="390" width="200" height="44"/>
+      <rect class="fill-100" x="396" y="152" width="228" height="190"/>
+      <rect class="fill-50" x="700" y="210" width="160" height="74"/>
+      <path d="M248 82H322M248 148H322M248 214H322M248 280H322M248 346H322M248 412H322"/>
+      <path d="M322 82V412"/>
+      <path marker-end="url(#arrow-002)" d="M322 247H388"/>
+      <path marker-end="url(#arrow-002)" d="M624 247H692"/>
+      <path d="M396 200H624"/>
+    </g>
+    <g class="svg-label">
+      <text x="68" y="86">SLACK</text>
+      <text x="68" y="152">WIKI / CONFLUENCE</text>
+      <text x="68" y="218">CODE REPOS</text>
+      <text x="68" y="284">NETLISTS</text>
+      <text x="68" y="350">PRM DOCS</text>
+      <text x="68" y="416">CUSTOM DATABASES</text>
+      <text x="420" y="184">EMBEDDINGS</text>
+      <text x="780" y="247" text-anchor="middle" dominant-baseline="middle">QUERY</text>
+    </g>
+    <g class="svg-label-muted">
+      <text x="420" y="234">DOCUMENT</text>
+      <text x="420" y="264">EMBEDDING</text>
+      <text x="420" y="294">METADATA</text>
+      <text x="420" y="324">SOURCE + TIMESTAMPS</text>
+      <text x="700" y="196">MCP - WEB UI - AGENTS</text>
+      <text x="396" y="372">ONE EMBEDDINGS TABLE</text>
+      <text x="48" y="468">ONE CONNECTOR PER SOURCE</text>
+    </g>
+  </svg>
+</div>
+
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">여러 소스가 하나의 조회 가능한 임베딩 테이블로 수렴합니다. (통합의 대상은 자료가 아니라 인터페이스입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>둘째, 슬랙은 대화 단위로 실시간 수집합니다.</strong> 슬랙이 가장 중요한 소스였습니다. 최신 엔지니어링 논의가 거기서 벌어지기 때문입니다. 봇을 소켓 모드로 띄워 모든 메시지 이벤트를 웹소켓으로 받습니다. 폴링 없이 실시간이고, API 호출 한도도 아낍니다. 이벤트가 오면 즉시 확인 응답을 보내고, 고유 ID로 중복을 걸러냅니다.</p>
+
+        <p>주목할 점은 저장 방식입니다. 새 메시지 하나만 따로 넣지 않습니다. 그 메시지가 속한 스레드 전체를 다시 불러와, 부모와 모든 답글을 한 행으로 씁니다. 그래서 저장된 내용과 참여자 명단, 마지막 활동 시각이 늘 대화 전체를 반영합니다. 채널마다 별도 소스로 두어, 사고 대응 채널처럼 급한 곳은 더 자주 가져올 수 있습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-003">
+  <style>  .cb-fig.cb-fig-003 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-003,
+  .cb-fig.cb-fig-003 *,
+  .cb-fig.cb-fig-003 *::before,
+  .cb-fig.cb-fig-003 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-003 button,
+  .cb-fig.cb-fig-003 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-003 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-003 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-003 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-003 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-003 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-003 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-003 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-003 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-003 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-003 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-003 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-003 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-003 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-003 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-003 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-003 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-003 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-003 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }</style>
+  <svg viewBox="0 0 900 430" role="img" aria-labelledby="fig-003-title">
+    <title id="fig-003-title">Slack event flow from Socket Mode through distillation and embedding</title>
+    <defs>
+      <marker id="arrow-003" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-white" x="38" y="172" width="132" height="58"/>
+      <polygon class="fill-100" points="232,201 282,157 332,201 282,245"/>
+      <rect class="fill-white" x="398" y="76" width="154" height="58"/>
+      <rect class="fill-white" x="386" y="172" width="178" height="58"/>
+      <rect class="fill-white" x="386" y="268" width="178" height="58"/>
+      <rect class="fill-100" x="636" y="172" width="152" height="58"/>
+      <rect class="fill-white" x="646" y="64" width="132" height="52"/>
+      <rect class="fill-white" x="646" y="274" width="132" height="52"/>
+      <rect class="fill-white" x="646" y="350" width="132" height="52"/>
+      <path marker-end="url(#arrow-003)" d="M170 201H224"/>
+      <path marker-end="url(#arrow-003)" d="M282 157V105H390"/>
+      <path marker-end="url(#arrow-003)" d="M332 201H378"/>
+      <path marker-end="url(#arrow-003)" d="M475 230V260"/>
+      <path marker-end="url(#arrow-003)" d="M564 297H598V201H628"/>
+      <path marker-end="url(#arrow-003)" d="M712 172V124"/>
+      <path marker-end="url(#arrow-003)" d="M712 230V266"/>
+      <path marker-end="url(#arrow-003)" d="M736 230V342"/>
+    </g>
+    <g class="svg-label" text-anchor="middle" dominant-baseline="middle">
+      <text x="104" y="201">SOCKET EVENT</text>
+      <text x="282" y="201">ROUTE</text>
+      <text x="475" y="105">BOT REPLY</text>
+      <text x="475" y="201">REINGEST_THREAD</text>
+      <text x="475" y="297">UPSERT THREAD</text>
+      <text x="712" y="201">SYNC_WORKER</text>
+      <text x="712" y="90">DISTILL</text>
+      <text x="712" y="300">THREAD VECTOR</text>
+      <text x="712" y="376">BURST VECTORS</text>
+    </g>
+    <g class="svg-label-muted">
+      <text x="376" y="48">@MENTION / DM</text>
+      <text x="368" y="156">TRACKED CHANNEL</text>
+      <text x="410" y="350">RESET WATERMARKS</text>
+    </g>
+  </svg>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">소켓 모드로 받은 슬랙 이벤트가 스레드 재수집, 요약, 임베딩을 거치는 흐름입니다. (메시지가 아니라 대화가 저장 단위입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>셋째, 원문 대신 요약을 벡터로 넣습니다.</strong> 처음엔 원문 임베딩만으로 충분한지 시험했습니다. 곧 부족하다는 걸 알았습니다. 슬랙 메시지는 정보 밀도가 제각각입니다. "네 알겠습니다"와 상세한 커널 설명이 같은 메시지 한 건입니다. 짧은 메시지가 길고 자세한 메시지를 코사인 유사도에서 이기는 일도 잦습니다.</p>
+
+        <p>그래서 증류 단계를 넣었습니다. LLM이 스레드 전체에서 네 가지를 뽑습니다. 엔지니어가 실제로 검색할 법한 한 줄 질문, 짧은 요약, 해결 결과, 언급된 시스템과 코드 참조입니다. 이 항목들을 임베딩합니다. 원본 대화록은 임베딩하지 않습니다. 일관된 형식으로 정규화했을 때 정확도가 뚜렷하게 올랐다고 밝힙니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-004">
+  <style>  .cb-fig.cb-fig-004 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-004,
+  .cb-fig.cb-fig-004 *,
+  .cb-fig.cb-fig-004 *::before,
+  .cb-fig.cb-fig-004 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-004 button,
+  .cb-fig.cb-fig-004 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-004 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-004 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-004 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-004 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-004 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-004 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-004 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-004 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-004 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-004 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-004 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-004 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-004 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-004 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-004 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-004 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-004 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-004 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }
+
+
+  .cb-fig.cb-fig-004 .fig-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .cb-fig.cb-fig-004 .control,
+  .cb-fig.cb-fig-004 button,
+  .cb-fig.cb-fig-004 input {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-004 button {
+    min-height: 34px;
+    padding: 7px 10px;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .cb-fig.cb-fig-004 button[aria-pressed="true"],
+  .cb-fig.cb-fig-004 button[aria-selected="true"] {
+    color: var(--white);
+    background: var(--cobalt-600);
+    border-color: var(--cobalt-600);
+  }
+
+
+  .cb-fig.cb-fig-004 .chunk-filebar {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--hairline);
+    color: var(--label);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+  }
+  .cb-fig.cb-fig-004 .chunk-filebar [data-mode-label] {
+    color: var(--cobalt-600);
+  }
+  .cb-fig.cb-fig-004 .chunk-mode__index {
+    grid-row: 1 / span 2;
+    color: var(--label);
+  }
+  .cb-fig.cb-fig-004 .chunk-mode__title {
+    color: var(--cobalt-600);
+    line-height: 1.25;
+  }
+  .cb-fig.cb-fig-004 .chunk-mode__detail {
+    color: var(--label);
+    font-size: 8px;
+    line-height: 1.4;
+  }
+  .cb-fig.cb-fig-004 .chunk-legend {
+    align-self: end;
+    display: grid;
+    gap: 7px;
+    padding: 10px 2px;
+    color: var(--label);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+  }
+  .cb-fig.cb-fig-004 .chunk-legend span {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+  .cb-fig.cb-fig-004 .chunk-legend i {
+    display: inline-block;
+    width: 18px;
+    height: 8px;
+  }
+  .cb-fig.cb-fig-004 .chunk-legend__swatch {
+    background: var(--cobalt-100);
+    border: 1px solid var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-004 .chunk-legend__cut {
+    border-top: 1px dashed var(--danger);
+  }
+
+
+  .cb-fig.cb-fig-004 .distill-app,
+  .cb-fig.cb-fig-004 .hybrid-app {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 168px;
+    grid-template-areas: "viewer modes";
+    gap: 12px;
+    align-items: stretch;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app .distill-modes {
+    grid-template-rows: auto auto auto auto 1fr;
+  }
+  .cb-fig.cb-fig-004 .distill-modes {
+    grid-area: modes;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 8px;
+  }
+  .cb-fig.cb-fig-004 .distill-modes button {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 3px 8px;
+    min-height: 86px;
+    padding: 12px;
+    text-align: left;
+  }
+  .cb-fig.cb-fig-004 .distill-modes button[aria-pressed="true"] .chunk-mode__index,
+  .cb-fig.cb-fig-004 .distill-modes button[aria-pressed="true"] .chunk-mode__title,
+  .cb-fig.cb-fig-004 .distill-modes button[aria-pressed="true"] .chunk-mode__detail {
+    color: var(--white);
+  }
+  .cb-fig.cb-fig-004 .distill-viewer {
+    grid-area: viewer;
+    min-width: 0;
+    border: 1px solid var(--hairline);
+    background: rgb(255 255 255 / 0.82);
+  }
+  .cb-fig.cb-fig-004 .dthread {
+    display: grid;
+    margin: 0;
+    padding: 18px 22px 14px;
+    list-style: none;
+  }
+  .cb-fig.cb-fig-004 .dmsg {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 340ms var(--ease);
+  }
+  .cb-fig.cb-fig-004 .dmsg--extra {
+    grid-template-rows: 0fr;
+  }
+  .cb-fig.cb-fig-004 .distill-app[data-stage="2"] .dmsg--extra {
+    grid-template-rows: 1fr;
+  }
+  .cb-fig.cb-fig-004 .dmsg__clip {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .cb-fig.cb-fig-004 .dmsg__row {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+    padding-bottom: 6px;
+  }
+  .cb-fig.cb-fig-004 .dmsg__gutter {
+    padding-top: 10px;
+    color: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.04em;
+    text-align: right;
+  }
+  .cb-fig.cb-fig-004 .dmsg__band {
+    position: relative;
+    padding: 9px 12px;
+    border: 1px solid transparent;
+    transition:
+      background 220ms var(--ease),
+      border-color 220ms var(--ease),
+      opacity 220ms var(--ease);
+  }
+  .cb-fig.cb-fig-004 .dmsg__meta {
+    margin-bottom: 3px;
+    color: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-004 .dmsg__band p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: color 220ms var(--ease);
+  }
+  .cb-fig.cb-fig-004 .dmsg__tag {
+    position: absolute;
+    top: 7px;
+    right: 9px;
+    padding: 1px 4px;
+    background: rgb(255 255 255 / 0.9);
+    color: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 7px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(-3px);
+    transition:
+      opacity 220ms var(--ease),
+      transform 220ms var(--ease);
+  }
+  .cb-fig.cb-fig-004 .distill-app:not([data-stage="0"]) .dmsg__tag {
+    opacity: 1;
+    transform: none;
+  }
+  .cb-fig.cb-fig-004 .distill-app:not([data-stage="0"]) .dmsg--keep .dmsg__band {
+    background: var(--cobalt-50);
+    border-color: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-004 .distill-app:not([data-stage="0"]) .dmsg--drop .dmsg__band {
+    background: color-mix(in oklab, var(--danger) 5%, white);
+    border: 1px dashed var(--danger);
+  }
+  .cb-fig.cb-fig-004 .distill-app:not([data-stage="0"]) .dmsg--drop .dmsg__band p {
+    color: var(--label);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+  .cb-fig.cb-fig-004 .dmsg--drop .dmsg__tag {
+    color: var(--danger);
+  }
+  .cb-fig.cb-fig-004 .dvec {
+    display: block;
+    width: 100%;
+    height: 26px;
+    margin: 6px 0 8px;
+  }
+  .cb-fig.cb-fig-004 .dvec__axis {
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+  }
+  .cb-fig.cb-fig-004 .dvec__bars {
+    fill: var(--cobalt-400);
+    opacity: 0.85;
+  }
+  .cb-fig.cb-fig-004 .dvec__caption {
+    margin: 0;
+    color: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px !important;
+    letter-spacing: 0.05em;
+    line-height: 1.6 !important;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-004 .hyb-query {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    padding: 12px 22px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .cb-fig.cb-fig-004 .hyb-query__label {
+    color: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+  }
+  .cb-fig.cb-fig-004 .hyb-query p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] .dmsg__tag[data-on~="0"],
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] .dmsg__tag[data-on~="1"],
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] .dmsg__tag[data-on~="2"],
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] .dmsg__tag[data-on~="3"] {
+    opacity: 1;
+    transform: none;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="boost"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="boost"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="boost"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="boost"] .dmsg__band {
+    background: var(--cobalt-50);
+    border-color: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__band {
+    background: color-mix(in oklab, var(--danger) 5%, white);
+    border-color: var(--danger);
+    border-style: dashed;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__band p,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__band p,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__band p,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__band p {
+    color: var(--label);
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__tag {
+    color: var(--danger);
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="dim"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="dim"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="dim"] .dmsg__band,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="dim"] .dmsg__band {
+    opacity: 0.45;
+  }
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="0"] [data-s0="dim"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="1"] [data-s1="dim"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="2"] [data-s2="dim"] .dmsg__tag,
+  .cb-fig.cb-fig-004 .hybrid-app[data-stage="3"] [data-s3="dim"] .dmsg__tag {
+    color: var(--label);
+  }
+  .cb-fig.cb-fig-004 .vector-status {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 2px 6px;
+    color: var(--cobalt-700);
+    background: var(--cobalt-100);
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-004 .distill-app,
+    .cb-fig.cb-fig-004 .hybrid-app {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "modes"
+        "viewer";
+    }
+    .cb-fig.cb-fig-004 .hybrid-app .distill-modes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: auto;
+    }
+    .cb-fig.cb-fig-004 .hyb-query {
+      padding: 10px 16px;
+    }
+    .cb-fig.cb-fig-004 .distill-modes {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto;
+    }
+    .cb-fig.cb-fig-004 .distill-modes button {
+      min-height: 0;
+    }
+    .cb-fig.cb-fig-004 .dthread {
+      padding: 14px 16px 10px;
+    }
+    .cb-fig.cb-fig-004 .dmsg__row {
+      grid-template-columns: 40px minmax(0, 1fr);
+      gap: 10px;
+    }
+  }
+  @media (max-width: 540px) {
+    .cb-fig.cb-fig-004 .distill-modes {
+      grid-template-columns: 1fr;
+    }
+    .cb-fig.cb-fig-004 .dmsg__row {
+      grid-template-columns: 1fr;
+    }
+    .cb-fig.cb-fig-004 .dmsg__gutter {
+      display: none;
+    }
+  }
+
+
+
+
+.cb-fig.cb-fig-004 .thread-pipeline {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.2fr) 48px minmax(220px, 1fr) 48px minmax(180px, 0.82fr);
+  grid-template-areas:
+    "modes modes modes modes modes"
+    "source distill artifact embed record";
+  gap: 14px 0;
+  align-items: stretch;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline__modes {
+  grid-area: modes;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto;
+  gap: 8px;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline__modes button {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 3px 8px;
+  min-height: 64px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline__modes button[aria-pressed="true"] .chunk-mode__index,
+.cb-fig.cb-fig-004 .thread-pipeline__modes button[aria-pressed="true"] .chunk-mode__title,
+.cb-fig.cb-fig-004 .thread-pipeline__modes button[aria-pressed="true"] .chunk-mode__detail {
+  color: var(--white);
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline__source {
+  grid-area: source;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.cb-fig.cb-fig-004 .thread-stage {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  background: rgb(255 255 255 / 0.82);
+  border: 1px solid var(--hairline);
+}
+
+.cb-fig.cb-fig-004 .thread-artifact {
+  grid-area: artifact;
+}
+
+.cb-fig.cb-fig-004 .thread-record {
+  grid-area: record;
+}
+
+.cb-fig.cb-fig-004 .thread-stage__header {
+  display: flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--cobalt-600);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.cb-fig.cb-fig-004 .thread-stage__header span:last-child {
+  color: var(--label);
+  font-size: 7px;
+  text-align: right;
+}
+
+.cb-fig.cb-fig-004 .thread-stage__footer {
+  margin-top: auto;
+  padding: 8px 10px;
+  border-top: 1px solid var(--hairline);
+  color: var(--label);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.05em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .chunk-filebar {
+  min-height: 34px;
+  align-items: center;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .chunk-filebar span:last-child {
+  color: var(--cobalt-600);
+  text-align: right;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dthread {
+  padding: 10px 10px 4px;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__row {
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 6px;
+  padding-bottom: 6px;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__gutter {
+  padding-top: 8px;
+  font-size: 7px;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__band {
+  padding: 7px 8px;
+  background: rgb(255 255 255 / 0.72);
+  border-color: var(--cobalt-300);
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__meta {
+  margin-bottom: 2px;
+  font-size: 8px;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__band p {
+  padding-right: 2px;
+  font-size: 11.5px;
+  line-height: 1.38;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg__tag,
+.cb-fig.cb-fig-004 .thread-pipeline:not([data-stage="0"]) .dmsg__tag {
+  top: 6px;
+  right: 6px;
+  font-size: 6px;
+  opacity: 1;
+  transform: none;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg--context .dmsg__band {
+  background: rgb(255 255 255 / 0.42);
+  border-color: var(--hairline);
+  border-style: dashed;
+  opacity: 0.62;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg--context .dmsg__tag {
+  color: var(--label);
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline .dmsg--extra[hidden] {
+  display: none;
+}
+
+.cb-fig.cb-fig-004 .thread-json {
+  display: grid;
+  padding: 10px;
+  font-family: var(--font-mono);
+}
+
+.cb-fig.cb-fig-004 .thread-json__brace {
+  color: var(--label);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.cb-fig.cb-fig-004 .thread-json__field {
+  padding: 7px 8px;
+  border-left: 1px solid var(--cobalt-300);
+  border-bottom: 1px solid var(--hairline);
+  overflow-wrap: anywhere;
+}
+
+.cb-fig.cb-fig-004 .thread-json__key,
+.cb-fig.cb-fig-004 .thread-json__value {
+  display: block;
+  letter-spacing: 0;
+}
+
+.cb-fig.cb-fig-004 .thread-json__key {
+  margin-bottom: 3px;
+  color: var(--cobalt-600);
+  font-size: 8px;
+}
+
+.cb-fig.cb-fig-004 .thread-json__value {
+  color: var(--ink);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.cb-fig.cb-fig-004 .thread-record__document {
+  margin: 12px 10px 10px;
+  padding: 9px;
+  background: var(--cobalt-50);
+  border: 1px solid var(--cobalt-300);
+}
+
+.cb-fig.cb-fig-004 .thread-record__document strong,
+.cb-fig.cb-fig-004 .thread-record__document p {
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+
+.cb-fig.cb-fig-004 .thread-record__document strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--cobalt-600);
+  font-size: 7px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.cb-fig.cb-fig-004 .thread-record__document p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+.cb-fig.cb-fig-004 .thread-vector {
+  display: block;
+  width: calc(100% - 20px);
+  height: 30px;
+  margin: 0 10px 10px;
+}
+
+.cb-fig.cb-fig-004 .thread-vector__axis {
+  stroke: var(--cobalt-300);
+  stroke-width: 1;
+}
+
+.cb-fig.cb-fig-004 .thread-vector__bars {
+  fill: var(--cobalt-400);
+  opacity: 0.88;
+}
+
+.cb-fig.cb-fig-004 .thread-record__rows {
+  display: grid;
+  margin: 0 10px 10px;
+  border-top: 1px solid var(--hairline);
+}
+
+.cb-fig.cb-fig-004 .thread-record__rows div {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 6px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.cb-fig.cb-fig-004 .thread-record__rows span {
+  color: var(--label);
+}
+
+.cb-fig.cb-fig-004 .thread-record__rows strong {
+  color: var(--cobalt-700);
+  font-weight: 400;
+}
+
+.cb-fig.cb-fig-004 .thread-connector {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--label);
+  font-family: var(--font-mono);
+  font-size: 6px;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cb-fig.cb-fig-004 .thread-connector--distill {
+  grid-area: distill;
+}
+
+.cb-fig.cb-fig-004 .thread-connector--embed {
+  grid-area: embed;
+}
+
+.cb-fig.cb-fig-004 .thread-connector i {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-top: 1px solid var(--cobalt-600);
+}
+
+.cb-fig.cb-fig-004 .thread-connector i::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  right: 1px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid var(--cobalt-600);
+  border-right: 1px solid var(--cobalt-600);
+  transform: rotate(45deg);
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline [data-pipeline-stage],
+.cb-fig.cb-fig-004 .thread-pipeline [data-pipeline-connector] {
+  transition:
+    border-color 240ms var(--ease),
+    opacity 240ms var(--ease);
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="0"] [data-pipeline-stage="1"],
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="0"] [data-pipeline-stage="2"] {
+  opacity: 0.36;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="0"] [data-pipeline-connector="0"] {
+  opacity: 0.62;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="0"] [data-pipeline-connector="1"] {
+  opacity: 0.22;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="1"] [data-pipeline-stage="0"] {
+  opacity: 0.56;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="1"] [data-pipeline-stage="2"] {
+  opacity: 0.36;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="1"] [data-pipeline-connector="1"] {
+  opacity: 0.42;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="2"] [data-pipeline-stage="0"] {
+  opacity: 0.46;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="2"] [data-pipeline-stage="1"] {
+  opacity: 0.64;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="2"] [data-pipeline-connector="0"] {
+  opacity: 0.66;
+}
+
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="0"] [data-pipeline-stage="0"],
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="1"] [data-pipeline-stage="1"],
+.cb-fig.cb-fig-004 .thread-pipeline[data-stage="2"] [data-pipeline-stage="2"] {
+  border-color: var(--cobalt-600);
+}
+
+  @media (max-width: 900px) {
+  .cb-fig.cb-fig-004 .thread-pipeline {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "modes"
+      "source"
+      "distill"
+      "artifact"
+      "embed"
+      "record";
+    gap: 0;
+  }
+
+  .cb-fig.cb-fig-004 .thread-pipeline__modes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 16px;
+  }
+
+  .cb-fig.cb-fig-004 .thread-pipeline .dmsg__row {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .cb-fig.cb-fig-004 .thread-pipeline .dmsg__band p {
+    font-size: 13px;
+  }
+
+  .cb-fig.cb-fig-004 .thread-connector {
+    min-height: 64px;
+    gap: 7px;
+  }
+
+  .cb-fig.cb-fig-004 .thread-connector i {
+    width: 1px;
+    height: 30px;
+    border-top: 0;
+    border-left: 1px solid var(--cobalt-600);
+  }
+
+  .cb-fig.cb-fig-004 .thread-connector i::after {
+    top: auto;
+    right: -4px;
+    bottom: 1px;
+    border-top: 0;
+    border-right: 1px solid var(--cobalt-600);
+    border-bottom: 1px solid var(--cobalt-600);
+    transform: rotate(45deg);
+  }
+  }
+
+  @media (max-width: 540px) {
+  .cb-fig.cb-fig-004 .thread-pipeline__modes {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .cb-fig.cb-fig-004 .thread-pipeline .dmsg__row {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-fig.cb-fig-004 .thread-pipeline .dmsg__gutter {
+    display: none;
+  }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-fig.cb-fig-004 *,
+    .cb-fig.cb-fig-004 *::before,
+    .cb-fig.cb-fig-004 *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 1ms !important;
+    }
+  }</style>
+  <div class="distill-app thread-pipeline" data-fig="distill" data-stage="0">
+    <div class="distill-viewer thread-pipeline__source" data-pipeline-stage="0">
+      <div class="chunk-filebar">
+        <span>#CKPT-SUPPORT / THREAD_8F42</span>
+        <span>FULL THREAD INPUT</span>
+      </div>
+      <ol class="dthread">
+        <li class="dmsg dmsg--keep">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">09:14</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag">QUESTION</b>
+              <div class="dmsg__meta">Maya</div>
+              <p>Restore stalls after manifest load on the larger cluster. Small runs are fine.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg dmsg--keep">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">09:17</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag">SUMMARY</b>
+              <div class="dmsg__meta">Owen</div>
+              <p>I can reproduce with 128 shards. The logs stop before cache warmup.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg dmsg--context">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">09:18</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag">CONTEXT</b>
+              <div class="dmsg__meta">Sam</div>
+              <p>My laptop also stalls when it sees Monday.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg dmsg--keep">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">09:21</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag">RESOLUTION</b>
+              <div class="dmsg__meta">Maya</div>
+              <p>Setting <code>CKPT_PREFETCH=4</code> makes it complete. The default is too high for the NFS mount.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg dmsg--keep dmsg--extra" hidden>
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter"></div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag">VECTOR</b>
+              <div class="dmsg__meta">Pgvector</div>
+              <svg class="dvec" viewBox="0 0 640 26" preserveAspectRatio="none" aria-hidden="true">
+                <line class="dvec__axis" x1="0" y1="13" x2="640" y2="13"/>
+                <path class="dvec__bars" d="M0.0 11.19h3.4v1.81h-3.4ZM6.7 11.5h3.4v1.5h-3.4ZM13.3 13h3.4v1.5h-3.4ZM20.0 6.91h3.4v6.09h-3.4ZM26.7 13h3.4v1.7h-3.4ZM33.3 13h3.4v10.27h-3.4ZM40.0 13h3.4v1.82h-3.4ZM46.7 6.21h3.4v6.79h-3.4ZM53.3 10.53h3.4v2.47h-3.4ZM60.0 8.27h3.4v4.73h-3.4ZM66.7 13h3.4v6.99h-3.4ZM73.3 11.5h3.4v1.5h-3.4ZM80.0 11.5h3.4v1.5h-3.4ZM86.7 13h3.4v5.53h-3.4ZM93.3 3.77h3.4v9.23h-3.4ZM100.0 13h3.4v8.56h-3.4ZM106.7 9.52h3.4v3.48h-3.4ZM113.3 13h3.4v3.77h-3.4ZM120.0 13h3.4v6.92h-3.4ZM126.7 9.24h3.4v3.76h-3.4ZM133.3 3.79h3.4v9.21h-3.4ZM140.0 13h3.4v8.11h-3.4ZM146.7 13h3.4v1.97h-3.4ZM153.3 5.32h3.4v7.68h-3.4ZM160.0 13h3.4v1.99h-3.4ZM166.7 13h3.4v10.28h-3.4ZM173.3 11.5h3.4v1.5h-3.4ZM180.0 6.31h3.4v6.69h-3.4ZM186.7 13h3.4v7.74h-3.4ZM193.3 4.13h3.4v8.87h-3.4ZM200.0 13h3.4v1.5h-3.4ZM206.7 13h3.4v1.5h-3.4ZM213.3 8.5h3.4v4.5h-3.4ZM220.0 5.63h3.4v7.37h-3.4ZM226.7 6.86h3.4v6.14h-3.4ZM233.3 10.26h3.4v2.74h-3.4ZM240.0 13h3.4v6.06h-3.4ZM246.7 9.89h3.4v3.11h-3.4ZM253.3 3.71h3.4v9.29h-3.4ZM260.0 13h3.4v5.57h-3.4ZM266.7 13h3.4v9.03h-3.4ZM273.3 2.76h3.4v10.24h-3.4ZM280.0 13h3.4v4.53h-3.4ZM286.7 13h3.4v8.92h-3.4ZM293.3 3.39h3.4v9.61h-3.4ZM300.0 13h3.4v3.19h-3.4ZM306.7 5.8h3.4v7.2h-3.4ZM313.3 13h3.4v5.24h-3.4ZM320.0 13h3.4v5.44h-3.4ZM326.7 13h3.4v8.0h-3.4ZM333.3 13h3.4v8.27h-3.4ZM340.0 4.02h3.4v8.98h-3.4ZM346.7 13h3.4v5.24h-3.4ZM353.3 13h3.4v1.5h-3.4ZM360.0 11.5h3.4v1.5h-3.4ZM366.7 13h3.4v2.5h-3.4ZM373.3 13h3.4v3.71h-3.4ZM380.0 13h3.4v6.98h-3.4ZM386.7 13h3.4v6.03h-3.4ZM393.3 13h3.4v3.33h-3.4ZM400.0 10.65h3.4v2.35h-3.4ZM406.7 13h3.4v1.5h-3.4ZM413.3 11.5h3.4v1.5h-3.4ZM420.0 3.84h3.4v9.16h-3.4ZM426.7 13h3.4v8.85h-3.4ZM433.3 13h3.4v9.47h-3.4ZM440.0 6.82h3.4v6.18h-3.4ZM446.7 11.5h3.4v1.5h-3.4ZM453.3 3.43h3.4v9.57h-3.4ZM460.0 13h3.4v1.5h-3.4ZM466.7 13h3.4v10.59h-3.4ZM473.3 13h3.4v1.5h-3.4ZM480.0 13h3.4v10.66h-3.4ZM486.7 13h3.4v4.78h-3.4ZM493.3 13h3.4v3.43h-3.4ZM500.0 3.35h3.4v9.65h-3.4ZM506.7 7.35h3.4v5.65h-3.4ZM513.3 13h3.4v2.38h-3.4ZM520.0 8.44h3.4v4.56h-3.4ZM526.7 13h3.4v4.58h-3.4ZM533.3 13h3.4v7.16h-3.4ZM540.0 11.09h3.4v1.91h-3.4ZM546.7 4.79h3.4v8.21h-3.4ZM553.3 11.5h3.4v1.5h-3.4ZM560.0 13h3.4v10.87h-3.4ZM566.7 13h3.4v7.67h-3.4ZM573.3 13h3.4v8.32h-3.4ZM580.0 4.2h3.4v8.8h-3.4ZM586.7 13h3.4v8.83h-3.4ZM593.3 13h3.4v7.36h-3.4ZM600.0 10.15h3.4v2.85h-3.4ZM606.7 13h3.4v10.44h-3.4ZM613.3 6.83h3.4v6.17h-3.4ZM620.0 4.22h3.4v8.78h-3.4ZM626.7 13h3.4v10.85h-3.4ZM633.3 13h3.4v7.74h-3.4Z"/>
+              </svg>
+              <p class="dvec__caption"><span class="vector-status">READY</span> One consistent record, 3,072 dimensions</p>
+            </div>
+          </div></div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="thread-connector thread-connector--distill" data-pipeline-connector="0" aria-hidden="true">
+      <span>DISTILL<br>FULL THREAD</span>
+      <i></i>
+    </div>
+
+    <section class="thread-stage thread-artifact" data-pipeline-stage="1" aria-label="Structured artifact extracted from the full thread">
+      <div class="thread-stage__header">
+        <span>STRUCTURED ARTIFACT</span>
+        <span>ONE PER THREAD</span>
+      </div>
+      <div class="thread-json">
+        <span class="thread-json__brace">{</span>
+        <div class="thread-json__field">
+          <span class="thread-json__key">&quot;question&quot;</span>
+          <span class="thread-json__value">&quot;Why does restore stall after manifest load?&quot;</span>
+        </div>
+        <div class="thread-json__field">
+          <span class="thread-json__key">&quot;summary&quot;</span>
+          <span class="thread-json__value">&quot;Large restores stop before cache warmup.&quot;</span>
+        </div>
+        <div class="thread-json__field">
+          <span class="thread-json__key">&quot;resolution&quot;</span>
+          <span class="thread-json__value">&quot;Set CKPT_PREFETCH=4 for the NFS mount.&quot;</span>
+        </div>
+        <div class="thread-json__field">
+          <span class="thread-json__key">&quot;systems&quot;</span>
+          <span class="thread-json__value">[&quot;checkpoint restore&quot;, &quot;NFS&quot;]</span>
+        </div>
+        <div class="thread-json__field">
+          <span class="thread-json__key">&quot;code_refs&quot;</span>
+          <span class="thread-json__value">[&quot;CKPT_PREFETCH&quot;]</span>
+        </div>
+        <span class="thread-json__brace">}</span>
+      </div>
+      <div class="thread-stage__footer">EXTRACTED FROM ALL FOUR MESSAGES</div>
+    </section>
+
+    <div class="thread-connector thread-connector--embed" data-pipeline-connector="1" aria-hidden="true">
+      <span>NORMALIZE<br>+ EMBED</span>
+      <i></i>
+    </div>
+
+    <section class="thread-stage thread-record" data-pipeline-stage="2" aria-label="Normalized embedding row written to Postgres">
+      <div class="thread-stage__header">
+        <span>EMBEDDING ROW</span>
+        <span>PGVECTOR</span>
+      </div>
+      <div class="thread-record__document">
+        <strong>NORMALIZED DOCUMENT</strong>
+        <p>Question + summary + resolution + systems + code references</p>
+      </div>
+      <svg class="thread-vector" viewBox="0 0 180 30" preserveAspectRatio="none" role="img" aria-label="A 3072-dimensional embedding vector">
+        <line class="thread-vector__axis" x1="0" y1="15" x2="180" y2="15"/>
+        <path class="thread-vector__bars" d="M2 8h5v7H2zM11 15h5v9h-5zM20 4h5v11h-5zM29 11h5v4h-5zM38 15h5v6h-5zM47 7h5v8h-5zM56 15h5v11h-5zM65 10h5v5h-5zM74 3h5v12h-5zM83 15h5v7h-5zM92 6h5v9h-5zM101 12h5v3h-5zM110 15h5v10h-5zM119 5h5v10h-5zM128 9h5v6h-5zM137 15h5v8h-5zM146 4h5v11h-5zM155 11h5v4h-5zM164 15h5v9h-5zM173 7h5v8h-5z"/>
+      </svg>
+      <div class="thread-record__rows">
+        <div><span>source</span><strong>slack_thread</strong></div>
+        <div><span>source_id</span><strong>thread_8f42</strong></div>
+        <div><span>embedding</span><strong>3,072 dims</strong></div>
+        <div><span>metadata</span><strong>channel + authors + time</strong></div>
+      </div>
+      <div class="thread-stage__footer">ONE QUERYABLE DATABASE RECORD</div>
+    </section>
+
+    <div class="distill-modes thread-pipeline__modes" role="group" aria-label="Distillation stages">
+      <button type="button" data-stage="0" aria-pressed="true">
+        <span class="chunk-mode__index">01</span>
+        <span class="chunk-mode__title">RAW THREAD</span>
+        <span class="chunk-mode__detail">ALL MESSAGES ENTER TOGETHER</span>
+      </button>
+      <button type="button" data-stage="1" aria-pressed="false">
+        <span class="chunk-mode__index">02</span>
+        <span class="chunk-mode__title">THREAD ARTIFACT</span>
+        <span class="chunk-mode__detail">ONE JSON OBJECT FROM THE THREAD</span>
+      </button>
+      <button type="button" data-stage="2" aria-pressed="false">
+        <span class="chunk-mode__index">03</span>
+        <span class="chunk-mode__title">EMBEDDED ROW</span>
+        <span class="chunk-mode__detail">NORMALIZED DOCUMENT IN PGVECTOR</span>
+      </button>
+    </div>
+    <span class="sr-only" aria-live="polite"></span>
+  </div>
+  <script>    (function () {
+      var scope = document.currentScript.closest('.cb-fig');
+      var root = scope && scope.querySelector('[data-fig="distill"]');
+      if (!root || root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+      var modes = Array.prototype.slice.call(root.querySelectorAll('button[data-stage]'));
+      var label = root.querySelector('[data-mode-label]');
+      var live = root.querySelector('.sr-only');
+      var names = modes.map(function (mode) {
+        var title = mode.querySelector('.chunk-mode__title');
+        return title ? title.textContent : '';
+      });
+      modes.forEach(function (mode, index) {
+        mode.addEventListener('click', function () { activate(index); });
+        mode.addEventListener('keydown', function (event) {
+          if (['ArrowRight', 'ArrowLeft', 'ArrowUp', 'ArrowDown'].indexOf(event.key) === -1) return;
+          event.preventDefault();
+          var delta = ['ArrowRight', 'ArrowDown'].indexOf(event.key) !== -1 ? 1 : -1;
+          activate((index + delta + modes.length) % modes.length, true);
+        });
+      });
+      function activate(index, focus) {
+        root.dataset.stage = String(index);
+        modes.forEach(function (mode, i) {
+          mode.setAttribute('aria-pressed', String(i === index));
+        });
+        if (label) label.textContent = names[index];
+        if (focus) modes[index].focus();
+        if (live) live.textContent = names[index] + ' selected';
+      }
+    })();
+  </script>
+</div>
+
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">스레드를 구조화된 항목으로 증류한 뒤 하나의 일관된 레코드로 만듭니다. (원문을 그대로 넣는 것이 가장 정직해 보이지만, 가장 잘 찾히는 방식은 아닙니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>스레드 요약만으로는 긴 대화 속 중요한 메시지가 묻혔습니다. 그래서 버스팅을 씁니다. 같은 사람이 연달아 쓴 메시지 묶음을 하나의 버스트로 보고, 스레드 주제를 앞에 붙여 따로 임베딩합니다. 답이 곁가지 메시지 하나에 들어 있는 경우를 잡기 위해서입니다.</p>
+
+        <p>다만 아무 버스트나 넣지 않습니다. 세 가지 신호를 가중 합산해 문턱을 넘어야 합니다. 희귀한 단어가 있는지, 합쳐서 200자 이상인지, 이모지 반응이 달렸는지입니다. 마지막 항목은 사람의 손이 남긴 품질 신호를 그대로 쓰는 셈입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-005">
+  <style>
+    .cb-fig.cb-fig-005 {
+      --cobalt-100: oklch(0.945 0.038 45);
+      --cobalt-600: #a93613;
+      --label: rgb(0 0 0 / 0.5);
+      --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 48px 40px;
+      color: #171717;
+      background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+      box-sizing: border-box;
+    }
+    .cb-fig.cb-fig-005 svg { display: block; width: 100%; overflow: hidden; }
+    .cb-fig.cb-fig-005 .svg-label {
+      fill: var(--cobalt-600);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cb-fig.cb-fig-005 .svg-label-muted {
+      fill: var(--label);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cb-fig.cb-fig-005 .stroke {
+      fill: none;
+      stroke: var(--cobalt-600);
+      stroke-width: 1.25;
+      vector-effect: non-scaling-stroke;
+    }
+    .cb-fig.cb-fig-005 .fill-100 { fill: var(--cobalt-100); }
+    .cb-fig.cb-fig-005 .fill-white { fill: #fff; }
+    @media (max-width: 900px) {
+      .cb-fig.cb-fig-005 { padding: 42px 18px; }
+    }
+  </style>
+  <svg viewBox="0 0 760 390" role="img" aria-labelledby="fig-005-title">
+    <title id="fig-005-title">A Slack thread split into same-author bursts and filtered by signal</title>
+    <defs>
+      <marker id="arrow-005" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-white" x="48" y="54" width="238" height="46"/>
+      <rect class="fill-white" x="48" y="110" width="238" height="46"/>
+      <rect class="fill-100" x="48" y="180" width="238" height="46"/>
+      <rect class="fill-100" x="48" y="236" width="238" height="46"/>
+      <rect class="fill-white" x="48" y="306" width="238" height="46"/>
+      <path d="M310 54h14v102h-14M310 180h14v102h-14"/>
+      <rect class="fill-white" x="410" y="92" width="278" height="72"/>
+      <rect class="fill-100" x="410" y="218" width="278" height="72"/>
+      <path marker-end="url(#arrow-005)" d="M324 105H402"/>
+      <path marker-end="url(#arrow-005)" d="M324 231H402"/>
+    </g>
+    <g class="svg-label">
+      <text x="76" y="82">AUTHOR A - SHORT</text>
+      <text x="76" y="138">AUTHOR A - FOLLOW-UP</text>
+      <text x="76" y="208">AUTHOR B - TECHNICAL DETAIL</text>
+      <text x="76" y="264">AUTHOR B - RESOLUTION</text>
+      <text x="76" y="334">AUTHOR C - ACK</text>
+      <text x="436" y="122">BURST 01 - FILTERED</text>
+      <text x="436" y="248">BURST 02 - EMBEDDED</text>
+    </g>
+    <g class="svg-label-muted">
+      <text x="436" y="146">SHORT - COMMON TOKENS - NO REACTIONS</text>
+      <text x="436" y="272">LONG - RARE TERMS - REACTED TO</text>
+    </g>
+  </svg>
+</div>
+
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">스레드를 같은 작성자 단위의 버스트로 쪼개고 신호 기준으로 걸러냅니다. (저품질 데이터를 미리 막는 문턱이 검색 품질을 지킵니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>넷째, 검색은 네 가지를 동시에 돌리고 순위는 합의로 정합니다.</strong> 어느 하나도 단독으로 신뢰하지 않습니다. 전문 검색은 오류 문자열, 플래그 이름, 호스트명처럼 임베딩이 뭉개는 정확한 토큰을 잡습니다. 임베딩 검색은 표현이 달라도 뜻이 같은 경우를 잇습니다. 역문서빈도는 흔한 인사말을 걸러내고 희귀 단어가 든 짧은 메시지를 끌어올립니다. 시간 감쇠는 슬랙의 답이 유통기한을 갖는다는 사실을 반영합니다. 반년 전 스레드가 지금은 없는 인프라를 설명할 수 있기 때문입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-hybrid">
+  <style>
+    .cb-fig.cb-fig-hybrid {
+      --paper: #fbfbfb;
+      --white: #fff;
+      --cobalt-50: oklch(0.98 0.012 45);
+      --cobalt-100: oklch(0.945 0.038 45);
+      --cobalt-300: oklch(0.79 0.125 39);
+      --cobalt-600: #a93613;
+      --danger: oklch(0.55 0.18 25);
+      --label: rgb(0 0 0 / 0.5);
+      --hairline: rgb(0 0 0 / 0.12);
+      --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+      --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 48px 40px;
+      color: #171717;
+      background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+      box-sizing: border-box;
+    }
+    .cb-fig.cb-fig-hybrid button {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      min-height: 34px;
+      padding: 7px 10px;
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      cursor: pointer;
+    }
+    .cb-fig.cb-fig-hybrid button[aria-pressed="true"] {
+      color: var(--white);
+      background: var(--cobalt-600);
+      border-color: var(--cobalt-600);
+    }
+    .cb-fig.cb-fig-hybrid .chunk-mode__index { grid-row: 1 / span 2; color: var(--label); }
+    .cb-fig.cb-fig-hybrid .chunk-mode__title { color: var(--cobalt-600); line-height: 1.25; }
+    .cb-fig.cb-fig-hybrid .chunk-mode__detail { color: var(--label); font-size: 8px; line-height: 1.4; }
+    .cb-fig.cb-fig-hybrid .chunk-legend {
+      align-self: end;
+      display: grid;
+      gap: 7px;
+      padding: 10px 2px;
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .cb-fig.cb-fig-hybrid .chunk-legend span { display: flex; gap: 7px; align-items: center; }
+    .cb-fig.cb-fig-hybrid .chunk-legend i { display: inline-block; width: 18px; height: 8px; }
+    .cb-fig.cb-fig-hybrid .chunk-legend__swatch { background: var(--cobalt-100); border: 1px solid var(--cobalt-300); }
+    .cb-fig.cb-fig-hybrid .chunk-legend__cut { border-top: 1px dashed var(--danger); }
+    .cb-fig.cb-fig-hybrid .chunk-filebar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .cb-fig.cb-fig-hybrid .chunk-filebar [data-mode-label] { color: var(--cobalt-600); }
+    .cb-fig.cb-fig-hybrid .hybrid-app {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 168px;
+      grid-template-areas: "viewer modes";
+      gap: 12px;
+      align-items: stretch;
+    }
+    .cb-fig.cb-fig-hybrid .hybrid-app .distill-modes { grid-template-rows: auto auto auto auto 1fr; }
+    .cb-fig.cb-fig-hybrid .distill-modes {
+      grid-area: modes;
+      display: grid;
+      grid-template-rows: auto auto auto 1fr;
+      gap: 8px;
+    }
+    .cb-fig.cb-fig-hybrid .distill-modes button {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 3px 8px;
+      min-height: 86px;
+      padding: 12px;
+      text-align: left;
+    }
+    .cb-fig.cb-fig-hybrid .distill-modes button[aria-pressed="true"] .chunk-mode__index,
+    .cb-fig.cb-fig-hybrid .distill-modes button[aria-pressed="true"] .chunk-mode__title,
+    .cb-fig.cb-fig-hybrid .distill-modes button[aria-pressed="true"] .chunk-mode__detail { color: var(--white); }
+    .cb-fig.cb-fig-hybrid .distill-viewer {
+      grid-area: viewer;
+      min-width: 0;
+      border: 1px solid var(--hairline);
+      background: rgb(255 255 255 / 0.82);
+    }
+    .cb-fig.cb-fig-hybrid .dthread { display: grid; margin: 0; padding: 18px 22px 14px; list-style: none; }
+    .cb-fig.cb-fig-hybrid .dmsg { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 340ms var(--ease); }
+    .cb-fig.cb-fig-hybrid .dmsg__clip { overflow: hidden; min-height: 0; }
+    .cb-fig.cb-fig-hybrid .dmsg__row {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 12px;
+      padding-bottom: 6px;
+    }
+    .cb-fig.cb-fig-hybrid .dmsg__gutter {
+      padding-top: 10px;
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.04em;
+      text-align: right;
+    }
+    .cb-fig.cb-fig-hybrid .dmsg__band {
+      position: relative;
+      padding: 9px 12px;
+      border: 1px solid transparent;
+      transition:
+        background 220ms var(--ease),
+        border-color 220ms var(--ease),
+        opacity 220ms var(--ease);
+    }
+    .cb-fig.cb-fig-hybrid .dmsg__meta {
+      margin-bottom: 3px;
+      color: var(--cobalt-600);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .cb-fig.cb-fig-hybrid .dmsg__band p { margin: 0; font-size: 15px; line-height: 1.5; transition: color 220ms var(--ease); }
+    .cb-fig.cb-fig-hybrid .dmsg__tag {
+      position: absolute;
+      top: 7px;
+      right: 9px;
+      padding: 1px 4px;
+      background: rgb(255 255 255 / 0.9);
+      color: var(--cobalt-600);
+      font-family: var(--font-mono);
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      opacity: 0;
+      transform: translateY(-3px);
+      transition:
+        opacity 220ms var(--ease),
+        transform 220ms var(--ease);
+    }
+    .cb-fig.cb-fig-hybrid .hyb-query {
+      display: flex;
+      gap: 14px;
+      align-items: baseline;
+      padding: 12px 22px;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .cb-fig.cb-fig-hybrid .hyb-query__label {
+      color: var(--cobalt-600);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.05em;
+    }
+    .cb-fig.cb-fig-hybrid .hyb-query p { margin: 0; font-size: 15px; line-height: 1.5; }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] .dmsg__tag[data-on~="0"],
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] .dmsg__tag[data-on~="1"],
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] .dmsg__tag[data-on~="2"],
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] .dmsg__tag[data-on~="3"] { opacity: 1; transform: none; }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="boost"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="boost"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="boost"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="boost"] .dmsg__band {
+      background: var(--cobalt-50);
+      border-color: var(--cobalt-300);
+    }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__band {
+      background: color-mix(in oklab, var(--danger) 5%, white);
+      border-color: var(--danger);
+      border-style: dashed;
+    }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__band p,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__band p,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__band p,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__band p {
+      color: var(--label);
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+    }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="cut"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="cut"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="cut"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="cut"] .dmsg__tag { color: var(--danger); }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="dim"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="dim"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="dim"] .dmsg__band,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="dim"] .dmsg__band { opacity: 0.45; }
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="0"] [data-s0="dim"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="1"] [data-s1="dim"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="2"] [data-s2="dim"] .dmsg__tag,
+    .cb-fig.cb-fig-hybrid .hybrid-app[data-stage="3"] [data-s3="dim"] .dmsg__tag { color: var(--label); }
+    .cb-fig.cb-fig-hybrid .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+    @media (max-width: 900px) {
+      .cb-fig.cb-fig-hybrid { padding: 42px 18px; }
+      .cb-fig.cb-fig-hybrid .hybrid-app {
+        grid-template-columns: 1fr;
+        grid-template-areas: "modes" "viewer";
+      }
+      .cb-fig.cb-fig-hybrid .hybrid-app .distill-modes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+      }
+      .cb-fig.cb-fig-hybrid .hyb-query { padding: 10px 16px; }
+      .cb-fig.cb-fig-hybrid .distill-modes button { min-height: 0; }
+      .cb-fig.cb-fig-hybrid .dthread { padding: 14px 16px 10px; }
+      .cb-fig.cb-fig-hybrid .dmsg__row { grid-template-columns: 40px minmax(0, 1fr); gap: 10px; }
+    }
+    @media (max-width: 540px) {
+      .cb-fig.cb-fig-hybrid .dmsg__row { grid-template-columns: 1fr; }
+      .cb-fig.cb-fig-hybrid .dmsg__gutter { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cb-fig.cb-fig-hybrid .dmsg,
+      .cb-fig.cb-fig-hybrid .dmsg__band,
+      .cb-fig.cb-fig-hybrid .dmsg__band p,
+      .cb-fig.cb-fig-hybrid .dmsg__tag { transition: none; }
+    }
+  </style>
+  <div class="hybrid-app" data-fig="hybrid" data-stage="0">
+    <div class="distill-viewer">
+      <div class="chunk-filebar">
+        <span>SEARCH / SLACK CANDIDATES</span>
+        <span data-mode-label>FULL-TEXT</span>
+      </div>
+      <div class="hyb-query">
+        <span class="hyb-query__label">QUERY</span>
+        <p>&ldquo;restore hangs after manifest load&rdquo;</p>
+      </div>
+      <ol class="dthread">
+        <li class="dmsg hyb-cand" data-s0="dim" data-s1="boost" data-s2="boost" data-s3="boost">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">2W AGO</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag" data-on="0">NO SHARED TOKENS</b>
+              <b class="dmsg__tag" data-on="1">PARAPHRASE MATCH</b>
+              <b class="dmsg__tag" data-on="2">CKPT_PREFETCH: RARE</b>
+              <b class="dmsg__tag" data-on="3">RECENT WINS TIE</b>
+              <div class="dmsg__meta">Thread</div>
+              <p>Checkpoint stalls on the NFS mount &mdash; set <code>CKPT_PREFETCH=4</code>.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg hyb-cand" data-s0="boost" data-s1="dim" data-s2="boost" data-s3="none">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">1D AGO</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag" data-on="0">EXACT TOKENS</b>
+              <b class="dmsg__tag" data-on="2">ERR_MANIFEST_TIMEOUT: RARE</b>
+              <div class="dmsg__meta">Message</div>
+              <p><code>ERR_MANIFEST_TIMEOUT</code>: restore hangs after manifest load.</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg hyb-cand" data-s0="dim" data-s1="boost" data-s2="cut" data-s3="none">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">3H AGO</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag" data-on="1">FALSE NEIGHBOR</b>
+              <b class="dmsg__tag" data-on="2">NO RARE TOKENS</b>
+              <div class="dmsg__meta">Message</div>
+              <p>sounds good, thanks! will try that</p>
+            </div>
+          </div></div>
+        </li>
+        <li class="dmsg hyb-cand" data-s0="boost" data-s1="none" data-s2="none" data-s3="cut">
+          <div class="dmsg__clip"><div class="dmsg__row">
+            <div class="dmsg__gutter">8MO AGO</div>
+            <div class="dmsg__band">
+              <b class="dmsg__tag" data-on="0">ALSO MATCHES</b>
+              <b class="dmsg__tag" data-on="3">8 MO: DECAYED</b>
+              <div class="dmsg__meta">Thread</div>
+              <p>restore hangs after manifest load &rarr; use <code>LEGACY_FETCHER=1</code>.</p>
+            </div>
+          </div></div>
+        </li>
+      </ol>
+    </div>
+    <div class="distill-modes" role="group" aria-label="Retrieval techniques">
+      <button type="button" data-stage="0" aria-pressed="true">
+        <span class="chunk-mode__index">01</span>
+        <span class="chunk-mode__title">FULL-TEXT</span>
+        <span class="chunk-mode__detail">EXACT TOKENS, PASTED ERRORS</span>
+      </button>
+      <button type="button" data-stage="1" aria-pressed="false">
+        <span class="chunk-mode__index">02</span>
+        <span class="chunk-mode__title">EMBEDDING</span>
+        <span class="chunk-mode__detail">PARAPHRASE ACROSS VOCABULARY</span>
+      </button>
+      <button type="button" data-stage="2" aria-pressed="false">
+        <span class="chunk-mode__index">03</span>
+        <span class="chunk-mode__title">IDF</span>
+        <span class="chunk-mode__detail">RARE TOKENS BEAT FILLER</span>
+      </button>
+      <button type="button" data-stage="3" aria-pressed="false">
+        <span class="chunk-mode__index">04</span>
+        <span class="chunk-mode__title">AGE DECAY</span>
+        <span class="chunk-mode__detail">NEWER ANSWERS WIN TIES</span>
+      </button>
+      <div class="chunk-legend">
+        <span><i class="chunk-legend__swatch"></i>BOOSTED BY THIS SIGNAL</span>
+        <span><i class="chunk-legend__cut"></i>PENALIZED</span>
+      </div>
+    </div>
+    <span class="sr-only" aria-live="polite"></span>
+  </div>
+  <script>
+    (function () {
+      var scope = document.currentScript.closest('.cb-fig');
+      var root = scope.querySelector('[data-fig="hybrid"]');
+      if (!root || root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+
+      const modes = [...root.querySelectorAll("button[data-stage]")]
+      const label = root.querySelector("[data-mode-label]")
+      const live = root.querySelector(".sr-only")
+      const names = modes.map((mode) => mode.querySelector(".chunk-mode__title")?.textContent ?? "")
+
+      modes.forEach((mode, index) => {
+        mode.addEventListener("click", () => activate(index))
+        mode.addEventListener("keydown", (event) => {
+          if (!["ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown"].includes(event.key)) return
+          event.preventDefault()
+          const delta = ["ArrowRight", "ArrowDown"].includes(event.key) ? 1 : -1
+          activate((index + delta + modes.length) % modes.length, true)
+        })
+      })
+
+      function activate(index, focus = false) {
+        root.dataset.stage = String(index)
+        modes.forEach((mode, i) => {
+          mode.setAttribute("aria-pressed", String(i === index))
+        })
+        if (label) label.textContent = names[index]
+        if (focus) modes[index].focus()
+        if (live) live.textContent = `${names[index]} selected`
+      }
+    })();
+  </script>
+</div>
+
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">네 가지 검색 기법이 서로의 약점을 메웁니다. 버튼을 눌러 각 기법이 무엇을 잡는지 볼 수 있습니다. (기법 하나를 고르는 문제가 아니라, 섞는 비율을 정하는 문제입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>서로 다른 검색기가 내놓은 목록은 그대로 비교할 수 없습니다. 그래서 상호 순위 융합을 씁니다. 문서마다 각 목록에서 가중치를 60 더하기 순위로 나눈 값을 더합니다. 가중치 기본값은 1.0, 완충 상수는 60입니다. 이 완충 상수 덕분에 한 검색기에서 1위인 문서보다, 여러 검색기에서 고르게 상위인 문서가 이깁니다.</p>
+
+        <p>그다음 중복을 원본 단위로 합칩니다. 한 파일이 차지할 결과 수도 제한해 상위 20개를 다양하게 만듭니다. 이를 작은 재순위 모델에 넘겨 0에서 10점을 매기고 상위 10개만 남깁니다. 마지막으로 살아남은 결과에 문맥을 되돌려줍니다. 위키 한 단락이 걸리면 앞뒤 두 단락을 함께 붙여, 조각내며 잘려나간 제목과 전제와 단서를 되살립니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-008">
+  <style>  .cb-fig.cb-fig-008 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 0 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-008,
+  .cb-fig.cb-fig-008 *,
+  .cb-fig.cb-fig-008 *::before,
+  .cb-fig.cb-fig-008 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-008 button,
+  .cb-fig.cb-fig-008 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-008 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-008 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-008 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-008 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-008 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 0 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-008 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-008 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-008 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-008 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-008 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-008 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-008 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-008 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-008 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-008 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-008 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-008 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-008 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }
+
+
+  .cb-fig.cb-fig-008 .fig-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    align-items: center;
+  }
+  .cb-fig.cb-fig-008 .control,
+  .cb-fig.cb-fig-008 button,
+  .cb-fig.cb-fig-008 input {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-008 button {
+    min-height: 28px;
+    padding: 5px 8px;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 0;
+    cursor: pointer;
+  }
+  .cb-fig.cb-fig-008 button[aria-pressed="true"],
+  .cb-fig.cb-fig-008 button[aria-selected="true"] {
+    color: var(--white);
+    background: var(--cobalt-600);
+    border-color: var(--cobalt-600);
+  }
+
+
+  .cb-fig.cb-fig-008 .rrf-app {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 0.36fr);
+    gap: 12px;
+  }
+  .cb-fig.cb-fig-008 .rrf-lists {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .cb-fig.cb-fig-008 .rrf-col,
+  .cb-fig.cb-fig-008 .rrf-merged {
+    position: relative;
+    min-width: 0;
+  }
+  .cb-fig.cb-fig-008 .rrf-col.is-off {
+    opacity: 0.25;
+  }
+  .cb-fig.cb-fig-008 .rrf-col__head {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 10px;
+    line-height: 1.2;
+  }
+  .cb-fig.cb-fig-008 .rrf-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px;
+    align-items: center;
+    min-height: 28px;
+    margin-bottom: 4px;
+    padding: 5px;
+    background: rgb(255 255 255 / 0.82);
+    border: 1px solid var(--hairline);
+    color: var(--ink);
+    font-family: var(--font-mono);
+    font-size: 6.5px;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    text-transform: uppercase;
+    transition:
+      background 220ms var(--ease),
+      opacity 220ms var(--ease),
+      transform 300ms var(--ease);
+  }
+  .cb-fig.cb-fig-008 .rrf-card.is-source-hit,
+  .cb-fig.cb-fig-008 .rrf-card.is-target-hit {
+    background: var(--cobalt-100);
+    border-color: color-mix(in oklab, var(--cobalt-600) 28%, var(--hairline));
+  }
+  .cb-fig.cb-fig-008 .rrf-rank,
+  .cb-fig.cb-fig-008 .rrf-score {
+    color: var(--cobalt-600);
+  }
+  .cb-fig.cb-fig-008 .rrf-formula {
+    margin-top: 12px;
+    color: var(--label);
+    font-family: var(--font-mono);
+    font-size: 7px;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-008 .rrf-app {
+      grid-template-columns: 1fr;
+    }
+    .cb-fig.cb-fig-008 .rrf-lists {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    .cb-fig.cb-fig-008 *,
+    .cb-fig.cb-fig-008 *::before,
+    .cb-fig.cb-fig-008 *::after {
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 1ms !important;
+    }
+  }</style>
+  <div data-fig="rrf"></div>
+  <script>    (function () {
+      var scope = document.currentScript.closest('.cb-fig');
+      var root = scope && scope.querySelector('[data-fig="rrf"]');
+      if (!root || root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+      var lists = [
+        ['vector', 'VECTOR', [['code_manifest', 1], ['ckpt_loader', 2], ['wiki_format', 3], ['thread_nfs', 4], ['incident_82', 5]]],
+        ['fts', 'FTS', [['wiki_format', 1], ['code_manifest', 2], ['runbook_nfs', 3], ['incident_82', 4], ['thread_cache', 5]]],
+        ['thread', 'THREAD SUMMARIES', [['thread_nfs', 1], ['thread_cache', 2], ['ckpt_loader', 3], ['wiki_stall', 4], ['incident_82', 5]]],
+        ['graph', 'GRAPH', [['ckpt_loader', 1], ['manifest_parser', 2], ['runbook_nfs', 3], ['thread_nfs', 4], ['wiki_format', 5]]],
+        ['wiki', 'WIKI VECTOR', [['wiki_format', 1], ['wiki_stall', 2], ['runbook_nfs', 3], ['incident_82', 4], ['ckpt_loader', 5]]],
+        ['slack', 'SLACK FTS', [['thread_nfs', 1], ['thread_cache', 2], ['burst_timeout', 3], ['incident_82', 4], ['ckpt_loader', 5]]]
+      ];
+      var names = {
+        code_manifest: 'CKPT_LOADER.CC',
+        ckpt_loader: 'CLASS: CHECKPOINTLOADER',
+        wiki_format: 'WIKI: CHECKPOINT FORMAT',
+        thread_nfs: 'THREAD: NFS STALL',
+        incident_82: 'INC-82: SLOW RESTORE',
+        runbook_nfs: 'RUNBOOK: NFS MOUNTS',
+        thread_cache: 'THREAD: CACHE WARMUP',
+        manifest_parser: 'MANIFEST_PARSER.H',
+        wiki_stall: 'WIKI: LOAD STALLS',
+        burst_timeout: 'BURST: TIMEOUT FLAGS'
+      };
+      var enabled = new Set(lists.map(function (list) { return list[0]; }));
+      root.innerHTML = '<div class="fig-controls"><button class="reset" type="button">RESET_</button><span class="sr-only" aria-live="polite"></span></div><div class="rrf-app"><div class="rrf-lists"></div><div class="rrf-merged"></div></div><div class="rrf-formula">SCORE(D) = SUM 1 / (60 + RANK_L(D)) &nbsp; | &nbsp; K = 60</div>';
+      var cols = root.querySelector('.rrf-lists');
+      var merged = root.querySelector('.rrf-merged');
+      var live = root.querySelector('.sr-only');
+      lists.forEach(function (list) {
+        var id = list[0];
+        var label = list[1];
+        var docs = list[2];
+        var col = document.createElement('section');
+        col.className = 'rrf-col';
+        col.dataset.list = id;
+        col.innerHTML = '<button type="button" class="rrf-col__head" aria-pressed="true">' + label + '</button>';
+        docs.forEach(function (doc) { col.append(card(doc[0], doc[1], id)); });
+        cols.append(col);
+        col.querySelector('button').addEventListener('click', function () {
+          enabled.has(id) ? enabled.delete(id) : enabled.add(id);
+          col.classList.toggle('is-off', !enabled.has(id));
+          col.querySelector('button').setAttribute('aria-pressed', String(enabled.has(id)));
+          renderMerged(true);
+          live.textContent = 'Merged ranking updated';
+        });
+      });
+      root.querySelector('.reset').addEventListener('click', function () {
+        enabled.clear();
+        lists.forEach(function (list) { enabled.add(list[0]); });
+        Array.prototype.slice.call(root.querySelectorAll('.rrf-col')).forEach(function (col) {
+          col.classList.remove('is-off');
+          col.querySelector('button').setAttribute('aria-pressed', 'true');
+        });
+        renderMerged(true);
+      });
+      renderMerged(false);
+      function card(doc, rank, list) {
+        var el = document.createElement('div');
+        el.className = 'rrf-card';
+        el.dataset.doc = doc;
+        el.dataset.list = list;
+        el.innerHTML = '<span class="rrf-rank">' + rank + '</span><span>' + names[doc] + '</span>';
+        return el;
+      }
+      function renderMerged(flip) {
+        var before = new Map(Array.prototype.slice.call(merged.children).map(function (el) {
+          return [el.dataset.doc, el.getBoundingClientRect()];
+        }));
+        var rows = score().slice(0, 6);
+        merged.innerHTML = '<button type="button" class="rrf-col__head" tabindex="-1">MERGED</button>';
+        rows.forEach(function (row, i) {
+          var el = card(row.doc, i + 1, 'merged');
+          el.classList.add('rrf-merged-card');
+          el.tabIndex = 0;
+          el.innerHTML = '<span class="rrf-rank">' + (i + 1) + '</span><span>' + names[row.doc] + '<br><span class="rrf-score">' + row.score.toFixed(4) + '</span></span>';
+          el.title = row.parts.map(function (p) { return '1/(60+' + p.rank + ')'; }).join(' + ');
+          el.addEventListener('mouseenter', function () { highlight(row.doc); });
+          el.addEventListener('focus', function () { highlight(row.doc); });
+          el.addEventListener('mouseleave', clear);
+          el.addEventListener('blur', clear);
+          merged.append(el);
+        });
+        if (flip) {
+          Array.prototype.slice.call(merged.querySelectorAll('.rrf-card')).forEach(function (el) {
+            var old = before.get(el.dataset.doc);
+            if (!old) return;
+            var now = el.getBoundingClientRect();
+            el.style.transform = 'translateY(' + (old.top - now.top) + 'px)';
+            window.requestAnimationFrame(function () { el.style.transform = ''; });
+          });
+        }
+      }
+      function score() {
+        var totals = new Map();
+        lists.forEach(function (list) {
+          var id = list[0];
+          var docs = list[2];
+          if (!enabled.has(id)) return;
+          docs.forEach(function (docPair) {
+            var doc = docPair[0];
+            var rank = docPair[1];
+            var row = totals.get(doc) || { doc: doc, score: 0, parts: [] };
+            row.score += 1 / (60 + rank);
+            row.parts.push({ list: id, rank: rank });
+            totals.set(doc, row);
+          });
+        });
+        return Array.from(totals.values()).sort(function (a, b) {
+          return b.score - a.score || names[a.doc].localeCompare(names[b.doc]);
+        });
+      }
+      function highlight(doc) {
+        clear();
+        Array.prototype.slice.call(root.querySelectorAll('[data-doc="' + doc + '"]')).forEach(function (el) {
+          el.classList.add(el.dataset.list === 'merged' ? 'is-target-hit' : 'is-source-hit');
+        });
+      }
+      function clear() {
+        Array.prototype.slice.call(root.querySelectorAll('.is-source-hit,.is-target-hit')).forEach(function (el) {
+          el.classList.remove('is-source-hit', 'is-target-hit');
+        });
+      }
+    })();
+  </script>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">여섯 개 검색기의 순위 목록이 상호 순위 융합으로 하나의 순위가 되는 과정입니다. (한 검색기의 확신보다 여러 검색기의 합의가 강합니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>다섯째, 코드는 굵은 단위부터 잘라 넣습니다.</strong> 처음엔 코드 임베딩이 필요한지 논쟁했습니다. 클로드 코드 같은 도구가 있으니 그냥 검색하면 된다는 생각이 있었기 때문입니다. 커서가 공개한 대규모 코드베이스 의미 검색 결과를 보고 시도하기로 했습니다. 40GB가 넘는 저장소도 있어, 관건은 최신 상태를 싸게 유지하는 일이었습니다.</p>
+
+        <p>선택은 코코인덱스였습니다. 언어별 규칙으로 굵은 경계부터 자릅니다. 클래스 단위를 먼저 시도하고, 조각이 여전히 크면 메서드, 그다음 더 작은 블록으로 내려갑니다. 커밋마다 바뀐 조각만 다시 임베딩합니다. 동기화 상태와 임베딩 저장소가 같은 데이터베이스에 있어 특히 잘 맞았습니다. 저장소가 늘어나자 온보딩을 설정 파일로 옮겨, 팀이 직접 경로 허용 목록과 제외 목록을 제출하게 했습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-006">
+  <style>
+    .cb-fig.cb-fig-006 {
+      --paper: #fbfbfb;
+      --white: #fff;
+      --cobalt-50: oklch(0.98 0.012 45);
+      --cobalt-100: oklch(0.945 0.038 45);
+      --cobalt-300: oklch(0.79 0.125 39);
+      --cobalt-400: oklch(0.67 0.175 35);
+      --cobalt-600: #a93613;
+      --cobalt-700: #7c260f;
+      --danger: oklch(0.55 0.18 25);
+      --label: rgb(0 0 0 / 0.5);
+      --hairline: rgb(0 0 0 / 0.12);
+      --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+      --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 48px 40px;
+      color: #171717;
+      background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+      box-sizing: border-box;
+    }
+    .cb-fig.cb-fig-006 button {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      min-height: 34px;
+      padding: 7px 10px;
+      background: var(--paper);
+      border: 1px solid var(--hairline);
+      border-radius: 0;
+      cursor: pointer;
+    }
+    .cb-fig.cb-fig-006 button[aria-pressed="true"] {
+      color: var(--white);
+      background: var(--cobalt-600);
+      border-color: var(--cobalt-600);
+    }
+    .cb-fig.cb-fig-006 .chunk-app {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 168px;
+      grid-template-areas: "viewer modes";
+      gap: 12px;
+      align-items: stretch;
+    }
+    .cb-fig.cb-fig-006 .chunk-modes {
+      grid-area: modes;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 8px;
+    }
+    .cb-fig.cb-fig-006 .chunk-modes button {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 3px 8px;
+      min-height: 86px;
+      padding: 12px;
+      text-align: left;
+    }
+    .cb-fig.cb-fig-006 .chunk-mode__index { grid-row: 1 / span 2; color: var(--label); }
+    .cb-fig.cb-fig-006 .chunk-mode__title { color: var(--cobalt-600); line-height: 1.25; }
+    .cb-fig.cb-fig-006 .chunk-mode__detail { color: var(--label); font-size: 8px; line-height: 1.4; }
+    .cb-fig.cb-fig-006 .chunk-modes button[aria-pressed="true"] .chunk-mode__index,
+    .cb-fig.cb-fig-006 .chunk-modes button[aria-pressed="true"] .chunk-mode__title,
+    .cb-fig.cb-fig-006 .chunk-modes button[aria-pressed="true"] .chunk-mode__detail { color: var(--white); }
+    .cb-fig.cb-fig-006 .chunk-legend {
+      align-self: end;
+      display: grid;
+      gap: 7px;
+      padding: 10px 2px;
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .cb-fig.cb-fig-006 .chunk-legend span { display: flex; gap: 7px; align-items: center; }
+    .cb-fig.cb-fig-006 .chunk-legend i { display: inline-block; width: 18px; height: 8px; }
+    .cb-fig.cb-fig-006 .chunk-legend__swatch { background: var(--cobalt-100); border: 1px solid var(--cobalt-300); }
+    .cb-fig.cb-fig-006 .chunk-legend__cut { border-top: 1px dashed var(--danger); }
+    .cb-fig.cb-fig-006 .chunk-viewer {
+      grid-area: viewer;
+      min-width: 0;
+      border: 1px solid var(--hairline);
+      background: rgb(255 255 255 / 0.82);
+    }
+    .cb-fig.cb-fig-006 .chunk-filebar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--hairline);
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .cb-fig.cb-fig-006 .chunk-filebar [data-mode-label] { color: var(--cobalt-600); }
+    .cb-fig.cb-fig-006 .chunk-code {
+      --chunk-line: 15px;
+      --chunk-pad: 14px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      overflow-x: auto;
+      overflow-y: hidden;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      line-height: var(--chunk-line);
+    }
+    .cb-fig.cb-fig-006 .chunk-lines,
+    .cb-fig.cb-fig-006 .chunk-text { position: relative; z-index: 2; padding: var(--chunk-pad) 0; }
+    .cb-fig.cb-fig-006 .chunk-lines { color: var(--label); text-align: right; border-right: 1px solid var(--hairline); }
+    .cb-fig.cb-fig-006 .chunk-lines span,
+    .cb-fig.cb-fig-006 .chunk-text span { display: block; min-height: var(--chunk-line); padding: 0 10px; white-space: pre; }
+    .cb-fig.cb-fig-006 .chunk-text em { font-style: normal; }
+    .cb-fig.cb-fig-006 .tok-keyword { color: var(--cobalt-600); }
+    .cb-fig.cb-fig-006 .tok-type { color: var(--cobalt-700); }
+    .cb-fig.cb-fig-006 .tok-symbol {
+      text-decoration: underline;
+      text-decoration-color: var(--cobalt-300);
+      text-underline-offset: 2px;
+    }
+    .cb-fig.cb-fig-006 .chunk-overlay { position: absolute; z-index: 1; inset: 0 0 0 42px; pointer-events: none; }
+    .cb-fig.cb-fig-006 .chunk-band {
+      position: absolute;
+      top: calc(var(--chunk-pad) + var(--top));
+      left: var(--inset, 0);
+      right: var(--inset, 0);
+      height: var(--height);
+      background: var(--cobalt-50);
+      border-top: 1px solid var(--cobalt-300);
+      border-bottom: 1px solid var(--cobalt-300);
+      transition:
+        top 220ms var(--ease),
+        height 220ms var(--ease),
+        background 220ms var(--ease),
+        border-color 220ms var(--ease);
+    }
+    .cb-fig.cb-fig-006 .chunk-band b {
+      position: absolute;
+      z-index: 3;
+      top: 2px;
+      right: 5px;
+      padding: 1px 3px;
+      background: rgb(255 255 255 / 0.88);
+      color: var(--cobalt-600);
+      font-family: var(--font-mono);
+      font-size: 7px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+    }
+    .cb-fig.cb-fig-006 .chunk-band--fixed {
+      background: color-mix(in oklab, var(--danger) 6%, white);
+      border-top: 1px dashed var(--danger);
+      border-bottom: 1px dashed var(--danger);
+    }
+    .cb-fig.cb-fig-006 .chunk-band--recursive { background: color-mix(in oklab, var(--cobalt-100) 58%, transparent); }
+    .cb-fig.cb-fig-006 .chunk-band--depth-0 { background: transparent; border: 1px solid var(--cobalt-600); }
+    .cb-fig.cb-fig-006 .chunk-band--depth-1 {
+      background: color-mix(in oklab, var(--cobalt-100) 48%, transparent);
+      border-color: var(--cobalt-400);
+    }
+    .cb-fig.cb-fig-006 .chunk-band--depth-2 {
+      background: color-mix(in oklab, var(--cobalt-300) 18%, transparent);
+      border-color: var(--cobalt-300);
+      border-left-style: dashed;
+    }
+    .cb-fig.cb-fig-006 .chunk-band--depth-0 b { color: var(--cobalt-700); }
+    .cb-fig.cb-fig-006 .chunk-band--depth-2 b { font-size: 6px; }
+    .cb-fig.cb-fig-006 .chunk-band--fixed b { color: var(--danger); }
+    .cb-fig.cb-fig-006 .chunk-status {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 10px;
+      color: var(--label);
+      font-family: var(--font-mono);
+      font-size: 8px;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    .cb-fig.cb-fig-006 .chunk-status strong { color: var(--cobalt-600); font-weight: 400; }
+    .cb-fig.cb-fig-006 .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+    @media (max-width: 900px) {
+      .cb-fig.cb-fig-006 { padding: 42px 18px; }
+      .cb-fig.cb-fig-006 .chunk-app {
+        grid-template-columns: 1fr;
+        grid-template-areas: "modes" "viewer";
+      }
+      .cb-fig.cb-fig-006 .chunk-modes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+      }
+      .cb-fig.cb-fig-006 .chunk-legend { display: none; }
+      .cb-fig.cb-fig-006 .chunk-status { display: grid; }
+    }
+  </style>
+  <div data-fig="chunking"></div>
+  <script>
+    (function () {
+      var scope = document.currentScript.closest('.cb-fig');
+      var root = scope.querySelector('[data-fig="chunking"]');
+      if (!root || root.dataset.initialized === 'true') return;
+      root.dataset.initialized = 'true';
+
+      const code = [
+        "class CheckpointLoader {",
+        " public:",
+        "  Status LoadManifest(Path p) {",
+        "    auto bytes = fs_.Read(p);",
+        "    if (!bytes.ok()) return bytes.status();",
+        "    manifest_ = ParseManifest(*bytes);",
+        "    return ValidateShards(manifest_);",
+        "  }",
+        "",
+        "  Status WarmShardCache() {",
+        "    for (const auto& shard : manifest_.shards()) {",
+        "      cache_.Pin(shard.key());",
+        "      stats_.Record(shard.bytes());",
+        "    }",
+        "    return OkStatus();",
+        "  }",
+        "",
+        "  Status Restore(RestoreOptions opts) {",
+        "    auto lease = coordinator_.Acquire(opts.cluster);",
+        "    if (!lease.ok()) return lease.status();",
+        "    for (auto id : manifest_.ordered_ids()) {",
+        "      RETURN_IF_ERROR(fetcher_.Fetch(id));",
+        "    }",
+        "    return coordinator_.Release(*lease);",
+        "  }",
+        "",
+        " private:",
+        "  FileSystem fs_;",
+        "  Manifest manifest_;",
+        "  ShardCache cache_;",
+        "};"
+      ]
+
+      let mode = "ast"
+      let pinnedMode = mode
+      root.innerHTML = `
+        <div class="chunk-app">
+          <div class="chunk-viewer">
+            <div class="chunk-filebar">
+              <span>CHECKPOINT_LOADER.CC</span>
+              <span data-mode-label>LANGUAGE-AWARE</span>
+            </div>
+            <div class="chunk-code">
+              <div class="chunk-lines"></div>
+              <div class="chunk-text"></div>
+              <div class="chunk-overlay"></div>
+            </div>
+          </div>
+          <div class="chunk-modes" aria-label="Chunking method">
+            <button type="button" data-mode="fixed" aria-pressed="false">
+              <span class="chunk-mode__index">01</span>
+              <span class="chunk-mode__title">NAIVE WINDOWS</span>
+              <span class="chunk-mode__detail">CUT EVERY N TOKENS</span>
+            </button>
+            <button type="button" data-mode="ast" aria-pressed="true">
+              <span class="chunk-mode__index">02</span>
+              <span class="chunk-mode__title">LANGUAGE-AWARE</span>
+              <span class="chunk-mode__detail">HIGH -&gt; LOW REGEX BOUNDARIES</span>
+            </button>
+            <div class="chunk-legend" aria-hidden="true">
+              <span><i class="chunk-legend__swatch"></i> SEMANTIC NODE</span>
+              <span><i class="chunk-legend__cut"></i> FIXED SPLIT</span>
+            </div>
+            <span class="sr-only" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="chunk-status" aria-hidden="true"></div>`
+      root.querySelector(".chunk-lines").innerHTML = code.map((_, i) => `<span>${i + 1}</span>`).join("")
+      root.querySelector(".chunk-text").innerHTML = code.map((line) => `<span>${highlight(line)}</span>`).join("")
+      root.querySelectorAll("button[data-mode]").forEach((btn) => {
+        btn.addEventListener("pointerenter", () => set(btn.dataset.mode, false))
+        btn.addEventListener("focus", () => set(btn.dataset.mode, false))
+        btn.addEventListener("click", () => {
+          pinnedMode = btn.dataset.mode
+          set(pinnedMode, true)
+        })
+        btn.addEventListener("pointerleave", () => set(pinnedMode, false))
+        btn.addEventListener("blur", () => set(pinnedMode, false))
+      })
+      set(mode, true)
+
+      function set(next, announce) {
+        mode = next
+        root.querySelectorAll("button[data-mode]").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.mode === mode)))
+        const overlay = root.querySelector(".chunk-overlay")
+        if (mode === "fixed") {
+          overlay.innerHTML = fixedBands([[0, 5], [6, 12], [13, 19], [20, 26], [27, 31]])
+          root.querySelector("[data-mode-label]").textContent = "NAIVE WINDOWS"
+          root.querySelector(".chunk-status").innerHTML = "<strong>5 CHUNKS</strong><span>FUNCTION BODIES ARE SPLIT ACROSS WINDOWS</span>"
+        } else {
+          overlay.innerHTML = recursiveBands([
+            { start: 0, end: 31, depth: 0, label: "1 TRY: CLASS" },
+            { start: 2, end: 7, depth: 1, label: "2 METHOD: LOADMANIFEST()" },
+            { start: 4, end: 4, depth: 2, label: "3 IF STILL LARGE: IF" },
+            { start: 9, end: 15, depth: 1, label: "2 METHOD: WARMSHARDCACHE()" },
+            { start: 10, end: 13, depth: 2, label: "3 IF STILL LARGE: FOR" },
+            { start: 17, end: 24, depth: 1, label: "2 METHOD: RESTORE()" },
+            { start: 19, end: 19, depth: 2, label: "3 IF STILL LARGE: IF" },
+            { start: 20, end: 22, depth: 2, label: "3 IF STILL LARGE: FOR" },
+            { start: 26, end: 30, depth: 1, label: "2 SECTION: PRIVATE FIELDS" }
+          ])
+          root.querySelector("[data-mode-label]").textContent = "LANGUAGE-AWARE"
+        }
+        if (announce) root.querySelector(".sr-only").textContent = `${mode === "ast" ? "Language-aware recursive" : "Naive window"} chunking selected`
+      }
+
+      function fixedBands(ranges) {
+        return ranges.map(([start, end], index) => {
+          const label = `CHUNK ${String(index + 1).padStart(2, "0")}`
+          return `<span class="chunk-band chunk-band--fixed" style="--top:${start * 15}px;--height:${(end - start + 1) * 15}px"><b>${label}</b></span>`
+        }).join("")
+      }
+
+      function recursiveBands(nodes) {
+        return nodes.map(({ start, end, depth, label }) => {
+          return `<span class="chunk-band chunk-band--recursive chunk-band--depth-${depth}" style="--top:${start * 15}px;--height:${(end - start + 1) * 15}px;--inset:${depth * 10}px"><b>${label}</b></span>`
+        }).join("")
+      }
+
+      function highlight(value) {
+        let text = value.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]))
+        text = text.replace(/\b(class|public|private|for|if|return|const|auto)\b/g, '<em class="tok-keyword">$1</em>')
+        text = text.replace(/\b(Status|Path|RestoreOptions|FileSystem|Manifest|ShardCache)\b/g, '<em class="tok-type">$1</em>')
+        text = text.replace(/\b(LoadManifest|WarmShardCache|Restore|ValidateShards|ParseManifest|OkStatus)\b/g, '<em class="tok-symbol">$1</em>')
+        return text
+      }
+    })();
+  </script>
+</div>
+
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">코드를 클래스, 메서드, 블록 순으로 잘라 여러 층위의 임베딩을 만듭니다. (한 파일이 여러 벡터로 남아, 큰 질문과 좁은 질문 모두에 걸립니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>여섯째, 질문마다 어떤 도구를 쓸지 먼저 계획합니다.</strong> 모든 질문에 대해 짧은 계획 단계를 먼저 돌립니다. LLM이 어떤 도구와 소스가 필요할지 고릅니다. 도구는 파일별 요약 색인, 통합 검색, 슬랙 검색, 코드 검색입니다. 최근 풀 리퀘스트와 전문가 찾기도 있습니다. 계획기는 어떤 프로젝트가 있고 각 소스가 무엇에 강한지 적힌 간략한 설명을 보고 판단합니다. 실행기는 선택된 도구를 병렬로 펼쳐 돌리고, 결과를 공통 형식으로 정리해 마지막 종합 단계에 넘깁니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-007">
+  <style>  .cb-fig.cb-fig-007 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 900px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-007,
+  .cb-fig.cb-fig-007 *,
+  .cb-fig.cb-fig-007 *::before,
+  .cb-fig.cb-fig-007 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-007 button,
+  .cb-fig.cb-fig-007 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-007 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-007 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-007 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-007 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-007 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-007 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-007 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-007 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-007 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-007 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-007 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-007 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-007 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-007 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-007 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-007 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-007 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-007 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }</style>
+  <svg viewBox="0 0 900 460" role="img" aria-labelledby="fig-007-title">
+    <title id="fig-007-title">Planner, parallel tool execution, evidence normalization, and synthesis</title>
+    <defs>
+      <marker id="arrow-007" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-white" x="58" y="188" width="142" height="64"/>
+      <rect class="fill-100" x="274" y="188" width="142" height="64"/>
+      <rect class="fill-white" x="492" y="48" width="150" height="52"/>
+      <rect class="fill-white" x="492" y="122" width="150" height="52"/>
+      <rect class="fill-white" x="492" y="196" width="150" height="52"/>
+      <rect class="fill-white" x="492" y="270" width="150" height="52"/>
+      <rect class="fill-white" x="492" y="344" width="150" height="52"/>
+      <rect class="fill-100" x="704" y="142" width="148" height="64"/>
+      <rect class="fill-100" x="704" y="264" width="148" height="64"/>
+      <path marker-end="url(#arrow-007)" d="M200 220H266"/>
+      <path marker-end="url(#arrow-007)" d="M416 220H458V74H484"/>
+      <path marker-end="url(#arrow-007)" d="M416 220H458V148H484"/>
+      <path marker-end="url(#arrow-007)" d="M416 220H484"/>
+      <path marker-end="url(#arrow-007)" d="M416 220H458V296H484"/>
+      <path marker-end="url(#arrow-007)" d="M416 220H458V370H484"/>
+      <path marker-end="url(#arrow-007)" d="M642 74H674V174H696"/>
+      <path marker-end="url(#arrow-007)" d="M642 148H696"/>
+      <path marker-end="url(#arrow-007)" d="M642 222H674V174H696"/>
+      <path marker-end="url(#arrow-007)" d="M642 296H674V296H696"/>
+      <path marker-end="url(#arrow-007)" d="M642 370H674V296H696"/>
+      <path marker-end="url(#arrow-007)" d="M778 206V256"/>
+    </g>
+    <g class="svg-label" text-anchor="middle" dominant-baseline="middle">
+      <text x="129" y="220">QUESTION</text>
+      <text x="345" y="220">PLANNER</text>
+      <text x="567" y="74">SEARCH</text>
+      <text x="567" y="148">SEARCH_SLACK</text>
+      <text x="567" y="222">SEARCH_CODE</text>
+      <text x="567" y="296">RECENT_PRS</text>
+      <text x="567" y="370">WHO_KNOWS</text>
+      <text x="778" y="166">EVIDENCE</text>
+      <text x="778" y="288">SYNTHESIS</text>
+    </g>
+    <g class="svg-label-muted" text-anchor="middle" dominant-baseline="middle">
+      <text x="778" y="190">NORMALIZED ROWS</text>
+      <text x="778" y="312">ANSWER + CITATIONS</text>
+    </g>
+  </svg>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">계획, 병렬 실행, 증거 정규화, 종합으로 이어지는 질의 파이프라인입니다. (도구를 늘리기 전에, 도구를 고르는 층을 먼저 만들어야 합니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>일곱째, 사람과 에이전트에게 다른 문을 내줍니다.</strong> MCP 쪽에서는 검색 기능을 하나의 답변 엔드포인트로 감싸지 않습니다. 슬랙 검색, 코드 검색, 통합 검색, 전문가 찾기처럼 작은 도구로 그대로 노출합니다. 입출력이 좁고 구조가 안정적이라 어떤 클라이언트든 싸고 빠르게 부를 수 있습니다. 이때 조율은 클로드 코드 같은 에이전트가 맡습니다. 웹 UI에서는 같은 도구를 쓰되, 계획과 실행과 종합을 시스템이 끝까지 책임집니다. 사용자에게는 질문하고 답을 받는 화면 하나로 보입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-009">
+  <style>  .cb-fig.cb-fig-009 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 680px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-009,
+  .cb-fig.cb-fig-009 *,
+  .cb-fig.cb-fig-009 *::before,
+  .cb-fig.cb-fig-009 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-009 button,
+  .cb-fig.cb-fig-009 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-009 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-009 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-009 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-009 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-009 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-009 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-009 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-009 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-009 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-009 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-009 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-009 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-009 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-009 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-009 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-009 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-009 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-009 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }</style>
+  <svg viewBox="0 0 760 390" role="img" aria-labelledby="fig-009-title">
+    <title id="fig-009-title">MCP exposes retrieval primitives while the web UI runs the complete agent pipeline</title>
+    <defs>
+      <marker id="arrow-009" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-white" x="50" y="52" width="286" height="276"/>
+      <rect class="fill-100" x="424" y="52" width="286" height="276"/>
+      <rect class="fill-white" x="84" y="104" width="218" height="42"/>
+      <rect class="fill-white" x="84" y="164" width="218" height="42"/>
+      <rect class="fill-white" x="84" y="224" width="218" height="42"/>
+      <rect class="fill-white" x="458" y="104" width="218" height="42"/>
+      <rect class="fill-white" x="458" y="164" width="218" height="42"/>
+      <rect class="fill-white" x="458" y="224" width="218" height="42"/>
+      <path marker-end="url(#arrow-009)" d="M567 146V156"/>
+      <path marker-end="url(#arrow-009)" d="M567 206V216"/>
+    </g>
+    <g class="svg-label" text-anchor="middle" dominant-baseline="middle">
+      <text x="193" y="80">MCP CLIENT</text>
+      <text x="567" y="80">WEB UI</text>
+      <text x="193" y="125">DIRECT TOOL CALLS</text>
+      <text x="193" y="185">RAW EVIDENCE ROWS</text>
+      <text x="193" y="245">CLIENT ORCHESTRATES</text>
+      <text x="567" y="125">PLANNER</text>
+      <text x="567" y="185">EXECUTOR</text>
+      <text x="567" y="245">SYNTHESIS</text>
+    </g>
+  </svg>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">MCP는 검색 원시 기능을 그대로 열고, 웹 UI는 완결된 파이프라인을 돌립니다. (같은 엔진에 두 개의 문을 내는 구조입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>여덟째, 검색 범위를 프로젝트로 좁힙니다.</strong> 말뭉치가 커지자 전부 검색하는 방식은 쓸모를 잃었습니다. 컴파일러 팀은 인프라 운영 문서가 결과에 섞이는 걸 원하지 않았습니다. 그래서 프로젝트라는 단위를 도입했습니다. 특정 슬랙 채널, 코드 저장소, 내부 데이터베이스, 문서 공간을 묶은 이름표입니다. 같은 소스를 여러 프로젝트가 함께 참조할 수 있어 복제가 생기지 않습니다. 온보딩 때 기본 프로젝트를 고르게 했습니다. 새 엔지니어도 어떤 채널이 중요한지 배우기 전에 쓸 만한 답을 받습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <div class="cb-fig cb-fig-010">
+  <style>  .cb-fig.cb-fig-010 {
+    --paper: #fbfbfb;
+    --ink: #171717;
+    --white: #fff;
+    --cobalt-50: oklch(0.98 0.012 45);
+    --cobalt-100: oklch(0.945 0.038 45);
+    --cobalt-200: oklch(0.88 0.075 43);
+    --cobalt-300: oklch(0.79 0.125 39);
+    --cobalt-400: oklch(0.67 0.175 35);
+    --cobalt-500: #cc461f;
+    --cobalt-600: #a93613;
+    --cobalt-700: #7c260f;
+    --danger: oklch(0.55 0.18 25);
+    --label: rgb(0 0 0 / 0.5);
+    --hairline: rgb(0 0 0 / 0.12);
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    position: relative;
+    clear: both;
+    width: 100%;
+    max-width: 680px;
+    margin: 3.5rem auto;
+    padding: 48px 40px;
+    color: var(--ink);
+    background: url("data:image/svg+xml;utf8,%3Csvg%20width='40'%20height='40'%20viewBox='0%200%2040%2040'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3E%3Cpath%20d='M20%200V40M0%2020H40'%20stroke='%23f15a29'%20stroke-opacity='0.06'%20stroke-width='0.75'/%3E%3Ccircle%20cx='20'%20cy='20'%20r='2'%20fill='%23fff'%20stroke='%23a93613'%20stroke-opacity='0.2'%20stroke-width='0.75'/%3E%3C/svg%3E") repeat;
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-010,
+  .cb-fig.cb-fig-010 *,
+  .cb-fig.cb-fig-010 *::before,
+  .cb-fig.cb-fig-010 *::after {
+    box-sizing: border-box;
+  }
+  .cb-fig.cb-fig-010 button,
+  .cb-fig.cb-fig-010 input {
+    font: inherit;
+  }
+  .cb-fig.cb-fig-010 button {
+    color: inherit;
+  }
+  .cb-fig.cb-fig-010 code {
+    color: var(--cobalt-700);
+    font-size: 0.8em;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .cb-fig.cb-fig-010 :focus-visible {
+    outline: 2px solid var(--cobalt-600);
+    outline-offset: 2px;
+  }
+  .cb-fig.cb-fig-010 .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  @media (max-width: 900px) {
+    .cb-fig.cb-fig-010 {
+      width: 100%;
+      margin: 3rem 0;
+      padding: 42px 18px;
+      transform: none;
+    }
+  }
+
+
+  .cb-fig.cb-fig-010 svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  .cb-fig.cb-fig-010 .svg-label {
+    fill: var(--cobalt-600);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-010 .svg-label-muted {
+    fill: var(--label);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .cb-fig.cb-fig-010 .stroke {
+    fill: none;
+    stroke: var(--cobalt-600);
+    stroke-width: 1.25;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-010 .stroke-muted {
+    fill: none;
+    stroke: var(--cobalt-300);
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+  .cb-fig.cb-fig-010 .fill-50 {
+    fill: var(--cobalt-50);
+  }
+  .cb-fig.cb-fig-010 .fill-100 {
+    fill: var(--cobalt-100);
+  }
+  .cb-fig.cb-fig-010 .fill-300 {
+    fill: var(--cobalt-300);
+  }
+  .cb-fig.cb-fig-010 .fill-white {
+    fill: #fff;
+  }
+  .cb-fig.cb-fig-010 .dash {
+    stroke-dasharray: 4 4;
+  }
+  .cb-fig.cb-fig-010 .ink {
+    stroke: var(--ink);
+  }
+  .cb-fig.cb-fig-010 .danger-stroke {
+    stroke: var(--danger);
+  }
+  .cb-fig.cb-fig-010 .danger-fill {
+    fill: color-mix(in oklab, var(--danger) 9%, white);
+  }</style>
+  <svg viewBox="0 0 760 420" role="img" aria-labelledby="fig-010-title">
+    <title id="fig-010-title">Projects reference shared data sources without duplicating them</title>
+    <defs>
+      <marker id="arrow-010" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+        <path d="M0 0 10 5 0 10Z" fill="var(--cobalt-600)"/>
+      </marker>
+    </defs>
+    <g class="stroke">
+      <rect class="fill-100" x="56" y="76" width="214" height="86"/>
+      <rect class="fill-100" x="56" y="258" width="214" height="86"/>
+      <rect class="fill-white" x="476" y="36" width="214" height="54"/>
+      <rect class="fill-white" x="476" y="112" width="214" height="54"/>
+      <rect class="fill-white" x="476" y="188" width="214" height="54"/>
+      <rect class="fill-white" x="476" y="264" width="214" height="54"/>
+      <rect class="fill-white" x="476" y="340" width="214" height="54"/>
+      <path marker-end="url(#arrow-010)" d="M270 108H404V63H468"/>
+      <path marker-end="url(#arrow-010)" d="M270 120H404V139H468"/>
+      <path marker-end="url(#arrow-010)" d="M270 132H404V215H468"/>
+      <path marker-end="url(#arrow-010)" d="M270 290H404V215H468"/>
+      <path marker-end="url(#arrow-010)" d="M270 302H404V291H468"/>
+      <path marker-end="url(#arrow-010)" d="M270 314H404V367H468"/>
+    </g>
+    <g class="svg-label" text-anchor="middle" dominant-baseline="middle">
+      <text x="163" y="108">COMPILER PROJECT</text>
+      <text x="163" y="290">PLATFORM PROJECT</text>
+      <text x="583" y="63">COMPILER SLACK</text>
+      <text x="583" y="139">MONOLITH REPO</text>
+      <text x="583" y="215">SHARED INCIDENTS</text>
+      <text x="583" y="291">PLATFORM REPO</text>
+      <text x="583" y="367">CLOUD RUNBOOKS</text>
+    </g>
+    <g class="svg-label-muted" text-anchor="middle" dominant-baseline="middle">
+      <text x="163" y="132">DEFAULT QUERY SCOPE</text>
+      <text x="163" y="314">DEFAULT QUERY SCOPE</text>
+    </g>
+  </svg>
+</div>
+          <figcaption style="font-size:13px; color:#888; margin-top:10px; line-height:1.6;">프로젝트는 데이터 소스를 복제하지 않고 참조만 합니다. (조직도를 그대로 옮기지 않고, 일하는 묶음으로 범위를 정합니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Cerebras (2026)</span>
+          </figcaption>
+        </figure>
+
+        <p>세레브라스가 정리한 구성 요소는 결국 세 가지입니다. 내부 데이터를 모으고 저장하는 층, 그 데이터를 질의하는 층입니다. 그리고 인증과 권한과 감사를 맡는 층입니다. 마지막 층은 화려하지 않지만, 사내 도입에서 가장 먼저 막히는 지점이기도 합니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>자료 이전 계획을 접고, 연결 계획으로 바꾸세요.</strong><br>모든 문서를 한 시스템에 옮기자는 안건이 있다면 멈추세요. 대신 지금 정보가 실제로 쌓이는 곳 세 군데를 적고, 각각에서 읽어오는 방법을 확인하세요. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>가장 반복되는 질문 20개를 뽑으세요.</strong><br>사내 채널에서 최근 한 달간 되풀이된 질문을 추려 목록으로 만드세요. 이 목록이 첫 시스템의 성능 시험지가 됩니다. 어떤 도구를 쓰든 이 20개로만 품질을 재세요. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>권한과 감사 설계를 먼저 확정하세요.</strong><br>누가 무엇을 볼 수 있는지 정하지 않으면 도입이 막힙니다. 검색 기능을 붙이기 전에 인증, 권한, 감사 로그 구조를 결정하세요. 운영 담당자도 함께 지정하세요. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>자사 사례이며 검증 수치가 아닙니다.</strong> 하루 1만 5천 건이라는 숫자는 세레브라스가 직접 밝힌 값입니다. 질문의 질이나 답변 정확도에 대한 외부 검증은 없습니다. 도입 성과를 추정할 때 이 숫자를 근거로 쓰지 마세요.</p>
+
+        <p><strong>엔지니어가 많은 조직의 설계입니다.</strong> 슬랙과 깃허브에 논의가 축적되는 회사에 맞춰진 구조입니다. 영업이나 제조처럼 정보가 회의와 문서와 현장에 흩어진 조직이라면, 소스 목록부터 다시 짜야 합니다. 그대로 복제하면 빈 데이터베이스만 남습니다.</p>
+
+        <p><strong>운영 부담이 계속 남습니다.</strong> 채널마다 소스를 두고, 저장소마다 허용 목록을 관리하고, 프로젝트를 유지해야 합니다. 만드는 비용보다 유지하는 비용이 큽니다. 운영 담당을 정하지 않을 거라면 시작하지 않는 편이 낫습니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>사내 지식베이스가 작동한 이유는 하나입니다. 정보를 한 시스템에 밀어 넣지 않고 있는 자리에서 꺼내 썼기 때문입니다. 통합해야 할 것은 자료가 아니라 자료를 꺼내는 방식입니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CEO/조직장</span>
+            <span>정보를 한곳에 모으라는 지시를 거두라. 어디서 정보가 생기는지부터 인정하고, 연결에 예산을 쓰라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO/AI 리드</span>
+            <span>검색 기법을 하나만 고르지 말라. 전문 검색, 임베딩, 희귀도, 시간 감쇠를 섞고 합의로 순위를 정하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">보안/거버넌스</span>
+            <span>인증, 권한, 감사 층을 검색 기능보다 먼저 설계하라. 여기서 막히면 나머지는 쓰이지 않는다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>임베딩(Embedding)</strong>: 글이나 코드를 숫자 배열로 바꿔, 뜻이 비슷한 것끼리 가깝게 놓는 방식입니다. 표현이 달라도 의미가 통하면 찾아냅니다.</p>
+          <p><strong>전문 검색(Full-text Search)</strong>: 글자와 단어를 그대로 맞춰 찾는 고전적인 검색입니다. 오류 메시지나 설정 이름처럼 정확한 문자열에 강합니다.</p>
+          <p><strong>역문서빈도(IDF)</strong>: 어떤 단어가 전체 문서에서 얼마나 드문지 재는 값입니다. 값이 클수록 희귀하고, 그만큼 신호가 강한 단어로 봅니다.</p>
+          <p><strong>상호 순위 융합(RRF)</strong>: 서로 다른 검색기가 낸 순위표를 하나로 합치는 방법입니다. 점수 체계가 달라도 순위만으로 공정하게 합칠 수 있습니다.</p>
+          <p><strong>재순위(Reranking)</strong>: 1차로 걸러낸 후보를 작은 모델이 다시 읽고 질문과의 적합도로 점수를 매기는 단계입니다.</p>
+          <p><strong>버스팅(Bursting)</strong>: 같은 사람이 연달아 쓴 메시지를 한 묶음으로 보고 따로 색인하는 방식입니다. 긴 대화 속 알짜 답을 살립니다.</p>
+          <p><strong>소켓 모드(Socket Mode)</strong>: 슬랙이 새 메시지를 실시간으로 밀어 보내주는 연결 방식입니다. 주기적으로 물어보지 않아도 됩니다.</p>
+          <p><strong>MCP(Model Context Protocol)</strong>: AI 도구가 외부 데이터와 기능에 접속하는 표준 방식입니다. 같은 검색 기능을 여러 AI 클라이언트가 함께 씁니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Cerebras. (2026, July). <em>How Cerebras Built Its Enterprise Knowledge Base</em> [Blog]. Cerebras Systems. (<a href="https://www.cerebras.ai/blog/how-we-built-our-knowledge-base" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>Cormack, G., Clarke, C., &amp; Büttcher, S. (2009). <em>Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Learning Methods</em> [Paper]. SIGIR.</li>
+          <li>Anthropic. (2024). <em>Introducing Contextual Retrieval</em> [Article]. Anthropic.</li>
+          <li>Liu, N., et al. (2023). <em>Lost in the Middle: How Language Models Use Long Contexts</em> [Paper]. arXiv:2307.03172.</li>
+          <li>Cursor. (2025). <em>Improving Agent with Semantic Search</em> [Article]. Cursor.</li>
+        </ul>
+      </section>
+
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희도 작년에 문서 다 한 곳에 모으자고 했다가 흐지부지됐어요. 근데 안 모으고 그냥 있는 데서 끌어온다는 게 무슨 말이에요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">슬랙 채널, 깃허브 저장소마다 커넥터를 하나씩 붙이는 거예요. 자료는 그대로 두고 색인만 한 테이블에 모읍니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그럼 커넥터 개수만큼 관리 포인트가 생기는 거잖아요. 채널마다 소스 두고 저장소마다 허용 목록 짠다면서요. 그거 누가 계속 봐요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맞아요, 그게 진짜 비용이에요. 만드는 건 몇 주, 유지하는 건 계속입니다. 담당자 없으면 시작 안 하는 게 나아요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">하루 1만 5천 건이면 이미 일하는 방식이 바뀐 거예요. 이 정도면 도입 안 하는 쪽이 손해입니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 사내 검색 붙여봤는데요, 질문 수는 금방 올라가요. 문제는 답이 맞냐는 거죠. 1만 5천 건 중에 쓸 만한 답이 몇 건인지는 아무도 안 밝혔잖아요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래서 반복 질문 20개로 재라는 거예요. 남의 숫자 말고 우리 질문지로. 그건 오늘 당장 만들 수 있잖아요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 이모지 반응을 품질 신호로 쓴다는 게 제일 재밌었어요. 사람들이 좋다고 눌러둔 게 그대로 데이터가 되는 거잖아요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그거 좋긴 한데, 저희 팀은 슬랙에 논의를 안 남겨요. 다 회의에서 끝나거든요. 그럼 저희는 뭘 긁어와야 되는 거예요?</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="2026-07-16-kimi-k3.html">
+          <div class="next-post-title">중국 오픈 모델이 미국 모델 성능의 문턱까지 다다랐습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/cto.html" class="concept-chip">CTO</a>
+      <a href="../insights/wiki/concepts/ui.html" class="concept-chip">UI</a>
+      <a href="../insights/wiki/concepts/rag.html" class="concept-chip">RAG</a>
+      <a href="../insights/wiki/concepts/mcp.html" class="concept-chip">MCP</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-15-cerebras-knowledge-base.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-07-15-cerebras-knowledge-base.html';
+    const ROASTING_QUOTE = '사내 정보를 한곳에 모으자는 프로젝트, 이번이 몇 번째입니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

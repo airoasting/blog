@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-18T04:30:47.267Z",
+  "generatedAt": "2026-07-20T01:10:20.894Z",
   "version": 1,
   "stats": {
     "totalConcepts": 118,
-    "totalRelationships": 305,
-    "totalPosts": 249,
-    "totalNewsletters": 56
+    "totalRelationships": 309,
+    "totalPosts": 250,
+    "totalNewsletters": 57
   },
   "concepts": [
     {
@@ -14,7 +14,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 77,
+      "frequency": 78,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -38,6 +38,7 @@
         "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
         "2026-06-12-openrouter-fusion-model-diversity",
         "2026-06-18-project-fetch-phase-two",
+        "2026-07-15-cerebras-knowledge-base",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
         "2024-10-15-ai-bubble-three-collapse-scenarios",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
@@ -98,7 +99,7 @@
         "nl-49"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-06-18",
+      "lastSeen": "2026-07-15",
       "needs_manual_review": false
     },
     {
@@ -184,7 +185,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 56,
+      "frequency": 57,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -211,6 +212,7 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-06-19-implicit-organization-ai-agents",
         "2026-06-30-thinking-machines-expert-judgment",
+        "2026-07-15-cerebras-knowledge-base",
         "2026-07-16-kimi-k3",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
@@ -369,7 +371,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 27,
+      "frequency": 28,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -393,6 +395,7 @@
         "2026-06-23-meta-ai-reorg-team-size",
         "2026-07-04-ai-scribes-regulatory-gap",
         "2026-07-06-llm-global-workspace",
+        "2026-07-15-cerebras-knowledge-base",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
         "2026-04-01-claude-code-hidden-features"
@@ -403,7 +406,7 @@
         "nl-47"
       ],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2026-07-06",
+      "lastSeen": "2026-07-15",
       "needs_manual_review": false
     },
     {
@@ -493,7 +496,7 @@
       "name": "IPO",
       "aliases": [],
       "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 23,
+      "frequency": 24,
       "category": "newsletter",
       "posts": [
         "2026-04-06-sam-altman-can-he-be-trusted",
@@ -520,7 +523,8 @@
         "nl-50",
         "nl-51",
         "nl-52",
-        "nl-53"
+        "nl-53",
+        "nl-57"
       ],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-04-07",
@@ -766,6 +770,36 @@
       "needs_manual_review": false
     },
     {
+      "id": "ui",
+      "slug": "ui",
+      "name": "UI",
+      "aliases": [],
+      "definition": "사용자 인터페이스입니다. 채팅 UI가 AI 시대의 기본 상호작용으로 자리잡았습니다.",
+      "frequency": 14,
+      "category": "company",
+      "posts": [
+        "2026-03-16-why-world-runs-on-sap",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-03-karpathy-llm-knowledge-base",
+        "2026-04-23-claude-code-quality-incident-postmortem",
+        "2026-07-15-cerebras-knowledge-base",
+        "2025-04-25-2025-shanghai-motor-show-shock",
+        "2025-06-15-why-perplexity-wants-to-acquire-chrome",
+        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
+        "2025-06-25-us-stablecoin-bill-hopes-and-concerns",
+        "2025-06-14-no-innovation-at-apple-wwdc-2025"
+      ],
+      "newsletters": [
+        "nl-1",
+        "nl-16",
+        "nl-52"
+      ],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-07-15",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai-safety",
       "slug": "ai-safety",
       "name": "AI 안전",
@@ -797,32 +831,31 @@
       "needs_manual_review": false
     },
     {
-      "id": "ui",
-      "slug": "ui",
-      "name": "UI",
+      "id": "rag",
+      "slug": "rag",
+      "name": "RAG",
       "aliases": [],
-      "definition": "사용자 인터페이스입니다. 채팅 UI가 AI 시대의 기본 상호작용으로 자리잡았습니다.",
+      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
       "frequency": 13,
-      "category": "company",
+      "category": "tech",
       "posts": [
-        "2026-03-16-why-world-runs-on-sap",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-03-21-dena-ai-20x-paradox",
         "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-23-claude-code-quality-incident-postmortem",
-        "2025-04-25-2025-shanghai-motor-show-shock",
-        "2025-06-15-why-perplexity-wants-to-acquire-chrome",
-        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
-        "2025-06-25-us-stablecoin-bill-hopes-and-concerns",
-        "2025-06-14-no-innovation-at-apple-wwdc-2025"
+        "2026-04-07-ai-agent-traps",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-05-20-sciatlas-scientific-knowledge-graph",
+        "2026-05-27-law-professors-prefer-ai",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2026-07-15-cerebras-knowledge-base",
+        "2025-03-05-speculating-why-naver-lee-haejin-returned",
+        "2025-07-10-why-openai-is-no-longer-the-leader",
+        "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2026-03-28-ai-agent-traps"
       ],
-      "newsletters": [
-        "nl-1",
-        "nl-16",
-        "nl-52"
-      ],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-04-23",
+      "newsletters": [],
+      "firstSeen": "2025-02-15",
+      "lastSeen": "2026-07-15",
       "needs_manual_review": false
     },
     {
@@ -882,33 +915,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "rag",
-      "slug": "rag",
-      "name": "RAG",
-      "aliases": [],
-      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
-      "frequency": 12,
-      "category": "tech",
-      "posts": [
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-05-20-sciatlas-scientific-knowledge-graph",
-        "2026-05-27-law-professors-prefer-ai",
-        "2026-05-28-sia-self-improving-ai-harness-weights",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2026-05-28",
-      "needs_manual_review": false
-    },
-    {
       "id": "생산성",
       "slug": "생산성",
       "name": "생산성",
@@ -940,12 +946,13 @@
       "name": "MCP",
       "aliases": [],
       "definition": "Model Context Protocol입니다. Anthropic이 제안한 AI와 외부 도구·데이터를 연결하는 표준입니다.",
-      "frequency": 10,
+      "frequency": 11,
       "category": "newsletter",
       "posts": [
         "2025-05-01-high-performers-must-be-different-in-ai-era",
         "2026-04-09-google-cloud-ai-agent-trends",
         "2026-04-23-gpt-5-5-agentic-coding",
+        "2026-07-15-cerebras-knowledge-base",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-naver-ai-introduces-lightweight-llm",
         "2025-03-10-ai-era-survival-strategy"
@@ -957,7 +964,7 @@
         "nl-26"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-04-23",
+      "lastSeen": "2026-07-15",
       "needs_manual_review": false
     },
     {
@@ -1681,6 +1688,26 @@
       "needs_manual_review": false
     },
     {
+      "id": "jd",
+      "slug": "jd",
+      "name": "JD",
+      "aliases": [],
+      "definition": "JD는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "newsletter",
+      "posts": [
+        "2025-11-10-peter-thiel-antichrist-lectures"
+      ],
+      "newsletters": [
+        "nl-51",
+        "nl-54",
+        "nl-57"
+      ],
+      "firstSeen": "2025-11-10",
+      "lastSeen": "2025-11-10",
+      "needs_manual_review": false
+    },
+    {
       "id": "grpo",
       "slug": "grpo",
       "name": "GRPO",
@@ -1989,6 +2016,26 @@
       "needs_manual_review": false
     },
     {
+      "id": "etf",
+      "slug": "etf",
+      "name": "ETF",
+      "aliases": [],
+      "definition": "ETF는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "newsletter",
+      "posts": [
+        "2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony"
+      ],
+      "newsletters": [
+        "nl-37",
+        "nl-54",
+        "nl-57"
+      ],
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2025-05-20",
+      "needs_manual_review": false
+    },
+    {
       "id": "dram",
       "slug": "dram",
       "name": "DRAM",
@@ -2097,25 +2144,6 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2025-05-25",
-      "needs_manual_review": false
-    },
-    {
-      "id": "jd",
-      "slug": "jd",
-      "name": "JD",
-      "aliases": [],
-      "definition": "JD는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2025-11-10-peter-thiel-antichrist-lectures"
-      ],
-      "newsletters": [
-        "nl-51",
-        "nl-54"
-      ],
-      "firstSeen": "2025-11-10",
-      "lastSeen": "2025-11-10",
       "needs_manual_review": false
     },
     {
@@ -2738,25 +2766,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "etf",
-      "slug": "etf",
-      "name": "ETF",
-      "aliases": [],
-      "definition": "ETF는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "newsletter",
-      "posts": [
-        "2025-05-20-stablecoin-secret-weapon-of-dollar-hegemony"
-      ],
-      "newsletters": [
-        "nl-37",
-        "nl-54"
-      ],
-      "firstSeen": "2025-05-20",
-      "lastSeen": "2025-05-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "cuda",
       "slug": "cuda",
       "name": "CUDA",
@@ -2839,7 +2848,7 @@
     {
       "source": "LLM",
       "target": "API",
-      "strength": 21
+      "strength": 22
     },
     {
       "source": "LLM",
@@ -2854,7 +2863,7 @@
     {
       "source": "LLM",
       "target": "CTO",
-      "strength": 4
+      "strength": 5
     },
     {
       "source": "LLM",
@@ -2898,13 +2907,18 @@
     },
     {
       "source": "LLM",
+      "target": "UI",
+      "strength": 6
+    },
+    {
+      "source": "LLM",
       "target": "AI 안전",
       "strength": 3
     },
     {
       "source": "LLM",
-      "target": "UI",
-      "strength": 5
+      "target": "RAG",
+      "strength": 7
     },
     {
       "source": "LLM",
@@ -2918,18 +2932,13 @@
     },
     {
       "source": "LLM",
-      "target": "RAG",
-      "strength": 6
-    },
-    {
-      "source": "LLM",
       "target": "생산성",
       "strength": 2
     },
     {
       "source": "LLM",
       "target": "MCP",
-      "strength": 6
+      "strength": 7
     },
     {
       "source": "LLM",
@@ -3133,6 +3142,11 @@
     },
     {
       "source": "GPU",
+      "target": "RAG",
+      "strength": 3
+    },
+    {
+      "source": "GPU",
       "target": "TPU",
       "strength": 8
     },
@@ -3140,11 +3154,6 @@
       "source": "GPU",
       "target": "ASI",
       "strength": 5
-    },
-    {
-      "source": "GPU",
-      "target": "RAG",
-      "strength": 3
     },
     {
       "source": "GPU",
@@ -3203,6 +3212,11 @@
     },
     {
       "source": "GPU",
+      "target": "JD",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
       "target": "GRPO",
       "strength": 2
     },
@@ -3243,11 +3257,6 @@
     },
     {
       "source": "GPU",
-      "target": "JD",
-      "strength": 2
-    },
-    {
-      "source": "GPU",
       "target": "오픈소스AI",
       "strength": 3
     },
@@ -3284,7 +3293,7 @@
     {
       "source": "API",
       "target": "CTO",
-      "strength": 12
+      "strength": 13
     },
     {
       "source": "API",
@@ -3319,7 +3328,12 @@
     {
       "source": "API",
       "target": "UI",
-      "strength": 4
+      "strength": 5
+    },
+    {
+      "source": "API",
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "API",
@@ -3328,13 +3342,8 @@
     },
     {
       "source": "API",
-      "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "API",
       "target": "MCP",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "API",
@@ -3638,6 +3647,11 @@
     },
     {
       "source": "AGI",
+      "target": "RAG",
+      "strength": 2
+    },
+    {
+      "source": "AGI",
       "target": "TPU",
       "strength": 3
     },
@@ -3645,11 +3659,6 @@
       "source": "AGI",
       "target": "ASI",
       "strength": 11
-    },
-    {
-      "source": "AGI",
-      "target": "RAG",
-      "strength": 2
     },
     {
       "source": "AGI",
@@ -3699,12 +3708,17 @@
     {
       "source": "CTO",
       "target": "UI",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "CTO",
       "target": "RAG",
-      "strength": 3
+      "strength": 4
+    },
+    {
+      "source": "CTO",
+      "target": "MCP",
+      "strength": 2
     },
     {
       "source": "CTO",
@@ -3788,13 +3802,13 @@
     },
     {
       "source": "IT",
-      "target": "TPU",
-      "strength": 2
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "IT",
-      "target": "RAG",
-      "strength": 3
+      "target": "TPU",
+      "strength": 2
     },
     {
       "source": "IT",
@@ -3890,6 +3904,11 @@
       "source": "IPO",
       "target": "SEC",
       "strength": 6
+    },
+    {
+      "source": "IPO",
+      "target": "JD",
+      "strength": 2
     },
     {
       "source": "IPO",
@@ -4097,6 +4116,11 @@
       "strength": 2
     },
     {
+      "source": "UI",
+      "target": "RAG",
+      "strength": 2
+    },
+    {
       "source": "AI 안전",
       "target": "AI규제",
       "strength": 3
@@ -4114,6 +4138,16 @@
     {
       "source": "AI 안전",
       "target": "AI 정렬",
+      "strength": 2
+    },
+    {
+      "source": "RAG",
+      "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "RAG",
+      "target": "SSRN",
       "strength": 2
     },
     {
@@ -4144,16 +4178,6 @@
     {
       "source": "ASI",
       "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "SSRN",
       "strength": 2
     },
     {
@@ -4334,6 +4358,11 @@
     {
       "source": "반도체",
       "target": "CUDA",
+      "strength": 2
+    },
+    {
+      "source": "JD",
+      "target": "ETF",
       "strength": 2
     },
     {
