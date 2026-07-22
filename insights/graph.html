@@ -301,27 +301,6 @@
     }
     .tt-connections span { font-weight: 700; color: #333; }
 
-    /* ── Instructions overlay ── */
-    .graph-instructions {
-      position: absolute;
-      top: 20px;
-      left: max(24px, calc(50% - 516px));
-      background: rgba(10,15,30,0.72);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-family: 'Pretendard', sans-serif;
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.8;
-      pointer-events: none;
-    }
-    @media (max-width: 768px) {
-      .graph-instructions { display: none; }
-    }
-
     /* ── Loading State ── */
     .graph-loading {
       position: absolute;
@@ -444,13 +423,6 @@
         </marker>
       </defs>
     </svg>
-
-    <div class="graph-instructions">
-      <div>🖱 드래그로 이동 · 스크롤로 확대/축소</div>
-      <div>● 클릭: 연결된 노드만 표시</div>
-      <div>● 더블클릭: 아티클 열기</div>
-      <div>● 빈 곳 클릭: 전체 보기</div>
-    </div>
 
     <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
   </div>
