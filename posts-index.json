@@ -1,6 +1,24 @@
 {
   "posts": [
     {
+      "title": "AI는 왜 유독 일본 문화에 집착할까요",
+      "date": "2026-04-23",
+      "category": "research",
+      "source": "arXiv (Fernandez de Landa 외)",
+      "tags": [
+        "AI편향",
+        "문화다양성",
+        "파인튜닝",
+        "다국어AI",
+        "AI평가"
+      ],
+      "slug": "2026-04-23-llm-japanese-culture-bias",
+      "file": "research/2026-04-23-llm-japanese-culture-bias.html",
+      "summary": "24개 언어 31,680개 문화 질문으로 8개 최전선 모델을 시험한 논문입니다. 모든 모델이 외국 중 일본을 가장 자주 언급했고, 이 편향은 사전학습이 아니라 지도 미세조정 단계에서 강해졌습니다.",
+      "roasting_quote": "당신의 AI가 세계를 안다고 믿으십니까? 실은 도쿄와 워싱턴만 보고 있습니다.",
+      "next_post": "research/2026-07-13-we-must-act-now-economists-statement.html"
+    },
+    {
       "title": "중국 오픈 모델이 미국 모델 성능의 문턱까지 다다랐습니다",
       "date": "2026-07-16",
       "category": "tech",
@@ -16,7 +34,7 @@
       "file": "tech/2026-07-16-kimi-k3.html",
       "summary": "문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터에 100만 토큰 컨텍스트로, 웹 탐색과 표 작업 등 여러 에이전트 벤치마크에서 1위를 찍었습니다. 다만 종합에서는 페이블 5와 GPT-5.6 Sol에 뒤진다고 스스로 인정합니다.",
       "roasting_quote": "오픈 모델이 최전선을 넘보는데, 당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?",
-      "next_post": "tech/2026-07-16-year-of-the-loop.html"
+      "next_post": "research/2026-04-23-llm-japanese-culture-bias.html"
     },
     {
       "title": "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다",

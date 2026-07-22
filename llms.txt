@@ -92,6 +92,7 @@
 - 2026-04-30 [생존] AI에게 인생 상담? 4건 중 1건은 동조였습니다 — /blog/survival/2026-04-30-claude-personal-guidance-sycophancy.html
 - 2026-04-24 [리서치] AI 에이전트가 실제로 거래했습니다: Anthropic의 거래 실험 — /blog/research/2026-04-24-anthropic-project-deal-agent-economy.html
 - 2026-04-24 [기술] DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다 — /blog/tech/2026-04-24-deepseek-v4-pro-coding-benchmark.html
+- 2026-04-23 [리서치] AI는 왜 유독 일본 문화에 집착할까요 — /blog/research/2026-04-23-llm-japanese-culture-bias.html
 - 2026-04-23 [기술] Claude Code 품질이 6주간 하락한 진짜 이유 — /blog/tech/2026-04-23-claude-code-quality-incident-postmortem.html
 - 2026-04-23 [기술] GPT-5.5, 에이전트 코딩 1위를 가져갔습니다 — /blog/tech/2026-04-23-gpt-5-5-agentic-coding.html
 - 2026-04-22 [생존] AI 도구에도 소득 격차가 있습니다 — /blog/survival/2026-04-22-ai-tool-income-gap.html

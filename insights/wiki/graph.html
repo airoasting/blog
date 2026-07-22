@@ -111,7 +111,8 @@
 
     /* D3 elements */
     .g-link {
-      stroke-opacity: 0.08;
+      fill: none;
+      stroke-opacity: 0.06;
       transition: stroke-opacity 0.25s, stroke-width 0.2s;
     }
     .g-link.faded { stroke-opacity: 0.015; }
@@ -140,6 +141,20 @@
     .g-node.highlighted circle {
       stroke-width: 3;
       filter: drop-shadow(0 0 12px currentColor);
+    }
+
+    /* 육지 도트 (지도 배경) */
+    .land-dot { pointer-events: none; }
+
+    /* 대륙 = 카테고리 라벨 */
+    .continent-label {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      font-weight: 800;
+      text-anchor: middle;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.12em;
+      opacity: 0.5;
     }
 
     /* ── Zoom reset button (뉴모피즘) ── */
@@ -280,7 +295,7 @@
     .graph-legend {
       position: absolute;
       bottom: 54px;
-      right: max(24px, calc(50% - 516px));
+      left: max(24px, calc(50% - 516px));
       cursor: grab;
       user-select: none;
       background: rgba(10,15,30,0.82);
@@ -309,6 +324,12 @@
       margin-bottom: 7px;
     }
     .legend-item:last-child { margin-bottom: 0; }
+    .legend-item .cont-name {
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      margin-left: auto;
+      padding-left: 14px;
+    }
     .legend-dot {
       width: 12px; height: 12px;
       border-radius: 50%;
@@ -435,7 +456,7 @@
 <script src="../../assets/js/theme.js"></script>
 <script src="../../assets/js/header.js"></script>
 
-<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 55%, #103024 0%, #0A2018 35%, #061310 70%, #020806 100%);">
+<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 45%, #0C1A38 0%, #071228 40%, #040A1A 72%, #02050F 100%);">
   <div class="graph-controls" id="graphControls">
     <div class="graph-controls-inner">
       <span class="ctrl-label">카테고리</span>
@@ -468,7 +489,7 @@
   <div class="graph-canvas-wrap">
     <div class="graph-loading" id="graphLoading">
       <div class="loading-spinner"></div>
-      <span>그래프 생성 중...</span>
+      <span>지도 생성 중...</span>
     </div>
 
     <svg id="graphSvg">
@@ -490,24 +511,24 @@
     <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
 
     <div class="graph-legend">
-      <div class="legend-title">카테고리</div>
+      <div class="legend-title">카테고리 = 대륙</div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치
+        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치<span class="cont-name">유럽</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더
+        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더<span class="cont-name">오세아니아</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업
+        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업<span class="cont-name">북아메리카</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술
+        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술<span class="cont-name">아시아</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존
+        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존<span class="cont-name">남아메리카</span>
       </div>
       <div class="legend-item">
-        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터
+        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터<span class="cont-name">아프리카</span>
       </div>
       <div class="legend-hint">
         <div class="legend-hint-row">

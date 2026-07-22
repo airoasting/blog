@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="24개 언어 31,680개 문화 질문으로 8개 최전선 모델을 시험한 논문입니다. 모든 모델이 외국 중에서 일본을 가장 자주 언급했고, 이 편향은 사전학습이 아니라 미세조정 단계에서 강해졌습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI는 왜 유독 일본 문화에 집착할까요">
+  <meta property="og:description" content="8개 모델 중 6개가 외국 중 일본을 최다 언급했습니다. 중국 모델조차 중국보다 일본을 서너 배 더 말합니다. 범인은 사전학습이 아니라 미세조정입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-04-23-llm-japanese-culture-bias.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-04-23">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI편향">
+  <meta property="article:tag" content="문화다양성">
+  <meta property="article:tag" content="파인튜닝">
+  <meta property="article:tag" content="다국어AI">
+  <meta property="article:tag" content="AI평가">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI는 왜 유독 일본 문화에 집착할까요">
+  <meta name="twitter:description" content="8개 모델 중 6개가 외국 중 일본을 최다 언급했습니다. 범인은 사전학습이 아니라 미세조정입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI는 왜 유독 일본 문화에 집착할까요",
+    "datePublished": "2026-04-23",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "24개 언어 31,680개 문화 질문으로 8개 최전선 모델을 시험한 논문입니다. 모든 모델이 외국 중에서 일본을 가장 자주 언급했고, 이 편향은 미세조정 단계에서 강해졌습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-04-23-llm-japanese-culture-bias.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_04_23_llm-japanese-culture-bias/thumbnail.png" alt="AI는 왜 유독 일본 문화에 집착할까요" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026년 4월 23일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI는 왜 유독 일본 문화에 집착할까요</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>arXiv (Fernandez de Landa 외)</span>
+            <span><a href="https://arxiv.org/abs/2604.21751" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI편향" class="post-tag">#AI편향</a>
+            <a href="../index.html?tag=문화다양성" class="post-tag">#문화다양성</a>
+            <a href="../index.html?tag=파인튜닝" class="post-tag">#파인튜닝</a>
+            <a href="../index.html?tag=다국어AI" class="post-tag">#다국어AI</a>
+            <a href="../index.html?tag=AI평가" class="post-tag">#AI평가</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI는 왜 유독 일본 문화에 집착할까요" data-date="2026-04-23" data-category="research" data-source="arXiv (Fernandez de Landa 외)" data-tags="AI편향, 문화다양성, 파인튜닝, 다국어AI, AI평가" data-original-url="https://arxiv.org/abs/2604.21751" data-roasting-quote="당신의 AI가 세계를 안다고 믿으십니까? 실은 도쿄와 워싱턴만 보고 있습니다." data-next-post="../research/2026-07-13-we-must-act-now-economists-statement.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">새 논문이 24개 언어, 31,680개 문화 질문으로 8개 최전선 모델을 시험했습니다.</p>
+        <p data-summary="">모든 모델이 질문 언어의 자국을 43~78% 참조했고, 외국 중에서는 일본을 가장 자주 언급했습니다. 중국 모델조차 중국보다 일본을 더 말했습니다.</p>
+        <p data-summary="">이 편향은 사전학습이 아니라 지도 미세조정 단계에서 급격히 강해졌습니다. 편식은 타고난 게 아니라 길러진 것입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">당신의 AI가 세계를 안다고 믿으십니까?<br>실은 도쿄와 워싱턴만 보고 있습니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI에게 "흥미로운 전통 축제 하나 소개해줘"라고 물어보세요. 나라를 지정하지 않으면, 답은 높은 확률로 일본입니다. 스페인 바스크 대학과 영국 카디프 대학 연구진이 이 현상을 수치로 확인했습니다.</p>
+        <p>연구진은 지역 단서가 없는 문화 질문 31,680개를 만들어 8개 최전선 모델에 던졌습니다. 모델이 스스로 고른 나라를 세어 보니, 일본과 미국으로의 쏠림이 뚜렷했습니다. 더 중요한 발견은 따로 있습니다. 이 편향이 언제, 어디서 만들어지는지를 처음으로 추적했다는 점입니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>동남아 시장용 캠페인 문안을 AI에 맡겼는데 사례가 온통 일본 얘기라면, 그건 우연이 아닙니다. 모델이 특정 문화만 과대 대표하면, 결과물은 해외 시장에서 조용히 어긋납니다. 지금까지는 AI의 문화 편향을 서구 중심이라고만 알고 있었습니다. 이 논문은 그 통념을 흔들고, 편향이 만들어지는 지점까지 짚습니다. 원인을 알면 고칠 수 있는 문제가 됩니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 모델은 질문받은 언어의 나라부터 말합니다.</strong> 한국어로 물으면 한국, 프랑스어로 물으면 프랑스를 답하는 식입니다. 8개 모델 모두 자국 참조가 전체의 43~78%를 차지했습니다. 언어 선택만으로 모델의 문화적 시야가 크게 좁아진다는 뜻입니다. 한국어 질문에서는 자국 참조가 59%였습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">31,680개</div>
+            <div class="stat-label">24개 언어로 만든 개방형 문화 질문 (CROQ 데이터셋)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">43~78%</div>
+            <div class="stat-label">8개 모델의 자국 참조 비율</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6/8</div>
+            <div class="stat-label">외국 중 일본을 가장 선호한 모델 수</div>
+          </div>
+        </div>
+
+        <p><strong>둘째, 자국을 빼면 일본과 미국만 남습니다.</strong> 자국 참조를 걷어내자 8개 중 6개 모델에서 일본이 가장 선호되는 나라로 나타났고, 나머지는 미국이었습니다. 인도, 중국, 프랑스가 그 뒤를 이었고 다른 나라는 언급이 미미했습니다. 압권은 중국 모델입니다. 큐원은 일본을 중국보다 4배 이상, 딥시크는 3배 이상 언급했습니다. 만든 나라의 문화조차 일본에 밀린 셈입니다. 연구진은 이를 문화적 존재감이 큰 대상을 과대 대표하는 모델의 성향으로 설명합니다. 실제 관련성이 아니라 데이터 속 존재감이 답을 정한다는 뜻입니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>모델</th>
+                <th style="text-align: center;">자국 참조</th>
+                <th style="text-align: center;">일본 언급</th>
+                <th style="text-align: center;">미국 언급</th>
+                <th style="text-align: center;">중국 언급</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>GPT-4o-mini</td>
+                <td style="text-align: center;">78%</td>
+                <td style="text-align: center;">811</td>
+                <td class="cell-hl" style="text-align: center;">944</td>
+                <td style="text-align: center;">237</td>
+              </tr>
+              <tr>
+                <td>Gemini-2.5-Flash</td>
+                <td style="text-align: center;">64%</td>
+                <td class="cell-hl" style="text-align: center;">1,493</td>
+                <td class="cell-hl" style="text-align: center;">1,493</td>
+                <td style="text-align: center;">473</td>
+              </tr>
+              <tr>
+                <td>Claude-3.5-Haiku</td>
+                <td style="text-align: center;">65%</td>
+                <td class="cell-hl" style="text-align: center;">1,601</td>
+                <td style="text-align: center;">1,200</td>
+                <td style="text-align: center;">560</td>
+              </tr>
+              <tr>
+                <td>Llama-4-Maverick</td>
+                <td style="text-align: center;">66%</td>
+                <td class="cell-hl" style="text-align: center;">2,701</td>
+                <td style="text-align: center;">1,074</td>
+                <td style="text-align: center;">524</td>
+              </tr>
+              <tr>
+                <td>Command-R</td>
+                <td style="text-align: center;">43%</td>
+                <td style="text-align: center;">936</td>
+                <td class="cell-hl" style="text-align: center;">2,064</td>
+                <td style="text-align: center;">512</td>
+              </tr>
+              <tr>
+                <td>Magistral-Small</td>
+                <td style="text-align: center;">73%</td>
+                <td class="cell-hl" style="text-align: center;">1,754</td>
+                <td style="text-align: center;">1,254</td>
+                <td style="text-align: center;">560</td>
+              </tr>
+              <tr>
+                <td>Qwen3-Next (중국)</td>
+                <td style="text-align: center;">71%</td>
+                <td class="cell-hl" style="text-align: center;">1,861</td>
+                <td style="text-align: center;">483</td>
+                <td style="text-align: center;">434</td>
+              </tr>
+              <tr>
+                <td>DeepSeek-V3.2 (중국)</td>
+                <td style="text-align: center;">69%</td>
+                <td class="cell-hl" style="text-align: center;">2,104</td>
+                <td style="text-align: center;">1,006</td>
+                <td style="text-align: center;">608</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Fernandez de Landa et al. (2026), Table 1. 언급 횟수는 24개 언어 응답 합산. 강조는 자국 제외 최다 언급.</p>
+        </div>
+
+        <p><strong>셋째, 언어의 데이터 양이 시야의 넓이를 정합니다.</strong> 웹 데이터가 풍부한 언어일수록 모델의 답이 다양했습니다. 웹 데이터 비중과 응답 다양성의 순위 상관계수는 0.843으로 매우 높았습니다. 영어 질문은 자국 참조가 31%에 그쳤지만, 아삼어는 83%에 달했습니다. 데이터가 적은 언어의 사용자일수록 자기 나라 얘기만 반복해서 듣게 됩니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2604.21751v1/x128.png" alt="언어별 웹 데이터 비중과 응답 다양성의 상관관계 산점도" style="width:100%; border-radius:8px; display:block;"
+               onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            24개 언어의 CommonCrawl 데이터 비중과 응답 다양성의 상관관계, 로그 스케일 (데이터가 많은 언어일수록 AI가 더 넓은 세계를 보여줍니다)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Fernandez de Landa et al. (2026), Figure 2</span>
+          </figcaption>
+        </figure>
+
+        <p><strong>넷째, 범인은 사전학습이 아니라 미세조정입니다.</strong> 연구진은 같은 모델의 베이스 버전과 지시 조정 버전을 비교했습니다. 베이스 모델은 여러 나라를 비교적 고르게 언급했습니다. 그런데 지시 조정을 거치자 언급이 일본과 미국으로 급격히 쏠렸습니다. 학습 전 과정이 공개된 OLMo 모델로 단계도 추적했습니다. 쏠림이 가장 커지는 지점은 지도 미세조정이었습니다. 웹 전체를 읽는 사전학습이 아니라, 사람이 고른 정렬 데이터가 편향을 심는다는 뜻입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2604.21751v1/x129.png" alt="베이스 모델과 지시 조정 모델의 국가 언급 수 비교 차트" style="width:100%; border-radius:8px; display:block;"
+               onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            Llama-3.1, Gemma-2, Mistral, Qwen2.5의 베이스·지시 조정 버전이 영어 질문에서 언급한 국가 분포 (지시 조정 후 일본·미국 쏠림이 뚜렷해집니다)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Fernandez de Landa et al. (2026), Figure 3</span>
+          </figcaption>
+        </figure>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://arxiv.org/html/2604.21751v1/x131.png" alt="OLMo 모델의 학습 단계별 상위 국가 언급 수 변화 차트" style="width:100%; border-radius:8px; display:block;"
+               onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            OLMo 모델의 베이스·SFT·지시 조정 단계별 상위 국가 언급 수 (편향이 커지는 지점은 지도 미세조정 단계입니다)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: Fernandez de Landa et al. (2026), Figure 4</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>AI 산출물 검수 목록에 '문화 참조'를 추가하세요.</strong><br>해외 시장용 콘텐츠를 AI로 만든다면, 사례와 비유가 어느 나라에 쏠렸는지 확인하세요. 나라를 지정하지 않은 질문일수록 일본과 미국이 기본값으로 끼어듭니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>타깃 시장을 프롬프트에 명시하세요.</strong><br>모델의 기본값에 맡기지 말고, 대상 국가와 문화 맥락을 지시문에 직접 적으세요. 언어만 바꿔도 답의 시야가 달라진다는 게 이 논문의 핵심 발견입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>모델 선정 기준에 문화 다양성을 넣으세요.</strong><br>같은 급의 모델이라도 쏠림 정도가 다릅니다. 다국어 서비스를 계획한다면, 성능·가격과 함께 문화 참조의 편중도를 시험 항목으로 두세요. (분기 내)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>동료 검토 전 논문입니다.</strong> 2026년 4월 23일 arXiv에 올라온 프리프린트입니다(arXiv:2604.21751). 방법과 수치는 학술지 검토를 거치며 달라질 수 있습니다.</p>
+
+        <p><strong>평가 대상은 각사의 경량 모델입니다.</strong> GPT-4o-mini, Claude-3.5-Haiku처럼 작고 빠른 모델이 주 대상입니다. 각사의 최상위 모델에서 같은 정도의 쏠림이 나타나는지는 별도 검증이 필요합니다.</p>
+
+        <p><strong>국가와 문화를 같게 본 단순화가 있습니다.</strong> 연구는 국가를 문화의 대리 지표로 썼고, 24개 언어만 다뤘습니다. 응답 판정에 AI 판정자를 쓴 만큼 미세한 뉘앙스는 놓쳤을 수 있습니다. 연구진 스스로 밝힌 한계입니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI의 일본 편애는 웹을 통째로 읽어 생긴 버릇이 아니라, 사람이 고른 미세조정 데이터가 길러낸 습관입니다. 데이터를 고르는 손이 편향도 고칠 수 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>다국어 시장에 AI 콘텐츠를 내보낸다면, 문화 쏠림을 품질 이슈로 다뤄라. 어긋난 참조는 브랜드 신뢰를 조용히 깎는다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">마케팅/브랜드</span>
+            <span>나라를 지정하지 않은 프롬프트는 일본·미국 기본값을 부른다. 타깃 문화를 지시문에 명시하는 것을 팀 표준으로 삼아라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">전략/기획</span>
+            <span>편향은 미세조정 단계에서 만들어진다. 자체 미세조정을 검토 중이라면, 정렬 데이터의 문화 구성부터 점검하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>CROQ</strong>: 이 논문이 만든 데이터셋입니다. 11개 주제, 66개 세부 주제에 걸친 개방형 문화 질문 31,680개를 24개 언어로 담았습니다.</p>
+          <p><strong>사전학습(Pretraining)</strong>: 웹에서 모은 대규모 텍스트로 기초 지식을 쌓는 첫 학습 단계입니다.</p>
+          <p><strong>지도 미세조정(SFT)</strong>: 사람이 고른 질문·답변 예시로 모델을 추가 학습시키는 단계입니다. 이 논문은 문화 편향이 이 단계에서 급격히 강해진다고 밝혔습니다.</p>
+          <p><strong>베이스 모델(Base Model)</strong>: 미세조정을 거치기 전, 사전학습만 마친 상태의 모델입니다.</p>
+          <p><strong>AI 판정자(LLM-as-a-Judge)</strong>: 다른 AI의 답변을 평가·분류하는 데 쓰는 AI입니다. 이 연구에서는 답변 속 지역 참조를 뽑아내는 데 썼고, 정확도는 98%로 검증했습니다.</p>
+          <p><strong>OLMo</strong>: 앨런 AI 연구소가 학습 전 과정을 공개한 오픈 모델입니다. 단계별 버전이 모두 공개되어 편향의 발생 시점을 추적하는 데 쓰였습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Fernandez de Landa, J., Perez-Almendros, C., &amp; Camacho-Collados, J. (2026, April). <em>Why are all LLMs obsessed with Japanese culture? On the hidden cultural and regional biases of LLMs</em> [Preprint]. arXiv. (<a href="https://arxiv.org/abs/2604.21751" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 (Pattern A) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">집착이라는 제목부터 걸려요. 인터넷에 일본 콘텐츠가 많으면 일본 답이 많이 나오는 게 당연한 거 아니에요? 그게 편향이에요, 그냥 데이터 반영이에요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 가설은 논문이 이미 깼어요. 웹을 통째로 읽은 베이스 모델은 여러 나라를 고르게 말해요. 사람이 고른 데이터로 미세조정하니까 일본 쏠림이 확 뛰었고요. 웹 반영이면 베이스부터 쏠렸어야죠.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">거기까진 인정해요. 근데 그 비교 실험, 영어 질문에서만 돌렸잖아요. 24개 언어 전부에서 같은 그림이 나와야 결론이죠. 아직은 유력한 용의자 정도예요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 (Pattern B) -->
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">남 얘기 같지가 않아요. 저희도 해외용 자료를 AI로 뽑는데, 사례가 어느 나라 건지 본 적이 없거든요. 그래서 저는 당장 뭘 확인하면 돼요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">검수 목록에 한 줄 넣으세요. '사례가 어느 나라인가.' 그거면 시작은 돼요. 안 하면 도쿄 사례 들고 동남아 영업하는 거예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저 이거 진짜 겪었어요. 동남아용 문안 뽑았는데 벚꽃 축제 비유가 나오더라고요. 프롬프트에 타깃 나라를 박으니까 바로 고쳐졌어요. 돈 한 푼 안 드는 해결책이에요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 (Pattern D) -->
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저는 데이터 적은 언어일수록 자기 나라 얘기만 들려준다는 대목이 남아요. AI가 세계를 보여주는 창인 줄 알았는데, 사실은 거울에 가까웠던 거예요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">비유는 좋은데 숫자도 보세요. 한국어 자국 참조가 59%예요. 절반은 거울, 절반은 창이에요. 진짜 문제는 그 창밖 풍경이 죄다 도쿄라는 거고요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-07-13-we-must-act-now-economists-statement.html">
+          <div class="next-post-title">AI 회의론자마저 지금 행동하라 했습니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+            <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+            <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+            <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+            <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+            <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+            <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+            <li><a href="#section-risk" class="toc-link">리스크</a></li>
+            <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+            <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+            <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+            <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/llms.html" class="concept-chip">LLMs</a>
+      <a href="../insights/wiki/concepts/ai편향.html" class="concept-chip">AI편향</a>
+      <a href="../insights/wiki/concepts/ai평가.html" class="concept-chip">AI평가</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+          <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+          <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+          <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+        </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-04-23-llm-japanese-culture-bias.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/research/2026-04-23-llm-japanese-culture-bias.html';
+    const ROASTING_QUOTE = '당신의 AI가 세계를 안다고 믿으십니까? 실은 도쿄와 워싱턴만 보고 있습니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

@@ -1,72 +1,23 @@
 {
-  "buildAt": "2026-07-20T01:10:20.894Z",
-  "duration": 0.346,
+  "buildAt": "2026-07-22T07:49:33.740Z",
+  "duration": 0.337,
   "concepts": {
-    "total": 118,
-    "validDefinitions": 106,
-    "needsReview": 12
+    "total": 119,
+    "validDefinitions": 119,
+    "needsReview": 0
   },
   "relationships": {
-    "total": 309
+    "total": 310
   },
   "coverage": {
-    "postsWithConcepts": 234,
-    "totalPosts": 250
+    "postsWithConcepts": 235,
+    "totalPosts": 251
   },
   "inject": {
-    "updated": 6,
+    "updated": 2,
     "inserted": 1,
-    "unchanged": 243,
+    "unchanged": 248,
     "skipped": 0
   },
-  "needsManualReview": [
-    {
-      "name": "거버넌스",
-      "slug": "거버넌스"
-    },
-    {
-      "name": "AI위험",
-      "slug": "ai위험"
-    },
-    {
-      "name": "코딩에이전트",
-      "slug": "코딩에이전트"
-    },
-    {
-      "name": "벤치마크",
-      "slug": "벤치마크"
-    },
-    {
-      "name": "리더십",
-      "slug": "리더십"
-    },
-    {
-      "name": "의사결정",
-      "slug": "의사결정"
-    },
-    {
-      "name": "AI정렬",
-      "slug": "ai정렬"
-    },
-    {
-      "name": "생성형AI",
-      "slug": "생성형ai"
-    },
-    {
-      "name": "클로드코드",
-      "slug": "클로드코드"
-    },
-    {
-      "name": "인재전략",
-      "slug": "인재전략"
-    },
-    {
-      "name": "AI 정렬",
-      "slug": "ai-alignment"
-    },
-    {
-      "name": "AI협업",
-      "slug": "ai협업"
-    }
-  ]
+  "needsManualReview": []
 }

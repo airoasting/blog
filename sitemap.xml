@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Category Pages -->
   <url>
     <loc>https://airoasting.github.io/blog/research/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1405,4 +1405,5 @@
   <url><loc>https://airoasting.github.io/blog/leader/2026-07-15-why-i-left-google-deepmind.html</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/tech/2026-07-16-kimi-k3.html</loc><lastmod>2026-07-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/tech/2026-07-15-cerebras-knowledge-base.html</loc><lastmod>2026-07-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/research/2026-04-23-llm-japanese-culture-bias.html</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

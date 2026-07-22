@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-20T01:10:20.894Z",
+  "generatedAt": "2026-07-22T07:49:33.740Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 118,
-    "totalRelationships": 309,
-    "totalPosts": 250,
+    "totalConcepts": 119,
+    "totalRelationships": 310,
+    "totalPosts": 251,
     "totalNewsletters": 57
   },
   "concepts": [
@@ -1184,6 +1184,28 @@
       "needs_manual_review": false
     },
     {
+      "id": "llms",
+      "slug": "llms",
+      "name": "LLMs",
+      "aliases": [],
+      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
+      "frequency": 7,
+      "category": "research",
+      "posts": [
+        "2026-02-02-advisor-model-black-box-llm",
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-04-07-llm-behavioral-alignment-gap",
+        "2026-04-23-llm-japanese-culture-bias",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2026-02-11-llm-behavioral-alignment-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-05-20",
+      "needs_manual_review": false
+    },
+    {
       "id": "멀티에이전트",
       "slug": "멀티에이전트",
       "name": "멀티에이전트",
@@ -1336,27 +1358,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-20",
       "lastSeen": "2026-07-02",
-      "needs_manual_review": false
-    },
-    {
-      "id": "llms",
-      "slug": "llms",
-      "name": "LLMs",
-      "aliases": [],
-      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
-      "frequency": 6,
-      "category": "research",
-      "posts": [
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2026-02-11-llm-behavioral-alignment-gap"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-05-20",
       "needs_manual_review": false
     },
     {
@@ -1526,6 +1527,26 @@
       "newsletters": [],
       "firstSeen": "2025-08-23",
       "lastSeen": "2026-07-16",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai편향",
+      "slug": "ai편향",
+      "name": "AI편향",
+      "aliases": [],
+      "definition": "AI편향는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 5,
+      "category": "research",
+      "posts": [
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-04-23-llm-japanese-culture-bias",
+        "2026-05-13-state-media-control-influences-llm",
+        "2026-06-25-ai-models-values-different-from-people",
+        "2025-07-10-ban-left-biased-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-07-10",
+      "lastSeen": "2026-06-25",
       "needs_manual_review": false
     },
     {
@@ -1781,25 +1802,6 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-06-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai편향",
-      "slug": "ai편향",
-      "name": "AI편향",
-      "aliases": [],
-      "definition": "AI편향는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 4,
-      "category": "research",
-      "posts": [
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-05-13-state-media-control-influences-llm",
-        "2026-06-25-ai-models-values-different-from-people",
-        "2025-07-10-ban-left-biased-ai"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-07-10",
-      "lastSeen": "2026-06-25",
       "needs_manual_review": false
     },
     {
@@ -2107,7 +2109,7 @@
       "newsletters": [],
       "firstSeen": "2025-05-01",
       "lastSeen": "2026-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "구글",
@@ -2162,7 +2164,7 @@
       "newsletters": [],
       "firstSeen": "2026-01-25",
       "lastSeen": "2026-07-01",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "erp",
@@ -2234,7 +2236,7 @@
       "newsletters": [],
       "firstSeen": "2026-03-20",
       "lastSeen": "2026-07-03",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "벤치마크",
@@ -2252,7 +2254,7 @@
       "newsletters": [],
       "firstSeen": "2026-03-24",
       "lastSeen": "2026-07-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai리서치",
@@ -2398,7 +2400,7 @@
       "newsletters": [],
       "firstSeen": "2026-04-14",
       "lastSeen": "2026-07-15",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "코딩ai",
@@ -2438,6 +2440,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai평가",
+      "slug": "ai평가",
+      "name": "AI평가",
+      "aliases": [],
+      "definition": "AI평가는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-04-23-llm-japanese-culture-bias",
+        "2026-05-27-law-professors-prefer-ai",
+        "2026-07-02-economist-forecast-accuracy-ai"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-23",
+      "lastSeen": "2026-07-02",
+      "needs_manual_review": false
+    },
+    {
       "id": "의사결정",
       "slug": "의사결정",
       "name": "의사결정",
@@ -2453,7 +2473,7 @@
       "newsletters": [],
       "firstSeen": "2026-04-30",
       "lastSeen": "2026-07-02",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai정렬",
@@ -2471,7 +2491,7 @@
       "newsletters": [],
       "firstSeen": "2026-02-11",
       "lastSeen": "2026-06-24",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "생성형ai",
@@ -2489,7 +2509,7 @@
       "newsletters": [],
       "firstSeen": "2026-05-20",
       "lastSeen": "2026-07-09",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai일자리",
@@ -2525,7 +2545,7 @@
       "newsletters": [],
       "firstSeen": "2026-06-02",
       "lastSeen": "2026-07-16",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ax전략",
@@ -2579,7 +2599,7 @@
       "newsletters": [],
       "firstSeen": "2025-04-10",
       "lastSeen": "2026-07-03",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai-alignment",
@@ -2600,7 +2620,7 @@
       "newsletters": [],
       "firstSeen": "2026-06-25",
       "lastSeen": "2026-07-13",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "ai협업",
@@ -2618,7 +2638,7 @@
       "newsletters": [],
       "firstSeen": "2025-04-16",
       "lastSeen": "2026-07-04",
-      "needs_manual_review": true
+      "needs_manual_review": false
     },
     {
       "id": "생성ai",
@@ -2972,6 +2992,11 @@
     },
     {
       "source": "LLM",
+      "target": "LLMs",
+      "strength": 4
+    },
+    {
+      "source": "LLM",
       "target": "멀티에이전트",
       "strength": 3
     },
@@ -2987,11 +3012,6 @@
     },
     {
       "source": "LLM",
-      "target": "LLMs",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
       "target": "GPQA",
       "strength": 2
     },
@@ -2999,6 +3019,11 @@
       "source": "LLM",
       "target": "RLHF",
       "strength": 4
+    },
+    {
+      "source": "LLM",
+      "target": "AI편향",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -3014,11 +3039,6 @@
       "source": "LLM",
       "target": "GPTs",
       "strength": 2
-    },
-    {
-      "source": "LLM",
-      "target": "AI편향",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -4276,6 +4296,16 @@
       "strength": 4
     },
     {
+      "source": "LLMs",
+      "target": "RLHF",
+      "strength": 3
+    },
+    {
+      "source": "LLMs",
+      "target": "AI편향",
+      "strength": 2
+    },
+    {
       "source": "CPU",
       "target": "SEC",
       "strength": 2
@@ -4299,11 +4329,6 @@
       "source": "VC",
       "target": "미중갈등",
       "strength": 2
-    },
-    {
-      "source": "LLMs",
-      "target": "RLHF",
-      "strength": 3
     },
     {
       "source": "GPQA",
