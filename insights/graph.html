@@ -301,66 +301,6 @@
     }
     .tt-connections span { font-weight: 700; color: #333; }
 
-    /* ── Legend ── 기본 위치는 JS가 남태평양 좌표에 앵커해 배치 */
-    .graph-legend {
-      position: absolute;
-      bottom: 54px;
-      left: max(24px, calc(50% - 516px));
-      z-index: 5;
-      cursor: grab;
-      user-select: none;
-      background: rgba(10,15,30,0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 16px 20px;
-      color: #fff;
-      font-family: 'Pretendard', sans-serif;
-    }
-    .legend-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 7px;
-    }
-    .legend-item:last-child { margin-bottom: 0; }
-    .legend-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      border: 2px solid;
-      flex-shrink: 0;
-    }
-    .legend-hint {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin-top: 12px;
-      padding-top: 12px;
-    }
-    .legend-hint-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 5px;
-    }
-    .hint-circle {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.3);
-    }
-    .hint-circle.lg { width: 14px; height: 14px; }
-
     /* ── Instructions overlay ── */
     .graph-instructions {
       position: absolute;
@@ -448,7 +388,6 @@
       .graph-page-header { padding: 12px 16px 0; }
       .graph-page-title { font-size: 16px; }
       .graph-page-sub { font-size: 11px; }
-      .graph-legend { display: none; }
       .zoom-reset-btn { top: 12px; right: 12px; padding: 7px 11px; font-size: 11px; }
       .graph-controls-inner { padding: 0 16px; }
     }
@@ -514,36 +453,6 @@
     </div>
 
     <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
-
-    <div class="graph-legend">
-      <div class="legend-title">카테고리</div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터
-      </div>
-      <div class="legend-hint">
-        <div class="legend-hint-row">
-          <div class="hint-circle"></div><span>연결 적음</span>
-        </div>
-        <div class="legend-hint-row">
-          <div class="hint-circle lg"></div><span>연결 많음 (허브)</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -1125,68 +1034,12 @@ function buildGraph(posts) {
     resizeTimer = setTimeout(() => {
       fitProjection();
       renderPositions();
-      positionLegend();
       fitToView(false);
     }, 150);
   });
 
   /* Zoom reset button */
   document.getElementById('zoomResetBtn').addEventListener('click', () => fitToView(true));
-
-  /* ── Legend 위치: 남태평양(빈 바다) 좌표에 앵커 ──
-     지도가 리사이즈로 다시 fit돼도 항상 태평양 가운데 온다.
-     사용자가 직접 드래그하면 이후 자동 배치는 중단. */
-  let legendDragged = false;
-
-  function positionLegend() {
-    const leg = document.querySelector('.graph-legend');
-    if (!leg || legendDragged) return;
-    if (getComputedStyle(leg).display === 'none') return;
-    const [ax, ay] = projection([-135, -28]);  // 남태평양 (NZ와 남미 사이)
-    const lw = leg.offsetWidth, lh = leg.offsetHeight;
-    const left = Math.max(8, Math.min(W - lw - 8, ax - lw / 2));
-    const top  = Math.max(8, Math.min(H - lh - 8, ay - lh / 2));
-    leg.style.left = left + 'px';
-    leg.style.top = top + 'px';
-    leg.style.bottom = 'auto';
-    leg.style.right = 'auto';
-  }
-  positionLegend();
-
-  /* Legend 드래그 */
-  (function() {
-    const leg = document.querySelector('.graph-legend');
-    if (!leg) return;
-    let dragging = false, ox = 0, oy = 0;
-
-    leg.addEventListener('mousedown', e => {
-      dragging = true;
-      legendDragged = true;
-      leg.style.cursor = 'grabbing';
-      /* bottom/right → top/left 로 전환 (부모 기준 보정) */
-      const rect = leg.getBoundingClientRect();
-      const wrapRect = leg.offsetParent.getBoundingClientRect();
-      leg.style.top    = (rect.top  - wrapRect.top)  + 'px';
-      leg.style.left   = (rect.left - wrapRect.left) + 'px';
-      leg.style.bottom = 'auto';
-      leg.style.right  = 'auto';
-      ox = e.clientX - rect.left;
-      oy = e.clientY - rect.top;
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousemove', e => {
-      if (!dragging) return;
-      const wrapRect = leg.offsetParent.getBoundingClientRect();
-      leg.style.left = (e.clientX - ox - wrapRect.left) + 'px';
-      leg.style.top  = (e.clientY - oy - wrapRect.top)  + 'px';
-    });
-
-    document.addEventListener('mouseup', () => {
-      dragging = false;
-      leg.style.cursor = 'grab';
-    });
-  })();
 
   /* 10. Category filter */
   let activeCategories = new Set(['research','leader','company','tech','survival','newsletter']);
