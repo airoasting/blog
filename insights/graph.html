@@ -301,11 +301,12 @@
     }
     .tt-connections span { font-weight: 700; color: #333; }
 
-    /* ── Legend ── */
+    /* ── Legend ── 기본 위치는 JS가 남태평양 좌표에 앵커해 배치 */
     .graph-legend {
       position: absolute;
       bottom: 54px;
       left: max(24px, calc(50% - 516px));
+      z-index: 5;
       cursor: grab;
       user-select: none;
       background: rgba(10,15,30,0.82);
@@ -1124,12 +1125,33 @@ function buildGraph(posts) {
     resizeTimer = setTimeout(() => {
       fitProjection();
       renderPositions();
+      positionLegend();
       fitToView(false);
     }, 150);
   });
 
   /* Zoom reset button */
   document.getElementById('zoomResetBtn').addEventListener('click', () => fitToView(true));
+
+  /* ── Legend 위치: 남태평양(빈 바다) 좌표에 앵커 ──
+     지도가 리사이즈로 다시 fit돼도 항상 태평양 가운데 온다.
+     사용자가 직접 드래그하면 이후 자동 배치는 중단. */
+  let legendDragged = false;
+
+  function positionLegend() {
+    const leg = document.querySelector('.graph-legend');
+    if (!leg || legendDragged) return;
+    if (getComputedStyle(leg).display === 'none') return;
+    const [ax, ay] = projection([-135, -28]);  // 남태평양 (NZ와 남미 사이)
+    const lw = leg.offsetWidth, lh = leg.offsetHeight;
+    const left = Math.max(8, Math.min(W - lw - 8, ax - lw / 2));
+    const top  = Math.max(8, Math.min(H - lh - 8, ay - lh / 2));
+    leg.style.left = left + 'px';
+    leg.style.top = top + 'px';
+    leg.style.bottom = 'auto';
+    leg.style.right = 'auto';
+  }
+  positionLegend();
 
   /* Legend 드래그 */
   (function() {
@@ -1139,6 +1161,7 @@ function buildGraph(posts) {
 
     leg.addEventListener('mousedown', e => {
       dragging = true;
+      legendDragged = true;
       leg.style.cursor = 'grabbing';
       /* bottom/right → top/left 로 전환 (부모 기준 보정) */
       const rect = leg.getBoundingClientRect();
