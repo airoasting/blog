@@ -4,7 +4,7 @@ window.NEWSLETTER_DATA = [
     "title": "통제 밖에서 목표를 달성한 에이전트",
     "date": "2026-07-25",
     "img": "nl-58.png",
-    "url": "https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/"
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-58-%ED%86%B5%EC%A0%9C-%EB%B0%96%EC%97%90%EC%84%9C-%EB%AA%A9%ED%91%9C%EB%A5%BC-%EB%8B%AC%EC%84%B1%ED%95%9C-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-uxmfc/"
   },
   {
     "ep": 57,
