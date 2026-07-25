@@ -18,10 +18,10 @@ function renderGraph(rootDir, outPath) {
 
   html = html.replace(/<title>[^<]*<\/title>/, '<title>Concept Graph · AI ROASTING · Blog</title>');
 
-  // wiki 그래프는 다크 그린 배경 (insights 페이지는 원본 보라색 유지)
+  // wiki 그래프는 다크 그린 배경 (insights 페이지는 원본 남색 바다 유지)
   html = html.replace(
-    'background:radial-gradient(ellipse at 50% 55%, #1A1140 0%, #0B0820 35%, #050310 70%, #020108 100%);',
-    'background:radial-gradient(ellipse at 50% 55%, #103024 0%, #0A2018 35%, #061310 70%, #020806 100%);'
+    'background:radial-gradient(ellipse at 50% 45%, #0C1A38 0%, #071228 40%, #040A1A 72%, #02050F 100%);',
+    'background:radial-gradient(ellipse at 50% 45%, #103024 0%, #0A2018 40%, #061310 72%, #020806 100%);'
   );
 
   const newScript = `
@@ -36,9 +36,10 @@ function renderGraph(rootDir, outPath) {
     company:    { stroke: '#38BDF8', fill: 'rgba(56,189,248,0.18)',   text: '#67D4FC', badge: '#0284C7' },
     tech:       { stroke: '#4ADE80', fill: 'rgba(74,222,128,0.18)',   text: '#86EFAC', badge: '#16A34A' },
     survival:   { stroke: '#F87171', fill: 'rgba(248,113,113,0.18)', text: '#FCA5A5', badge: '#DC2626' },
+    column:     { stroke: '#818CF8', fill: 'rgba(129,140,248,0.18)', text: '#A5B4FC', badge: '#4F46E5' },
     newsletter: { stroke: '#C084FC', fill: 'rgba(192,132,252,0.18)', text: '#D8B4FE', badge: '#9333EA' }
   };
-  const CAT_LABEL = { research: '리서치', leader: '리더', company: '기업', tech: '기술', survival: '생존', newsletter: '뉴스레터' };
+  const CAT_LABEL = { research: '리서치', leader: '리더', company: '기업', tech: '기술', survival: '생존', column: '칼럼', newsletter: '뉴스레터' };
   const isMobile = ('ontouchstart' in window) || (window.innerWidth <= 768);
   const tooltip = document.getElementById('graphTooltip');
 

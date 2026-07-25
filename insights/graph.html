@@ -401,6 +401,9 @@
       <button class="filter-pill active" data-cat="survival" style="color:#F87171;">
         <span class="pill-dot"></span>생존
       </button>
+      <button class="filter-pill active" data-cat="column" style="color:#818CF8;">
+        <span class="pill-dot"></span>칼럼
+      </button>
       <button class="filter-pill active" data-cat="newsletter" style="color:#C084FC;">
         <span class="pill-dot"></span>뉴스레터
       </button>
@@ -452,12 +455,13 @@ const CAT = {
   company:    { stroke: '#38BDF8', fill: 'rgba(56,189,248,0.18)',   text: '#67D4FC', badge: '#0284C7' },
   tech:       { stroke: '#4ADE80', fill: 'rgba(74,222,128,0.18)',   text: '#86EFAC', badge: '#16A34A' },
   survival:   { stroke: '#F87171', fill: 'rgba(248,113,113,0.18)', text: '#FCA5A5', badge: '#DC2626' },
+  column:     { stroke: '#818CF8', fill: 'rgba(129,140,248,0.18)', text: '#A5B4FC', badge: '#4F46E5' },
   newsletter: { stroke: '#C084FC', fill: 'rgba(192,132,252,0.18)', text: '#D8B4FE', badge: '#9333EA' },
 };
 
 const CAT_LABEL = {
   research: '리서치', leader: '리더', company: '기업',
-  tech: '기술', survival: '생존', newsletter: '뉴스레터'
+  tech: '기술', survival: '생존', column: '칼럼', newsletter: '뉴스레터'
 };
 
 /* ── 세계 지도 육지 도트 (equal-area 근사 격자, [lon, lat]) — 남극 제외 ── */
@@ -1014,7 +1018,7 @@ function buildGraph(posts) {
   document.getElementById('zoomResetBtn').addEventListener('click', () => fitToView(true));
 
   /* 10. Category filter */
-  let activeCategories = new Set(['research','leader','company','tech','survival','newsletter']);
+  let activeCategories = new Set(['research','leader','company','tech','survival','column','newsletter']);
 
   document.getElementById('graphControls').addEventListener('click', e => {
     const btn = e.target.closest('.filter-pill');
@@ -1026,7 +1030,7 @@ function buildGraph(posts) {
         activeCategories.clear();
         document.querySelectorAll('.filter-pill:not([data-cat="all"])').forEach(b => b.classList.remove('active'));
       } else {
-        activeCategories = new Set(['research','leader','company','tech','survival','newsletter']);
+        activeCategories = new Set(['research','leader','company','tech','survival','column','newsletter']);
         document.querySelectorAll('.filter-pill:not([data-cat="all"])').forEach(b => b.classList.add('active'));
       }
       btn.classList.toggle('active', activeCategories.size > 0);

@@ -145,16 +145,27 @@
 
     /* 육지 도트 (지도 배경) */
     .land-dot { pointer-events: none; }
+    .land-dot.shimmer { animation: dotShimmer 7s ease-in-out infinite; }
+    @keyframes dotShimmer {
+      0%, 100% { fill-opacity: 0.3; }
+      50%      { fill-opacity: 0.62; }
+    }
 
-    /* 대륙 = 카테고리 라벨 */
-    .continent-label {
-      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
-      font-weight: 800;
-      text-anchor: middle;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: 0.12em;
-      opacity: 0.5;
+    /* 허브 노드 숨쉬기 (글로우 강약) */
+    .g-node.hub .node-dot { animation: hubPulse 3.4s ease-in-out infinite; }
+    @keyframes hubPulse {
+      0%, 100% { filter: drop-shadow(0 0 5px currentColor); }
+      50%      { filter: drop-shadow(0 0 14px currentColor); }
+    }
+    /* 포커스 중에는 허브 펄스가 강조 효과를 덮지 않게 정지 */
+    .g-node.faded .node-dot,
+    .g-node.highlighted .node-dot { animation: none; }
+
+    /* 유성(아크 위를 흐르는 빛) */
+    .comet { pointer-events: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .land-dot.shimmer, .g-node.hub .node-dot { animation: none; }
     }
 
     /* ── Zoom reset button (뉴모피즘) ── */
@@ -291,92 +302,6 @@
     }
     .tt-connections span { font-weight: 700; color: #333; }
 
-    /* ── Legend ── */
-    .graph-legend {
-      position: absolute;
-      bottom: 54px;
-      left: max(24px, calc(50% - 516px));
-      cursor: grab;
-      user-select: none;
-      background: rgba(10,15,30,0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 16px 20px;
-      color: #fff;
-      font-family: 'Pretendard', sans-serif;
-    }
-    .legend-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.45);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 7px;
-    }
-    .legend-item:last-child { margin-bottom: 0; }
-    .legend-item .cont-name {
-      color: rgba(255,255,255,0.35);
-      font-size: 11px;
-      margin-left: auto;
-      padding-left: 14px;
-    }
-    .legend-dot {
-      width: 12px; height: 12px;
-      border-radius: 50%;
-      border: 2px solid;
-      flex-shrink: 0;
-    }
-    .legend-hint {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      margin-top: 12px;
-      padding-top: 12px;
-    }
-    .legend-hint-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 5px;
-    }
-    .hint-circle {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.3);
-    }
-    .hint-circle.lg { width: 14px; height: 14px; }
-
-    /* ── Instructions overlay ── */
-    .graph-instructions {
-      position: absolute;
-      top: 20px;
-      left: max(24px, calc(50% - 516px));
-      background: rgba(10,15,30,0.72);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 10px 14px;
-      font-family: 'Pretendard', sans-serif;
-      font-size: 11px;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.8;
-      pointer-events: none;
-    }
-    @media (max-width: 768px) {
-      .graph-instructions { display: none; }
-    }
-
     /* ── Loading State ── */
     .graph-loading {
       position: absolute;
@@ -443,7 +368,6 @@
       .graph-page-header { padding: 12px 16px 0; }
       .graph-page-title { font-size: 16px; }
       .graph-page-sub { font-size: 11px; }
-      .graph-legend { display: none; }
       .zoom-reset-btn { top: 12px; right: 12px; padding: 7px 11px; font-size: 11px; }
       .graph-controls-inner { padding: 0 16px; }
     }
@@ -456,7 +380,7 @@
 <script src="../../assets/js/theme.js"></script>
 <script src="../../assets/js/header.js"></script>
 
-<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 45%, #0C1A38 0%, #071228 40%, #040A1A 72%, #02050F 100%);">
+<div class="graph-shell" style="background:radial-gradient(ellipse at 50% 45%, #103024 0%, #0A2018 40%, #061310 72%, #020806 100%);">
   <div class="graph-controls" id="graphControls">
     <div class="graph-controls-inner">
       <span class="ctrl-label">카테고리</span>
@@ -477,6 +401,9 @@
       </button>
       <button class="filter-pill active" data-cat="survival" style="color:#F87171;">
         <span class="pill-dot"></span>생존
+      </button>
+      <button class="filter-pill active" data-cat="column" style="color:#818CF8;">
+        <span class="pill-dot"></span>칼럼
       </button>
       <button class="filter-pill active" data-cat="newsletter" style="color:#C084FC;">
         <span class="pill-dot"></span>뉴스레터
@@ -501,44 +428,7 @@
       </defs>
     </svg>
 
-    <div class="graph-instructions">
-      <div>🖱 드래그로 이동 · 스크롤로 확대/축소</div>
-      <div>● 클릭: 연결된 노드만 표시</div>
-      <div>● 더블클릭: 아티클 열기</div>
-      <div>● 빈 곳 클릭: 전체 보기</div>
-    </div>
-
     <button class="zoom-reset-btn" id="zoomResetBtn">⊙ 전체 보기</button>
-
-    <div class="graph-legend">
-      <div class="legend-title">카테고리 = 대륙</div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#60A5FA;background:rgba(96,165,250,0.2);"></div>리서치<span class="cont-name">유럽</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#FB923C;background:rgba(251,146,60,0.2);"></div>리더<span class="cont-name">오세아니아</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#38BDF8;background:rgba(56,189,248,0.2);"></div>기업<span class="cont-name">북아메리카</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#4ADE80;background:rgba(74,222,128,0.2);"></div>기술<span class="cont-name">아시아</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#F87171;background:rgba(248,113,113,0.2);"></div>생존<span class="cont-name">남아메리카</span>
-      </div>
-      <div class="legend-item">
-        <div class="legend-dot" style="border-color:#C084FC;background:rgba(192,132,252,0.2);"></div>뉴스레터<span class="cont-name">아프리카</span>
-      </div>
-      <div class="legend-hint">
-        <div class="legend-hint-row">
-          <div class="hint-circle"></div><span>연결 적음</span>
-        </div>
-        <div class="legend-hint-row">
-          <div class="hint-circle lg"></div><span>연결 많음 (허브)</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -556,9 +446,10 @@
     company:    { stroke: '#38BDF8', fill: 'rgba(56,189,248,0.18)',   text: '#67D4FC', badge: '#0284C7' },
     tech:       { stroke: '#4ADE80', fill: 'rgba(74,222,128,0.18)',   text: '#86EFAC', badge: '#16A34A' },
     survival:   { stroke: '#F87171', fill: 'rgba(248,113,113,0.18)', text: '#FCA5A5', badge: '#DC2626' },
+    column:     { stroke: '#818CF8', fill: 'rgba(129,140,248,0.18)', text: '#A5B4FC', badge: '#4F46E5' },
     newsletter: { stroke: '#C084FC', fill: 'rgba(192,132,252,0.18)', text: '#D8B4FE', badge: '#9333EA' }
   };
-  const CAT_LABEL = { research: '리서치', leader: '리더', company: '기업', tech: '기술', survival: '생존', newsletter: '뉴스레터' };
+  const CAT_LABEL = { research: '리서치', leader: '리더', company: '기업', tech: '기술', survival: '생존', column: '칼럼', newsletter: '뉴스레터' };
   const isMobile = ('ontouchstart' in window) || (window.innerWidth <= 768);
   const tooltip = document.getElementById('graphTooltip');
 

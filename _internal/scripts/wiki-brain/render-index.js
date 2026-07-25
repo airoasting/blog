@@ -11,6 +11,7 @@ const CAT_META = {
   company:    { label: '기업',     color: 'var(--cat-company)',  surf: 'var(--cat-company-surface)' },
   tech:       { label: '기술',     color: 'var(--cat-tech)',     surf: 'var(--cat-tech-surface)' },
   survival:   { label: '생존',     color: 'var(--cat-survival)', surf: 'var(--cat-survival-surface)' },
+  column:     { label: '칼럼',     color: 'var(--cat-column)',   surf: 'var(--cat-column-surface)' },
   newsletter: { label: '뉴스레터', color: 'var(--cat-newsletter)', surf: 'var(--surface-container-high)' },
 };
 const catMeta = cat => CAT_META[cat] || { label: cat, color: 'var(--text-secondary)', surf: 'var(--surface-container-high)' };

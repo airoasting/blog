@@ -12,12 +12,13 @@
     company: '기업',
     tech: '기술',
     survival: '생존',
+    column: '칼럼',
     newsletter: '뉴스레터'
   };
 
   // Detect URL prefix based on page depth
   const loc = window.location.pathname;
-  const urlPrefix = /\/(research|leader|company|tech|survival|newsletter|about)\//.test(loc) ? '../' : './';
+  const urlPrefix = /\/(research|leader|company|tech|survival|column|newsletter|about)\//.test(loc) ? '../' : './';
 
   let fuse = null;
   let allPosts = [];

@@ -10,7 +10,7 @@
     prefix = '../../../';
   } else if (/\/insights\/wiki(\/|$)/.test(loc)) {
     prefix = '../../';
-  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
+  } else if (/\/(research|leader|company|tech|survival|column|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
     prefix = '../';
   }
 
@@ -70,6 +70,7 @@
           navLink('company', '기업') +
           navLink('tech', '기술') +
           navLink('survival', '생존') +
+          navLink('column', '칼럼') +
           '<a href="' + prefix + 'insights/graph.html" class="nav-graph' + (activeCat === 'graph' ? ' active' : '') + '">지식 그래프</a>' +
           '<a href="' + prefix + 'insights/wiki/index.html" class="nav-wiki' + (activeCat === 'wiki' ? ' active' : '') + '">위키 브레인</a>' +
           '<a href="' + prefix + 'timeline/model-timeline.html" class="nav-timeline' + (activeCat === 'timeline' ? ' active' : '') + '">모델·로봇 타임라인</a>' +
@@ -88,6 +89,7 @@
       mobileLink('company', '기업') +
       mobileLink('tech', '기술') +
       mobileLink('survival', '생존') +
+      mobileLink('column', '칼럼') +
       '<a href="' + prefix + 'about/index.html" class="mobile-nav-group-start">프로젝트 소개</a>' +
       '<a href="' + prefix + 'insights/graph.html">지식 그래프</a>' +
       '<a href="' + prefix + 'insights/wiki/index.html">위키 브레인</a>' +

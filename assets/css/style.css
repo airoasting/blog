@@ -51,6 +51,7 @@
   --cat-company:  #1A4A7A;
   --cat-tech:     #145C35;
   --cat-survival: #7A1F1F;
+  --cat-column:   #4A2A6A;
 
   /* Category surface tints */
   --cat-research-surface: #EBE0D9;
@@ -58,6 +59,7 @@
   --cat-company-surface:  #D9E4F0;
   --cat-tech-surface:     #D8EADF;
   --cat-survival-surface: #EADADA;
+  --cat-column-surface:   #E2DAEC;
 
   /* Neumorphism System */
   --nm-bg:        #F2F0EB;
@@ -536,6 +538,7 @@ img {
 .featured-hero[data-hero-cat="company"]  .featured-hero-accent { background: var(--cat-company); }
 .featured-hero[data-hero-cat="tech"]     .featured-hero-accent { background: var(--cat-tech); }
 .featured-hero[data-hero-cat="survival"] .featured-hero-accent { background: var(--cat-survival); }
+.featured-hero[data-hero-cat="column"] .featured-hero-accent { background: var(--cat-column); }
 
 /* Meta row */
 .featured-hero-meta {
@@ -558,6 +561,7 @@ img {
 .featured-hero[data-hero-cat="company"]  .featured-hero-cat { color: var(--cat-company); }
 .featured-hero[data-hero-cat="tech"]     .featured-hero-cat { color: var(--cat-tech); }
 .featured-hero[data-hero-cat="survival"] .featured-hero-cat { color: var(--cat-survival); }
+.featured-hero[data-hero-cat="column"] .featured-hero-cat { color: var(--cat-column); }
 
 .featured-hero-meta-date,
 .featured-hero-meta-source {
@@ -768,6 +772,7 @@ img {
 .card[data-category="company"]  { background: var(--nm-bg); }
 .card[data-category="tech"]     { background: var(--nm-bg); }
 .card[data-category="survival"] { background: var(--nm-bg); }
+.card[data-category="column"] { background: var(--nm-bg); }
 
 /* Category color top accent stripe via ::before */
 .card::before {
@@ -783,6 +788,7 @@ img {
 .card[data-category="company"]::before  { background: var(--cat-company); }
 .card[data-category="tech"]::before     { background: var(--cat-tech); }
 .card[data-category="survival"]::before { background: var(--cat-survival); }
+.card[data-category="column"]::before { background: var(--cat-column); }
 
 /* Category badge color */
 .card[data-category="research"] .card-badge { color: var(--cat-research); }
@@ -790,6 +796,7 @@ img {
 .card[data-category="company"]  .card-badge { color: var(--cat-company); }
 .card[data-category="tech"]     .card-badge { color: var(--cat-tech); }
 .card[data-category="survival"] .card-badge { color: var(--cat-survival); }
+.card[data-category="column"] .card-badge { color: var(--cat-column); }
 
 /* 카테고리별 커스텀 shadow 제거 — 단일 nm-raised 사용 */
 
@@ -799,6 +806,7 @@ img {
 .featured-hero[data-hero-cat="company"],
 .featured-hero[data-hero-cat="tech"],
 .featured-hero[data-hero-cat="survival"] { background: var(--nm-bg); }
+.featured-hero[data-hero-cat="column"] { background: var(--nm-bg); }
 
 /* Thumbnail — hidden */
 .card-thumb {
@@ -1064,6 +1072,7 @@ img {
 .post-thumbnail-hero[data-category="company"]  .post-color-bar { background: var(--cat-company); }
 .post-thumbnail-hero[data-category="tech"]     .post-color-bar { background: var(--cat-tech); }
 .post-thumbnail-hero[data-category="survival"] .post-color-bar { background: var(--cat-survival); }
+.post-thumbnail-hero[data-category="column"] .post-color-bar { background: var(--cat-column); }
 
 /* Meta row → normal flow */
 .post-hero-meta {
@@ -1094,6 +1103,7 @@ img {
 .post-thumbnail-hero[data-category="company"]  .post-hero-meta .post-category { color: var(--cat-company) !important; }
 .post-thumbnail-hero[data-category="tech"]     .post-hero-meta .post-category { color: var(--cat-tech) !important; }
 .post-thumbnail-hero[data-category="survival"] .post-hero-meta .post-category { color: var(--cat-survival) !important; }
+.post-thumbnail-hero[data-category="column"] .post-hero-meta .post-category { color: var(--cat-column) !important; }
 
 .post-hero-meta .post-date,
 .post-hero-meta .post-read-time {
@@ -1138,6 +1148,7 @@ img {
 .post[data-category="company"]  .post-thumbnail-overlay .post-title:hover { color: var(--cat-company)  !important; }
 .post[data-category="tech"]     .post-thumbnail-overlay .post-title:hover { color: var(--cat-tech)     !important; }
 .post[data-category="survival"] .post-thumbnail-overlay .post-title:hover { color: var(--cat-survival) !important; }
+.post[data-category="column"] .post-thumbnail-overlay .post-title:hover { color: var(--cat-column) !important; }
 
 /* Bottom (source + tags) → normal flow */
 .post-hero-bottom {
@@ -1230,6 +1241,7 @@ img {
 .post-category[data-category="company"]  { color: var(--cat-company); }
 .post-category[data-category="tech"]     { color: var(--cat-tech); }
 .post-category[data-category="survival"] { color: var(--cat-survival); }
+.post-category[data-category="column"] { color: var(--cat-column); }
 
 .post-date {
   font-family: var(--font-meta);
@@ -1365,6 +1377,16 @@ img {
 .post[data-category="company"] .post-section-label  { color: var(--cat-company); }
 .post[data-category="tech"] .post-section-label     { color: var(--cat-tech); }
 .post[data-category="survival"] .post-section-label { color: var(--cat-survival); }
+.post[data-category="column"] .post-section-label { color: var(--cat-column); }
+
+/* 카테고리별 액센트 색. 지정이 없으면 --cat-leader(오렌지)로 떨어진다.
+   섹션 라벨 밑줄, 인용 블록, 읽기 진행바가 이 변수를 함께 쓴다. */
+.post[data-category="research"] { --category-color: var(--cat-research); }
+.post[data-category="leader"]   { --category-color: var(--cat-leader); }
+.post[data-category="company"]  { --category-color: var(--cat-company); }
+.post[data-category="tech"]     { --category-color: var(--cat-tech); }
+.post[data-category="survival"] { --category-color: var(--cat-survival); }
+.post[data-category="column"]   { --category-color: var(--cat-column); }
 
 .post-section p {
   font-size: 15px;
@@ -1552,12 +1574,14 @@ img {
 .post[data-category="company"]  .post-table th { border-bottom-color: var(--cat-company); }
 .post[data-category="tech"]     .post-table th { border-bottom-color: var(--cat-tech); }
 .post[data-category="survival"] .post-table th { border-bottom-color: var(--cat-survival); }
+.post[data-category="column"] .post-table th { border-bottom-color: var(--cat-column); }
 /* Category-accent highlight text */
 .post[data-category="research"] .post-table .cell-hl { color: var(--cat-research); font-weight: 700; }
 .post[data-category="leader"]   .post-table .cell-hl { color: var(--cat-leader);   font-weight: 700; }
 .post[data-category="company"]  .post-table .cell-hl { color: var(--cat-company);  font-weight: 700; }
 .post[data-category="tech"]     .post-table .cell-hl { color: var(--cat-tech);     font-weight: 700; }
 .post[data-category="survival"] .post-table .cell-hl { color: var(--cat-survival); font-weight: 700; }
+.post[data-category="column"] .post-table .cell-hl { color: var(--cat-column); font-weight: 700; }
 .post-table-source,
 .post-section .post-table-source { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
 
@@ -2491,6 +2515,7 @@ img {
 .about-category-item:nth-child(3) .about-category-name { color: var(--cat-company); }
 .about-category-item:nth-child(4) .about-category-name { color: var(--cat-tech); }
 .about-category-item:nth-child(5) .about-category-name { color: var(--cat-survival); }
+.about-category-item:nth-child(6) .about-category-name { color: var(--cat-column); }
 
 .about-category-desc {
   font-size: 13px;
@@ -2882,6 +2907,7 @@ img {
 .mobile-nav a[data-cat="company"]  .nav-count-pill { color: var(--cat-company); }
 .mobile-nav a[data-cat="tech"]     .nav-count-pill { color: var(--cat-tech); }
 .mobile-nav a[data-cat="survival"] .nav-count-pill { color: var(--cat-survival); }
+.mobile-nav a[data-cat="column"] .nav-count-pill { color: var(--cat-column); }
 
 .mobile-search {
   padding: 12px 0;
@@ -3151,6 +3177,7 @@ img {
 .filter-tab[data-category="company"].active  { color: var(--cat-company); }
 .filter-tab[data-category="tech"].active     { color: var(--cat-tech); }
 .filter-tab[data-category="survival"].active { color: var(--cat-survival); }
+.filter-tab[data-category="column"].active { color: var(--cat-column); }
 
 .filter-pills-wrap {
   max-height: 0;
@@ -3667,6 +3694,8 @@ img {
 .post[data-category="tech"] ~ .reading-progress-bar .reading-progress-fill { background: var(--cat-tech); }
 [data-category="survival"] .reading-progress-fill,
 .post[data-category="survival"] ~ .reading-progress-bar .reading-progress-fill { background: var(--cat-survival); }
+[data-category="column"] .reading-progress-fill,
+.post[data-category="column"] ~ .reading-progress-bar .reading-progress-fill { background: var(--cat-column); }
 
 /* ═══════════════════════════════════════════
    Post Body Layout (Content + TOC)
@@ -3938,11 +3967,13 @@ img {
   --cat-company-surface:  #141E2E;
   --cat-tech-surface:     #142418;
   --cat-survival-surface: #2A1616;
+  --cat-column-surface:   #221A2E;
   --cat-research: #D4A090;
   --cat-leader:   #FFB59A;
   --cat-company:  #9ABEF5;
   --cat-tech:     #72D9A0;
   --cat-survival: #F4A8A8;
+  --cat-column:   #C0A8E0;
   /* Neumorphism dark */
   --nm-bg:        #2A2825;
   --nm-dark:      #141210;
@@ -3977,7 +4008,8 @@ img {
 [data-theme="dark"] .card[data-category="leader"],
 [data-theme="dark"] .card[data-category="company"],
 [data-theme="dark"] .card[data-category="tech"],
-[data-theme="dark"] .card[data-category="survival"] {
+[data-theme="dark"] .card[data-category="survival"],
+[data-theme="dark"] .card[data-category="column"] {
   background: var(--nm-bg);
 }
 [data-theme="dark"] .featured-hero,
@@ -3985,7 +4017,8 @@ img {
 [data-theme="dark"] .featured-hero[data-hero-cat="leader"],
 [data-theme="dark"] .featured-hero[data-hero-cat="company"],
 [data-theme="dark"] .featured-hero[data-hero-cat="tech"],
-[data-theme="dark"] .featured-hero[data-hero-cat="survival"] {
+[data-theme="dark"] .featured-hero[data-hero-cat="survival"],
+[data-theme="dark"] .featured-hero[data-hero-cat="column"] {
   background: var(--nm-bg);
 }
 [data-theme="dark"] .load-more-btn,
@@ -4120,12 +4153,14 @@ img {
 [data-theme="dark"] .card[data-category="company"],
 [data-theme="dark"] .card[data-category="tech"],
 [data-theme="dark"] .card[data-category="survival"] { box-shadow: var(--nm-raised); }
+[data-theme="dark"] .card[data-category="column"] { box-shadow: var(--nm-raised); }
 
 [data-theme="dark"] .card[data-category="research"]:hover,
 [data-theme="dark"] .card[data-category="leader"]:hover,
 [data-theme="dark"] .card[data-category="company"]:hover,
 [data-theme="dark"] .card[data-category="tech"]:hover,
 [data-theme="dark"] .card[data-category="survival"]:hover { box-shadow: var(--nm-raised-lg); transform: translateY(-3px); }
+[data-theme="dark"] .card[data-category="column"]:hover { box-shadow: var(--nm-raised-lg); transform: translateY(-3px); }
 
 /* Reading progress — leader dark variant */
 [data-theme="dark"] [data-category="leader"] .reading-progress-fill,

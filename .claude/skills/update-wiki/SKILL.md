@@ -60,7 +60,7 @@ ANTHROPIC_API_KEY가 환경변수로 설정되어 있으면 정의가 Claude API
 다음 변경 사항을 모두 커밋:
 - `wiki/` 전체 (concepts-data.json, *.html, build-report.json)
 - `config/concept-aliases.json` (slugMap 신규 항목)
-- 갱신된 포스트 HTML (`research/`, `leader/`, `company/`, `tech/`, `survival/`)
+- 갱신된 포스트 HTML (`research/`, `leader/`, `company/`, `tech/`, `survival/`, `column/`)
 
 커밋 메시지 예시:
 ```

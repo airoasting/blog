@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 58,
+    "title": "통제 밖에서 목표를 달성한 에이전트",
+    "date": "2026-07-25",
+    "img": "nl-58.png",
+    "url": "https://www.linkedin.com/newsletters/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-7321517076899127296/"
+  },
+  {
     "ep": 57,
     "title": "중국 공짜 모델에 흔들리는 미국 AI",
     "date": "2026-07-18",

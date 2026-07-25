@@ -3,7 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 const cheerio = require('cheerio');
 
-const CATEGORIES = ['research', 'leader', 'company', 'tech', 'survival'];
+const CATEGORIES = ['research', 'leader', 'company', 'tech', 'survival', 'column'];
 
 function safeParseFrontmatter(raw) {
   try {

@@ -1,4 +1,4 @@
-const CATEGORY_PRIORITY = ['tech', 'research', 'company', 'leader', 'survival', 'newsletter'];
+const CATEGORY_PRIORITY = ['tech', 'research', 'company', 'leader', 'survival', 'column', 'newsletter'];
 
 function buildConceptIndex(sources, { minFrequency = 3 } = {}) {
   const map = new Map();

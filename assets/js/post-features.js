@@ -11,7 +11,8 @@
       leader: '#111',
       company: '#E8590C',
       tech: '#7048E8',
-      survival: '#D6336C'
+      survival: '#D6336C',
+      column: '#4A2A6A'
     };
     const cat = post.getAttribute('data-category');
     if (colors[cat]) fill.style.background = colors[cat];

@@ -5,7 +5,7 @@
     prefix = '../../../';
   } else if (/\/insights\/wiki(\/|$)/.test(loc)) {
     prefix = '../../';
-  } else if (/\/(research|leader|company|tech|survival|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
+  } else if (/\/(research|leader|company|tech|survival|column|newsletter|about|insights|timeline)(\/|$)/.test(loc)) {
     prefix = '../';
   }
 
@@ -34,6 +34,7 @@
             footerCatLink('company', '기업') +
             footerCatLink('tech', '기술') +
             footerCatLink('survival', '생존') +
+            footerCatLink('column', '칼럼') +
           '</ul>' +
         '</div>' +
         '<div>' +

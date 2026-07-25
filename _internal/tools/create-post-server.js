@@ -21,6 +21,7 @@ const CATEGORIES = {
   company:  { ko: '기업',   color: '#1A4A7A' },
   tech:     { ko: '기술',   color: '#145C35' },
   survival: { ko: '생존',   color: '#7A1F1F' },
+  column:   { ko: '칼럼',   color: '#4A2A6A' },
 };
 
 // ─── URL Fetcher ───

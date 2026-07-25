@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-22T07:49:33.740Z",
+  "generatedAt": "2026-07-25T06:03:14.672Z",
   "version": 1,
   "stats": {
     "totalConcepts": 119,
-    "totalRelationships": 310,
-    "totalPosts": 251,
-    "totalNewsletters": 57
+    "totalRelationships": 312,
+    "totalPosts": 252,
+    "totalNewsletters": 58
   },
   "concepts": [
     {
@@ -108,7 +108,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 61,
+      "frequency": 62,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -173,7 +173,8 @@
         "nl-47",
         "nl-50",
         "nl-51",
-        "nl-54"
+        "nl-54",
+        "nl-58"
       ],
       "firstSeen": "2024-08-05",
       "lastSeen": "2026-05-28",
@@ -578,7 +579,7 @@
       "name": "AI전략",
       "aliases": [],
       "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
-      "frequency": 21,
+      "frequency": 22,
       "category": "leader",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -593,6 +594,7 @@
         "2026-04-07-culture-that-ate-silicon-valley",
         "2026-06-10-from-agi-to-asi",
         "2026-06-15-satya-nadella-learning-loop-token-capital",
+        "2026-07-22-ax-tacit-knowledge-company-brain",
         "2025-04-15-ai-from-learning-era-to-experience-era",
         "2025-05-10-jang-kangmyoung-the-future-that-came-first",
         "2025-05-20-anthropic-cpo-on-pm-competencies",
@@ -605,7 +607,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-06-15",
+      "lastSeen": "2026-07-22",
       "needs_manual_review": false
     },
     {
@@ -859,6 +861,34 @@
       "needs_manual_review": false
     },
     {
+      "id": "mcp",
+      "slug": "mcp",
+      "name": "MCP",
+      "aliases": [],
+      "definition": "Model Context Protocol입니다. Anthropic이 제안한 AI와 외부 도구·데이터를 연결하는 표준입니다.",
+      "frequency": 12,
+      "category": "newsletter",
+      "posts": [
+        "2025-05-01-high-performers-must-be-different-in-ai-era",
+        "2026-04-09-google-cloud-ai-agent-trends",
+        "2026-04-23-gpt-5-5-agentic-coding",
+        "2026-07-15-cerebras-knowledge-base",
+        "2026-07-22-ax-tacit-knowledge-company-brain",
+        "2025-03-20-ai-trends-2025-agents-verticals-biz",
+        "2025-04-10-naver-ai-introduces-lightweight-llm",
+        "2025-03-10-ai-era-survival-strategy"
+      ],
+      "newsletters": [
+        "nl-9",
+        "nl-15",
+        "nl-24",
+        "nl-26"
+      ],
+      "firstSeen": "2025-03-10",
+      "lastSeen": "2026-07-22",
+      "needs_manual_review": false
+    },
+    {
       "id": "tpu",
       "slug": "tpu",
       "name": "TPU",
@@ -941,30 +971,30 @@
       "needs_manual_review": false
     },
     {
-      "id": "mcp",
-      "slug": "mcp",
-      "name": "MCP",
+      "id": "hbm",
+      "slug": "hbm",
+      "name": "HBM",
       "aliases": [],
-      "definition": "Model Context Protocol입니다. Anthropic이 제안한 AI와 외부 도구·데이터를 연결하는 표준입니다.",
+      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
       "frequency": 11,
       "category": "newsletter",
       "posts": [
-        "2025-05-01-high-performers-must-be-different-in-ai-era",
-        "2026-04-09-google-cloud-ai-agent-trends",
-        "2026-04-23-gpt-5-5-agentic-coding",
-        "2026-07-15-cerebras-knowledge-base",
-        "2025-03-20-ai-trends-2025-agents-verticals-biz",
-        "2025-04-10-naver-ai-introduces-lightweight-llm",
-        "2025-03-10-ai-era-survival-strategy"
+        "2025-07-15-why-jensen-huang-is-going-to-china"
       ],
       "newsletters": [
+        "nl-4",
         "nl-9",
-        "nl-15",
+        "nl-20",
         "nl-24",
-        "nl-26"
+        "nl-35",
+        "nl-50",
+        "nl-52",
+        "nl-54",
+        "nl-56",
+        "nl-58"
       ],
-      "firstSeen": "2025-03-10",
-      "lastSeen": "2026-07-15",
+      "firstSeen": "2025-07-15",
+      "lastSeen": "2025-07-15",
       "needs_manual_review": false
     },
     {
@@ -1044,29 +1074,27 @@
       "needs_manual_review": false
     },
     {
-      "id": "hbm",
-      "slug": "hbm",
-      "name": "HBM",
+      "id": "ax",
+      "slug": "ax",
+      "name": "AX",
       "aliases": [],
-      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
-      "frequency": 10,
-      "category": "newsletter",
+      "definition": "AI Transformation의 약칭입니다. 디지털 전환에 이은 AI 기반 사업 변혁을 가리킵니다.",
+      "frequency": 9,
+      "category": "company",
       "posts": [
-        "2025-07-15-why-jensen-huang-is-going-to-china"
+        "2026-04-09-anthropic-2026-agentic-coding-trends",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-09-google-cloud-ai-agent-trends",
+        "2026-06-23-wef-ai-first-operating-system",
+        "2026-07-04-ai-scribes-regulatory-gap",
+        "2026-07-08-anthropic-marketing-ops-cowork-skills",
+        "2026-07-22-ax-tacit-knowledge-company-brain",
+        "2025-03-15-kt-korean-ai-model-mideum-2",
+        "2025-05-25-gpt5-limitations-and-whats-next"
       ],
-      "newsletters": [
-        "nl-4",
-        "nl-9",
-        "nl-20",
-        "nl-24",
-        "nl-35",
-        "nl-50",
-        "nl-52",
-        "nl-54",
-        "nl-56"
-      ],
-      "firstSeen": "2025-07-15",
-      "lastSeen": "2025-07-15",
+      "newsletters": [],
+      "firstSeen": "2025-03-15",
+      "lastSeen": "2026-07-22",
       "needs_manual_review": false
     },
     {
@@ -1136,29 +1164,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-01",
       "lastSeen": "2026-07-03",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ax",
-      "slug": "ax",
-      "name": "AX",
-      "aliases": [],
-      "definition": "AI Transformation의 약칭입니다. 디지털 전환에 이은 AI 기반 사업 변혁을 가리킵니다.",
-      "frequency": 8,
-      "category": "company",
-      "posts": [
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-09-google-cloud-ai-agent-trends",
-        "2026-06-23-wef-ai-first-operating-system",
-        "2026-07-04-ai-scribes-regulatory-gap",
-        "2026-07-08-anthropic-marketing-ops-cowork-skills",
-        "2025-03-15-kt-korean-ai-model-mideum-2",
-        "2025-05-25-gpt5-limitations-and-whats-next"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-15",
-      "lastSeen": "2026-07-08",
       "needs_manual_review": false
     },
     {
@@ -2942,6 +2947,11 @@
     },
     {
       "source": "LLM",
+      "target": "MCP",
+      "strength": 7
+    },
+    {
+      "source": "LLM",
       "target": "TPU",
       "strength": 4
     },
@@ -2957,8 +2967,8 @@
     },
     {
       "source": "LLM",
-      "target": "MCP",
-      "strength": 7
+      "target": "HBM",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -2972,18 +2982,13 @@
     },
     {
       "source": "LLM",
-      "target": "HBM",
+      "target": "AX",
       "strength": 3
     },
     {
       "source": "LLM",
       "target": "AI전환",
       "strength": 5
-    },
-    {
-      "source": "LLM",
-      "target": "AX",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -3167,6 +3172,11 @@
     },
     {
       "source": "GPU",
+      "target": "MCP",
+      "strength": 3
+    },
+    {
+      "source": "GPU",
       "target": "TPU",
       "strength": 8
     },
@@ -3177,18 +3187,13 @@
     },
     {
       "source": "GPU",
-      "target": "MCP",
-      "strength": 3
+      "target": "HBM",
+      "strength": 6
     },
     {
       "source": "GPU",
       "target": "CFO",
       "strength": 2
-    },
-    {
-      "source": "GPU",
-      "target": "HBM",
-      "strength": 5
     },
     {
       "source": "GPU",
@@ -3357,13 +3362,13 @@
     },
     {
       "source": "API",
-      "target": "TPU",
-      "strength": 2
+      "target": "MCP",
+      "strength": 4
     },
     {
       "source": "API",
-      "target": "MCP",
-      "strength": 4
+      "target": "TPU",
+      "strength": 2
     },
     {
       "source": "API",
@@ -3512,13 +3517,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "생산성",
-      "strength": 2
+      "target": "MCP",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "MCP",
-      "strength": 4
+      "target": "생산성",
+      "strength": 2
     },
     {
       "source": "AI 에이전트",
@@ -3672,6 +3677,11 @@
     },
     {
       "source": "AGI",
+      "target": "MCP",
+      "strength": 3
+    },
+    {
+      "source": "AGI",
       "target": "TPU",
       "strength": 3
     },
@@ -3682,18 +3692,13 @@
     },
     {
       "source": "AGI",
-      "target": "MCP",
+      "target": "HBM",
       "strength": 3
     },
     {
       "source": "AGI",
       "target": "CFO",
       "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "AGI",
@@ -3907,13 +3912,13 @@
     },
     {
       "source": "IPO",
-      "target": "CFO",
-      "strength": 5
+      "target": "HBM",
+      "strength": 3
     },
     {
       "source": "IPO",
-      "target": "HBM",
-      "strength": 3
+      "target": "CFO",
+      "strength": 5
     },
     {
       "source": "IPO",
@@ -4022,6 +4027,11 @@
     },
     {
       "source": "AI전략",
+      "target": "MCP",
+      "strength": 2
+    },
+    {
+      "source": "AI전략",
       "target": "ASI",
       "strength": 2
     },
@@ -4122,13 +4132,13 @@
     },
     {
       "source": "조직설계",
-      "target": "AI전환",
-      "strength": 3
+      "target": "AX",
+      "strength": 2
     },
     {
       "source": "조직설계",
-      "target": "AX",
-      "strength": 2
+      "target": "AI전환",
+      "strength": 3
     },
     {
       "source": "조직설계",
@@ -4171,43 +4181,13 @@
       "strength": 2
     },
     {
-      "source": "TPU",
-      "target": "CFO",
-      "strength": 3
-    },
-    {
-      "source": "TPU",
+      "source": "MCP",
       "target": "HBM",
-      "strength": 3
-    },
-    {
-      "source": "TPU",
-      "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "TPU",
-      "target": "EPS",
-      "strength": 2
-    },
-    {
-      "source": "ASI",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "ASI",
-      "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "생산성",
-      "target": "AI전환",
       "strength": 2
     },
     {
       "source": "MCP",
-      "target": "HBM",
+      "target": "AX",
       "strength": 2
     },
     {
@@ -4236,18 +4216,38 @@
       "strength": 2
     },
     {
-      "source": "CFO",
+      "source": "TPU",
+      "target": "HBM",
+      "strength": 3
+    },
+    {
+      "source": "TPU",
+      "target": "CFO",
+      "strength": 3
+    },
+    {
+      "source": "TPU",
       "target": "SEC",
       "strength": 2
     },
     {
-      "source": "CFO",
-      "target": "초지능",
+      "source": "TPU",
+      "target": "EPS",
       "strength": 2
     },
     {
-      "source": "CFO",
-      "target": "EPS",
+      "source": "ASI",
+      "target": "HBM",
+      "strength": 2
+    },
+    {
+      "source": "ASI",
+      "target": "MMLU",
+      "strength": 2
+    },
+    {
+      "source": "생산성",
+      "target": "AI전환",
       "strength": 2
     },
     {
@@ -4264,6 +4264,21 @@
       "source": "HBM",
       "target": "ADR",
       "strength": 3
+    },
+    {
+      "source": "CFO",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "초지능",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "EPS",
+      "strength": 2
     },
     {
       "source": "노동시장",

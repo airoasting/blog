@@ -1,6 +1,23 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "[전자신문] AI 전환 성패, 암묵지 자산화에 달렸다",
+      "date": "2026-07-22",
+      "category": "column",
+      "source": "전자신문 (기고)",
+      "tags": [
+        "AX",
+        "컴퍼니브레인",
+        "암묵지",
+        "조직지능",
+        "스킬라이브러리"
+      ],
+      "slug": "2026-07-22-ax-tacit-knowledge-company-brain",
+      "file": "column/2026-07-22-ax-tacit-knowledge-company-brain.html",
+      "summary": "전자신문 2026년 7월 22일자 기고 칼럼 원문입니다. MS 프런티어 컴퍼니와 정부의 M.AX 2030을 근거로, AX의 승부처가 도구 도입이 아니라 개인의 암묵지를 컴퍼니 브레인으로 증류하는 일에 있다고 짚습니다.",
+      "roasting_quote": "AI 도구를 몇 개 깔았는지 묻지 마십시오. 그 사용법이 회사 지식으로 남았는지 물으십시오."
+    },
+    {
       "title": "AI는 왜 유독 일본 문화에 집착할까요",
       "date": "2026-04-23",
       "category": "research",

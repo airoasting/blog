@@ -11,7 +11,8 @@
     leader: '리더',
     company: '기업',
     tech: '기술',
-    survival: '생존'
+    survival: '생존',
+    column: '칼럼'
   };
 
   let allPosts = [];

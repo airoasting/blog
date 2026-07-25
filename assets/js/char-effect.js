@@ -12,7 +12,8 @@
     leader:   '196,53,0',
     company:  '26,74,122',
     tech:     '20,92,53',
-    survival: '122,31,31'
+    survival: '122,31,31',
+    column:   '74,42,106'
   };
 
   function rndChar() {

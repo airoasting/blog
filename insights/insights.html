@@ -274,6 +274,7 @@
     .theme-btn[data-theme="company"].active  { background: #1A4A7A; }
     .theme-btn[data-theme="tech"].active     { background: #145C35; }
     .theme-btn[data-theme="survival"].active { background: #7A1F1F; }
+    .theme-btn[data-theme="column"].active { background: #4A2A6A; }
     .theme-dot {
       width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
     }
@@ -283,6 +284,7 @@
     .theme-btn[data-theme="company"]  .theme-dot { background: #1A4A7A; }
     .theme-btn[data-theme="tech"]     .theme-dot { background: #145C35; }
     .theme-btn[data-theme="survival"] .theme-dot { background: #7A1F1F; }
+    .theme-btn[data-theme="column"] .theme-dot { background: #4A2A6A; }
     .theme-btn.active .theme-dot { background: rgba(255,255,255,0.6); }
 
     /* ── 패널 헤더 ── */
@@ -380,6 +382,7 @@
     .insight-card[data-theme="company"]::before  { background: #1A4A7A; }
     .insight-card[data-theme="tech"]::before     { background: #145C35; }
     .insight-card[data-theme="survival"]::before { background: #7A1F1F; }
+    .insight-card[data-theme="column"]::before { background: #4A2A6A; }
 
     /* 카드 호버 시 전체 좌측선 → 탑 라인으로 변환 */
     .insight-card:hover::before {
@@ -412,6 +415,7 @@
     .insight-card[data-theme="company"]  .card-glow { background: radial-gradient(circle, rgba(26,74,122,0.12) 0%, transparent 70%); }
     .insight-card[data-theme="tech"]     .card-glow { background: radial-gradient(circle, rgba(20,92,53,0.10) 0%, transparent 70%); }
     .insight-card[data-theme="survival"] .card-glow { background: radial-gradient(circle, rgba(122,31,31,0.10) 0%, transparent 70%); }
+    .insight-card[data-theme="column"] .card-glow { background: radial-gradient(circle, rgba(74,42,106,0.10) 0%, transparent 70%); }
 
     .ic-tag {
       display: inline-flex;
@@ -429,11 +433,13 @@
     .insight-card[data-theme="company"]  .ic-tag { color: #1A4A7A; }
     .insight-card[data-theme="tech"]     .ic-tag { color: #145C35; }
     .insight-card[data-theme="survival"] .ic-tag { color: #7A1F1F; }
+    .insight-card[data-theme="column"] .ic-tag { color: #4A2A6A; }
     [data-theme="dark"] .insight-card[data-theme="research"] .ic-tag { color: #9090B8; }
     [data-theme="dark"] .insight-card[data-theme="leader"]   .ic-tag { color: #F07040; }
     [data-theme="dark"] .insight-card[data-theme="company"]  .ic-tag { color: #5B9BD5; }
     [data-theme="dark"] .insight-card[data-theme="tech"]     .ic-tag { color: #4CAF78; }
     [data-theme="dark"] .insight-card[data-theme="survival"] .ic-tag { color: #E07070; }
+    [data-theme="dark"] .insight-card[data-theme="column"] .ic-tag { color: #B9A3D9; }
 
     .ic-body {
       font-size: 15px;
@@ -773,7 +779,7 @@
         </button>
         <button class="q-tab" data-phase="5" role="tab">
           <span class="q-tab-quarter">26 Q3</span>
-          <span class="q-tab-title">미중 프런티어 경쟁<span class="q-tab-count">22</span></span>
+          <span class="q-tab-title">미중 프런티어 경쟁<span class="q-tab-count">24</span></span>
         </button>
       </div>
 
@@ -785,6 +791,7 @@
         <button class="theme-btn" data-theme="company"><span class="theme-dot"></span>기업</button>
         <button class="theme-btn" data-theme="tech"><span class="theme-dot"></span>기술</button>
         <button class="theme-btn" data-theme="survival"><span class="theme-dot"></span>생존</button>
+        <button class="theme-btn" data-theme="column"><span class="theme-dot"></span>칼럼</button>
       </div>
 
       <!-- 패널 -->
@@ -1171,10 +1178,11 @@
     {
       id: 5, quarter: "26 Q3",
       period: "2026.7월",
-      epRange: "뉴스레터 #55~57 · 포스트 19개",
+      epRange: "뉴스레터 #55~58 · 포스트 20개",
       headline: "미중 프런티어 경쟁이 판을 흔듭니다: 중국 오픈 모델이 값과 성능으로 미국의 우위를 위협합니다",
       summary: "중국 문샷이 공짜 오픈 모델 Kimi K3로 프런티어 문턱에 닿자, 미국 반도체와 AI 주가가 출렁였습니다. 미국은 칩 수출 통제와 안보 규제로 속도를 늦추는데, 그 압박이 오히려 중국의 저비용 경쟁력을 키웠습니다. 리더는 이제 닫힌 미국 모델과 열린 중국 모델을 함께 저울에 올려야 합니다.",
       insights: [
+        { theme: "tech", tag: "기술", body: "오픈AI의 보안 테스트 에이전트가 <strong>격리 환경을 벗어나</strong> Hugging Face 실제 시스템에 접근했습니다. 파악까지 약 일주일이 걸렸습니다.", source: "뉴스레터 #58", date: "2026-07-25" },
         { theme: "company", tag: "기업", body: "중국 문샷의 공짜 모델 Kimi K3가 <strong>미국 반도체·AI 주가</strong>를 흔들었습니다. 30분의 1 투자로 프런티어 문턱에 닿았습니다.", source: "뉴스레터 #57", date: "2026-07-18" },
         { theme: "company", tag: "기업", body: "미국이 ASML EUV 장비의 <strong>대중 수출 통제</strong>를 밀어붙입니다. 고래 싸움에 낀 네덜란드와 한국이 흔들립니다.", source: "뉴스레터 #56", date: "2026-07-11" },
         { theme: "tech", tag: "기술", body: "AI가 문서에 없는 <strong>암묵지</strong>까지 학습하기 시작했습니다. 숙련자의 노하우가 데이터가 됩니다.", source: "뉴스레터 #55", date: "2026-07-04" },
@@ -1196,12 +1204,13 @@
         { theme: "tech", tag: "기술", body: "AI는 성능만 다른 게 아닙니다. 모델과 <strong>언어</strong>가 바뀌면 같은 질문에도 다른 가치가 답합니다.", source: "같은 클로드도, 언어마다 다른 가치를 말합니다", url: "../tech/2026-07-13-claude-values-models-languages.html", date: "2026-07-13", roasting: "당신의 팀이 쓰는 AI, 영어로 쓸 때와<br>한국어로 쓸 때 같은 판단을 한다고 확신하십니까?", summaries: ["앤트로픽이 클로드 대화 30만 건을 분석해, 클로드가 드러내는 가치를 네 개의 축으로 정리했습니다.", "모델마다 성격이 다릅니다. 소네트는 따뜻하고, 오푸스 4.7은 신중하고 깐깐합니다.", "언어가 바뀌면 가치도 바뀝니다. 같은 과제라도 영어로 물을 때와 아랍어로 물을 때 다른 가치를 말합니다."] },
         { theme: "leader", tag: "리더", body: "딥마인드 연구원이 <strong>군사 AI 계약</strong>에 반대해 회사를 떠났습니다. 구속력 없는 원칙은 압력에 무너집니다.", source: "압력이 이기고, 윤리가 졌습니다", url: "../leader/2026-07-15-why-i-left-google-deepmind.html", date: "2026-07-15", roasting: "종이에 적은 원칙은 압력 앞에서 며칠이나 버팁니까?<br>당신의 조직은 그 약속에 강제력을 붙여 두었습니까?", summaries: ["딥마인드 연구원 앨릭스 터너가 구글의 군사 AI 계약에 반대하며 회사를 떠났습니다.", "그는 사내 청원과 25쪽 감독 틀까지 만들었지만, 유명 인사들의 윤리 약속은 압력 앞에서 흔들렸습니다.", "그의 결론은 하나입니다. 구속력 없는 원칙은 이해관계 앞에서 무너집니다."] },
         { theme: "tech", tag: "기술", body: "오픈 모델 Kimi K3가 <strong>웹 탐색·표 작업</strong> 등 여러 에이전트 벤치마크에서 1위를 찍었습니다. 종합은 아직 닫힌 모델이 앞섭니다.", source: "중국 오픈 모델이 미국 모델 성능의 문턱까지 다다랐습니다", url: "../tech/2026-07-16-kimi-k3.html", date: "2026-07-16", roasting: "오픈 모델이 최전선을 넘보는데,<br>당신의 AI 예산은 아직 닫힌 모델에만 묶여 있습니까?", summaries: ["문샷 AI가 오픈 가중치 모델 Kimi K3를 공개했습니다. 2.8조 파라미터에 100만 토큰 컨텍스트입니다.", "웹 탐색과 표 작업, 여러 에이전트 벤치마크에서 1위를 찍었습니다. 코딩도 최상위권입니다.", "다만 종합에서는 페이블 5와 GPT-5.6 Sol에 뒤진다고 스스로 인정합니다. 정상은 아직 닫힌 모델입니다."] },
-        { theme: "tech", tag: "기술", body: "세레브라스의 사내 지식베이스가 <strong>하루 1만 5천 건</strong>의 질문을 받습니다. 자료를 옮기지 않고 있는 자리에서 끌어옵니다.", source: "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다", url: "../tech/2026-07-15-cerebras-knowledge-base.html", date: "2026-07-15", roasting: "사내 정보를 한곳에 모으자는 프로젝트,<br>이번이 몇 번째입니까?", summaries: ["세레브라스의 사내 지식베이스가 하루 1만 5천 건의 질문을 받습니다. 출시 3개월 만의 기록입니다.", "비결은 자료를 한곳에 모으지 않은 것입니다. 슬랙, 코드 저장소, 문서에서 있는 그대로 끌어옵니다.", "검색은 네 가지 방식을 동시에 돌리고, 순위는 합의로 정합니다. 하나만 믿지 않는 설계입니다."] }
+        { theme: "tech", tag: "기술", body: "세레브라스의 사내 지식베이스가 <strong>하루 1만 5천 건</strong>의 질문을 받습니다. 자료를 옮기지 않고 있는 자리에서 끌어옵니다.", source: "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다", url: "../tech/2026-07-15-cerebras-knowledge-base.html", date: "2026-07-15", roasting: "사내 정보를 한곳에 모으자는 프로젝트,<br>이번이 몇 번째입니까?", summaries: ["세레브라스의 사내 지식베이스가 하루 1만 5천 건의 질문을 받습니다. 출시 3개월 만의 기록입니다.", "비결은 자료를 한곳에 모으지 않은 것입니다. 슬랙, 코드 저장소, 문서에서 있는 그대로 끌어옵니다.", "검색은 네 가지 방식을 동시에 돌리고, 순위는 합의로 정합니다. 하나만 믿지 않는 설계입니다."] },
+        { theme: "column", tag: "칼럼", body: "AX의 승부처는 도구 도입이 아니라 <strong>암묵지의 자산화</strong>입니다. 개인의 노하우를 컴퍼니 브레인으로 증류해야 합니다.", source: "[전자신문] AI 전환 성패, 암묵지 자산화에 달렸다", url: "../column/2026-07-22-ax-tacit-knowledge-company-brain.html", date: "2026-07-22", roasting: "AI 도구를 몇 개 깔았는지 묻고 계십니까,<br>아니면 그 사용법이 회사 지식으로 남았는지 묻고 계십니까?", summaries: ["전자신문 2026년 7월 22일자 기고 칼럼입니다. MS 프런티어 컴퍼니와 정부 M.AX 2030을 근거로 AX의 병목을 짚습니다.", "개인의 생산성이 올라도 그 지식이 개인 노트북과 프롬프트에만 남으면 조직 능력은 쌓이지 않습니다.", "출발점은 스킬 라이브러리와 MCP 같은 연결 구조입니다. 다만 강제 수집이 아니라 신뢰 있는 교환 위에서만 작동합니다."] }
       ]
     }
   ];
 
-  const THEME_LABELS = { all:"전체", research:"리서치", leader:"리더", company:"기업", tech:"기술", survival:"생존" };
+  const THEME_LABELS = { all:"전체", research:"리서치", leader:"리더", company:"기업", tech:"기술", survival:"생존", column:"칼럼" };
 
   // ── 상태 ─────────────────────────────────────────────────────────────────
   // 접속 시점의 현재 월로 분기를 자동 선택한다 (2025 Q2 = id 0 기준).
@@ -1530,8 +1539,8 @@
     }
 
     /* ── 포스트 오픈 ── */
-    var CAT_LABELS = {research:'리서치',leader:'리더',company:'기업',tech:'기술',survival:'생존'};
-    var CAT_COLORS = {research:'#1A1A1A',leader:'#C43500',company:'#1A4A7A',tech:'#145C35',survival:'#7A1F1F'};
+    var CAT_LABELS = {research:'리서치',leader:'리더',company:'기업',tech:'기술',survival:'생존',column:'칼럼'};
+    var CAT_COLORS = {research:'#1A1A1A',leader:'#C43500',company:'#1A4A7A',tech:'#145C35',survival:'#7A1F1F',column:'#4A2A6A'};
     function openPostReader(url, cardTitle, cardBody, cardTheme, cardRoasting, cardSummaries){
       var cat = cardTheme||'';
       epPill.textContent = CAT_LABELS[cat]||'포스트';
