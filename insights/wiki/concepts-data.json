@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-25T06:03:14.672Z",
+  "generatedAt": "2026-07-25T06:20:21.264Z",
   "version": 1,
   "stats": {
     "totalConcepts": 119,
-    "totalRelationships": 312,
+    "totalRelationships": 311,
     "totalPosts": 252,
     "totalNewsletters": 58
   },
@@ -579,7 +579,7 @@
       "name": "AI전략",
       "aliases": [],
       "definition": "AI를 사업에 적용하는 경영 계획입니다. 기술 도입, 조직 설계, 투자 우선순위를 포괄합니다.",
-      "frequency": 22,
+      "frequency": 21,
       "category": "leader",
       "posts": [
         "2025-10-09-sam-altman-openai-four-bets",
@@ -594,7 +594,6 @@
         "2026-04-07-culture-that-ate-silicon-valley",
         "2026-06-10-from-agi-to-asi",
         "2026-06-15-satya-nadella-learning-loop-token-capital",
-        "2026-07-22-ax-tacit-knowledge-company-brain",
         "2025-04-15-ai-from-learning-era-to-experience-era",
         "2025-05-10-jang-kangmyoung-the-future-that-came-first",
         "2025-05-20-anthropic-cpo-on-pm-competencies",
@@ -607,7 +606,7 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-07-22",
+      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -4024,11 +4023,6 @@
       "source": "AI전략",
       "target": "UI",
       "strength": 3
-    },
-    {
-      "source": "AI전략",
-      "target": "MCP",
-      "strength": 2
     },
     {
       "source": "AI전략",

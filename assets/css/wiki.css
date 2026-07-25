@@ -20,8 +20,8 @@
 .wiki-post-card .meta { font-size: 11px; color: #888; margin-bottom: 6px; }
 .wiki-post-card .title { font-size: 14px; line-height: 1.45; font-weight: 600; color: #222; }
 .wiki-related { display: flex; flex-wrap: wrap; gap: 10px; }
-.wiki-related .item { padding: 10px 14px; border-radius: 10px; background: #fff; border: 1px solid #ececec; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
-.wiki-related .strength { font-size: 10px; padding: 2px 6px; background: #1a1a1a; color: #fff; border-radius: 4px; }
+.wiki-related .item { font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 10px; background: #fff; border: 1px solid #ececec; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px; }
+.wiki-related .strength { font-size: 9px; font-weight: 600; padding: 2px 6px; background: #1a1a1a; color: #fff; border-radius: 4px; }
 .wiki-footer-nav { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8e6e0; display: flex; justify-content: space-between; font-size: 13px; }
 .wiki-footer-nav a { color: #1a1a1a; text-decoration: none; font-weight: 600; }
 
@@ -166,9 +166,9 @@
 .related-concepts .concept-links { display: flex; flex-wrap: wrap; gap: 8px; }
 /* 필버튼: 위키 개념 페이지로 이동. 라이트/다크 모두 CSS 변수로 가독 보장 */
 .related-concepts .concept-chip {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  padding: 7px 14px;
+  padding: 6px 13px;
   border-radius: 100px;
   background: var(--surface-container-high, #f2f0eb);
   color: var(--text, #444);
