@@ -1,7 +1,7 @@
 window.MODEL_TIMELINE_DATA = {
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-07-26",
   "period_start": "2017-06-12",
-  "period_end": "2026-07-16",
+  "period_end": "2026-07-24",
   "notes": [
     "회사별 웹서치(공식 출처 우선)로 주요 모델 업데이트를 전수 정리했습니다."
   ],
@@ -2319,6 +2319,18 @@ window.MODEL_TIMELINE_DATA = {
       "summary_en": "Kimi K3, 2.8T open-weight MoE, 1M context",
       "source_url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/",
       "source_type": "news",
+      "significance": "major",
+      "category": "llm"
+    },
+    {
+      "date": "2026-07-24",
+      "provider": "Anthropic",
+      "model": "Opus 5",
+      "event_type": "release",
+      "summary_ko": "Claude Opus 5 출시, 에이전트·코딩 강화",
+      "summary_en": "Claude Opus 5 released, stronger agentic coding",
+      "source_url": "https://www.anthropic.com/news/claude-opus-5",
+      "source_type": "official_blog",
       "significance": "major",
       "category": "llm"
     }
