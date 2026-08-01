@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-25T06:20:21.264Z",
+  "generatedAt": "2026-08-01T12:00:29.855Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 119,
-    "totalRelationships": 311,
+    "totalConcepts": 120,
+    "totalRelationships": 312,
     "totalPosts": 252,
-    "totalNewsletters": 58
+    "totalNewsletters": 59
   },
   "concepts": [
     {
@@ -2845,6 +2845,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "euv",
+      "slug": "euv",
+      "name": "EUV",
+      "aliases": [],
+      "definition": "극자외선 노광 기술입니다. 최첨단 반도체 회로를 새기는 장비로 ASML이 사실상 독점하며, 미국의 대중 수출 통제 핵심 품목입니다.",
+      "frequency": 3,
+      "category": "newsletter",
+      "posts": [],
+      "newsletters": [
+        "nl-20",
+        "nl-56",
+        "nl-59"
+      ],
+      "firstSeen": null,
+      "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
       "id": "spcx",
       "slug": "spcx",
       "name": "SPCX",
@@ -4258,6 +4276,11 @@
       "source": "HBM",
       "target": "ADR",
       "strength": 3
+    },
+    {
+      "source": "HBM",
+      "target": "EUV",
+      "strength": 2
     },
     {
       "source": "CFO",
