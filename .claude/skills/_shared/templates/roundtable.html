@@ -1,0 +1,28 @@
+<!-- 라운드테이블 댓글 섹션. 인라인 스타일 자급(외부 CSS 의존 없음) -->
+<!-- 페르소나 색상/이니셜/직함:
+  블랙 #1A1A1A B 중견기업 임원 / 레드 #C43500 R 저널리스트 / 골드 #C49000 G 창업자
+  네이비 #1A4A7A N 시니어 엔지니어 / 퍼플 #6B3FA0 P 마케터 / 화이트 #555555 W 조직장
+  다크모드: style.css에 color:#1A1A1A, #555555 오버라이드 정의됨. 색상값 변경 금지 -->
+
+<section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+    <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+    <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+  </div>
+
+  <!-- 스레드: 원댓글 margin-left:0 / 댓글 margin-left:44px / 대댓글 margin-left:88px -->
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:{페르소나색}; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">{이니셜}</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:{페르소나색}; margin-bottom:6px;">{페르소나명} <span style="font-weight:400; color:#aaa;">· {직함}</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">{발언}</div>
+      </div>
+    </div>
+    <!-- 댓글 복제: margin-left:44px margin-top:12px 추가 -->
+    <!-- 대댓글 복제: margin-left:88px margin-top:12px 추가 -->
+  </div>
+
+  <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+  <!-- 스레드 2, 3 동일 구조 반복. 마지막 스레드는 구분선 생략 -->
+</section>

@@ -1,6 +1,8 @@
 .DS_Store
 **/.DS_Store
-.claude/
+# .claude 하위는 기본 제외, 단 스킬은 공개 (settings/worktrees 등은 계속 제외)
+.claude/*
+!.claude/skills/
 node_modules/
 
 # API 키를 사용하는 스크립트 (GitHub 업로드 금지)

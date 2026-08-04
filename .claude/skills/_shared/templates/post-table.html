@@ -1,0 +1,35 @@
+<!-- 소스 표/차트 템플릿. -->
+<!-- ⚠️ 반드시 .post-table 클래스를 사용한다. inline style로 배경·글자색을 -->
+<!--    하드코딩하면 다크 모드에서 "밝은 배경 + 밝은 글자 = 안 보임"이 된다. -->
+<!--    th 글자색은 절대 지정하지 않는다 (CSS 변수 var(--text)가 자동 적용). -->
+<!--    헤더 배경·테두리·강조색은 .post[data-category]에서 자동으로 입혀진다. -->
+<!--    (카테고리 컬러를 직접 쓸 필요 없음 — class만 붙이면 자동 처리) -->
+<div class="post-table-wrap">
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th style="text-align: center;">기존</th>
+        <th style="text-align: center;">신규</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>항목명</td>
+        <td style="text-align: center;">값</td>
+        <td class="cell-hl" style="text-align: center;">값</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="post-table-source">출처: 저자 (연도), Table N.</p>
+</div>
+
+<!-- 허용 inline style: text-align 뿐. 색상·배경·테두리 inline 금지. -->
+<!-- 강조 셀은 색상을 직접 쓰지 말고 class="cell-hl" 만 붙인다 -->
+<!-- (라이트/다크 모두 카테고리 색상으로 자동 처리). -->
+
+<!-- 가공 원칙 -->
+<!-- 1. 원문 전문 용어 헤더 → 비개발자 한국어 (예: AUROC → 예측 정확도) -->
+<!-- 2. 열/행 10개 이상 시 핵심 4~6개 선별 -->
+<!-- 3. 핵심 수치는 class="cell-hl" 강조 (색상 하드코딩 금지) -->
+<!-- 4. 배치: 해당 인사이트 문단 바로 아래 -->
