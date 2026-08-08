@@ -44,7 +44,7 @@
 
     // Category tabs
     const categories = ['all', ...Object.keys(CATEGORY_LABELS)];
-    const catHTML = categories.map(cat => {
+    const catTabs = categories.map(cat => {
       const label = cat === 'all' ? '전체' : CATEGORY_LABELS[cat];
       const isActive = cat === 'all' ? !activeCategory : activeCategory === cat;
       return `<button class="filter-tab${isActive ? ' active' : ''}"
@@ -52,7 +52,7 @@
                 ${cat !== 'all' ? `style="--cat-color: var(--cat-${cat})"` : ''}>
                 ${label}
               </button>`;
-    }).join('');
+    });
 
     // Collect tags with counts
     const tagCount = {};
@@ -67,13 +67,14 @@
         return `<button class="filter-pill${isActive ? ' active' : ''}" data-tag="${tag}">#${tag}<span class="filter-pill-count">${count}</span></button>`;
       }).join('');
 
-    const nlTab = `<button class="filter-tab filter-tab-newsletter" data-category="newsletter" style="--cat-color:var(--cat-newsletter,#7C3AED)">뉴스레터</button>`;
+    const nlActive = activeCategory === 'newsletter';
+    const nlTab = `<button class="filter-tab filter-tab-newsletter${nlActive ? ' active' : ''}" data-category="newsletter" style="--cat-color:var(--cat-newsletter,#7C3AED)">뉴스레터</button>`;
     const hasActiveTag = !!activeTag;
     const wasOpen = document.getElementById('filterPillsWrap')?.classList.contains('open') || hasActiveTag;
 
     container.innerHTML = `
       <div class="filter-bar-row">
-        <div class="filter-tabs-scroll"><div class="filter-tabs">${catHTML}${nlTab}</div></div>
+        <div class="filter-tabs-scroll"><div class="filter-tabs">${catTabs[0]}${nlTab}${catTabs.slice(1).join('')}</div></div>
         <button class="filter-pills-toggle${hasActiveTag ? ' has-active' : ''}${wasOpen ? ' open' : ''}" id="filterPillsToggle"># 태그</button>
       </div>
       <div class="filter-pills-wrap${wasOpen ? ' open' : ''}" id="filterPillsWrap">
