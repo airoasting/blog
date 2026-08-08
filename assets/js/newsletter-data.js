@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 60,
+    "title": "인재들이 탈출 중인 구글",
+    "date": "2026-08-08",
+    "img": "nl-60.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-60-%EC%9D%B8%EC%9E%AC%EB%93%A4%EC%9D%B4-%ED%83%88%EC%B6%9C-%EC%A4%91%EC%9D%B8-%EA%B5%AC%EA%B8%80-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-zd7rc/"
+  },
+  {
     "ep": 59,
     "title": "AI 버블이라도 괜찮다는 사람들",
     "date": "2026-08-01",
