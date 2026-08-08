@@ -1,0 +1,457 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="AI가 일을 마친 뒤 사람이 매번 같은 항목을 확인하고 있다면, 그 확인 절차를 스킬로 만들어야 합니다. 앤트로픽이 검증 루프를 팀 인프라로 만드는 방법을 공개했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="검수를 사람이 하는 한, AI는 절반만 일합니다">
+  <meta property="og:description" content="에이전트의 세 단계는 맥락 수집, 실행, 확인입니다. 대부분의 조직이 마지막 단계를 사람에게 맡기고 있습니다. 그 자리를 스킬로 채우는 방법입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/company/2026-07-22-verification-loops-with-skills.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-07-22">
+  <meta property="article:section" content="기업">
+  <meta property="article:tag" content="스킬">
+  <meta property="article:tag" content="검증루프">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="업무자동화">
+  <meta property="article:tag" content="팀인프라">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="검수를 사람이 하는 한, AI는 절반만 일합니다">
+  <meta name="twitter:description" content="AI가 만든 결과를 매번 당신이 검사한다면, 병목은 AI가 아니라 당신입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "검수를 사람이 하는 한, AI는 절반만 일합니다",
+    "datePublished": "2026-07-22",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽이 공개한 검증 루프 스킬 구축법을 근거로, 반복 검수를 팀 인프라로 전환하는 방법을 정리합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/company/2026-07-22-verification-loops-with-skills.html",
+    "articleSection": "기업"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'company' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="company">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="company">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_07_22_verification-loops-with-skills/thumbnail.png" alt="검수를 사람이 하는 한, AI는 절반만 일합니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="company">기업</span>
+          <span class="post-date">2026년 7월 22일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">검수를 사람이 하는 한, AI는 절반만 일합니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>앤트로픽 (Delba de Oliveira)</span>
+            <span><a href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=스킬" class="post-tag">#스킬</a>
+            <a href="../index.html?tag=검증루프" class="post-tag">#검증루프</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=업무자동화" class="post-tag">#업무자동화</a>
+            <a href="../index.html?tag=팀인프라" class="post-tag">#팀인프라</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="검수를 사람이 하는 한, AI는 절반만 일합니다" data-date="2026-07-22" data-category="company" data-source="앤트로픽 (Delba de Oliveira)" data-tags="스킬, 검증루프, AI에이전트, 업무자동화, 팀인프라" data-original-url="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" data-roasting-quote="AI가 만든 결과를 매번 당신이 검사하고 있다면, 병목은 AI가 아니라 당신입니다." data-next-post="../company/2026-07-08-anthropic-marketing-ops-cowork-skills.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">에이전트의 작업은 세 단계입니다. 맥락을 모으고, 실행하고, 결과를 확인합니다. 대부분의 조직이 마지막 단계를 사람에게 맡깁니다.</p>
+        <p data-summary="">앤트로픽은 그 확인 절차를 스킬로 만들라고 제안합니다. 에이전트가 스스로 검사하고 실패한 것을 고친 뒤 넘어가는 구조입니다.</p>
+        <p data-summary="">핵심은 개인 습관을 팀 인프라로 바꾸는 것입니다. 한 사람의 검수 요령이 모든 작업에 자동으로 적용됩니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 만든 결과를 매번 당신이 검사하고 있다면,<br>병목은 AI가 아니라 당신입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI가 만든 결과를 받아 들고 매번 같은 것을 확인하는 사람이 있습니다. 숫자가 맞는지, 형식이 맞는지, 빠진 항목이 없는지입니다.</p>
+        <p>그 확인이 세 번째 반복됐다면 그것은 업무가 아니라 절차입니다. 앤트로픽이 7월 22일 공개한 글의 요지는 간단합니다. 그 절차를 사람이 아니라 에이전트가 돌게 만들라는 것입니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>지난달 우리는 같은 것을 두 번 고쳤다면 스킬로 만들라는 앤트로픽의 사례를 다뤘습니다. 이번 글은 그 다음 칸입니다. 만드는 절차뿐 아니라 검사하는 절차도 스킬이 된다는 이야기입니다. 생성이 빨라질수록 확인이 병목이 되는 지금, 이 구분이 조직의 처리 용량을 가릅니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 검증 루프의 정의가 분명합니다.</strong> 원문은 이를 에이전트가 자기 작업을 스스로 점검하는 반복 주기로 규정합니다. 테스트를 돌리거나 검사 도구를 실행하거나 별도 점검을 수행하고, 실패한 것을 고친 뒤 다음으로 넘어갑니다. 사람이 끼어드는 지점이 사라지는 구조입니다.</p>
+
+        <p><strong>둘째, 대부분의 조직이 세 번째 단계를 비워 두고 있습니다.</strong> 에이전트가 일하는 방식은 세 단계입니다. 맥락을 모으고, 행동하고, 결과를 확인합니다. 앞의 둘은 이미 자동화돼 있습니다. 확인만 사람의 눈으로 돌아옵니다. 자동화율이 3분의 2에서 멈추는 이유가 여기 있습니다.</p>
+
+        <p><strong>셋째, 검증 스킬은 짧은 문서 한 장입니다.</strong> 특별한 개발이 필요하지 않습니다. 이름과 설명, 쓸 수 있는 도구, 그리고 무엇을 어떻게 확인할지 적은 평문이 전부입니다. 원문은 오류 로그에 요청 식별자가 들어 있고 요청 본문은 들어 있지 않은지 확인하는 스킬을 예로 듭니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>스킬 파일의 구성</th>
+                <th>역할</th>
+                <th style="text-align: center;">작성 요령</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>이름</td>
+                <td>스킬을 부르는 식별자</td>
+                <td style="text-align: center;">동작을 드러내는 짧은 이름</td>
+              </tr>
+              <tr>
+                <td>설명</td>
+                <td>언제 이 스킬을 쓰는지</td>
+                <td class="cell-hl" style="text-align: center;">발동 조건까지 함께 적기</td>
+              </tr>
+              <tr>
+                <td>사용 가능 도구</td>
+                <td>읽기, 수정, 검색 등 권한 범위</td>
+                <td class="cell-hl" style="text-align: center;">필요한 최소한만 부여</td>
+              </tr>
+              <tr>
+                <td>본문</td>
+                <td>무엇을 어떻게 확인할지</td>
+                <td class="cell-hl" style="text-align: center;">새 팀원에게 설명하듯 평문으로</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: de Oliveira (2026, July 22), 예시 스킬 구조 재구성.</p>
+        </div>
+
+        <p><strong>넷째, 배치 방식이 네 가지로 정리됩니다.</strong> 단독으로 불러 쓰는 방식은 보안 점검이나 접근성 감사처럼 여러 작업에 걸친 검사에 맞습니다. 만드는 스킬 안에 심어 두면 산출과 동시에 검사가 돕니다. 여러 스킬을 이어 붙이면 순서대로 돌고, 이 연쇄가 안정되면 모든 병합 요청에 자동으로 걸리는 관문이 됩니다.</p>
+
+        <p><strong>다섯째, 앤트로픽 팀 자신이 연쇄로 씁니다.</strong> 클로드 코드 팀은 코드 검토, 단순화, 검증, 디자인 점검을 차례로 잇는다고 밝혔습니다. 하나의 요청이 네 개의 관문을 통과한 뒤 사람에게 옵니다. 사람이 보는 것은 걸러진 결과이지 초안이 아닙니다.</p>
+
+        <p><strong>여섯째, 이 구조는 개발 밖에서도 그대로 작동합니다.</strong> 확인 절차가 반복되는 업무라면 종류를 가리지 않습니다. 계약서 초안에서 위약금 조항과 관할 법원이 빠지지 않았는지 보는 일, 보고서의 숫자가 원자료와 맞는지 대조하는 일, 대외 문서가 회사 표기 규칙을 지켰는지 확인하는 일이 모두 같은 형태입니다.</p>
+
+        <p>차이는 하나뿐입니다. 개발 조직은 테스트라는 이름으로 이 절차를 이미 문서화해 뒀습니다. 나머지 조직은 그 절차가 담당자의 머릿속에만 있습니다. 검증 스킬을 만드는 일은 사실 그 암묵지를 꺼내 적는 일입니다.</p>
+
+        <p><strong>일곱째, 그래서 이것은 인력 문제로 이어집니다.</strong> 검수를 잘하는 사람의 기준이 문서로 나오면, 그 기준은 그 사람이 자리에 없어도 작동합니다. 반대로 문서로 꺼내지 않으면 그 사람의 퇴사와 함께 사라집니다. 원문의 표현대로 개인 작업 방식을 팀 인프라로 바꾸는 일입니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>가장 자주 손으로 하는 확인 하나를 적으세요.</strong><br>지난 한 주 동안 AI 결과물을 받고 반복해서 본 항목을 떠올려 한 줄로 쓰세요. 원문이 제시한 첫 단계가 이 기록입니다. (오늘, 10분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>새 팀원에게 설명하듯 평문으로 절차를 쓰세요.</strong><br>코드가 아니라 문장으로 씁니다. "각 항목마다 원자료의 숫자와 대조하고, 다르면 표시한다" 수준이면 충분합니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>스킬 파일로 만들어 두 번 돌려 보세요.</strong><br>새로운 작업 두 건에 적용해 실제로 발동하는지 확인하고 문장을 다듬으세요. 한 번으로는 발동 조건이 맞는지 알 수 없습니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>안정되면 연쇄로 묶고 관문으로 거세요.</strong><br>검증 스킬 두세 개가 자리를 잡으면 순서대로 잇고, 모든 산출물이 통과하도록 기본 절차에 넣으세요. 사람은 걸러진 결과만 봅니다. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>성과 수치가 제시되지 않았습니다.</strong> 원문은 시간 절감이나 오류 감소를 숫자로 밝히지 않습니다. 방법론 소개이지 효과 검증 보고가 아닙니다. 도입 전에 자체 측정 기준을 세워야 합니다.</p>
+
+        <p><strong>개발 워크플로 중심의 사례입니다.</strong> 예시가 코드 검토와 테스트에 집중돼 있습니다. 비개발 업무로 옮길 때는 확인 항목을 스스로 정의해야 하고, 그 정의가 절반 이상의 일입니다.</p>
+
+        <p><strong>검증 스킬 자체가 틀릴 수 있습니다.</strong> 잘못 쓰인 검사 기준은 틀린 결과를 통과시킵니다. 스킬을 만든 뒤에도 주기적으로 그 기준이 맞는지 사람이 되짚어야 합니다.</p>
+
+        <p><strong>자동화가 책임까지 옮기지는 않습니다.</strong> 관문을 통과했다는 사실이 결과에 대한 책임을 없애지 않습니다. 최종 승인의 주체와 근거는 사람 쪽에 남겨 두어야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>생성은 이미 자동입니다. 확인까지 자동이 될 때 비로소 사람의 시간이 남습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 도입 보고에서 자동화된 단계가 어디까지인지 물어라. 확인이 사람 손에 있으면 자동화는 3분의 2에서 멈춘다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀에서 가장 검수를 잘하는 사람의 기준을 문서로 꺼내라. 적히지 않은 기준은 그 사람과 함께 사라진다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">실무 담당</span>
+            <span>같은 확인을 세 번 했다면 절차로 보고 스킬로 옮겨라. 반복은 업무가 아니라 아직 자동화되지 않은 절차다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>검증 루프(Verification Loop)</strong>: 에이전트가 자기 작업을 스스로 점검하고 실패한 부분을 고친 뒤 다음으로 넘어가는 반복 주기입니다.</p>
+          <p><strong>스킬(Skill)</strong>: 특정 작업의 절차를 담은 짧은 문서입니다. 조건이 맞으면 자동으로 불려 나와 적용됩니다.</p>
+          <p><strong>연쇄(Chaining)</strong>: 여러 스킬을 순서대로 이어 하나의 흐름으로 만드는 방식입니다.</p>
+          <p><strong>관문(Gate)</strong>: 모든 산출물이 통과해야 하는 자동 점검 지점입니다. 통과하지 못하면 다음 단계로 넘어가지 못합니다.</p>
+          <p><strong>도구 권한(Allowed Tools)</strong>: 해당 스킬이 쓸 수 있는 기능의 범위입니다. 읽기만 허용할지 수정까지 허용할지 정합니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>de Oliveira, D. (2026, July 22). <em>Building verification loops in Claude Code with skills</em> [Article]. Anthropic. (<a href="https://claude.com/blog/building-verification-loops-in-claude-code-with-skills" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">AI가 만든 걸 제가 매번 확인하는데요. 이걸 어떻게 자동으로 만들어요? 저 코딩 못 해요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">코딩 안 해도 됩니다. 무엇을 확인하는지 새 팀원한테 설명하듯 평문으로 적으면 그게 스킬이에요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저도 그렇게 시작했어요. 첫 스킬이 세 줄이었어요. 숫자가 원자료랑 맞는지 보고 다르면 표시해라, 그게 끝이었어요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 정도면 저도 쓰겠는데요. 근데 그게 진짜 돌아가긴 하나요?</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">되는지 안 되는지는 두 번 돌려보면 압니다. 중요한 건 이거예요. 확인이 사람 손에 있는 한 자동화는 3분의 2에서 멈춰요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 3분의 2는 측정된 숫자예요? 원문에 성과 수치는 없다면서요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">맥락 수집, 실행, 확인 세 단계 중 둘이라는 뜻이에요. 성과 수치가 아니라 구조를 말한 겁니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">팀에서 검수 제일 잘하는 사람의 기준을 문서로 꺼내는 일이라는 표현이 좋았어요. 안 꺼내면 그 사람 떠날 때 같이 사라지잖아요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../company/2026-07-08-anthropic-marketing-ops-cowork-skills.html">
+          <div class="next-post-title">AI에게 같은 걸 두 번 고쳤다면, 스킬입니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/스킬.html" class="concept-chip">스킬</a>
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-07-22-verification-loops-with-skills.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/company/2026-07-22-verification-loops-with-skills.html';
+    const ROASTING_QUOTE = 'AI가 만든 결과를 매번 당신이 검사하고 있다면, 병목은 AI가 아니라 당신입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

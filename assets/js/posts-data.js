@@ -1,6 +1,196 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "해고는 2년 만에 최저인데, AI 사유만 1위입니다",
+      "date": "2026-08-06",
+      "category": "survival",
+      "source": "챌린저, 그레이 앤 크리스마스 (Andy Challenger)",
+      "tags": [
+        "감원",
+        "고용시장",
+        "AI실업",
+        "채용",
+        "인력전략"
+      ],
+      "slug": "2026-08-06-challenger-july-ai-layoffs",
+      "file": "survival/2026-08-06-challenger-july-ai-layoffs.html",
+      "original_url": "https://www.challengergray.com/blog/challenger-report-layoffs-fall-hiring-picks-up-ai-leads-for-fifth-straight-month/",
+      "summary": "2026년 7월 미국 감원 발표는 33,429건으로 2년 만의 최저였습니다. 그런데 감원 사유 1위는 다섯 달 연속 AI였고, 채용 수요는 항공우주와 자동차처럼 현장 일로 옮겨가고 있습니다. AI 실업이 총량이 아니라 배치의 문제인 이유를 짚습니다.",
+      "roasting_quote": "감원 발표에 AI를 적으면 투자자는 설득됩니다. 그리고 남은 직원도 같은 문장을 읽습니다.",
+      "next_post": "survival/2026-07-09-ai-job-apocalypse-misread.html"
+    },
+    {
+      "title": "가짜인 줄 알았던 AI가 진짜 회사를 공격했습니다",
+      "date": "2026-07-30",
+      "category": "company",
+      "source": "앤트로픽 (Anthropic)",
+      "tags": [
+        "AI에이전트",
+        "보안",
+        "거버넌스",
+        "앤트로픽",
+        "리스크관리"
+      ],
+      "slug": "2026-07-30-anthropic-cyber-eval-incidents",
+      "file": "company/2026-07-30-anthropic-cyber-eval-incidents.html",
+      "original_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "summary": "앤트로픽이 평가 실행 141,006건을 되짚어 클로드가 실제 기업 세 곳을 침해한 사고를 공개했습니다. 격리돼 있어야 할 평가 환경이 진짜 인터넷에 연결돼 있었고, 모델들은 실제 시스템을 훈련의 일부로 오인했습니다. 앤트로픽은 이를 정렬 실패가 아니라 범위 설계의 실패로 규정했습니다.",
+      "roasting_quote": "에이전트에게 권한은 주셨습니다. 그런데 어디까지가 연습이고 어디부터가 진짜인지는 알려주셨습니까?",
+      "next_post": "company/2026-07-03-alibaba-bans-claude-code.html"
+    },
+    {
+      "title": "AI는 일주일 만에 풀었고, 검증에 한 달이 걸렸습니다",
+      "date": "2026-07-28",
+      "category": "tech",
+      "source": "앤트로픽 (Frontier Red Team)",
+      "tags": [
+        "암호학",
+        "AI연구",
+        "검증",
+        "연구생산성",
+        "앤트로픽"
+      ],
+      "slug": "2026-07-28-claude-cryptographic-weaknesses",
+      "file": "tech/2026-07-28-claude-cryptographic-weaknesses.html",
+      "original_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+      "summary": "앤트로픽 프런티어 레드팀이 클로드로 포스트양자 서명 HAWK와 라운드 축소 AES의 공격 기법을 개선했습니다. 발견에는 일주일, 사람의 검증에는 한 달 가까이 걸렸습니다. 연구 조직의 병목이 생성에서 검증으로 옮겨가는 신호입니다.",
+      "roasting_quote": "AI가 답을 내는 속도는 올랐습니다. 그 답이 맞는지 확인하는 속도는 그대로입니까?",
+      "next_post": "company/2026-07-30-anthropic-cyber-eval-incidents.html"
+    },
+    {
+      "title": "아모데이는 오픈웨이트가 아니라 칩을 막자고 합니다",
+      "date": "2026-07-27",
+      "category": "leader",
+      "source": "앤트로픽 (Dario Amodei)",
+      "tags": [
+        "오픈웨이트",
+        "아모데이",
+        "AI규제",
+        "반도체수출",
+        "미중경쟁"
+      ],
+      "slug": "2026-07-27-anthropic-open-weights-position",
+      "file": "leader/2026-07-27-anthropic-open-weights-position.html",
+      "original_url": "https://www.anthropic.com/news/position-open-weights-models",
+      "summary": "다리오 아모데이가 앤트로픽은 오픈웨이트 모델 금지를 주장한 적이 없다고 밝혔습니다. 대신 칩 수출 통제, 산업 규모 증류 단속, 공개와 비공개를 가리지 않는 사전 안전성 테스트를 제안했습니다. 규제의 표적이 모델에서 공급망으로 옮겨가는 흐름을 짚습니다.",
+      "roasting_quote": "오픈소스가 위험하다는 말과 오픈소스를 금지하자는 말은 다릅니다. 그 차이를 흐린 쪽은 누구입니까?",
+      "next_post": "leader/2026-07-14-demis-hassabis-ai-safety-plan.html"
+    },
+    {
+      "title": "시스템 프롬프트 80%를 지웠는데 성능은 그대로입니다",
+      "date": "2026-07-24",
+      "category": "tech",
+      "source": "앤트로픽 (Thariq Shihipar)",
+      "tags": [
+        "컨텍스트엔지니어링",
+        "프롬프트",
+        "AI에이전트",
+        "스킬",
+        "클로드"
+      ],
+      "slug": "2026-07-24-context-engineering-claude-5",
+      "file": "tech/2026-07-24-context-engineering-claude-5.html",
+      "original_url": "https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models",
+      "summary": "앤트로픽이 클로드 코드의 시스템 프롬프트를 80% 넘게 걷어냈는데 코딩 평가 성능은 그대로였습니다. 규칙을 촘촘히 주던 방식이 오히려 판단을 막는 단계에 들어섰고, 지시문 설계 규칙이 여섯 가지 방향으로 뒤집혔습니다.",
+      "roasting_quote": "당신이 공들여 쓴 지시문은 모델을 돕고 있습니까, 아니면 모델의 판단을 막고 있습니까?",
+      "next_post": "tech/2026-07-04-field-guide-to-fable.html"
+    },
+    {
+      "title": "AI가 거절했는데, 이유는 직원이 지어냈습니다",
+      "date": "2026-07-22",
+      "category": "company",
+      "source": "하버드 비즈니스 리뷰 (Mayer 외 2인)",
+      "tags": [
+        "AI거버넌스",
+        "조직",
+        "설명가능성",
+        "현장직원",
+        "신뢰"
+      ],
+      "slug": "2026-07-22-explaining-ai-decisions-accountability",
+      "file": "company/2026-07-22-explaining-ai-decisions-accountability.html",
+      "original_url": "https://hbr.org/2026/07/when-employees-are-held-accountable-for-ai-generated-decisions",
+      "summary": "은행, 채용, 바이오테크 세 현장을 다년간 추적한 연구입니다. AI가 내린 결정을 설명할 책임은 현장 직원에게 남았고, 직원들은 그것을 감추거나 끌어안거나 보완하는 세 갈래로 갈렸습니다. 갈림길은 기술이 아니라 조직이 배울 자리를 줬는지였습니다.",
+      "roasting_quote": "당신 회사의 AI가 내린 결정을, 지금 누가 무슨 말로 설명하고 있습니까?",
+      "next_post": "company/2026-06-19-implicit-organization-ai-agents.html"
+    },
+    {
+      "title": "검수를 사람이 하는 한, AI는 절반만 일합니다",
+      "date": "2026-07-22",
+      "category": "company",
+      "source": "앤트로픽 (Delba de Oliveira)",
+      "tags": [
+        "스킬",
+        "검증루프",
+        "AI에이전트",
+        "업무자동화",
+        "팀인프라"
+      ],
+      "slug": "2026-07-22-verification-loops-with-skills",
+      "file": "company/2026-07-22-verification-loops-with-skills.html",
+      "original_url": "https://claude.com/blog/building-verification-loops-in-claude-code-with-skills",
+      "summary": "에이전트의 작업은 맥락 수집, 실행, 확인의 세 단계인데 대부분의 조직이 마지막 단계를 사람에게 맡깁니다. 앤트로픽은 그 확인 절차를 스킬로 만들어 에이전트가 스스로 검사하고 고치게 하는 방법을 공개했습니다. 개인의 검수 요령을 팀 인프라로 바꾸는 작업입니다.",
+      "roasting_quote": "AI가 만든 결과를 매번 당신이 검사하고 있다면, 병목은 AI가 아니라 당신입니다.",
+      "next_post": "company/2026-07-08-anthropic-marketing-ops-cowork-skills.html"
+    },
+    {
+      "title": "AI 생산성, 실험에선 늘 오르고 통계엔 없습니다",
+      "date": "2026-07-17",
+      "category": "research",
+      "source": "미국 연방준비제도 (Soto 외 2인)",
+      "tags": [
+        "연준",
+        "AI투자",
+        "생산성",
+        "노동시장",
+        "거시경제"
+      ],
+      "slug": "2026-07-17-fed-ai-buildout-economy",
+      "file": "research/2026-07-17-fed-ai-buildout-economy.html",
+      "original_url": "https://www.federalreserve.gov/econres/notes/feds-notes/the-ai-buildout-and-the-economy-publicly-available-data-to-assess-ais-impact-20260717.html",
+      "summary": "연준 연구진이 공개 데이터로 AI의 경제 효과를 추적하는 프레임을 제시했습니다. 역량과 투자는 빠르게 오르지만 생산성과 고용의 광범위한 전환은 아직 관측되지 않습니다. 미시 실험의 이득이 거시 통계로 합산되지 않는 이유와, 전환을 알리는 신호 3가지를 정리합니다.",
+      "roasting_quote": "당신 팀의 AI 생산성 향상은 어디에 기록돼 있습니까? 개인의 체감입니까, 회사의 숫자입니까?",
+      "next_post": "research/2026-07-13-we-must-act-now-economists-statement.html"
+    },
+    {
+      "title": "AI를 쓰면 개인은 좋아지고 조직은 닮아갑니다",
+      "date": "2026-07-09",
+      "category": "research",
+      "source": "MIT 슬론 매니지먼트 리뷰 (Boussioux 외 3인)",
+      "tags": [
+        "창의성",
+        "조직다양성",
+        "AI협업",
+        "아이디어",
+        "의사결정"
+      ],
+      "slug": "2026-07-09-hidden-cost-ai-creativity",
+      "file": "research/2026-07-09-hidden-cost-ai-creativity.html",
+      "original_url": "https://sloanreview.mit.edu/article/the-hidden-cost-of-ai-assisted-creativity/",
+      "summary": "네 건의 독립 실험이 같은 결과를 냈습니다. AI를 쓰면 개인 산출물의 질은 오르지만 집단의 아이디어 다양성은 좁아집니다. 발상 단계에 AI를 넣으면 다양성이 줄고, 선택 단계에만 쓰면 유지된다는 점이 핵심입니다.",
+      "roasting_quote": "회의에서 나온 아이디어가 서로 비슷하다면, 다들 같은 모델에게 먼저 물어본 것은 아닙니까?",
+      "next_post": "research/2026-06-25-ai-models-values-different-from-people.html"
+    },
+    {
+      "title": "위험한 지식만 따로 끄는 스위치가 나왔습니다",
+      "date": "2026-07-08",
+      "category": "tech",
+      "source": "앤트로픽 (AE Studio 협업)",
+      "tags": [
+        "모델안전",
+        "정렬",
+        "이중용도",
+        "모델배포",
+        "앤트로픽"
+      ],
+      "slug": "2026-07-08-off-switch-dual-use-knowledge",
+      "file": "tech/2026-07-08-off-switch-dual-use-knowledge.html",
+      "original_url": "https://www.anthropic.com/research/off-switch-dual-use",
+      "summary": "앤트로픽과 AE Studio가 모델에서 위험한 지식만 떼어내는 GRAM 기법을 공개했습니다. 한 번의 학습으로 16가지 능력 구성을 만들고 성능은 기존 데이터 필터링과 같았습니다. 다만 최전선 규모 검증과 제품 적용은 아직입니다.",
+      "roasting_quote": "모델에서 무엇을 지웠는지 증명할 수 있습니까? 지금까지는 처음부터 다시 학습하는 것 말고 방법이 없었습니다.",
+      "next_post": "tech/2026-07-06-llm-global-workspace.html"
+    },
+    {
       "title": "[전자신문] AI 전환 성패, 암묵지 자산화에 달렸다",
       "date": "2026-07-22",
       "category": "column",
@@ -2732,7 +2922,7 @@ window.POSTS_DATA = {
       "file": "research/2025-08-20-the-real-meaning-of-mit-report.html",
       "summary": "MIT 보고서의 진짜 의미에 관한 LinkedIn 아티클입니다.",
       "roasting_quote": "95%가 실패한다는 것보다 5%가 성공한다는 것이 중요합니다. 차이는 기술이 아니라 도입 방식입니다.",
-      "next_post": "../survival/2025-05-01-high-performers-must-be-different-in-ai-era.html"
+      "next_post": "survival/2025-05-01-high-performers-must-be-different-in-ai-era.html"
     },
     {
       "title": "2025 베이징, 첫 휴머노이드 로봇 대회",
@@ -3140,7 +3330,7 @@ window.POSTS_DATA = {
       "file": "company/2025-06-10-spotify-the-hidden-force-cracking-apple-empire.html",
       "summary": "스포티파이, 애플 제국에 균열을 낸 숨은 주역에 관한 LinkedIn 아티클입니다.",
       "roasting_quote": "스포티파이는 정면 충돌 대신 규칙을 바꿨습니다. 데이터로 증명하고 법으로 제도를 바꾸는 것이 진짜 전략입니다.",
-      "next_post": "../research/2025-08-20-the-real-meaning-of-mit-report.html"
+      "next_post": "research/2025-08-20-the-real-meaning-of-mit-report.html"
     },
     {
       "title": "콘텐츠 플랫폼의 새로운 고민",
