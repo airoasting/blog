@@ -1,6 +1,12 @@
 {
   "newsletters": [
     {
+      "ep": 61,
+      "title": "가격 인하 중인 챗GPT vs. 최대 12배 인상 중인 딥시크",
+      "date": "2026-08-15",
+      "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-61-%EA%B0%80%EA%B2%A9-%EC%9D%B8%ED%95%98-%EC%A4%91%EC%9D%B8-%EC%98%A4%ED%94%88ai-vs-%EC%B5%9C%EB%8C%80-12%EB%B0%B0-%EC%9D%B8%EC%83%81-%EB%94%A5%EC%8B%9C%ED%81%AC-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-hdvgc/"
+    },
+    {
       "ep": 60,
       "title": "인재들이 탈출 중인 구글",
       "date": "2026-08-08",
