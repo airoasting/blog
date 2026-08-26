@@ -1920,22 +1920,6 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-02-gemma-4-open-model.html"
     },
     {
-      "title": "유출된 클로드 코드가 드러낸 설계 원칙 8가지",
-      "date": "2026-04-08",
-      "category": "tech",
-      "source": "MindStudio",
-      "tags": [
-        "ClaudeCode",
-        "시스템프롬프트",
-        "CLAUDE.md",
-        "AI코딩도구"
-      ],
-      "slug": "2026-04-08-claude-code-hidden-features",
-      "file": "tech/2026-04-08-claude-code-hidden-features.html",
-      "summary": "Claude Code 시스템 프롬프트 유출로 8가지 핵심 설계 원칙이 공개됐습니다. 병렬 실행, CLAUDE.md 메모리, Bash 우선 사용 등 숨겨진 동작 방식이 드러났습니다. 설계 의도를 이해하면 지시 방식만 ",
-      "roasting_quote": "도구를 만든 사람의 설계 의도를 알면 더 잘 쓸 수 있습니다. CLAUDE.md 하나가 팀 전체의 AI 활용 수준을 바꿉니다."
-    },
-    {
       "title": "AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고",
       "date": "2026-04-07",
       "category": "tech",

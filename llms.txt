@@ -125,7 +125,6 @@
 - 2026-04-09 [기업] Gen AI 로봇이 서비스업을 다시 설계합니다 — /blog/company/2026-04-09-gen-ai-robots-reshaping-services.html
 - 2026-04-08 [생존] 갤럽 조사: 전 세계 직원 몰입도 2년 연속 하락 — /blog/survival/2026-04-08-gallup-engagement-ai-paradox.html
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
-- 2026-04-08 [기술] 유출된 클로드 코드가 드러낸 설계 원칙 8가지 — /blog/tech/2026-04-08-claude-code-hidden-features.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
 - 2026-04-07 [기업] 앤트로픽이 기업 시장을 가져간 무기, 신뢰 — /blog/company/2026-04-07-culture-that-ate-silicon-valley.html
 - 2026-04-07 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html

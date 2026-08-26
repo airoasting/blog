@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T06:55:26.567Z",
+  "generatedAt": "2026-08-26T07:02:42.208Z",
   "version": 1,
   "stats": {
     "totalConcepts": 131,
     "totalRelationships": 336,
-    "totalPosts": 267,
+    "totalPosts": 266,
     "totalNewsletters": 62
   },
   "concepts": [
@@ -189,7 +189,7 @@
       "name": "API",
       "aliases": [],
       "definition": "응용 프로그램 인터페이스입니다. AI 모델을 다른 소프트웨어에 연결하는 표준 통로입니다.",
-      "frequency": 62,
+      "frequency": 61,
       "category": "tech",
       "posts": [
         "2025-05-05-two-views-on-google-mobility-strategy",
@@ -202,7 +202,6 @@
         "2026-04-02-gemma-4-open-model",
         "2026-04-06-paperorchestra-multi-agent-writing",
         "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-08-claude-code-hidden-features",
         "2026-04-08-managed-agents-decoupling",
         "2026-04-09-advisor-strategy-claude-opus",
         "2026-04-11-agent-harness-memory-lock-in",
