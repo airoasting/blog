@@ -460,24 +460,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://airoasting.github.io/blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://airoasting.github.io/blog/research/2026-04-07-llm-behavioral-alignment-gap.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://airoasting.github.io/blog/tech/2026-04-07-ai-agent-traps.html</loc>
-    <lastmod>2026-04-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://airoasting.github.io/blog/tech/2026-04-01-claude-code-hidden-features.html</loc>
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>

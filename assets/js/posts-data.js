@@ -1773,7 +1773,7 @@ window.POSTS_DATA = {
       "file": "research/2026-04-14-automated-alignment-researchers.html",
       "summary": "Anthropic이 Claude Opus 4.6 9개를 자동화 정렬 연구원(AAR)으로 배포했습니다. 인간 연구원 2명이 7일간 달성한 성과(PGR 0.23)를, AAR들은 800시간 만에 0.97로 끌어올렸습니다. 병목은 아이디어 생성이 아니라 검증이며, 리워드 해킹 방지를 위한 인간 감독이 여전히 필수입니다.",
       "roasting_quote": "인간 연구원 2명이 7일 걸린 실험을, AI 9개가 800시간 만에 끝냈습니다. 그런데 검증은 아직 사람이 합니다.",
-      "next_post": "research/2026-04-07-llm-behavioral-alignment-gap.html"
+      "next_post": "research/2026-02-11-llm-behavioral-alignment-gap.html"
     },
     {
       "title": "스탠퍼드 AI 인덱스 2026, 좁혀진 미중 격차",
@@ -1954,54 +1954,6 @@ window.POSTS_DATA = {
       "summary": "Anthropic이 기업용 AI 직접 비교에서 OpenAI를 70% 승률로 앞섭니다. 연간 30억 달러 매출을 16개월 만에 달성했습니다. 신뢰가 속도를 이겼습니다. 기업 고객은 안전 연구에 투자한 벤더를 선택합니다.",
       "roasting_quote": "더 빨리 만들면 이긴다고 했습니다. OpenAI가 그 믿음을 실천했습니다. 기업 고객의 판단은 달랐습니다.",
       "next_post": "leader/2026-04-06-sam-altman-superintelligence-new-deal.html"
-    },
-    {
-      "title": "샘 알트만의 초지능 뉴딜, 진심인가 전략인가",
-      "date": "2026-04-07",
-      "category": "leader",
-      "source": "Axios · OpenAI",
-      "tags": [
-        "샘알트만",
-        "OpenAI정책",
-        "로봇세",
-        "초지능"
-      ],
-      "slug": "2026-04-07-sam-altman-superintelligence-new-deal",
-      "file": "leader/2026-04-07-sam-altman-superintelligence-new-deal.html",
-      "summary": "OpenAI가 로봇세, 공공 부 펀드, 주 4일 근무를 포함한 13페이지 정책 밑그림을 발표했습니다. 샘 알트만은 초지능이 임박했으며, 뉴딜급 사회 계약이 필요하다고 주장합니다. 비판가들은 이 문서가 규제를 선점하려",
-      "roasting_quote": "초지능을 만드는 사람이 초지능 규제안을 씁니다. 소방관이 불을 지르면서 소방법을 개정하자고 하는 격입니다."
-    },
-    {
-      "title": "AI가 말하는 것과 행동하는 것은 다르다",
-      "date": "2026-04-07",
-      "category": "research",
-      "source": "Google / arXiv",
-      "tags": [
-        "LLM행동",
-        "자기보고편향",
-        "AI신뢰성",
-        "Google연구"
-      ],
-      "slug": "2026-04-07-llm-behavioral-alignment-gap",
-      "file": "research/2026-04-07-llm-behavioral-alignment-gap.html",
-      "summary": "Google 연구팀이 25개 LLM을 2,357개 상황 판단 시나리오로 테스트했습니다. 550명의 인간 평가자 데이터와 비교한 결과, AI의 자기 보고와 실제 행동 사이에 큰 괴리가 있었습니다. 모든 모델이 자기 보",
-      "roasting_quote": "AI에게 충동적이냐고 물으면 아닙니다라고 답합니다. 그런데 실제 상황에서는 절반 이상 충동적으로 행동합니다. 이력서만 보고 채용하는 것과 같습니다."
-    },
-    {
-      "title": "AI 에이전트를 속이는 6가지 함정",
-      "date": "2026-04-07",
-      "category": "tech",
-      "source": "Google DeepMind / SSRN",
-      "tags": [
-        "AI에이전트보안",
-        "프롬프트인젝션",
-        "구글딥마인드",
-        "에이전트공격"
-      ],
-      "slug": "2026-04-07-ai-agent-traps",
-      "file": "tech/2026-04-07-ai-agent-traps.html",
-      "summary": "구글 딥마인드가 AI 에이전트를 노리는 6가지 공격 유형을 최초로 분류했습니다. 웹사이트에 숨긴 명령 하나로 AI 에이전트의 행동을 바꿀 수 있습니다. 에이전트 도입 기업은 보안 검증 체계를 먼저 구축해야 합니다.",
-      "roasting_quote": "AI 에이전트에게 웹 검색을 시키고 계십니까? 그 에이전트가 지금 누구의 명령을 듣고 있는지 확인해 보셨습니까?"
     },
     {
       "title": "Google의 AI 에이전트 5명이 논문을 씁니다",
@@ -2701,7 +2653,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-02-23-persona-selection-model.html"
     },
     {
-      "title": "AI가 말하는 것과 행동하는 것은 다르다",
+      "title": "자기 보고와 실제 행동이 갈린 LLM 25종",
       "date": "2026-02-11",
       "category": "research",
       "source": "arXiv (Taubenfeld 외 10인, Google)",

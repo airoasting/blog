@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-08-26T07:02:42.208Z",
-  "duration": 0.434,
+  "buildAt": "2026-08-26T07:07:44.900Z",
+  "duration": 0.362,
   "concepts": {
-    "total": 131,
-    "validDefinitions": 128,
+    "total": 129,
+    "validDefinitions": 126,
     "needsReview": 3
   },
   "relationships": {
-    "total": 336
+    "total": 328
   },
   "coverage": {
-    "postsWithConcepts": 250,
-    "totalPosts": 266
+    "postsWithConcepts": 247,
+    "totalPosts": 263
   },
   "inject": {
     "updated": 0,
     "inserted": 0,
-    "unchanged": 266,
+    "unchanged": 263,
     "skipped": 0
   },
   "needsManualReview": [

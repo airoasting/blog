@@ -127,9 +127,6 @@
 - 2026-04-08 [기술] AI 에이전트, 뇌와 손을 분리해야 확장됩니다 — /blog/tech/2026-04-08-managed-agents-decoupling.html
 - 2026-04-07 [기술] AI가 27년 묵은 버그를 혼자 찾았다: Claude Mythos의 경고 — /blog/tech/2026-04-07-claude-mythos-cybersecurity.html
 - 2026-04-07 [기업] 앤트로픽이 기업 시장을 가져간 무기, 신뢰 — /blog/company/2026-04-07-culture-that-ate-silicon-valley.html
-- 2026-04-07 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-07-sam-altman-superintelligence-new-deal.html
-- 2026-04-07 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-04-07-llm-behavioral-alignment-gap.html
-- 2026-04-07 [기술] AI 에이전트를 속이는 6가지 함정 — /blog/tech/2026-04-07-ai-agent-traps.html
 - 2026-04-06 [기술] Google의 AI 에이전트 5명이 논문을 씁니다 — /blog/tech/2026-04-06-paperorchestra-multi-agent-writing.html
 - 2026-04-06 [리더] 샘 알트만, 신뢰할 수 있는가 — /blog/leader/2026-04-06-sam-altman-can-he-be-trusted.html
 - 2026-04-06 [리더] 샘 알트만의 초지능 뉴딜, 진심인가 전략인가 — /blog/leader/2026-04-06-sam-altman-superintelligence-new-deal.html
@@ -172,7 +169,7 @@
 - 2026-02-23 [기술] AI는 왜 사람처럼 행동하는가 (멀티 페르소나) — /blog/tech/2026-02-23-persona-selection-model.html
 - 2026-02-14 [기술] 강화학습 없이, 프롬프트가 스스로 진화합니다 — /blog/tech/2026-02-14-gepa-reflective-prompt-evolution.html
 - 2026-02-12 [리더] 재미로 만들어 GitHub 18만 스타: OpenClaw 창시자의 에이전트 엔지니어링 선언 — /blog/leader/2026-02-12-peter-steinberger-openclaw-agentic-engineering.html
-- 2026-02-11 [리서치] AI가 말하는 것과 행동하는 것은 다르다 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
+- 2026-02-11 [리서치] 자기 보고와 실제 행동이 갈린 LLM 25종 — /blog/research/2026-02-11-llm-behavioral-alignment-gap.html
 - 2026-02-09 [리서치] AI가 줄인 것이 아니라 늘린 일 — /blog/research/2026-02-09-ai-intensifies-work.html
 - 2026-02-02 [리서치] 블랙박스 AI를 맞춤 조종하는 어드바이저 모델 — /blog/research/2026-02-02-advisor-model-black-box-llm.html
 - 2026-02-01 [생존] AI를 쓸수록 실력이 떨어진다 — /blog/survival/2026-02-01-ai-skill-erosion-anthropic-study.html

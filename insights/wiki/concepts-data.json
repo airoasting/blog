@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T07:02:42.208Z",
+  "generatedAt": "2026-08-26T07:07:44.900Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 131,
-    "totalRelationships": 336,
-    "totalPosts": 266,
+    "totalConcepts": 129,
+    "totalRelationships": 328,
+    "totalPosts": 263,
     "totalNewsletters": 62
   },
   "concepts": [
@@ -14,7 +14,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 78,
+      "frequency": 77,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -28,7 +28,6 @@
         "2026-04-01-nature-ai-editorial-policy",
         "2026-04-03-karpathy-llm-knowledge-base",
         "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-07-llm-behavioral-alignment-gap",
         "2026-04-09-gen-ai-robots-reshaping-services",
         "2026-04-11-agent-harness-memory-lock-in",
         "2026-05-13-state-media-control-influences-llm",
@@ -335,14 +334,13 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 35,
+      "frequency": 34,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
         "2026-03-20-karpathy-end-of-coding",
         "2026-04-02-gemma-4-open-model",
         "2026-04-06-paperorchestra-multi-agent-writing",
-        "2026-04-07-ai-agent-traps",
         "2026-04-07-claude-mythos-cybersecurity",
         "2026-04-08-managed-agents-decoupling",
         "2026-04-09-advisor-strategy-claude-opus",
@@ -476,7 +474,7 @@
       "name": "ROI",
       "aliases": [],
       "definition": "투자수익률입니다. AI 도입의 비용 대비 효과를 판단하는 핵심 지표입니다.",
-      "frequency": 24,
+      "frequency": 23,
       "category": "research",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -487,7 +485,6 @@
         "2026-03-16-why-world-runs-on-sap",
         "2026-03-17-ai-investment-roi-7-factors",
         "2026-03-20-karpathy-end-of-coding",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
         "2026-04-09-google-cloud-ai-agent-trends",
         "2024-10-15-ai-bubble-three-collapse-scenarios",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
@@ -516,11 +513,10 @@
       "name": "IPO",
       "aliases": [],
       "definition": "기업공개입니다. AI 인프라 기업들의 상장이 시장 평가의 시험대가 됩니다.",
-      "frequency": 24,
+      "frequency": 23,
       "category": "newsletter",
       "posts": [
         "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
         "2026-04-06-sam-altman-superintelligence-new-deal",
         "2024-08-20-acqui-hire-new-way-to-buy-ai-startups",
         "2024-10-05-cerebras-ipo-vs-nvidia"
@@ -547,7 +543,7 @@
         "nl-57"
       ],
       "firstSeen": "2024-08-20",
-      "lastSeen": "2026-04-07",
+      "lastSeen": "2026-04-06",
       "needs_manual_review": false
     },
     {
@@ -881,34 +877,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "rag",
-      "slug": "rag",
-      "name": "RAG",
-      "aliases": [],
-      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
-      "frequency": 13,
-      "category": "tech",
-      "posts": [
-        "2026-04-03-karpathy-llm-knowledge-base",
-        "2026-04-07-ai-agent-traps",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-05-20-sciatlas-scientific-knowledge-graph",
-        "2026-05-27-law-professors-prefer-ai",
-        "2026-05-28-sia-self-improving-ai-harness-weights",
-        "2026-07-15-cerebras-knowledge-base",
-        "2025-03-05-speculating-why-naver-lee-haejin-returned",
-        "2025-07-10-why-openai-is-no-longer-the-leader",
-        "2025-02-15-llms-will-get-smaller-and-smarter",
-        "2025-05-10-the-rocky-road-to-chatgpt5",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-02-15",
-      "lastSeen": "2026-07-15",
-      "needs_manual_review": false
-    },
-    {
       "id": "생산성",
       "slug": "생산성",
       "name": "생산성",
@@ -964,34 +932,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "cfo",
-      "slug": "cfo",
-      "name": "CFO",
-      "aliases": [],
-      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 12,
-      "category": "leader",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-06-19-companies-rein-in-ai-costs",
-        "2026-07-17-fed-ai-buildout-economy",
-        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
-        "2026-01-10-elon-musk-vision-of-ai-future",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [
-        "nl-21",
-        "nl-49",
-        "nl-50",
-        "nl-62"
-      ],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2026-07-17",
-      "needs_manual_review": false
-    },
-    {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
@@ -1017,6 +957,33 @@
       ],
       "firstSeen": "2025-05-10",
       "lastSeen": "2026-06-10",
+      "needs_manual_review": false
+    },
+    {
+      "id": "rag",
+      "slug": "rag",
+      "name": "RAG",
+      "aliases": [],
+      "definition": "Retrieval-Augmented Generation입니다. 외부 지식을 검색해 답변에 반영하는 AI 구조입니다.",
+      "frequency": 12,
+      "category": "tech",
+      "posts": [
+        "2026-04-03-karpathy-llm-knowledge-base",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-05-20-sciatlas-scientific-knowledge-graph",
+        "2026-05-27-law-professors-prefer-ai",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2026-07-15-cerebras-knowledge-base",
+        "2025-03-05-speculating-why-naver-lee-haejin-returned",
+        "2025-07-10-why-openai-is-no-longer-the-leader",
+        "2025-02-15-llms-will-get-smaller-and-smarter",
+        "2025-05-10-the-rocky-road-to-chatgpt5",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-02-15",
+      "lastSeen": "2026-07-15",
       "needs_manual_review": false
     },
     {
@@ -1096,6 +1063,33 @@
       ],
       "newsletters": [],
       "firstSeen": "2025-03-25",
+      "lastSeen": "2026-07-17",
+      "needs_manual_review": false
+    },
+    {
+      "id": "cfo",
+      "slug": "cfo",
+      "name": "CFO",
+      "aliases": [],
+      "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
+      "frequency": 11,
+      "category": "leader",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa",
+        "2026-06-19-companies-rein-in-ai-costs",
+        "2026-07-17-fed-ai-buildout-economy",
+        "2025-05-10-jang-kangmyoung-the-future-that-came-first",
+        "2026-01-10-elon-musk-vision-of-ai-future",
+        "2026-04-06-sam-altman-superintelligence-new-deal"
+      ],
+      "newsletters": [
+        "nl-21",
+        "nl-49",
+        "nl-50",
+        "nl-62"
+      ],
+      "firstSeen": "2025-05-10",
       "lastSeen": "2026-07-17",
       "needs_manual_review": false
     },
@@ -1267,28 +1261,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "llms",
-      "slug": "llms",
-      "name": "LLMs",
-      "aliases": [],
-      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
-      "frequency": 7,
-      "category": "research",
-      "posts": [
-        "2026-02-02-advisor-model-black-box-llm",
-        "2026-03-17-llm-stock-picking-bias",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2026-04-23-llm-japanese-culture-bias",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2026-02-11-llm-behavioral-alignment-gap"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-05-20",
-      "needs_manual_review": false
-    },
-    {
       "id": "cpu",
       "slug": "cpu",
       "name": "CPU",
@@ -1422,6 +1394,27 @@
       "needs_manual_review": false
     },
     {
+      "id": "llms",
+      "slug": "llms",
+      "name": "LLMs",
+      "aliases": [],
+      "definition": "Large Language Models의 약칭입니다. 대규모 언어 모델 전반을 가리킵니다.",
+      "frequency": 6,
+      "category": "research",
+      "posts": [
+        "2026-02-02-advisor-model-black-box-llm",
+        "2026-03-17-llm-stock-picking-bias",
+        "2026-04-23-llm-japanese-culture-bias",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2026-02-11-llm-behavioral-alignment-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-05-20",
+      "needs_manual_review": false
+    },
+    {
       "id": "gpqa",
       "slug": "gpqa",
       "name": "GPQA",
@@ -1462,27 +1455,6 @@
       "newsletters": [],
       "firstSeen": "2026-03-02",
       "lastSeen": "2026-07-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "rlhf",
-      "slug": "rlhf",
-      "name": "RLHF",
-      "aliases": [],
-      "definition": "인간 피드백 기반 강화학습입니다. 사람의 선호를 반영해 모델을 정렬하는 핵심 기법입니다.",
-      "frequency": 6,
-      "category": "research",
-      "posts": [
-        "2026-03-10-openclaw-rl",
-        "2026-04-07-llm-behavioral-alignment-gap",
-        "2026-05-08-teaching-claude-why",
-        "2025-04-25-does-ai-make-us-smarter",
-        "2025-07-10-ban-left-biased-ai",
-        "2026-02-11-llm-behavioral-alignment-gap"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-04-25",
-      "lastSeen": "2026-05-08",
       "needs_manual_review": false
     },
     {
@@ -1614,6 +1586,26 @@
       "needs_manual_review": false
     },
     {
+      "id": "rlhf",
+      "slug": "rlhf",
+      "name": "RLHF",
+      "aliases": [],
+      "definition": "인간 피드백 기반 강화학습입니다. 사람의 선호를 반영해 모델을 정렬하는 핵심 기법입니다.",
+      "frequency": 5,
+      "category": "research",
+      "posts": [
+        "2026-03-10-openclaw-rl",
+        "2026-05-08-teaching-claude-why",
+        "2025-04-25-does-ai-make-us-smarter",
+        "2025-07-10-ban-left-biased-ai",
+        "2026-02-11-llm-behavioral-alignment-gap"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-25",
+      "lastSeen": "2026-05-08",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai인프라",
       "slug": "ai인프라",
       "name": "AI인프라",
@@ -1692,26 +1684,6 @@
       "newsletters": [],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-04-06",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ciso",
-      "slug": "ciso",
-      "name": "CISO",
-      "aliases": [],
-      "definition": "최고정보보안책임자입니다. AI 시대 데이터·모델 보안을 책임집니다.",
-      "frequency": 5,
-      "category": "tech",
-      "posts": [
-        "2026-04-07-ai-agent-traps",
-        "2026-04-07-claude-mythos-cybersecurity",
-        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
-        "2026-07-06-llm-global-workspace",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-28",
-      "lastSeen": "2026-07-06",
       "needs_manual_review": false
     },
     {
@@ -1944,6 +1916,25 @@
       ],
       "firstSeen": "2026-03-31",
       "lastSeen": "2026-04-24",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ciso",
+      "slug": "ciso",
+      "name": "CISO",
+      "aliases": [],
+      "definition": "최고정보보안책임자입니다. AI 시대 데이터·모델 보안을 책임집니다.",
+      "frequency": 4,
+      "category": "tech",
+      "posts": [
+        "2026-04-07-claude-mythos-cybersecurity",
+        "2026-04-30-gpt-5-5-cyber-capability-aisi-evaluation",
+        "2026-07-06-llm-global-workspace",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-28",
+      "lastSeen": "2026-07-06",
       "needs_manual_review": false
     },
     {
@@ -2470,42 +2461,6 @@
       "newsletters": [],
       "firstSeen": "2025-07-20",
       "lastSeen": "2026-04-24",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ssrn",
-      "slug": "ssrn",
-      "name": "SSRN",
-      "aliases": [],
-      "definition": "SSRN는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "tech",
-      "posts": [
-        "2026-04-07-ai-agent-traps",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-03-28-ai-agent-traps"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-28",
-      "lastSeen": "2026-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "초지능",
-      "slug": "초지능",
-      "name": "초지능",
-      "aliases": [],
-      "definition": "초지능는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "leader",
-      "posts": [
-        "2026-04-07-sam-altman-superintelligence-new-deal",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2026-04-06-sam-altman-superintelligence-new-deal"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-04-06",
-      "lastSeen": "2026-06-15",
       "needs_manual_review": false
     },
     {
@@ -3213,11 +3168,6 @@
     },
     {
       "source": "LLM",
-      "target": "RAG",
-      "strength": 7
-    },
-    {
-      "source": "LLM",
       "target": "생산성",
       "strength": 2
     },
@@ -3228,13 +3178,13 @@
     },
     {
       "source": "LLM",
-      "target": "CFO",
-      "strength": 2
+      "target": "ASI",
+      "strength": 3
     },
     {
       "source": "LLM",
-      "target": "ASI",
-      "strength": 3
+      "target": "RAG",
+      "strength": 7
     },
     {
       "source": "LLM",
@@ -3245,6 +3195,11 @@
       "source": "LLM",
       "target": "AI규제",
       "strength": 4
+    },
+    {
+      "source": "LLM",
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "LLM",
@@ -3268,11 +3223,6 @@
     },
     {
       "source": "LLM",
-      "target": "LLMs",
-      "strength": 4
-    },
-    {
-      "source": "LLM",
       "target": "CPU",
       "strength": 2
     },
@@ -3283,13 +3233,18 @@
     },
     {
       "source": "LLM",
+      "target": "LLMs",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "GPQA",
       "strength": 2
     },
     {
       "source": "LLM",
       "target": "RLHF",
-      "strength": 4
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -3438,18 +3393,8 @@
     },
     {
       "source": "GPU",
-      "target": "RAG",
-      "strength": 3
-    },
-    {
-      "source": "GPU",
       "target": "MCP",
       "strength": 3
-    },
-    {
-      "source": "GPU",
-      "target": "CFO",
-      "strength": 4
     },
     {
       "source": "GPU",
@@ -3458,8 +3403,18 @@
     },
     {
       "source": "GPU",
+      "target": "RAG",
+      "strength": 3
+    },
+    {
+      "source": "GPU",
       "target": "HBM",
       "strength": 7
+    },
+    {
+      "source": "GPU",
+      "target": "CFO",
+      "strength": 4
     },
     {
       "source": "GPU",
@@ -3643,13 +3598,13 @@
     },
     {
       "source": "API",
-      "target": "RAG",
-      "strength": 3
+      "target": "MCP",
+      "strength": 4
     },
     {
       "source": "API",
-      "target": "MCP",
-      "strength": 4
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "API",
@@ -3798,17 +3753,17 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "RAG",
-      "strength": 4
-    },
-    {
-      "source": "AI 에이전트",
       "target": "생산성",
       "strength": 2
     },
     {
       "source": "AI 에이전트",
       "target": "MCP",
+      "strength": 4
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "RAG",
       "strength": 4
     },
     {
@@ -3863,11 +3818,6 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
       "target": "GRPO",
       "strength": 2
     },
@@ -3879,6 +3829,11 @@
     {
       "source": "AI 에이전트",
       "target": "ML",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "CISO",
       "strength": 2
     },
     {
@@ -3968,13 +3923,13 @@
     },
     {
       "source": "CTO",
-      "target": "RAG",
-      "strength": 4
+      "target": "MCP",
+      "strength": 2
     },
     {
       "source": "CTO",
-      "target": "MCP",
-      "strength": 2
+      "target": "RAG",
+      "strength": 3
     },
     {
       "source": "CTO",
@@ -4013,12 +3968,12 @@
     },
     {
       "source": "CTO",
-      "target": "CISO",
-      "strength": 4
+      "target": "MMLU",
+      "strength": 3
     },
     {
       "source": "CTO",
-      "target": "MMLU",
+      "target": "CISO",
       "strength": 3
     },
     {
@@ -4034,11 +3989,6 @@
     {
       "source": "CTO",
       "target": "오픈소스AI",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "SSRN",
       "strength": 2
     },
     {
@@ -4098,18 +4048,8 @@
     },
     {
       "source": "AGI",
-      "target": "RAG",
-      "strength": 2
-    },
-    {
-      "source": "AGI",
       "target": "MCP",
       "strength": 3
-    },
-    {
-      "source": "AGI",
-      "target": "CFO",
-      "strength": 2
     },
     {
       "source": "AGI",
@@ -4118,8 +4058,18 @@
     },
     {
       "source": "AGI",
+      "target": "RAG",
+      "strength": 2
+    },
+    {
+      "source": "AGI",
       "target": "HBM",
       "strength": 3
+    },
+    {
+      "source": "AGI",
+      "target": "CFO",
+      "strength": 2
     },
     {
       "source": "AGI",
@@ -4188,11 +4138,6 @@
     },
     {
       "source": "ROI",
-      "target": "IPO",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
       "target": "임원",
       "strength": 4
     },
@@ -4219,7 +4164,7 @@
     {
       "source": "ROI",
       "target": "CFO",
-      "strength": 3
+      "strength": 2
     },
     {
       "source": "ROI",
@@ -4229,11 +4174,6 @@
     {
       "source": "ROI",
       "target": "AI협업",
-      "strength": 2
-    },
-    {
-      "source": "ROI",
-      "target": "초지능",
       "strength": 2
     },
     {
@@ -4248,13 +4188,13 @@
     },
     {
       "source": "IPO",
-      "target": "CFO",
-      "strength": 5
+      "target": "HBM",
+      "strength": 3
     },
     {
       "source": "IPO",
-      "target": "HBM",
-      "strength": 3
+      "target": "CFO",
+      "strength": 4
     },
     {
       "source": "IPO",
@@ -4269,11 +4209,6 @@
     {
       "source": "IPO",
       "target": "JD",
-      "strength": 2
-    },
-    {
-      "source": "IPO",
-      "target": "초지능",
       "strength": 2
     },
     {
@@ -4363,12 +4298,12 @@
     },
     {
       "source": "AI전략",
-      "target": "CFO",
+      "target": "ASI",
       "strength": 2
     },
     {
       "source": "AI전략",
-      "target": "ASI",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -4488,12 +4423,12 @@
     },
     {
       "source": "TPU",
-      "target": "CFO",
+      "target": "HBM",
       "strength": 3
     },
     {
       "source": "TPU",
-      "target": "HBM",
+      "target": "CFO",
       "strength": 3
     },
     {
@@ -4524,16 +4459,6 @@
     {
       "source": "AI 안전",
       "target": "AI 정렬",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "RAG",
-      "target": "SSRN",
       "strength": 2
     },
     {
@@ -4582,31 +4507,6 @@
       "strength": 2
     },
     {
-      "source": "CFO",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "AI투자",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "초지능",
-      "strength": 2
-    },
-    {
-      "source": "CFO",
-      "target": "EPS",
-      "strength": 2
-    },
-    {
       "source": "ASI",
       "target": "HBM",
       "strength": 2
@@ -4614,6 +4514,11 @@
     {
       "source": "ASI",
       "target": "MMLU",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -4644,6 +4549,21 @@
     {
       "source": "GDP",
       "target": "노동시장",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "AI투자",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "EPS",
       "strength": 2
     },
     {
@@ -4682,16 +4602,6 @@
       "strength": 4
     },
     {
-      "source": "LLMs",
-      "target": "RLHF",
-      "strength": 3
-    },
-    {
-      "source": "LLMs",
-      "target": "AI편향",
-      "strength": 2
-    },
-    {
       "source": "CPU",
       "target": "SEC",
       "strength": 2
@@ -4717,6 +4627,16 @@
       "strength": 2
     },
     {
+      "source": "LLMs",
+      "target": "RLHF",
+      "strength": 2
+    },
+    {
+      "source": "LLMs",
+      "target": "AI편향",
+      "strength": 2
+    },
+    {
       "source": "GPQA",
       "target": "MMLU",
       "strength": 2
@@ -4724,16 +4644,6 @@
     {
       "source": "GPQA",
       "target": "오픈소스AI",
-      "strength": 2
-    },
-    {
-      "source": "RLHF",
-      "target": "RL",
-      "strength": 2
-    },
-    {
-      "source": "RLHF",
-      "target": "AI정렬",
       "strength": 2
     },
     {
@@ -4752,6 +4662,16 @@
       "strength": 3
     },
     {
+      "source": "RLHF",
+      "target": "RL",
+      "strength": 2
+    },
+    {
+      "source": "RLHF",
+      "target": "AI정렬",
+      "strength": 2
+    },
+    {
       "source": "AI인프라",
       "target": "반도체",
       "strength": 2
@@ -4764,11 +4684,6 @@
     {
       "source": "AI정책",
       "target": "한국AI",
-      "strength": 2
-    },
-    {
-      "source": "CISO",
-      "target": "SSRN",
       "strength": 2
     },
     {
