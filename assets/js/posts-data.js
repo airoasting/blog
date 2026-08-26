@@ -134,7 +134,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-03-alibaba-bans-claude-code.html"
     },
     {
-      "title": "AI는 일주일 만에 풀었고, 검증에 한 달이 걸렸습니다",
+      "title": "AI는 일주일 만에 풀었고, 사람은 한 달을 검증했습니다",
       "date": "2026-07-28",
       "category": "tech",
       "source": "앤트로픽 (Frontier Red Team)",
@@ -881,7 +881,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
-      "title": "AI가 이 글을 썼을까, 다섯 분야를 추적했습니다",
+      "title": "AI가 이 글을 썼을까, 이코노미스트가 추적했습니다",
       "date": "2026-06-16",
       "category": "research",
       "source": "The Economist (Graphic detail)",
@@ -1009,7 +1009,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-01-cs-degree-glut-ai-erodes-value.html"
     },
     {
-      "title": "여러 AI를 합치니 가장 강한 모델을 넘었습니다",
+      "title": "여러 AI를 합친 답이 가장 강한 모델을 넘었습니다",
       "date": "2026-06-12",
       "category": "research",
       "source": "OpenRouter (Brian Thomas)",
@@ -1174,7 +1174,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
-      "title": "복잡한 일은 AI 한 명에게 맡기지 마세요",
+      "title": "복잡한 일은 AI 하나에 몰아주지 마세요",
       "date": "2026-06-02",
       "category": "tech",
       "source": "Anthropic",
@@ -1284,7 +1284,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html"
     },
     {
-      "title": "GPT-5.5도 한국어 웹 탐색은 45%에 그쳤습니다",
+      "title": "GPT-5.5도 한국어 웹 탐색에서 45%에 그쳤습니다",
       "date": "2026-06-01",
       "category": "research",
       "source": "arXiv (Nahyun Lee 외 14인)",
@@ -1340,7 +1340,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
     },
     {
-      "title": "스스로 진화하는 AI, 코드를 스스로 고칩니다",
+      "title": "스스로 진화하는 AI, 자기 코드를 고칩니다",
       "date": "2026-05-28",
       "category": "tech",
       "source": "arXiv (Hebbar, Manawat, Verboomen 외)",
@@ -1359,7 +1359,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-05-22-sundar-pichai-anxious-ai-future.html"
     },
     {
-      "title": "모두가 AI를 마스터하는데 나만 뒤처졌다는 착각",
+      "title": "모두가 AI를 잘 쓰는데 나만 뒤처졌다는 착각",
       "date": "2026-05-27",
       "category": "survival",
       "source": "Nature (Zhang-Ren Chen)",
