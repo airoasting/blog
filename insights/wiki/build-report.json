@@ -1,48 +1,36 @@
 {
-  "buildAt": "2026-08-08T05:01:38.246Z",
-  "duration": 1.21,
+  "buildAt": "2026-08-26T06:32:35.876Z",
+  "duration": 0.363,
   "concepts": {
-    "total": 126,
-    "validDefinitions": 120,
-    "needsReview": 6
+    "total": 131,
+    "validDefinitions": 128,
+    "needsReview": 3
   },
   "relationships": {
-    "total": 328
+    "total": 336
   },
   "coverage": {
-    "postsWithConcepts": 246,
-    "totalPosts": 262
+    "postsWithConcepts": 251,
+    "totalPosts": 267
   },
   "inject": {
-    "updated": 2,
+    "updated": 15,
     "inserted": 0,
-    "unchanged": 260,
+    "unchanged": 252,
     "skipped": 0
   },
   "needsManualReview": [
     {
-      "name": "앤트로픽",
-      "slug": "앤트로픽"
+      "name": "조직",
+      "slug": "조직"
     },
     {
-      "name": "보안",
-      "slug": "보안"
+      "name": "창의성",
+      "slug": "창의성"
     },
     {
-      "name": "AI투자",
-      "slug": "ai투자"
-    },
-    {
-      "name": "채용",
-      "slug": "채용"
-    },
-    {
-      "name": "프롬프팅",
-      "slug": "prompting"
-    },
-    {
-      "name": "스킬",
-      "slug": "스킬"
+      "name": "규제",
+      "slug": "규제"
     }
   ]
 }
