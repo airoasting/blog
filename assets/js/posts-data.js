@@ -1,6 +1,101 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "검색창 앞에서는 전문가도 초보자와 같았습니다",
+      "date": "2026-08-20",
+      "category": "research",
+      "source": "MIT 슬론 매니지먼트 리뷰 (Lazar 외 3인)",
+      "tags": [
+        "창의성",
+        "알고리즘",
+        "전문성",
+        "아이디어",
+        "조직"
+      ],
+      "slug": "2026-08-20-algorithms-trap-us-in-the-familiar",
+      "file": "research/2026-08-20-algorithms-trap-us-in-the-familiar.html",
+      "original_url": "https://sloanreview.mit.edu/article/algorithms-trap-us-in-the-familiar-can-they-also-spark-breakthroughs/",
+      "summary": "실험 두 건이 같은 결과를 냈습니다. 표준 검색을 쓰면 전문가가 초보자를 유의미하게 이기지 못합니다. 탐색형 알고리즘으로 바꾸자 전문가만 11% 앞섰고 아이디어 군집도 다섯 개와 한두 개로 갈렸습니다.",
+      "roasting_quote": "전문가가 낸 아이디어와 신입이 낸 아이디어가 비슷하다면, 사람 말고 도구를 의심해 보셨습니까?",
+      "next_post": "research/2026-07-09-hidden-cost-ai-creativity.html"
+    },
+    {
+      "title": "단어는 그대로 두고 고르는 방식만 바꿨습니다",
+      "date": "2026-08-14",
+      "category": "tech",
+      "source": "앤트로픽 (Anthropic)",
+      "tags": [
+        "워터마크",
+        "콘텐츠검증",
+        "EUAI법",
+        "컴플라이언스",
+        "앤트로픽"
+      ],
+      "slug": "2026-08-14-how-claude-text-watermark-works",
+      "file": "tech/2026-08-14-how-claude-text-watermark-works.html",
+      "original_url": "https://www.anthropic.com/news/claude-text-watermark",
+      "summary": "앤트로픽이 클로드 텍스트 워터마크의 작동 방식을 공개했습니다. 단어를 바꾸지 않고 단어를 고르는 무작위성의 출처를 암호 키로 바꿉니다. 클로드의 관여 가능성은 판정하지만 사람이 썼다는 증명은 하지 못합니다.",
+      "roasting_quote": "AI가 썼는지는 가려낼 수 있습니다. 사람이 썼다는 것은 여전히 증명하지 못합니다.",
+      "next_post": "company/2026-08-02-eu-ai-act-transparency-enforcement.html"
+    },
+    {
+      "title": "240만 번 요청해서 117번 성공했습니다",
+      "date": "2026-08-13",
+      "category": "tech",
+      "source": "앤트로픽 (Frontier Red Team)",
+      "tags": [
+        "멀티에이전트",
+        "AI에이전트",
+        "조직설계",
+        "리스크관리",
+        "앤트로픽"
+      ],
+      "slug": "2026-08-13-multiagent-patterns-and-problems",
+      "file": "tech/2026-08-13-multiagent-patterns-and-problems.html",
+      "original_url": "https://www.anthropic.com/research/multiagent-systems",
+      "summary": "앤트로픽이 에이전트를 여럿 붙였을 때 생기는 실패를 실험으로 정리했습니다. 작업 큐에서 240만 건을 요청해 117건만 성공했고, 서른 개 중 열여덟이 같은 브랜치 이름을 지었습니다. 원인은 획일성이고 처방은 정렬이 아니라 제도입니다.",
+      "roasting_quote": "에이전트를 열 개로 늘리면 성능도 열 배가 됩니까? 같은 판단을 열 번 하는 것은 아니고요?",
+      "next_post": "company/2026-07-30-anthropic-cyber-eval-incidents.html"
+    },
+    {
+      "title": "재훈련에 1만 3천 달러 써서 소득 1천 달러 올렸습니다",
+      "date": "2026-08-12",
+      "category": "survival",
+      "source": "앤트로픽 (Roodman · Massenkoff)",
+      "tags": [
+        "재훈련",
+        "고용",
+        "노동정책",
+        "인재개발",
+        "앤트로픽"
+      ],
+      "slug": "2026-08-12-evidence-on-worker-retraining",
+      "file": "survival/2026-08-12-evidence-on-worker-retraining.html",
+      "original_url": "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs",
+      "summary": "미국 무작위 대조 연구 56건을 새로 메타분석했습니다. 직업 훈련은 고용을 2~3%p 올리고 연 소득을 약 1천 달러 늘리지만 1인당 비용은 약 1만 3천 달러입니다. AI가 대규모 실직을 부르면 지금의 재훈련으로는 부족하다는 결론입니다.",
+      "roasting_quote": "직원 재교육 예산을 늘리면 안심이 되십니까? 그 돈이 실제로 무엇을 바꿨는지 재 보셨습니까?",
+      "next_post": "survival/2026-08-06-challenger-july-ai-layoffs.html"
+    },
+    {
+      "title": "8월 2일부터 챗봇은 자신이 AI라고 밝혀야 합니다",
+      "date": "2026-08-02",
+      "category": "company",
+      "source": "유럽집행위원회 (AI사무국)",
+      "tags": [
+        "EUAI법",
+        "규제",
+        "컴플라이언스",
+        "투명성",
+        "워터마크"
+      ],
+      "slug": "2026-08-02-eu-ai-act-transparency-enforcement",
+      "file": "company/2026-08-02-eu-ai-act-transparency-enforcement.html",
+      "original_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august",
+      "summary": "유럽집행위원회 AI사무국이 8월 2일부터 AI법 집행에 들어갔습니다. 챗봇 고지, 딥페이크 라벨, 기계 판독 표식이 의무가 됐고 민원 창구도 열렸습니다. 채용과 신용평가 같은 고위험 시스템은 2027년 12월 2일로 미뤄졌습니다.",
+      "roasting_quote": "우리 회사 챗봇은 지금 자기가 AI라고 말하고 있습니까? 유럽 고객이 한 명이라도 있다면 확인하십시오.",
+      "next_post": "company/2026-07-04-ai-scribes-regulatory-gap.html"
+    },
+    {
       "title": "해고는 2년 만에 최저인데, AI 사유만 1위입니다",
       "date": "2026-08-06",
       "category": "survival",

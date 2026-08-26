@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="앤트로픽이 클로드 텍스트 워터마크의 작동 방식을 공개했습니다. 단어를 바꾸지 않고 단어를 고르는 무작위성의 출처를 바꿉니다. AI가 썼는지는 가려내지만 사람이 썼다는 증명은 못 합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="단어는 그대로 두고 고르는 방식만 바꿨습니다">
+  <meta property="og:description" content="EU AI법이 요구한 기계 판독 표식에 개발사가 내놓은 실제 구현입니다. 할 수 있는 일과 못 하는 일이 분명합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-08-14-how-claude-text-watermark-works.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-08-14">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="워터마크">
+  <meta property="article:tag" content="콘텐츠검증">
+  <meta property="article:tag" content="EUAI법">
+  <meta property="article:tag" content="컴플라이언스">
+  <meta property="article:tag" content="앤트로픽">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="단어는 그대로 두고 고르는 방식만 바꿨습니다">
+  <meta name="twitter:description" content="AI가 썼는지는 가려낼 수 있습니다. 사람이 썼다는 것은 여전히 증명하지 못합니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "단어는 그대로 두고 고르는 방식만 바꿨습니다",
+    "datePublished": "2026-08-14",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "클로드 텍스트 워터마크의 작동 원리와 한계를, EU AI법 표식 의무와 연결해 기업 관점에서 정리합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-08-14-how-claude-text-watermark-works.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_08_14_how-claude-text-watermark-works/thumbnail.png" alt="단어는 그대로 두고 고르는 방식만 바꿨습니다" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 8월 14일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">단어는 그대로 두고 고르는 방식만 바꿨습니다</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>앤트로픽 (Anthropic)</span>
+            <span><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=워터마크" class="post-tag">#워터마크</a>
+            <a href="../index.html?tag=콘텐츠검증" class="post-tag">#콘텐츠검증</a>
+            <a href="../index.html?tag=EUAI법" class="post-tag">#EUAI법</a>
+            <a href="../index.html?tag=컴플라이언스" class="post-tag">#컴플라이언스</a>
+            <a href="../index.html?tag=앤트로픽" class="post-tag">#앤트로픽</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="단어는 그대로 두고 고르는 방식만 바꿨습니다" data-date="2026-08-14" data-category="tech" data-source="앤트로픽 (Anthropic)" data-tags="워터마크, 콘텐츠검증, EUAI법, 컴플라이언스, 앤트로픽" data-original-url="https://www.anthropic.com/news/claude-text-watermark" data-roasting-quote="AI가 썼는지는 가려낼 수 있습니다. 사람이 썼다는 것은 여전히 증명하지 못합니다." data-next-post="../company/2026-08-02-eu-ai-act-transparency-enforcement.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">앤트로픽이 클로드 텍스트 워터마크의 작동 방식을 공개했습니다. 7월에 서명한 EU AI법 요건에 맞춘 기능입니다.</p>
+        <p data-summary="">단어를 바꾸는 방식이 아닙니다. 비슷하게 자연스러운 후보 중 하나를 고를 때 쓰는 무작위성의 출처를 암호 키로 바꿉니다.</p>
+        <p data-summary="">클로드의 관여 가능성은 판정할 수 있습니다. 사람이 썼다는 확인, 다른 AI의 관여 식별, 짧은 글 판정은 하지 못합니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI가 썼는지는 가려낼 수 있습니다.<br>사람이 썼다는 것은 여전히 증명하지 못합니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI가 쓴 글을 가려내겠다는 시도는 오래 실패해 왔습니다. 문체를 통계로 재는 방식은 오판이 잦았습니다.</p>
+        <p>앤트로픽이 8월 14일 다른 접근을 공개했습니다. 글을 나중에 검사하지 않고, 만들 때 표식을 심어 두는 방식입니다. 단어 자체는 손대지 않습니다. 단어를 고르는 순간의 무작위성만 바꿉니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>8월 2일부터 EU AI법은 합성 콘텐츠에 기계가 읽을 수 있는 표식을 요구합니다. 이 요건은 서비스를 만드는 회사가 자기 코드로 해결할 수 없습니다. 표식은 글을 생성하는 모델 쪽에서 넣어야 하기 때문입니다. 모델 공급사가 무엇을 어떻게 넣는지가 곧 우리 회사의 준수 여부가 됩니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 방식이 특이합니다.</strong> 모델은 다음 단어를 고를 때 여러 후보를 놓고 확률을 계산합니다. 흐리다와 잿빛이다처럼 어느 쪽을 써도 자연스러운 순간이 문장마다 생깁니다. 워터마크는 그 순간에 개입합니다. 단어를 바꾸는 대신 어느 쪽을 고를지 정하는 무작위성의 출처를 암호 키로 갈아 끼웁니다.</p>
+
+        <p>판단이 갈려도 결과가 어색해지지 않는 자리만 골라 쓰기 때문에 읽는 사람은 차이를 느끼지 못합니다. 이런 낮은 위험도의 선택이 글 전체에 흩어지면서 하나의 패턴을 만듭니다. 나중에 같은 키로 그 패턴을 확인합니다. 구글 딥마인드가 만든 신스ID 텍스트(SynthID-Text) 방식을 씁니다.</p>
+
+        <p><strong>둘째, 길이가 확신을 만듭니다.</strong> 표식은 선택의 누적으로 생깁니다. 문장이 몇 개뿐이면 개입할 자리도 몇 개뿐이라 판정이 흔들립니다. 글이 길어질수록 확신도가 올라갑니다. 짧은 답변이나 한 문단짜리 메모에는 쓸 수 없다는 뜻입니다.</p>
+
+        <p><strong>셋째, 사실을 적은 구절에는 표식이 붙지 않습니다.</strong> 뉴턴의 프린키피아 같은 고유명사와 정확한 표현이 필요한 자리에는 바꿔 쓸 후보가 없습니다. 선택지가 없으면 개입할 틈도 없습니다. 정밀함이 요구되는 코드도 같은 이유로 약합니다. 사실과 숫자로 채운 문서일수록 표식이 옅어집니다.</p>
+
+        <p><strong>넷째, 많이 다듬은 글에서는 흐려집니다.</strong> 사람이 문장을 크게 고쳐 쓰면 심어 둔 선택들이 지워집니다. 편집을 거친 문서에서 클로드의 관여를 잡아내는 일은 어렵습니다. 초안 그대로 나간 글과 손을 많이 본 글의 판정 신뢰도가 다릅니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>할 수 있는 일</th>
+                <th style="text-align: center;">하지 못하는 일</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>판정 대상</td>
+                <td>클로드가 생성·편집에 관여했을 가능성</td>
+                <td class="cell-hl" style="text-align: center;">사람이 썼다는 확인</td>
+              </tr>
+              <tr>
+                <td>다른 AI</td>
+                <td>해당 없음</td>
+                <td class="cell-hl" style="text-align: center;">타사 모델의 관여 식별</td>
+              </tr>
+              <tr>
+                <td>글 길이</td>
+                <td>길수록 확신도 상승</td>
+                <td style="text-align: center;">짧은 표본의 신뢰 판정</td>
+              </tr>
+              <tr>
+                <td>문서 성격</td>
+                <td>서술형 산문</td>
+                <td style="text-align: center;">사실 나열·정밀 코드·중교정 문서</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Anthropic (2026, August 14), 기능 설명 재구성.</p>
+        </div>
+
+        <p><strong>다섯째, 이 비대칭이 실무의 핵심입니다.</strong> 워터마크는 클로드가 관여했을 가능성을 말해 줍니다. 표식이 없다는 사실은 사람이 썼다는 증거가 되지 못합니다. 다른 AI로 썼을 수도 있고, 클로드로 쓴 뒤 많이 고쳤을 수도 있습니다. 두 문장은 전혀 다른 주장이며, 실무에서 섞이면 사람이 다칩니다.</p>
+
+        <p>채용 심사나 학생 평가에서 이 도구를 반대 방향으로 쓰면 문제가 커집니다. 표식이 없으니 본인이 썼다고 판정하는 방식도, 표식이 있으니 부정행위라고 단정하는 방식도 근거를 넘어섭니다. 이 기능은 판정이 아니라 참고 신호를 냅니다.</p>
+
+        <p><strong>여섯째, 검증 수단은 아직 예고 단계입니다.</strong> 앤트로픽은 워터마크 탐지 API를 곧 제공하겠다고 밝혔습니다. 구현 세부는 정해지지 않았습니다. 표식이 들어가는 것과 우리가 그것을 확인할 수 있는 것은 다른 문제입니다. 준수 계획을 세울 때 이 시차를 넣어야 합니다.</p>
+
+        <p>성능 쪽 부담은 없다고 적었습니다. 비용이 오르거나 속도가 떨어지거나 출력 품질이 나빠지지 않습니다. 켜고 끄는 선택의 문제가 아니라 기본으로 깔리는 층에 가깝습니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>탐지 결과를 증거가 아니라 신호로 다루는 규칙을 먼저 정하세요.</strong><br>"워터마크 판정은 단독 근거로 쓰지 않는다"를 사내 지침에 넣으세요. 도구가 들어온 다음에 정하면 이미 늦습니다. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>사람이 썼다는 증명에 이 도구를 쓰지 마세요.</strong><br>표식이 없다는 결과를 본인 작성의 근거로 삼는 절차가 있는지 점검하세요. 채용과 평가 문서에서 특히 위험합니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>모델 공급사에 탐지 수단의 제공 시점을 물으세요.</strong><br>표식 삽입 여부와 별개로 검증 API의 일정과 조건을 서면으로 받아 두세요. 두 가지는 함께 오지 않습니다. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>EU 표식 의무와 묶어 한 장으로 관리하세요.</strong><br>8월 2일부터 켜진 기계 판독 표식 요건과 공급사의 워터마크 지원 현황을 같은 표에 넣으세요. 규제 항목과 기술 항목이 흩어지면 빈칸이 생깁니다. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>짧은 글에서는 신뢰할 수 없습니다.</strong> 표식은 선택의 누적으로 만들어집니다. 문단 하나 분량에서는 판정이 흔들립니다. 짧은 답변을 근거로 쓰면 오판이 납니다.</p>
+
+        <p><strong>클로드에만 해당합니다.</strong> 다른 회사 모델이 쓴 글은 이 방식으로 잡히지 않습니다. AI 사용 여부 전반을 가리는 도구가 아닙니다.</p>
+
+        <p><strong>손을 많이 본 글에서는 사라집니다.</strong> 사람이 문장을 크게 고치면 심어 둔 선택이 지워집니다. 편집을 거친 문서의 판정은 신뢰도가 낮습니다.</p>
+
+        <p><strong>검증 API가 아직 나오지 않았습니다.</strong> 곧 제공하겠다는 예고 단계입니다. 지금은 표식이 들어가도 우리 손으로 확인할 방법이 없습니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>이 도구는 AI가 썼는지를 묻는 데 쓰는 물건입니다. 사람이 썼는지를 묻는 데 쓰면 틀립니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>워터마크를 콘텐츠 진위 문제의 해결책으로 발표하지 마라. 잡는 범위가 자사 모델 하나다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">법무/컴플라이언스</span>
+            <span>표식 삽입과 표식 검증을 별개 항목으로 관리하라. 앞은 들어왔고 뒤는 아직 없다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">인사/평가</span>
+            <span>판정 결과를 단독 근거로 쓰는 절차를 지금 막아라. 표식이 없다는 사실은 아무것도 증명하지 않는다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>텍스트 워터마크</strong>: AI가 글을 만들 때 사람 눈에 보이지 않는 표식을 심어 두었다가 나중에 확인하는 기술입니다.</p>
+          <p><strong>신스ID 텍스트</strong>: 구글 딥마인드가 만든 텍스트 워터마크 방식입니다. 클로드가 채택한 방법입니다.</p>
+          <p><strong>무작위성의 출처</strong>: 모델이 여러 후보 단어 중 하나를 고를 때 쓰는 난수의 근원입니다. 여기에 암호 키를 넣어 표식을 만듭니다.</p>
+          <p><strong>낮은 위험도 선택</strong>: 어느 쪽을 골라도 뜻과 자연스러움이 달라지지 않는 자리입니다. 워터마크는 이런 자리만 씁니다.</p>
+          <p><strong>기계 판독 표식</strong>: 사람은 못 읽고 프로그램만 읽는 표시입니다. EU AI법이 합성 콘텐츠에 요구하는 요건입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Anthropic. (2026, August 14). <em>How Claude's text watermark works</em> [Article]. Anthropic. (<a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">표식이 없으면 사람이 썼다는 뜻 아니에요? 이게 왜 증명이 안 됩니까.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">다른 AI로 썼을 수도 있고, 클로드로 쓴 뒤 많이 고쳤을 수도 있어요. 없다는 사실이 아무것도 말해 주지 않습니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">아, 한 방향으로만 되는 거군요. 그럼 평가에 쓰면 사고 나겠네요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희 인사팀이 이거 도입하자고 할 것 같은데요. 미리 뭘 정해 둬야 하나요?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">단독 근거로 쓰지 않는다를 지침에 먼저 넣으세요. 도구가 들어온 다음엔 늦습니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희는 벌써 겪었어요. 탐지 도구 하나 붙였다가 억울한 사람이 나와서 결국 뺐습니다.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">단어를 안 바꾸고 고르는 방식만 바꾼다는 게 신기해요. 흐리다와 잿빛이다 중에 뭘 고를지로 표식을 만든다니요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">대신 사실만 적은 문서엔 안 붙어요. 바꿔 쓸 후보가 없으니까요. 숫자표에는 못 씁니다.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../company/2026-08-02-eu-ai-act-transparency-enforcement.html">
+          <div class="next-post-title">8월 2일부터 챗봇은 자신이 AI라고 밝혀야 합니다 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/앤트로픽.html" class="concept-chip">앤트로픽</a>
+      <a href="../insights/wiki/concepts/llm.html" class="concept-chip">LLM</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-08-14-how-claude-text-watermark-works.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-08-14-how-claude-text-watermark-works.html';
+    const ROASTING_QUOTE = 'AI가 썼는지는 가려낼 수 있습니다. 사람이 썼다는 것은 여전히 증명하지 못합니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

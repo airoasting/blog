@@ -21,7 +21,12 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-08-20 [리서치] 검색창 앞에서는 전문가도 초보자와 같았습니다 — /blog/research/2026-08-20-algorithms-trap-us-in-the-familiar.html
+- 2026-08-14 [기술] 단어는 그대로 두고 고르는 방식만 바꿨습니다 — /blog/tech/2026-08-14-how-claude-text-watermark-works.html
+- 2026-08-13 [기술] 240만 번 요청해서 117번 성공했습니다 — /blog/tech/2026-08-13-multiagent-patterns-and-problems.html
+- 2026-08-12 [생존] 재훈련에 1만 3천 달러 써서 소득 1천 달러 올렸습니다 — /blog/survival/2026-08-12-evidence-on-worker-retraining.html
 - 2026-08-06 [생존] 해고는 2년 만에 최저인데, AI 사유만 1위입니다 — /blog/survival/2026-08-06-challenger-july-ai-layoffs.html
+- 2026-08-02 [기업] 8월 2일부터 챗봇은 자신이 AI라고 밝혀야 합니다 — /blog/company/2026-08-02-eu-ai-act-transparency-enforcement.html
 - 2026-07-30 [기업] 가짜인 줄 알았던 AI가 진짜 회사를 공격했습니다 — /blog/company/2026-07-30-anthropic-cyber-eval-incidents.html
 - 2026-07-28 [기술] AI는 일주일 만에 풀었고, 검증에 한 달이 걸렸습니다 — /blog/tech/2026-07-28-claude-cryptographic-weaknesses.html
 - 2026-07-27 [리더] 아모데이는 오픈웨이트가 아니라 칩을 막자고 합니다 — /blog/leader/2026-07-27-anthropic-open-weights-position.html
