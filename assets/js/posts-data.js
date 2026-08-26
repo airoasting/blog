@@ -357,7 +357,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-16-kimi-k3.html"
     },
     {
-      "title": "딥마인드 연구원이 사표로 남긴 기록",
+      "title": "딥마인드 연구원이 사표를 쓰며 남긴 기록",
       "date": "2026-07-15",
       "category": "leader",
       "source": "turntrout.com (Alex Turner)",
@@ -1210,7 +1210,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-06-02-claude-code-dynamic-workflows.html"
     },
     {
-      "title": "AI 리서치를 2분에 끝낸 건 지식 그래프였습니다",
+      "title": "논문 4,300만 건을 이은 지식 그래프",
       "date": "2026-05-20",
       "category": "research",
       "source": "arXiv (Shuofei Qiao 외 10인)",
@@ -1229,7 +1229,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-27-law-professors-prefer-ai.html"
     },
     {
-      "title": "AI 일자리 종말론은 과장입니다, 진짜 위험은 따로 있습니다",
+      "title": "일자리 종말론이 가린 진짜 위험",
       "date": "2026-05-06",
       "category": "survival",
       "source": "a16z (David George)",
@@ -1396,7 +1396,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-29-openai-erdos-unit-distance-problem.html"
     },
     {
-      "title": "신입 채용을 줄인 건 AI가 아니라 재택근무였습니다",
+      "title": "신입 채용을 줄인 진짜 원인, 재택근무",
       "date": "2026-05-20",
       "category": "survival",
       "source": "SSRN (Peter John Lambert, Yannick Schindler)",
@@ -1414,7 +1414,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
-      "title": "AI가 만든 콘텐츠가 세상을 덮고 있습니다",
+      "title": "다섯 영역을 덮은 AI 생성물",
       "date": "2026-05-20",
       "category": "survival",
       "source": "The Washington Post (Kevin Schaul)",
@@ -1504,7 +1504,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-05-10-garry-tan-meta-meta-prompting-personal-ai.html"
     },
     {
-      "title": "Claude에게 '왜'를 가르쳤더니 협박을 멈췄습니다",
+      "title": "행동이 아니라 이유를 가르치자 멈춘 협박",
       "date": "2026-05-08",
       "category": "tech",
       "source": "Anthropic Research (Anthropic)",
@@ -1522,7 +1522,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-04-14-dorsey-mode-ai-org-design.html"
     },
     {
-      "title": "AI가 숨긴 속마음을 읽어냈습니다",
+      "title": "모델의 내부 활성값을 문장으로 옮기는 법",
       "date": "2026-05-07",
       "category": "tech",
       "source": "Anthropic Research (Anthropic)",
@@ -1558,7 +1558,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-07-natural-language-autoencoders.html"
     },
     {
-      "title": "GPT-5.5, 12시간 짜리 해킹 작업을 10분 만에 완수했습니다",
+      "title": "전문가 12시간짜리 해킹 과제, GPT-5.5는 10분",
       "date": "2026-04-30",
       "category": "tech",
       "source": "AISI (영국 AI 안전 연구소)",
@@ -1576,7 +1576,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-30-ctx2skill-context-learning.html"
     },
     {
-      "title": "AI에게 인생 상담? 4건 중 1건은 동조였습니다",
+      "title": "인생 상담 4건 중 1건은 아첨",
       "date": "2026-04-30",
       "category": "survival",
       "source": "Anthropic (Judy Hanwen Shen 외 32인)",
@@ -1631,7 +1631,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-03-01-conductor-multi-agent-orchestration.html"
     },
     {
-      "title": "잭 도시: 회사는 위계가 아니라 지능입니다",
+      "title": "잭 도시가 다시 그린 회사, 위계 대신 지능",
       "date": "2026-04-13",
       "category": "leader",
       "source": "Long Strange Trip Podcast (Brian Halligan, Jack Dorsey, Roelof Botha)",
@@ -1667,7 +1667,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-04-13-jack-dorsey-company-as-intelligence.html"
     },
     {
-      "title": "AI 도구에도 소득 격차가 있습니다",
+      "title": "쓰는 AI로 갈리는 소득 계층",
       "date": "2026-04-22",
       "category": "survival",
       "source": "Epoch AI (Caroline Falkman Olsson, Jaeho Lee)",
@@ -1685,7 +1685,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-04-14-harvard-what-makes-a-good-learner.html"
     },
     {
-      "title": "DeepSeek V4-Pro, 코딩 성능 1위에 가격은 클로드의 7분의 1입니다",
+      "title": "코딩 1위 딥시크 V4-Pro, 가격은 7분의 1",
       "date": "2026-04-24",
       "category": "tech",
       "source": "DeepSeek (DeepSeek 연구팀)",
@@ -1721,7 +1721,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
     },
     {
-      "title": "GPT-5.5, 에이전트 코딩 1위를 가져갔습니다",
+      "title": "에이전트 코딩 1위를 가져간 GPT-5.5",
       "date": "2026-04-23",
       "category": "tech",
       "source": "OpenAI (OpenAI Team)",
@@ -1740,7 +1740,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-16-claude-opus-4-7-launch.html"
     },
     {
-      "title": "클로드 오퍼스 4.7, 코딩 성능 13% 올리고 가격은 동결했습니다",
+      "title": "코딩 13% 향상, 가격은 그대로인 오퍼스 4.7",
       "date": "2026-04-16",
       "category": "tech",
       "source": "Anthropic (Claude Team)",
@@ -1776,7 +1776,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-04-07-llm-behavioral-alignment-gap.html"
     },
     {
-      "title": "스탠퍼드 AI 인덱스 2026: 격차가 사라지고 있습니다",
+      "title": "스탠퍼드 AI 인덱스 2026, 좁혀진 미중 격차",
       "date": "2026-04-13",
       "category": "tech",
       "source": "Stanford HAI (AI Index 팀)",
@@ -1920,7 +1920,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-02-gemma-4-open-model.html"
     },
     {
-      "title": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
+      "title": "유출된 클로드 코드가 드러낸 설계 원칙 8가지",
       "date": "2026-04-08",
       "category": "tech",
       "source": "MindStudio",
@@ -1954,7 +1954,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-04-07-culture-that-ate-silicon-valley.html"
     },
     {
-      "title": "Anthropic이 기업 시장을 장악한 이유: 신뢰가 전략입니다",
+      "title": "앤트로픽이 기업 시장을 가져간 무기, 신뢰",
       "date": "2026-04-07",
       "category": "company",
       "source": "Substack (Raj Sarkar)",
@@ -2123,7 +2123,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-04-08-gallup-engagement-ai-paradox.html"
     },
     {
-      "title": "AI는 당신의 감정에 관심 없습니다",
+      "title": "프롬프트에 감정을 넣어도 달라지지 않는 성능",
       "date": "2026-04-02",
       "category": "tech",
       "source": "arXiv (Minda Zhao 외 7인)",
@@ -2140,7 +2140,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-03-31-asi-evolve-ai-accelerates-ai.html"
     },
     {
-      "title": "Claude 안의 감정: 171개 벡터가 행동을 결정한다",
+      "title": "클로드의 행동을 가르는 171개 감정 벡터",
       "date": "2026-04-02",
       "category": "research",
       "source": "Anthropic (Interpretability Team)",
@@ -2157,7 +2157,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-04-03-karpathy-llm-knowledge-base.html"
     },
     {
-      "title": "Claude Code 소스 코드 유출, 8가지 설계 원칙이 드러났습니다",
+      "title": "유출된 클로드 코드가 드러낸 설계 원칙 8가지",
       "date": "2026-04-01",
       "category": "tech",
       "source": "MindStudio Blog (MindStudio Team)",
@@ -2208,7 +2208,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-03-23-vibe-physics-ai-grad-student.html"
     },
     {
-      "title": "전 구글 임원의 경고: 준비할 시간이 2년입니다",
+      "title": "전 구글 임원이 못 박은 2년의 시간표",
       "date": "2026-03-31",
       "category": "leader",
       "source": "YouTube (Silicon Valley Girl)",
@@ -2242,7 +2242,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-04-06-sam-altman-can-he-be-trusted.html"
     },
     {
-      "title": "AI가 ML 논문을 혼자 썼습니다, Nature도 실었습니다",
+      "title": "피어리뷰를 통과한 AI의 단독 논문",
       "date": "2026-03-26",
       "category": "tech",
       "source": "Nature (Sakana AI + UBC + Vector Institute + Oxford)",
@@ -2276,7 +2276,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-04-02-claude-emotion-vectors.html"
     },
     {
-      "title": "소프트웨어에 남은 길은 두 가지뿐입니다",
+      "title": "소프트웨어에 남은 두 갈래 길",
       "date": "2026-03-23",
       "category": "company",
       "source": "a16z (David George)",
@@ -2497,7 +2497,7 @@ window.POSTS_DATA = {
       "next_post": ""
     },
     {
-      "title": "Nvidia NemoClaw: AI 에이전트 플랫폼의 경쟁 축이 보안으로 이동한다",
+      "title": "엔비디아 네모클로, 성능에서 보안으로 옮긴 경쟁 축",
       "date": "2026-03-16",
       "category": "company",
       "source": "TechCrunch (Rebecca Szkutak)",
@@ -2734,7 +2734,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-03-28-ai-agent-traps.html"
     },
     {
-      "title": "AI는 일을 줄이지 않는다, 더 늘리고 있다",
+      "title": "AI가 줄인 것이 아니라 늘린 일",
       "date": "2026-02-09",
       "category": "research",
       "source": "HBR",
@@ -2887,7 +2887,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-03-10-alphago-10-years.html"
     },
     {
-      "title": "AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다",
+      "title": "AI 70개가 내놓은 단 두 갈래의 답",
       "date": "2025-10-27",
       "category": "tech",
       "source": "NeurIPS 2025",
@@ -2937,7 +2937,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-02-23-persona-selection-model.html"
     },
     {
-      "title": "AI가 만든 업무 쓰레기, 워크슬롭이 조직을 잠식한다",
+      "title": "조직을 잠식하는 AI 산출물, 워크슬롭",
       "date": "2025-09-22",
       "category": "research",
       "source": "HBR",
@@ -3343,7 +3343,7 @@ window.POSTS_DATA = {
       "next_post": "company/2025-06-20-cheating-is-also-an-ai-business-opportunity.html"
     },
     {
-      "title": "애플 WWDC 2025에 혁신은 없었다",
+      "title": "혁신이 빠진 애플 WWDC 2025",
       "date": "2025-06-14",
       "category": "tech",
       "source": "LinkedIn 아티클",
@@ -4159,7 +4159,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2025-04-10-ai-era-response-overload-society.html"
     },
     {
-      "title": "AI는 이제 ‘이야기’를 빼앗고 있다",
+      "title": "AI가 빼앗기 시작한 이야기의 힘",
       "date": "2025-04-01",
       "category": "survival",
       "source": "LinkedIn 아티클",
@@ -4312,7 +4312,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2025-03-15-optimization-ai-new-era.html"
     },
     {
-      "title": "최적화 AI는 새로운 가능성의 시대를 열 것입니다",
+      "title": "생성형과 다른 길, 최적화 AI",
       "date": "2025-03-15",
       "category": "tech",
       "source": "LinkedIn 아티클",
@@ -4482,7 +4482,7 @@ window.POSTS_DATA = {
       "next_post": "research/2025-03-01-how-korea-us-japan-gen-z-use-ai.html"
     },
     {
-      "title": "LLM은 더 작고 똑똑해질 것입니다",
+      "title": "더 작아지며 똑똑해지는 LLM",
       "date": "2025-02-15",
       "category": "tech",
       "source": "LinkedIn 아티클",

@@ -1,5 +1,5 @@
 ---
-title: 애플 WWDC 2025에 혁신은 없었다
+title: 혁신이 빠진 애플 WWDC 2025
 date: 2025-06-14
 brunch_url: https://brunch.co.kr/@jaydenkang/402
 source: aisycophancy

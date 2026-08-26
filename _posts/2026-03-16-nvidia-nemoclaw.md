@@ -1,5 +1,5 @@
 ---
-title: "Nvidia NemoClaw: AI 에이전트 플랫폼의 경쟁 축이 보안으로 이동한다"
+title: "엔비디아 네모클로, 성능에서 보안으로 옮긴 경쟁 축"
 date: 2026-03-16
 category: tech
 source: TechCrunch (Rebecca Szkutak)

@@ -1,5 +1,5 @@
 ---
-title: 최적화 AI는 새로운 가능성의 시대를 열 것입니다
+title: 생성형과 다른 길, 최적화 AI
 date: 2025-03-15
 linkedin_url: https://www.linkedin.com/in/jayden-kang/recent-activity/all/
 likes: 60

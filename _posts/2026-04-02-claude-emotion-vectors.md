@@ -1,4 +1,4 @@
-# Claude 안의 감정: 171개 벡터가 행동을 결정한다
+# 클로드의 행동을 가르는 171개 감정 벡터
 
 **카테고리:** 리서치
 **출처:** Anthropic Interpretability Team

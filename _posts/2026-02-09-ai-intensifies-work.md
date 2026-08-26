@@ -1,5 +1,5 @@
 ---
-title: AI는 일을 줄이지 않는다, 더 늘리고 있다
+title: AI가 줄인 것이 아니라 늘린 일
 date: 2026-02-09
 category: research
 source: HBR

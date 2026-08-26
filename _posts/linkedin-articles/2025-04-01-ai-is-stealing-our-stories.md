@@ -1,5 +1,5 @@
 ---
-title: AI는 이제 ‘이야기’를 빼앗고 있다
+title: AI가 빼앗기 시작한 이야기의 힘
 date: 2025-04-01
 brunch_url: https://brunch.co.kr/@jaydenkang/372
 source: airoastingiii

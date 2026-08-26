@@ -1,5 +1,5 @@
 ---
-title: "AI 70개에게 같은 질문을 던졌더니, 답은 2가지뿐이었다"
+title: "AI 70개가 내놓은 단 두 갈래의 답"
 date: 2025-10-27
 category: tech
 source: NeurIPS 2025

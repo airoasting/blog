@@ -1,5 +1,5 @@
 ---
-title: LLM은 더 작고 똑똑해질 것입니다
+title: 더 작아지며 똑똑해지는 LLM
 date: 2025-02-15
 brunch_url: https://brunch.co.kr/@jaydenkang/345
 source: airoastingii
