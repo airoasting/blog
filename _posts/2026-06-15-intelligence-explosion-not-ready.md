@@ -1,5 +1,5 @@
 ---
-title: "초지능엔 끄는 스위치가 없습니다"
+title: "끄는 스위치가 없는 초지능"
 date: 2026-06-15
 category: survival
 source: "The Economist (Will Marshall)"
@@ -7,7 +7,7 @@ original_url: "https://www.economist.com/by-invitation/2026/06/15/humanity-isnt-
 tags: [AI안전, 초지능, 재귀적자기개선, AI거버넌스, 실존위험]
 ---
 
-# 초지능엔 끄는 스위치가 없습니다
+# 끄는 스위치가 없는 초지능
 
 ## 3줄 요약
 

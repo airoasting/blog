@@ -1,5 +1,5 @@
 ---
-title: 전문가가 포기한 희귀병, AI가 단서를 찾았습니다
+title: 미진단 희귀질환 376건에서 나온 새 단서
 date: 2026-06-18
 category: tech
 source: OpenAI (보스턴 아동병원 · 하버드 공동연구, NEJM AI)

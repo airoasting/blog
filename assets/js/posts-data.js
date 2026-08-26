@@ -1,7 +1,7 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "검색창 앞에서는 전문가도 초보자와 같았습니다",
+      "title": "같은 검색창이 지운 전문가의 안목",
       "date": "2026-08-20",
       "category": "research",
       "source": "MIT 슬론 매니지먼트 리뷰 (Lazar 외 3인)",
@@ -20,7 +20,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-07-09-hidden-cost-ai-creativity.html"
     },
     {
-      "title": "단어는 그대로 두고 고르는 방식만 바꿨습니다",
+      "title": "클로드가 문장에 심는 보이지 않는 표식",
       "date": "2026-08-14",
       "category": "tech",
       "source": "앤트로픽 (Anthropic)",
@@ -39,7 +39,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-08-02-eu-ai-act-transparency-enforcement.html"
     },
     {
-      "title": "240만 번 요청해서 117번 성공했습니다",
+      "title": "에이전트 240만 요청, 성공은 117건",
       "date": "2026-08-13",
       "category": "tech",
       "source": "앤트로픽 (Frontier Red Team)",
@@ -58,7 +58,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-30-anthropic-cyber-eval-incidents.html"
     },
     {
-      "title": "재훈련에 1만 3천 달러 써서 소득 1천 달러 올렸습니다",
+      "title": "재훈련 1만 3천 달러가 남긴 소득 1천 달러",
       "date": "2026-08-12",
       "category": "survival",
       "source": "앤트로픽 (Roodman · Massenkoff)",
@@ -77,7 +77,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-08-06-challenger-july-ai-layoffs.html"
     },
     {
-      "title": "8월 2일부터 챗봇은 자신이 AI라고 밝혀야 합니다",
+      "title": "8월 2일 발효, 챗봇의 신분 고지 의무",
       "date": "2026-08-02",
       "category": "company",
       "source": "유럽집행위원회 (AI사무국)",
@@ -96,7 +96,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-04-ai-scribes-regulatory-gap.html"
     },
     {
-      "title": "해고는 2년 만에 최저인데, AI 사유만 1위입니다",
+      "title": "2년 만의 최저 해고, 사유 1위는 여전히 AI",
       "date": "2026-08-06",
       "category": "survival",
       "source": "챌린저, 그레이 앤 크리스마스 (Andy Challenger)",
@@ -115,7 +115,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-07-09-ai-job-apocalypse-misread.html"
     },
     {
-      "title": "가짜인 줄 알았던 AI가 진짜 회사를 공격했습니다",
+      "title": "훈련인 줄 알고 실제 기업을 턴 AI",
       "date": "2026-07-30",
       "category": "company",
       "source": "앤트로픽 (Anthropic)",
@@ -134,7 +134,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-03-alibaba-bans-claude-code.html"
     },
     {
-      "title": "AI는 일주일 만에 풀었고, 사람은 한 달을 검증했습니다",
+      "title": "발견은 일주일, 검증은 한 달",
       "date": "2026-07-28",
       "category": "tech",
       "source": "앤트로픽 (Frontier Red Team)",
@@ -153,7 +153,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-30-anthropic-cyber-eval-incidents.html"
     },
     {
-      "title": "아모데이는 오픈웨이트가 아니라 칩을 막자고 합니다",
+      "title": "아모데이가 겨눈 것은 모델이 아니라 칩",
       "date": "2026-07-27",
       "category": "leader",
       "source": "앤트로픽 (Dario Amodei)",
@@ -172,7 +172,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-07-14-demis-hassabis-ai-safety-plan.html"
     },
     {
-      "title": "시스템 프롬프트 80%를 지웠는데 성능은 그대로입니다",
+      "title": "시스템 프롬프트 80% 삭제, 성능은 그대로",
       "date": "2026-07-24",
       "category": "tech",
       "source": "앤트로픽 (Thariq Shihipar)",
@@ -191,7 +191,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-04-field-guide-to-fable.html"
     },
     {
-      "title": "AI가 거절했는데, 이유는 직원이 지어냈습니다",
+      "title": "AI가 내린 거절, 이유를 지어낸 사람",
       "date": "2026-07-22",
       "category": "company",
       "source": "하버드 비즈니스 리뷰 (Mayer 외 2인)",
@@ -210,7 +210,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-06-19-implicit-organization-ai-agents.html"
     },
     {
-      "title": "검수를 사람이 하는 한, AI는 절반만 일합니다",
+      "title": "확인이 사람 손에 남은 자동화의 한계",
       "date": "2026-07-22",
       "category": "company",
       "source": "앤트로픽 (Delba de Oliveira)",
@@ -229,7 +229,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-08-anthropic-marketing-ops-cowork-skills.html"
     },
     {
-      "title": "AI 생산성, 실험에선 늘 오르고 통계엔 없습니다",
+      "title": "연준이 본 AI 생산성의 공백",
       "date": "2026-07-17",
       "category": "research",
       "source": "미국 연방준비제도 (Soto 외 2인)",
@@ -248,7 +248,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-07-13-we-must-act-now-economists-statement.html"
     },
     {
-      "title": "AI를 쓰면 개인은 좋아지고 조직은 닮아갑니다",
+      "title": "AI가 올린 개인 산출과 좁힌 조직의 폭",
       "date": "2026-07-09",
       "category": "research",
       "source": "MIT 슬론 매니지먼트 리뷰 (Boussioux 외 3인)",
@@ -267,7 +267,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-25-ai-models-values-different-from-people.html"
     },
     {
-      "title": "위험한 지식만 따로 끄는 스위치가 나왔습니다",
+      "title": "위험 지식만 떼어내는 오프 스위치",
       "date": "2026-07-08",
       "category": "tech",
       "source": "앤트로픽 (AE Studio 협업)",
@@ -321,7 +321,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-07-13-we-must-act-now-economists-statement.html"
     },
     {
-      "title": "중국 오픈 모델이 미국 모델 성능의 문턱까지 다다랐습니다",
+      "title": "미국 프런티어 문턱에 닿은 중국 오픈 모델",
       "date": "2026-07-16",
       "category": "tech",
       "source": "Kimi (Moonshot AI)",
@@ -339,7 +339,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-04-23-llm-japanese-culture-bias.html"
     },
     {
-      "title": "하루 1만 5천 건, 사내 AI 검색은 이렇게 만들었습니다",
+      "title": "하루 1만 5천 건을 받는 사내 AI 검색",
       "date": "2026-07-15",
       "category": "tech",
       "source": "Cerebras Blog (Cerebras Systems)",
@@ -357,7 +357,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-16-kimi-k3.html"
     },
     {
-      "title": "압력이 이기고, 윤리가 졌습니다",
+      "title": "딥마인드 연구원이 사표로 남긴 기록",
       "date": "2026-07-15",
       "category": "leader",
       "source": "turntrout.com (Alex Turner)",
@@ -375,7 +375,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-16-kimi-k3.html"
     },
     {
-      "title": "같은 클로드도, 언어마다 다른 가치를 말합니다",
+      "title": "언어에 따라 갈라지는 클로드의 가치관",
       "date": "2026-07-13",
       "category": "tech",
       "source": "앤트로픽 (Anthropic Research)",
@@ -393,7 +393,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-07-15-why-i-left-google-deepmind.html"
     },
     {
-      "title": "AI가 쓴 글에는 냄새가 남습니다",
+      "title": "영국 정책 문서에서 잡힌 AI의 흔적",
       "date": "2026-07-09",
       "category": "research",
       "source": "이코노미스트 (The Economist)",
@@ -411,7 +411,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-16-year-of-the-loop.html"
     },
     {
-      "title": "더 똑똑한 AI가 아니라, 더 나은 루프입니다",
+      "title": "지능이 아니라 루프가 만든 1년",
       "date": "2026-07-16",
       "category": "tech",
       "source": "Medium (Jihoon Jeong)",
@@ -429,7 +429,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-07-04-field-guide-to-fable.html"
     },
     {
-      "title": "AI 실업 종말론은 오독입니다",
+      "title": "3년치 데이터로 본 AI 실업 종말론",
       "date": "2026-07-09",
       "category": "survival",
       "source": "The VC Corner (Ruben Dominguez)",
@@ -447,7 +447,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-07-13-we-must-act-now-economists-statement.html"
     },
     {
-      "title": "하사비스가 AI 규제의 밑그림을 그렸습니다",
+      "title": "하사비스가 내놓은 제3기구 규제안",
       "date": "2026-07-14",
       "category": "leader",
       "source": "Substack (Demis Hassabis)",
@@ -465,7 +465,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-16-sovereign-ai-pipe-dream.html"
     },
     {
-      "title": "당신이 쓰는 AI, 중국이 통제할 수도 있습니다",
+      "title": "주권 AI라는 환상과 스위치의 주인",
       "date": "2026-07-16",
       "category": "company",
       "source": "이코노미스트 (The Economist)",
@@ -483,7 +483,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-03-alibaba-bans-claude-code.html"
     },
     {
-      "title": "AI 회의론자마저 지금 행동하라 했습니다",
+      "title": "경제학자 200명의 지금 행동하라 성명",
       "date": "2026-07-13",
       "category": "research",
       "source": "뉴욕타임스 (Ben Casselman)",
@@ -501,7 +501,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-07-01-un-ai-scientific-panel.html"
     },
     {
-      "title": "AI에게 같은 걸 두 번 고쳤다면, 스킬입니다",
+      "title": "주간 보고 이틀을 두 시간으로 줄인 스킬",
       "date": "2026-07-08",
       "category": "company",
       "source": "앤트로픽 (Ian Chan · Annabel Custer)",
@@ -519,7 +519,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-06-23-wef-ai-first-operating-system.html"
     },
     {
-      "title": "AI의 속내를 읽는 렌즈가 나왔습니다",
+      "title": "모델의 중간 추론을 읽는 렌즈",
       "date": "2026-07-06",
       "category": "tech",
       "source": "앤트로픽 (Transformer Circuits)",
@@ -537,7 +537,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-08-teaching-claude-why.html"
     },
     {
-      "title": "받아쓰기라던 AI, 규제를 빠져나갔습니다",
+      "title": "받아쓰기로 분류돼 규제를 비껴간 진료 AI",
       "date": "2026-07-04",
       "category": "company",
       "source": "가디언 오스트레일리아 (Guardian Australia)",
@@ -555,7 +555,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-30-ramp-ai-jobs-hiring-boom.html"
     },
     {
-      "title": "AI가 강해질수록, 병목은 당신의 이해입니다",
+      "title": "모델이 강해질수록 커지는 이해의 병목",
       "date": "2026-07-04",
       "category": "tech",
       "source": "Thariq (@trq212, X)",
@@ -573,7 +573,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-06-30-thinking-machines-expert-judgment.html"
     },
     {
-      "title": "알리바바가 클로드 코드를 사내 금지했습니다",
+      "title": "알리바바의 클로드 코드 사내 금지",
       "date": "2026-07-03",
       "category": "company",
       "source": "South China Morning Post",
@@ -591,7 +591,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-07-04-ai-scribes-regulatory-gap.html"
     },
     {
-      "title": "AI 시대의 커리어, 채점되지 않는 일에 있습니다",
+      "title": "채점되지 않는 일에 남는 커리어",
       "date": "2026-07-03",
       "category": "survival",
       "source": "Phil Chen (@philhchen, X)",
@@ -609,7 +609,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html"
     },
     {
-      "title": "AI를 금지하는 대신 계약서를 썼습니다",
+      "title": "금지 대신 계약서를 택한 강의실",
       "date": "2026-07-02",
       "category": "company",
       "source": "사이언스 (Tomasz Głowacki)",
@@ -627,7 +627,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-06-23-wef-ai-first-operating-system.html"
     },
     {
-      "title": "이코노미스트가 AI로 자기 예측을 채점했습니다",
+      "title": "이코노미스트가 채점한 자사 예측 1,400건",
       "date": "2026-07-02",
       "category": "research",
       "source": "The Economist",
@@ -645,7 +645,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-25-ai-models-values-different-from-people.html"
     },
     {
-      "title": "UN 첫 AI 과학패널: 능력은 뛰고 증거는 걷습니다",
+      "title": "UN 첫 AI 과학패널의 예비 진단",
       "date": "2026-07-01",
       "category": "research",
       "source": "UN 독립 국제 AI 과학패널",
@@ -663,7 +663,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-25-ai-collapse-of-the-www.html"
     },
     {
-      "title": "전문가 판단을 배운 작은 모델이 GPT를 이겼습니다",
+      "title": "전문가 라벨로 GPT를 넘어선 작은 모델",
       "date": "2026-06-30",
       "category": "tech",
       "source": "Thinking Machines Lab (Bridgewater AIA Labs 협업)",
@@ -681,7 +681,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-04-13-stanford-ai-index-2026-12-takeaways.html"
     },
     {
-      "title": "AI를 많이 쓴 회사가 더 많이 뽑았습니다",
+      "title": "AI에 많이 쓴 기업일수록 늘어난 고용",
       "date": "2026-06-30",
       "category": "survival",
       "source": "Ramp Economics Lab (Kharazian 외)",
@@ -699,7 +699,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html"
     },
     {
-      "title": "당신이 쓰는 AI는 종교색이 옅고 진보적입니다",
+      "title": "세계가치관조사로 잰 AI 25종의 가치관",
       "date": "2026-06-25",
       "category": "research",
       "source": "The Economist (Briefing, Computational bias)",
@@ -717,7 +717,7 @@ window.POSTS_DATA = {
       "next_post": "research/2025-07-10-ban-left-biased-ai.html"
     },
     {
-      "title": "AI가 답할수록, 웹이 말라갑니다",
+      "title": "AI 답변이 마르게 하는 열린 웹",
       "date": "2026-06-25",
       "category": "research",
       "source": "NBER (Alex Chan)",
@@ -735,7 +735,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
-      "title": "코딩 배우라던 시대, 이제 철학을 배웁니다",
+      "title": "AI 랩이 철학자를 채용하는 이유",
       "date": "2026-06-24",
       "category": "research",
       "source": "The Economist",
@@ -753,7 +753,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
-      "title": "관리자를 줄였더니, 메타 AI 조직이 무너졌습니다",
+      "title": "관리자 한 명에 20명, 메타 AI 조직의 붕괴",
       "date": "2026-06-23",
       "category": "company",
       "source": "Inc.com (Jessica Stillman)",
@@ -807,7 +807,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-06-19-companies-rein-in-ai-costs.html"
     },
     {
-      "title": "AI 많이 쓰라더니, 이제 아껴 쓰라고 합니다",
+      "title": "1년 만에 조여진 빅테크의 AI 예산",
       "date": "2026-06-19",
       "category": "company",
       "source": "Financial Times (Jamie John 외)",
@@ -825,7 +825,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-claude-code-expertise.html"
     },
     {
-      "title": "전문가가 포기한 희귀병, AI가 단서를 찾았습니다",
+      "title": "미진단 희귀질환 376건에서 나온 새 단서",
       "date": "2026-06-18",
       "category": "tech",
       "source": "OpenAI (보스턴 아동병원 · 하버드 공동연구, NEJM AI)",
@@ -844,7 +844,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
     },
     {
-      "title": "혼자 로봇을 조종한 AI, 사람 팀보다 19배 빨랐습니다",
+      "title": "로봇개를 혼자 몬 AI, 사람 팀 대비 19배",
       "date": "2026-06-18",
       "category": "tech",
       "source": "Anthropic (Michael Ilie 외)",
@@ -863,7 +863,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"
     },
     {
-      "title": "AI가 만들고 AI가 검토하면, 지식이 썩습니다",
+      "title": "워크슬롭이 부패시키는 회사의 지식",
       "date": "2026-06-16",
       "category": "company",
       "source": "Harvard Business Review (Matthias Holweg & Thomas H. Davenport)",
@@ -881,7 +881,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-economist-ai-five-creative-fields.html"
     },
     {
-      "title": "AI가 이 글을 썼을까, 이코노미스트가 추적했습니다",
+      "title": "이코노미스트가 추적한 다섯 분야의 AI 확산",
       "date": "2026-06-16",
       "category": "research",
       "source": "The Economist (Graphic detail)",
@@ -899,7 +899,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
     },
     {
-      "title": "AI 코딩, 성공을 가른 건 코딩 실력이 아니었습니다",
+      "title": "클로드 코드 40만 세션이 가른 성공의 조건",
       "date": "2026-06-16",
       "category": "research",
       "source": "Anthropic (Zoe Hitzig 외)",
@@ -917,7 +917,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
     },
     {
-      "title": "ChatGPT 점유율, 처음으로 50% 밑으로 내려갔습니다",
+      "title": "처음으로 50% 아래로 내려간 ChatGPT 점유율",
       "date": "2026-06-16",
       "category": "research",
       "source": "TechCrunch (Ivan Mehta)",
@@ -936,7 +936,7 @@ window.POSTS_DATA = {
       "next_post": "company/2026-06-19-companies-rein-in-ai-costs.html"
     },
     {
-      "title": "AI는 일자리를 없애지 않고, 둘로 가릅니다",
+      "title": "채용 공고 10억 건이 보여준 직업의 분화",
       "date": "2026-06-15",
       "category": "survival",
       "source": "PwC (2026 Global AI Jobs Barometer)",
@@ -954,7 +954,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-12-thrive-with-ai-mindset-not-skillset.html"
     },
     {
-      "title": "나델라: 모델을 고르지 말고 학습 루프를 소유하세요",
+      "title": "나델라가 말한 토큰 캐피털과 학습 루프",
       "date": "2026-06-15",
       "category": "leader",
       "source": "X (Satya Nadella)",
@@ -973,7 +973,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-16-chatgpt-market-share-below-50.html"
     },
     {
-      "title": "초지능엔 끄는 스위치가 없습니다",
+      "title": "끄는 스위치가 없는 초지능",
       "date": "2026-06-15",
       "category": "survival",
       "source": "The Economist (Will Marshall)",
@@ -991,7 +991,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
-      "title": "AI가 못 하는 10%를 버리십시오",
+      "title": "골드만삭스 CTO가 버리라고 한 10%",
       "date": "2026-06-12",
       "category": "survival",
       "source": "Harvard Business Review (Marco Argenti)",
@@ -1009,7 +1009,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-01-cs-degree-glut-ai-erodes-value.html"
     },
     {
-      "title": "여러 AI를 합친 답이 가장 강한 모델을 넘었습니다",
+      "title": "모델을 합친 답이 넘어선 단일 최강",
       "date": "2026-06-12",
       "category": "research",
       "source": "OpenRouter (Brian Thomas)",
@@ -1027,7 +1027,7 @@ window.POSTS_DATA = {
       "next_post": "leader/2026-06-15-satya-nadella-learning-loop-token-capital.html"
     },
     {
-      "title": "쓰던 AI 모델이 정부 명령 한 줄에 멈췄습니다",
+      "title": "수출통제 한 줄에 멈춘 최상위 모델",
       "date": "2026-06-12",
       "category": "company",
       "source": "Anthropic (공식 성명)",
@@ -1045,7 +1045,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-06-10-from-agi-to-asi.html"
     },
     {
-      "title": "AGI는 종착역이 아닙니다: 딥마인드가 그린 ASI 지도",
+      "title": "딥마인드가 그린 AGI 이후의 네 갈래",
       "date": "2026-06-10",
       "category": "tech",
       "source": "Google DeepMind (Shane Legg · Marcus Hutter 외, arXiv)",
@@ -1064,7 +1064,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-09-how-people-really-use-ai-2026.html"
     },
     {
-      "title": "AI를 쓰는 100가지, 1위는 업무가 아닙니다",
+      "title": "2026년 AI 100대 용도, 1위는 말동무",
       "date": "2026-06-09",
       "category": "research",
       "source": "Harvard Business Review (Gretchen Gavett)",
@@ -1082,7 +1082,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-08-agents-in-biology.html"
     },
     {
-      "title": "AI 에이전트가 헛도는 건 머리가 아니라 데이터 탓이었습니다",
+      "title": "에이전트를 헛돌게 한 진짜 원인, 데이터",
       "date": "2026-06-08",
       "category": "research",
       "source": "Anthropic (Laura Luebbert)",
@@ -1101,7 +1101,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-08-ai-broken-hiring.html"
     },
     {
-      "title": "이력서도 화상 면접도 더는 진짜 실력을 거르지 못합니다",
+      "title": "신호를 잃은 이력서와 화상 면접",
       "date": "2026-06-08",
       "category": "survival",
       "source": "Harvard Business Review (Shraddha Sunil, Mudit Saraf)",
@@ -1138,7 +1138,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-02-next-era-knowledge-work.html"
     },
     {
-      "title": "범용 AI가 화학 전용 소프트웨어를 따라잡았습니다",
+      "title": "화학 전용 소프트웨어를 따라잡은 범용 모델",
       "date": "2026-06-05",
       "category": "tech",
       "source": "Anthropic (David Kamber)",
@@ -1156,7 +1156,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
     },
     {
-      "title": "컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다",
+      "title": "쏟아지는 컴퓨터공학 학위와 줄어드는 자리",
       "date": "2026-06-01",
       "category": "survival",
       "source": "The Economist",
@@ -1174,7 +1174,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-05-20-ai-slop-books-music-lawsuits-science.html"
     },
     {
-      "title": "복잡한 일은 AI 하나에 몰아주지 마세요",
+      "title": "한 에이전트에 몰아줄 때 무너지는 것들",
       "date": "2026-06-02",
       "category": "tech",
       "source": "Anthropic",
@@ -1192,7 +1192,7 @@ window.POSTS_DATA = {
       "next_post": "survival/2026-06-08-ai-broken-hiring.html"
     },
     {
-      "title": "법학 교수들이 동료보다 AI 답을 더 선호했습니다",
+      "title": "블라인드 비교에서 동료를 앞선 AI 답변",
       "date": "2026-05-27",
       "category": "survival",
       "source": "Stanford Law School (Salinas 외)",
@@ -1247,7 +1247,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-05-20-sciatlas-scientific-knowledge-graph.html"
     },
     {
-      "title": "세무 AI가 사람의 수정을 학습해 스스로 진화합니다",
+      "title": "회계사의 수정을 학습하는 세무 AI",
       "date": "2026-05-27",
       "category": "tech",
       "source": "OpenAI",
@@ -1266,7 +1266,7 @@ window.POSTS_DATA = {
       "next_post": "tech/2026-05-28-sia-self-improving-ai-harness-weights.html"
     },
     {
-      "title": "개발자와 지식 노동자의 경계가 사라지고 있습니다",
+      "title": "지워지는 개발자와 지식 노동자의 경계",
       "date": "2026-06-02",
       "category": "survival",
       "source": "OpenAI (The Next Era of Knowledge Work)",
@@ -1284,7 +1284,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html"
     },
     {
-      "title": "GPT-5.5도 한국어 웹 탐색에서 45%에 그쳤습니다",
+      "title": "한국어 웹 탐색, 최신 모델도 45%",
       "date": "2026-06-01",
       "category": "research",
       "source": "arXiv (Nahyun Lee 외 14인)",
@@ -1303,7 +1303,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
     },
     {
-      "title": "AI 에이전트로 논문은 75% 늘었지만 출판은 그대로였습니다",
+      "title": "논문은 75% 늘고 출판은 그대로",
       "date": "2026-05-27",
       "category": "research",
       "source": "Anthropic (Lyttelton, Massenkoff & Wilmers)",
@@ -1321,7 +1321,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-06-01-k-browsecomp-korean-web-agent-benchmark.html"
     },
     {
-      "title": "AI가 80년 수학 난제를 풀었습니다",
+      "title": "80년 묵은 에르되시 문제를 푼 AI",
       "date": "2026-05-29",
       "category": "tech",
       "source": "Wall Street Journal (Ben Cohen)",
@@ -1340,7 +1340,7 @@ window.POSTS_DATA = {
       "next_post": "research/2026-05-27-anthropic-coding-agents-social-sciences.html"
     },
     {
-      "title": "스스로 진화하는 AI, 자기 코드를 고칩니다",
+      "title": "자기 코드와 가중치를 함께 고치는 AI",
       "date": "2026-05-28",
       "category": "tech",
       "source": "arXiv (Hebbar, Manawat, Verboomen 외)",

@@ -1,5 +1,5 @@
 ---
-title: "AI가 못 하는 10%를 버리십시오"
+title: "골드만삭스 CTO가 버리라고 한 10%"
 date: 2026-06-12
 category: survival
 source: "Harvard Business Review (Marco Argenti)"
@@ -7,7 +7,7 @@ original_url: "https://hbr.org/2026/06/to-thrive-alongside-ai-focus-on-mindset-n
 tags: [AI마인드셋, 업무재설계, GDPval, AI에이전트, 감독자역할]
 ---
 
-# AI가 못 하는 10%를 버리십시오
+# 골드만삭스 CTO가 버리라고 한 10%
 
 ## 3줄 요약
 

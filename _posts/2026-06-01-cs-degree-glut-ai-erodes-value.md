@@ -1,5 +1,5 @@
 ---
-title: "컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다"
+title: "쏟아지는 컴퓨터공학 학위와 줄어드는 자리"
 date: 2026-06-01
 category: survival
 source: "The Economist"
@@ -7,7 +7,7 @@ original_url: "https://www.economist.com/finance-and-economics/2026/06/01/do-you
 tags: [컴퓨터공학, AI일자리, 학위인플레이션, 온라인대학, 신입개발자]
 ---
 
-# 컴퓨터공학 학위가 쏟아지는데, 일자리는 줄어듭니다
+# 쏟아지는 컴퓨터공학 학위와 줄어드는 자리
 
 ## 3줄 요약
 

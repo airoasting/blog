@@ -1,5 +1,5 @@
 ---
-title: "세무 AI가 사람의 수정을 학습해 스스로 진화합니다"
+title: "회계사의 수정을 학습하는 세무 AI"
 date: 2026-05-27
 category: tech
 source: "OpenAI"
