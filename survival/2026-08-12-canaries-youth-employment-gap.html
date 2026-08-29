@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="미국 급여 데이터 분석 결과 22~25세의 AI 고노출 직업 고용이 저노출 대비 19% 낮았습니다. 경력자에게는 같은 격차가 없고, 원인은 해고가 아니라 채용 감소입니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="22~25세에게만 벌어진 19%의 고용 격차">
+  <meta property="og:description" content="경제 전체의 일자리 감소는 없습니다. 다만 형식지에 기댄 청년 직무에서만 격차가 벌어지고 있습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/survival/2026-08-12-canaries-youth-employment-gap.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-08-12">
+  <meta property="article:section" content="생존">
+  <meta property="article:tag" content="청년고용">
+  <meta property="article:tag" content="노동시장">
+  <meta property="article:tag" content="신입채용">
+  <meta property="article:tag" content="AI노출">
+  <meta property="article:tag" content="스탠퍼드">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="22~25세에게만 벌어진 19%의 고용 격차">
+  <meta name="twitter:description" content="우리 회사 신입 채용은 왜 줄었습니까? 사람이 없어서입니까, 자리를 안 만들어서입니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "22~25세에게만 벌어진 19%의 고용 격차",
+    "datePublished": "2026-08-12",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "스탠퍼드 디지털이코노미랩의 ADP 급여 데이터 분석을 근거로 AI가 청년 고용에 미치는 영향을 정리합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/survival/2026-08-12-canaries-youth-employment-gap.html",
+    "articleSection": "생존"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'survival' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="survival">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="survival">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_08_12_canaries-youth-employment-gap/thumbnail.png" alt="22~25세에게만 벌어진 19%의 고용 격차" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="survival">생존</span>
+          <span class="post-date">2026년 8월 12일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">22~25세에게만 벌어진 19%의 고용 격차</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>스탠퍼드 디지털이코노미랩 (Brynjolfsson 외 2인)</span>
+            <span><a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=청년고용" class="post-tag">#청년고용</a>
+            <a href="../index.html?tag=노동시장" class="post-tag">#노동시장</a>
+            <a href="../index.html?tag=신입채용" class="post-tag">#신입채용</a>
+            <a href="../index.html?tag=AI노출" class="post-tag">#AI노출</a>
+            <a href="../index.html?tag=스탠퍼드" class="post-tag">#스탠퍼드</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="22~25세에게만 벌어진 19%의 고용 격차" data-date="2026-08-12" data-category="survival" data-source="스탠퍼드 디지털이코노미랩 (Brynjolfsson 외 2인)" data-tags="청년고용, 노동시장, 신입채용, AI노출, 스탠퍼드" data-original-url="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" data-roasting-quote="우리 회사 신입 채용은 왜 줄었습니까? 사람이 없어서입니까, 자리를 안 만들어서입니까?" data-next-post="../survival/2026-08-12-evidence-on-worker-retraining.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">미국 급여 데이터를 분석한 결과 경제 전체의 일자리 감소는 확인되지 않았습니다. 다만 청년층에서만 격차가 벌어졌습니다.</p>
+        <p data-summary="">22~25세의 AI 고노출 직업 고용은 저노출 직업 대비 19% 낮습니다. 경력자에게는 같은 격차가 나타나지 않습니다.</p>
+        <p data-summary="">조정은 해고가 아니라 채용 감소로 일어납니다. 임금은 그대로이고 자리의 수만 줄어듭니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">우리 회사 신입 채용은 왜 줄었습니까?<br>사람이 없어서입니까, 자리를 안 만들어서입니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI가 일자리를 없애느냐는 질문에 이 연구는 아니라고 답합니다. 경제 전체에서 광범위한 일자리 감소는 확인되지 않았습니다.</p>
+        <p>그 대신 한 집단에서만 숫자가 갈렸습니다. 22세에서 25세 사이, AI 노출이 높은 직업에 있는 사람들입니다. 이들의 고용은 비슷한 나이의 저노출 직업 종사자 대비 19% 낮습니다. 같은 직업의 경력자에게는 그 격차가 없습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>지난달 챌린저 리포트는 감원 총량이 2년 만의 최저라고 알렸습니다. 이어서 다룬 재훈련 연구는 기존 프로그램으로는 대규모 이동을 감당하지 못한다고 짚었습니다. 남은 질문은 하나였습니다. 그래서 지금 누가 맞고 있느냐입니다. 이 연구가 그 자리를 특정합니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 데이터의 성격이 이 연구의 무게입니다.</strong> 에릭 브린욜프슨과 바라트 찬다르, 루유 첸이 ADP의 급여 대장을 썼습니다. 미국 노동자 수백만 명의 실제 급여 기록이고, 2026년 6월까지 포함합니다. 설문이 아니라 지급된 임금을 세었습니다.</p>
+
+        <p><strong>둘째, 총량에서는 아무 일도 일어나지 않았습니다.</strong> 연구진의 첫 번째 결론은 경제 전반의 광범위한 일자리 대체를 뒷받침할 증거가 없다는 것입니다. AI 실업 종말론을 지지하지 않습니다. 문제는 평균 아래에 있습니다.</p>
+
+        <p><strong>셋째, 청년층에서만 격차가 벌어졌습니다.</strong> 대상은 22세에서 25세, AI 노출이 높은 직업입니다. 이들의 고용은 저노출 동년배 대비 19% 낮은 자리에 있습니다. 경력자에게는 대응하는 격차가 없습니다. 나이가 변수입니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">19%</div>
+            <div class="stat-label">22~25세 고노출 직업의 고용 부족분</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">15% → 19%</div>
+            <div class="stat-label">2025년 8월 최초 관측 이후의 확대 폭</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">0%</div>
+            <div class="stat-label">같은 직업 경력자에게 나타난 격차</div>
+          </div>
+        </div>
+
+        <p><strong>넷째, 격차는 계속 벌어지는 중입니다.</strong> 연구진이 2025년 8월에 처음 기록했을 때 이 값은 15%였습니다. 2026년 6월 데이터에서 19%가 됐습니다. 한 번 튄 수치가 아니라 방향을 가진 추세입니다.</p>
+
+        <p><strong>다섯째, 경로는 해고가 아니라 채용입니다.</strong> 조정은 청년 노동자를 내보내는 방식이 아니라 새로 뽑지 않는 방식으로 일어납니다. 기존 직원의 자리는 유지됩니다. 다만 비어 있던 자리가 다시 채워지지 않습니다. 이 구분이 대응책을 완전히 갈라놓습니다.</p>
+
+        <p><strong>여섯째, AI가 대체하는 자리와 거드는 자리가 다릅니다.</strong> 감소는 AI가 사람의 일을 주로 대신하는 직업에 몰렸습니다. AI가 주로 사람을 거드는 직업에서는 고용이 유지되거나 늘었고, 특히 경력자에게서 늘었습니다. 같은 기술이 직무에 따라 반대로 작동합니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>청년 (22~25세)</th>
+                <th style="text-align: center;">경력자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI가 대체하는 직무</td>
+                <td>고용 19% 부족</td>
+                <td class="cell-hl" style="text-align: center;">격차 없음</td>
+              </tr>
+              <tr>
+                <td>AI가 거드는 직무</td>
+                <td>유지</td>
+                <td class="cell-hl" style="text-align: center;">증가</td>
+              </tr>
+              <tr>
+                <td>조정 방식</td>
+                <td>채용 감소</td>
+                <td style="text-align: center;">해당 없음</td>
+              </tr>
+              <tr>
+                <td>임금</td>
+                <td>변화 없음</td>
+                <td style="text-align: center;">변화 없음</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Brynjolfsson, Chandar, &amp; Chen (2026, August 12), 여섯 가지 사실 재구성.</p>
+        </div>
+
+        <p><strong>일곱째, 갈림선은 형식지와 암묵지입니다.</strong> 연구진은 두 종류의 지식을 나눕니다. 문서로 적혀 표준화된 형식지와 겪어야 쌓이는 암묵지입니다. 고용이 줄어든 쪽은 형식지에 기댄 청년 직무였습니다. 암묵지를 쓰는 경력자 직무에서는 오히려 자리가 늘었습니다.</p>
+
+        <p>이 구분은 조직에 실질적인 질문을 남깁니다. 신입에게 맡기던 일이 대체로 형식지 업무였다면, 그 자리를 없애는 결정은 당장 비용을 줄입니다. 다만 그 자리는 사람이 암묵지를 쌓던 유일한 통로이기도 합니다. 5년 뒤 경력자를 어디서 구할지가 함께 걸려 있습니다.</p>
+
+        <p><strong>여덟째, 임금이 아니라 자리에서 조정됩니다.</strong> 기본급은 움직이지 않았습니다. 시장이 값을 깎는 대신 문을 좁혔습니다. 임금 통계만 보는 조직은 이 변화를 놓칩니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>신입 채용 축소가 형식지 직무에 몰렸는지 확인하세요.</strong><br>지난 2년간 줄인 신입 자리를 형식지 업무와 암묵지 업무로 갈라 세어 보세요. 앞쪽에 몰려 있다면 이 연구와 같은 자리에 서 있습니다. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>경력자 공급 경로를 그려 두세요.</strong><br>지금 신입 자리를 없애면 5년 뒤 중간 연차를 어디서 데려올지 한 장에 적으세요. 외부에서 뽑겠다면 그 시장의 경쟁 강도도 함께 적으세요. (이번 분기)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>채용 지표를 해고 지표와 분리해 보세요.</strong><br>인원 감소를 한 숫자로 보면 원인이 안 보입니다. 이탈과 신규 채용을 따로 세워야 이 연구가 말하는 조정이 눈에 들어옵니다. (다음 분기 보고)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>AI를 대체가 아니라 보완으로 붙일 직무를 고르세요.</strong><br>같은 도구라도 직무 설계에 따라 고용이 갈렸습니다. 사람이 판단하고 AI가 거드는 형태로 재설계할 직무를 세 개만 정해 보세요. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>인과가 확정된 것은 아닙니다.</strong> 연구진 스스로 인과에 불확실성이 있다고 밝힙니다. 다른 설정에서도 같은 양상이 반복되고 시점이 AI 확산과 맞는다는 점을 근거로 들 뿐입니다.</p>
+
+        <p><strong>미국 급여 데이터입니다.</strong> ADP는 미국 사업장의 급여 처리 기록입니다. 고용 계약과 신입 채용 관행이 다른 한국에 그대로 옮길 수 없습니다.</p>
+
+        <p><strong>AI 노출 지표는 추정입니다.</strong> 직업별 AI 노출도는 2024년에 나온 연구의 분류를 씁니다. 어떤 직무가 얼마나 노출됐는지는 측정이 아니라 판단이 섞인 값입니다.</p>
+
+        <p><strong>경기 요인과 분리되지 않았습니다.</strong> 같은 기간에 금리와 채용 시장 전반의 변화도 있었습니다. 청년 채용 감소에서 AI 몫이 얼마인지는 이 데이터만으로 떼어내기 어렵습니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI는 사람을 내보내지 않습니다. 들어올 문을 좁힙니다. 그 문이 사람이 경력을 쌓던 유일한 통로였습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>신입 자리를 줄이는 결정을 비용 항목으로만 보지 마라. 5년 뒤 경력자 공급이 같은 결정에 걸려 있다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">인사/HR</span>
+            <span>이탈과 신규 채용을 분리해 보고하라. 한 숫자로 합치면 이 연구가 말하는 조정이 보이지 않는다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>신입에게 맡기던 형식지 업무를 AI로 돌렸다면, 그 사람이 암묵지를 쌓을 다른 통로를 만들어라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>AI 노출도</strong>: 어떤 직업의 업무가 AI로 수행될 수 있는 정도를 추정한 지표입니다. 직업별로 점수를 매깁니다.</p>
+          <p><strong>형식지</strong>: 문서와 규칙으로 적어 전할 수 있는 표준화된 지식입니다. AI가 비교적 잘 다룹니다.</p>
+          <p><strong>암묵지</strong>: 겪으면서 몸에 쌓이는 지식입니다. 말로 옮기기 어렵고 AI가 흉내 내기 까다롭습니다.</p>
+          <p><strong>ADP 급여 데이터</strong>: 미국의 대형 급여 처리 회사가 보유한 실제 임금 지급 기록입니다. 설문이 아닌 행정 데이터입니다.</p>
+          <p><strong>이탈(Separation)</strong>: 해고와 자발적 퇴사를 포함해 사람이 자리를 떠나는 것을 가리킵니다. 신규 채용과 구분해 봅니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Brynjolfsson, E., Chandar, B., &amp; Chen, R. (2026, August 12). <em>Canaries in the Coal Mine? Six Facts about the Recent Employment Effects of Artificial Intelligence</em> [Working paper]. Stanford Digital Economy Lab. (<a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">19%면 심각한데요. 근데 저희는 해고를 한 적이 없어요. 그럼 해당 없는 거죠?</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">해고가 아니라 채용 감소라잖아요. 안 뽑은 것도 여기 들어갑니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">작년에 신입 공고를 아예 안 냈어요. 그게 이 숫자에 들어가는 거군요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">결론은 하나예요. 신입 자리를 없앨 거면 5년 뒤 경력자를 어디서 구할지 같이 적으세요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">저희는 그게 벌써 왔어요. 3년 차를 뽑으려는데 시장에 없어요. 다들 안 뽑았으니까요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">형식지와 암묵지 구분이 좋았어요. 신입한테 주던 일이 딱 형식지였잖아요. 그게 사람이 크는 통로였는데요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">근데 인과는 확정이 아니라고 연구진이 직접 썼어요. 같은 기간에 금리도 움직였고요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그래도 방향은 봐야죠. 15%에서 19%로 계속 벌어지는 걸 우연으로 보기는 어렵습니다.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../survival/2026-08-12-evidence-on-worker-retraining.html">
+          <div class="next-post-title">재훈련 1만 3천 달러가 남긴 소득 1천 달러 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/노동시장.html" class="concept-chip">노동시장</a>
+      <a href="../insights/wiki/concepts/신입채용.html" class="concept-chip">신입채용</a>
+      <a href="../insights/wiki/concepts/adp.html" class="concept-chip">ADP</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-08-12-canaries-youth-employment-gap.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/survival/2026-08-12-canaries-youth-employment-gap.html';
+    const ROASTING_QUOTE = '우리 회사 신입 채용은 왜 줄었습니까? 사람이 없어서입니까, 자리를 안 만들어서입니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="클로드가 스스로 연구 루프를 돌려 10가지 정렬 실패의 안전 격차를 26~96% 메웠습니다. 기만 항목에서는 85%로 사람 연구자의 20%를 앞섰습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI가 스스로 메운 정렬 격차 26~96%">
+  <meta property="og:description" content="AI 안전을 사람이 연구하는 속도가 병목이었습니다. 그 병목마저 자동화되면 무엇이 남는지 짚습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-08-28-automated-alignment-researchers.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-08-28">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="정렬">
+  <meta property="article:tag" content="AI안전">
+  <meta property="article:tag" content="자동화연구">
+  <meta property="article:tag" content="검증">
+  <meta property="article:tag" content="앤트로픽">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI가 스스로 메운 정렬 격차 26~96%">
+  <meta name="twitter:description" content="AI의 안전을 사람이 연구합니다. 그 속도가 AI가 강해지는 속도를 따라잡고 있습니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI가 스스로 메운 정렬 격차 26~96%",
+    "datePublished": "2026-08-28",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽의 자동화 정렬 연구 결과를 근거로, 검증과 안전 연구의 자동화가 조직에 남기는 질문을 정리합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-08-28-automated-alignment-researchers.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_08_28_automated-alignment-researchers/thumbnail.png" alt="AI가 스스로 메운 정렬 격차 26~96%" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 8월 28일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">AI가 스스로 메운 정렬 격차 26~96%</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>앤트로픽 (Alignment)</span>
+            <span><a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=정렬" class="post-tag">#정렬</a>
+            <a href="../index.html?tag=AI안전" class="post-tag">#AI안전</a>
+            <a href="../index.html?tag=자동화연구" class="post-tag">#자동화연구</a>
+            <a href="../index.html?tag=검증" class="post-tag">#검증</a>
+            <a href="../index.html?tag=앤트로픽" class="post-tag">#앤트로픽</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="AI가 스스로 메운 정렬 격차 26~96%" data-date="2026-08-28" data-category="tech" data-source="앤트로픽 (Alignment)" data-tags="정렬, AI안전, 자동화연구, 검증, 앤트로픽" data-original-url="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" data-roasting-quote="AI의 안전을 사람이 연구합니다. 그 속도가 AI가 강해지는 속도를 따라잡고 있습니까?" data-next-post="../tech/2026-07-28-claude-cryptographic-weaknesses.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">클로드가 사람 없이 연구 루프를 돌려 10가지 정렬 실패를 다뤘습니다. 안전 격차를 26%에서 96%까지 메웠습니다.</p>
+        <p data-summary="">기만 항목에서는 85%를 메웠습니다. 같은 과제에서 사람 연구자가 메운 폭은 20%였습니다.</p>
+        <p data-summary="">소넷 5가 오퍼스 4.8 초기 버전을 60시간 만에 정렬했습니다. 데이터 사용은 표준 절차의 약 1만 5천분의 1이었습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI의 안전을 사람이 연구합니다.<br>그 속도가 AI가 강해지는 속도를 따라잡고 있습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 안전 논의에는 오래된 전제가 하나 있습니다. 모델은 빠르게 강해지는데 안전 연구는 사람 속도로 간다는 것입니다.</p>
+        <p>앤트로픽이 8월 28일 그 전제를 흔드는 결과를 냈습니다. 클로드가 스스로 논문을 읽고 방법을 제안하고 모델을 학습시켜 검증까지 돌렸습니다. 기만을 줄이는 과제에서 사람 연구자가 20%를 메울 때 클로드는 85%를 메웠습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>지난달 다룬 암호 분석 사례에서 병목은 검증이었습니다. 클로드가 일주일에 찾아낸 결과를 사람이 한 달 동안 확인했습니다. 이번 연구는 그 병목의 앞 칸을 건드립니다. 무엇을 검증할지 정하고 방법을 만드는 연구 자체를 모델에게 맡긴 실험입니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 연구 전 과정을 모델이 돌았습니다.</strong> 클로드는 문헌을 훑고, 방법을 제안하고, 모델을 학습시키고, 벤치마크로 시험하는 순환을 스스로 반복했습니다. 사람은 과제를 주고 결과를 받았습니다. 중간에 부정행위나 능력 저하가 생기지 않도록 감시 에이전트를 따로 붙였습니다.</p>
+
+        <p><strong>둘째, 대상은 열 가지 정렬 실패였습니다.</strong> 기만, 아첨, 프라이버시 침해, 보상 해킹 같은 범주입니다. 모델이 사용자를 속이거나 듣기 좋은 말만 하는 행동입니다. 평가 기준의 허점을 파고드는 행동도 여기 들어갑니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">26~96%</div>
+            <div class="stat-label">열 가지 정렬 실패에서 메운 안전 격차</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">85% 대 20%</div>
+            <div class="stat-label">기만 항목에서 클로드와 사람 연구자의 격차 해소</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">60시간</div>
+            <div class="stat-label">소넷 5가 오퍼스 4.8 초기 버전을 정렬한 시간</div>
+          </div>
+        </div>
+
+        <p><strong>셋째, 성적의 폭이 넓습니다.</strong> 열 가지 항목에서 메운 격차는 26%에서 96%까지 벌어졌습니다. 잘 풀린 항목과 거의 못 푼 항목이 함께 있다는 뜻입니다. 평균만 인용하면 이 분산이 지워집니다.</p>
+
+        <p><strong>넷째, 기만 항목의 차이가 특히 큽니다.</strong> 사람 연구자가 20%를 메운 과제에서 클로드는 85%를 메웠습니다. 네 배가 넘습니다. 다만 이 비교는 같은 과제, 같은 기간의 결과이지 연구자의 능력을 잰 값이 아닙니다. 시도 횟수의 차이가 크게 작용합니다.</p>
+
+        <p><strong>다섯째, 작은 모델이 큰 모델을 정렬했습니다.</strong> 클로드가 찾아낸 방법은 학습 대상보다 4.7배 큰 모델에도 통했습니다. 그리고 소넷 5가 오퍼스 4.8의 초기 체크포인트를 60시간 만에 정렬해 거의 출시 수준에 올렸습니다. 데이터 효율은 표준 절차의 약 1만 5천 배였습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>항목</th>
+                <th>결과</th>
+                <th style="text-align: center;">비교 대상</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>열 가지 정렬 실패</td>
+                <td>격차 26~96% 해소</td>
+                <td style="text-align: center;">항목별 편차 큼</td>
+              </tr>
+              <tr>
+                <td>기만</td>
+                <td>85% 해소</td>
+                <td class="cell-hl" style="text-align: center;">사람 연구자 20%</td>
+              </tr>
+              <tr>
+                <td>방법의 일반화</td>
+                <td>4.7배 큰 모델에도 적용</td>
+                <td style="text-align: center;">학습 대상 기준</td>
+              </tr>
+              <tr>
+                <td>소넷 5의 오퍼스 4.8 정렬</td>
+                <td>60시간</td>
+                <td class="cell-hl" style="text-align: center;">데이터 약 1만 5천 배 효율</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Anthropic (2026, August 28), 실험 결과 재구성.</p>
+        </div>
+
+        <p><strong>여섯째, 연구진이 단 한계가 결과만큼 중요합니다.</strong> 다룬 정렬 실패가 실제 제품에서 나오는 것에 비하면 좁다고 밝혔습니다. 정치적 편향이나 새로 생기는 실패 유형은 재지 않았습니다. 미리 정한 능력만 시험했기에 전반적인 성능 저하를 확인하지 못했고, 강화학습을 오래 돌린 뒤에도 효과가 남는지도 시험하지 않았습니다.</p>
+
+        <p>쓰인 평가들도 실제 오정렬의 대리 지표일 뿐이라고 적었습니다. 벤치마크에서 격차를 메웠다는 말과 현장에서 안전해졌다는 말은 다릅니다. 이 구분을 지우면 결과가 실제보다 크게 읽힙니다.</p>
+
+        <p><strong>일곱째, 조직에는 병목의 이동이라는 문제가 남습니다.</strong> 지난달 암호 분석 사례에서는 생성이 빨라지고 검증이 병목이 됐습니다. 이번 결과는 그 검증과 연구까지 모델이 가져갈 수 있음을 보여줍니다. 그러면 사람에게 남는 자리는 무엇을 연구할지 정하고, 무엇을 믿을지 판단하는 쪽으로 좁아집니다.</p>
+
+        <p>실무의 질문도 같은 방향으로 바뀝니다. 우리 조직이 AI로 무엇을 더 빨리 만들지가 아니라, 빨라진 산출물 중 무엇을 채택할지 누가 어떤 기준으로 정하는지가 남습니다. 그 기준이 문서로 없으면 자동화가 빨라질수록 판단이 흐려집니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>채택 기준을 사람이 쥐고 문서로 남기세요.</strong><br>AI가 낸 결과를 받아들이는 조건을 한 장에 적으세요. 무엇을 통과해야 쓰는지 정하지 않으면 산출이 빨라질수록 검토가 형식이 됩니다. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>자동화할 검증 항목과 사람이 쥘 항목을 나누세요.</strong><br>기준이 명확하고 반복되는 확인은 자동화 후보이고, 새로 생기는 실패 유형은 사람 몫입니다. 연구진이 못 쟀다고 밝힌 영역이 후자입니다. (이번 분기)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>벤치마크 통과와 현장 안전을 분리해 보고하세요.</strong><br>"평가에서 몇 % 개선"과 "실제 사고 몇 건 감소"를 같은 표에 나란히 쓰세요. 앞의 숫자만 보면 뒤가 나빠져도 모릅니다. (다음 분기 보고)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>감시 장치를 자동화 설계에 함께 넣으세요.</strong><br>이 실험도 부정행위와 능력 저하를 막는 감시 에이전트를 따로 붙였습니다. 자동화하는 순간 감시도 같이 설계해야 합니다. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>다룬 실패 범주가 좁습니다.</strong> 연구진이 직접 밝힌 한계입니다. 실제 제품에서 나타나는 정렬 실패에 비하면 시험한 열 가지는 좁은 묶음입니다.</p>
+
+        <p><strong>평가는 현실의 대리 지표입니다.</strong> 쓰인 벤치마크는 실제 오정렬을 재는 대용물입니다. 벤치마크 개선폭을 현장 안전 개선폭으로 옮겨 읽으면 안 됩니다.</p>
+
+        <p><strong>지속성이 검증되지 않았습니다.</strong> 강화학습을 오래 돌린 뒤에도 효과가 남는지 시험하지 않았습니다. 학습을 더 진행하면 되돌아갈 여지가 있습니다.</p>
+
+        <p><strong>사람과의 비교는 조건이 다릅니다.</strong> 85% 대 20%는 같은 과제의 결과이지만 투입한 시도 횟수와 시간이 다릅니다. 연구자 개인의 능력 비교로 읽을 수치가 아닙니다.</p>
+
+        <p><strong>자사 모델을 대상으로 한 자체 연구입니다.</strong> 앤트로픽이 자사 모델로 자사 모델을 정렬한 결과입니다. 제3자 검증이 나오기 전까지는 단일 출처입니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>만드는 일도 확인하는 일도 모델이 가져가는 중입니다. 무엇을 믿을지 정하는 자리만 사람 몫으로 남습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI가 얼마나 많이 만들었는지 묻지 말고, 그중 무엇을 왜 채택했는지 물어라. 판단 기준이 유일하게 남는 자산이다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CTO</span>
+            <span>검증 자동화를 설계할 때 감시 장치를 같은 문서에 넣어라. 이 실험도 부정행위를 막을 감시 에이전트를 따로 붙였다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">리스크/품질</span>
+            <span>벤치마크 개선과 실제 사고 감소를 분리해 보고하라. 두 숫자가 갈라지는 순간이 위험 신호다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>정렬(Alignment)</strong>: 모델이 사람이 의도한 목적과 가치에 맞게 행동하도록 만드는 일입니다.</p>
+          <p><strong>안전 격차</strong>: 지금 모델의 안전 수준과 목표로 삼은 수준 사이의 거리입니다. 이 거리를 얼마나 좁혔는지로 성과를 잽니다.</p>
+          <p><strong>아첨(Sycophancy)</strong>: 모델이 사실보다 사용자가 듣고 싶어 하는 답을 고르는 경향입니다.</p>
+          <p><strong>보상 해킹</strong>: 모델이 목표 대신 평가 기준의 허점을 파고들어 점수만 올리는 행동입니다.</p>
+          <p><strong>체크포인트</strong>: 학습 도중 저장한 모델의 중간 상태입니다. 출시본이 되기 전 단계입니다.</p>
+          <p><strong>감시 에이전트</strong>: 다른 AI의 작업을 지켜보며 부정행위나 성능 저하를 잡아내는 별도 모델입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Anthropic. (2026, August 28). <em>Automated researchers can reliably mitigate alignment failures</em> [Article]. Anthropic. (<a href="https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">85% 대 20%면 사람이 진 거 아니에요? 좀 서늘한데요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">조건이 달라요. 시도 횟수와 시간이 다르잖아요. 연구자 개인 능력을 잰 숫자가 아닙니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그건 맞는데, 시도를 사실상 무한히 할 수 있다는 게 이미 이긴 거 아닌가요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:32px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그럼 저희 같은 회사는 뭘 해야 해요? 정렬 연구를 하는 것도 아닌데요.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">채택 기준을 문서로 만드세요. AI가 뭘 만들든 쓸지 말지는 사람이 정합니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그리고 벤치마크 점수와 실제 사고 건수를 따로 보세요. 두 숫자가 갈라지는 때가 위험합니다.</div>
+            </div>
+          </div>
+          <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">그 둘을 한 표에 놓으면 되는 거군요.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <div style="margin-bottom:8px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;">
+            <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+            <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+              <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+              <div style="font-size:13px; line-height:1.75; color:#222;">감시 에이전트를 따로 붙였다는 게 오래 남아요. 자동화하면서 감시도 같이 설계한 거잖아요.</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-07-28-claude-cryptographic-weaknesses.html">
+          <div class="next-post-title">발견은 일주일, 검증은 한 달 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/cto.html" class="concept-chip">CTO</a>
+      <a href="../insights/wiki/concepts/ai-safety.html" class="concept-chip">AI 안전</a>
+      <a href="../insights/wiki/concepts/앤트로픽.html" class="concept-chip">앤트로픽</a>
+      <a href="../insights/wiki/concepts/ai-alignment.html" class="concept-chip">AI 정렬</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-08-28-automated-alignment-researchers.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-08-28-automated-alignment-researchers.html';
+    const ROASTING_QUOTE = 'AI의 안전을 사람이 연구합니다. 그 속도가 AI가 강해지는 속도를 따라잡고 있습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

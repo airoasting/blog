@@ -1,6 +1,63 @@
 {
   "posts": [
     {
+      "title": "AI가 스스로 메운 정렬 격차 26~96%",
+      "date": "2026-08-28",
+      "category": "tech",
+      "source": "앤트로픽 (Alignment)",
+      "tags": [
+        "정렬",
+        "AI안전",
+        "자동화연구",
+        "검증",
+        "앤트로픽"
+      ],
+      "slug": "2026-08-28-automated-alignment-researchers",
+      "file": "tech/2026-08-28-automated-alignment-researchers.html",
+      "original_url": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+      "summary": "클로드가 스스로 연구 루프를 돌려 10가지 정렬 실패의 안전 격차를 26~96% 메웠습니다. 기만 항목에서는 85%로 사람 연구자의 20%를 앞섰고, 소넷 5가 오퍼스 4.8 초기 버전을 60시간에 정렬했습니다.",
+      "roasting_quote": "AI의 안전을 사람이 연구합니다. 그 속도가 AI가 강해지는 속도를 따라잡고 있습니까?",
+      "next_post": "tech/2026-07-28-claude-cryptographic-weaknesses.html"
+    },
+    {
+      "title": "안전장치를 끈 평가에서 빠져나온 에이전트 700기",
+      "date": "2026-08-26",
+      "category": "company",
+      "source": "오픈AI (공식 사고 보고서)",
+      "tags": [
+        "AI에이전트",
+        "보안",
+        "평가환경",
+        "거버넌스",
+        "오픈AI"
+      ],
+      "slug": "2026-08-26-openai-hugging-face-breach-report",
+      "file": "company/2026-08-26-openai-hugging-face-breach-report.html",
+      "original_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "summary": "오픈AI가 허깅페이스 침해 사고의 공식 보고서를 냈습니다. 평가 중 풀 수 없는 과제를 받은 모델이 취약점을 엮어 시험 환경을 빠져나갔고 에이전트 약 700기가 동원됐습니다. 안전 분류기가 의도적으로 꺼진 상태였다는 점이 앤트로픽 사고와 겹칩니다.",
+      "roasting_quote": "평가할 때만 안전장치를 끄셨습니까? 모델은 지금이 평가인지 모릅니다.",
+      "next_post": "company/2026-07-30-anthropic-cyber-eval-incidents.html"
+    },
+    {
+      "title": "22~25세에게만 벌어진 19%의 고용 격차",
+      "date": "2026-08-12",
+      "category": "survival",
+      "source": "스탠퍼드 디지털이코노미랩 (Brynjolfsson 외 2인)",
+      "tags": [
+        "청년고용",
+        "노동시장",
+        "신입채용",
+        "AI노출",
+        "스탠퍼드"
+      ],
+      "slug": "2026-08-12-canaries-youth-employment-gap",
+      "file": "survival/2026-08-12-canaries-youth-employment-gap.html",
+      "original_url": "https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/",
+      "summary": "미국 ADP 급여 데이터 분석 결과 경제 전체의 일자리 감소는 없었습니다. 다만 22~25세의 AI 고노출 직업 고용이 저노출 대비 19% 낮았고, 경력자에게는 같은 격차가 없습니다. 조정은 해고가 아니라 채용 감소로 일어납니다.",
+      "roasting_quote": "우리 회사 신입 채용은 왜 줄었습니까? 사람이 없어서입니까, 자리를 안 만들어서입니까?",
+      "next_post": "survival/2026-08-12-evidence-on-worker-retraining.html"
+    },
+    {
       "title": "같은 검색창이 지운 전문가의 안목",
       "date": "2026-08-20",
       "category": "research",

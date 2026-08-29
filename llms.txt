@@ -21,9 +21,12 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-08-28 [기술] AI가 스스로 메운 정렬 격차 26~96% — /blog/tech/2026-08-28-automated-alignment-researchers.html
+- 2026-08-26 [기업] 안전장치를 끈 평가에서 빠져나온 에이전트 700기 — /blog/company/2026-08-26-openai-hugging-face-breach-report.html
 - 2026-08-20 [리서치] 같은 검색창이 지운 전문가의 안목 — /blog/research/2026-08-20-algorithms-trap-us-in-the-familiar.html
 - 2026-08-14 [기술] 클로드가 문장에 심는 보이지 않는 표식 — /blog/tech/2026-08-14-how-claude-text-watermark-works.html
 - 2026-08-13 [기술] 에이전트 240만 요청, 성공은 117건 — /blog/tech/2026-08-13-multiagent-patterns-and-problems.html
+- 2026-08-12 [생존] 22~25세에게만 벌어진 19%의 고용 격차 — /blog/survival/2026-08-12-canaries-youth-employment-gap.html
 - 2026-08-12 [생존] 재훈련 1만 3천 달러가 남긴 소득 1천 달러 — /blog/survival/2026-08-12-evidence-on-worker-retraining.html
 - 2026-08-06 [생존] 2년 만의 최저 해고, 사유 1위는 여전히 AI — /blog/survival/2026-08-06-challenger-july-ai-layoffs.html
 - 2026-08-02 [기업] 8월 2일 발효, 챗봇의 신분 고지 의무 — /blog/company/2026-08-02-eu-ai-act-transparency-enforcement.html
