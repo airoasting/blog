@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-08-29T09:45:04.759Z",
-  "duration": 0.407,
+  "buildAt": "2026-08-29T10:18:00.740Z",
+  "duration": 0.368,
   "concepts": {
-    "total": 130,
+    "total": 131,
     "validDefinitions": 126,
-    "needsReview": 4
+    "needsReview": 5
   },
   "relationships": {
     "total": 340
   },
   "coverage": {
-    "postsWithConcepts": 250,
-    "totalPosts": 266
+    "postsWithConcepts": 251,
+    "totalPosts": 267
   },
   "inject": {
-    "updated": 18,
+    "updated": 3,
     "inserted": 0,
-    "unchanged": 248,
+    "unchanged": 264,
     "skipped": 0
   },
   "needsManualReview": [
@@ -27,6 +27,10 @@
     {
       "name": "조직",
       "slug": "조직"
+    },
+    {
+      "name": "신뢰",
+      "slug": "신뢰"
     },
     {
       "name": "창의성",

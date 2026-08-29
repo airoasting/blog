@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-29T09:45:04.759Z",
+  "generatedAt": "2026-08-29T10:18:00.740Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 130,
+    "totalConcepts": 131,
     "totalRelationships": 340,
-    "totalPosts": 266,
+    "totalPosts": 267,
     "totalNewsletters": 63
   },
   "concepts": [
@@ -966,6 +966,33 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai규제",
+      "slug": "ai규제",
+      "name": "AI규제",
+      "aliases": [],
+      "definition": "AI 개발과 사용에 대한 법·제도적 통제입니다. EU AI Act가 글로벌 기준의 출발점입니다.",
+      "frequency": 12,
+      "category": "leader",
+      "posts": [
+        "2025-11-10-peter-thiel-antichrist-lectures",
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-07-04-ai-scribes-regulatory-gap",
+        "2026-07-13-we-must-act-now-economists-statement",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
+        "2026-07-27-anthropic-open-weights-position",
+        "2026-08-16-amodei-crisis-of-trust",
+        "2025-05-10-conversations-children-have-with-ai-chatbots",
+        "2025-07-10-ban-left-biased-ai",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-05-05-what-korea-needs-to-become-ai-g3",
+        "2025-05-12-why-trump-fired-the-copyright-office-director"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-08-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "asi",
       "slug": "asi",
       "name": "ASI",
@@ -1018,32 +1045,6 @@
       "newsletters": [],
       "firstSeen": "2025-02-15",
       "lastSeen": "2026-07-15",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai규제",
-      "slug": "ai규제",
-      "name": "AI규제",
-      "aliases": [],
-      "definition": "AI 개발과 사용에 대한 법·제도적 통제입니다. EU AI Act가 글로벌 기준의 출발점입니다.",
-      "frequency": 11,
-      "category": "leader",
-      "posts": [
-        "2025-11-10-peter-thiel-antichrist-lectures",
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-07-04-ai-scribes-regulatory-gap",
-        "2026-07-13-we-must-act-now-economists-statement",
-        "2026-07-14-demis-hassabis-ai-safety-plan",
-        "2026-07-27-anthropic-open-weights-position",
-        "2025-05-10-conversations-children-have-with-ai-chatbots",
-        "2025-07-10-ban-left-biased-ai",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-05-05-what-korea-needs-to-become-ai-g3",
-        "2025-05-12-why-trump-fired-the-copyright-office-director"
-      ],
-      "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-07-27",
       "needs_manual_review": false
     },
     {
@@ -2032,6 +2033,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "리더십",
+      "slug": "리더십",
+      "name": "리더십",
+      "aliases": [],
+      "definition": "리더십는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 4,
+      "category": "leader",
+      "posts": [
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-04-14-harvard-what-makes-a-good-learner",
+        "2026-07-15-why-i-left-google-deepmind",
+        "2026-08-16-amodei-crisis-of-trust"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-08-16",
+      "needs_manual_review": false
+    },
+    {
       "id": "의사결정",
       "slug": "의사결정",
       "name": "의사결정",
@@ -2534,24 +2554,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "리더십",
-      "slug": "리더십",
-      "name": "리더십",
-      "aliases": [],
-      "definition": "리더십는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 3,
-      "category": "leader",
-      "posts": [
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-04-14-harvard-what-makes-a-good-learner",
-        "2026-07-15-why-i-left-google-deepmind"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-04-14",
-      "lastSeen": "2026-07-15",
-      "needs_manual_review": false
-    },
-    {
       "id": "코딩ai",
       "slug": "코딩ai",
       "name": "코딩AI",
@@ -2825,6 +2827,24 @@
       "newsletters": [],
       "firstSeen": "2026-07-09",
       "lastSeen": "2026-08-20",
+      "needs_manual_review": true
+    },
+    {
+      "id": "신뢰",
+      "slug": "신뢰",
+      "name": "신뢰",
+      "aliases": [],
+      "definition": "신뢰는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "research",
+      "posts": [
+        "2026-07-09-ai-writing-westminster",
+        "2026-07-22-explaining-ai-decisions-accountability",
+        "2026-08-16-amodei-crisis-of-trust"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-07-09",
+      "lastSeen": "2026-08-16",
       "needs_manual_review": true
     },
     {
@@ -3216,6 +3236,11 @@
     },
     {
       "source": "LLM",
+      "target": "AI규제",
+      "strength": 4
+    },
+    {
+      "source": "LLM",
       "target": "ASI",
       "strength": 3
     },
@@ -3223,11 +3248,6 @@
       "source": "LLM",
       "target": "RAG",
       "strength": 7
-    },
-    {
-      "source": "LLM",
-      "target": "AI규제",
-      "strength": 4
     },
     {
       "source": "LLM",
@@ -3976,12 +3996,12 @@
     },
     {
       "source": "CTO",
-      "target": "RAG",
+      "target": "AI규제",
       "strength": 3
     },
     {
       "source": "CTO",
-      "target": "AI규제",
+      "target": "RAG",
       "strength": 3
     },
     {

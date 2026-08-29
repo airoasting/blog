@@ -1,6 +1,25 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "아모데이가 AI 반감에 붙인 이름, 신뢰의 위기",
+      "date": "2026-08-16",
+      "category": "leader",
+      "source": "X (Dario Amodei)",
+      "tags": [
+        "아모데이",
+        "신뢰",
+        "AI규제",
+        "여론",
+        "리더십"
+      ],
+      "slug": "2026-08-16-amodei-crisis-of-trust",
+      "file": "leader/2026-08-16-amodei-crisis-of-trust.html",
+      "original_url": "https://x.com/DarioAmodei",
+      "summary": "투자자 개빈 베이커가 아모데이의 위험 경고 탓에 AI 반감이 커졌다고 지적하자, 아모데이는 근본 원인이 신뢰의 위기라고 반박했습니다. 가장 정확한 비판은 AI 기업이 약속을 아직 지키지 못한 것이라고도 적었습니다. 이코노미스트·유고브 조사에서 미국인 71%가 AI 속도가 너무 빠르다고 답했습니다.",
+      "roasting_quote": "우리 회사가 AI로 약속한 것 중 지킨 것은 몇 개입니까? 반감은 대개 거기서 옵니다.",
+      "next_post": "leader/2026-07-27-anthropic-open-weights-position.html"
+    },
+    {
       "title": "AI가 스스로 메운 정렬 격차 26~96%",
       "date": "2026-08-28",
       "category": "tech",
