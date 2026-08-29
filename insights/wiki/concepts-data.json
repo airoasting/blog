@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-26T07:07:44.900Z",
+  "generatedAt": "2026-08-29T09:45:04.759Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 129,
-    "totalRelationships": 328,
-    "totalPosts": 263,
-    "totalNewsletters": 62
+    "totalConcepts": 130,
+    "totalRelationships": 340,
+    "totalPosts": 266,
+    "totalNewsletters": 63
   },
   "concepts": [
     {
@@ -107,7 +107,7 @@
       "name": "GPU",
       "aliases": [],
       "definition": "그래픽 처리 장치입니다. 병렬 연산에 강해 AI 학습·추론의 표준 하드웨어가 됐습니다.",
-      "frequency": 65,
+      "frequency": 66,
       "category": "newsletter",
       "posts": [
         "2025-05-05-furiosa-ai",
@@ -176,7 +176,8 @@
         "nl-54",
         "nl-58",
         "nl-61",
-        "nl-62"
+        "nl-62",
+        "nl-63"
       ],
       "firstSeen": "2024-08-05",
       "lastSeen": "2026-07-17",
@@ -270,7 +271,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 48,
+      "frequency": 49,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -316,6 +317,7 @@
         "2026-07-24-context-engineering-claude-5",
         "2026-07-30-anthropic-cyber-eval-incidents",
         "2026-08-13-multiagent-patterns-and-problems",
+        "2026-08-26-openai-hugging-face-breach-report",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -325,7 +327,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-08-13",
+      "lastSeen": "2026-08-26",
       "needs_manual_review": false
     },
     {
@@ -334,7 +336,7 @@
       "name": "CTO",
       "aliases": [],
       "definition": "최고기술책임자입니다. AI 도입과 기술 스택 결정의 핵심 의사결정자입니다.",
-      "frequency": 34,
+      "frequency": 36,
       "category": "tech",
       "posts": [
         "2026-03-01-conductor-multi-agent-orchestration",
@@ -365,6 +367,8 @@
         "2026-07-30-anthropic-cyber-eval-incidents",
         "2026-08-02-eu-ai-act-transparency-enforcement",
         "2026-08-13-multiagent-patterns-and-problems",
+        "2026-08-26-openai-hugging-face-breach-report",
+        "2026-08-28-automated-alignment-researchers",
         "2025-05-05-what-korea-needs-to-become-ai-g3",
         "2026-03-28-ai-agent-traps",
         "2026-04-01-claude-code-hidden-features"
@@ -375,7 +379,7 @@
         "nl-47"
       ],
       "firstSeen": "2025-05-05",
-      "lastSeen": "2026-08-13",
+      "lastSeen": "2026-08-28",
       "needs_manual_review": false
     },
     {
@@ -787,6 +791,38 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai-safety",
+      "slug": "ai-safety",
+      "name": "AI 안전",
+      "aliases": [
+        "AI안전",
+        "AI safety"
+      ],
+      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "frequency": 14,
+      "category": "tech",
+      "posts": [
+        "2026-01-25-dario-amodei-adolescence-of-technology",
+        "2026-02-23-persona-selection-model",
+        "2026-04-06-sam-altman-can-he-be-trusted",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-07-natural-language-autoencoders",
+        "2026-05-08-teaching-claude-why",
+        "2026-06-15-intelligence-explosion-not-ready",
+        "2026-07-06-llm-global-workspace",
+        "2026-07-13-claude-values-models-languages",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
+        "2026-07-15-why-i-left-google-deepmind",
+        "2026-08-28-automated-alignment-researchers",
+        "2024-11-01-geoffrey-hinton-on-ai-danger",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
+      ],
+      "newsletters": [],
+      "firstSeen": "2024-11-01",
+      "lastSeen": "2026-08-28",
+      "needs_manual_review": false
+    },
+    {
       "id": "ui",
       "slug": "ui",
       "name": "UI",
@@ -846,34 +882,32 @@
       "needs_manual_review": false
     },
     {
-      "id": "ai-safety",
-      "slug": "ai-safety",
-      "name": "AI 안전",
-      "aliases": [
-        "AI안전",
-        "AI safety"
-      ],
-      "definition": "AI가 의도하지 않은 피해를 일으키지 않도록 하는 연구·실천입니다. 정렬·해석성·통제 등을 다룹니다.",
+      "id": "hbm",
+      "slug": "hbm",
+      "name": "HBM",
+      "aliases": [],
+      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
       "frequency": 13,
-      "category": "tech",
+      "category": "newsletter",
       "posts": [
-        "2026-01-25-dario-amodei-adolescence-of-technology",
-        "2026-02-23-persona-selection-model",
-        "2026-04-06-sam-altman-can-he-be-trusted",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-05-07-natural-language-autoencoders",
-        "2026-05-08-teaching-claude-why",
-        "2026-06-15-intelligence-explosion-not-ready",
-        "2026-07-06-llm-global-workspace",
-        "2026-07-13-claude-values-models-languages",
-        "2026-07-14-demis-hassabis-ai-safety-plan",
-        "2026-07-15-why-i-left-google-deepmind",
-        "2024-11-01-geoffrey-hinton-on-ai-danger",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
+        "2026-07-17-fed-ai-buildout-economy",
+        "2025-07-15-why-jensen-huang-is-going-to-china"
       ],
-      "newsletters": [],
-      "firstSeen": "2024-11-01",
-      "lastSeen": "2026-07-15",
+      "newsletters": [
+        "nl-4",
+        "nl-9",
+        "nl-20",
+        "nl-24",
+        "nl-35",
+        "nl-50",
+        "nl-52",
+        "nl-54",
+        "nl-56",
+        "nl-58",
+        "nl-63"
+      ],
+      "firstSeen": "2025-07-15",
+      "lastSeen": "2026-07-17",
       "needs_manual_review": false
     },
     {
@@ -987,34 +1021,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "hbm",
-      "slug": "hbm",
-      "name": "HBM",
-      "aliases": [],
-      "definition": "고대역폭 메모리입니다. AI 학습 GPU에 필수이며 SK하이닉스가 주도합니다.",
-      "frequency": 12,
-      "category": "newsletter",
-      "posts": [
-        "2026-07-17-fed-ai-buildout-economy",
-        "2025-07-15-why-jensen-huang-is-going-to-china"
-      ],
-      "newsletters": [
-        "nl-4",
-        "nl-9",
-        "nl-20",
-        "nl-24",
-        "nl-35",
-        "nl-50",
-        "nl-52",
-        "nl-54",
-        "nl-56",
-        "nl-58"
-      ],
-      "firstSeen": "2025-07-15",
-      "lastSeen": "2026-07-17",
-      "needs_manual_review": false
-    },
-    {
       "id": "ai규제",
       "slug": "ai규제",
       "name": "AI규제",
@@ -1099,7 +1105,7 @@
       "name": "노동시장",
       "aliases": [],
       "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
-      "frequency": 9,
+      "frequency": 10,
       "category": "survival",
       "posts": [
         "2026-03-05-ai-labor-market-exposure",
@@ -1109,12 +1115,13 @@
         "2026-07-09-ai-job-apocalypse-misread",
         "2026-07-13-we-must-act-now-economists-statement",
         "2026-07-17-fed-ai-buildout-economy",
+        "2026-08-12-canaries-youth-employment-gap",
         "2025-05-10-will-ai-really-replace-our-work",
         "2025-05-20-generative-ai-effect-on-youth-employment"
       ],
       "newsletters": [],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2026-07-17",
+      "lastSeen": "2026-08-12",
       "needs_manual_review": false
     },
     {
@@ -1166,6 +1173,34 @@
       "needs_manual_review": false
     },
     {
+      "id": "앤트로픽",
+      "slug": "앤트로픽",
+      "name": "앤트로픽",
+      "aliases": [
+        "앤쓰로픽",
+        "앤스로픽",
+        "엔쓰로픽"
+      ],
+      "definition": "Anthropic의 한글 표기입니다. Claude를 만든 AI 안전 연구 기업으로 2021년 창업했습니다.",
+      "frequency": 9,
+      "category": "tech",
+      "posts": [
+        "2026-07-06-llm-global-workspace",
+        "2026-07-08-off-switch-dual-use-knowledge",
+        "2026-07-28-claude-cryptographic-weaknesses",
+        "2026-07-30-anthropic-cyber-eval-incidents",
+        "2026-08-12-evidence-on-worker-retraining",
+        "2026-08-13-multiagent-patterns-and-problems",
+        "2026-08-14-how-claude-text-watermark-works",
+        "2026-08-28-automated-alignment-researchers",
+        "2025-05-20-anthropic-cpo-on-pm-competencies"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2026-08-28",
+      "needs_manual_review": false
+    },
+    {
       "id": "멀티에이전트",
       "slug": "멀티에이전트",
       "name": "멀티에이전트",
@@ -1212,30 +1247,51 @@
       "needs_manual_review": false
     },
     {
-      "id": "앤트로픽",
-      "slug": "앤트로픽",
-      "name": "앤트로픽",
-      "aliases": [
-        "앤쓰로픽",
-        "앤스로픽",
-        "엔쓰로픽"
+      "id": "cpu",
+      "slug": "cpu",
+      "name": "CPU",
+      "aliases": [],
+      "definition": "중앙 처리 장치입니다. AI 학습보다 추론·범용 연산에서 여전히 핵심입니다.",
+      "frequency": 8,
+      "category": "newsletter",
+      "posts": [
+        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa"
       ],
-      "definition": "Anthropic의 한글 표기입니다. Claude를 만든 AI 안전 연구 기업으로 2021년 창업했습니다.",
+      "newsletters": [
+        "nl-13",
+        "nl-15",
+        "nl-23",
+        "nl-36",
+        "nl-42",
+        "nl-51",
+        "nl-63"
+      ],
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-03-17",
+      "needs_manual_review": false
+    },
+    {
+      "id": "metr",
+      "slug": "metr",
+      "name": "METR",
+      "aliases": [],
+      "definition": "AI 에이전트 자율 작업 시간을 측정하는 평가 기관입니다. 작업 길이로 능력을 정량화합니다.",
       "frequency": 8,
       "category": "tech",
       "posts": [
-        "2026-07-06-llm-global-workspace",
-        "2026-07-08-off-switch-dual-use-knowledge",
-        "2026-07-28-claude-cryptographic-weaknesses",
+        "2026-03-19-pm-on-ai-exponential",
+        "2026-04-03-ai-coder-automation-timeline",
+        "2026-07-16-year-of-the-loop",
+        "2026-07-17-fed-ai-buildout-economy",
         "2026-07-30-anthropic-cyber-eval-incidents",
-        "2026-08-12-evidence-on-worker-retraining",
-        "2026-08-13-multiagent-patterns-and-problems",
-        "2026-08-14-how-claude-text-watermark-works",
-        "2025-05-20-anthropic-cpo-on-pm-competencies"
+        "2026-08-26-openai-hugging-face-breach-report"
       ],
-      "newsletters": [],
-      "firstSeen": "2025-05-20",
-      "lastSeen": "2026-08-14",
+      "newsletters": [
+        "nl-44",
+        "nl-63"
+      ],
+      "firstSeen": "2026-03-19",
+      "lastSeen": "2026-08-26",
       "needs_manual_review": false
     },
     {
@@ -1258,29 +1314,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-15",
       "lastSeen": "2026-05-28",
-      "needs_manual_review": false
-    },
-    {
-      "id": "cpu",
-      "slug": "cpu",
-      "name": "CPU",
-      "aliases": [],
-      "definition": "중앙 처리 장치입니다. AI 학습보다 추론·범용 연산에서 여전히 핵심입니다.",
-      "frequency": 7,
-      "category": "newsletter",
-      "posts": [
-        "2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa"
-      ],
-      "newsletters": [
-        "nl-13",
-        "nl-15",
-        "nl-23",
-        "nl-36",
-        "nl-42",
-        "nl-51"
-      ],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-03-17",
       "needs_manual_review": false
     },
     {
@@ -1480,28 +1513,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "metr",
-      "slug": "metr",
-      "name": "METR",
-      "aliases": [],
-      "definition": "AI 에이전트 자율 작업 시간을 측정하는 평가 기관입니다. 작업 길이로 능력을 정량화합니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-03-19-pm-on-ai-exponential",
-        "2026-04-03-ai-coder-automation-timeline",
-        "2026-07-16-year-of-the-loop",
-        "2026-07-17-fed-ai-buildout-economy",
-        "2026-07-30-anthropic-cyber-eval-incidents"
-      ],
-      "newsletters": [
-        "nl-44"
-      ],
-      "firstSeen": "2026-03-19",
-      "lastSeen": "2026-07-30",
-      "needs_manual_review": false
-    },
-    {
       "id": "클로드",
       "slug": "클로드",
       "name": "클로드",
@@ -1562,6 +1573,26 @@
       ],
       "firstSeen": null,
       "lastSeen": null,
+      "needs_manual_review": false
+    },
+    {
+      "id": "거버넌스",
+      "slug": "거버넌스",
+      "name": "거버넌스",
+      "aliases": [],
+      "definition": "거버넌스는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 5,
+      "category": "company",
+      "posts": [
+        "2025-05-01-indonesia-startup-scandal",
+        "2026-07-14-demis-hassabis-ai-safety-plan",
+        "2026-07-15-why-i-left-google-deepmind",
+        "2026-07-30-anthropic-cyber-eval-incidents",
+        "2026-08-26-openai-hugging-face-breach-report"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-01",
+      "lastSeen": "2026-08-26",
       "needs_manual_review": false
     },
     {
@@ -1687,6 +1718,49 @@
       "needs_manual_review": false
     },
     {
+      "id": "신입채용",
+      "slug": "신입채용",
+      "name": "신입채용",
+      "aliases": [],
+      "definition": "신입채용는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 5,
+      "category": "survival",
+      "posts": [
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-15-pwc-ai-jobs-barometer-2026",
+        "2026-06-30-ramp-ai-jobs-hiring-boom",
+        "2026-08-12-canaries-youth-employment-gap",
+        "2025-05-20-generative-ai-effect-on-youth-employment"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2026-08-12",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai-alignment",
+      "slug": "ai-alignment",
+      "name": "AI 정렬",
+      "aliases": [
+        "AI alignment",
+        "정렬"
+      ],
+      "definition": "AI 정렬는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 5,
+      "category": "tech",
+      "posts": [
+        "2026-06-25-ai-models-values-different-from-people",
+        "2026-07-06-llm-global-workspace",
+        "2026-07-08-off-switch-dual-use-knowledge",
+        "2026-07-13-claude-values-models-languages",
+        "2026-08-28-automated-alignment-researchers"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-06-25",
+      "lastSeen": "2026-08-28",
+      "needs_manual_review": false
+    },
+    {
       "id": "반도체",
       "slug": "반도체",
       "name": "반도체",
@@ -1704,25 +1778,6 @@
       "newsletters": [],
       "firstSeen": "2024-08-25",
       "lastSeen": "2026-07-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "거버넌스",
-      "slug": "거버넌스",
-      "name": "거버넌스",
-      "aliases": [],
-      "definition": "거버넌스는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 4,
-      "category": "company",
-      "posts": [
-        "2025-05-01-indonesia-startup-scandal",
-        "2026-07-14-demis-hassabis-ai-safety-plan",
-        "2026-07-15-why-i-left-google-deepmind",
-        "2026-07-30-anthropic-cyber-eval-incidents"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-01",
-      "lastSeen": "2026-07-30",
       "needs_manual_review": false
     },
     {
@@ -1880,6 +1935,25 @@
       "needs_manual_review": false
     },
     {
+      "id": "보안",
+      "slug": "보안",
+      "name": "보안",
+      "aliases": [],
+      "definition": "AI 시스템과 데이터를 지키는 활동입니다. 에이전트의 권한 상승과 데이터 유출이 새 위험으로 떠올랐습니다.",
+      "frequency": 4,
+      "category": "company",
+      "posts": [
+        "2026-03-16-nvidia-nemoclaw",
+        "2026-07-30-anthropic-cyber-eval-incidents",
+        "2026-08-26-openai-hugging-face-breach-report",
+        "2026-03-28-ai-agent-traps"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-16",
+      "lastSeen": "2026-08-26",
+      "needs_manual_review": false
+    },
+    {
       "id": "ml",
       "slug": "ml",
       "name": "ML",
@@ -1977,25 +2051,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "신입채용",
-      "slug": "신입채용",
-      "name": "신입채용",
-      "aliases": [],
-      "definition": "신입채용는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 4,
-      "category": "survival",
-      "posts": [
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-06-15-pwc-ai-jobs-barometer-2026",
-        "2026-06-30-ramp-ai-jobs-hiring-boom",
-        "2025-05-20-generative-ai-effect-on-youth-employment"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-20",
-      "lastSeen": "2026-06-30",
-      "needs_manual_review": false
-    },
-    {
       "id": "업무재설계",
       "slug": "업무재설계",
       "name": "업무재설계",
@@ -2031,28 +2086,6 @@
       "newsletters": [],
       "firstSeen": "2024-07-20",
       "lastSeen": "2026-06-16",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai-alignment",
-      "slug": "ai-alignment",
-      "name": "AI 정렬",
-      "aliases": [
-        "AI alignment",
-        "정렬"
-      ],
-      "definition": "AI 정렬는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
-      "frequency": 4,
-      "category": "tech",
-      "posts": [
-        "2026-06-25-ai-models-values-different-from-people",
-        "2026-07-06-llm-global-workspace",
-        "2026-07-08-off-switch-dual-use-knowledge",
-        "2026-07-13-claude-values-models-languages"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-06-25",
-      "lastSeen": "2026-07-13",
       "needs_manual_review": false
     },
     {
@@ -2283,22 +2316,22 @@
       "needs_manual_review": false
     },
     {
-      "id": "보안",
-      "slug": "보안",
-      "name": "보안",
+      "id": "adp",
+      "slug": "adp",
+      "name": "ADP",
       "aliases": [],
-      "definition": "AI 시스템과 데이터를 지키는 활동입니다. 에이전트의 권한 상승과 데이터 유출이 새 위험으로 떠올랐습니다.",
+      "definition": "ADP는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
       "frequency": 3,
-      "category": "company",
+      "category": "survival",
       "posts": [
-        "2026-03-16-nvidia-nemoclaw",
-        "2026-07-30-anthropic-cyber-eval-incidents",
-        "2026-03-28-ai-agent-traps"
+        "2026-03-05-ai-labor-market-exposure",
+        "2026-08-12-canaries-youth-employment-gap",
+        "2025-05-20-generative-ai-effect-on-youth-employment"
       ],
       "newsletters": [],
-      "firstSeen": "2026-03-16",
-      "lastSeen": "2026-07-30",
-      "needs_manual_review": false
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2026-08-12",
+      "needs_manual_review": true
     },
     {
       "id": "erp",
@@ -3153,6 +3186,11 @@
     },
     {
       "source": "LLM",
+      "target": "AI 안전",
+      "strength": 3
+    },
+    {
+      "source": "LLM",
       "target": "UI",
       "strength": 6
     },
@@ -3163,7 +3201,7 @@
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
+      "target": "HBM",
       "strength": 3
     },
     {
@@ -3185,11 +3223,6 @@
       "source": "LLM",
       "target": "RAG",
       "strength": 7
-    },
-    {
-      "source": "LLM",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "LLM",
@@ -3218,12 +3251,12 @@
     },
     {
       "source": "LLM",
-      "target": "강화학습",
+      "target": "CPU",
       "strength": 2
     },
     {
       "source": "LLM",
-      "target": "CPU",
+      "target": "강화학습",
       "strength": 2
     },
     {
@@ -3393,6 +3426,11 @@
     },
     {
       "source": "GPU",
+      "target": "HBM",
+      "strength": 8
+    },
+    {
+      "source": "GPU",
       "target": "MCP",
       "strength": 3
     },
@@ -3408,23 +3446,23 @@
     },
     {
       "source": "GPU",
-      "target": "HBM",
-      "strength": 7
-    },
-    {
-      "source": "GPU",
       "target": "CFO",
       "strength": 4
     },
     {
       "source": "GPU",
-      "target": "강화학습",
-      "strength": 4
+      "target": "CPU",
+      "strength": 6
     },
     {
       "source": "GPU",
-      "target": "CPU",
-      "strength": 5
+      "target": "METR",
+      "strength": 2
+    },
+    {
+      "source": "GPU",
+      "target": "강화학습",
+      "strength": 4
     },
     {
       "source": "GPU",
@@ -3598,6 +3636,11 @@
     },
     {
       "source": "API",
+      "target": "HBM",
+      "strength": 4
+    },
+    {
+      "source": "API",
       "target": "MCP",
       "strength": 4
     },
@@ -3608,18 +3651,13 @@
     },
     {
       "source": "API",
-      "target": "HBM",
+      "target": "앤트로픽",
       "strength": 4
     },
     {
       "source": "API",
       "target": "멀티에이전트",
       "strength": 5
-    },
-    {
-      "source": "API",
-      "target": "앤트로픽",
-      "strength": 4
     },
     {
       "source": "API",
@@ -3699,7 +3737,7 @@
     {
       "source": "AI 에이전트",
       "target": "CTO",
-      "strength": 16
+      "strength": 17
     },
     {
       "source": "AI 에이전트",
@@ -3773,13 +3811,18 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "앤트로픽",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
       "target": "멀티에이전트",
       "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "앤트로픽",
-      "strength": 2
+      "target": "METR",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -3808,13 +3851,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "METR",
-      "strength": 2
+      "target": "클로드",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
-      "target": "클로드",
-      "strength": 3
+      "target": "거버넌스",
+      "strength": 2
     },
     {
       "source": "AI 에이전트",
@@ -3825,6 +3868,11 @@
       "source": "AI 에이전트",
       "target": "GPTs",
       "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "보안",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
@@ -3840,11 +3888,6 @@
       "source": "AI 에이전트",
       "target": "업무재설계",
       "strength": 2
-    },
-    {
-      "source": "AI 에이전트",
-      "target": "보안",
-      "strength": 3
     },
     {
       "source": "AI 에이전트",
@@ -3918,6 +3961,11 @@
     },
     {
       "source": "CTO",
+      "target": "AI 안전",
+      "strength": 2
+    },
+    {
+      "source": "CTO",
       "target": "UI",
       "strength": 3
     },
@@ -3938,13 +3986,18 @@
     },
     {
       "source": "CTO",
+      "target": "앤트로픽",
+      "strength": 6
+    },
+    {
+      "source": "CTO",
       "target": "멀티에이전트",
       "strength": 3
     },
     {
       "source": "CTO",
-      "target": "앤트로픽",
-      "strength": 5
+      "target": "METR",
+      "strength": 2
     },
     {
       "source": "CTO",
@@ -3968,6 +4021,21 @@
     },
     {
       "source": "CTO",
+      "target": "거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "CTO",
+      "target": "AI 정렬",
+      "strength": 3
+    },
+    {
+      "source": "CTO",
+      "target": "보안",
+      "strength": 3
+    },
+    {
+      "source": "CTO",
       "target": "MMLU",
       "strength": 3
     },
@@ -3975,16 +4043,6 @@
       "source": "CTO",
       "target": "CISO",
       "strength": 3
-    },
-    {
-      "source": "CTO",
-      "target": "AI 정렬",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
-      "target": "보안",
-      "strength": 2
     },
     {
       "source": "CTO",
@@ -4048,6 +4106,11 @@
     },
     {
       "source": "AGI",
+      "target": "HBM",
+      "strength": 3
+    },
+    {
+      "source": "AGI",
       "target": "MCP",
       "strength": 3
     },
@@ -4060,11 +4123,6 @@
       "source": "AGI",
       "target": "RAG",
       "strength": 2
-    },
-    {
-      "source": "AGI",
-      "target": "HBM",
-      "strength": 3
     },
     {
       "source": "AGI",
@@ -4108,12 +4166,12 @@
     },
     {
       "source": "IT",
-      "target": "TPU",
+      "target": "AI 안전",
       "strength": 2
     },
     {
       "source": "IT",
-      "target": "AI 안전",
+      "target": "TPU",
       "strength": 2
     },
     {
@@ -4417,6 +4475,31 @@
       "strength": 2
     },
     {
+      "source": "AI 안전",
+      "target": "AI규제",
+      "strength": 3
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "앤트로픽",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "AI 안전",
+      "target": "AI 정렬",
+      "strength": 3
+    },
+    {
       "source": "UI",
       "target": "RAG",
       "strength": 2
@@ -4442,23 +4525,48 @@
       "strength": 2
     },
     {
-      "source": "AI 안전",
-      "target": "AI규제",
+      "source": "HBM",
+      "target": "MCP",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "ASI",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "CFO",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "METR",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "DRAM",
+      "strength": 2
+    },
+    {
+      "source": "HBM",
+      "target": "ADR",
       "strength": 3
     },
     {
-      "source": "AI 안전",
-      "target": "AI거버넌스",
+      "source": "HBM",
+      "target": "EUV",
       "strength": 2
     },
     {
-      "source": "AI 안전",
-      "target": "거버넌스",
-      "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "AI 정렬",
+      "source": "HBM",
+      "target": "APEC",
       "strength": 2
     },
     {
@@ -4469,11 +4577,6 @@
     {
       "source": "생산성",
       "target": "AI전환",
-      "strength": 2
-    },
-    {
-      "source": "MCP",
-      "target": "HBM",
       "strength": 2
     },
     {
@@ -4508,42 +4611,7 @@
     },
     {
       "source": "ASI",
-      "target": "HBM",
-      "strength": 2
-    },
-    {
-      "source": "ASI",
       "target": "MMLU",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "CFO",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "SEC",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "DRAM",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "ADR",
-      "strength": 3
-    },
-    {
-      "source": "HBM",
-      "target": "EUV",
-      "strength": 2
-    },
-    {
-      "source": "HBM",
-      "target": "APEC",
       "strength": 2
     },
     {
@@ -4573,12 +4641,17 @@
     },
     {
       "source": "노동시장",
+      "target": "신입채용",
+      "strength": 4
+    },
+    {
+      "source": "노동시장",
       "target": "GPTs",
       "strength": 2
     },
     {
       "source": "노동시장",
-      "target": "신입채용",
+      "target": "ADP",
       "strength": 3
     },
     {
@@ -4587,24 +4660,34 @@
       "strength": 2
     },
     {
+      "source": "앤트로픽",
+      "target": "AI 정렬",
+      "strength": 3
+    },
+    {
       "source": "AI전환",
       "target": "CRM",
       "strength": 2
     },
     {
-      "source": "앤트로픽",
-      "target": "AI 정렬",
+      "source": "CPU",
+      "target": "SEC",
+      "strength": 2
+    },
+    {
+      "source": "METR",
+      "target": "거버넌스",
+      "strength": 2
+    },
+    {
+      "source": "METR",
+      "target": "보안",
       "strength": 2
     },
     {
       "source": "강화학습",
       "target": "GRPO",
       "strength": 4
-    },
-    {
-      "source": "CPU",
-      "target": "SEC",
-      "strength": 2
     },
     {
       "source": "SWE",
@@ -4662,6 +4745,11 @@
       "strength": 3
     },
     {
+      "source": "거버넌스",
+      "target": "보안",
+      "strength": 2
+    },
+    {
       "source": "RLHF",
       "target": "RL",
       "strength": 2
@@ -4684,6 +4772,11 @@
     {
       "source": "AI정책",
       "target": "한국AI",
+      "strength": 2
+    },
+    {
+      "source": "신입채용",
+      "target": "ADP",
       "strength": 2
     },
     {

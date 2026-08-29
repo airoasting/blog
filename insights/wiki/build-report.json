@@ -1,25 +1,29 @@
 {
-  "buildAt": "2026-08-26T07:07:44.900Z",
-  "duration": 0.362,
+  "buildAt": "2026-08-29T09:45:04.759Z",
+  "duration": 0.407,
   "concepts": {
-    "total": 129,
+    "total": 130,
     "validDefinitions": 126,
-    "needsReview": 3
+    "needsReview": 4
   },
   "relationships": {
-    "total": 328
+    "total": 340
   },
   "coverage": {
-    "postsWithConcepts": 247,
-    "totalPosts": 263
+    "postsWithConcepts": 250,
+    "totalPosts": 266
   },
   "inject": {
-    "updated": 0,
+    "updated": 18,
     "inserted": 0,
-    "unchanged": 263,
+    "unchanged": 248,
     "skipped": 0
   },
   "needsManualReview": [
+    {
+      "name": "ADP",
+      "slug": "adp"
+    },
     {
       "name": "조직",
       "slug": "조직"
