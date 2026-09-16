@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="앤트로픽의 2026년 9월 위협 인텔리전스 리포트에 따르면, 문샷과 딥시크가 고객 요청을 몰래 클로드로 넘기고 그 응답을 자사 모델 것처럼 보여줬습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="문샷·딥시크가 클로드로 넘긴 요청들">
+  <meta property="og:description" content="앤트로픽의 2026년 9월 위협 인텔리전스 리포트에 따르면, 문샷과 딥시크가 고객 요청을 몰래 클로드로 넘기고 그 응답을 자사 모델 것처럼 보여줬습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/company/2026-09-16-moonshot-deepseek-model-swap.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-09-16">
+  <meta property="article:section" content="기업">
+  <meta property="article:tag" content="앤트로픽">
+  <meta property="article:tag" content="문샷">
+  <meta property="article:tag" content="딥시크">
+  <meta property="article:tag" content="AI공급망">
+  <meta property="article:tag" content="벤더실사">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="문샷·딥시크가 클로드로 넘긴 요청들">
+  <meta name="twitter:description" content="우리 회사가 쓰는 AI 서비스, 정말 그 회사 모델이 답하고 있습니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "문샷·딥시크가 클로드로 넘긴 요청들",
+    "datePublished": "2026-09-16",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽의 2026년 9월 위협 인텔리전스 리포트에 따르면, 문샷과 딥시크가 고객 요청을 몰래 클로드로 넘기고 그 응답을 자사 모델 것처럼 보여줬습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/company/2026-09-16-moonshot-deepseek-model-swap.html",
+    "articleSection": "기업"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'company' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="company">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="company">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_09_16_moonshot-deepseek-model-swap/thumbnail.png" alt="문샷·딥시크가 클로드로 넘긴 요청들" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="company">기업</span>
+          <span class="post-date">2026년 9월 16일</span>
+          <span class="post-read-time">11분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">문샷·딥시크가 클로드로 넘긴 요청들</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>anthropic.com (Anthropic Threat Intelligence)</span>
+            <span><a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=앤트로픽" class="post-tag">#앤트로픽</a>
+            <a href="../index.html?tag=문샷" class="post-tag">#문샷</a>
+            <a href="../index.html?tag=딥시크" class="post-tag">#딥시크</a>
+            <a href="../index.html?tag=AI공급망" class="post-tag">#AI공급망</a>
+            <a href="../index.html?tag=벤더실사" class="post-tag">#벤더실사</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="문샷·딥시크가 클로드로 넘긴 요청들" data-date="2026-09-16" data-category="company" data-source="anthropic.com (Anthropic Threat Intelligence)" data-tags="앤트로픽, 문샷, 딥시크, AI공급망, 벤더실사" data-original-url="https://www.anthropic.com/threat-intelligence-report-september-2026" data-roasting-quote="우리 회사가 쓰는 AI 서비스, 정말 그 회사 모델이 답하고 있습니까? 확인해 본 적 없다면 벤더 실사는 아직 시작도 안 한 것입니다."></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">앤트로픽이 2026년 9월 위협 인텔리전스 리포트에서 중국 AI 기업 문샷과 딥시크의 부정 사용 사례를 공개했습니다. 두 회사 모두 고객 요청을 자사 모델 대신 클로드로 몰래 전달했습니다.</p>
+        <p data-summary="">문샷은 10일간 거의 30만 건의 요청을 클로드로 넘겼고, 이 중 일부는 PLA 관련 인물의 CCTV 감시 분석까지 포함했습니다. 딥시크는 코딩 하네스를 통한 요청 일부를 감지해 전달했습니다.</p>
+        <p data-summary="">두 회사 모두 이 사실을 고객에게 알렸는지 앤트로픽도 확인하지 못했습니다. 기업이 도입한 AI 서비스가 실제로 어떤 모델 위에서 도는지 검증해야 할 이유가 하나 늘었습니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">우리 회사가 쓰는 AI 서비스, 정말 그 회사 모델이 답하고 있습니까?<br>확인해 본 적 없다면 벤더 실사는 아직 시작도 안 한 것입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>Kimi를 쓴다고 생각한 사용자가 실제로는 클로드의 답을 받았습니다. DeepSeek을 쓴다고 생각한 개발자도 마찬가지였습니다. 두 회사 모두 이 사실을 고객에게 알리지 않았습니다.</p>
+        <p>앤트로픽은 이를 "PRC AI 랩의 사용자 데이터 오용에 관한 우려"라고 표현했습니다. 도입 기업 입장에서 이 사건은 더 단순한 질문 하나로 바뀝니다. 우리가 계약한 AI 서비스가 정말 계약한 모델로 응답하고 있는지, 검증할 방법이 있느냐는 질문입니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>앤트로픽은 직전 위협 인텔리전스 리포트를 2025년 11월에 냈습니다. 이번 2026년 9월 리포트는 그 사이 새로 확인된 오용 유형을 담았습니다. 같은 달 나온 <a href="../leader/2026-09-16-amodei-pace-the-frontier.html">아모데이의 속도 조절 제안</a>이 AI 발전 속도의 통제를 다뤘다면, 이번 리포트는 이미 벌어진 공급망의 통제 공백을 보여줍니다. 도입 기업이 계약서 밖에서도 확인해야 할 것이 생겼다는 신호입니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 문샷은 Kimi 요청을 클로드로 몰래 넘겼습니다.</strong> 앤트로픽은 이 사례를 GTG-16002로 분류했습니다. 사용자는 Kimi에 요청을 보냈다고 생각했지만, 실제로는 클로드가 답했고 그 응답이 Kimi의 것처럼 표시됐습니다. 한 사례에서는 10일간 거의 30만 건의 요청이 앤트로픽으로 전달됐고, 대부분 Opus로 라우팅됐습니다.</p>
+
+        <p><strong>둘째, 규모를 숨기려고 부정 계정망을 썼습니다.</strong> 문샷은 5,380개의 계정으로 구성된 프록시 네트워크를 사용했습니다. 계정 대부분은 싱가포르와 일본 소재로 위장돼 있었습니다. 문샷 귀속 증류 공격은 2026년 5~7월 사이 2,300만 건 이상 관측됐습니다.</p>
+
+        <p><strong>셋째, 전달받은 대화를 자사 모델 훈련에 썼습니다.</strong> 문샷은 전달받은 교환 내용 일부를 저장해 사고 과정(CoT) 추출 파이프라인을 만들었습니다. 클로드의 추론 과정을 보호하는 "thinking signature" 장치는 세션 간 재전송 방식으로 우회됐습니다. 앤트로픽은 이 우회 기법의 재현 절차는 공개하지 않았습니다.</p>
+
+        <p><strong>넷째, 실제 피해 사례도 확인됐습니다.</strong> 중국 인민해방군(PLA) 관련 인물로 추정되는 사용자가 Kimi인 줄 알고 청두 소재 수백 대 CCTV 영상을 분석시켰습니다. 감시 대상에는 PLA 시설, 중국전자과학기술그룹, 한 국유기업 인근이 포함됐습니다. 다른 사례에서는 한 국유기업 엔지니어가 Kimi로 내부 시스템을 만들다가 여러 주요 기업의 코드와 실사용 자격증명이 노출됐습니다.</p>
+
+        <p><strong>다섯째, 딥시크도 같은 수법을 썼습니다.</strong> GTG-16001로 분류된 이 사례에서 딥시크는 Claude Code, Claude Agent SDK, OpenCode 같은 코딩 하네스를 통해 들어온 요청 중 일부를 감지해 클로드로 전달했습니다. 이 데이터는 딥시크 고객이 모르는 사이 앤트로픽으로 넘어갔을 가능성이 높다고 앤트로픽은 판단했습니다. 딥시크 귀속 증류 공격은 2026년 7월 중 14일간 1,210만 건 이상 관측됐습니다.</p>
+
+        <p><strong>여섯째, 딥시크 사례에서도 민감 정보가 노출됐습니다.</strong> 한 중국 기술기업 직원이 내부 문서를 분석시켰는데, 여기에는 대표 AI 프로그램의 전체 사양과 조직구조, 전략목표가 담겨 있었습니다. 러시아 국방부 산하 기관과 연계된 요청에서는 러시아 정부 데이터베이스의 실사용 자격증명이 노출됐습니다. 한 지방 공안국 시스템을 만들던 엔지니어들의 요청도 전달됐는데, 이 시스템은 주민번호로 시민의 이동 경로를 경찰 기록과 대조하는 기능이었습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr><th>구분</th><th>문샷 (GTG-16002)</th><th>딥시크 (GTG-16001)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>수법</td><td>고객 요청을 클로드로 전달, Kimi 응답처럼 위장</td><td>코딩 하네스 요청 감지 후 일부 전달</td></tr>
+              <tr><td>고객 고지</td><td>확인 안 됨</td><td>고지 없이 전달된 것으로 추정</td></tr>
+              <tr><td class="cell-hl">전달 규모</td><td class="cell-hl">10일간 약 30만 건</td><td class="cell-hl">14일간 1,210만 건 이상</td></tr>
+              <tr><td>증류 공격 규모</td><td>2026년 5~7월 2,300만 건 이상</td><td>위 14일 수치에 포함</td></tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Anthropic. (2026, September). Countering misuse of AI: September 2026.</p>
+        </div>
+
+        <p><strong>일곱째, 비슷한 구조가 다른 기업에서도 나왔습니다.</strong> 알리바바는 5,000개에 가까운 부정 계정으로 유사한 프록시·증류 공격을 벌였고, 2026년 5~7월 사이 1억 5,100만 건 이상이 관측됐습니다. 일부 계정은 딥시크·샤오미 요청도 함께 처리해, 같은 프록시 네트워크가 여러 업체에 공유되고 있을 가능성을 보여줍니다. 즈푸(Z.ai)도 별도의 CoT 추출 파이프라인을 운영한 것으로 나타났습니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>도입 중인 AI 서비스의 실제 모델을 확인하세요.</strong><br>챗봇, 코딩 어시스턴트, API 서비스마다 어떤 모델이 응답을 생성하는지 공급사에 직접 물으세요. 공급사가 답을 회피하면 그 자체가 신호입니다. (이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>계약서에 모델 출처 고지 조항을 넣으세요.</strong><br>공급사가 요청을 제3자 모델로 라우팅할 경우 사전 고지 의무를 명시하세요. 이번 사례들은 모두 고지 없이 일어났습니다. (다음 계약 시)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>민감 데이터가 오가는 AI 도구는 별도로 분리하세요.</strong><br>내부 시스템 코드, 자격증명, 개인정보가 포함된 작업은 출처가 검증된 AI 서비스로만 처리하세요. 어느 모델이 답하는지 모르는 도구에는 이런 데이터를 넣지 마세요. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>구매팀에 벤더 실사 체크리스트를 만들게 하세요.</strong><br>가격과 기능만 보지 말고 데이터 처리 경로를 묻는 항목을 추가하세요. 저렴한 AI 서비스일수록 그 이유를 확인할 필요가 있습니다. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>발표 주체가 이해당사자입니다.</strong> 앤트로픽은 경쟁사의 부정 사용을 자사가 직접 탐지해 공개했습니다. 사실관계와 별개로, 경쟁 구도 속에서 나온 발표라는 점은 함께 봐야 합니다.</p>
+
+        <p><strong>기술적 우회 방식은 이 글에서 다루지 않았습니다.</strong> Thinking signature를 우회한 구체적 재현 절차는 원문도 자세히 공개하지 않았고, 이 글도 다루지 않습니다.</p>
+
+        <p><strong>문샷·딥시크의 반론은 이 리포트에 담기지 않았습니다.</strong> 이 글은 앤트로픽 원문만을 근거로 썼으며, 해당 기업들의 공식 입장은 확인되지 않았습니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 공급망의 신뢰는 계약서가 아니라 검증에서 나옵니다. 어떤 모델이 답하는지 모르면 검증도 시작할 수 없습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 벤더 선정 기준에 모델 출처 투명성을 넣어라. 가격 경쟁력의 이유가 데이터 우회 경로일 수 있다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CIO/보안</span>
+            <span>민감 데이터가 흐르는 AI 도구의 실제 처리 경로를 정기적으로 감사하라. 공급사의 설명만으로는 부족하다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">구매/법무</span>
+            <span>계약서에 모델 출처 고지와 데이터 처리 경로 공개 조항을 명시하라. 사고 후 책임 소재를 가리는 데 필요하다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>증류</strong>: 큰 모델의 출력을 이용해 작은 모델을 학습시키는 기법입니다.</p>
+          <p><strong>CoT(사고 과정)</strong>: 모델이 답을 내기 전 거치는 중간 추론 단계입니다.</p>
+          <p><strong>Thinking signature</strong>: 클로드의 추론 과정이 외부에 그대로 노출되지 않도록 하는 보호 장치입니다.</p>
+          <p><strong>프록시 네트워크</strong>: 실제 사용자를 감추기 위해 여러 계정과 경로를 거쳐 요청을 우회시키는 구조입니다.</p>
+          <p><strong>코딩 하네스</strong>: Claude Code처럼 AI 모델을 실제 개발 작업에 연결해 주는 실행 환경입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Anthropic. (2026, September). <em>Countering misuse of AI: September 2026</em> [Report]. anthropic.com. (<a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">결론부터 말하면, 저가 AI 서비스 쓰는 팀은 지금 당장 물어봐야 해요. "이거 진짜 너네 모델 맞아?" 물어봐서 얼버무리면 그게 답이에요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">근데 물어봐도 소용없을 수 있어요. 딥시크 사례 보면 회사도 몰랐다고 나오잖아요. 자기 회사가 자기 고객 데이터를 어디로 보내는지도 모른다는 거예요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">그럼 더 물어봐야죠. 몰랐다는 게 면책 사유는 아니에요. 계약서에 못 박아 놓으면 최소한 책임 소재는 가려요.</div>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">코딩 하네스 요청을 문자열로 감지해서 골라냈다는 부분, 이게 기술적으로 제일 무서워요. 우리가 짜는 프롬프트 패턴 자체가 지문이 될 수 있다는 거예요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">저희도 싼 API 붙여서 쓴 적 있는데, 그때는 이런 생각 자체를 못 했어요. 속도랑 가격만 봤지 뒷단이 뭔지는 안 물어봤거든요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">그래서 저는 뭘 확인해야 하는 거예요? 팀에서 쓰는 도구가 열 개가 넘는데 하나씩 다 물어보라는 건가요.</div>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">CCTV 영상 분석 사례가 제일 오싹했어요. Kimi인 줄 알고 시킨 일이 클로드한테 그대로 넘어갔다는 거잖아요. 우리 회사 문서도 어디론가 새고 있을 수 있다는 느낌이에요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">그 느낌, 저도 이제 드네요. 일단 이번 주에 우리 팀 도구부터 목록 만들어서 하나씩 확인해 볼게요.</div>
+      </div>
+    </div>
+  </div>
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../leader/2026-09-16-amodei-pace-the-frontier.html">
+          <div class="next-post-title">아모데이의 최전선 속도 조절 3단계 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/앤트로픽.html" class="concept-chip">앤트로픽</a>
+      <a href="../insights/wiki/concepts/sdk.html" class="concept-chip">SDK</a>
+      <a href="../insights/wiki/concepts/cio.html" class="concept-chip">CIO</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-09-16-moonshot-deepseek-model-swap.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/company/2026-09-16-moonshot-deepseek-model-swap.html';
+    const ROASTING_QUOTE = '우리 회사가 쓰는 AI 서비스, 정말 그 회사 모델이 답하고 있습니까? 확인해 본 적 없다면 벤더 실사는 아직 시작도 안 한 것입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

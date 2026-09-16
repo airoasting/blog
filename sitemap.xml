@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -23,7 +23,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/company/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,9 +63,15 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/survival/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://airoasting.github.io/blog/column/2026-09-13-amodei-pace-the-frontier-motive.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/column/2026-07-22-ax-tacit-knowledge-company-brain.html</loc>
@@ -1413,4 +1419,7 @@
   <url><loc>https://airoasting.github.io/blog/company/2026-08-26-openai-hugging-face-breach-report.html</loc><lastmod>2026-08-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/tech/2026-08-28-automated-alignment-researchers.html</loc><lastmod>2026-08-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/leader/2026-08-16-amodei-crisis-of-trust.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/leader/2026-09-16-amodei-pace-the-frontier.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/company/2026-09-16-moonshot-deepseek-model-swap.html</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/survival/2026-09-04-information-sector-ai-relabel.html</loc><lastmod>2026-09-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
