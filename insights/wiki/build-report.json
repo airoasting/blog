@@ -1,28 +1,32 @@
 {
-  "buildAt": "2026-08-29T10:18:00.740Z",
-  "duration": 0.368,
+  "buildAt": "2026-09-16T11:56:29.385Z",
+  "duration": 0.387,
   "concepts": {
-    "total": 131,
+    "total": 133,
     "validDefinitions": 126,
-    "needsReview": 5
+    "needsReview": 7
   },
   "relationships": {
-    "total": 340
+    "total": 349
   },
   "coverage": {
-    "postsWithConcepts": 251,
-    "totalPosts": 267
+    "postsWithConcepts": 254,
+    "totalPosts": 270
   },
   "inject": {
-    "updated": 3,
+    "updated": 0,
     "inserted": 0,
-    "unchanged": 264,
+    "unchanged": 270,
     "skipped": 0
   },
   "needsManualReview": [
     {
       "name": "ADP",
       "slug": "adp"
+    },
+    {
+      "name": "CIO",
+      "slug": "cio"
     },
     {
       "name": "조직",
@@ -35,6 +39,10 @@
     {
       "name": "창의성",
       "slug": "창의성"
+    },
+    {
+      "name": "아모데이",
+      "slug": "아모데이"
     },
     {
       "name": "규제",

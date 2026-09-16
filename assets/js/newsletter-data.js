@@ -1,5 +1,19 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 65,
+    "title": "오픈AI가 난제를 풀었다는데, 수학자들은 왜 화가 났을까",
+    "date": "2026-09-12",
+    "img": "nl-65.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-65-%EC%98%A4%ED%94%88ai%EA%B0%80-%EB%82%9C%EC%A0%9C%EB%A5%BC-%ED%92%80%EC%97%88%EB%8B%A4%EB%8A%94%EB%8D%B0-%EC%88%98%ED%95%99%EC%9E%90%EB%93%A4%EC%9D%80-%EC%99%9C-%ED%99%94%EA%B0%80-%EB%82%AC%EC%9D%84%EA%B9%8C-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-fd5uc/"
+  },
+  {
+    "ep": 64,
+    "title": "오픈AI 에이전트 3,000개의 은밀한 대화",
+    "date": "2026-09-05",
+    "img": "nl-64.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-64-%EC%98%A4%ED%94%88ai-%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8-3000%EA%B0%9C%EC%9D%98-%EC%9D%80%EB%B0%80%ED%95%9C-%EB%8C%80%ED%99%94-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-pqchc/"
+  },
+  {
     "ep": 63,
     "title": "오만, 미 국방부가 앤트로픽에 붙인 이름",
     "date": "2026-08-29",
