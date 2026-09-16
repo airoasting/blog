@@ -1,6 +1,6 @@
 # 아모데이의 최전선 속도 조절 3단계
 
-- **날짜**: 2026-09-16
+- **날짜**: 2026-09-12
 - **카테고리**: 리더
 - **소스**: darioamodei.com (Dario Amodei)
 - **원문**: https://darioamodei.com/post/we-must-pace-the-frontier

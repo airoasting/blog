@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-09-16T11:56:29.385Z",
-  "duration": 0.387,
+  "buildAt": "2026-09-16T12:09:13.057Z",
+  "duration": 0.26,
   "concepts": {
-    "total": 133,
+    "total": 135,
     "validDefinitions": 126,
-    "needsReview": 7
+    "needsReview": 9
   },
   "relationships": {
-    "total": 349
+    "total": 350
   },
   "coverage": {
-    "postsWithConcepts": 254,
-    "totalPosts": 270
+    "postsWithConcepts": 255,
+    "totalPosts": 271
   },
   "inject": {
     "updated": 0,
     "inserted": 0,
-    "unchanged": 270,
+    "unchanged": 271,
     "skipped": 0
   },
   "needsManualReview": [
@@ -27,6 +27,10 @@
     {
       "name": "CIO",
       "slug": "cio"
+    },
+    {
+      "name": "AI실업",
+      "slug": "ai실업"
     },
     {
       "name": "조직",
@@ -47,6 +51,10 @@
     {
       "name": "규제",
       "slug": "규제"
+    },
+    {
+      "name": "인력전략",
+      "slug": "인력전략"
     }
   ]
 }

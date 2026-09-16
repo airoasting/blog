@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-09-16T11:56:29.385Z",
+  "generatedAt": "2026-09-16T12:09:13.057Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 133,
-    "totalRelationships": 349,
-    "totalPosts": 270,
+    "totalConcepts": 135,
+    "totalRelationships": 350,
+    "totalPosts": 271,
     "totalNewsletters": 65
   },
   "concepts": [
@@ -222,7 +222,7 @@
         "2026-07-30-anthropic-cyber-eval-incidents",
         "2026-08-13-multiagent-patterns-and-problems",
         "2026-08-14-how-claude-text-watermark-works",
-        "2026-09-16-moonshot-deepseek-model-swap",
+        "2026-09-11-moonshot-deepseek-model-swap",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
         "2025-06-20-legally-bought-books-fair-use-pirated-books-infringement",
         "2025-02-20-sovereign-ai",
@@ -259,7 +259,7 @@
         "nl-61"
       ],
       "firstSeen": "2025-02-15",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-11",
       "needs_manual_review": false
     },
     {
@@ -753,14 +753,14 @@
         "2026-07-14-demis-hassabis-ai-safety-plan",
         "2026-07-15-why-i-left-google-deepmind",
         "2026-08-28-automated-alignment-researchers",
+        "2026-09-12-amodei-pace-the-frontier",
         "2026-09-13-amodei-pace-the-frontier-motive",
-        "2026-09-16-amodei-pace-the-frontier",
         "2024-11-01-geoffrey-hinton-on-ai-danger",
         "2025-03-10-ai-intentional-lies-reward-hacking"
       ],
       "newsletters": [],
       "firstSeen": "2024-11-01",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-13",
       "needs_manual_review": false
     },
     {
@@ -1129,13 +1129,13 @@
         "2026-08-13-multiagent-patterns-and-problems",
         "2026-08-14-how-claude-text-watermark-works",
         "2026-08-28-automated-alignment-researchers",
+        "2026-09-11-moonshot-deepseek-model-swap",
         "2026-09-13-amodei-pace-the-frontier-motive",
-        "2026-09-16-moonshot-deepseek-model-swap",
         "2025-05-20-anthropic-cpo-on-pm-competencies"
       ],
       "newsletters": [],
       "firstSeen": "2025-05-20",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-13",
       "needs_manual_review": false
     },
     {
@@ -1178,15 +1178,15 @@
         "2026-07-17-fed-ai-buildout-economy",
         "2026-07-30-anthropic-cyber-eval-incidents",
         "2026-08-26-openai-hugging-face-breach-report",
-        "2026-09-13-amodei-pace-the-frontier-motive",
-        "2026-09-16-amodei-pace-the-frontier"
+        "2026-09-12-amodei-pace-the-frontier",
+        "2026-09-13-amodei-pace-the-frontier-motive"
       ],
       "newsletters": [
         "nl-44",
         "nl-63"
       ],
       "firstSeen": "2026-03-19",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-13",
       "needs_manual_review": false
     },
     {
@@ -1206,12 +1206,12 @@
         "2026-07-01-un-ai-scientific-panel",
         "2026-07-03-alibaba-bans-claude-code",
         "2026-07-22-explaining-ai-decisions-accountability",
-        "2026-09-16-amodei-pace-the-frontier",
+        "2026-09-12-amodei-pace-the-frontier",
         "2025-04-01-light-and-shadow-of-china-digital-id-system"
       ],
       "newsletters": [],
       "firstSeen": "2025-04-01",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-12",
       "needs_manual_review": false
     },
     {
@@ -1745,11 +1745,11 @@
         "2026-04-14-harvard-what-makes-a-good-learner",
         "2026-07-15-why-i-left-google-deepmind",
         "2026-08-16-amodei-crisis-of-trust",
-        "2026-09-16-amodei-pace-the-frontier"
+        "2026-09-12-amodei-pace-the-frontier"
       ],
       "newsletters": [],
       "firstSeen": "2026-04-14",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-12",
       "needs_manual_review": false
     },
     {
@@ -2076,14 +2076,14 @@
       "category": "newsletter",
       "posts": [
         "2026-04-11-agent-harness-memory-lock-in",
-        "2026-09-16-moonshot-deepseek-model-swap"
+        "2026-09-11-moonshot-deepseek-model-swap"
       ],
       "newsletters": [
         "nl-16",
         "nl-17"
       ],
       "firstSeen": "2026-04-11",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-11",
       "needs_manual_review": false
     },
     {
@@ -2579,12 +2579,12 @@
       "category": "company",
       "posts": [
         "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-09-16-amodei-pace-the-frontier",
-        "2026-09-16-moonshot-deepseek-model-swap"
+        "2026-09-11-moonshot-deepseek-model-swap",
+        "2026-09-12-amodei-pace-the-frontier"
       ],
       "newsletters": [],
       "firstSeen": "2026-04-14",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-12",
       "needs_manual_review": true
     },
     {
@@ -2846,6 +2846,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "ai실업",
+      "slug": "ai실업",
+      "name": "AI실업",
+      "aliases": [],
+      "definition": "AI실업는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "survival",
+      "posts": [
+        "2026-07-09-ai-job-apocalypse-misread",
+        "2026-08-06-challenger-july-ai-layoffs",
+        "2026-09-04-information-sector-ai-relabel"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-07-09",
+      "lastSeen": "2026-09-04",
+      "needs_manual_review": true
+    },
+    {
       "id": "조직",
       "slug": "조직",
       "name": "조직",
@@ -2910,11 +2928,11 @@
       "posts": [
         "2026-07-27-anthropic-open-weights-position",
         "2026-08-16-amodei-crisis-of-trust",
-        "2026-09-16-amodei-pace-the-frontier"
+        "2026-09-12-amodei-pace-the-frontier"
       ],
       "newsletters": [],
       "firstSeen": "2026-07-27",
-      "lastSeen": "2026-09-16",
+      "lastSeen": "2026-09-12",
       "needs_manual_review": true
     },
     {
@@ -2933,6 +2951,24 @@
       "newsletters": [],
       "firstSeen": "2024-08-20",
       "lastSeen": "2026-08-02",
+      "needs_manual_review": true
+    },
+    {
+      "id": "인력전략",
+      "slug": "인력전략",
+      "name": "인력전략",
+      "aliases": [],
+      "definition": "인력전략는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "survival",
+      "posts": [
+        "2026-08-06-challenger-july-ai-layoffs",
+        "2026-09-04-information-sector-ai-relabel",
+        "2025-04-20-who-gets-displaced-first-in-ai-era"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-04-20",
+      "lastSeen": "2026-09-04",
       "needs_manual_review": true
     },
     {
@@ -4934,6 +4970,11 @@
     {
       "source": "GLM",
       "target": "APEC",
+      "strength": 2
+    },
+    {
+      "source": "AI실업",
+      "target": "인력전략",
       "strength": 2
     }
   ]

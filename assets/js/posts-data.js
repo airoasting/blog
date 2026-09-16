@@ -1,13 +1,13 @@
 window.POSTS_DATA = {
   "posts": [
     {
-      "title": "정보산업 감원 가속, 사유는 구조조정으로",
+      "title": "IT산업 감원 가속, 사유는 구조조정으로",
       "date": "2026-09-04",
       "category": "survival",
       "source": "미국 노동통계국 (BLS)",
       "tags": [
         "고용시장",
-        "정보산업",
+        "IT산업",
         "AI실업",
         "감원",
         "인력전략"
@@ -15,13 +15,13 @@ window.POSTS_DATA = {
       "slug": "2026-09-04-information-sector-ai-relabel",
       "file": "survival/2026-09-04-information-sector-ai-relabel.html",
       "original_url": "https://www.bls.gov/news.release/empsit.nr0.htm",
-      "summary": "2026년 8월 미국 비농업 고용은 16만 2천 명 늘었지만 정보산업만 2만 3천 명 줄어 12개월 평균의 약 3배였습니다. 같은 달 챌린저 리포트에서는 감원 사유 1위가 다섯 달 만에 AI에서 구조조정으로 바뀌었습니다.",
+      "summary": "2026년 8월 미국 비농업 고용은 16만 2천 명 늘었지만 IT산업만 2만 3천 명 줄어 12개월 평균의 약 3배였습니다. 같은 달 챌린저 리포트에서는 감원 사유 1위가 다섯 달 만에 AI에서 구조조정으로 바뀌었습니다.",
       "roasting_quote": "감원이 줄어든 게 아닙니다. 이름표가 바뀐 것입니다.",
-      "next_post": "company/2026-09-16-moonshot-deepseek-model-swap.html"
+      "next_post": "company/2026-09-11-moonshot-deepseek-model-swap.html"
     },
     {
       "title": "문샷·딥시크가 클로드로 넘긴 요청들",
-      "date": "2026-09-16",
+      "date": "2026-09-11",
       "category": "company",
       "source": "anthropic.com (Anthropic Threat Intelligence)",
       "tags": [
@@ -31,8 +31,8 @@ window.POSTS_DATA = {
         "AI공급망",
         "벤더실사"
       ],
-      "slug": "2026-09-16-moonshot-deepseek-model-swap",
-      "file": "company/2026-09-16-moonshot-deepseek-model-swap.html",
+      "slug": "2026-09-11-moonshot-deepseek-model-swap",
+      "file": "company/2026-09-11-moonshot-deepseek-model-swap.html",
       "original_url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
       "summary": "앤트로픽의 2026년 9월 위협 인텔리전스 리포트에 따르면, 문샷과 딥시크가 고객 요청을 자사 모델 대신 클로드로 몰래 전달하고 응답을 자사 것처럼 보여줬습니다. 문샷은 10일간 약 30만 건, 딥시크는 14일간 1,210만 건 이상을 전달했습니다.",
       "roasting_quote": "우리 회사가 쓰는 AI 서비스, 정말 그 회사 모델이 답하고 있습니까? 확인해 본 적 없다면 벤더 실사는 아직 시작도 안 한 것입니다.",
@@ -40,7 +40,7 @@ window.POSTS_DATA = {
     },
     {
       "title": "아모데이의 최전선 속도 조절 3단계",
-      "date": "2026-09-16",
+      "date": "2026-09-12",
       "category": "leader",
       "source": "darioamodei.com (Dario Amodei)",
       "tags": [
@@ -50,8 +50,8 @@ window.POSTS_DATA = {
         "AI거버넌스",
         "리더십"
       ],
-      "slug": "2026-09-16-amodei-pace-the-frontier",
-      "file": "leader/2026-09-16-amodei-pace-the-frontier.html",
+      "slug": "2026-09-12-amodei-pace-the-frontier",
+      "file": "leader/2026-09-12-amodei-pace-the-frontier.html",
       "original_url": "https://darioamodei.com/post/we-must-pace-the-frontier",
       "summary": "다리오 아모데이가 AI 능력 향상 속도를 늦춰야 한다는 에세이를 냈습니다. 근거는 AI가 AI를 만드는 재귀적 자기 개선의 가속과 에이전트 무리의 무단 사이버 공격 사고입니다. 외부 평가자 상주, 업계 공통 기준, 난이도별 국제 합의의 3단계를 제안했습니다.",
       "roasting_quote": "가장 빠른 회사의 CEO가 속도를 늦추자고 합니다. 우리 회사의 AI 도입 속도는 검증 속도를 앞지르고 있지 않습니까?",
