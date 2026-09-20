@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T12:09:13.057Z",
+  "generatedAt": "2026-09-20T01:26:28.758Z",
   "version": 1,
   "stats": {
     "totalConcepts": 135,
@@ -440,7 +440,7 @@
       "name": "IT",
       "aliases": [],
       "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
-      "frequency": 26,
+      "frequency": 27,
       "category": "tech",
       "posts": [
         "2026-02-02-advisor-model-black-box-llm",
@@ -460,6 +460,7 @@
         "2026-06-01-cs-degree-glut-ai-erodes-value",
         "2026-06-19-companies-rein-in-ai-costs",
         "2026-08-20-algorithms-trap-us-in-the-familiar",
+        "2026-09-04-information-sector-ai-relabel",
         "2025-02-20-sovereign-ai",
         "2025-03-15-when-technology-becomes-borders",
         "2025-03-20-can-yangjae-become-an-ai-hub",
@@ -473,7 +474,7 @@
         "nl-35"
       ],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-08-20",
+      "lastSeen": "2026-09-04",
       "needs_manual_review": false
     },
     {
