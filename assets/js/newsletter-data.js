@@ -1,5 +1,19 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 67,
+    "title": "ChatGPT를 제친 메타 뮤즈",
+    "date": "2026-09-26",
+    "img": "nl-67.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-67-chatgpt%EB%A5%BC-%EC%A0%9C%EC%B9%9C-%EB%A9%94%ED%83%80-%EB%AE%A4%EC%A6%88-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-amuac/"
+  },
+  {
+    "ep": 66,
+    "title": "AI 개발을 늦추자는 미국, 관심 없는 중국?",
+    "date": "2026-09-19",
+    "img": "nl-66.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-66-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EB%8A%A6%EC%B6%94%EC%9E%90%EB%8A%94-%EB%AF%B8%EA%B5%AD-%EA%B4%80%EC%8B%AC-%EC%97%86%EB%8A%94-%EC%A4%91%EA%B5%AD-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-qvfic/"
+  },
+  {
     "ep": 65,
     "title": "오픈AI가 난제를 풀었다는데, 수학자들은 왜 화가 났을까",
     "date": "2026-09-12",
