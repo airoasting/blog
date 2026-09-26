@@ -1,32 +1,48 @@
 {
-  "buildAt": "2026-09-20T01:26:28.758Z",
-  "duration": 0.387,
+  "buildAt": "2026-09-26T05:43:44.740Z",
+  "duration": 0.515,
   "concepts": {
-    "total": 135,
+    "total": 139,
     "validDefinitions": 126,
-    "needsReview": 9
+    "needsReview": 13
   },
   "relationships": {
-    "total": 350
+    "total": 373
   },
   "coverage": {
-    "postsWithConcepts": 255,
-    "totalPosts": 271
+    "postsWithConcepts": 270,
+    "totalPosts": 286
   },
   "inject": {
-    "updated": 1,
-    "inserted": 0,
-    "unchanged": 270,
+    "updated": 32,
+    "inserted": 9,
+    "unchanged": 245,
     "skipped": 0
   },
   "needsManualReview": [
+    {
+      "name": "CIO",
+      "slug": "cio"
+    },
     {
       "name": "ADP",
       "slug": "adp"
     },
     {
-      "name": "CIO",
-      "slug": "cio"
+      "name": "AISI",
+      "slug": "aisi"
+    },
+    {
+      "name": "CTF",
+      "slug": "ctf"
+    },
+    {
+      "name": "SSRN",
+      "slug": "ssrn"
+    },
+    {
+      "name": "US",
+      "slug": "us"
     },
     {
       "name": "AI실업",
