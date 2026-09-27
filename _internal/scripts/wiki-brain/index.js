@@ -8,7 +8,7 @@ const { extractRawTerms } = require('./extract');
 const { normalize } = require('./normalize');
 const { buildConceptIndex, calculateRelationships } = require('./relationships');
 const { assignSlugs, applyTranslatedSlugs } = require('./slugs');
-const { generateAll, fallbackDefinition } = require('./definitions');
+const { generateAll, fallbackDefinition, pickDefinition } = require('./definitions');
 const MANUAL_DEFINITIONS = require('./manual-definitions');
 const { writeConceptPages } = require('./render-concept');
 const { renderIndex } = require('./render-index');
@@ -123,31 +123,17 @@ async function main() {
 
   const postsBySlug = new Map(posts.map(p => [p.slug, p]));
   const skip = new Set();
-  if (!f.forceRegenerate && !f.skipDefinitions) {
-    for (const c of concepts) {
-      const ex = existingDefinitions[c.name];
-      if (ex && ex.definition && !ex.needsReview) {
-        c.definition = ex.definition;
-        skip.add(c.name);
-      }
-    }
-  } else if (f.skipDefinitions) {
-    for (const c of concepts) {
-      const ex = existingDefinitions[c.name];
-      if (ex && ex.definition) { c.definition = ex.definition; skip.add(c.name); }
-    }
-  }
-
-  // 수동 정의(manual-definitions.js) 적용. API 정의가 없는 개념의 fallback 문장을 대체합니다.
+  // 수동 정의(manual-definitions.js) > 유효한 기존 정의 순으로 적용합니다.
+  // 기존 fallback 문장은 재사용하지 않고 아래에서 API 생성 또는 검수 대상으로 넘깁니다.
   let manualApplied = 0;
   for (const c of concepts) {
-    if (skip.has(c.name)) continue;
-    const md = MANUAL_DEFINITIONS[c.name];
-    if (!md) continue;
-    c.definition = md;
-    c.needs_manual_review = false;
+    const ex = f.forceRegenerate ? null : existingDefinitions[c.name];
+    const picked = pickDefinition(c.name, MANUAL_DEFINITIONS, ex, { allowReview: f.skipDefinitions });
+    if (!picked) continue;
+    c.definition = picked.definition;
+    c.needs_manual_review = picked.needsReview;
     skip.add(c.name);
-    manualApplied++;
+    if (picked.source === 'manual') manualApplied++;
   }
   if (manualApplied) console.log(`✓ applied ${manualApplied} manual definitions`);
 
@@ -172,7 +158,10 @@ async function main() {
   }
 
   for (const c of concepts) {
-    if (!c.definition) c.definition = fallbackDefinition(c);
+    if (!c.definition) {
+      c.definition = fallbackDefinition(c);
+      c.needs_manual_review = true;
+    }
   }
 
   const data = {

@@ -1,88 +1,23 @@
 {
-  "buildAt": "2026-09-27T01:33:39.190Z",
-  "duration": 0.372,
+  "buildAt": "2026-09-27T01:42:48.718Z",
+  "duration": 0.421,
   "concepts": {
-    "total": 142,
-    "validDefinitions": 126,
-    "needsReview": 16
+    "total": 117,
+    "validDefinitions": 117,
+    "needsReview": 0
   },
   "relationships": {
-    "total": 400
+    "total": 377
   },
   "coverage": {
-    "postsWithConcepts": 271,
+    "postsWithConcepts": 270,
     "totalPosts": 287
   },
   "inject": {
-    "updated": 0,
+    "updated": 70,
     "inserted": 0,
-    "unchanged": 287,
+    "unchanged": 217,
     "skipped": 0
   },
-  "needsManualReview": [
-    {
-      "name": "CIO",
-      "slug": "cio"
-    },
-    {
-      "name": "인력전략",
-      "slug": "인력전략"
-    },
-    {
-      "name": "ADP",
-      "slug": "adp"
-    },
-    {
-      "name": "AI비용",
-      "slug": "ai비용"
-    },
-    {
-      "name": "AISI",
-      "slug": "aisi"
-    },
-    {
-      "name": "CTF",
-      "slug": "ctf"
-    },
-    {
-      "name": "SSRN",
-      "slug": "ssrn"
-    },
-    {
-      "name": "지식노동",
-      "slug": "지식노동"
-    },
-    {
-      "name": "US",
-      "slug": "us"
-    },
-    {
-      "name": "AI실업",
-      "slug": "ai실업"
-    },
-    {
-      "name": "조직",
-      "slug": "조직"
-    },
-    {
-      "name": "신뢰",
-      "slug": "신뢰"
-    },
-    {
-      "name": "창의성",
-      "slug": "창의성"
-    },
-    {
-      "name": "아모데이",
-      "slug": "아모데이"
-    },
-    {
-      "name": "규제",
-      "slug": "규제"
-    },
-    {
-      "name": "감원",
-      "slug": "감원"
-    }
-  ]
+  "needsManualReview": []
 }

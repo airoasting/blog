@@ -36,6 +36,23 @@ function fallbackDefinition(concept) {
   return `${concept.name}는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.`;
 }
 
+const FALLBACK_PATTERN = /AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다\.?\s*$/;
+
+function isFallbackDefinition(text) {
+  return FALLBACK_PATTERN.test((text || '').trim());
+}
+
+// 우선순위: 수동 정의 > 유효한 기존 정의. fallback 문장은 기존 정의로 재사용하지 않습니다.
+// allowReview가 false면 검수 대기(needsReview) 정의도 재사용하지 않습니다. 해당 없으면 null.
+function pickDefinition(name, manual, existing, { allowReview = false } = {}) {
+  if (manual && manual[name]) return { definition: manual[name], source: 'manual', needsReview: false };
+  if (existing && existing.definition && !isFallbackDefinition(existing.definition)
+      && (allowReview || !existing.needsReview)) {
+    return { definition: existing.definition, source: 'existing', needsReview: !!existing.needsReview };
+  }
+  return null;
+}
+
 function extractDefinition(text) {
   const m = text.match(/"definition"\s*:\s*"([^"\\]*(?:\\.[^"\\]*)*)"/);
   if (m) return m[1].replace(/\\"/g, '"').trim();
@@ -99,4 +116,4 @@ async function generateAll(concepts, postsBySlug, relationships, client, { model
   return out;
 }
 
-module.exports = { validateDefinition, buildPrompt, fallbackDefinition, generateOne, generateAll, extractDefinition };
+module.exports = { validateDefinition, buildPrompt, fallbackDefinition, isFallbackDefinition, pickDefinition, generateOne, generateAll, extractDefinition };
