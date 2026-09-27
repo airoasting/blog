@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="구글 딥마인드가 평가 문항과 모델 가중치를 서로 숨긴 채 AI를 채점하는 이중맹검 평가를 처음 시범 운영했습니다. 벤더 벤치마크 점수를 읽는 법과 자사 평가를 설계하는 방법을 정리합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="시험지도 가중치도 숨긴 AI 평가">
+  <meta property="og:description" content="모델이 시험지를 미리 봤다면 점수는 의미가 없습니다. 딥마인드가 암호 기술로 그 가능성을 막은 첫 시범 평가를 짚습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/tech/2026-08-27-deepmind-double-blind-eval.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-08-27">
+  <meta property="article:section" content="기술">
+  <meta property="article:tag" content="벤치마크">
+  <meta property="article:tag" content="AI평가">
+  <meta property="article:tag" content="기밀컴퓨팅">
+  <meta property="article:tag" content="딥마인드">
+  <meta property="article:tag" content="AI안전">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="시험지도 가중치도 숨긴 AI 평가">
+  <meta name="twitter:description" content="벤더가 내민 벤치마크 점수, 그 모델이 시험지를 미리 보지 않았다고 확인해 보셨습니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "시험지도 가중치도 숨긴 AI 평가",
+    "datePublished": "2026-08-27",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "구글 딥마인드의 이중맹검 AI 평가 시범 운영을 근거로, 벤더 벤치마크 점수의 신뢰도와 자사 평가 설계 방법을 정리합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/tech/2026-08-27-deepmind-double-blind-eval.html",
+    "articleSection": "기술"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'tech' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="tech">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="tech">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_08_27_deepmind-double-blind-eval/thumbnail.png" alt="시험지도 가중치도 숨긴 AI 평가" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="tech">기술</span>
+          <span class="post-date">2026년 8월 27일</span>
+          <span class="post-read-time">10분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">시험지도 가중치도 숨긴 AI 평가</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Google DeepMind (William Isaac 외 2인)</span>
+            <span><a href="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=벤치마크" class="post-tag">#벤치마크</a>
+            <a href="../index.html?tag=AI평가" class="post-tag">#AI평가</a>
+            <a href="../index.html?tag=기밀컴퓨팅" class="post-tag">#기밀컴퓨팅</a>
+            <a href="../index.html?tag=딥마인드" class="post-tag">#딥마인드</a>
+            <a href="../index.html?tag=AI안전" class="post-tag">#AI안전</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="시험지도 가중치도 숨긴 AI 평가" data-date="2026-08-27" data-category="tech" data-source="Google DeepMind (William Isaac 외 2인)" data-tags="벤치마크, AI평가, 기밀컴퓨팅, 딥마인드, AI안전" data-original-url="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" data-roasting-quote="벤더가 내민 벤치마크 점수, 그 모델이 시험지를 미리 보지 않았다고 확인해 보셨습니까?" data-next-post="../tech/2026-08-28-automated-alignment-researchers.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">구글 딥마인드가 이중맹검 AI 평가를 처음 시범 운영했습니다. 평가 기관은 모델 가중치를, 구글은 평가 문항을 보지 못하는 방식입니다.</p>
+        <p data-summary="">하드웨어 암호화 구역 안에서 제미나이 2.5 플래시 라이트를 비공개 문항으로 채점했습니다. 싱가포르 AISI, MLCommons, AVERI, OpenMined가 참여했습니다.</p>
+        <p data-summary="">벤치마크 오염은 계약만으로 막기 어렵습니다. 벤더 점수는 참고치로 두고, 어떤 모델도 본 적 없는 자사 문항으로 따로 재야 합니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">벤더가 내민 벤치마크 점수,<br>그 모델이 시험지를 미리 보지 않았다고 확인해 보셨습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>시험 전에 문제지를 본 학생의 만점은 실력의 증거가 되지 못합니다. 딥마인드는 지금 AI 평가가 이런 처지라는 지적으로 글을 엽니다. 모델이 평가 문항을 미리 학습했다면 점수는 부풀려집니다.</p>
+        <p>AI 도입을 검토하는 회사는 대부분 벤더가 제시한 벤치마크 점수로 모델을 비교합니다. 그 점수의 오염 여부를 검증할 방법은 지금까지 거의 없었습니다. 딥마인드가 8월 27일 공개한 시범 평가는 이 문제에 처음으로 기술적 해법을 내놓았습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>딥마인드 기술 보고서가 인용한 선행 연구를 보면 벤치마크 오염은 흔한 일입니다. 31개 모델을 조사한 연구에서 약 절반이 학습 과정에서 벤치마크 데이터를 접한 흔적을 보였습니다. 오염이 성능 점수를 부풀리고, 모델이 클수록 부풀림도 커진다는 연구도 있습니다. 한 프런티어 연구소가 비공개 변형 27개를 순위표에 시험하고 최고점만 공개한 사례도 보고됐습니다. 모델 선정을 점수표에만 의존하는 조직일수록 이 리스크에 크게 노출됩니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 외부 평가는 늘 한쪽이 리스크를 떠안는 거래였습니다.</strong> 평가 기관이 문항을 넘기면 모델 회사가 시험지를 미리 볼 수 있었습니다. 모델 회사가 가중치를 넘기면 지식재산이 새어 나갈 위험이 생겼습니다. 딥마인드는 이 거래 구조의 해소를 이번 시범의 목적으로 밝혔습니다.</p>
+
+        <p><strong>둘째, 두 자산을 암호화된 방 하나에 넣고 결과만 꺼냈습니다.</strong> 구글 클라우드의 컨피덴셜 스페이스 안에서 모델 가중치와 평가 문항을 함께 돌렸습니다. 평가 기관은 제미나이 가중치를 볼 수 없고, 구글은 평가 문항을 볼 수 없습니다. 평가가 끝나면 평가 기관은 집계 지표만 받고, 암호화 환경은 폐기됩니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>방식</th>
+                <th>평가 기관이 떠안는 리스크</th>
+                <th>모델 회사가 떠안는 리스크</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>API로 평가</td>
+                <td>문항이 평문으로 모델 회사에 노출</td>
+                <td>없음</td>
+              </tr>
+              <tr>
+                <td>가중치 제공</td>
+                <td>없음</td>
+                <td>지식재산 유출</td>
+              </tr>
+              <tr>
+                <td>계약·무기록 약속</td>
+                <td>상대를 믿어야 함</td>
+                <td>상대를 믿어야 함</td>
+              </tr>
+              <tr>
+                <td class="cell-hl">이중맹검 평가</td>
+                <td class="cell-hl">하드웨어·암호로 차단</td>
+                <td class="cell-hl">하드웨어·암호로 차단</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Google DeepMind (2026, August 27), 블로그 및 기술 보고서 내용 재구성.</p>
+        </div>
+
+        <p><strong>셋째, 시험지는 어떤 모델도 본 적 없는 예비 문항이었습니다.</strong> 문항은 MLCommons의 AI 안전 벤치마크 AILuminate에서 가져왔습니다. 그중에서도 한 번도 모델에 입력된 적 없는 예비 세트를 썼습니다. 화생방·폭발물, 사이버 공격, 혐오 표현, 자해, 폭력 범죄를 유도하는 문항들입니다. 싱가포르 AISI는 싱가포르 맥락의 유해 콘텐츠 유도 문항을 별도로 제공했습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">5% 미만</div>
+            <div class="stat-label">보고서가 밝힌 암호화 환경의 연산 부담</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">31개 중 약 절반</div>
+            <div class="stat-label">선행 연구에서 벤치마크 유출 흔적이 나온 모델</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">27개</div>
+            <div class="stat-label">한 연구소가 순위표에 시험한 비공개 변형 수</div>
+          </div>
+        </div>
+
+        <p><strong>넷째, 계약과 무기록 약속은 신뢰에 기댑니다.</strong> 기존에도 외부 평가 문항은 무기록 절차와 계약으로 보호했습니다. 보고서는 이런 장치로는 실수에 의한 유출까지 막지 못한다고 지적합니다. 평가 문항이 다음 학습 데이터에 섞여 들어가는 일은 고의가 없어도 생깁니다. 이번 시범은 신뢰 대신 하드웨어 증명으로 이 유출 경로를 차단하려는 시도입니다.</p>
+
+        <p><strong>다섯째, 남은 병목은 사람 사이의 조율입니다.</strong> 보고서는 연산 부담이 더는 걸림돌이 아니라고 적었습니다. 지금 시간이 드는 곳은 법률 합의와 코드 검토입니다. 연구진은 이 평가가 웹 브라우저의 HTTPS 자물쇠 같은 표준 절차가 되기를 바랍니다. 사용자는 암호 원리를 몰라도 자물쇠 표시만 보고 사이트를 믿습니다.</p>
+
+        <p><strong>여섯째, 기업 구매자에게는 점수의 출처를 묻는 근거가 생겼습니다.</strong> 같은 벤더 점수라도 누가, 어떤 문항으로, 어떤 환경에서 쟀는지에 따라 신뢰도가 다릅니다. 공개 벤치마크 점수에는 오염 가능성이 늘 따라붙습니다. 독립 기관이 비공개 문항으로 잰 점수가 더 믿을 만합니다. 이번 시범으로 그런 점수를 실제로 산출할 수 있음이 확인됐습니다.</p>
+
+        <p>보고서에는 기업이 바로 쓸 수 있는 구분도 하나 있습니다. 공개 가중치 모델은 평가자가 내려받아 자기 장비에서 돌리면 문항이 새지 않습니다. 반면 폐쇄형 모델을 API로 평가하면 문항이 평문으로 모델 회사에 전달됩니다. 모델 유형에 따라 자사 평가 문항을 지키는 비용이 달라집니다.</p>
+
+        <p>다만 제미나이가 받은 점수는 이번 발표에 없습니다. 보고서는 평가 방법과 절차만 설명하고 채점 결과는 공개하지 않았습니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>자사 비공개 평가 문항 30~50개를 만드십시오.</strong><br>실제 업무 요청, 과거 실패 사례, 규정 위반을 유도하는 문항을 섞습니다. 인터넷에 올리지 않고, 담당자 2~3명만 접근하게 둡니다. 모델을 바꿀 때마다 같은 문항으로 다시 잽니다. (팀 기준 반나절)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>문항의 일부를 예비 세트로 떼어 두십시오.</strong><br>AILuminate처럼 어떤 모델에도 넣지 않은 문항을 따로 보관합니다. 상시 문항 점수와 예비 문항 점수가 크게 벌어지면 상시 문항이 유출됐다는 신호입니다. (문항 작성 시 함께)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>벤더 미팅에서 점수의 출처를 세 가지로 물으십시오.</strong><br>"누가 쟀습니까, 문항은 공개입니까 비공개입니까, 오염 점검을 했습니까." 답이 모호하면 그 점수는 참고치로만 씁니다. (다음 벤더 미팅)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>API로 평가할 때 문항이 벤더에 보인다는 점을 계약에 반영하십시오.</strong><br>평가 데이터의 학습 사용 금지와 보관 기간을 계약서에 명시합니다. 보고서가 지적했듯 계약은 신뢰에 기대므로, 핵심 문항은 주기적으로 교체합니다. (다음 계약 갱신 시)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>구글이 모델 소유자이면서 검증 경로까지 쥐고 있습니다.</strong> 암호화 환경은 구글 클라우드에서 돌았고, 증명서 서명과 검증도 구글 서비스에 의존했습니다. 보고서도 이 구조 탓에 구글을 더 믿어야 한다는 점을 직접 인정했습니다.</p>
+
+        <p><strong>모든 코드를 들여다보지는 못했습니다.</strong> 연구진은 공학적 부담이 너무 커서 제미나이를 공개 라이브러리만으로 돌리는 방안을 포기했습니다. 일부 독점 코드는 검사하지 못한 채 남았고, AVERI는 이를 알고 수락했습니다. 운영체제 빌드도 독립적으로 재현할 수 없었습니다.</p>
+
+        <p><strong>경량 모델 한 개로 진행한 시범입니다.</strong> 대상은 제미나이 2.5 플래시 라이트였고, 장비는 H100 GPU 한 장이었습니다. 연구진은 수조 개 매개변수의 대형 모델이라면 여러 대를 묶은 암호화 클러스터가 필요하다고 밝혔습니다.</p>
+
+        <p><strong>하드웨어 제조사와 클라우드를 믿는다는 전제가 남습니다.</strong> 이 방식은 클라우드 사업자와 칩 제조사가 결탁하지 않는다고 가정합니다. 믿어야 할 대상이 줄었을 뿐, 신뢰가 필요 없어진 것은 아닙니다.</p>
+
+        <p><strong>평가 결과가 공개되지 않았습니다.</strong> 절차가 실현 가능하다는 점은 확인했지만, 점수가 어떻게 달라지는지는 알 수 없습니다. 오염 없는 평가 점수가 기존 점수와 얼마나 다른지는 후속 발표를 봐야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>점수를 보기 전에 누가 어떤 시험지로 쟀는지부터 물어야 합니다. 가장 믿을 만한 시험지는 자사 안에 있습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>모델 선택 보고는 공개 벤치마크 점수와 자사 문항 점수를 나눠서 받습니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">구매/법무</span>
+            <span>AI 계약서에 평가 데이터의 학습 사용 금지와 보관 기간 조항을 넣습니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>업무 문항 30~50개와 따로 보관할 예비 문항을 이번 분기 안에 만듭니다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>벤치마크 오염</strong>: 평가 문항이 학습 데이터에 섞여 점수가 실력보다 높게 나오는 현상입니다.</p>
+          <p><strong>이중맹검 평가</strong>: 평가 기관과 모델 회사가 서로의 자산을 보지 못하는 상태로 진행하는 평가입니다.</p>
+          <p><strong>모델 가중치</strong>: 학습으로 얻은 모델의 내부 수치 전체입니다. 모델 회사의 핵심 지식재산입니다.</p>
+          <p><strong>기밀 컴퓨팅</strong>: 칩이 메모리 속 데이터를 하드웨어 수준에서 암호화하는 기술입니다. 클라우드 사업자도 내용을 보지 못합니다.</p>
+          <p><strong>원격 증명</strong>: 암호화 환경에서 실행 중인 소프트웨어를 칩의 비밀 키로 서명해 외부에 증명하는 절차입니다.</p>
+          <p><strong>AISI</strong>: 각국 정부가 세운 AI 안전 연구소입니다. 영국, 싱가포르 등이 운영합니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Isaac, W., Messing, S., &amp; Lum, K. (2026, August 27). <em>Piloting the world's first double-blind AI evaluations</em> [Article]. Google DeepMind. (<a href="https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>Trask, A., Messing, S., et al. (2026, August). <em>Double Blind Evals: Resolving the Dual Confidentiality Dilemma in AI Safety Auditing</em> [Technical Report]. Google DeepMind. (<a href="https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/piloting-the-worlds-first-double-blind-ai-evaluations/double-blind-evaluations-technical-report.pdf" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+      <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">제미나이가 몇 점 받았는지는 안 나왔죠? 시험장은 지었는데 성적표가 없어요. 게다가 암호화 방도 구글 클라우드, 증명서 서명도 구글 서비스예요. 이걸 이중맹검이라고 불러도 돼요?</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">불러도 돼요. 애초에 점수 내려고 한 시범이 아니잖아요. 사는 쪽에선 벤더한테 "누가 쟀어요?" 물을 근거가 생겼어요. 그걸로 충분합니다.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">근거가 생긴 건 인정해요. 그런데 구글에 거는 신뢰가 커진다는 건 보고서가 스스로 적은 말이에요. 모델 주인이 검증 경로까지 쥐고 있는데 충분하다고요? 남의 모델로 한 번 더 돌려보고 나서 그 말 하시죠.</div>
+          </div>
+        </div>
+      </div><!-- /스레드 1 -->
+
+      <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+      <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">액션 스텝에 자사 문항 30~50개를 만들라는데요. 팀원들은 프롬프트 쓰는 것도 버거워해요. 시험지까지 만들자고 하면 표정이 어떨지 벌써 보이는데, 어디서부터 손대요?</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">저 해봤어요. 거창하게 시작하면 망하고요, AI가 틀렸던 질문부터 모으면 돼요. 저흰 고객 문의 중에 답이 엉망이었던 걸 추려서 시작했거든요. 솔직히 그게 제일 좋은 시험지였어요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">모으는 건 쉬운 쪽입니다. 그 문항을 API로 벤더 모델에 한 번 넣으면 평문으로 넘어갑니다. 예비 세트는 아예 안 넣어야 의미가 있습니다.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">아, 그래서 예비 세트를 떼어 두라는 거였구나. 저흰 모은 걸 전부 돌려봤는데요. 다시 만들어야겠네요, 하하.</div>
+          </div>
+        </div>
+      </div><!-- /스레드 2 -->
+
+      <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+      <div style="margin-bottom:0px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">HTTPS 자물쇠 비유 잘 골랐어요. 암호 원리를 몰라도 자물쇠 보면 다들 안심하잖아요. AI 점수 옆에도 그런 표시 하나 붙으면 팀 설득이 훨씬 쉬울 것 같더라고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">그 자물쇠, 칩 제조사랑 클라우드가 짜고 치지 않는다는 가정 위에 달려 있어요. 표시가 붙는 순간 사람들이 그 가정까지 잊어버릴까 봐 걱정이에요.</div>
+          </div>
+        </div>
+      </div><!-- /스레드 3 -->
+
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../tech/2026-08-28-automated-alignment-researchers.html">
+          <div class="next-post-title">AI가 스스로 메운 정렬 격차 26~96% →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/gpu.html" class="concept-chip">GPU</a>
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/ai-safety.html" class="concept-chip">AI 안전</a>
+      <a href="../insights/wiki/concepts/벤치마크.html" class="concept-chip">벤치마크</a>
+      <a href="../insights/wiki/concepts/ai평가.html" class="concept-chip">AI평가</a>
+      <a href="../insights/wiki/concepts/aisi.html" class="concept-chip">AISI</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-08-27-deepmind-double-blind-eval.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/tech/2026-08-27-deepmind-double-blind-eval.html';
+    const ROASTING_QUOTE = '벤더가 내민 벤치마크 점수, 그 모델이 시험지를 미리 보지 않았다고 확인해 보셨습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

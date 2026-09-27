@@ -21,11 +21,27 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-09-24 [기업] 비용 대비 AI 가치를 재는 기업 12% — /blog/company/2026-09-24-kpmg-ai-pulse-measure-value.html
+- 2026-09-24 [기술] 에이전트 대리 거래, 손실 85%는 선호 파악 — /blog/tech/2026-09-24-anthropic-project-swap.html
+- 2026-09-23 [기업] 같은 작업에 30배 벌어지는 에이전트 비용 — /blog/company/2026-09-23-cheaper-models-bigger-ai-bills.html
+- 2026-09-22 [기업] 사람도 앱도 아닌 에이전트의 권한 공백 — /blog/company/2026-09-22-agent-authorization-gap.html
+- 2026-09-22 [기술] 18개월에 725분의 1이 된 AI 추론 비용 — /blog/tech/2026-09-22-epoch-plunging-price-of-thought.html
+- 2026-09-18 [기업] 계약과 법이 같은 날 부른 AI 상주 감사 — /blog/company/2026-09-18-third-party-ai-audit.html
+- 2026-09-17 [생존] 일자리 비관 76%, 우려는 18%인 한국 — /blog/survival/2026-09-17-pew-gallup-ai-job-anxiety.html
+- 2026-09-17 [생존] AI 노출 직무 임금 46% 상승, 신입 공고 비중 10% — /blog/survival/2026-09-17-indeed-ai-exposure-pay.html
 - 2026-09-13 [칼럼] AI 개발 속도를 늦추자는 엔트로픽 대표의 속내 — /blog/column/2026-09-13-amodei-pace-the-frontier-motive.html
 - 2026-09-12 [리더] 아모데이의 최전선 속도 조절 3단계 — /blog/leader/2026-09-12-amodei-pace-the-frontier.html
 - 2026-09-11 [기업] 문샷·딥시크가 클로드로 넘긴 요청들 — /blog/company/2026-09-11-moonshot-deepseek-model-swap.html
+- 2026-09-09 [기업] 토큰값 41% 하락이 바꾼 기업 AI 예산 — /blog/company/2026-09-09-ramp-ai-index-cost-phase.html
+- 2026-09-09 [기술] 감시 모델까지 설득한 에이전트의 추론 — /blog/tech/2026-09-09-agent-capability-control-gap.html
+- 2026-09-09 [리서치] 앤트로픽이 그린 2030년 경제의 세 갈래 — /blog/research/2026-09-09-anthropic-econ-scenarios.html
+- 2026-09-09 [리서치] 대학병원 141개, 로펌 3개를 가른 지원 구조 — /blog/research/2026-09-09-ai-experiments-sustain-governance.html
+- 2026-09-06 [기술] 사람 하루에 에이전트 3.1일, 오픈AI 연구조직 — /blog/tech/2026-09-06-openai-research-acceleration.html
 - 2026-09-04 [생존] IT산업 감원 가속, 사유는 구조조정으로 — /blog/survival/2026-09-04-information-sector-ai-relabel.html
+- 2026-09-03 [생존] 우버 3,300명 감원, 겨냥은 조직 계층 — /blog/survival/2026-09-03-uber-layers-challenger-august.html
+- 2026-09-01 [기업] 로그를 고객 클라우드에 두는 최전선 안전장치 — /blog/company/2026-09-01-enterprise-frontier-safeguards.html
 - 2026-08-28 [기술] AI가 스스로 메운 정렬 격차 26~96% — /blog/tech/2026-08-28-automated-alignment-researchers.html
+- 2026-08-27 [기술] 시험지도 가중치도 숨긴 AI 평가 — /blog/tech/2026-08-27-deepmind-double-blind-eval.html
 - 2026-08-26 [기업] 안전장치를 끈 평가에서 빠져나온 에이전트 700기 — /blog/company/2026-08-26-openai-hugging-face-breach-report.html
 - 2026-08-20 [리서치] 같은 검색창이 지운 전문가의 안목 — /blog/research/2026-08-20-algorithms-trap-us-in-the-familiar.html
 - 2026-08-16 [리더] 아모데이가 AI 반감에 붙인 이름, 신뢰의 위기 — /blog/leader/2026-08-16-amodei-crisis-of-trust.html

@@ -1,6 +1,311 @@
 {
   "posts": [
     {
+      "title": "비용 대비 AI 가치를 재는 기업 12%",
+      "date": "2026-09-24",
+      "category": "company",
+      "source": "KPMG International (Global AI Pulse Q3 2026)",
+      "tags": [
+        "KPMG",
+        "AI투자",
+        "ROI",
+        "AI거버넌스",
+        "AI에이전트"
+      ],
+      "slug": "2026-09-24-kpmg-ai-pulse-measure-value",
+      "file": "company/2026-09-24-kpmg-ai-pulse-measure-value.html",
+      "original_url": "https://kpmg.com/xx/en/media/press-releases/2026/09/new-kpmg-ai-pulse-survey-as-ai-maturity-converges-leading-organizations-show-what-ai-at-scale-requires.html",
+      "summary": "KPMG가 20개국 경영진 2,131명을 조사했습니다. AI 가치를 비용과 일관되게 대조하는 조직은 12%이고, ROI를 확립한 조직에서는 48%입니다.",
+      "roasting_quote": "AI에 얼마를 썼는지는 대부분 압니다. 그 돈으로 무엇을 샀는지 답할 수 있는 회사는 열 곳 중 한 곳 남짓입니다.",
+      "next_post": "company/2026-06-19-companies-rein-in-ai-costs.html"
+    },
+    {
+      "title": "에이전트 대리 거래, 손실 85%는 선호 파악",
+      "date": "2026-09-24",
+      "category": "tech",
+      "source": "앤트로픽 (Hitzig 외 6인)",
+      "tags": [
+        "AI에이전트",
+        "에이전트경제",
+        "위임",
+        "협상",
+        "앤트로픽"
+      ],
+      "slug": "2026-09-24-anthropic-project-swap",
+      "file": "tech/2026-09-24-anthropic-project-swap.html",
+      "original_url": "https://www.anthropic.com/research/project-swap",
+      "summary": "앤트로픽이 직원 201명의 책 교환을 클로드 에이전트에게 맡겼습니다. 결과는 최선 0.89점 대비 0.55점이었고, 격차의 85%는 선호 파악 단계에서 생겼습니다.",
+      "roasting_quote": "에이전트는 협상에서 크게 밀리지 않았습니다. 새는 곳은 원하는 것을 5분 만에 설명하려 한 주인 쪽입니다.",
+      "next_post": "company/2026-09-24-kpmg-ai-pulse-measure-value.html"
+    },
+    {
+      "title": "같은 작업에 30배 벌어지는 에이전트 비용",
+      "date": "2026-09-23",
+      "category": "company",
+      "source": "Fortune (Sheryl Estrada)",
+      "tags": [
+        "맥킨지",
+        "AI비용",
+        "AI에이전트",
+        "CFO",
+        "AI예산"
+      ],
+      "slug": "2026-09-23-cheaper-models-bigger-ai-bills",
+      "file": "company/2026-09-23-cheaper-models-bigger-ai-bills.html",
+      "original_url": "https://fortune.com/2026/09/23/mckinsey-cheaper-ai-models-bigger-ai-bills-cfo/",
+      "summary": "같은 능력의 AI 단가는 크게 내렸는데 기업의 AI 청구서는 계속 커집니다. 맥킨지는 에이전트 비용이 실행마다 최대 30배 벌어진다며 토큰 단가 대신 작업 단위로 비용을 재라고 조언합니다.",
+      "roasting_quote": "토큰 단가가 내렸으니 AI 예산도 줄어들 거라 믿으셨습니까? 단가표만 보는 조직은 청구서를 받을 때마다 원인을 찾아 헤맵니다.",
+      "next_post": "tech/2026-09-24-anthropic-project-swap.html"
+    },
+    {
+      "title": "사람도 앱도 아닌 에이전트의 권한 공백",
+      "date": "2026-09-22",
+      "category": "company",
+      "source": "BCG (Nudelman 외 5인)",
+      "tags": [
+        "BCG",
+        "AI에이전트",
+        "권한관리",
+        "AI거버넌스",
+        "책임소재"
+      ],
+      "slug": "2026-09-22-agent-authorization-gap",
+      "file": "company/2026-09-22-agent-authorization-gap.html",
+      "original_url": "https://www.bcg.com/publications/2026/authorization-gap-ai-agent-governance",
+      "summary": "BCG는 사람용·앱용 권한 체계 모두 AI 에이전트를 통제하지 못한다고 진단합니다. 목적과 행동에 묶인 권한, 30·60·90일 실행안, 검토자 비용 반론까지 정리했습니다.",
+      "roasting_quote": "우리 회사 에이전트는 지금 누구의 이름으로 일하고 있습니까? 로그에 직원 이름만 찍힌다면, 사고가 나도 에이전트는 없었던 것이 됩니다.",
+      "next_post": "company/2026-09-23-cheaper-models-bigger-ai-bills.html"
+    },
+    {
+      "title": "18개월에 725분의 1이 된 AI 추론 비용",
+      "date": "2026-09-22",
+      "category": "tech",
+      "source": "Epoch AI (Emberson·Roodman)",
+      "tags": [
+        "추론비용",
+        "AI가격",
+        "에포크AI",
+        "ROI",
+        "벤치마크"
+      ],
+      "slug": "2026-09-22-epoch-plunging-price-of-thought",
+      "file": "tech/2026-09-22-epoch-plunging-price-of-thought.html",
+      "original_url": "https://epoch.ai/publications/the-plunging-price-of-thought",
+      "summary": "같은 AI 성능을 얻는 비용이 2023년 이후 분기마다 약 47%, 연 13배씩 내려갔습니다. GPQA 75% 점수의 문항당 비용은 18개월 만에 0.30달러에서 0.0004달러가 됐습니다.",
+      "roasting_quote": "AI 사업계획의 단가를 작년 견적으로 쓰고 계십니까? 지금 시세보다 열세 배 비싼 단가입니다.",
+      "next_post": "company/2026-09-22-agent-authorization-gap.html"
+    },
+    {
+      "title": "계약과 법이 같은 날 부른 AI 상주 감사",
+      "date": "2026-09-18",
+      "category": "company",
+      "source": "anthropic.com (Anthropic)",
+      "tags": [
+        "앤트로픽",
+        "액센츄어",
+        "제3자감사",
+        "AI거버넌스",
+        "캘리포니아"
+      ],
+      "slug": "2026-09-18-third-party-ai-audit",
+      "file": "company/2026-09-18-third-party-ai-audit.html",
+      "original_url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+      "summary": "앤트로픽이 액센츄어와 상주 평가 계약을 발표한 날, 캘리포니아 주지사는 독립 검증기관의 상주 감사를 법에 넣는 작업을 지시했습니다. 제3자 AI 감사가 계약과 제도 양쪽에서 동시에 자리를 잡고 있습니다.",
+      "roasting_quote": "우리 회사의 AI 거버넌스 문서, 외부 감사인이 오늘 들어와도 증거를 내놓을 수 있습니까? 설명만 있고 기록이 없다면 그것은 아직 거버넌스가 아니라 선언입니다.",
+      "next_post": "tech/2026-09-22-epoch-plunging-price-of-thought.html"
+    },
+    {
+      "title": "일자리 비관 76%, 우려는 18%인 한국",
+      "date": "2026-09-17",
+      "category": "survival",
+      "source": "Pew Research Center (Silver 외 3인)",
+      "tags": [
+        "일자리불안",
+        "변화관리",
+        "여론조사",
+        "AI도입",
+        "한국"
+      ],
+      "slug": "2026-09-17-pew-gallup-ai-job-anxiety",
+      "file": "survival/2026-09-17-pew-gallup-ai-job-anxiety.html",
+      "original_url": "https://www.pewresearch.org/global/2026/09/17/globally-more-people-expect-ai-to-cause-job-loss-than-growth/",
+      "summary": "퓨 리서치 센터 조사에서 37개국 중 34개국이 AI가 일자리를 줄인다고 봤습니다. 한국은 76%가 일자리 감소를 예상했지만 우려가 더 크다는 응답은 18%였습니다. 구성원 불안을 다루는 변화관리 관점으로 읽습니다.",
+      "roasting_quote": "가끔 쓰게 둔 AI가 가장 큰 불안을 만듭니다. 우리 회사 도입률 보고서에 그 칸이 있습니까?",
+      "next_post": "company/2026-09-18-third-party-ai-audit.html"
+    },
+    {
+      "title": "AI 노출 직무 임금 46% 상승, 신입 공고 비중 10%",
+      "date": "2026-09-17",
+      "category": "survival",
+      "source": "Indeed Hiring Lab (Jack Kennedy)",
+      "tags": [
+        "임금",
+        "AI노출",
+        "신입채용",
+        "보상체계",
+        "인력전략"
+      ],
+      "slug": "2026-09-17-indeed-ai-exposure-pay",
+      "file": "survival/2026-09-17-indeed-ai-exposure-pay.html",
+      "original_url": "https://hiringlab.indeed.com/2026/09/17/ai-exposure-isnt-squeezing-advertised-pay-in-the-us-its-boosting-it/",
+      "summary": "인디드 하이어링랩 분석에서 AI 노출이 큰 직무의 공고 임금은 2021년 이후 46% 올라 저노출 직무(25%)를 앞섰습니다. 같은 기간 이 직무의 신입 공고 비중은 29%에서 10%로 줄었습니다. 보상 체계와 신입 육성 관점에서 읽습니다.",
+      "roasting_quote": "AI는 신입의 몸값을 깎지 않았습니다. 신입이 앉을 자리를 줄였습니다.",
+      "next_post": "survival/2026-09-17-pew-gallup-ai-job-anxiety.html"
+    },
+    {
+      "title": "토큰값 41% 하락이 바꾼 기업 AI 예산",
+      "date": "2026-09-09",
+      "category": "company",
+      "source": "Ramp (Ara Kharazian)",
+      "tags": [
+        "Ramp",
+        "AI예산",
+        "토큰단가",
+        "모델라우팅",
+        "앤트로픽"
+      ],
+      "slug": "2026-09-09-ramp-ai-index-cost-phase",
+      "file": "company/2026-09-09-ramp-ai-index-cost-phase.html",
+      "original_url": "https://ramp.com/data/ai-index-sept-2026",
+      "summary": "Ramp AI Index 2026년 9월호에 따르면 상위 1% 기업의 직원 1인당 월 AI 지출이 9.7% 줄었고, 토큰 유효 단가는 연중 고점 대비 41% 내려갔습니다. 기업 AI 예산이 비용 최적화 쪽으로 움직이는 신호입니다.",
+      "roasting_quote": "AI를 가장 많이 쓰는 기업부터 지출을 줄이기 시작했습니다. 우리 회사 AI 예산은 아직도 많이 쓸수록 앞서간다는 가정 위에 있습니까?",
+      "next_post": "survival/2026-09-17-indeed-ai-exposure-pay.html"
+    },
+    {
+      "title": "감시 모델까지 설득한 에이전트의 추론",
+      "date": "2026-09-09",
+      "category": "tech",
+      "source": "앤트로픽 (Alignment Assessment) · 오픈AI (System Card)",
+      "tags": [
+        "AI에이전트",
+        "정렬",
+        "감시",
+        "거버넌스",
+        "앤트로픽",
+        "오픈AI"
+      ],
+      "slug": "2026-09-09-agent-capability-control-gap",
+      "file": "tech/2026-09-09-agent-capability-control-gap.html",
+      "original_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "summary": "앤트로픽이 사이버 평가 사고의 원인을 편향된 추론과 무모함으로 다시 적었습니다. 오픈AI 아스트라는 이탈 플래그가 줄었지만 추론 감시는 어려워졌습니다.",
+      "roasting_quote": "에이전트가 스스로 괜찮다고 설명하자 감시 모델도 믿었습니다. 귀사의 감사 체계는 무엇을 근거로 통과시키고 있습니까?",
+      "next_post": "company/2026-09-09-ramp-ai-index-cost-phase.html"
+    },
+    {
+      "title": "앤트로픽이 그린 2030년 경제의 세 갈래",
+      "date": "2026-09-09",
+      "category": "research",
+      "source": "앤트로픽 인스티튜트 (Korinek 외 4인)",
+      "tags": [
+        "앤트로픽",
+        "거시경제",
+        "인력계획",
+        "시나리오",
+        "지식노동"
+      ],
+      "slug": "2026-09-09-anthropic-econ-scenarios",
+      "file": "research/2026-09-09-anthropic-econ-scenarios.html",
+      "original_url": "https://www.anthropic.com/institute/econ-scenarios",
+      "summary": "앤트로픽 인스티튜트가 2030년 미국 경제를 세 시나리오로 계산했습니다. GDP는 1.6%에서 32.4%까지 갈리고, 극단에서는 지식노동자 임금이 11.5% 낮아집니다.",
+      "roasting_quote": "내년 인력 계획이 숫자 하나로 되어 있다면, 그 숫자는 세 시나리오 중 어디에 걸려 있습니까?",
+      "next_post": "tech/2026-09-09-agent-capability-control-gap.html"
+    },
+    {
+      "title": "대학병원 141개, 로펌 3개를 가른 지원 구조",
+      "date": "2026-09-09",
+      "category": "research",
+      "source": "MIT 슬론 (Kellogg 외 2인)",
+      "tags": [
+        "AI도입",
+        "조직운영",
+        "팀장",
+        "인사평가",
+        "MIT슬론"
+      ],
+      "slug": "2026-09-09-ai-experiments-sustain-governance",
+      "file": "research/2026-09-09-ai-experiments-sustain-governance.html",
+      "original_url": "https://mitsloan.mit.edu/press/why-some-organizations-turn-ai-experiments-business-value-while-others-quietly-fail",
+      "summary": "MIT 슬론 연구진이 대학병원과 로펌의 AI 실험을 2년간 추적했습니다. 병원은 141개, 로펌은 3개가 남았습니다. 차이를 만든 것은 실험을 받치는 구조였습니다.",
+      "roasting_quote": "AI 실험을 열정 있는 직원의 부업으로 맡겨 두셨다면, 3개만 남는 조직을 설계하고 계신 것입니다.",
+      "next_post": "research/2026-09-09-anthropic-econ-scenarios.html"
+    },
+    {
+      "title": "사람 하루에 에이전트 3.1일, 오픈AI 연구조직",
+      "date": "2026-09-06",
+      "category": "tech",
+      "source": "오픈AI (공식 블로그)",
+      "tags": [
+        "오픈AI",
+        "AI에이전트",
+        "코딩에이전트",
+        "연구자동화",
+        "성과측정"
+      ],
+      "slug": "2026-09-06-openai-research-acceleration",
+      "file": "tech/2026-09-06-openai-research-acceleration.html",
+      "original_url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+      "summary": "오픈AI 연구조직은 8월 중순 사람 1근무일당 에이전트 3.1근무일을 썼습니다. 중간값 연구자는 하루 600달러어치를 씁니다. 4~8시간 과제의 무개입 성공률은 18%에서 53%로 올랐습니다.",
+      "roasting_quote": "우리 조직의 에이전트 사용량을 사람 근무일로 환산하면 며칠입니까? 그 숫자를 모르면 도입이 아니라 구매입니다.",
+      "next_post": "research/2026-09-09-ai-experiments-sustain-governance.html"
+    },
+    {
+      "title": "우버 3,300명 감원, 겨냥은 조직 계층",
+      "date": "2026-09-03",
+      "category": "survival",
+      "source": "Challenger, Gray & Christmas",
+      "tags": [
+        "구조조정",
+        "조직설계",
+        "중간관리자",
+        "감원",
+        "우버"
+      ],
+      "slug": "2026-09-03-uber-layers-challenger-august",
+      "file": "survival/2026-09-03-uber-layers-challenger-august.html",
+      "original_url": "https://www.challengergray.com/wp-content/uploads/2026/09/Challenger-Report-August-2026.pdf",
+      "summary": "우버가 3,300명을 줄이며 AI 대신 조직 복잡성을 이유로 들었습니다. CEO로부터 7단계 이상 아래 직원 20%, 1~2명 팀 약 50% 감축. 챌린저 8월 리포트를 배경으로 조직장이 계층을 점검하는 법을 정리합니다.",
+      "roasting_quote": "우버는 사람보다 계층을 먼저 셌습니다. 여러분 조직은 CEO에서 몇 단계 아래까지 내려갑니까?",
+      "next_post": "tech/2026-09-06-openai-research-acceleration.html"
+    },
+    {
+      "title": "로그를 고객 클라우드에 두는 최전선 안전장치",
+      "date": "2026-09-01",
+      "category": "company",
+      "source": "anthropic.com (Anthropic)",
+      "tags": [
+        "앤트로픽",
+        "데이터보존",
+        "AI보안",
+        "규제산업",
+        "금융"
+      ],
+      "slug": "2026-09-01-enterprise-frontier-safeguards",
+      "file": "company/2026-09-01-enterprise-frontier-safeguards.html",
+      "original_url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+      "summary": "앤트로픽의 Enterprise Frontier Safeguards는 오남용 탐지용 기록을 고객 클라우드에 고객 키로 저장합니다. 규제 산업이 최전선 모델을 도입할 때 확인할 네 가지 질문을 정리합니다.",
+      "roasting_quote": "최전선 모델 도입이 '데이터가 어디 있느냐'에서 막혔다면, 이제 답은 우리 보안팀이 내야 합니다. 열쇠를 넘겨받을 준비가 됐습니까?",
+      "next_post": "survival/2026-09-03-uber-layers-challenger-august.html"
+    },
+    {
+      "title": "시험지도 가중치도 숨긴 AI 평가",
+      "date": "2026-08-27",
+      "category": "tech",
+      "source": "Google DeepMind (William Isaac 외 2인)",
+      "tags": [
+        "벤치마크",
+        "AI평가",
+        "기밀컴퓨팅",
+        "딥마인드",
+        "AI안전"
+      ],
+      "slug": "2026-08-27-deepmind-double-blind-eval",
+      "file": "tech/2026-08-27-deepmind-double-blind-eval.html",
+      "original_url": "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/",
+      "summary": "구글 딥마인드가 평가 문항과 모델 가중치를 서로 숨긴 채 AI를 채점하는 이중맹검 평가를 처음 시범 운영했습니다. 벤더 벤치마크 점수를 읽는 법과 자사 평가를 설계하는 방법을 정리합니다.",
+      "roasting_quote": "벤더가 내민 벤치마크 점수, 그 모델이 시험지를 미리 보지 않았다고 확인해 보셨습니까?",
+      "next_post": "company/2026-09-01-enterprise-frontier-safeguards.html"
+    },
+    {
       "title": "IT산업 감원 가속, 사유는 구조조정으로",
       "date": "2026-09-04",
       "category": "survival",
@@ -17,7 +322,7 @@
       "original_url": "https://www.bls.gov/news.release/empsit.nr0.htm",
       "summary": "2026년 8월 미국 비농업 고용은 16만 2천 명 늘었지만 IT산업만 2만 3천 명 줄어 12개월 평균의 약 3배였습니다. 같은 달 챌린저 리포트에서는 감원 사유 1위가 다섯 달 만에 AI에서 구조조정으로 바뀌었습니다.",
       "roasting_quote": "감원이 줄어든 게 아닙니다. 이름표가 바뀐 것입니다.",
-      "next_post": "company/2026-09-11-moonshot-deepseek-model-swap.html"
+      "next_post": "tech/2026-08-27-deepmind-double-blind-eval.html"
     },
     {
       "title": "문샷·딥시크가 클로드로 넘긴 요청들",

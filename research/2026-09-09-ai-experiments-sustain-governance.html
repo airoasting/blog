@@ -1,0 +1,503 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="MIT 슬론 연구진이 대학병원과 로펌의 AI 실험을 2년간 추적했습니다. 병원은 141개, 로펌은 3개가 남았습니다. 차이를 만든 것은 실험을 받치는 구조였습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="대학병원 141개, 로펌 3개를 가른 지원 구조">
+  <meta property="og:description" content="같은 샌드박스와 교육으로 출발한 두 조직의 AI 실험이 141개와 3개로 갈렸습니다. 팀장이 손댈 수 있는 네 가지 변수를 정리했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-09-09-ai-experiments-sustain-governance.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-09-09">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="AI도입">
+  <meta property="article:tag" content="조직운영">
+  <meta property="article:tag" content="팀장">
+  <meta property="article:tag" content="인사평가">
+  <meta property="article:tag" content="MIT슬론">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="대학병원 141개, 로펌 3개를 가른 지원 구조">
+  <meta name="twitter:description" content="AI 실험을 열정 있는 직원의 부업으로 맡겨 두셨다면, 3개만 남는 조직을 설계하고 계신 것입니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "대학병원 141개, 로펌 3개를 가른 지원 구조",
+    "datePublished": "2026-09-09",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "MIT 슬론 켈로그 교수 연구진의 2년 현장 연구를 근거로, 조직 단위 AI 실험이 지속되는 조건과 팀장이 손댈 수 있는 변수를 분석합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-09-09-ai-experiments-sustain-governance.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_09_09_ai-experiments-sustain-governance/thumbnail.png" alt="대학병원 141개, 로펌 3개를 가른 지원 구조" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026년 9월 9일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">대학병원 141개, 로펌 3개를 가른 지원 구조</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>MIT 슬론 (Kellogg 외 2인)</span>
+            <span><a href="https://mitsloan.mit.edu/press/why-some-organizations-turn-ai-experiments-business-value-while-others-quietly-fail" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=AI도입" class="post-tag">#AI도입</a>
+            <a href="../index.html?tag=조직운영" class="post-tag">#조직운영</a>
+            <a href="../index.html?tag=팀장" class="post-tag">#팀장</a>
+            <a href="../index.html?tag=인사평가" class="post-tag">#인사평가</a>
+            <a href="../index.html?tag=MIT슬론" class="post-tag">#MIT슬론</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="대학병원 141개, 로펌 3개를 가른 지원 구조" data-date="2026-09-09" data-category="research" data-source="MIT 슬론 (Kellogg 외 2인)" data-tags="AI도입, 조직운영, 팀장, 인사평가, MIT슬론" data-original-url="https://mitsloan.mit.edu/press/why-some-organizations-turn-ai-experiments-business-value-while-others-quietly-fail" data-roasting-quote="AI 실험을 열정 있는 직원의 부업으로 맡겨 두셨다면, 3개만 남는 조직을 설계하고 계신 것입니다." data-next-post="../research/2026-03-09-ai-last-mile-transformation.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">MIT 슬론 연구진이 대학병원과 로펌의 AI 실험을 2년간 추적했습니다. 두 곳 모두 샌드박스와 교육을 똑같이 제공했습니다.</p>
+        <p data-summary="">대학병원에서는 조직 단위 AI 솔루션 141개가 쓰이고, 로펌에는 3개만 남았습니다. 로펌 도메인 전문가의 80% 이상은 조용히 손을 뗐습니다.</p>
+        <p data-summary="">연구진은 실험 지원 체계를 차이의 원인으로 꼽았습니다. 교육, 공동 평가 기준, 통합 지원, 인사평가 반영입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI 실험을 열정 있는 직원의 부업으로 맡겨 두셨다면,<br>3개만 남는 조직을 설계하고 계신 것입니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>AI 도입 보고서에는 보통 교육 이수율과 도구 배포 현황이 올라갑니다. 이 연구의 두 조직은 그 항목에서 비슷했습니다. 둘 다 안전한 샌드박스를 열고 교육을 진행했습니다. 전사 공용 AI 도구를 만들라고 직원도 독려했습니다.</p>
+        <p>결과는 141개와 3개로 갈렸습니다. 로펌에서 눈에 띄는 반발은 없었습니다. 켈로그 교수는 "사람들이 조용히 물러서는 것"을 봤다고 말합니다. 이런 이탈은 대시보드에 잡히지 않습니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>많은 조직이 사내 AI 도구 도입과 교육 단계를 지나고 있습니다. 그다음 질문은 누가 그 도구로 조직 공용 해법을 계속 만들어 내느냐입니다. 켈로그 교수는 이를 도입보다 지속의 문제로 봅니다. 연구가 기록한 추가 노동을 감안하면, 지속 여부는 매주 업무 배분에서 갈립니다. 그 배분 권한은 팀장에게 있습니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 조직 단위 AI 솔루션은 보이지 않는 추가 노동을 전제로 합니다.</strong> 연구진이 기록한 추가 업무는 시행착오에서 시작합니다. AI가 어떤 일을 믿을 만하게 해내고 어떤 일에서 틀리는지 직접 검증해야 합니다. 만든 결과물은 유관 부서 동료와 함께 검토하고 보완합니다. 기술이 바뀌면 해법도 다시 손봐야 합니다.</p>
+
+        <p>이 일은 정규 업무 밖에서 이뤄졌습니다. 개인 생산성용 AI와 달리 조직 공용 해법은 한 번 만들고 끝나지 않습니다. 운영하는 내내 유지보수가 필요합니다. 켈로그 교수도 조직 전체가 쓰는 AI 솔루션에는 지속적인 실험이 필요하다고 말합니다.</p>
+
+        <p><strong>둘째, 실패는 반발 없이 조용한 이탈로 나타납니다.</strong> 로펌 도메인 전문가의 80% 이상이 혁신 과정에서 빠졌습니다. 공개적으로 거부한 사람은 드물었습니다. 대부분은 실험과 검토 자리에 발길을 끊는 방식으로 조용히 물러났습니다. 로펌의 지원은 초기 교육 이후 제한적이었습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">141개</div>
+            <div class="stat-label">대학병원에서 쓰이는 조직 단위 AI 솔루션</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3개</div>
+            <div class="stat-label">로펌에 남은 조직 단위 AI 솔루션</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">80% 이상</div>
+            <div class="stat-label">로펌에서 손을 뗀 도메인 전문가 비율</div>
+          </div>
+        </div>
+
+        <p>반대 목소리가 없으면 경영진은 문제를 늦게 알아챕니다. 도구는 그대로 있고, 교육 이수 기록도 남아 있습니다. 줄어드는 것은 실험 회의 참석자 수뿐입니다.</p>
+
+        <p><strong>셋째, 두 조직의 출발 조건은 비슷했습니다.</strong> 둘 다 샌드박스와 교육을 갖췄습니다. 대학병원 팀은 환자가 읽기 쉬운 퇴원 요약서를 다뤘습니다. 로펌 팀은 법률 리서치를 다뤘습니다. 연구진은 전문가의 참여를 지속시킨 '집단 실험의 비계'를 성패를 가른 요인으로 지목했습니다.</p>
+
+        <p><strong>넷째, 대학병원이 세운 비계는 네 층입니다.</strong> 교육, 평가, 통합, 인사의 층이 각각 다른 종류의 부담을 덜어 줍니다. 아래 표는 보도자료가 전한 대학병원의 실행 방식입니다. 오른쪽 열은 팀 단위 적용안으로, 이 글이 덧붙였습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>층</th>
+                <th>대학병원이 한 일</th>
+                <th>팀 단위로 옮기면</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>교육</td>
+                <td>상시 교육 회의와 프롬프타톤, 명확한 문서화, 전담 기술 전문가</td>
+                <td>격주 공유 시간, 프롬프트와 실패 사례 문서화</td>
+              </tr>
+              <tr>
+                <td>평가</td>
+                <td>공동 평가 기준, 지식 공유 포럼</td>
+                <td>팀 공용 평가 기준 한 장</td>
+              </tr>
+              <tr>
+                <td>통합</td>
+                <td>공식 위험 선별 절차, 시스템 통합 지원</td>
+                <td>IT·보안 조직에 요청 창구 확보</td>
+              </tr>
+              <tr>
+                <td>인사</td>
+                <td>AI 실험을 직무, 성과 평가, 승진, 경력 개발에 공식 반영</td>
+                <td class="cell-hl">업무 분장과 평가 목표에 명시</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: MIT Sloan School of Management (2026, September 9) 보도자료 재구성. 오른쪽 열은 AI ROASTING 해석.</p>
+        </div>
+
+        <p><strong>다섯째, 이 글은 인사 반영이 나머지 세 층을 떠받친다고 봅니다.</strong> 켈로그 교수는 리더들이 AI 실험을 도전 과제로 여긴다고 지적합니다. 의욕 있는 직원이 본업에 얹어 알아서 소화하리라 기대한다는 것입니다. 직원들은 한동안 그 일을 떠안습니다. 연구진은 의미 있는 지원과 인정, 자원이 없으면 이들이 끝내 이탈한다고 봤습니다.</p>
+
+        <p>교육과 평가 기준이 있어도 실험 시간이 인사평가에 반영되지 않으면, 실험은 개인의 선의에 기댈 수밖에 없습니다. 선의는 마감이 몰리는 달에 가장 먼저 줄어듭니다. 보도자료가 로펌의 제한적 지원과 전문가 이탈을 함께 전한 것도 이 해석과 부합합니다.</p>
+
+        <p><strong>여섯째, 네 층 가운데 셋은 팀장 재량 안에서 시작할 수 있습니다.</strong> 교육, 공동 평가 기준, 업무 분장 반영은 팀 안에서 정할 수 있습니다. 위험 선별과 통합에는 IT·보안 조직의 협조가 필요합니다. 다만 요청 창구 개설은 팀장이 먼저 제안할 수 있습니다. 승진과 경력 반영은 인사 조직을 설득해야 풀리는 과제입니다. 그 근거는 팀이 쌓은 기록입니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>팀의 숨은 AI 실험 시간을 적으세요.</strong><br>정규 업무 밖에서 AI 해법을 만들고 검토하는 사람의 이름과 주당 시간을 모으세요. 이 목록이 숨은 노동을 드러내는 첫 장부가 됩니다. (30분, 이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>공동 평가 기준 한 장을 만드세요.</strong><br>정확성, 검토 소요 시간, 타 팀 재사용 가능성 같은 항목 3~5개를 정하세요. 같은 기준으로 봐야 결과물끼리 비교할 수 있습니다. (1시간, 이번 주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>실험 참여 인원을 매달 세세요.</strong><br>AI 해법 검토 회의에 나온 전문가 수를 월별로 기록하세요. 로펌의 이탈은 반대 없이 조용히 진행됐습니다. 참석자 수 감소가 첫 경보입니다. (5분, 매달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>격주 30분 공유 시간을 고정하세요.</strong><br>효과를 본 프롬프트와 실패 사례를 함께 문서로 남기세요. 대학병원의 지식 공유 포럼과 문서화를 팀 규모로 줄인 형태입니다. (다음 달부터)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">5</span>
+            <div class="action-body"><strong>통합이 막힌 해법 목록을 IT에 넘기세요.</strong><br>보안 검토나 시스템 연동에서 멈춘 도구를 한 줄씩 적어 요청하세요. 위험 선별 창구가 없다면 창구 개설 자체를 요청 항목에 넣으세요. (이번 달)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">6</span>
+            <div class="action-body"><strong>다음 평가 주기 목표에 AI 실험 기여를 넣으세요.</strong><br>업무 분장표에 '조직 공용 AI 해법 개발'을 명시하고 성과 목표 한 줄로 올리세요. 승진 반영이 필요하면 1번 장부를 들고 인사팀과 협의하세요. (이번 분기)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>비교 대상이 두 조직뿐입니다.</strong> 업종도 과제도 다릅니다. 병원과 로펌의 업무 구조 차이가 결과에 영향을 줬을 수 있습니다. 네 가지 비계가 다른 업종에서도 같은 효과를 내는지는 확인되지 않았습니다.</p>
+
+        <p><strong>동료 심사 전 워킹페이퍼입니다.</strong> 이 글은 MIT 슬론 보도자료를 근거로 썼습니다. 연구 방법과 표본의 세부 내용은 SSRN 원문에서 확인해야 합니다.</p>
+
+        <p><strong>141과 3을 그대로 비교하기는 어렵습니다.</strong> 솔루션 하나의 규모와 사용 범위는 보도자료에 나오지 않습니다. 개수보다 전문가 참여가 지속됐는지의 차이로 보는 편이 안전합니다.</p>
+
+        <p><strong>인사평가 반영에는 부작용이 따를 수 있습니다.</strong> 평가가 개수 목표로 흐르면 쓰이지 않는 도구만 늘어납니다. 기여를 산정할 때는 실제 사용 여부와 품질을 함께 봐야 합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI 실험을 개인의 선의에 맡기면 참여자는 조용히 빠져나갑니다. 141개는 실험 시간을 업무로 인정한 조직에서 나왔습니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>AI 성과 보고에 배포 수 말고 계속 실험하는 전문가 수를 넣어라. 이탈은 조용히 온다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">인사</span>
+            <span>AI 실험 기여를 직무와 평가, 승진 기준에 명시하라. 선의에 기댄 실험은 오래 가지 않는다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀원의 숨은 AI 실험 시간을 장부로 만들고 평가 목표에 올려라. 보이지 않는 일부터 사라진다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>샌드박스</strong>: 회사 데이터를 외부로 내보내지 않고 AI를 시험해 볼 수 있게 격리한 사내 환경입니다.</p>
+          <p><strong>조직 단위 AI 솔루션</strong>: 여러 부서와 이해관계자가 함께 쓰도록 만든 AI 도구나 업무 방식입니다. 개인 생산성 도구와 구분됩니다.</p>
+          <p><strong>비계</strong>: 건물을 올릴 때 받쳐 두는 임시 구조물입니다. 연구에서는 실험을 지속시키는 교육, 기준, 지원, 제도를 가리킵니다.</p>
+          <p><strong>프롬프타톤</strong>: 정해진 시간 동안 여러 사람이 모여 AI 지시문을 함께 만들고 겨루는 행사입니다.</p>
+          <p><strong>위험 선별 절차</strong>: AI 도구를 실제 업무에 붙이기 전에 보안, 정확성, 규제 위험을 걸러내는 공식 검토 단계입니다.</p>
+          <p><strong>도메인 전문가</strong>: 의사, 변호사처럼 해당 업무 분야의 지식을 가진 실무자입니다. AI 결과물이 맞는지 판단할 수 있는 사람입니다.</p>
+          <p><strong>워킹페이퍼</strong>: 학술지 심사를 거치기 전에 먼저 공개한 연구 논문입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>MIT Sloan School of Management. (2026, September 9). <em>Why some organizations turn AI experiments into business value while others quietly fail</em> [Article]. MIT Sloan. (<a href="https://mitsloan.mit.edu/press/why-some-organizations-turn-ai-experiments-business-value-while-others-quietly-fail" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>Karunakaran, A., Kellogg, K. C., &amp; Wiesenfeld, B. M. (2026). <em>Experimentalist Intensification Governance: Managing Worker Negative Consequences Associated with Generative AI Innovation Work</em> [Working paper]. SSRN. (<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7088100" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">141개 대 3개면 답 나왔어요. 실험 시간을 평가에 안 넣으면 3개 남는 쪽입니다. 인사팀부터 부르세요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">병원 하나, 로펌 하나 비교잖아요. 업종도 과제도 다르다고 본문 리스크에 적혀 있고요. 퇴원 요약서랑 법률 리서치를 같은 저울에 올려도 되는 거예요? 아직 심사 전 워킹페이퍼이기도 하고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">표본 둘인 거 압니다. 그럼 논문 심사 끝날 때까지 기다리면 뭐가 달라져요? 평가 목표에 한 줄 넣는 데 돈 안 듭니다. 틀리면 다음 분기에 빼요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">읽다가 뜨끔했어요. 우리 팀에도 퇴근 후에 혼자 AI로 뭘 만드는 친구가 하나 있거든요. 그걸 평가에 넣자고 하면 위에선 뭐라고 할지... 제 평가 기준도 제가 못 정하는데요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">저희 회사에도 그런 사람이 딱 둘 있었어요. 근데 솔직히 둘 다 반년쯤 지나서 손 놨어요. 칭찬은 엄청 했는데 시간은 한 번도 안 빼줬거든요. 1번 장부부터 써 보세요. 이름이랑 주당 시간 적힌 종이 한 장이 생각보다 설득력이 있더라고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">장부는 찬성입니다. 그 도구, 보안 검토는 거쳤습니까. 개인이 만든 해법은 공용으로 바로 못 돌립니다. 병원도 위험 선별 절차와 통합 지원을 따로 뒀습니다.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">아 그건 아프네요. 저희도 만든 건 많았는데 사내 시스템에 붙은 건 거의 없었어요. 5번 IT 목록은 이번 달에 저도 해볼게요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">"조용히 물러선다"는 말이 제일 오래 남아요. 회의실 의자가 하나씩 비는데 아무도 이유를 안 묻는 장면 같달까요. 팀에 얘기할 때도 "혁신하자" 말고 "네 시간을 일로 쳐줄게"로 바꿔 말하려고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">측정 비용은 3번이 제일 쌉니다. 한 달에 5분, 참석자 수만 셉니다. 도구 수가 그대로여도 이 숫자는 먼저 줄어듭니다.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">퍼플님, "일로 쳐줄게"는 좋은 말인데요. 평가표에 안 적히면 그건 그냥 격려예요. 연구진이 든 것도 인정이랑 자원이었지 말투가 아니었고요. 거꾸로 개수 목표로 적으면 안 쓰는 도구만 늘어난다는 경고도 본문에 있죠.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 3 -->
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-03-09-ai-last-mile-transformation.html">
+          <div class="next-post-title">AI 전환의 '라스트 마일' 문제: 파일럿이 조직에 안착되지 못하는 이유 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/it.html" class="concept-chip">IT</a>
+      <a href="../insights/wiki/concepts/팀장.html" class="concept-chip">팀장</a>
+      <a href="../insights/wiki/concepts/ai도입.html" class="concept-chip">AI도입</a>
+      <a href="../insights/wiki/concepts/ssrn.html" class="concept-chip">SSRN</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-09-09-ai-experiments-sustain-governance.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/research/2026-09-09-ai-experiments-sustain-governance.html';
+    const ROASTING_QUOTE = 'AI 실험을 열정 있는 직원의 부업으로 맡겨 두셨다면, 3개만 남는 조직을 설계하고 계신 것입니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

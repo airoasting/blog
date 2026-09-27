@@ -1,0 +1,594 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="앤트로픽 인스티튜트가 2030년 미국 경제를 세 시나리오로 계산했습니다. GDP는 1.6%에서 32.4%까지 갈리고, 극단에서는 지식노동자 임금이 11.5% 낮아집니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="앤트로픽이 그린 2030년 경제의 세 갈래">
+  <meta property="og:description" content="같은 모델이 2030년 GDP를 1.6%, 8.3%, 32.4%로 가릅니다. 인력 계획을 숫자 하나가 아니라 시나리오로 세워야 하는 이유입니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/research/2026-09-09-anthropic-econ-scenarios.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-09-09">
+  <meta property="article:section" content="리서치">
+  <meta property="article:tag" content="앤트로픽">
+  <meta property="article:tag" content="거시경제">
+  <meta property="article:tag" content="인력계획">
+  <meta property="article:tag" content="시나리오">
+  <meta property="article:tag" content="지식노동">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="앤트로픽이 그린 2030년 경제의 세 갈래">
+  <meta name="twitter:description" content="내년 인력 계획이 숫자 하나로 되어 있다면, 그 숫자는 세 시나리오 중 어디에 걸려 있습니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "앤트로픽이 그린 2030년 경제의 세 갈래",
+    "datePublished": "2026-09-09",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽 인스티튜트의 경제 시나리오 모델을 근거로, 2030년 GDP·임금·자본 몫의 세 갈래와 경영 리더의 시나리오형 인력 계획을 분석합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/research/2026-09-09-anthropic-econ-scenarios.html",
+    "articleSection": "리서치"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'research' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="research">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="research">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_09_09_anthropic-econ-scenarios/thumbnail.png" alt="앤트로픽이 그린 2030년 경제의 세 갈래" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="research">리서치</span>
+          <span class="post-date">2026년 9월 9일</span>
+          <span class="post-read-time">12분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">앤트로픽이 그린 2030년 경제의 세 갈래</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>앤트로픽 인스티튜트 (Korinek 외 4인)</span>
+            <span><a href="https://www.anthropic.com/institute/econ-scenarios" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=앤트로픽" class="post-tag">#앤트로픽</a>
+            <a href="../index.html?tag=거시경제" class="post-tag">#거시경제</a>
+            <a href="../index.html?tag=인력계획" class="post-tag">#인력계획</a>
+            <a href="../index.html?tag=시나리오" class="post-tag">#시나리오</a>
+            <a href="../index.html?tag=지식노동" class="post-tag">#지식노동</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="앤트로픽이 그린 2030년 경제의 세 갈래" data-date="2026-09-09" data-category="research" data-source="앤트로픽 인스티튜트 (Korinek 외 4인)" data-tags="앤트로픽, 거시경제, 인력계획, 시나리오, 지식노동" data-original-url="https://www.anthropic.com/institute/econ-scenarios" data-roasting-quote="내년 인력 계획이 숫자 하나로 되어 있다면, 그 숫자는 세 시나리오 중 어디에 걸려 있습니까?" data-next-post="../research/2026-07-17-fed-ai-buildout-economy.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">앤트로픽 인스티튜트가 2030년 미국 경제를 세 시나리오로 계산했습니다. AI가 없을 때보다 GDP가 완만 1.6%, 상당 8.3%, 극단 32.4% 높아집니다.</p>
+        <p data-summary="">극단 시나리오에서는 지식노동자 임금이 11.5% 낮아지고, 자본 몫이 40%에서 55%로 오릅니다. 경제는 커지는데 늘어난 몫은 거의 모두 자본으로 갑니다.</p>
+        <p data-summary="">저자들은 확률을 붙이지 않았고, 시나리오는 2027년 이후에 갈립니다. 인력 계획도 세 벌로 세워 두고 지표에 맞춰 갈아타는 편이 합리적입니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">내년 인력 계획이 숫자 하나로 되어 있다면,<br>그 숫자는 세 시나리오 중 어디에 걸려 있습니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>인력 계획은 흔히 숫자 하나로 끝납니다. 내년 채용 몇 명, 인건비 몇 퍼센트 같은 식입니다.</p>
+        <p>이번 보고서는 그 숫자 하나가 얼마나 위험한지 보여 줍니다. 같은 모델에서 2030년 GDP가 1.6%에서 32.4% 사이로 벌어집니다. 지식노동자의 실업률은 2.9%에 머물 수도, 17.9%로 뛸 수도 있습니다. 전망 하나에 조직을 걸기에는 편차가 너무 큽니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI의 생산성 효과 추정치는 연구마다 자릿수가 다를 만큼 엇갈립니다. 고용 전망 역시 영향 미미와 파국 사이에 넓게 흩어져 있습니다. 앤트로픽 인스티튜트는 이 논쟁을 모델 하나에 담아, 가정을 직접 바꿔 볼 수 있는 탐색기로 공개했습니다. 설계는 안톤 코리넥, 찰스 존스 등 경제학자 5인이 맡았습니다. "AI가 우리 인력을 얼마나 바꾸나"라는 질문을 가정별로 나눠 검증할 도구가 생겼습니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 입력값 몇 개만 바꿔도 같은 모델에서 2030년이 세 갈래로 나옵니다.</strong> 모델은 일자리를 과업의 묶음으로 보고, AI가 과업을 자동화하거나 보조한다고 가정합니다. 경제 전체에서 AI가 건드린 과업 비중은 완만 4%, 상당 12%, 극단 30%입니다. 그중 자동화 비율은 절반, 4분의 3, 90%로 올라갑니다. 과업당 생산성 향상 폭도 약 35%와 57%를 거쳐 극단에서는 두 배를 넘습니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">+1.6%</div>
+            <div class="stat-label">완만 시나리오, 2030년 GDP (AI 없는 경로 대비)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">+8.3%</div>
+            <div class="stat-label">상당 시나리오, 2030년 GDP</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">+32.4%</div>
+            <div class="stat-label">극단 시나리오, 2030년 GDP</div>
+          </div>
+        </div>
+
+        <p>저자들은 세 시나리오가 예측이 아니라고 못 박았고, 확률도 붙이지 않았습니다. 목적은 가정별 결과를 같은 기준에서 비교하는 데 있습니다.</p>
+        <p>완만 시나리오는 인터넷 보급 때와 비슷한 영향을 가정합니다. 2023년 금융·컨설팅 기관 전망치는 상당 시나리오 수준이었습니다. 극단 시나리오에는 범용 AI가 성장률 자체를 끌어올린다는 가속론이 반영돼 있습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>2030년 지표</th>
+                <th style="text-align: center;">AI 없음</th>
+                <th style="text-align: center;">완만</th>
+                <th style="text-align: center;">상당</th>
+                <th style="text-align: center;">극단</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI가 건드린 과업 비중 (경제 전체)</td>
+                <td style="text-align: center;">-</td>
+                <td style="text-align: center;">4%</td>
+                <td style="text-align: center;">12%</td>
+                <td style="text-align: center;">30%</td>
+              </tr>
+              <tr>
+                <td>GDP, AI 없는 경로 대비</td>
+                <td style="text-align: center;">0</td>
+                <td style="text-align: center;">+1.6%</td>
+                <td style="text-align: center;">+8.3%</td>
+                <td class="cell-hl" style="text-align: center;">+32.4%</td>
+              </tr>
+              <tr>
+                <td>GDP 성장률 (연)</td>
+                <td style="text-align: center;">2.0%</td>
+                <td style="text-align: center;">2.4%</td>
+                <td style="text-align: center;">5.4%</td>
+                <td style="text-align: center;">15.4%</td>
+              </tr>
+              <tr>
+                <td>지식 직군 임금, AI 없는 경로 대비</td>
+                <td style="text-align: center;">0</td>
+                <td style="text-align: center;">+0.4%</td>
+                <td style="text-align: center;">-0.3%</td>
+                <td class="cell-hl" style="text-align: center;">-11.5%</td>
+              </tr>
+              <tr>
+                <td>그 외 직군 임금, AI 없는 경로 대비</td>
+                <td style="text-align: center;">0</td>
+                <td style="text-align: center;">+1.1%</td>
+                <td style="text-align: center;">+5.9%</td>
+                <td style="text-align: center;">+33.6%</td>
+              </tr>
+              <tr>
+                <td>노동 몫 / 자본 몫</td>
+                <td style="text-align: center;">60 / 40</td>
+                <td style="text-align: center;">59.4 / 40.6</td>
+                <td style="text-align: center;">56.1 / 43.9</td>
+                <td class="cell-hl" style="text-align: center;">45.2 / 54.8</td>
+              </tr>
+              <tr>
+                <td>지식 직군 고용, 2026년 중반 대비</td>
+                <td style="text-align: center;">0</td>
+                <td style="text-align: center;">-0.5%</td>
+                <td style="text-align: center;">-3.9%</td>
+                <td style="text-align: center;">-21.5%</td>
+              </tr>
+              <tr>
+                <td>지식노동자 실업률</td>
+                <td style="text-align: center;">2.9%</td>
+                <td style="text-align: center;">2.9%</td>
+                <td style="text-align: center;">4.5%</td>
+                <td class="cell-hl" style="text-align: center;">17.9%</td>
+              </tr>
+              <tr>
+                <td>전체 실업률</td>
+                <td style="text-align: center;">3.8%</td>
+                <td style="text-align: center;">3.9%</td>
+                <td style="text-align: center;">4.6%</td>
+                <td style="text-align: center;">11.9%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Korinek, Jones, Sacher, Cotter, &amp; McCrory (2026), Table 3 및 4장 재구성. 미국 경제 기준, 2030년 초 값.</p>
+        </div>
+
+        <p><strong>둘째, 상당 시나리오에서도 GDP와 월급은 따로 움직입니다.</strong> 이 시나리오의 2030년 성장률 5.4%는 1999년 닷컴 호황 정점 4.7%보다 높습니다. 그런데 GDP가 8.3% 늘 때 평균 임금은 2.1%만 오릅니다. 지식 직군 임금은 오히려 AI 없는 경로보다 0.3% 낮습니다. 반대로 AI가 직접 닿지 않는 직군 임금은 5.9% 오릅니다.</p>
+
+        <p>늘어난 몫은 자본 쪽으로 기웁니다. 노동 몫은 4년 만에 60%에서 56%로 떨어집니다. 저자들에 따르면 이 하락폭은 1980년 이후 40년간 미국 노동 몫이 줄어든 폭에 조금 못 미칩니다.</p>
+
+        <p><strong>셋째, 극단 시나리오에서는 성장 문제가 분배 문제로 바뀝니다.</strong> GDP는 3분의 1 커지지만 노동소득 총액은 AI가 없을 때와 거의 같습니다. 증가분이 거의 전부 자본 쪽으로 가면서 자본소득이 81% 늘어납니다. 임금이 11.5% 낮고 일자리가 21.5% 적은 결과, 지식 직군 임금 총액은 31% 줄어듭니다.</p>
+
+        <p>실업률도 전후 미국이 겪은 적 없는 수준입니다. 지식노동자 출신 실업률이 17.9%, 전체 실업률이 11.9%입니다. 금융위기 직후에도 연간 실업률 정점은 10%에 조금 못 미쳤습니다.</p>
+        <p>저자들은 GDP의 약 9%를 이전하면 지식노동자 소득을 보전할 수 있다고 계산했습니다. 이는 사회보장과 메디케어를 합친 규모입니다. 다만 그만한 소득 이전이 저절로 일어난 전례는 없다고 덧붙였습니다.</p>
+
+        <p><strong>넷째, 모델에서 충격은 임금이나 실업 중 한쪽으로 나옵니다.</strong> 연구진은 지식 직군 임금의 조정 속도를 바꿔 가며 모델을 다시 돌렸습니다. 극단 시나리오에서 임금이 매우 경직되면 지식 직군 임금은 2.8% 높지만 실업률이 24.0%입니다. 반대로 임금이 완전히 유연하면 실업률은 2.6%에 그치는 대신 임금이 42.2% 떨어집니다. 조직도 같은 트레이드오프를 피하기 어렵습니다. 보상 수준을 지키면 인원이 줄고, 인원을 지키면 보상이 눌립니다.</p>
+
+        <p><strong>다섯째, 세 시나리오가 갈라지는 시점은 2027년 이후입니다.</strong> 세 시나리오는 모두 같은 현재 수치에서 출발합니다. 그래서 거시 데이터에서 AI의 고용 효과가 아직 약하다는 사실만으로는 판단하기 어렵습니다. 완만 시나리오에 있다는 신호일 수도, 극단 시나리오의 초입일 수도 있습니다. 저자들은 1~2년 안에 어느 쪽인지 더 분명해질 수 있다고 봅니다.</p>
+
+        <p><strong>여섯째, 갈림길을 알려 줄 신호는 측정할 수 있는 숫자입니다.</strong> 모델의 입력값은 모두 관측 가능합니다. AI가 할 수 있는 과업 비중, 실제 도입 기업 비중, 과업당 생산성 향상 폭, 실직자의 재취업 기간입니다.</p>
+
+        <p>연구진은 미국 성인 10,980명에게 이 값을 물었습니다. 응답 중앙값은 GDP 8.6% 증가, 실업률 4.6%로 상당 시나리오 근처였습니다. 기업도 같은 네 지표를 조직 단위로 재면 현재 위치를 가늠할 수 있습니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr>
+                <th>시나리오</th>
+                <th>조직 안에서 보일 신호</th>
+                <th>인력 계획 기본값</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>완만</td>
+                <td>지식직 과업 중 AI 처리는 일부, 절반은 보조 방식</td>
+                <td>기존 채용 유지, 도구 교육과 재배치 중심</td>
+              </tr>
+              <tr>
+                <td>상당</td>
+                <td>지식직 과업의 약 20%에 AI 적용, 그중 4분의 3이 자동화</td>
+                <td>지식직 신규 채용 속도 조절, 타 직무 전환 경로 설계</td>
+              </tr>
+              <tr>
+                <td class="cell-hl">극단</td>
+                <td>지식직 과업의 약 절반에 AI 적용, 90%가 자동화, 신규 과업 생성 없음</td>
+                <td>조직 구조 재설계, 전환 지원 예산과 보상 체계 동시 결정</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: 과업 비중·자동화 비율은 Korinek 외 (2026) 4장. 인력 계획 기본값은 필자 구성.</p>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>탐색기에 우리 가정을 직접 넣으세요.</strong><br>앤트로픽 인스티튜트 탐색기의 슬라이더로 과업 비중, 도입률, 자동화 비율을 바꿔 보세요. 경영진이 각자 믿는 값을 넣으면 의견 차이가 숫자로 드러납니다. (30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>팀 과업을 자동화·보조·무관 세 칸으로 나누세요.</strong><br>직무기술서를 Claude에 붙여 넣고 아래 지시문으로 분류하세요. 결과는 우리 팀의 "AI가 건드린 과업 비중"과 "자동화 비율"에 대한 첫 추정치가 됩니다. (팀당 1시간)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>내년 인력 계획을 세 벌로 다시 쓰세요.</strong><br>완만·상당·극단 각각의 채용 규모, 재배치 인원, 교육 예산을 한 장에 나란히 적으세요. 기본안은 상당 시나리오로 잡되, 나머지 두 안도 결재까지 받아 두세요. (이번 분기)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>계획을 갈아탈 기준값을 미리 정하세요.</strong><br>2번에서 잰 비율은 분기마다 다시 측정하세요. 모델 기준으로는 지식직 과업의 약 20%에 AI가 닿으면 상당, 약 절반이면 극단입니다. 이 두 값을 출발점 삼아 우리 조직의 전환 기준을 문서로 정해 두세요. 기준을 사후에 정하면 결정이 늦어집니다. (분기별 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">5</span>
+            <div class="action-body"><strong>보상 체계와 인원 계획을 한 회의에서 결정하세요.</strong><br>모델에서 충격은 임금이나 실업 중 한쪽으로 나옵니다. 두 결정을 다른 부서가 따로 내리면 양쪽 비용을 한꺼번에 떠안을 수 있습니다. (다음 인사 계획 회의)</div>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <pre class="prompt-text">아래는 우리 팀의 직무기술서입니다.
+1. 이 직무를 구체적인 과업 단위로 10~20개로 나눠 주세요.
+2. 각 과업을 다음 셋 중 하나로 분류해 주세요.
+   - 자동화: 지금 AI가 사람 확인만 거쳐 거의 대신할 수 있음
+   - 보조: 사람이 하되 AI로 시간이 크게 줄어듦
+   - 무관: 현장·대면·물리 작업 등 AI 영향이 적음
+3. 각 과업이 주간 업무 시간에서 차지하는 비중을 추정해 주세요.
+4. 마지막에 자동화·보조·무관 비중을 시간 기준으로 합산해 주세요.
+판단 근거를 과업마다 한 줄로 적어 주세요.
+
+[직무기술서 붙여 넣기]</pre>
+          <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>미국 경제를 대상으로 한 모델입니다.</strong> 고용 구조와 노동시장 유연성이 다른 한국에 수치를 그대로 적용하기는 어렵습니다. 프레임만 빌리고, 숫자는 자사 데이터로 다시 채우는 편이 맞습니다.</p>
+
+        <p><strong>노동자를 두 집단으로만 나눕니다.</strong> 모델 안에서 노동자는 지식 직군과 그 외 직군뿐이고, 집단 안에서는 모두 같은 임금을 받습니다. 직무를 옮긴 사람이 경력 손실 없이 새 직군 임금을 바로 받는다는 가정도 깔려 있습니다. 실제 전환 비용은 이보다 큽니다.</p>
+
+        <p><strong>빠진 변수가 많습니다.</strong> 모델에는 정책 대응, 경기 순환, 금융시장 충격, 수요 위축의 악순환이 반영돼 있지 않습니다. 로봇 기술의 급진전도 제외해, 분석 기간을 2030년까지로 한정했습니다. 탐색기는 극단 시나리오를 사고실험으로 봐야 한다는 비판도 함께 소개합니다.</p>
+
+        <p><strong>가정 하나에 결과가 크게 흔들립니다.</strong> 자본 공급 탄력성에 따라 극단 시나리오 GDP는 21.3%와 43.3% 사이를 오갑니다. 탄력성이 낮으면 평균 임금이 AI 없는 경로보다 9.2% 낮아지기도 합니다.</p>
+
+        <p><strong>AI 기업이 낸 AI 경제 모델입니다.</strong> 연구진은 논문의 견해가 저자 개인 의견이며 앤트로픽의 공식 입장이 아니라고 밝혔습니다. 그래도 이해관계자가 낸 산출물이라는 점은 감안하고 읽는 편이 안전합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>2030년 GDP는 1.6%와 32.4% 사이 어디에든 떨어질 수 있습니다. 인력 계획은 세 벌로 준비하고, 분기마다 잰 지표에 맞춰 갈아타세요.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">창업자/CEO</span>
+            <span>인력 계획을 한 숫자로 결재하지 마라. 세 벌을 받고, 갈아탈 기준값까지 함께 승인하라.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CHRO/인사</span>
+            <span>보상과 인원을 한 회의에서 다뤄라. 모델에서 충격은 둘 중 한쪽으로 나온다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>팀 과업의 자동화 비율을 분기마다 재라. 그 숫자로 우리 팀이 어느 시나리오에 있는지 판단하라.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>AI 없는 경로</strong>: AI가 없었다고 가정하고 그린 경제의 기준선입니다. 보고서의 모든 수치는 이 경로와의 차이로 표시됩니다.</p>
+          <p><strong>지식 직군 (인지 직군)</strong>: 관리, 전문, 영업, 사무 직종입니다. 모델에서 AI의 직접 영향을 받는 집단입니다.</p>
+          <p><strong>노동 몫과 자본 몫</strong>: 국민소득 가운데 임금으로 가는 비율과 자본 수익으로 가는 비율입니다. 현재 미국은 약 60 대 40입니다.</p>
+          <p><strong>자동화와 보조</strong>: 자동화는 AI가 과업을 대신하는 것, 보조는 사람이 AI의 도움을 받아 더 많이 해내는 것입니다.</p>
+          <p><strong>임금 경직성</strong>: 노동 수요가 줄어도 임금이 바로 내려가지 않는 성질입니다. 경직될수록 임금 대신 고용이 줄어듭니다.</p>
+          <p><strong>자본 공급 탄력성</strong>: 자본 수익이 오를 때 투자가 얼마나 빨리 늘어나는지를 나타내는 값입니다. 높을수록 노동이 성장 몫을 더 가져갑니다.</p>
+          <p><strong>작업 논문</strong>: 학술지 심사 전에 먼저 공개하는 연구 논문입니다. 이번 보고서는 앤트로픽 인스티튜트 작업 논문 2026-02호입니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Korinek, A., Jones, C. I., Sacher, S., Cotter, T., &amp; McCrory, P. (2026, September). <em>Economic Scenarios for Transformative AI</em> [Working Paper No. 2026-02]. The Anthropic Institute. (<a href="https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>The Anthropic Institute. (2026, September). <em>Scenarios for our Economic Future</em> [Interactive]. Anthropic. (<a href="https://www.anthropic.com/institute/econ-scenarios" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">숫자 하나로 올라온 인력 계획, 저는 이제 반려해요. 1.6%와 32.4%가 같은 모델에서 나왔어요. 그중 하나를 찍어서 결재하라는 건 도박이죠.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">근데 그 모델 누가 만들었어요? 앤트로픽이잖아요. AI 회사가 낸 AI 경제 모델 보고 우리 인력 계획을 다시 쓰자는 거예요. 본문에 '공식 입장 아님'이라고 한 줄 있던데, 그걸로 이해관계가 지워지나요?</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">안 지워지죠. 그래서 확률 없는 표만 가져다 써요. 세 벌 쓰는 데 한 분기면 되고, 숫자 하나 믿었다 틀리면 1년이 날아가요. 전망은 안 믿고, 비교표는 씁니다.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">탐색기에 임원들이 각자 믿는 값을 넣어 보라고요? 그거 하면 회의가 두 시간은 싸움판 될 것 같은데요. 그래서 팀장인 저는 월요일에 뭐부터 해요? 직무기술서 붙여 넣는 거요?</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">저 그거 해 봤어요. 과업 쪼개는 건 진짜 금방 해 줘요. 근데 솔직히 결과 보고 좀 웃었어요. 우리 팀이 매일 붙잡고 있는 잡일이 직무기술서엔 한 줄도 없더라고요. 본문에서 '첫 추정치'라고 한 이유가 있어요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">첫 추정치는 팀당 1시간이면 나옵니다. 문제는 분기마다 다시 잴 때예요. 지시문이나 입력 문서가 바뀌면 20%냐 절반이냐 비교 자체가 안 됩니다. 지시문 고정, 같은 문서, 같은 시점. 이 세 개 안 지키면 추세선은 소음이에요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">아, 그럼 지시문을 팀 공용 폴더에 박아 두는 것부터 하면 되겠네요. 그건 저도 이번 주에 할 수 있어요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">넷째 인사이트 읽고 좀 서늘했어요. 보상을 지키면 인원이 줄고, 인원을 지키면 보상이 눌린다는 대목이요. 팀원들한테 '둘 다 지킬게' 하고 싶은데, 그게 제일 위험한 약속 같더라고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">그 약속 안 하는 게 맞아요. 대신 숫자는 조심해서 옮기세요. 실업률 24.0%, 임금 42.2% 하락은 극단 시나리오에서 임금 경직성을 양 끝까지 민 값이에요. 게다가 미국 모델이고요. 전체 회의에서 그대로 읽으면 겁주기밖에 안 돼요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">퍼플님, 구조로 보면 변수 두 개가 한 식에 묶여 있어요. 따로 최적화가 안 됩니다. 보상은 인사팀, 인원은 사업부가 따로 정하는 회사라면 그 조직도가 버그예요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 3 -->
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="../research/2026-07-17-fed-ai-buildout-economy.html">
+          <div class="next-post-title">연준이 본 AI 생산성의 공백 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/앤트로픽.html" class="concept-chip">앤트로픽</a>
+      <a href="../insights/wiki/concepts/gdp.html" class="concept-chip">GDP</a>
+      <a href="../insights/wiki/concepts/지식노동.html" class="concept-chip">지식노동</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-09-09-anthropic-econ-scenarios.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/research/2026-09-09-anthropic-econ-scenarios.html';
+    const ROASTING_QUOTE = '내년 인력 계획이 숫자 하나로 되어 있다면, 그 숫자는 세 시나리오 중 어디에 걸려 있습니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

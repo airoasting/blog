@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="같은 능력의 AI 단가는 크게 내렸는데 기업의 AI 청구서는 계속 커집니다. 맥킨지는 에이전트 비용이 실행마다 최대 30배 벌어진다며 토큰 단가 대신 작업 단위로 비용을 재라고 조언합니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="같은 작업에 30배 벌어지는 에이전트 비용">
+  <meta property="og:description" content="같은 능력의 AI 단가는 크게 내렸는데 기업의 AI 청구서는 계속 커집니다. 맥킨지는 에이전트 비용이 실행마다 최대 30배 벌어진다며 토큰 단가 대신 작업 단위로 비용을 재라고 조언합니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/company/2026-09-23-cheaper-models-bigger-ai-bills.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-09-23">
+  <meta property="article:section" content="기업">
+  <meta property="article:tag" content="맥킨지">
+  <meta property="article:tag" content="AI비용">
+  <meta property="article:tag" content="AI에이전트">
+  <meta property="article:tag" content="CFO">
+  <meta property="article:tag" content="AI예산">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="같은 작업에 30배 벌어지는 에이전트 비용">
+  <meta name="twitter:description" content="토큰 단가가 내렸으니 AI 예산도 줄어들 거라 믿으셨습니까? 단가표만 보는 조직은 청구서를 받을 때마다 원인을 찾아 헤맵니다.">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "같은 작업에 30배 벌어지는 에이전트 비용",
+    "datePublished": "2026-09-23",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "같은 능력의 AI 단가는 크게 내렸는데 기업의 AI 청구서는 계속 커집니다. 맥킨지는 에이전트 비용이 실행마다 최대 30배 벌어진다며 토큰 단가 대신 작업 단위로 비용을 재라고 조언합니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/company/2026-09-23-cheaper-models-bigger-ai-bills.html",
+    "articleSection": "기업"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'company' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="company">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="company">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_09_23_cheaper-models-bigger-ai-bills/thumbnail.png" alt="같은 작업에 30배 벌어지는 에이전트 비용" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="company">기업</span>
+          <span class="post-date">2026년 9월 23일</span>
+          <span class="post-read-time">8분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">같은 작업에 30배 벌어지는 에이전트 비용</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>Fortune (Sheryl Estrada)</span>
+            <span><a href="https://fortune.com/2026/09/23/mckinsey-cheaper-ai-models-bigger-ai-bills-cfo/" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=맥킨지" class="post-tag">#맥킨지</a>
+            <a href="../index.html?tag=AI비용" class="post-tag">#AI비용</a>
+            <a href="../index.html?tag=AI에이전트" class="post-tag">#AI에이전트</a>
+            <a href="../index.html?tag=CFO" class="post-tag">#CFO</a>
+            <a href="../index.html?tag=AI예산" class="post-tag">#AI예산</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="같은 작업에 30배 벌어지는 에이전트 비용" data-date="2026-09-23" data-category="company" data-source="Fortune (Sheryl Estrada)" data-tags="맥킨지, AI비용, AI에이전트, CFO, AI예산" data-original-url="https://fortune.com/2026/09/23/mckinsey-cheaper-ai-models-bigger-ai-bills-cfo/" data-roasting-quote="토큰 단가가 내렸으니 AI 예산도 줄어들 거라 믿으셨습니까? 단가표만 보는 조직은 청구서를 받을 때마다 원인을 찾아 헤맵니다." data-next-post="2026-09-11-moonshot-deepseek-model-swap.html"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">같은 능력의 AI 단가는 크게 내렸지만 기업의 AI 청구서는 계속 커지고 있습니다. 맥킨지 시니어 파트너 두 명은 원인으로 사용량 증가와 에이전트를 꼽았습니다.</p>
+        <p data-summary="">에이전트는 같은 작업도 실행마다 비용이 최대 30배까지 벌어집니다. 그래서 토큰 단가 대신 작업 단위로 실행 비용, 성공률, 검증 시간을 재야 합니다.</p>
+        <p data-summary="">맥킨지 조사에서 응답자 80%는 AI로 개인 생산성이 올랐다고 답했습니다. EBIT 효과를 본 비율은 37%입니다. 맥킨지 파트너는 아낀 시간을 손익으로 옮기는 워크플로 재설계를 더 큰 과제로 봅니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">토큰 단가가 내렸으니 AI 예산도 줄어들 거라 믿으셨습니까?<br>단가표만 보는 조직은 청구서를 받을 때마다 원인을 찾아 헤맵니다.</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>2023년 GPT-4가 나왔을 때 API 가격은 출력 토큰 100만 개당 60달러였습니다. 지금은 비슷한 성능의 모델을 훨씬 싼 값에 씁니다. 그런데 기업의 AI 지출은 줄지 않고 계속 늘고 있습니다.</p>
+        <p>예산을 짜는 팀장에게 단가 인하 소식은 비용 절감 신호처럼 들립니다. 실제 청구서는 반대로 움직입니다. 맥킨지 파트너들이 이 간극의 원인과 관리 방법을 설명했습니다. 다음 분기 AI 예산을 승인하기 전에 무엇을 재야 하는지 정리합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>맥킨지 8월 연례 보고서 'The state of AI in 2026'을 보면 에이전트 도입이 늘고 있습니다. 매출 10억 달러 이상 기업 응답자의 40%가 에이전트를 확장 중이라고 답했습니다(지난해 27%). 반면 AI가 EBIT에 조금이라도 기여했다고 답한 비율은 지난해와 거의 같았습니다. 성과는 제자리인데 사용량만 늘면 AI 운영비가 예산 회의의 첫 안건이 됩니다.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">최대 30배</div>
+            <div class="stat-label">같은 에이전트 작업이 실행마다 벌어지는 비용 차이</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">80% vs 37%</div>
+            <div class="stat-label">개인 생산성 향상 응답 대 EBIT 효과를 본 응답</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">20%</div>
+            <div class="stat-label">AI 운영비 때문에 활용이 제약됐다는 응답</div>
+          </div>
+        </div>
+
+        <p><strong>첫째, 단가가 떨어진 속도보다 사용량이 더 빨리 늘었습니다.</strong> 맥킨지의 라리 해멜래이넨(Lari Hämäläinen)은 먼저 단가 하락을 짚었습니다. 그는 "일정 능력 수준의 지능은 훨씬 저렴해지고 있다"고 말했습니다. 그런데 기업은 싸진 모델에 훨씬 많은 추론과 일을 맡깁니다. 에이전트로 작업을 자율 실행하기도 합니다. 공급사도 효율 개선분의 일부를 마진으로 가져갑니다.</p>
+
+        <p>소프트웨어 개발이 대표 사례입니다. 에이전트는 코드베이스 전체를 반복해 검토하고 다시 쓰면서 사람보다 훨씬 많은 코드를 만듭니다. 단가가 내려도 사용량이 그보다 빨리 늘면 청구서는 커집니다.</p>
+
+        <p><strong>둘째, 에이전트는 같은 작업도 실행마다 비용이 다릅니다.</strong> 기존 소프트웨어는 실행 비용을 예측할 수 있었습니다. 에이전트는 결과에 이르는 경로가 매번 달라서, 같은 작업이 실행마다 최대 30배까지 차이 납니다. 차이의 상당 부분은 추론과 결과물을 반복해 다듬는 과정에서 생깁니다. 단일 에이전트로 갈지, 여러 에이전트로 나눌지에 따라서도 작업당 비용이 크게 달라집니다.</p>
+
+        <p><strong>셋째, 토큰 단가 대신 작업 단위로 재야 합니다.</strong> 해멜래이넨은 에이전트를 작업 단위로 평가하라고 권했습니다. 기준은 회당 실행 비용, 성공률, 사람의 검증 시간입니다. 예시도 들었습니다. 사람이 1시간 걸리는 일을 에이전트에 맡기고, 그 결과를 6분 만에 검증할 수 있다고 해 봅시다. 이때는 성공률이 10%만 넘어도 가치가 생기기 시작합니다.</p>
+
+        <p>이 숫자를 풀면 판단 공식이 됩니다(필자 풀이). 성공한 결과 하나를 얻는 데 드는 검증 시간은 '검증 시간 ÷ 성공률'입니다. 6분에 성공률 10%면 60분으로, 사람이 직접 하는 시간과 같아집니다. 이 계산에는 에이전트 실행 비용이 빠져 있습니다. 실행 비용까지 넣으면 실제 손익분기 성공률은 이보다 높아집니다.</p>
+
+        <p><strong>넷째, 개인의 체감과 회사의 손익 사이 간격이 큽니다.</strong> 맥킨지 조사(1,719명 응답)에서 업무에 AI를 쓰는 응답자 80%가 개인 생산성이 올랐다고 답했습니다. AI가 EBIT에 조금이라도 기여했다고 답한 비율은 37%입니다. EBIT의 5% 이상을 AI 덕분으로 보는 고성과 기업 비중은 6%에 그쳤습니다. 응답자 20%는 AI 운영비가 이미 활용을 제약했다고 답했습니다.</p>
+
+        <p>개인이 아낀 시간이 손익으로 넘어가지 않은 채 사용량만 늘면, 비용 부담이 먼저 커집니다. 해멜래이넨도 확보한 여유 시간을 실제 업무에 쓰도록 워크플로를 재설계하는 일이 더 큰 과제라고 짚었습니다. 작업 단위로 재면 두 문제를 한 표에서 볼 수 있습니다. 작업당 비용 옆에 줄어든 사람 시간과 그 시간에 새로 한 일을 적어 보세요. 어디서 비용이 손익으로 바뀌는지 보입니다.</p>
+
+        <p><strong>다섯째, 비용을 줄이는 단일 레버는 없습니다.</strong> 탕기 캐틀린(Tanguy Catlin)은 "비용을 움직이는 레버는 하나가 아니다"라고 말했습니다. 그는 AI 지출 관리 영역을 세 가지로 나눴고, 무차별 삭감은 경계했습니다. AI 지출의 ROI가 가장 높은 곳을 먼저 찾고, 그 기준으로 최적화하라는 조언입니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr><th>관리 영역</th><th>맥킨지가 든 항목</th><th>먼저 볼 지표</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="cell-hl">지출 가시성</td><td>어떤 사용 사례, 사업부, 에이전트, 모델, 사용자가 지출을 일으키는지 파악</td><td>지출 상위 작업 목록과 작업별 월 비용</td></tr>
+              <tr><td class="cell-hl">워크플로 최적화</td><td>작업 난이도에 맞는 모델 배정, 요청 라우팅, 재사용 컨텍스트 캐싱, 불필요한 툴 호출과 에이전트 반복 제한</td><td>작업당 평균 비용과 실행 간 편차</td></tr>
+              <tr><td class="cell-hl">구매 규율</td><td>미사용 라이선스 정리, 사용 한도 관리, 공급사 조건 협상, 특정 모델·공급사 과의존 회피</td><td>활성 사용자 대비 라이선스 수, 공급사별 지출 비중</td></tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Fortune (2026, September 23)이 전한 탕기 캐틀린 발언. 세 번째 열은 필자 정리.</p>
+        </div>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>지난달 AI 청구서를 작업 단위로 쪼개세요.</strong><br>API 비용과 라이선스 비용을 사용처별로 나눕니다. 열은 작업명, 담당 팀, 사용 모델, 월 비용, 월 실행 횟수 다섯 개면 충분합니다. 채우지 못한 칸이 곧 가시성이 없는 지출입니다. (반나절)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>대표 에이전트 작업 하나로 비용 편차를 재세요.</strong><br>같은 입력으로 10번 실행하고 회당 비용과 성공 여부를 기록합니다. 최고 비용이 최저의 몇 배인지 보세요. 필자는 3배를 넘으면 반복 횟수와 툴 호출에 상한을 거는 것부터 권합니다. 이 숫자가 다음 분기 예산의 상단 추정치가 됩니다. (1~2일)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>도입 후보 업무를 검증 시간 기준으로 거르세요.</strong><br>업무별로 사람 작업 시간과 결과 검증 시간을 적고, 손익분기 성공률을 계산합니다. 클로드나 챗GPT에 아래 프롬프트를 넣으면 초안 표가 나옵니다. (1시간)
+              <div class="prompt-block">
+                <pre class="prompt-text">아래는 우리 팀이 AI 에이전트에 맡기려는 업무 목록이야.
+각 업무마다 다음을 표로 정리해줘.
+1) 사람이 직접 할 때 걸리는 시간(분)
+2) 에이전트 결과물을 사람이 검증하는 데 걸리는 시간(분)
+3) 손익분기 성공률 = 검증 시간 ÷ 직접 작업 시간
+4) 검증 중 오류를 놓쳤을 때의 피해 수준(상/중/하)
+시간 추정이 불확실한 항목은 따로 표시하고, 내가 확인해야 할 질문을 붙여줘.
+
+[업무 목록 붙여넣기]</pre>
+                <button class="copy-prompt-btn" onclick="copyPrompt(this)" aria-label="프롬프트 복사">복사</button>
+              </div>
+            </div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>라이선스 사용률과 모델 배정 규칙을 점검하세요.</strong><br>최근 30일간 쓰지 않은 라이선스를 뽑아 정리 대상에 올립니다. 분류, 요약 같은 단순 작업은 작은 모델을 기본값으로 두는 규칙을 IT와 합의하세요. 캐틀린이 말한 구매 규율과 워크플로 최적화의 첫 단계입니다. (이번 주)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>30배는 평균이 아니라 상한입니다.</strong> 해멜래이넨은 같은 작업이 "최대 30배" 차이 날 수 있다고 말했습니다. 어떤 작업과 조건에서 측정했는지는 보도에 나오지 않습니다. 우리 회사 편차는 직접 재 봐야 압니다.</p>
+
+        <p><strong>1시간 대 6분 예시는 단순화된 계산입니다.</strong> 검증자가 틀린 결과를 통과시켰을 때의 오류 비용은 빠져 있습니다. 오류 피해가 큰 업무라면 성공률 10%는 턱없이 낮은 기준입니다. 검증 시간이 짧다는 가정도 업무마다 다시 확인해야 합니다.</p>
+
+        <p><strong>조사 수치는 자기 보고이며 인과를 보여주지 않습니다.</strong> 37%는 EBIT에 '조금이라도' 영향이 있었다고 답한 비율입니다. 80%의 생산성 향상도 응답자 체감입니다. 두 숫자의 간격은 측정 방식이 달라서 생겼을 수도 있습니다.</p>
+
+        <p><strong>이 글은 원자료 대신 보도를 인용했습니다.</strong> 파트너 발언은 Fortune이 전한 맥킨지 라이브 세션 내용이며, 세션 원본은 확인하지 못했습니다. 조사 수치는 맥킨지 보고서를 인용한 The Register 보도 기준입니다. 맥킨지가 AI 도입 자문을 하는 회사라는 점도 감안하세요.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>모델 단가는 AI 청구서를 결정하는 여러 변수 중 하나일 뿐입니다. 청구서를 통제하려면 작업 단위로 실행 비용, 성공률, 검증 시간을 재야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CFO</span>
+            <span>AI 예산을 모델 단가가 아니라 작업당 비용으로 승인하세요. 사업부별 AI 지출 보고에 작업 수와 성공률을 함께 넣게 하세요.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>에이전트 도입 제안서에 사람 작업 시간, 검증 시간, 예상 성공률 세 숫자를 적으세요. 이 숫자가 없는 제안은 비용 논쟁에서 버티지 못합니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">CIO</span>
+            <span>모델 라우팅, 캐싱, 반복 상한을 플랫폼 기본값으로 두세요. 특정 공급사 의존도는 분기마다 점검하세요.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>토큰</strong>: AI 모델이 글을 처리하는 단위입니다. API 요금은 보통 입력·출력 토큰 100만 개당 가격으로 매깁니다.</p>
+          <p><strong>AI 에이전트</strong>: 목표를 받으면 스스로 단계를 나누고 도구를 호출하며 작업을 끝까지 수행하는 AI 시스템입니다.</p>
+          <p><strong>EBIT</strong>: 이자와 법인세를 빼기 전 이익입니다. 사업 자체의 수익성을 볼 때 쓰는 지표입니다.</p>
+          <p><strong>라우팅</strong>: 요청의 난이도에 따라 작고 싼 모델과 크고 비싼 모델 중 하나로 보내는 방식입니다.</p>
+          <p><strong>컨텍스트 캐싱</strong>: 반복해서 쓰는 지시문이나 문서를 저장해 두고 재사용해, 매번 다시 처리하는 비용을 줄이는 기법입니다.</p>
+          <p><strong>툴 호출</strong>: 에이전트가 검색, 계산, 사내 시스템 조회 같은 외부 기능을 불러 쓰는 동작입니다. 호출이 늘수록 비용과 시간이 늘어납니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Estrada, S. (2026, September 23). <em>McKinsey: Cheaper AI models, bigger AI bills</em> [Article]. Fortune. (<a href="https://fortune.com/2026/09/23/mckinsey-cheaper-ai-models-bigger-ai-bills-cfo/" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>Vigliarolo, B. (2026, August 25). <em>McKinsey says enterprise AI is finally 'on the road to ROI'</em> [Article]. The Register. (<a href="https://www.theregister.com/ai-and-ml/2026/08/25/mckinsey-says-enterprise-ai-is-finally-on-the-road-to-roi/5292388" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>McKinsey &amp; Company. (2026, August). <em>The state of AI in 2026: On the road to ROI</em> [Report]. McKinsey. (<a href="https://www.mckinsey.com/~/media/mckinsey/business%20functions/quantumblack/our%20insights/the%20state%20of%20ai/the-state-of-ai-in-2026-on-the-road-to-roi.pdf" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+  <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+    <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+    <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+  </div>
+
+  <!-- 스레드 1 -->
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">단가표 보고 AI 예산 깎자는 보고서, 이번 분기에 저도 받았어요. 반려했습니다. 작업당 비용이 안 적혀 있으면 승인 안 해요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">잠깐만요. 30배가 어떤 작업, 어떤 조건에서 나온 숫자인지 보도에 없다고 글에도 적혀 있잖아요. 측정 조건도 모르는 숫자로 결재 기준을 바꾸신다고요?</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">30배를 믿으라는 게 아니에요. 우리 편차를 직접 재라는 거죠. 같은 작업 10번 돌려서 3배만 벌어져도 예산 상단이 달라집니다. 안 재고 단가표만 믿는 쪽이 더 위험해요.</div>
+      </div>
+    </div>
+  </div><!-- /스레드 1 -->
+
+  <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+  <!-- 스레드 2 -->
+  <div style="margin-bottom:32px;">
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">1시간짜리 일을 6분에 검증하면 성공률 10%로도 된다는 대목, 처음엔 혹했어요. 근데 솔직히 저희 팀 코드 리뷰는 6분에 안 끝나요. 에이전트가 쓴 코드일수록 더 꼼꼼히 보게 되더라고요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">그 계산에 실행 비용이 빠졌다고 글에서 따로 짚었죠. 검증 6분, 성공률 10%면 성공 하나에 검증만 60분. 실행 비용을 얹으면 손익분기는 10%보다 위로 갑니다.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">두 분 얘기 들으니까 더 막막해요. 저는 검증 시간을 재 본 적이 한 번도 없거든요. 팀원들한테 에이전트 결과 확인에 몇 분 걸리냐고 묻는 것부터 해야 하나요?</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">네, 거기서부터요. 저도 스톱워치 켜 놓고 몇 번 재 보고 나서야 맡기면 안 되는 일이 보였어요. 감으로 고르면 꼭 검증이 제일 오래 걸리는 일을 넘기게 돼요.</div>
+      </div>
+    </div>
+  </div><!-- /스레드 2 -->
+
+  <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+  <!-- 스레드 3 -->
+  <div>
+    <div style="display:flex; gap:12px; align-items:flex-start;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">80% 대 37%, 이 숫자 보는데 헬스장 회원권이 떠오르더라고요. 다들 운동한 기분은 드는데 체중계 숫자는 그대로인 느낌이요. 팀에 설명할 때 이 비유면 바로 알아들을 것 같아요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">맞아요, 저희 팀도 다들 빨라졌다고는 해요. 그런데 빨라진 시간에 뭘 했는지 적는 사람은 없어요. 작업당 비용 옆에 그 칸 하나 더 만들어 보려고요.</div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+      <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+        <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+        <div style="font-size:13px; line-height:1.75; color:#222;">비유는 재밌는데 조심하셔야 해요. 80%는 응답자 체감이고, 37%는 EBIT에 '조금이라도' 기여했다는 답이에요. 재는 방식이 다른 두 숫자를 나란히 놓으면 간격이 실제보다 커 보일 수 있어요. 조사를 낸 곳이 AI 도입을 자문하는 맥킨지라는 것도 잊지 마시고요.</div>
+      </div>
+    </div>
+  </div><!-- /스레드 3 -->
+      </section>
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="2026-09-11-moonshot-deepseek-model-swap.html">
+          <div class="next-post-title">문샷·딥시크가 클로드로 넘긴 요청들 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+            <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/api.html" class="concept-chip">API</a>
+      <a href="../insights/wiki/concepts/ai-agent.html" class="concept-chip">AI 에이전트</a>
+      <a href="../insights/wiki/concepts/it.html" class="concept-chip">IT</a>
+      <a href="../insights/wiki/concepts/roi.html" class="concept-chip">ROI</a>
+      <a href="../insights/wiki/concepts/cfo.html" class="concept-chip">CFO</a>
+      <a href="../insights/wiki/concepts/cio.html" class="concept-chip">CIO</a>
+      <a href="../insights/wiki/concepts/ai비용.html" class="concept-chip">AI비용</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-09-23-cheaper-models-bigger-ai-bills.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://airoasting-blog.vercel.app/company/2026-09-23-cheaper-models-bigger-ai-bills.html';
+    const ROASTING_QUOTE = '토큰 단가가 내렸으니 AI 예산도 줄어들 거라 믿으셨습니까? 단가표만 보는 조직은 청구서를 받을 때마다 원인을 찾아 헤맵니다.';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>
