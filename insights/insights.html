@@ -337,6 +337,9 @@
     .insight-card.ic-wide { grid-column: span 2; }
     @media (max-width: 900px) { .insight-card.ic-wide { grid-column: span 1; } }
 
+    .insight-card:focus-visible,
+    .q-tab:focus-visible,
+    .theme-btn:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
     .insight-card {
       position: relative;
       background: var(--surface-container-high);
@@ -366,16 +369,16 @@
     .insight-card:nth-child(7) { animation-delay: 0.30s; }
     .insight-card:nth-child(8) { animation-delay: 0.35s; }
 
-    /* 카드 좌측 컬러 액센트 선 */
+    /* 카드 상단 컬러 라인: 호버 시에만 나타남 (왼쪽 띠지는 쓰지 않는다) */
     .insight-card::before {
       content: '';
       position: absolute;
-      top: 20px; left: 0;
-      width: 3px;
-      height: calc(100% - 40px);
-      border-radius: 0 2px 2px 0;
+      top: 0; left: 20px;
+      width: calc(100% - 40px);
+      height: 0;
+      border-radius: 0 0 2px 2px;
       background: var(--border);
-      transition: background 0.2s, height 0.2s, top 0.2s;
+      transition: height 0.2s;
     }
     .insight-card[data-theme="research"]::before { background: #3A3A4A; }
     .insight-card[data-theme="leader"]::before   { background: #C43500; }
@@ -384,13 +387,8 @@
     .insight-card[data-theme="survival"]::before { background: #7A1F1F; }
     .insight-card[data-theme="column"]::before { background: #4A2A6A; }
 
-    /* 카드 호버 시 전체 좌측선 → 탑 라인으로 변환 */
-    .insight-card:hover::before {
-      top: 0; left: 20px;
-      width: calc(100% - 40px);
-      height: 3px;
-      border-radius: 0 0 2px 2px;
-    }
+    .insight-card:hover::before,
+    .insight-card:focus-visible::before { height: 3px; }
     .insight-card:hover {
       border-color: transparent;
       box-shadow: 0 20px 60px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.08);
@@ -646,7 +644,7 @@
     .nlr-hero-quote {
       position: relative;
       background: rgba(124,58,237,0.06);
-      border-left: 3px solid #7C3AED; border-radius: 0 4px 4px 0;
+      border-radius: 8px;
       padding: 18px 22px; margin-bottom: 32px;
       font-size: 17px; font-weight: 700; color: var(--text); line-height: 1.65; letter-spacing: -0.01em; word-break: keep-all;
     }
@@ -1301,7 +1299,7 @@
   let mx = -100, my = -100, rx = -100, ry = -100;
 
   document.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
-  (function animateCursor() {
+  if (!window.matchMedia("(max-width: 640px)").matches) (function animateCursor() {
     rx += (mx - rx) * 0.18;
     ry += (my - ry) * 0.18;
     cursorDot.style.left  = mx + "px";
@@ -1357,6 +1355,8 @@
     });
   }
 
+  const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
   // 카드 날짜: date 필드 → 포스트 파일명 → 뉴스레터 에피소드 순으로 찾습니다
   function cardDate(c) {
     if (c.date) return c.date;
@@ -1380,9 +1380,11 @@
           const epMatch = c.source && c.source.match(/뉴스레터\s*#(\d+)/);
           const epNum = epMatch ? epMatch[1] : null;
           const tag = c.url ? "a" : "div";
-          const roastingAttr = c.roasting ? ` data-roasting="${c.roasting.replace(/"/g,'&quot;')}"` : '';
-          const summariesAttr = c.summaries ? ` data-summaries="${JSON.stringify(c.summaries).replace(/"/g,'&quot;')}"` : '';
-          const attrs = c.url ? `href="${c.url}" target="_blank" rel="noopener" data-post-title="${(c.source||'').replace(/"/g,'&quot;')}"${roastingAttr}${summariesAttr}` : (epNum ? `data-ep="${epNum}"` : "");
+          const source = esc(c.source || '');
+          // 포스트 카드는 원문으로 이동, 뉴스레터 카드는 리더 팝업 (키보드로도 열 수 있게 button 역할 부여)
+          const attrs = c.url
+            ? `href="${esc(c.url)}" target="_blank" rel="noopener"`
+            : (epNum ? `data-ep="${epNum}" role="button" tabindex="0" aria-label="${source} 열기"` : "");
           // 10카드 주기: 0→와이드 왼쪽[2col][1col], 6→와이드 오른쪽[1col][2col]
           const isWide = (idx % 10 === 0 || idx % 10 === 6);
           const dateStr = cardDate(c);
@@ -1393,7 +1395,7 @@
           let nlImgHTML = '';
           if (epNum && !c.url && window.NEWSLETTER_DATA) {
             const nlItem = window.NEWSLETTER_DATA.find(n => String(n.ep) === String(epNum));
-            if (nlItem && nlItem.img) nlImgHTML = `<div class="ic-nl-thumb"><img src="../newsletter/images/${nlItem.img}" alt="${c.source}" loading="lazy"></div>`;
+            if (nlItem && nlItem.img) nlImgHTML = `<div class="ic-nl-thumb"><img src="../newsletter/images/${nlItem.img}" alt="${source}" loading="lazy"></div>`;
           }
           return `
           <${tag} class="insight-card${isWide ? ' ic-wide' : ''}" data-theme="${c.theme}" ${attrs}>
@@ -1401,7 +1403,7 @@
             ${nlImgHTML}
             <div class="ic-tag">● ${c.tag}</div>
             <div class="ic-body">${c.body}</div>
-            <div class="ic-source"><span>${c.source}${c.url ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : (epNum ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : '')}</span>${dateHTML}</div>
+            <div class="ic-source"><span>${source}${c.url || epNum ? ' <span style="opacity:0.5;font-size:10px;">↗</span>' : ''}</span>${dateHTML}</div>
           </${tag}>`;
         }).join("");
 
@@ -1464,8 +1466,11 @@
       grid = Array.from({length: rows}, () => Array.from({length: cols}, rnd));
     }
 
+    let visible = true, resizeTimer;
+
     function draw() {
-      if (!canvas.isConnected) { cancelAnimationFrame(rafId); return; }
+      rafId = null;
+      if (!visible) return;
       if (Math.random() < 0.5) grid[Math.floor(Math.random()*rows)][Math.floor(Math.random()*cols)] = rnd();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${FS-1}px 'Courier New', monospace`;
@@ -1476,10 +1481,17 @@
           ctx.fillText(grid[r][c], c * FS, r * FS);
       rafId = requestAnimationFrame(draw);
     }
+    const start = () => { if (!rafId) rafId = requestAnimationFrame(draw); };
 
     setup();
-    draw();
-    window.addEventListener('resize', () => { setup(); });
+    start();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) start(); }).observe(heroEl);
+    }
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setup, 150);
+    });
   })();
 
   // ── h1 scramble 애니메이션 ───────────────────────────────────────────────
@@ -1579,12 +1591,12 @@
     }
 
     /* ── 뉴스레터 오픈 ── */
+    var requestId=0, lastFocus=null;
     function openReader(ep){
+      var myRequest=++requestId;
+      lastFocus=document.activeElement;
       epPill.textContent='#'+ep;
-      epPill.style.background='';
       hTitle.textContent='';
-      liBtn.querySelector('span').textContent='LinkedIn 원본 보기';
-      liBtn.querySelector('.nlr-li-icon').style.display='';
       var nlData=window.NEWSLETTER_DATA||[];
       var nlItem=nlData.find(function(d){ return String(d.ep)===String(ep); });
       if(nlItem&&nlItem.url){ liBtn.href=nlItem.url; liBtn.style.display=''; }
@@ -1592,7 +1604,9 @@
       body.innerHTML='<div class="nlr-loading"><div class="nlr-spinner"></div><span style="font-size:13px;color:#999;">불러오는 중...</span></div>';
       backdrop.classList.add('open');
       document.body.style.overflow='hidden';
+      closeBtn.focus();
       function renderRaw(raw){
+        if(myRequest!==requestId||!backdrop.classList.contains('open')) return;
         var parsed=parseMd(raw);
         epPill.textContent='#'+parsed.epNum;
         hTitle.textContent=parsed.title;
@@ -1606,161 +1620,29 @@
           .then(function(r){ if(!r.ok) throw new Error('fail'); return r.text(); })
           .then(renderRaw)
           .catch(function(){
+            if(myRequest!==requestId) return;
             body.innerHTML='<p style="padding:32px;color:#999;font-size:14px;">콘텐츠를 불러올 수 없습니다.'+(nlItem&&nlItem.url?'<br><a href="'+escHtml(nlItem.url)+'" target="_blank" style="color:#7C3AED;">LinkedIn에서 직접 보기 →</a>':'')+'</p>';
           });
       }
     }
 
-    /* ── 포스트 오픈 ── */
-    var CAT_LABELS = {research:'리서치',leader:'리더',company:'기업',tech:'기술',survival:'생존',column:'칼럼'};
-    var CAT_COLORS = {research:'#1A1A1A',leader:'#C43500',company:'#1A4A7A',tech:'#145C35',survival:'#7A1F1F',column:'#4A2A6A'};
-    function openPostReader(url, cardTitle, cardBody, cardTheme, cardRoasting, cardSummaries){
-      var cat = cardTheme||'';
-      epPill.textContent = CAT_LABELS[cat]||'포스트';
-      epPill.style.background = CAT_COLORS[cat]||'#444';
-      hTitle.textContent = cardTitle||'';
-      liBtn.href = url;
-      liBtn.querySelector('span').textContent = '포스트 원문 보기';
-      liBtn.querySelector('.nlr-li-icon').style.display = 'none';
-      liBtn.style.display = '';
-      backdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
-
-      /* 카드 데이터로 즉시 렌더 */
-      function renderFromCard(){
-        var h = '<h2 class="nlr-content-title">'+escHtml(cardTitle||'')+'</h2>';
-        if(cardRoasting){
-          h += '<div class="nlr-hero-quote">'+cardRoasting+'</div>';
-        }
-        if(cardSummaries && cardSummaries.length){
-          h += '<div class="nlr-news-header" style="margin-top:24px;padding-top:20px;"><span class="nlr-news-header-label">3줄 요약</span><div class="nlr-news-header-line"></div></div>';
-          h += '<div class="nlr-news-grid">';
-          cardSummaries.forEach(function(s,i){ h += '<div class="nlr-news-item"><div class="nlr-news-num">'+(i+1)+'</div><div class="nlr-news-text">'+s+'</div></div>'; });
-          h += '</div>';
-        } else if(cardBody){
-          h += '<div class="nlr-news-header" style="margin-top:24px;padding-top:20px;"><span class="nlr-news-header-label">인사이트 요약</span><div class="nlr-news-header-line"></div></div>';
-          h += '<div style="font-size:15px;line-height:1.82;color:var(--text-secondary);margin-top:12px;word-break:keep-all;">'+cardBody+'</div>';
-        }
-        h += '<div style="margin-top:36px;padding:20px 24px;background:var(--surface-container);border:1px solid var(--border);border-radius:12px;text-align:center;">';
-        h += '<p style="font-size:13px;color:var(--text-muted);margin:0 0 14px;">포스트 전체 내용은 원문에서 확인하세요.</p>';
-        h += '<a href="'+escHtml(url)+'" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--text);color:var(--bg);font-size:13px;font-weight:700;padding:10px 22px;border-radius:100px;text-decoration:none;">포스트 전체 보기 →</a>';
-        h += '</div>';
-        body.innerHTML = h;
-        body.scrollTop = 0;
-      }
-
-      renderFromCard();
-
-      /* fetch 성공 시 전체 내용으로 교체 */
-      fetch(url)
-        .then(function(r){ if(!r.ok) throw new Error(); return r.text(); })
-        .then(function(html){
-          var parser=new DOMParser();
-          var doc=parser.parseFromString(html,'text/html');
-          var pd=doc.getElementById('postData');
-          var title=pd?pd.dataset.title:cardTitle||'';
-          var date=pd?pd.dataset.date:'';
-          var source=pd?pd.dataset.source:'';
-          var origUrl=pd?pd.dataset.originalUrl:'';
-          var quote=pd?pd.dataset.roastingQuote:'';
-          if(origUrl){ liBtn.href=origUrl; }
-          hTitle.textContent=title;
-
-          var h='<h2 class="nlr-content-title">'+escHtml(title)+'</h2>';
-          if(date) h+='<div class="nlr-meta"><span class="nlr-meta-date">'+escHtml(date.replace(/-/g,'년 ').replace(/-/,'월 ')+'일')+'</span>';
-          if(source) h+='<span class="nlr-meta-sep" style="color:#ccc;font-size:11px;"> · </span><span style="font-size:12px;color:#999;">'+escHtml(source)+'</span>';
-          if(date||source) h+='</div>';
-          if(quote) h+='<div class="nlr-hero-quote">'+escHtml(quote)+'</div>';
-
-          /* section-article: LinkedIn 아티클 원문 문단 렌더 */
-          var articleSec=doc.getElementById('section-article');
-          if(articleSec){
-            h+='<div class="nlr-news-header" style="margin-top:24px;padding-top:20px;"><span class="nlr-news-header-label">아티클</span><div class="nlr-news-header-line"></div></div>';
-            h+='<div class="nlr-news-grid">';
-            articleSec.querySelectorAll('div[style*="display:flex"]').forEach(function(row){
-              var numEl=row.querySelector('span');
-              var pEl=row.querySelector('p');
-              if(!pEl) return;
-              var num=numEl?numEl.textContent.trim():'';
-              var txt=pEl.innerHTML.trim();
-              h+='<div class="nlr-news-item nlr-news-expanded"><div class="nlr-news-num">'+escHtml(num)+'</div><div class="nlr-news-text nlr-news-body">'+txt+'</div></div>';
-            });
-            h+='</div>';
-            /* footnotes */
-            articleSec.querySelectorAll('.post-footnote').forEach(function(fn){
-              h+='<p style="font-size:11px;color:#999;margin:4px 0 0;padding-left:8px;">'+fn.innerHTML.trim()+'</p>';
-            });
-          }
-
-          var SKIP_SECTIONS=['section-cta','section-references','section-roasting','section-article'];
-          var sections=doc.querySelectorAll('.post-section');
-          sections.forEach(function(sec){
-            if(SKIP_SECTIONS.indexOf(sec.id)!==-1) return;
-            var labelEl=sec.querySelector('.post-section-label');
-            var label=labelEl?labelEl.textContent.trim():'';
-            if(!label) return;
-            h+='<div class="nlr-news-header" style="margin-top:28px;padding-top:24px;"><span class="nlr-news-header-label">'+escHtml(label)+'</span><div class="nlr-news-header-line"></div></div>';
-            var summaries=sec.querySelectorAll('[data-summary]');
-            if(summaries.length){
-              h+='<div class="nlr-news-grid">';
-              summaries.forEach(function(s,i){ h+='<div class="nlr-news-item"><div class="nlr-news-num">'+(i+1)+'</div><div class="nlr-news-text">'+s.innerHTML.trim()+'</div></div>'; });
-              h+='</div>'; return;
-            }
-            var bq=sec.querySelector('blockquote');
-            if(bq){ h+='<div class="nlr-hero-quote">'+bq.innerHTML.trim()+'</div>'; return; }
-            var steps=sec.querySelectorAll('.action-step');
-            if(steps.length){
-              h+='<div class="nlr-news-grid">';
-              steps.forEach(function(step){
-                var num=(step.querySelector('.action-num')||{}).textContent||'';
-                var bodyEl=step.querySelector('.action-body');
-                var txt=bodyEl?bodyEl.innerHTML:'';
-                h+='<div class="nlr-news-item nlr-news-expanded"><div class="nlr-news-num">'+escHtml(num)+'</div><div class="nlr-news-text nlr-news-body">'+txt.trim()+'</div></div>';
-              });
-              h+='</div>'; return;
-            }
-            var dps=sec.querySelectorAll('.decision-point');
-            if(dps.length){
-              h+='<div class="nlr-news-grid">';
-              dps.forEach(function(dp){
-                var role=(dp.querySelector('.decision-role')||{}).textContent||'';
-                var spans=dp.querySelectorAll('span');
-                var txt='';
-                if(spans.length>1){
-                  txt=spans[spans.length-1].innerHTML;
-                } else {
-                  // text node directly after role span (newer format)
-                  var clone=dp.cloneNode(true);
-                  var roleEl=clone.querySelector('.decision-role');
-                  if(roleEl) roleEl.remove();
-                  txt=clone.innerHTML.trim();
-                }
-                h+='<div class="nlr-news-item"><div class="nlr-news-num" style="width:auto;padding:0 8px;font-size:9px;">'+escHtml(role)+'</div><div class="nlr-news-text">'+txt.trim()+'</div></div>';
-              });
-              h+='</div>'; return;
-            }
-            sec.querySelectorAll('p,li').forEach(function(p){
-              if(p.closest('.post-section-label')) return;
-              var txt=p.innerHTML.trim();
-              if(txt) h+='<p class="nlr-paragraph">'+txt+'</p>';
-            });
-          });
-          body.innerHTML=h;
-          body.scrollTop=0;
-        })
-        .catch(function(){ /* 카드 데이터로 이미 렌더됨, 아무것도 안함 */ });
-    }
-
     function closeReader(){
+      if(!backdrop.classList.contains('open')) return;
+      requestId++;
       backdrop.classList.remove('open');
       document.body.style.overflow='';
-      epPill.style.background='';
-      liBtn.querySelector('.nlr-li-icon').style.display='';
+      if(lastFocus&&lastFocus.focus) lastFocus.focus();
     }
 
-    document.getElementById('panelContent').addEventListener('click', function(e){
+    var panel=document.getElementById('panelContent');
+    panel.addEventListener('click', function(e){
       var card=e.target.closest('[data-ep]');
-      if(card){ e.preventDefault(); openReader(parseInt(card.dataset.ep,10)); return; }
+      if(card){ e.preventDefault(); openReader(parseInt(card.dataset.ep,10)); }
+    });
+    panel.addEventListener('keydown', function(e){
+      if(e.key!=='Enter'&&e.key!==' ') return;
+      var card=e.target.closest('[data-ep]');
+      if(card){ e.preventDefault(); openReader(parseInt(card.dataset.ep,10)); }
     });
 
     closeBtn.addEventListener('click', closeReader);
