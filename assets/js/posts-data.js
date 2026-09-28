@@ -2991,7 +2991,7 @@ window.POSTS_DATA = {
     },
     {
       "title": "카파시의 AutoResearch: AI가 밤새 스스로 연구하는 시대",
-      "date": "2026-03-06",
+      "date": "2026-03-18",
       "category": "leader",
       "source": "GitHub (Andrej Karpathy)",
       "tags": [

@@ -6,7 +6,9 @@
     "wiki": "node _internal/scripts/wiki-brain/index.js",
     "wiki:enrich": "node _internal/scripts/wiki-brain/index.js --enrich",
     "wiki:dry": "node _internal/scripts/wiki-brain/index.js --dry-run",
-    "wiki:test": "node --test _internal/scripts/wiki-brain/__tests__/*.test.js"
+    "wiki:test": "node --test _internal/scripts/wiki-brain/__tests__/*.test.js",
+    "insights:sync": "node _internal/tools/insights-sync.js",
+    "insights:check": "node _internal/tools/insights-sync.js --check"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.30.0",
