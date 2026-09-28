@@ -6,16 +6,18 @@
 //   node _internal/tools/insights-sync.js --check  점검만 (문제 있으면 exit 1)
 //
 // 정본(단일 소스):
-//   posts-index.json            포스트 제목·날짜
+//   포스트 HTML의 <h1>          포스트 제목 (포스트 제목이 최우선)
+//   posts-index.json            포스트 날짜 (제목은 h1과 같아야 함)
 //   assets/js/newsletter-data.js 뉴스레터 회차·날짜
 //
 // 자동 수정하는 파생 값:
-//   - 포스트 카드 source(제목)·date를 posts-index.json에 맞춤
+//   - 포스트 카드 source(제목)를 포스트 h1에, date를 posts-index.json에 맞춤
 //   - 뉴스레터 카드 date를 newsletter-data.js에 맞춤
 //   - 날짜와 다른 분기에 들어간 카드를 올바른 분기로 이동
 //   - epRange("뉴스레터 #a~b · 포스트 N개"), 탭 q-tab-count, 히어로 통계, meta description
 //
 // 사람이 채워야 하는 것(보고만 함):
+//   - posts-index.json 제목이 포스트 h1과 다른 경우
 //   - 카드가 없는 포스트·뉴스레터, 인덱스에 없는 카드, 중복 카드, 필수 필드 누락
 
 const fs = require('fs');
@@ -31,6 +33,20 @@ const newsletters = JSON.parse(nlSrc.replace('window.NEWSLETTER_DATA = ', '').re
 
 const postByFile = new Map(posts.map(p => [p.file || `${p.category}/${p.slug}.html`, p]));
 const nlByEp = new Map(newsletters.map(n => [n.ep, n]));
+
+// 포스트 제목은 본문 <h1>이 기준입니다
+const decode = t => t.replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '')
+  .replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/\s+/g, ' ').trim();
+const h1Cache = new Map();
+const postTitle = (file, p) => {
+  if (!h1Cache.has(file)) {
+    const full = path.join(ROOT, file);
+    const m = fs.existsSync(full) && fs.readFileSync(full, 'utf8').match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+    h1Cache.set(file, m ? decode(m[1]) : null);
+  }
+  return h1Cache.get(file) || p.title;
+};
 
 // 분기 id: 2025 Q2 = 0 (페이지의 activePhase 계산과 동일)
 const phaseId = date => {
@@ -90,7 +106,8 @@ for (const phase of phases) {
       if (!fs.existsSync(path.join(ROOT, file))) problems.push(`파일 없는 카드: ${file}`);
       for (const f of ['theme', 'tag', 'body', 'roasting']) if (!c[f]) problems.push(`필드 누락 ${f}: ${file}`);
       if (!Array.isArray(c.summaries) || c.summaries.length !== 3) problems.push(`summaries 3개 아님: ${file}`);
-      if (c.source !== p.title) { changes.push(`제목 ${file}: "${c.source}" → "${p.title}"`); card.text = setField(card.text, 'source', p.title); }
+      const title = postTitle(file, p);
+      if (c.source !== title) { changes.push(`제목 ${file}: "${c.source}" → "${title}"`); card.text = setField(card.text, 'source', title); }
       if (c.date !== p.date) { changes.push(`날짜 ${file}: ${c.date || '없음'} → ${p.date}`); card.text = setField(card.text, 'date', p.date); }
       target = phaseId(p.date);
     } else if (epm) {
@@ -116,7 +133,11 @@ phases.forEach(p => { p.cards = p.cards.filter(c => c.move === undefined); });
 moving.forEach(c => phaseById.get(c.move).cards.push(c));
 
 // ── 빠진 카드 보고 ─────────────────────────────────────────────────────────
-for (const file of postByFile.keys()) if (!seen.has(file)) problems.push(`카드 없는 포스트: ${file}`);
+for (const [file, p] of postByFile) {
+  if (!seen.has(file)) problems.push(`카드 없는 포스트: ${file}`);
+  const title = postTitle(file, p);
+  if (title !== p.title) problems.push(`posts-index.json 제목이 포스트 h1과 다름: ${file} ("${p.title}" ≠ "${title}")`);
+}
 for (const n of newsletters) if (!seen.has(`nl#${n.ep}`)) problems.push(`카드 없는 뉴스레터: #${n.ep} (${n.date})`);
 
 // ── 카드 줄 다시 쓰기 (쉼표 정리 포함) ────────────────────────────────────

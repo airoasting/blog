@@ -2548,7 +2548,7 @@
       "next_post": "leader/2026-04-03-karpathy-llm-knowledge-base.html"
     },
     {
-      "title": "유출된 클로드 코드가 드러낸 설계 원칙 8가지",
+      "title": "Claude Code 소스 코드 유출, 8가지 설계 원칙",
       "date": "2026-04-01",
       "category": "tech",
       "source": "MindStudio Blog (MindStudio Team)",
@@ -2853,7 +2853,7 @@
       "next_post": ""
     },
     {
-      "title": "LLM이 깊어질수록 잊는 이유, Kimi가 고쳤다",
+      "title": "AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다",
       "date": "2026-03-16",
       "category": "tech",
       "source": "arXiv (Kimi Team, Moonshot AI)",
@@ -2938,7 +2938,7 @@
       "next_post": ""
     },
     {
-      "title": "대화만으로 AI 에이전트를 훈련한다: OpenClaw-RL",
+      "title": "\"아니, 그거 말고\" 한 마디가 AI를 훈련시킨다: OpenClaw-RL",
       "date": "2026-03-10",
       "category": "tech",
       "source": "arXiv (Yinjie Wang, Ling Yang 외)",
@@ -2990,7 +2990,7 @@
       "next_post": ""
     },
     {
-      "title": "카파시의 AutoResearch: AI가 밤새 스스로 연구하는 시대",
+      "title": "카파시의 AutoResearch: AI 에이전트가 밤새 100회 실험하는 시대",
       "date": "2026-03-18",
       "category": "leader",
       "source": "GitHub (Andrej Karpathy)",
@@ -3176,7 +3176,7 @@
       "next_post": ""
     },
     {
-      "title": "아모데이가 경고한 AI의 5가지 위험",
+      "title": "AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험",
       "date": "2026-01-25",
       "category": "leader",
       "source": "darioamodei.com (다리오 아모데이)",
