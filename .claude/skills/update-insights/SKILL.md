@@ -58,7 +58,7 @@ description: 발행된 포스트를 insights/insights.html의 해당 분기 PHAS
 아래 형식으로 카드 객체를 작성합니다:
 
 ```js
-{ theme: "{category}", tag: "{tag_label}", body: "{핵심 인사이트 1~2문장. <strong>핵심 수치나 결론</strong> 강조}", source: "{포스트 제목}", url: "../{category}/{slug}", roasting: "{roasting_quote}", summaries: ["{요약1}", "{요약2}", "{요약3}"] }
+{ theme: "{category}", tag: "{tag_label}", body: "{핵심 인사이트 1~2문장. <strong>핵심 수치나 결론</strong> 강조}", source: "{포스트 제목}", url: "../{category}/{slug}", date: "{YYYY-MM-DD}", roasting: "{roasting_quote}", summaries: ["{요약1}", "{요약2}", "{요약3}"] }
 ```
 
 **각 필드 규칙:**
@@ -68,6 +68,7 @@ description: 발행된 포스트를 insights/insights.html의 해당 분기 PHAS
 - `body`: 40자 이내 문장 1~2개. `<strong>` 태그로 핵심 수치 또는 결론 1곳만 강조. 종결어미 ~입니다/~합니다
 - `source`: 포스트 제목 (Step 1에서 추출한 `title`)
 - `url`: 상대 경로 `../category/slug` (예: `../tech/2026-03-10-openclaw-rl.html`)
+- `date`: 포스트 날짜 `YYYY-MM-DD` (필수. 빠지면 카드가 날짜 정렬에서 뉴스레터 아래로 밀립니다)
 - `roasting`: Step 1에서 추출한 blockquote 내용 그대로. `<br>` 유지, 따옴표는 `\"`로 이스케이프
 - `summaries`: Step 1에서 추출한 `<p data-summary>` 3개 텍스트. 각 항목 1문장
 
