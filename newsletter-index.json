@@ -1,6 +1,12 @@
 {
   "newsletters": [
     {
+      "ep": 68,
+      "title": "구글 내부에서도 의심 받는 제미나이 4",
+      "date": "2026-10-03",
+      "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-68-%EA%B5%AC%EA%B8%80-%EB%82%B4%EB%B6%80%EC%97%90%EC%84%9C%EB%8F%84-%EC%9D%98%EC%8B%AC-%EB%B0%9B%EB%8A%94-%EC%A0%9C%EB%AF%B8%EB%82%98%EC%9D%B4-4-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-tsorc/"
+    },
+    {
       "ep": 67,
       "title": "ChatGPT를 제친 메타 뮤즈",
       "date": "2026-09-26",
