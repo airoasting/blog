@@ -118,7 +118,7 @@
 /* 공유 (아이콘 버튼: 텍스트 대신 .copied 클래스 토글로 피드백) */
 function getShareUrl() {
   if (typeof PAGE_URL !== 'undefined') return PAGE_URL;
-  return 'https://airoasting-blog.vercel.app' + window.location.pathname;
+  return 'https://blog.airoasting.com' + window.location.pathname;
 }
 function shareLinkedIn() {
   window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(getShareUrl()), '_blank');
