@@ -1,6 +1,44 @@
 window.POSTS_DATA = {
   "posts": [
     {
+      "title": "로봇이 사람보다 싼 일 0.3%",
+      "date": "2026-09-30",
+      "category": "survival",
+      "source": "앤트로픽 (Legate-Yang · Massenkoff)",
+      "tags": [
+        "앤트로픽",
+        "로봇",
+        "자동화",
+        "일자리",
+        "노동시장"
+      ],
+      "slug": "2026-09-30-anthropic-robot-exposure",
+      "file": "survival/2026-09-30-anthropic-robot-exposure.html",
+      "original_url": "https://www.anthropic.com/research/what-work-can-robots-do",
+      "summary": "앤트로픽은 오늘의 로봇이 신체 작업의 74%를 할 수 있지만, 사람보다 싸게 할 수 있는 일은 0.3%라고 분석했습니다. 직업별 노출도와 비용, 병목을 정리했습니다.",
+      "roasting_quote": "휴머노이드 시연 영상에 박수 치기 전에 물어야 합니다. 우리 현장에서 로봇이 사람보다 싸게 할 수 있는 일은 몇 개입니까?",
+      "next_post": "survival/2026-03-05-ai-labor-market-exposure.html"
+    },
+    {
+      "title": "AI 가치 5배를 가른 두 가지 조건",
+      "date": "2026-09-30",
+      "category": "company",
+      "source": "BCG (Apotheker 외 17인)",
+      "tags": [
+        "BCG",
+        "AI투자",
+        "AI성과측정",
+        "AI에이전트",
+        "조직설계"
+      ],
+      "slug": "2026-09-30-bcg-applied-ai-index-2026",
+      "file": "company/2026-09-30-bcg-applied-ai-index-2026.html",
+      "original_url": "https://www.bcg.com/publications/2026/the-formula-for-agentic-ai-value",
+      "summary": "BCG가 경영진 1,330명을 조사했습니다. 기업의 절반 가까이가 AI로 가치를 내고 있고, 상위 7.5%와 나머지를 가른 것은 전략 명확성과 적용 역량이었습니다.",
+      "roasting_quote": "AI 예산의 80%가 IT 밖에서 쓰이고 있습니다. 그 돈이 무엇을 바꿨는지 회의실에서 답할 수 있는 사람이 있습니까?",
+      "next_post": "survival/2026-09-30-anthropic-robot-exposure.html"
+    },
+    {
       "title": "비용 대비 AI 가치를 재는 기업 12%",
       "date": "2026-09-24",
       "category": "company",
@@ -17,7 +55,7 @@ window.POSTS_DATA = {
       "original_url": "https://kpmg.com/xx/en/media/press-releases/2026/09/new-kpmg-ai-pulse-survey-as-ai-maturity-converges-leading-organizations-show-what-ai-at-scale-requires.html",
       "summary": "KPMG가 20개국 경영진 2,131명을 조사했습니다. AI 가치를 비용과 일관되게 대조하는 조직은 12%이고, ROI를 확립한 조직에서는 48%입니다.",
       "roasting_quote": "AI에 얼마를 썼는지는 대부분 압니다. 그 돈으로 무엇을 샀는지 답할 수 있는 회사는 열 곳 중 한 곳 남짓입니다.",
-      "next_post": "company/2026-06-19-companies-rein-in-ai-costs.html"
+      "next_post": "company/2026-09-30-bcg-applied-ai-index-2026.html"
     },
     {
       "title": "에이전트 대리 거래, 손실 85%는 선호 파악",

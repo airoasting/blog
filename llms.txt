@@ -21,6 +21,8 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-09-30 [생존] 로봇이 사람보다 싼 일 0.3% — /blog/survival/2026-09-30-anthropic-robot-exposure.html
+- 2026-09-30 [기업] AI 가치 5배를 가른 두 가지 조건 — /blog/company/2026-09-30-bcg-applied-ai-index-2026.html
 - 2026-09-24 [기업] 비용 대비 AI 가치를 재는 기업 12% — /blog/company/2026-09-24-kpmg-ai-pulse-measure-value.html
 - 2026-09-24 [기술] 에이전트 대리 거래, 손실 85%는 선호 파악 — /blog/tech/2026-09-24-anthropic-project-swap.html
 - 2026-09-23 [기업] 같은 작업에 30배 벌어지는 에이전트 비용 — /blog/company/2026-09-23-cheaper-models-bigger-ai-bills.html
@@ -159,7 +161,7 @@
 - 2026-04-02 [기술] Gemma 4, 크기의 상식을 깨는 오픈 모델 — /blog/tech/2026-04-02-gemma-4-open-model.html
 - 2026-04-02 [기술] 프롬프트에 감정을 넣어도 달라지지 않는 성능 — /blog/tech/2026-04-02-ai-emotion-prompts.html
 - 2026-04-02 [리서치] 클로드의 행동을 가르는 171개 감정 벡터 — /blog/research/2026-04-02-claude-emotion-vectors.html
-- 2026-04-01 [기술] 유출된 클로드 코드가 드러낸 설계 원칙 8가지 — /blog/tech/2026-04-01-claude-code-hidden-features.html
+- 2026-04-01 [기술] Claude Code 소스 코드 유출, 8가지 설계 원칙 — /blog/tech/2026-04-01-claude-code-hidden-features.html
 - 2026-04-01 [리서치] Nature가 AI에 선을 긋다, 학술 출판의 새 기준 — /blog/research/2026-04-01-nature-ai-editorial-policy.html
 - 2026-03-31 [기술] AI가 AI를 설계한다, 사람 없이 — /blog/tech/2026-03-31-asi-evolve-ai-accelerates-ai.html
 - 2026-03-31 [리더] 전 구글 임원이 못 박은 2년의 시간표 — /blog/leader/2026-03-31-mo-gawdat-face-rip-dystopia-survival.html
@@ -173,19 +175,19 @@
 - 2026-03-19 [기술] AI 모델이 빨라질수록 제품 관리도 바뀐다 — /blog/tech/2026-03-19-pm-on-ai-exponential.html
 - 2026-03-19 [기술] AI가 스스로 진화한다: Meta의 하이퍼에이전트 — /blog/tech/2026-03-19-hyperagents-self-improving-ai.html
 - 2026-03-19 [리서치] 8만 1천 명이 AI에게 원하는 것: Anthropic 인터뷰 — /blog/research/2026-03-19-anthropic-81k-interviews.html
+- 2026-03-18 [리더] 카파시의 AutoResearch: AI 에이전트가 밤새 100회 실험하는 시대 — /blog/leader/2026-03-18-karpathy-autoresearch.html
 - 2026-03-17 [기업] 젠슨 황 GTC 2026 키노트: 토큰 공장의 시대가 열렸다 — /blog/company/2026-03-17-nvidia-gtc26-keynote.html
 - 2026-03-17 [리더] 젠슨 황의 GTC26 애널리스트 Q&A: 1조 달러 주문과 토큰 경제의 시작 — /blog/leader/2026-03-17-nvidia-gtc26-jensen-huang-analyst-qa.html
 - 2026-03-17 [리서치] AI에게 주식을 추천받았더니, 학습 데이터의 편향이 드러났다 — /blog/research/2026-03-17-llm-stock-picking-bias.html
 - 2026-03-17 [리서치] AI 투자 수익률을 결정하는 7가지 경영 원칙 — /blog/research/2026-03-17-ai-investment-roi-7-factors.html
-- 2026-03-16 [기술] LLM이 깊어질수록 잊는 이유, Kimi가 고쳤다 — /blog/tech/2026-03-16-attention-residuals-kimi.html
+- 2026-03-16 [기술] AI 모델, 왜 커질수록 앞에서 배운 걸 잊을까? Kimi가 고쳤다 — /blog/tech/2026-03-16-attention-residuals-kimi.html
 - 2026-03-16 [리서치] AI는 왜 아직도 스스로 배우지 못하는가: LeCun· Dupoux· Malik의 처방전 — /blog/research/2026-03-16-why-ai-cant-learn.html
 - 2026-03-16 [기업] 엔비디아 네모클로, 성능에서 보안으로 옮긴 경쟁 축 — /blog/company/2026-03-16-nvidia-nemoclaw.html
 - 2026-03-16 [기업] 세계는 왜 아직도 SAP 위에서 돌아가는가 — /blog/company/2026-03-16-why-world-runs-on-sap.html
 - 2026-03-16 [생존] 미국 테크 산업 정리해고, 2026년 27만 명 예상 — /blog/survival/2026-03-16-tech-layoffs-tracker.html
-- 2026-03-10 [기술] 대화만으로 AI 에이전트를 훈련한다: OpenClaw-RL — /blog/tech/2026-03-10-openclaw-rl.html
+- 2026-03-10 [기술] "아니, 그거 말고" 한 마디가 AI를 훈련시킨다: OpenClaw-RL — /blog/tech/2026-03-10-openclaw-rl.html
 - 2026-03-10 [리더] 알파고 10주년: AI가 과학을 재발명하고 있다 (데미스 하사비스) — /blog/leader/2026-03-10-alphago-10-years.html
 - 2026-03-09 [리서치] AI 전환의 '라스트 마일' 문제: 파일럿이 조직에 안착되지 못하는 이유 — /blog/research/2026-03-09-ai-last-mile-transformation.html
-- 2026-03-06 [리더] 카파시의 AutoResearch: AI가 밤새 스스로 연구하는 시대 — /blog/leader/2026-03-18-karpathy-autoresearch.html
 - 2026-03-05 [생존] AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 — /blog/survival/2026-03-05-ai-labor-market-exposure.html
 - 2026-03-05 [리서치] AI 도구 3개 넘으면 생산성이 떨어진다 — /blog/research/2026-03-05-brain-fry.html
 - 2026-03-02 [생존] AI 해고 함정: 기업이 자를수록 모두가 손해 보는 이유 — /blog/survival/2026-03-02-ai-layoff-trap.html
@@ -197,7 +199,7 @@
 - 2026-02-09 [리서치] AI가 줄인 것이 아니라 늘린 일 — /blog/research/2026-02-09-ai-intensifies-work.html
 - 2026-02-02 [리서치] 블랙박스 AI를 맞춤 조종하는 어드바이저 모델 — /blog/research/2026-02-02-advisor-model-black-box-llm.html
 - 2026-02-01 [생존] AI를 쓸수록 실력이 떨어진다 — /blog/survival/2026-02-01-ai-skill-erosion-anthropic-study.html
-- 2026-01-25 [리더] 아모데이가 경고한 AI의 5가지 위험 — /blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html
+- 2026-01-25 [리더] AI의 사춘기: 다리오 아모데이가 경고한 5가지 문명적 위험 — /blog/leader/2026-01-25-dario-amodei-adolescence-of-technology.html
 - 2026-01-21 [리더] AGI 이후의 세계: 하사비스와 아모데이가 충돌한 5가지 쟁점 — /blog/leader/2026-01-21-hassabis-amodei-agi-debate.html
 - 2026-01-16 [리서치] Workslop은 개인의 게으름이 아니라 경영 실패다 — /blog/research/2026-01-16-workslop-pressure-cooker.html
 - 2026-01-10 [리더] 일론 머스크가 바라보는 AI의 미래 — /blog/leader/2026-01-10-elon-musk-vision-of-ai-future.html

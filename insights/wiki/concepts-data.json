@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-27T01:42:48.718Z",
+  "generatedAt": "2026-10-06T09:02:25.344Z",
   "version": 1,
   "stats": {
-    "totalConcepts": 117,
-    "totalRelationships": 377,
-    "totalPosts": 287,
-    "totalNewsletters": 67
+    "totalConcepts": 120,
+    "totalRelationships": 394,
+    "totalPosts": 289,
+    "totalNewsletters": 68
   },
   "concepts": [
     {
@@ -14,7 +14,7 @@
       "name": "LLM",
       "aliases": [],
       "definition": "대규모 언어 모델입니다. 방대한 텍스트로 학습된 신경망으로 ChatGPT·Claude 같은 서비스의 기반입니다.",
-      "frequency": 79,
+      "frequency": 80,
       "category": "tech",
       "posts": [
         "2026-01-25-dario-amodei-adolescence-of-technology",
@@ -39,6 +39,7 @@
         "2026-06-18-project-fetch-phase-two",
         "2026-07-15-cerebras-knowledge-base",
         "2026-09-09-ramp-ai-index-cost-phase",
+        "2026-09-30-anthropic-robot-exposure",
         "2024-09-10-ted-chiang-generative-ai-blurry-jpeg",
         "2024-10-15-ai-bubble-three-collapse-scenarios",
         "2025-03-01-how-korea-us-japan-gen-z-use-ai",
@@ -100,7 +101,7 @@
         "nl-64"
       ],
       "firstSeen": "2024-08-05",
-      "lastSeen": "2026-09-09",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -286,7 +287,7 @@
         "agent"
       ],
       "definition": "사용자의 의도를 이해해 자율적으로 작업을 수행하는 AI입니다. 채팅을 넘어 운영체제로 진화합니다.",
-      "frequency": 55,
+      "frequency": 56,
       "category": "tech",
       "posts": [
         "2026-02-12-peter-steinberger-openclaw-agentic-engineering",
@@ -339,6 +340,7 @@
         "2026-09-23-cheaper-models-bigger-ai-bills",
         "2026-09-24-anthropic-project-swap",
         "2026-09-24-kpmg-ai-pulse-measure-value",
+        "2026-09-30-bcg-applied-ai-index-2026",
         "2025-03-20-ai-trends-2025-agents-verticals-biz",
         "2025-04-10-why-manus-ai-moved-to-singapore",
         "2026-03-28-ai-agent-traps",
@@ -348,7 +350,7 @@
         "nl-34"
       ],
       "firstSeen": "2025-03-10",
-      "lastSeen": "2026-09-24",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -413,7 +415,7 @@
       "name": "IT",
       "aliases": [],
       "definition": "정보 기술입니다. AI는 IT의 다음 단계로 산업과 직무를 재편합니다.",
-      "frequency": 37,
+      "frequency": 38,
       "category": "survival",
       "posts": [
         "2026-02-02-advisor-model-black-box-llm",
@@ -440,6 +442,7 @@
         "2026-09-17-pew-gallup-ai-job-anxiety",
         "2026-09-22-agent-authorization-gap",
         "2026-09-23-cheaper-models-bigger-ai-bills",
+        "2026-09-30-bcg-applied-ai-index-2026",
         "2025-02-20-sovereign-ai",
         "2025-03-15-when-technology-becomes-borders",
         "2025-03-20-can-yangjae-become-an-ai-hub",
@@ -457,7 +460,7 @@
         "nl-35"
       ],
       "firstSeen": "2025-02-20",
-      "lastSeen": "2026-09-23",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -747,6 +750,80 @@
       "needs_manual_review": false
     },
     {
+      "id": "organizational-design",
+      "slug": "organizational-design",
+      "name": "조직설계",
+      "aliases": [
+        "조직 설계",
+        "org design",
+        "organization design"
+      ],
+      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "frequency": 18,
+      "category": "company",
+      "posts": [
+        "2026-03-21-dena-ai-20x-paradox",
+        "2026-04-09-gen-ai-robots-reshaping-services",
+        "2026-04-13-jack-dorsey-company-as-intelligence",
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-02-next-era-knowledge-work",
+        "2026-06-07-bok-ai-productivity-disconnect",
+        "2026-06-19-implicit-organization-ai-agents",
+        "2026-06-23-meta-ai-reorg-team-size",
+        "2026-06-23-wef-ai-first-operating-system",
+        "2026-08-13-multiagent-patterns-and-problems",
+        "2026-09-03-uber-layers-challenger-august",
+        "2026-09-30-bcg-applied-ai-index-2026",
+        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2025-03-05-redesigning-work-structure-in-ai-era",
+        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
+        "2025-06-25-us-stablecoin-bill-hopes-and-concerns"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-03-05",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": false
+    },
+    {
+      "id": "앤트로픽",
+      "slug": "앤트로픽",
+      "name": "앤트로픽",
+      "aliases": [
+        "앤쓰로픽",
+        "앤스로픽",
+        "엔쓰로픽"
+      ],
+      "definition": "Anthropic의 한글 표기입니다. Claude를 만든 AI 안전 연구 기업으로 2021년 창업했습니다.",
+      "frequency": 18,
+      "category": "tech",
+      "posts": [
+        "2026-07-06-llm-global-workspace",
+        "2026-07-08-off-switch-dual-use-knowledge",
+        "2026-07-28-claude-cryptographic-weaknesses",
+        "2026-07-30-anthropic-cyber-eval-incidents",
+        "2026-08-12-evidence-on-worker-retraining",
+        "2026-08-13-multiagent-patterns-and-problems",
+        "2026-08-14-how-claude-text-watermark-works",
+        "2026-08-28-automated-alignment-researchers",
+        "2026-09-01-enterprise-frontier-safeguards",
+        "2026-09-09-agent-capability-control-gap",
+        "2026-09-09-anthropic-econ-scenarios",
+        "2026-09-09-ramp-ai-index-cost-phase",
+        "2026-09-11-moonshot-deepseek-model-swap",
+        "2026-09-13-amodei-pace-the-frontier-motive",
+        "2026-09-18-third-party-ai-audit",
+        "2026-09-24-anthropic-project-swap",
+        "2026-09-30-anthropic-robot-exposure",
+        "2025-05-20-anthropic-cpo-on-pm-competencies"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-20",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": false
+    },
+    {
       "id": "팀장",
       "slug": "팀장",
       "name": "팀장",
@@ -814,75 +891,35 @@
       "needs_manual_review": false
     },
     {
-      "id": "organizational-design",
-      "slug": "organizational-design",
-      "name": "조직설계",
-      "aliases": [
-        "조직 설계",
-        "org design",
-        "organization design"
-      ],
-      "definition": "사업 목표에 맞춰 조직 구조와 역할을 설계하는 일입니다. AI 시대에 계층과 권한이 다시 정의됩니다.",
+      "id": "kpi",
+      "slug": "kpi",
+      "name": "KPI",
+      "aliases": [],
+      "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
       "frequency": 17,
-      "category": "company",
+      "category": "research",
       "posts": [
-        "2026-03-21-dena-ai-20x-paradox",
-        "2026-04-09-gen-ai-robots-reshaping-services",
-        "2026-04-13-jack-dorsey-company-as-intelligence",
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-05-15-gen-ai-performance-reviews",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-06-02-next-era-knowledge-work",
-        "2026-06-07-bok-ai-productivity-disconnect",
-        "2026-06-19-implicit-organization-ai-agents",
-        "2026-06-23-meta-ai-reorg-team-size",
-        "2026-06-23-wef-ai-first-operating-system",
-        "2026-08-13-multiagent-patterns-and-problems",
-        "2026-09-03-uber-layers-challenger-august",
-        "2025-04-20-paradox-of-ai-driven-productivity-gains",
+        "2026-03-09-ai-last-mile-transformation",
+        "2026-03-18-karpathy-autoresearch",
+        "2026-03-19-anthropic-81k-interviews",
+        "2026-03-20-karpathy-end-of-coding",
+        "2026-04-08-gallup-engagement-ai-paradox",
+        "2026-04-09-anthropic-2026-agentic-coding-trends",
+        "2026-04-14-automated-alignment-researchers",
+        "2026-05-27-ai-fomo-mastering-illusion",
+        "2026-05-27-anthropic-coding-agents-social-sciences",
+        "2026-05-28-sia-self-improving-ai-harness-weights",
+        "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
+        "2026-06-19-companies-rein-in-ai-costs",
+        "2026-09-30-bcg-applied-ai-index-2026",
         "2025-03-05-redesigning-work-structure-in-ai-era",
-        "2025-06-20-cheating-is-also-an-ai-business-opportunity",
-        "2025-06-25-us-stablecoin-bill-hopes-and-concerns"
+        "2025-04-05-shortsification-era-content-industry-crisis",
+        "2025-04-10-why-ai-first-declaration-matters",
+        "2025-03-10-ai-intentional-lies-reward-hacking"
       ],
       "newsletters": [],
       "firstSeen": "2025-03-05",
-      "lastSeen": "2026-09-03",
-      "needs_manual_review": false
-    },
-    {
-      "id": "앤트로픽",
-      "slug": "앤트로픽",
-      "name": "앤트로픽",
-      "aliases": [
-        "앤쓰로픽",
-        "앤스로픽",
-        "엔쓰로픽"
-      ],
-      "definition": "Anthropic의 한글 표기입니다. Claude를 만든 AI 안전 연구 기업으로 2021년 창업했습니다.",
-      "frequency": 17,
-      "category": "tech",
-      "posts": [
-        "2026-07-06-llm-global-workspace",
-        "2026-07-08-off-switch-dual-use-knowledge",
-        "2026-07-28-claude-cryptographic-weaknesses",
-        "2026-07-30-anthropic-cyber-eval-incidents",
-        "2026-08-12-evidence-on-worker-retraining",
-        "2026-08-13-multiagent-patterns-and-problems",
-        "2026-08-14-how-claude-text-watermark-works",
-        "2026-08-28-automated-alignment-researchers",
-        "2026-09-01-enterprise-frontier-safeguards",
-        "2026-09-09-agent-capability-control-gap",
-        "2026-09-09-anthropic-econ-scenarios",
-        "2026-09-09-ramp-ai-index-cost-phase",
-        "2026-09-11-moonshot-deepseek-model-swap",
-        "2026-09-13-amodei-pace-the-frontier-motive",
-        "2026-09-18-third-party-ai-audit",
-        "2026-09-24-anthropic-project-swap",
-        "2025-05-20-anthropic-cpo-on-pm-competencies"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-20",
-      "lastSeen": "2026-09-24",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -917,43 +954,12 @@
       "needs_manual_review": false
     },
     {
-      "id": "kpi",
-      "slug": "kpi",
-      "name": "KPI",
-      "aliases": [],
-      "definition": "핵심 성과 지표입니다. AI가 KPI 정의 자체를 바꾸는 흐름이 진행됩니다.",
-      "frequency": 16,
-      "category": "research",
-      "posts": [
-        "2026-03-09-ai-last-mile-transformation",
-        "2026-03-18-karpathy-autoresearch",
-        "2026-03-19-anthropic-81k-interviews",
-        "2026-03-20-karpathy-end-of-coding",
-        "2026-04-08-gallup-engagement-ai-paradox",
-        "2026-04-09-anthropic-2026-agentic-coding-trends",
-        "2026-04-14-automated-alignment-researchers",
-        "2026-05-27-ai-fomo-mastering-illusion",
-        "2026-05-27-anthropic-coding-agents-social-sciences",
-        "2026-05-28-sia-self-improving-ai-harness-weights",
-        "2026-06-01-k-browsecomp-korean-web-agent-benchmark",
-        "2026-06-19-companies-rein-in-ai-costs",
-        "2025-03-05-redesigning-work-structure-in-ai-era",
-        "2025-04-05-shortsification-era-content-industry-crisis",
-        "2025-04-10-why-ai-first-declaration-matters",
-        "2025-03-10-ai-intentional-lies-reward-hacking"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-03-05",
-      "lastSeen": "2026-06-19",
-      "needs_manual_review": false
-    },
-    {
       "id": "cfo",
       "slug": "cfo",
       "name": "CFO",
       "aliases": [],
       "definition": "최고재무책임자입니다. AI 투자의 수익성·ROI를 평가합니다.",
-      "frequency": 15,
+      "frequency": 16,
       "category": "company",
       "posts": [
         "2026-03-17-ai-investment-roi-7-factors",
@@ -964,6 +970,7 @@
         "2026-09-22-epoch-plunging-price-of-thought",
         "2026-09-23-cheaper-models-bigger-ai-bills",
         "2026-09-24-kpmg-ai-pulse-measure-value",
+        "2026-09-30-bcg-applied-ai-index-2026",
         "2025-05-10-jang-kangmyoung-the-future-that-came-first",
         "2026-01-10-elon-musk-vision-of-ai-future",
         "2026-04-06-sam-altman-superintelligence-new-deal"
@@ -975,7 +982,7 @@
         "nl-62"
       ],
       "firstSeen": "2025-05-10",
-      "lastSeen": "2026-09-24",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -1094,6 +1101,36 @@
       "needs_manual_review": false
     },
     {
+      "id": "노동시장",
+      "slug": "노동시장",
+      "name": "노동시장",
+      "aliases": [
+        "AI일자리"
+      ],
+      "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
+      "frequency": 13,
+      "category": "survival",
+      "posts": [
+        "2026-03-05-ai-labor-market-exposure",
+        "2026-05-06-ai-job-apocalypse-fantasy",
+        "2026-05-20-broken-ladder-wfh-not-ai",
+        "2026-06-01-cs-degree-glut-ai-erodes-value",
+        "2026-06-15-pwc-ai-jobs-barometer-2026",
+        "2026-06-30-ramp-ai-jobs-hiring-boom",
+        "2026-07-09-ai-job-apocalypse-misread",
+        "2026-07-13-we-must-act-now-economists-statement",
+        "2026-07-17-fed-ai-buildout-economy",
+        "2026-08-12-canaries-youth-employment-gap",
+        "2026-09-30-anthropic-robot-exposure",
+        "2025-05-10-will-ai-really-replace-our-work",
+        "2025-05-20-generative-ai-effect-on-youth-employment"
+      ],
+      "newsletters": [],
+      "firstSeen": "2025-05-10",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": false
+    },
+    {
       "id": "hbm",
       "slug": "hbm",
       "name": "HBM",
@@ -1175,35 +1212,6 @@
       ],
       "firstSeen": "2025-03-10",
       "lastSeen": "2026-07-22",
-      "needs_manual_review": false
-    },
-    {
-      "id": "노동시장",
-      "slug": "노동시장",
-      "name": "노동시장",
-      "aliases": [
-        "AI일자리"
-      ],
-      "definition": "고용과 임금이 결정되는 시장입니다. AI 자동화가 직무 구조를 근본적으로 바꾸고 있습니다.",
-      "frequency": 12,
-      "category": "survival",
-      "posts": [
-        "2026-03-05-ai-labor-market-exposure",
-        "2026-05-06-ai-job-apocalypse-fantasy",
-        "2026-05-20-broken-ladder-wfh-not-ai",
-        "2026-06-01-cs-degree-glut-ai-erodes-value",
-        "2026-06-15-pwc-ai-jobs-barometer-2026",
-        "2026-06-30-ramp-ai-jobs-hiring-boom",
-        "2026-07-09-ai-job-apocalypse-misread",
-        "2026-07-13-we-must-act-now-economists-statement",
-        "2026-07-17-fed-ai-buildout-economy",
-        "2026-08-12-canaries-youth-employment-gap",
-        "2025-05-10-will-ai-really-replace-our-work",
-        "2025-05-20-generative-ai-effect-on-youth-employment"
-      ],
-      "newsletters": [],
-      "firstSeen": "2025-05-10",
-      "lastSeen": "2026-08-12",
       "needs_manual_review": false
     },
     {
@@ -1339,6 +1347,30 @@
       "needs_manual_review": false
     },
     {
+      "id": "cio",
+      "slug": "cio",
+      "name": "CIO",
+      "aliases": [],
+      "definition": "최고정보책임자입니다. AI 예산 집행과 사내 시스템 도입을 맡으며, 투자 가치를 증명해야 하는 첫 책임자입니다.",
+      "frequency": 9,
+      "category": "company",
+      "posts": [
+        "2026-04-14-dorsey-mode-ai-org-design",
+        "2026-09-09-ramp-ai-index-cost-phase",
+        "2026-09-11-moonshot-deepseek-model-swap",
+        "2026-09-12-amodei-pace-the-frontier",
+        "2026-09-18-third-party-ai-audit",
+        "2026-09-22-agent-authorization-gap",
+        "2026-09-23-cheaper-models-bigger-ai-bills",
+        "2026-09-24-kpmg-ai-pulse-measure-value",
+        "2026-09-30-bcg-applied-ai-index-2026"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-04-14",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": false
+    },
+    {
       "id": "ai-alignment",
       "slug": "ai-alignment",
       "name": "AI 정렬",
@@ -1460,29 +1492,6 @@
       "needs_manual_review": false
     },
     {
-      "id": "cio",
-      "slug": "cio",
-      "name": "CIO",
-      "aliases": [],
-      "definition": "최고정보책임자입니다. AI 예산 집행과 사내 시스템 도입을 맡으며, 투자 가치를 증명해야 하는 첫 책임자입니다.",
-      "frequency": 8,
-      "category": "company",
-      "posts": [
-        "2026-04-14-dorsey-mode-ai-org-design",
-        "2026-09-09-ramp-ai-index-cost-phase",
-        "2026-09-11-moonshot-deepseek-model-swap",
-        "2026-09-12-amodei-pace-the-frontier",
-        "2026-09-18-third-party-ai-audit",
-        "2026-09-22-agent-authorization-gap",
-        "2026-09-23-cheaper-models-bigger-ai-bills",
-        "2026-09-24-kpmg-ai-pulse-measure-value"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-04-14",
-      "lastSeen": "2026-09-24",
-      "needs_manual_review": false
-    },
-    {
       "id": "강화학습",
       "slug": "강화학습",
       "name": "강화학습",
@@ -1525,6 +1534,28 @@
       ],
       "firstSeen": "2026-03-01",
       "lastSeen": "2026-09-22",
+      "needs_manual_review": false
+    },
+    {
+      "id": "자동화",
+      "slug": "자동화",
+      "name": "자동화",
+      "aliases": [],
+      "definition": "사람의 개입 없이 작업을 처리하는 시스템입니다. AI 에이전트가 자동화의 새 단계를 엽니다.",
+      "frequency": 7,
+      "category": "tech",
+      "posts": [
+        "2026-03-02-ai-layoff-trap",
+        "2026-03-10-openclaw-rl",
+        "2026-03-19-hyperagents-self-improving-ai",
+        "2026-04-30-ctx2skill-context-learning",
+        "2026-06-08-agents-in-biology",
+        "2026-07-16-year-of-the-loop",
+        "2026-09-30-anthropic-robot-exposure"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-02",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -1660,27 +1691,6 @@
       "newsletters": [],
       "firstSeen": "2025-04-25",
       "lastSeen": "2026-05-20",
-      "needs_manual_review": false
-    },
-    {
-      "id": "자동화",
-      "slug": "자동화",
-      "name": "자동화",
-      "aliases": [],
-      "definition": "사람의 개입 없이 작업을 처리하는 시스템입니다. AI 에이전트가 자동화의 새 단계를 엽니다.",
-      "frequency": 6,
-      "category": "tech",
-      "posts": [
-        "2026-03-02-ai-layoff-trap",
-        "2026-03-10-openclaw-rl",
-        "2026-03-19-hyperagents-self-improving-ai",
-        "2026-04-30-ctx2skill-context-learning",
-        "2026-06-08-agents-in-biology",
-        "2026-07-16-year-of-the-loop"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-02",
-      "lastSeen": "2026-07-16",
       "needs_manual_review": false
     },
     {
@@ -1917,6 +1927,26 @@
       "newsletters": [],
       "firstSeen": "2025-08-23",
       "lastSeen": "2026-07-16",
+      "needs_manual_review": false
+    },
+    {
+      "id": "ai투자",
+      "slug": "ai투자",
+      "name": "AI투자",
+      "aliases": [],
+      "definition": "AI 인프라와 모델에 투입되는 자본입니다. 데이터센터, 칩, 인재에 자금이 몰리며 버블 논쟁을 낳습니다.",
+      "frequency": 5,
+      "category": "research",
+      "posts": [
+        "2026-03-17-ai-investment-roi-7-factors",
+        "2026-04-13-stanford-ai-index-2026-12-takeaways",
+        "2026-07-17-fed-ai-buildout-economy",
+        "2026-09-24-kpmg-ai-pulse-measure-value",
+        "2026-09-30-bcg-applied-ai-index-2026"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-17",
+      "lastSeen": "2026-09-30",
       "needs_manual_review": false
     },
     {
@@ -2173,25 +2203,6 @@
       "newsletters": [],
       "firstSeen": "2026-03-16",
       "lastSeen": "2026-08-26",
-      "needs_manual_review": false
-    },
-    {
-      "id": "ai투자",
-      "slug": "ai투자",
-      "name": "AI투자",
-      "aliases": [],
-      "definition": "AI 인프라와 모델에 투입되는 자본입니다. 데이터센터, 칩, 인재에 자금이 몰리며 버블 논쟁을 낳습니다.",
-      "frequency": 4,
-      "category": "research",
-      "posts": [
-        "2026-03-17-ai-investment-roi-7-factors",
-        "2026-04-13-stanford-ai-index-2026-12-takeaways",
-        "2026-07-17-fed-ai-buildout-economy",
-        "2026-09-24-kpmg-ai-pulse-measure-value"
-      ],
-      "newsletters": [],
-      "firstSeen": "2026-03-17",
-      "lastSeen": "2026-09-24",
       "needs_manual_review": false
     },
     {
@@ -2553,6 +2564,24 @@
       "needs_manual_review": false
     },
     {
+      "id": "kpmg",
+      "slug": "kpmg",
+      "name": "KPMG",
+      "aliases": [],
+      "definition": "KPMG는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "company",
+      "posts": [
+        "2026-03-16-why-world-runs-on-sap",
+        "2026-09-24-kpmg-ai-pulse-measure-value",
+        "2026-09-30-bcg-applied-ai-index-2026"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-03-16",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": true
+    },
+    {
       "id": "자기개선ai",
       "slug": "자기개선ai",
       "name": "자기개선AI",
@@ -2569,6 +2598,25 @@
       "firstSeen": "2026-03-19",
       "lastSeen": "2026-05-28",
       "needs_manual_review": false
+    },
+    {
+      "id": "ebitda",
+      "slug": "ebitda",
+      "name": "EBITDA",
+      "aliases": [],
+      "definition": "EBITDA는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "company",
+      "posts": [
+        "2026-03-23-two-paths-for-software",
+        "2026-09-30-bcg-applied-ai-index-2026"
+      ],
+      "newsletters": [
+        "nl-21"
+      ],
+      "firstSeen": "2026-03-23",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": true
     },
     {
       "id": "ai리서치",
@@ -2697,6 +2745,24 @@
       "firstSeen": "2026-04-30",
       "lastSeen": "2026-09-09",
       "needs_manual_review": false
+    },
+    {
+      "id": "bcg",
+      "slug": "bcg",
+      "name": "BCG",
+      "aliases": [],
+      "definition": "BCG는 AI ROASTING 블로그에서 자주 다루는 핵심 개념입니다.",
+      "frequency": 3,
+      "category": "company",
+      "posts": [
+        "2026-05-15-gen-ai-performance-reviews",
+        "2026-09-22-agent-authorization-gap",
+        "2026-09-30-bcg-applied-ai-index-2026"
+      ],
+      "newsletters": [],
+      "firstSeen": "2026-05-15",
+      "lastSeen": "2026-09-30",
+      "needs_manual_review": true
     },
     {
       "id": "지식노동",
@@ -3070,13 +3136,18 @@
     },
     {
       "source": "LLM",
-      "target": "AI 안전",
-      "strength": 3
+      "target": "조직설계",
+      "strength": 5
     },
     {
       "source": "LLM",
-      "target": "조직설계",
-      "strength": 5
+      "target": "앤트로픽",
+      "strength": 2
+    },
+    {
+      "source": "LLM",
+      "target": "AI 안전",
+      "strength": 3
     },
     {
       "source": "LLM",
@@ -3300,13 +3371,13 @@
     },
     {
       "source": "GPU",
-      "target": "창업자",
-      "strength": 2
+      "target": "KPI",
+      "strength": 3
     },
     {
       "source": "GPU",
-      "target": "KPI",
-      "strength": 3
+      "target": "창업자",
+      "strength": 2
     },
     {
       "source": "GPU",
@@ -3505,11 +3576,6 @@
     },
     {
       "source": "API",
-      "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "API",
       "target": "조직설계",
       "strength": 2
     },
@@ -3517,6 +3583,11 @@
       "source": "API",
       "target": "앤트로픽",
       "strength": 7
+    },
+    {
+      "source": "API",
+      "target": "AI 안전",
+      "strength": 2
     },
     {
       "source": "API",
@@ -3560,17 +3631,17 @@
     },
     {
       "source": "API",
+      "target": "CIO",
+      "strength": 3
+    },
+    {
+      "source": "API",
       "target": "멀티에이전트",
       "strength": 5
     },
     {
       "source": "API",
       "target": "IP",
-      "strength": 3
-    },
-    {
-      "source": "API",
-      "target": "CIO",
       "strength": 3
     },
     {
@@ -3585,13 +3656,13 @@
     },
     {
       "source": "API",
-      "target": "SWE",
-      "strength": 4
+      "target": "자동화",
+      "strength": 2
     },
     {
       "source": "API",
-      "target": "자동화",
-      "strength": 2
+      "target": "SWE",
+      "strength": 4
     },
     {
       "source": "API",
@@ -3681,7 +3752,7 @@
     {
       "source": "AI 에이전트",
       "target": "IT",
-      "strength": 9
+      "strength": 10
     },
     {
       "source": "AI 에이전트",
@@ -3710,13 +3781,8 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "팀장",
-      "strength": 3
-    },
-    {
-      "source": "AI 에이전트",
       "target": "조직설계",
-      "strength": 4
+      "strength": 5
     },
     {
       "source": "AI 에이전트",
@@ -3725,18 +3791,23 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "창업자",
+      "target": "팀장",
       "strength": 3
     },
     {
       "source": "AI 에이전트",
       "target": "KPI",
-      "strength": 7
+      "strength": 8
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "창업자",
+      "strength": 3
     },
     {
       "source": "AI 에이전트",
       "target": "CFO",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
@@ -3770,13 +3841,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "멀티에이전트",
+      "target": "CIO",
       "strength": 4
     },
     {
       "source": "AI 에이전트",
-      "target": "CIO",
-      "strength": 3
+      "target": "멀티에이전트",
+      "strength": 4
     },
     {
       "source": "AI 에이전트",
@@ -3790,13 +3861,13 @@
     },
     {
       "source": "AI 에이전트",
-      "target": "SWE",
-      "strength": 2
+      "target": "자동화",
+      "strength": 5
     },
     {
       "source": "AI 에이전트",
-      "target": "자동화",
-      "strength": 5
+      "target": "SWE",
+      "strength": 2
     },
     {
       "source": "AI 에이전트",
@@ -3811,6 +3882,11 @@
     {
       "source": "AI 에이전트",
       "target": "RL",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "AI투자",
       "strength": 2
     },
     {
@@ -3860,6 +3936,11 @@
     },
     {
       "source": "AI 에이전트",
+      "target": "KPMG",
+      "strength": 3
+    },
+    {
+      "source": "AI 에이전트",
       "target": "자기개선AI",
       "strength": 2
     },
@@ -3881,6 +3962,11 @@
     {
       "source": "AI 에이전트",
       "target": "CTF",
+      "strength": 2
+    },
+    {
+      "source": "AI 에이전트",
+      "target": "BCG",
       "strength": 2
     },
     {
@@ -3920,11 +4006,6 @@
     },
     {
       "source": "CTO",
-      "target": "AI 안전",
-      "strength": 2
-    },
-    {
-      "source": "CTO",
       "target": "조직설계",
       "strength": 2
     },
@@ -3932,6 +4013,11 @@
       "source": "CTO",
       "target": "앤트로픽",
       "strength": 8
+    },
+    {
+      "source": "CTO",
+      "target": "AI 안전",
+      "strength": 2
     },
     {
       "source": "CTO",
@@ -4055,6 +4141,11 @@
     },
     {
       "source": "IT",
+      "target": "조직설계",
+      "strength": 3
+    },
+    {
+      "source": "IT",
       "target": "팀장",
       "strength": 2
     },
@@ -4065,18 +4156,13 @@
     },
     {
       "source": "IT",
-      "target": "조직설계",
-      "strength": 2
-    },
-    {
-      "source": "IT",
       "target": "KPI",
-      "strength": 2
+      "strength": 3
     },
     {
       "source": "IT",
       "target": "CFO",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "IT",
@@ -4095,12 +4181,12 @@
     },
     {
       "source": "IT",
-      "target": "AI도입",
-      "strength": 2
+      "target": "CIO",
+      "strength": 3
     },
     {
       "source": "IT",
-      "target": "CIO",
+      "target": "AI도입",
       "strength": 2
     },
     {
@@ -4120,12 +4206,22 @@
     },
     {
       "source": "IT",
+      "target": "AI투자",
+      "strength": 2
+    },
+    {
+      "source": "IT",
       "target": "CISO",
       "strength": 2
     },
     {
       "source": "IT",
       "target": "AI비용",
+      "strength": 2
+    },
+    {
+      "source": "IT",
+      "target": "BCG",
       "strength": 2
     },
     {
@@ -4250,12 +4346,12 @@
     },
     {
       "source": "ROI",
-      "target": "AI도입",
+      "target": "CIO",
       "strength": 2
     },
     {
       "source": "ROI",
-      "target": "CIO",
+      "target": "AI도입",
       "strength": 2
     },
     {
@@ -4271,6 +4367,11 @@
     {
       "source": "ROI",
       "target": "AI협업",
+      "strength": 2
+    },
+    {
+      "source": "ROI",
+      "target": "KPMG",
       "strength": 2
     },
     {
@@ -4290,12 +4391,12 @@
     },
     {
       "source": "AI전략",
-      "target": "창업자",
+      "target": "KPI",
       "strength": 4
     },
     {
       "source": "AI전략",
-      "target": "KPI",
+      "target": "창업자",
       "strength": 4
     },
     {
@@ -4405,13 +4506,13 @@
     },
     {
       "source": "AI거버넌스",
-      "target": "AI 안전",
-      "strength": 5
+      "target": "앤트로픽",
+      "strength": 3
     },
     {
       "source": "AI거버넌스",
-      "target": "앤트로픽",
-      "strength": 3
+      "target": "AI 안전",
+      "strength": 5
     },
     {
       "source": "AI거버넌스",
@@ -4445,13 +4546,13 @@
     },
     {
       "source": "임원",
-      "target": "창업자",
-      "strength": 16
+      "target": "KPI",
+      "strength": 3
     },
     {
       "source": "임원",
-      "target": "KPI",
-      "strength": 3
+      "target": "창업자",
+      "strength": 16
     },
     {
       "source": "임원",
@@ -4459,14 +4560,89 @@
       "strength": 2
     },
     {
-      "source": "팀장",
-      "target": "창업자",
-      "strength": 14
+      "source": "조직설계",
+      "target": "KPI",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "UI",
+      "strength": 3
+    },
+    {
+      "source": "조직설계",
+      "target": "생산성",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "AX",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "CIO",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "멀티에이전트",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "AI전환",
+      "strength": 3
+    },
+    {
+      "source": "조직설계",
+      "target": "CRM",
+      "strength": 2
+    },
+    {
+      "source": "조직설계",
+      "target": "BCG",
+      "strength": 2
+    },
+    {
+      "source": "앤트로픽",
+      "target": "AI 안전",
+      "strength": 3
+    },
+    {
+      "source": "앤트로픽",
+      "target": "METR",
+      "strength": 4
+    },
+    {
+      "source": "앤트로픽",
+      "target": "CIO",
+      "strength": 3
+    },
+    {
+      "source": "앤트로픽",
+      "target": "AI 정렬",
+      "strength": 4
+    },
+    {
+      "source": "앤트로픽",
+      "target": "CISO",
+      "strength": 2
+    },
+    {
+      "source": "앤트로픽",
+      "target": "CTF",
+      "strength": 2
     },
     {
       "source": "팀장",
       "target": "KPI",
       "strength": 2
+    },
+    {
+      "source": "팀장",
+      "target": "창업자",
+      "strength": 14
     },
     {
       "source": "팀장",
@@ -4477,11 +4653,6 @@
       "source": "팀장",
       "target": "AI도입",
       "strength": 2
-    },
-    {
-      "source": "AI 안전",
-      "target": "앤트로픽",
-      "strength": 3
     },
     {
       "source": "AI 안전",
@@ -4509,63 +4680,13 @@
       "strength": 2
     },
     {
-      "source": "조직설계",
-      "target": "UI",
-      "strength": 3
-    },
-    {
-      "source": "조직설계",
-      "target": "생산성",
+      "source": "KPI",
+      "target": "창업자",
       "strength": 2
     },
     {
-      "source": "조직설계",
-      "target": "AX",
-      "strength": 2
-    },
-    {
-      "source": "조직설계",
-      "target": "멀티에이전트",
-      "strength": 2
-    },
-    {
-      "source": "조직설계",
-      "target": "AI전환",
-      "strength": 3
-    },
-    {
-      "source": "조직설계",
-      "target": "CRM",
-      "strength": 2
-    },
-    {
-      "source": "앤트로픽",
-      "target": "METR",
-      "strength": 4
-    },
-    {
-      "source": "앤트로픽",
-      "target": "AI 정렬",
-      "strength": 4
-    },
-    {
-      "source": "앤트로픽",
-      "target": "CIO",
-      "strength": 3
-    },
-    {
-      "source": "앤트로픽",
-      "target": "CISO",
-      "strength": 2
-    },
-    {
-      "source": "앤트로픽",
-      "target": "CTF",
-      "strength": 2
-    },
-    {
-      "source": "창업자",
-      "target": "KPI",
+      "source": "KPI",
+      "target": "CFO",
       "strength": 2
     },
     {
@@ -4606,12 +4727,22 @@
     {
       "source": "CFO",
       "target": "CIO",
-      "strength": 3
+      "strength": 4
     },
     {
       "source": "CFO",
       "target": "AI투자",
-      "strength": 3
+      "strength": 4
+    },
+    {
+      "source": "CFO",
+      "target": "KPMG",
+      "strength": 2
+    },
+    {
+      "source": "CFO",
+      "target": "EBITDA",
+      "strength": 2
     },
     {
       "source": "CFO",
@@ -4636,6 +4767,36 @@
     {
       "source": "TPU",
       "target": "HBM",
+      "strength": 3
+    },
+    {
+      "source": "노동시장",
+      "target": "생산성",
+      "strength": 3
+    },
+    {
+      "source": "노동시장",
+      "target": "직업변화",
+      "strength": 2
+    },
+    {
+      "source": "노동시장",
+      "target": "신입채용",
+      "strength": 5
+    },
+    {
+      "source": "노동시장",
+      "target": "AI대체",
+      "strength": 3
+    },
+    {
+      "source": "노동시장",
+      "target": "GPTs",
+      "strength": 2
+    },
+    {
+      "source": "노동시장",
+      "target": "ADP",
       "strength": 3
     },
     {
@@ -4667,11 +4828,6 @@
       "source": "HBM",
       "target": "APEC",
       "strength": 2
-    },
-    {
-      "source": "생산성",
-      "target": "노동시장",
-      "strength": 3
     },
     {
       "source": "생산성",
@@ -4709,31 +4865,6 @@
       "strength": 2
     },
     {
-      "source": "노동시장",
-      "target": "직업변화",
-      "strength": 2
-    },
-    {
-      "source": "노동시장",
-      "target": "신입채용",
-      "strength": 5
-    },
-    {
-      "source": "노동시장",
-      "target": "AI대체",
-      "strength": 3
-    },
-    {
-      "source": "노동시장",
-      "target": "GPTs",
-      "strength": 2
-    },
-    {
-      "source": "노동시장",
-      "target": "ADP",
-      "strength": 3
-    },
-    {
       "source": "METR",
       "target": "CIO",
       "strength": 2
@@ -4754,6 +4885,26 @@
       "strength": 2
     },
     {
+      "source": "CIO",
+      "target": "AI투자",
+      "strength": 2
+    },
+    {
+      "source": "CIO",
+      "target": "리더십",
+      "strength": 2
+    },
+    {
+      "source": "CIO",
+      "target": "KPMG",
+      "strength": 2
+    },
+    {
+      "source": "CIO",
+      "target": "BCG",
+      "strength": 2
+    },
+    {
       "source": "AI 정렬",
       "target": "RLHF",
       "strength": 2
@@ -4761,11 +4912,6 @@
     {
       "source": "AI전환",
       "target": "CRM",
-      "strength": 2
-    },
-    {
-      "source": "CIO",
-      "target": "리더십",
       "strength": 2
     },
     {
@@ -4861,6 +5007,11 @@
     {
       "source": "AI인프라",
       "target": "반도체",
+      "strength": 2
+    },
+    {
+      "source": "AI투자",
+      "target": "KPMG",
       "strength": 2
     },
     {
