@@ -1,5 +1,19 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 70,
+    "title": "오픈AI 임원실의 휴지 녹음기",
+    "date": "2026-10-17",
+    "img": "nl-70.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-70-%EC%98%A4%ED%94%88ai-%EC%9E%84%EC%9B%90%EC%8B%A4%EC%9D%98-%ED%9C%B4%EC%A7%80-%EB%85%B9%EC%9D%8C%EA%B8%B0-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-qvboc/"
+  },
+  {
+    "ep": 69,
+    "title": "오픈AI가 해고한 안전 연구원 세 명",
+    "date": "2026-10-10",
+    "img": "nl-69.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-69-%EC%98%A4%ED%94%88ai%EA%B0%80-%ED%95%B4%EA%B3%A0%ED%95%9C-%EC%95%88%EC%A0%84-%EC%97%B0%EA%B5%AC%EC%9B%90-%EC%84%B8-%EB%AA%85-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-1cuqc/"
+  },
+  {
     "ep": 68,
     "title": "구글 내부에서도 의심 받는 제미나이 4",
     "date": "2026-10-03",
