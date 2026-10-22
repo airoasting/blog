@@ -1,0 +1,520 @@
+<!DOCTYPE html><html lang="ko"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI ROASTING · Blog</title>
+  <meta name="description" content="앤트로픽 직원은 2030년까지 AI가 자기 일의 75%를 할 수 있다고 봤고, 미국 근로자는 28%로 봤습니다. 기대가 갈리는 지점과 인력 관리에 주는 의미를 정리했습니다.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="내 일의 75%와 28%, AI 기대 격차">
+  <meta property="og:description" content="앤트로픽 직원은 2030년까지 AI가 자기 일의 75%를 할 수 있다고 봤고, 미국 근로자는 28%로 봤습니다. 기대가 갈리는 지점과 인력 관리에 주는 의미를 정리했습니다.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://airoasting.github.io/blog/survival/2026-10-16-anthropic-ai-expectations-gap.html">
+  <meta property="og:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="article:published_time" content="2026-10-16">
+  <meta property="article:section" content="생존">
+  <meta property="article:tag" content="앤트로픽">
+  <meta property="article:tag" content="AI기대격차">
+  <meta property="article:tag" content="일자리">
+  <meta property="article:tag" content="노동시장">
+  <meta property="article:tag" content="인력관리">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="내 일의 75%와 28%, AI 기대 격차">
+  <meta name="twitter:description" content="AI를 매일 쓰는 조직은 2030년에 자기 일의 75%를 AI가 할 수 있다고 봅니다. 우리 팀의 답이 28%라면, AI를 덜 아는 것입니까, 덜 쓰는 것입니까?">
+  <meta name="twitter:image" content="https://airoasting.github.io/blog/assets/images/og-cover.png">
+
+  <!-- Stylesheet -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/wiki.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "내 일의 75%와 28%, AI 기대 격차",
+    "datePublished": "2026-10-16",
+    "author": { "@type": "Person", "name": "AI ROASTING" },
+    "publisher": { "@type": "Organization", "name": "AI ROASTING", "url": "https://airoasting.github.io/blog/" },
+    "description": "앤트로픽 직원은 2030년까지 AI가 자기 일의 75%를 할 수 있다고 봤고, 미국 근로자는 28%로 봤습니다. 기대가 갈리는 지점과 인력 관리에 주는 의미를 정리했습니다.",
+    "mainEntityOfPage": "https://airoasting.github.io/blog/survival/2026-10-16-anthropic-ai-expectations-gap.html",
+    "articleSection": "생존"
+  }
+  </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+  <header id="site-header"></header>
+  <script>window.HEADER_CONFIG = { activeCat: 'survival' };</script>
+  <script src="../assets/js/header.js"></script>
+  <script src="../assets/js/theme.js"></script>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar"><div class="reading-progress-fill"></div></div>
+
+  <main>
+    <!-- Mobile TOC -->
+    <button class="toc-fab" id="tocFab" aria-label="목차">목차</button>
+    <div class="toc-mobile-overlay" id="tocMobileOverlay">
+      <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+      </ul>
+    </div>
+
+    <article class="post" data-category="survival">
+      <!-- Thumbnail Hero -->
+      <div class="post-thumbnail-hero" data-category="survival">
+        <div class="post-color-bar"></div>
+        <img src="images/2026_10_16_anthropic-ai-expectations-gap/thumbnail.png" alt="내 일의 75%와 28%, AI 기대 격차" onerror="this.style.display='none'">
+        <div class="post-hero-meta">
+          <span class="post-category" data-category="survival">생존</span>
+          <span class="post-date">2026년 10월 16일</span>
+          <span class="post-read-time">9분</span>
+        </div>
+        <div class="post-thumbnail-overlay">
+          <h1 class="post-title" id="postTitle">내 일의 75%와 28%, AI 기대 격차</h1>
+        </div>
+        <div class="post-hero-bottom">
+          <div class="post-hero-source">
+            <span>앤트로픽 (Sacher 외 4인)</span>
+            <span><a href="https://www.anthropic.com/research/ai-expectations-gap" target="_blank" rel="noopener">원문 보기 ↗</a></span>
+          </div>
+          <div class="post-hero-tags">
+            <a href="../index.html?tag=앤트로픽" class="post-tag">#앤트로픽</a>
+            <a href="../index.html?tag=AI기대격차" class="post-tag">#AI기대격차</a>
+            <a href="../index.html?tag=일자리" class="post-tag">#일자리</a>
+            <a href="../index.html?tag=노동시장" class="post-tag">#노동시장</a>
+            <a href="../index.html?tag=인력관리" class="post-tag">#인력관리</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Data for AI View -->
+      <div id="postData" hidden="" data-title="내 일의 75%와 28%, AI 기대 격차" data-date="2026-10-16" data-category="survival" data-source="앤트로픽 (Sacher 외 4인)" data-tags="앤트로픽, AI기대격차, 일자리, 노동시장, 인력관리" data-original-url="https://www.anthropic.com/research/ai-expectations-gap" data-roasting-quote="AI를 매일 쓰는 조직은 2030년에 자기 일의 75%를 AI가 할 수 있다고 봅니다. 우리 팀의 답이 28%라면, AI를 덜 아는 것입니까, 덜 쓰는 것입니까?"></div>
+
+      <!-- Post Body Layout -->
+      <div class="post-body-layout">
+        <div class="post-body">
+
+      <!-- 3줄 요약 -->
+      <section class="post-section" id="section-summary">
+        <div class="post-section-label">3줄 요약</div>
+        <p data-summary="">앤트로픽 경제팀이 미국 성인 10,980명과 자사 직원 1,334명에게 AI의 미래를 물었습니다. 두 집단은 오늘의 AI가 할 수 있는 일에는 대체로 동의했습니다. 갈린 것은 앞으로의 속도입니다.</p>
+        <p data-summary="">직원들은 2030년까지 AI가 자기 일의 75%를 할 수 있다고 봤고, 미국 근로자는 28%로 봤습니다. 이 답을 경제 모형에 넣으면 2030년 GDP 성장률이 17.1%와 5.4%로 갈립니다.</p>
+        <p data-summary="">그런데 실업을 예측하는 방식은 두 집단이 같았습니다. 자기 일을 AI가 많이 한다고 볼수록 실업률을 높게 봤습니다. 차이는 사고방식보다 AI를 직접 겪은 경험에서 나옵니다.</p>
+      </section>
+
+      <!-- Roasting -->
+      <section class="post-section" id="section-roasting">
+        <div class="post-section-label">Roasting</div>
+        <div class="roasting-block">
+          <blockquote id="roastingQuote">AI를 매일 쓰는 조직은 2030년에 자기 일의 75%를 AI가 할 수 있다고 봅니다.<br>우리 팀의 답이 28%라면, AI를 덜 아는 것입니까, 덜 쓰는 것입니까?</blockquote>
+        </div>
+      </section>
+
+      <!-- 훅 -->
+      <section class="post-section" id="section-hook">
+        <div class="post-section-label">이 글, 왜 읽어야 하나</div>
+        <p>2030년까지 AI가 노벨상급 과학 발견을 할 수 있을까요? 미국 성인은 39%가 그렇다고 답했습니다. 앤트로픽 직원은 91%가 그렇다고 답했습니다. 같은 질문에 대한 답이 두 배 넘게 벌어졌습니다.</p>
+        <p>이 격차는 AI 회사 밖에도 있습니다. 미국 성인 중 AI를 일에 정기적으로 쓰는 사람과 한 번도 써 본 적 없는 사람의 기대도 크게 달랐습니다. 같은 팀 안에서도 이런 차이가 생길 수 있습니다. AI를 매일 쓰는 팀원과 거의 안 쓰는 팀원은 서로 다른 2030년을 전제로 일하고 있을 수 있습니다. 이 글은 그 차이를 리더가 어떻게 다뤄야 하는지 정리합니다.</p>
+      </section>
+
+      <!-- 컨텍스트 -->
+      <section class="post-section" id="section-context">
+        <div class="post-section-label">왜 지금 중요한가</div>
+        <p>AI가 경제를 얼마나 바꿀지에 대한 전망은 크게 엇갈립니다. 앤트로픽 경제팀은 그 차이가 능력에 대한 생각에서 오는지, 도입 속도에 대한 생각에서 오는지 따져 봤습니다. 2026년 8월, 같은 질문지를 일반 대중과 AI를 가장 깊이 쓰는 집단에 함께 던졌습니다. 조직 안에서도 AI 사용량은 사람마다 다릅니다. 기대가 다르면 인력 계획과 교육, 채용의 전제가 달라집니다.</p>
+
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="stat-num">75%</div>
+            <div class="stat-label">앤트로픽 직원이 본 2030년 AI가 할 수 있는 자기 일</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">28%</div>
+            <div class="stat-label">미국 근로자가 본 같은 비중</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">40%</div>
+            <div class="stat-label">AI를 정기적으로 쓰는 미국 컴퓨터·공학·과학 직군</div>
+          </div>
+        </div>
+        <p class="post-table-source">출처: Sacher 외 (2026, October 16), 앤트로픽. 현재 근무시간 중 2030년까지 AI가 할 수 있다고 본 비중의 평균.</p>
+      </section>
+
+      <!-- 핵심 인사이트 -->
+      <section class="post-section" id="section-insight">
+        <div class="post-section-label">핵심 인사이트</div>
+
+        <p><strong>첫째, 오늘에 대한 판단은 같고, 속도에 대한 판단이 다릅니다.</strong> 연구진은 이메일 작성부터 노벨상급 발견까지 8개 과제를 제시했습니다. 그리고 AI가 숙련된 전문가만큼 해낼 시점을 물었습니다. 두 집단은 과제의 난이도 순서를 거의 똑같이 매겼습니다. 과학 연구를 설계하고 수행해 발표하는 일은 양쪽 모두 4분의 1 정도가 이미 가능하다고 봤습니다.</p>
+
+        <p>갈린 것은 그다음입니다. 같은 과제가 내년에 가능하다고 본 비율은 직원이 10명 중 9명, 대중은 38%였습니다. 과제에 따라 미국 성인의 19~40%는 AI가 그 일을 영영 못 한다고 답했습니다. 직원 중 그렇게 답한 비율은 많아야 2%였습니다.</p>
+
+        <p><strong>둘째, 자기 일에 대한 기대가 가장 크게 갈립니다.</strong> 앤트로픽 직원은 2030년까지 AI가 자기 근무시간의 75%를 할 수 있다고 봤습니다. 미국 근로자의 평균은 28%였습니다. 자기 일의 80% 이상을 AI가 할 수 있다고 본 근로자는 20명 중 1명입니다. 직원은 절반 이상이 그렇게 답했습니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/23b4644432371743e7aab1c386977d1157826002-1920x1026.png" alt="2030년까지 AI가 할 수 있는 자기 일의 비중. 미국 근로자 28%, 육체·생산·운송 25%, 관리·경영·재무 31%, 컴퓨터·공학·과학 33%, 그중 AI 정기 사용자 40%, 앤트로픽 직원 75%" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            2030년까지 AI가 할 수 있다고 본 자기 근무시간의 비중입니다. 관리·경영·재무 직군은 31%로 답했습니다. (리더 자신의 기대도 대중 평균에 가깝다는 뜻입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: 앤트로픽 (2026), Figure 5</span>
+          </figcaption>
+        </figure>
+
+        <p>직군별 차이는 생각보다 작습니다. 육체·생산·운송 직군은 25%, 컴퓨터·공학·과학 직군은 33%였습니다. 관리·경영·재무 직군은 31%입니다. 같은 미국인끼리는 직군이 달라도 10%p 안쪽에서 움직입니다. 앤트로픽 직원과의 차이는 40%p가 넘습니다.</p>
+
+        <p><strong>셋째, 격차의 일부는 AI를 얼마나 깊이 쓰느냐에서 나옵니다.</strong> 미국 성인 중 AI를 일에 정기적으로 쓰는 사람은 약 5분의 1입니다. 이들의 56%는 2030년까지 AI가 8개 과제 중 7개 이상을 해낼 것으로 봤습니다. 전체 성인은 41%, AI를 써 본 적 없는 사람은 28%입니다. 사용 빈도가 높을수록 기대가 높아집니다.</p>
+
+        <p>다만 정기 사용자도 직원(96%)에는 한참 못 미칩니다. 컴퓨터·공학·과학 직군의 정기 사용자도 자기 일의 40%만 AI가 할 수 있다고 봤습니다. 쓰는 횟수만으로는 설명되지 않는 차이입니다. 연구진은 직원 대부분이 이미 일의 상당 부분을 AI와 함께 한다고 봅니다. 같은 날 나온 앤트로픽 내부 고용 보고서에 단서가 있습니다. 엔지니어가 추가한 코드 줄 수는 코딩 에이전트 도입 한 달 만에 세 배가 됐습니다.</p>
+
+        <p><strong>넷째, 실업을 예측하는 논리는 두 집단이 같습니다.</strong> 연구진은 현재 실업률이 약 4.2%라고 알려 주고 2030년 실업률을 물었습니다. 자기 일의 절반 미만을 AI가 한다고 본 근로자는 7~8%를 예측했습니다. 80% 이상이라고 본 근로자는 평균 12.2%를 예측했습니다. 글로벌 금융위기 때의 정점보다 높은 수치입니다.</p>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/f9e98906000b6ff03c73ab6aaa9a71cbc2e85020-1920x1527.png" alt="AI가 할 수 있다고 본 자기 일의 비중별 2030년 실업률 예측. 미국 근로자와 앤트로픽 직원 모두 비중이 높을수록 실업률 예측이 올라가며, 80% 이상 구간에서 두 집단 모두 12% 안팎" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            위는 자기 일의 AI 노출 구간별 실업률 예측, 아래는 각 구간에 속한 응답자 비율입니다. 두 선은 거의 겹치지만, 직원의 55%는 80% 이상 구간에 몰려 있습니다. (생각하는 방식은 같고, 서 있는 위치가 다릅니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: 앤트로픽 (2026), Figure 6</span>
+          </figcaption>
+        </figure>
+
+        <p>미국 근로자는 자기 일의 노출이 10%p 높아질 때마다 실업률 예측이 0.4%p 높아졌습니다. AI에 대한 일반적 낙관은 이 관계를 설명하지 못했습니다. 앤트로픽 직원에게서도 같은 기울기가 나타났습니다. 두 집단은 AI와 노동시장을 같은 방식으로 생각합니다. 다른 것은 AI가 무엇을 할 수 있는지에 대한 경험입니다.</p>
+
+        <p>리더에게 이 결과는 경고이기도 합니다. AI를 많이 쓰는 사람일수록 자기 일의 노출을 높게 봤습니다. 그렇다면 도입이 넓어질수록 일자리 불안도 함께 커질 수 있습니다. AI 도입을 밀어붙이는 리더는 이 불안까지 관리 대상에 넣어야 합니다.</p>
+
+        <p><strong>다섯째, 업무 자동화와 인력 감축은 다른 예측입니다.</strong> 앤트로픽 직원의 95%는 앞으로 12개월 동안 회사 인원이 늘 것으로 봤습니다. 중앙값은 66% 증가였고, 27%는 두 배 이상을 예상했습니다. 자기 일의 75%를 AI가 할 수 있다고 보면서도 채용은 계속된다고 보는 셈입니다. 연구진은 이것이 직원 개인의 예상일 뿐, 회사의 계획이 아니라고 밝혔습니다.</p>
+
+        <p>반면 일자리를 잃은 뒤의 전망은 직원 쪽이 조금 더 비관적입니다. 연구진은 평소 실직자는 새 일을 찾는 데 3개월쯤 걸린다고 먼저 알려 줬습니다. 그리고 2030년에 AI 때문에 직업을 바꿔야 하는 사람의 재취업 기간을 물었습니다. 직원의 중앙값은 12개월, 미국 성인의 중앙값은 7~12개월 구간이었습니다. 자동화를 가까이서 보는 쪽이 전환 비용을 더 크게 본 셈입니다.</p>
+
+        <p><strong>여섯째, 다섯 가지 기대의 차이가 GDP 전망을 세 배로 벌립니다.</strong> 연구진은 응답을 자사 경제 모형에 넣었습니다. 능력, 확산, 자율성, 시간 절감, 재취업 기간의 다섯 가지 답입니다. 미국 성인 중앙값의 답은 2030년 GDP 성장률 5.4%로 이어집니다. 직원 중앙값의 답은 17.1%로 이어집니다.</p>
+
+        <div class="post-table-wrap">
+          <table class="post-table">
+            <thead>
+              <tr><th>모형 입력값</th><th>질문 (2030년 기준)</th><th style="text-align:center">미국 성인</th><th style="text-align:center">앤트로픽 직원</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>능력</td><td>AI가 노벨상급 발견을 할 수 있다</td><td style="text-align:center">39%</td><td class="cell-hl" style="text-align:center">91%</td></tr>
+              <tr><td>확산</td><td>AI가 할 수 있는 업무 중 실제로 AI가 하는 비중</td><td style="text-align:center">42%</td><td class="cell-hl" style="text-align:center">65%</td></tr>
+              <tr><td>자율성</td><td>사람이 일 대부분을 직접 하거나 AI 도움만 받는다</td><td style="text-align:center">10명 중 4명</td><td class="cell-hl" style="text-align:center">대다수는 AI 단독 또는 사람 검수</td></tr>
+              <tr><td>시간 절감</td><td>AI로 작업 시간이 4분의 1 이하로 준다 (업무에 AI를 쓰는 사람)</td><td style="text-align:center">26%</td><td class="cell-hl" style="text-align:center">59%</td></tr>
+              <tr><td>재취업 기간</td><td>AI로 실직해 직업을 바꾸는 사람의 재취업 기간 (중앙값)</td><td style="text-align:center">7~12개월</td><td class="cell-hl" style="text-align:center">12개월</td></tr>
+              <tr><td>결과</td><td>모형이 환산한 2030년 GDP 성장률 (중앙값)</td><td style="text-align:center">5.4%</td><td class="cell-hl" style="text-align:center">17.1%</td></tr>
+            </tbody>
+          </table>
+          <p class="post-table-source">출처: Sacher 외 (2026, October 16), 앤트로픽. 미국 성인은 2030년 문항 응답자 기준. GDP 환산은 다섯 문항에 모두 답한 미국 성인 3,259명, 직원 1,093명 대상.</p>
+        </div>
+
+        <figure class="post-figure" style="margin: 28px 0;">
+          <img src="https://www-cdn.anthropic.com/images/4zrzovbb/website/d4b5d6daebc5d653cfee156baff992ddf9b22a50-1920x1080.png" alt="응답이 함의하는 2030년 GDP 성장률 분포. 미국 성인 중앙값 5.4%, 웹사이트 방문자 중앙값 12.5%, 앤트로픽 직원 중앙값 17.1%" style="width:100%; border-radius:8px; display:block;" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <figcaption style="font-size:13px; color:#888; margin-top:8px; line-height:1.6;">
+            응답을 모형에 넣어 환산한 2030년 GDP 성장률입니다. 웹사이트 방문자 23,075명의 중앙값은 12.5%로 두 집단 사이에 있습니다. (AI에 관심이 많을수록 기대가 높아지는 계단이 보입니다.)
+            <span style="display:block; margin-top:4px; font-size:12px;">출처: 앤트로픽 (2026), Figure 7</span>
+          </figcaption>
+        </figure>
+
+        <p>연구진은 직원의 기대대로라면 2030년 미국 경제가 약 4년 반마다 두 배가 된다고 설명합니다. 대중의 기대만으로도 성장률은 평소의 두 배를 넘습니다. 다만 각 집단 안에서도 답이 넓게 퍼져 있어 두 분포는 상당 부분 겹칩니다.</p>
+
+        <p>확산 속도를 정하는 것은 기술만이 아닙니다. 미국 성인이 가장 많이 꼽은 2030년 도입 장벽은 사람을 상대하고 싶어 하는 고객입니다. 데이터 보안 우려, AI의 신뢰성 부족, 법과 규제가 뒤를 이었습니다. 업무에 AI를 정기적으로 쓰는 사람은 데이터 보안을 1순위로 꼽았습니다(42%, 나머지 응답자는 37%). 고객 선호를 꼽은 비율은 이들이 37%로, 나머지(42%)보다 낮았습니다.</p>
+      </section>
+
+      <!-- 내일 당장 -->
+      <section class="post-section" id="section-action">
+        <div class="post-section-label">내일 당장 할 수 있는 것</div>
+        <p>이 조사의 질문은 그대로 우리 조직의 진단 도구가 됩니다.</p>
+
+        <div class="action-steps">
+          <div class="action-step">
+            <span class="action-num">1</span>
+            <div class="action-body"><strong>팀에 같은 질문 두 개를 던지세요.</strong><br>익명 설문으로 묻습니다. "2030년까지 지금 내 근무시간의 몇 %를 AI가 할 수 있다고 보십니까?" "지난주 업무에 AI를 며칠 쓰셨습니까?" 결과를 Claude에 넣고 이렇게 요청합니다. "응답을 AI 사용 일수별로 나누고, 그룹별 평균 기대치를 표로 비교해 줘." (설문 작성 30분, 수집 1주)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">2</span>
+            <div class="action-body"><strong>리더부터 시나리오 탐색기에 답해 보세요.</strong><br>앤트로픽은 이 조사의 짧은 버전을 <a href="https://www.anthropic.com/institute/econ-scenarios" target="_blank" rel="noopener">경제 시나리오 탐색기</a>로 공개했습니다. 임원과 팀장이 각자 답하고, 서로의 결과를 비교합니다. 누가 어느 문항에서 갈리는지가 곧 우리 조직의 기대 격차 지도입니다. (1인 15분, 비교 회의 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">3</span>
+            <div class="action-body"><strong>기대가 높은 사람의 실제 작업을 보여 주세요.</strong><br>AI로 작업 시간을 4분의 1 이하로 줄인 팀원에게 그 작업을 시연하게 합니다. 연구진은 AI 사용이 퍼지면 대중의 기대도 움직일 수 있다고 봅니다. 기대를 말로 설득하지 말고 실제 작업으로 바꿉니다. (주 1회 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">4</span>
+            <div class="action-body"><strong>노출을 높게 본 팀원과는 역할을 먼저 이야기하세요.</strong><br>자기 일의 노출을 높게 보는 사람일수록 실업을 높게 예측했습니다. 설문에서 높은 노출을 답한 팀원과 1:1 면담을 잡습니다. AI에 넘길 일과 그 사람이 새로 맡을 일을 함께 적습니다. (1인당 30분)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">5</span>
+            <div class="action-body"><strong>인력 계획을 28% 안과 75% 안 두 개로 그려 보세요.</strong><br>Claude에 이렇게 요청합니다. "우리 팀 업무 목록과 인원을 줄게. 2030년에 AI가 업무의 28%를 할 때와 75%를 할 때, 필요한 역할과 인원을 각각 추정해 줘. 재교육이 필요한 역할도 표시해 줘." 두 안의 차이가 큰 역할부터 채용과 교육 계획을 다시 봅니다. (반나절)</div>
+          </div>
+          <div class="action-step">
+            <span class="action-num">6</span>
+            <div class="action-body"><strong>보안 가이드를 도입 계획보다 먼저 내놓으세요.</strong><br>AI를 정기적으로 쓰는 사람이 가장 크게 본 장벽은 데이터 보안이었습니다. 어떤 데이터를 어떤 AI 도구에 넣어도 되는지 한 장짜리 기준을 만듭니다. 많이 쓰는 사람이 걱정하는 지점부터 풀어 주는 일입니다. (초안 1일, 보안 담당 검토 1주)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 리스크 -->
+      <section class="post-section" id="section-risk">
+        <div class="post-section-label">리스크 &amp; 주의점</div>
+
+        <p><strong>AI 회사 직원의 기대입니다.</strong> 앤트로픽 직원은 AI를 만들고 매일 쓰는 사람입니다. 연구진은 개발 과정을 더 가까이서 보기 때문일 수 있다고 설명합니다. 그러나 자기 회사의 기술을 낙관할 이유가 있는 집단이기도 합니다. 직원 설문은 사내 설문으로 진행됐고 가중치를 두지 않았습니다.</p>
+
+        <p><strong>두 집단의 응답 방식이 다릅니다.</strong> 자기 일의 노출 비중을 직원은 슬라이더로 답했습니다. 미국 성인은 구간 중에서 골랐고, 연구진은 구간의 중간값을 썼습니다. 측정 방식의 차이가 숫자에 일부 섞여 있을 수 있습니다.</p>
+
+        <p><strong>대중 설문은 온라인 패널입니다.</strong> 인터넷을 쓰지 않는 성인은 빠져 있습니다. 연구진도 인구 통계 가중치만으로 바로잡지 못하는 차이가 있을 수 있다고 밝혔습니다. 또 모두 미국 데이터이므로 국내 조직에 숫자를 그대로 옮기면 안 됩니다.</p>
+
+        <p><strong>GDP 수치는 예측이 아니라 환산값입니다.</strong> 응답을 모형에 넣어 계산한 값이고, 나머지 변수는 중간 시나리오에 고정했습니다. 기대 자체도 움직입니다. 9월 재조사에서 노벨상급 발견이 가능하다고 본 미국 성인은 39%에서 44%로 늘었습니다. 오늘의 28%를 고정된 숫자로 읽으면 위험합니다.</p>
+      </section>
+
+      <!-- 한 줄 정리 -->
+      <section class="post-section" id="section-closing">
+        <div class="post-section-label">한 줄 정리</div>
+        <p>AI의 미래를 두고 사람들이 갈리는 이유는 생각하는 방식이 아니라 겪어 본 AI의 차이입니다. 조직 안의 기대 격차는 설득보다 사용 경험으로 좁혀야 합니다.</p>
+      </section>
+
+      <!-- 리더의 결정 포인트 -->
+      <section class="post-section" id="section-decision">
+        <div class="post-section-label">리더의 결정 포인트</div>
+        <div class="decision-points">
+          <div class="decision-point">
+            <span class="decision-role">CEO/임원</span>
+            <span>중장기 인력 계획이 어느 기대치를 전제로 했는지 확인하세요. 28%를 전제로 한 계획이라면 75% 안도 함께 놓고 비교해야 합니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">인사 책임자</span>
+            <span>AI 사용 빈도와 자기 일 노출 기대를 함께 묻는 정기 설문을 만드세요. 노출을 높게 보는 집단에는 역할 전환과 재교육 경로를 먼저 제시해야 합니다.</span>
+          </div>
+          <div class="decision-point">
+            <span class="decision-role">팀장</span>
+            <span>AI를 많이 쓰는 팀원과 적게 쓰는 팀원이 같은 계획을 다르게 읽고 있다고 가정하세요. 실제 작업 시연으로 두 사람의 2030년을 맞추는 일이 먼저입니다.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 용어 설명 -->
+      <section class="post-section" id="section-glossary">
+        <div class="post-section-label">용어 설명</div>
+        <div class="methodology-box">
+          <p><strong>자기 일의 노출</strong>: 응답자가 현재 근무시간 중 2030년까지 AI가 할 수 있다고 본 비중입니다. 실제로 AI가 그 일을 하게 될지와는 별개입니다.</p>
+          <p><strong>확산</strong>: AI가 할 수 있는 업무 가운데 실제로 AI가 쓰이는 비중입니다. 능력이 있어도 고객 선호, 보안, 규제 때문에 쓰이지 않을 수 있습니다.</p>
+          <p><strong>모형 환산 GDP 성장률</strong>: 응답자의 다섯 가지 답을 앤트로픽의 경제 모형에 넣어 계산한 2030년 성장률입니다. 모형은 완만(2.4%), 상당(5.4%), 극단(15.4%) 세 시나리오를 기준선으로 둡니다.</p>
+          <p><strong>중앙값</strong>: 응답을 크기순으로 세웠을 때 한가운데 있는 값입니다. 극단적인 답에 덜 흔들립니다.</p>
+          <p><strong>재귀적 자기개선</strong>: AI가 다음 세대 AI를 만드는 일을 점점 더 많이 맡는 과정입니다. 직원들은 최신 모델 개발 업무 중 AI가 하는 비중을 현재 51%, 2030년 말 95%로 봤습니다.</p>
+        </div>
+      </section>
+
+      <!-- 참고자료 -->
+      <section class="post-section" id="section-references" style="margin-bottom:0;">
+        <div class="post-section-label">참고자료</div>
+        <ul class="references-list">
+          <li>Sacher, S., Cotter, T., Jones, C. I., Korinek, A., &amp; McCrory, P. (2026, October 16). <em>The AI Expectations Gap: Public and Frontier Lab Views on AI's Impact on Work</em> [Research]. Anthropic. (<a href="https://www.anthropic.com/research/ai-expectations-gap" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+          <li>Wilmers, N., Catipon, R., Massenkoff, M., &amp; McCrory, P. (2026, October 16). <em>How Employment is Changing at Anthropic</em> [Research]. Anthropic. (<a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">원문 보기 ↗</a>)</li>
+        </ul>
+      </section>
+
+      <!-- 라운드테이블 댓글 -->
+      <section id="section-roundtable" style="margin-top:40px; padding:32px; background:#F7F7F5; border-radius:12px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+          <div style="font-size:13px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#888;">라운드테이블</div>
+          <div style="flex:1; height:1px; background:#E0E0DC;"></div>
+        </div>
+
+        <!-- 스레드 1 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">앤트로픽 직원의 75%를 기준점으로 쓰면 곤란해요. 자기 회사 기술을 낙관할 이유가 있는 사람들이고, 사내 설문은 가중치도 안 뒀다잖아요. 그 숫자를 우리 팀에 들이밀면 공정한 비교예요?</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">공정한 비교를 하자는 게 아니에요. 같은 미국인끼리도 AI를 정기적으로 쓰는 쪽은 40%까지 봤어요. 쓸수록 기대가 올라가는 건 회사 밖에서도 보였어요. 그러니까 우리 팀도 써 보게 해야 해요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">'써 보면 기대가 오른다'는 건 상관관계예요. 기대가 높은 사람이 원래 더 많이 썼을 수도 있어요. 측정 방식도 직원은 슬라이더, 대중은 구간 선택이라 달랐고요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:132px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A1A1A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">B</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A1A1A; margin-bottom:6px;">블랙 <span style="font-weight:400; color:#aaa;">· 중견기업 임원</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">맞아요, 인과는 몰라요. 그래도 우리 팀 설문 하나는 30분이면 돌려요. 모르면 재 보면 돼요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 1 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 2 -->
+        <div style="margin-bottom:32px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">제일 무서운 숫자는 12.2%예요. 자기 일의 80% 이상을 AI가 한다고 본 사람들이 예측한 실업률이요. 우리 팀에서 AI를 제일 잘 쓰는 친구가 요즘 말수가 줄었는데, 이거였나 싶어요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C49000; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">G</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C49000; margin-bottom:6px;">골드 <span style="font-weight:400; color:#aaa;">· 창업자</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">저도 써 봤는데요, 많이 쓸수록 불안해지는 거 진짜예요. 근데 솔직히 앤트로픽 직원 95%는 회사 인원이 늘 거라고 봤잖아요. 일이 자동화된다고 사람이 바로 줄어드는 건 아니라는 얘기죠.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:88px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#555555; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">W</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#555555; margin-bottom:6px;">화이트 <span style="font-weight:400; color:#aaa;">· 조직장</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">그건 AI 회사니까 그렇죠. 우리 회사에서 인원을 늘린다는 말은 들어 본 적이 없어요. 그 친구한테 저는 뭐라고 말해 줘야 해요?</div>
+          </div>
+        </div>
+        </div><!-- /스레드 2 -->
+
+        <div style="border-top:1px solid #E8E8E4; margin-bottom:28px;"></div>
+
+        <!-- 스레드 3 -->
+        <div style="margin-bottom:0px;">
+        <div style="display:flex; gap:12px; align-items:flex-start;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#6B3FA0; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">P</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#6B3FA0; margin-bottom:6px;">퍼플 <span style="font-weight:400; color:#aaa;">· 마케터</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">5.4%랑 17.1%요. 같은 질문에 답했는데 그리는 미래가 세 배 차이 나는 느낌이에요. 팀 회의에서 이 표 하나 보여 주면, 서로 다른 2030년을 상상하고 있었다는 걸 바로 알 것 같아요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#1A4A7A; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">N</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#1A4A7A; margin-bottom:6px;">네이비 <span style="font-weight:400; color:#aaa;">· 시니어 엔지니어</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">그 GDP는 예측이 아니라 환산값이에요. 응답 다섯 개를 모형에 넣은 결과고, 나머지 변수는 중간 시나리오로 고정했어요. 회의에서 보여 줄 거면 그 한 줄도 꼭 같이 보여 주세요.</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; margin-left:44px; margin-top:12px;">
+          <div style="width:36px; height:36px; border-radius:50%; background:#C43500; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:2px;">R</div>
+          <div style="flex:1; background:#fff; border-radius:10px; padding:14px 16px; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+            <div style="font-size:13px; font-weight:700; color:#C43500; margin-bottom:6px;">레드 <span style="font-weight:400; color:#aaa;">· 저널리스트</span></div>
+            <div style="font-size:13px; line-height:1.75; color:#222;">보여 주기 전에 이것도 보세요. 9월 재조사에서 노벨상급 발견이 가능하다고 본 미국 성인이 39%에서 44%로 늘었어요. 오늘 잰 우리 팀 숫자도 한 달 뒤엔 다를 수 있다는 뜻이에요.</div>
+          </div>
+        </div>
+        </div><!-- /스레드 3 -->
+
+      </section>
+
+
+      <!-- 다음 글 추천 -->
+      <div class="next-post">
+        <div class="next-post-label">AI ROASTING이 추천하는 다음 글</div>
+        <a href="./2026-03-05-ai-labor-market-exposure.html">
+          <div class="next-post-title">AI가 당신의 직업을 대체할 수 있다고? 이론과 현실의 거리 →</div>
+        </a>
+      </div>
+
+        </div><!-- /post-body -->
+
+        <nav class="toc-sidebar" id="tocSidebar">
+          <ul class="toc-list">
+        <li><a href="#section-summary" class="toc-link">3줄 요약</a></li>
+        <li><a href="#section-roasting" class="toc-link">Roasting</a></li>
+        <li><a href="#section-hook" class="toc-link">왜 읽어야 하나</a></li>
+        <li><a href="#section-context" class="toc-link">왜 지금 중요한가</a></li>
+        <li><a href="#section-insight" class="toc-link">핵심 인사이트</a></li>
+        <li><a href="#section-action" class="toc-link">내일 당장</a></li>
+        <li><a href="#section-risk" class="toc-link">리스크</a></li>
+        <li><a href="#section-closing" class="toc-link">한 줄 정리</a></li>
+        <li><a href="#section-decision" class="toc-link">결정 포인트</a></li>
+        <li><a href="#section-glossary" class="toc-link">용어 설명</a></li>
+        <li><a href="#section-references" class="toc-link">참고자료</a></li>
+        <li><a href="#section-roundtable" class="toc-link">라운드테이블</a></li>
+          </ul>
+        </nav>
+      </div><!-- /post-body-layout -->
+
+
+      <!-- Concepts (left) + Social Share (right) -->
+      <div class="concept-share-row">
+        <div class="share-bar desktop-only">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtn" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+      </div>
+  
+    <!-- WIKI_CONCEPTS_START -->
+    <section class="related-concepts">
+      <div class="concept-links">
+      <a href="../insights/wiki/concepts/앤트로픽.html" class="concept-chip">앤트로픽</a>
+      <a href="../insights/wiki/concepts/gdp.html" class="concept-chip">GDP</a>
+      <a href="../insights/wiki/concepts/노동시장.html" class="concept-chip">노동시장</a>
+      </div>
+    </section>
+    <!-- WIKI_CONCEPTS_END -->
+  </article>
+  </main>
+
+  <!-- Mobile Share Bar -->
+  <div class="mobile-share-bar">
+    <div class="share-bar">
+      <button class="share-btn share-btn-icon" onclick="shareLinkedIn()" aria-label="LinkedIn에 공유"><svg class="share-ico share-ico-linkedin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg></button>
+      <button class="share-btn share-btn-icon" onclick="shareThreads()" aria-label="Threads에 공유"><svg class="share-ico share-ico-threads" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.323.146 1.512.71 2.62 1.793 3.187 3.106.806 1.867.823 4.913-1.722 7.401-1.939 1.895-4.246 2.747-7.241 2.768z"/></svg></button>
+      <button class="share-btn share-btn-icon" id="copyBtnMobile" onclick="copyLink()" aria-label="링크 복사"><svg class="share-ico share-ico-stroke ico-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><svg class="share-ico share-ico-stroke ico-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></button>
+    </div>
+  </div>
+
+  <!-- AI Markdown Overlay -->
+  <div class="ai-md-overlay" id="aiMdOverlay">
+    <div class="ai-md-header">
+      <span class="ai-md-path">_posts/2026-10-16-anthropic-ai-expectations-gap.md</span>
+      <button class="ai-md-close" id="aiMdClose">Human</button>
+    </div>
+    <div class="ai-md-content" id="aiMdContent"></div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../assets/js/footer.js"></script>
+
+  <script>
+    const PAGE_URL = 'https://blog.airoasting.com/survival/2026-10-16-anthropic-ai-expectations-gap.html';
+    const ROASTING_QUOTE = 'AI를 매일 쓰는 조직은 2030년에 자기 일의 75%를 AI가 할 수 있다고 봅니다. 우리 팀의 답이 28%라면, AI를 덜 아는 것입니까, 덜 쓰는 것입니까?';
+
+    function shareLinkedIn() {
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE_URL), '_blank');
+    }
+    function shareThreads() {
+      window.open('https://www.threads.net/intent/post?text=' + encodeURIComponent(ROASTING_QUOTE + ' ' + PAGE_URL), '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(PAGE_URL).then(() => {
+        document.querySelectorAll('#copyBtn, #copyBtnMobile').forEach(btn => {
+          btn.classList.add('copied');
+          setTimeout(() => { btn.classList.remove('copied'); }, 2000);
+        });
+      });
+    }
+  </script>
+  <script src="../assets/js/ai-view.js"></script>
+  <script src="../assets/js/post-features.js"></script>
+  <script src="../assets/js/char-effect.js"></script>
+  <script>
+  if (window.CharEffect) window.CharEffect.initPostTitle();
+  </script>
+
+</body></html>

@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://airoasting.github.io/blog/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Category Pages -->
   <url>
     <loc>https://airoasting.github.io/blog/research/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,13 +23,13 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/company/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/tech/</loc>
-    <lastmod>2026-09-26</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -63,7 +63,7 @@
   </url>
   <url>
     <loc>https://airoasting.github.io/blog/survival/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -1440,4 +1440,8 @@
   <url><loc>https://airoasting.github.io/blog/company/2026-09-24-kpmg-ai-pulse-measure-value.html</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/company/2026-09-30-bcg-applied-ai-index-2026.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://airoasting.github.io/blog/survival/2026-09-30-anthropic-robot-exposure.html</loc><lastmod>2026-10-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/tech/2026-10-08-state-of-ai-report-2026.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/research/2026-10-16-employment-at-anthropic.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/survival/2026-10-16-anthropic-ai-expectations-gap.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://airoasting.github.io/blog/company/2026-10-19-gartner-cio-ai-stopping-rules.html</loc><lastmod>2026-10-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

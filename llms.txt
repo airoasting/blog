@@ -21,6 +21,10 @@
 각 포스트: 3줄 요약 · Roasting(편집장 판단) · 리더의 결정 포인트
 
 ## 최신 포스트
+- 2026-10-19 [기업] AI 과제 중단 기준을 갖춘 CIO 17% — /blog/company/2026-10-19-gartner-cio-ai-stopping-rules.html
+- 2026-10-16 [생존] 내 일의 75%와 28%, AI 기대 격차 — /blog/survival/2026-10-16-anthropic-ai-expectations-gap.html
+- 2026-10-16 [리서치] 에이전트가 사람보다 6배 일하는 회사 — /blog/research/2026-10-16-employment-at-anthropic.html
+- 2026-10-08 [기술] State of AI 2026, 리더가 볼 네 가지 신호 — /blog/tech/2026-10-08-state-of-ai-report-2026.html
 - 2026-09-30 [생존] 로봇이 사람보다 싼 일 0.3% — /blog/survival/2026-09-30-anthropic-robot-exposure.html
 - 2026-09-30 [기업] AI 가치 5배를 가른 두 가지 조건 — /blog/company/2026-09-30-bcg-applied-ai-index-2026.html
 - 2026-09-24 [기업] 비용 대비 AI 가치를 재는 기업 12% — /blog/company/2026-09-24-kpmg-ai-pulse-measure-value.html

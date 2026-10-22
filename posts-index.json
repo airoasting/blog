@@ -1,6 +1,82 @@
 {
   "posts": [
     {
+      "title": "AI 과제 중단 기준을 갖춘 CIO 17%",
+      "date": "2026-10-19",
+      "category": "company",
+      "source": "Gartner (2027 CIO and Technology Executive Agenda)",
+      "tags": [
+        "가트너",
+        "CIO",
+        "AI투자",
+        "AI거버넌스",
+        "파일럿"
+      ],
+      "slug": "2026-10-19-gartner-cio-ai-stopping-rules",
+      "file": "company/2026-10-19-gartner-cio-ai-stopping-rules.html",
+      "original_url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-19-gartner-survey-finds-only-13-percent-of-cios-say-their-enterprise-has-realized-significant-or-transformational-value-from-ai",
+      "summary": "가트너가 CIO와 기술 임원 2,002명을 조사했습니다. AI로 큰 가치를 냈다는 CIO는 13%였습니다. 선도 그룹을 가른 것은 파일럿과 운영 단계의 중단 기준이었습니다.",
+      "roasting_quote": "AI 파일럿을 시작하는 결재 라인은 어느 회사에나 있습니다. 끝내는 결재 라인은 누가 쥐고 있습니까?",
+      "next_post": "company/2026-09-24-kpmg-ai-pulse-measure-value.html"
+    },
+    {
+      "title": "내 일의 75%와 28%, AI 기대 격차",
+      "date": "2026-10-16",
+      "category": "survival",
+      "source": "앤트로픽 (Sacher 외 4인)",
+      "tags": [
+        "앤트로픽",
+        "AI기대격차",
+        "일자리",
+        "노동시장",
+        "인력관리"
+      ],
+      "slug": "2026-10-16-anthropic-ai-expectations-gap",
+      "file": "survival/2026-10-16-anthropic-ai-expectations-gap.html",
+      "original_url": "https://www.anthropic.com/research/ai-expectations-gap",
+      "summary": "앤트로픽 직원은 2030년까지 AI가 자기 일의 75%를 할 수 있다고 봤고, 미국 근로자는 28%로 봤습니다. 기대가 갈리는 지점과 인력 관리에 주는 의미를 정리했습니다.",
+      "roasting_quote": "AI를 매일 쓰는 조직은 2030년에 자기 일의 75%를 AI가 할 수 있다고 봅니다. 우리 팀의 답이 28%라면, AI를 덜 아는 것입니까, 덜 쓰는 것입니까?",
+      "next_post": "company/2026-10-19-gartner-cio-ai-stopping-rules.html"
+    },
+    {
+      "title": "에이전트가 사람보다 6배 일하는 회사",
+      "date": "2026-10-16",
+      "category": "research",
+      "source": "앤트로픽 (Wilmers 외 3인)",
+      "tags": [
+        "앤트로픽",
+        "AI 에이전트",
+        "채용",
+        "조직 설계",
+        "생산성"
+      ],
+      "slug": "2026-10-16-employment-at-anthropic",
+      "file": "research/2026-10-16-employment-at-anthropic.html",
+      "original_url": "https://www.anthropic.com/research/employment-at-anthropic",
+      "summary": "앤트로픽이 사내 인사·업무 데이터로 AI가 자기 회사의 일을 어떻게 바꿨는지 분석했습니다. 에이전트 작업 시간은 사람의 6배, 주니어 기술직 채용 비중은 27%에서 9%로 줄었습니다.",
+      "roasting_quote": "에이전트를 몇 개 돌리는지 자랑하기 전에 물어야 합니다. 그 결과물을 읽을 사람의 시간은 누가 계산했습니까?",
+      "next_post": "survival/2026-10-16-anthropic-ai-expectations-gap.html"
+    },
+    {
+      "title": "State of AI 2026, 리더가 볼 네 가지 신호",
+      "date": "2026-10-08",
+      "category": "tech",
+      "source": "Air Street Capital (Nathan Benaich)",
+      "tags": [
+        "AI전망",
+        "연구자동화",
+        "AI에이전트",
+        "AI인프라",
+        "AI안전"
+      ],
+      "slug": "2026-10-08-state-of-ai-report-2026",
+      "file": "tech/2026-10-08-state-of-ai-report-2026.html",
+      "original_url": "https://www.stateof.ai/",
+      "summary": "244장짜리 State of AI Report 2026에서 경영 리더의 결정을 바꾸는 네 가지를 골랐습니다. AI가 AI를 만드는 속도, 쓰는 방식의 격차, 전력과 정부라는 공급 제약, 실제로 일어난 에이전트 사고입니다.",
+      "roasting_quote": "앤트로픽에서 클로드가 이끈 모델 연구 비중은 반년 새 1% 미만에서 26%가 됐습니다. 귀사의 AI 계획은 몇 달에 한 번 다시 짭니까?",
+      "next_post": "research/2026-10-16-employment-at-anthropic.html"
+    },
+    {
       "title": "로봇이 사람보다 싼 일 0.3%",
       "date": "2026-09-30",
       "category": "survival",
@@ -17,7 +93,7 @@
       "original_url": "https://www.anthropic.com/research/what-work-can-robots-do",
       "summary": "앤트로픽은 오늘의 로봇이 신체 작업의 74%를 할 수 있지만, 사람보다 싸게 할 수 있는 일은 0.3%라고 분석했습니다. 직업별 노출도와 비용, 병목을 정리했습니다.",
       "roasting_quote": "휴머노이드 시연 영상에 박수 치기 전에 물어야 합니다. 우리 현장에서 로봇이 사람보다 싸게 할 수 있는 일은 몇 개입니까?",
-      "next_post": "survival/2026-03-05-ai-labor-market-exposure.html"
+      "next_post": "tech/2026-10-08-state-of-ai-report-2026.html"
     },
     {
       "title": "AI 가치 5배를 가른 두 가지 조건",

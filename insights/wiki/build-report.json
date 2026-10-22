@@ -1,22 +1,22 @@
 {
-  "buildAt": "2026-10-06T09:02:25.344Z",
-  "duration": 0.273,
+  "buildAt": "2026-10-22T12:17:39.057Z",
+  "duration": 5.86,
   "concepts": {
-    "total": 120,
+    "total": 121,
     "validDefinitions": 117,
-    "needsReview": 3
+    "needsReview": 4
   },
   "relationships": {
-    "total": 394
+    "total": 415
   },
   "coverage": {
-    "postsWithConcepts": 272,
-    "totalPosts": 289
+    "postsWithConcepts": 276,
+    "totalPosts": 293
   },
   "inject": {
-    "updated": 16,
-    "inserted": 0,
-    "unchanged": 273,
+    "updated": 29,
+    "inserted": 3,
+    "unchanged": 261,
     "skipped": 0
   },
   "needsManualReview": [
@@ -31,6 +31,10 @@
     {
       "name": "BCG",
       "slug": "bcg"
+    },
+    {
+      "name": "CNN",
+      "slug": "cnn"
     }
   ]
 }
