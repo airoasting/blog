@@ -1,5 +1,12 @@
 window.NEWSLETTER_DATA = [
   {
+    "ep": 71,
+    "title": "PHP의 18시간",
+    "date": "2026-10-24",
+    "img": "nl-71.png",
+    "url": "https://www.linkedin.com/pulse/ai-%EB%A1%9C%EC%8A%A4%ED%8C%85-71-php%EC%9D%98-18%EC%8B%9C%EA%B0%84-jayden-kang-%EA%B0%95%EC%A0%95%EA%B5%AC-htk5c/"
+  },
+  {
     "ep": 70,
     "title": "오픈AI 임원실의 휴지 녹음기",
     "date": "2026-10-17",
